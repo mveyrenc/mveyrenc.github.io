@@ -1,13 +1,11 @@
-.. Symfony documentation master file, created by
-   sphinx-quickstart on Sun Jul 13 11:39:01 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
+===================================
 Documentation Symfony
 ===================================
 
-Contents:
+Tout ce qu'il y a savoir sur Symfony.
 
+Contents
+========
 .. toctree::
    :maxdepth: 2
 
