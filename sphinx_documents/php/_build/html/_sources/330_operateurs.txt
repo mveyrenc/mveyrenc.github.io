@@ -16,7 +16,7 @@ Les opérateurs arithmétiques
 Les opérateurs d'affectation
 ============================
 
-L'opérateur d'affectation le plus simple est le signe "=".
+L'opérateur d'affectation est le signe "=".
 
 En plus du simple opérateur d'affectation, il existe des "opérateurs combinés" pour tous les opérateurs arithmétiques,
 l'union de tableaux et pour les opérateurs sur les chaînes de caractères :
@@ -54,7 +54,7 @@ Opérateurs de comparaison
 * Identique ``===`` : ``$a === $b`` (égals et de même type)
 * Différent ``!=`` : ``$a != $b`` (différents après transtypage)
 * Différent ``<>`` : ``$a <> $b`` (différents après transtypage)
-* Différent ``!==`` : ``$a !== $b`` (différents et de même type)
+* Non-identique ``!==`` : ``$a !== $b`` (différents et de même type)
 * Plus petit que ``<`` : ``$a < $b``
 * Plus grand ``>`` : ``$a > $b``
 * Inférieur ou égal ``<=`` : ``$a <= $b``
@@ -116,3 +116,48 @@ Voir le paragraphe |operateur_doc_link| de la doc de PHP.
 .. |operateur_doc_link| raw:: html
 
    <a href="http://fr2.php.net/manual/fr/language.operators.precedence.php" target="_blank">précédence d'opérateurs</a>
+   
+   
+Opérateur de chaînes
+====================
+
+L'opérateur de concaténation est le signe ".".
+
+Opérateurs de tableaux
+======================
+
+* Union ``+`` : ``$a + $b``
+* Egalité ``==`` : ``$a == $b``
+* Identique ``===`` : ``$a === $b``
+* Inégalité ``!=`` : ``$a != $b``
+* Inégalité ``<>`` : ``$a <> $b``
+* Non-identique ``!==`` : ``$a !== $b``
+
+Opérateurs de types
+===================
+
+``instanceof`` est utilisé pour déterminer si une variable PHP est un objet instancié d'une certaine classe, d'une classe
+héritées, d'une interface ou s'il est de la même classe qu'un autre objet.
+
+.. code-block:: php
+
+    interface InterfaceI {}
+    class ClassA  implements InterfaceI {}
+    class ClassB {}
+
+    $a = new ClassA();
+    $b = new ClassA();
+    $c = new ClassB();
+    $d = 'ClassA';
+    $e = 'ClassB';
+    
+    $a instanceof ClassA // Retourne TRUE
+    $a instanceof ClassB // Retourne FALSE
+    $a instanceof InterfaceI // Retourne TRUE
+    $a instanceof $b // Retourne TRUE
+    $a instanceof $c // Retourne FALSE
+    $a instanceof $d // Retourne TRUE
+    $a instanceof $e // Retourne FALSE
+    
+    
+    

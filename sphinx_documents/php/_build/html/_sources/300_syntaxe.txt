@@ -7,6 +7,7 @@ La syntaxe
 .. include:: 310_generalites.rst
 .. include:: 320_types.rst
 .. include:: 330_operateurs.rst
+.. include:: 330_structures-de-controle.rst
 
 
 

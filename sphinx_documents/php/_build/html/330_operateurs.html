@@ -74,6 +74,9 @@
 <li><a class="reference internal" href="#operateur-d-execution">Opérateur d&#8217;exécution</a></li>
 <li><a class="reference internal" href="#operateurs-d-incrementation-et-decrementation">Opérateurs d&#8217;incrémentation et décrémentation</a></li>
 <li><a class="reference internal" href="#les-operateurs-logiques">Les opérateurs logiques</a></li>
+<li><a class="reference internal" href="#operateur-de-chaines">Opérateur de chaînes</a></li>
+<li><a class="reference internal" href="#operateurs-de-tableaux">Opérateurs de tableaux</a></li>
+<li><a class="reference internal" href="#operateurs-de-types">Opérateurs de types</a></li>
 </ul>
 </li>
 </ul>
@@ -119,7 +122,7 @@
 </div>
 <div class="section" id="les-operateurs-d-affectation">
 <h2>Les opérateurs d&#8217;affectation<a class="headerlink" href="#les-operateurs-d-affectation" title="Permalink to this headline">¶</a></h2>
-<p>L&#8217;opérateur d&#8217;affectation le plus simple est le signe &#8220;=&#8221;.</p>
+<p>L&#8217;opérateur d&#8217;affectation est le signe &#8220;=&#8221;.</p>
 <p>En plus du simple opérateur d&#8217;affectation, il existe des &#8220;opérateurs combinés&#8221; pour tous les opérateurs arithmétiques,
 l&#8217;union de tableaux et pour les opérateurs sur les chaînes de caractères :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -156,7 +159,7 @@ l&#8217;union de tableaux et pour les opérateurs sur les chaînes de caractère
 <li>Identique <tt class="docutils literal"><span class="pre">===</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">===</span> <span class="pre">$b</span></tt> (égals et de même type)</li>
 <li>Différent <tt class="docutils literal"><span class="pre">!=</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">!=</span> <span class="pre">$b</span></tt> (différents après transtypage)</li>
 <li>Différent <tt class="docutils literal"><span class="pre">&lt;&gt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;&gt;</span> <span class="pre">$b</span></tt> (différents après transtypage)</li>
-<li>Différent <tt class="docutils literal"><span class="pre">!==</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">!==</span> <span class="pre">$b</span></tt> (différents et de même type)</li>
+<li>Non-identique <tt class="docutils literal"><span class="pre">!==</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">!==</span> <span class="pre">$b</span></tt> (différents et de même type)</li>
 <li>Plus petit que <tt class="docutils literal"><span class="pre">&lt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;</span> <span class="pre">$b</span></tt></li>
 <li>Plus grand <tt class="docutils literal"><span class="pre">&gt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&gt;</span> <span class="pre">$b</span></tt></li>
 <li>Inférieur ou égal <tt class="docutils literal"><span class="pre">&lt;=</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;=</span> <span class="pre">$b</span></tt></li>
@@ -213,6 +216,45 @@ Utilisez les guillemets obliques revient à utiliser la fonction shell_exec().</
 </ul>
 <p>La raison pour laquelle il existe deux types de &#8220;ET&#8221; et de &#8220;OU&#8221; est qu&#8217;ils ont des priorités différentes.
 Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.precedence.php" target="_blank">précédence d'opérateurs</a> de la doc de PHP.</p>
+</div>
+<div class="section" id="operateur-de-chaines">
+<h2>Opérateur de chaînes<a class="headerlink" href="#operateur-de-chaines" title="Permalink to this headline">¶</a></h2>
+<p>L&#8217;opérateur de concaténation est le signe &#8221;.&#8221;.</p>
+</div>
+<div class="section" id="operateurs-de-tableaux">
+<h2>Opérateurs de tableaux<a class="headerlink" href="#operateurs-de-tableaux" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Union <tt class="docutils literal"><span class="pre">+</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">+</span> <span class="pre">$b</span></tt></li>
+<li>Egalité <tt class="docutils literal"><span class="pre">==</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">==</span> <span class="pre">$b</span></tt></li>
+<li>Identique <tt class="docutils literal"><span class="pre">===</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">===</span> <span class="pre">$b</span></tt></li>
+<li>Inégalité <tt class="docutils literal"><span class="pre">!=</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">!=</span> <span class="pre">$b</span></tt></li>
+<li>Inégalité <tt class="docutils literal"><span class="pre">&lt;&gt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;&gt;</span> <span class="pre">$b</span></tt></li>
+<li>Non-identique <tt class="docutils literal"><span class="pre">!==</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">!==</span> <span class="pre">$b</span></tt></li>
+</ul>
+</div>
+<div class="section" id="operateurs-de-types">
+<h2>Opérateurs de types<a class="headerlink" href="#operateurs-de-types" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">instanceof</span></tt> est utilisé pour déterminer si une variable PHP est un objet instancié d&#8217;une certaine classe, d&#8217;une classe
+héritées, d&#8217;une interface ou s&#8217;il est de la même classe qu&#8217;un autre objet.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">interface</span> <span class="nx">InterfaceI</span> <span class="p">{}</span>
+<span class="k">class</span> <span class="nc">ClassA</span>  <span class="k">implements</span> <span class="nx">InterfaceI</span> <span class="p">{}</span>
+<span class="k">class</span> <span class="nc">ClassB</span> <span class="p">{}</span>
+
+<span class="nv">$a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassA</span><span class="p">();</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassA</span><span class="p">();</span>
+<span class="nv">$c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassB</span><span class="p">();</span>
+<span class="nv">$d</span> <span class="o">=</span> <span class="s1">&#39;ClassA&#39;</span><span class="p">;</span>
+<span class="nv">$e</span> <span class="o">=</span> <span class="s1">&#39;ClassB&#39;</span><span class="p">;</span>
+
+<span class="nv">$a</span> <span class="nx">instanceof</span> <span class="nx">ClassA</span> <span class="c1">// Retourne TRUE</span>
+<span class="nv">$a</span> <span class="nx">instanceof</span> <span class="nx">ClassB</span> <span class="c1">// Retourne FALSE</span>
+<span class="nv">$a</span> <span class="nx">instanceof</span> <span class="nx">InterfaceI</span> <span class="c1">// Retourne TRUE</span>
+<span class="nv">$a</span> <span class="nx">instanceof</span> <span class="nv">$b</span> <span class="c1">// Retourne TRUE</span>
+<span class="nv">$a</span> <span class="nx">instanceof</span> <span class="nv">$c</span> <span class="c1">// Retourne FALSE</span>
+<span class="nv">$a</span> <span class="nx">instanceof</span> <span class="nv">$d</span> <span class="c1">// Retourne TRUE</span>
+<span class="nv">$a</span> <span class="nx">instanceof</span> <span class="nv">$e</span> <span class="c1">// Retourne FALSE</span>
+</pre></div>
+</div>
 </div>
 </div>
 
