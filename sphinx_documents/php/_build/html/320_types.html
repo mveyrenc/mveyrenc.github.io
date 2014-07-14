@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Les types &mdash; PHP 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="PHP 1.0.0 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">PHP</a>
+      <span class="navbar-text pull-left"><b>1.0.0</b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="100_avant_de_commencer.html">Avant de commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="200_introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="300_syntaxe.html">La syntaxe</a></li>
+</ul>
+</ul>
+</li>
+            <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Les types</a><ul>
+<li><a class="reference internal" href="#les-booleens">Les booléens</a></li>
+<li><a class="reference internal" href="#les-numeriques">Les numériques</a></li>
+<li><a class="reference internal" href="#les-chaines-de-caracteres">Les chaînes de caractères</a></li>
+<li><a class="reference internal" href="#les-tableaux">Les tableaux</a></li>
+<li><a class="reference internal" href="#les-objets">Les objets</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+          
+          
+            <li>
+  <a href="_sources/320_types.txt"
+     rel="nofollow">Source</a></li>
+          
+        </ul>
+
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section" id="les-types">
+<h1>Les types<a class="headerlink" href="#les-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="les-booleens">
+<h2>Les booléens<a class="headerlink" href="#les-booleens" title="Permalink to this headline">¶</a></h2>
+<p>Il peut valoir <tt class="docutils literal"><span class="pre">TRUE</span></tt> ou <tt class="docutils literal"><span class="pre">FALSE</span></tt>.</p>
+<p>Lors d&#8217;une conversion en booléen, les valeurs suivantes sont considérées comme <tt class="docutils literal"><span class="pre">FALSE</span></tt> :</p>
+<ul class="simple">
+<li>le booléen <tt class="docutils literal"><span class="pre">FALSE</span></tt>, lui-même</li>
+<li>l&#8217;entier <tt class="docutils literal"><span class="pre">0</span></tt></li>
+<li>le nombre à virgule flottante <tt class="docutils literal"><span class="pre">0.0</span></tt></li>
+<li>la chaîne vide, et la chaîne <tt class="docutils literal"><span class="pre">&quot;0&quot;</span></tt></li>
+<li>un tableau avec aucun élément</li>
+<li>le type spécial <tt class="docutils literal"><span class="pre">NULL</span></tt> (incluant les variables non définies)</li>
+</ul>
+</div>
+<div class="section" id="les-numeriques">
+<h2>Les numériques<a class="headerlink" href="#les-numeriques" title="Permalink to this headline">¶</a></h2>
+<p>Il comprènnent les entiers et les flottants.</p>
+<p>Les entiers peuvent être spécifiés en notation décimale (base 10), hexadécimaled(base 16), octaled(base 8), ou binaire
+(base 2) optionnellement précédée d&#8217;undsigne (- ou +).</p>
+<p>Les entiers littéraux binaires sont disponibles depuis PHP 5.4.0.</p>
+<p>Pour utiliser la notation octale, précédez le nombre d&#8217;un 0 (zéro).
+Pour utiliser la notation hexadécimale, précédez le nombre d&#8217;un 0x.
+Pour utiliser l&#8217;anotation binaire, précédez le nombre d&#8217;un 0b.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$a</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span> <span class="c1">// un nombre décimal</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// un nombre négatif</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mo">0123</span><span class="p">;</span> <span class="c1">// un nombre octal (équivalent à 83 en décimal)</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mh">0x1A</span><span class="p">;</span> <span class="c1">// un nombre héxadecimal (équivalent à 26 en décimal)</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">0</span><span class="nx">b11111111</span><span class="p">;</span> <span class="c1">// un nombre binaire (équivalent à 255 en decimal)</span>
+</pre></div>
+</div>
+<p>Les flottants peuvent être spécifiés en utilisant les syntaxes suivantes :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$a</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="mf">1.2e3</span><span class="p">;</span>
+<span class="nv">$c</span> <span class="o">=</span> <span class="mf">7E-10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-chaines-de-caracteres">
+<h2>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Permalink to this headline">¶</a></h2>
+<p>Une chaîne de caractères littérale peut être spécifiée de 4 façons différentes :</p>
+<ul>
+<li><p class="first">Entourée de guillemets simples</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">echo</span> <span class="s1">&#39;Arnold a dit : &quot;I\&#39;ll be back&quot;&#39;</span>              <span class="c1">// Affiche : Arnold a dit : &quot;I&#39;ll be back&quot;</span>
+<span class="k">echo</span> <span class="s1">&#39;Ceci n\&#39;affichera pas \n de nouvelle ligne&#39;</span>  <span class="c1">// Affiche : Ceci n&#39;affichera pas \n de nouvelle ligne</span>
+<span class="k">echo</span> <span class="s1">&#39;Les variables ne seront pas $traitees $ici&#39;</span>  <span class="c1">// Affiche : Les variables ne seront pas $traitees $ici</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Entourée de guillemets doubles</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$juice</span> <span class="o">=</span> <span class="s2">&quot;pomme&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">&quot;Il a bu du jus de </span><span class="si">$juice</span><span class="s2">.&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>     <span class="c1">// Affiche : Il a bu du jus de pomme.&quot;</span>
+<span class="k">echo</span> <span class="s2">&quot;Il a bu du jus constitué de </span><span class="si">$juices</span><span class="s2">.&quot;</span>   <span class="c1">// Affiche : Il a bu du jus constitué de .</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Syntaxe Heredoc</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;EOD</span>
+<span class="s">Exemple de chaîne</span>
+<span class="s">sur plusieurs lignes</span>
+<span class="s">en utilisant la syntaxe Heredoc.</span>
+<span class="s">EOD;</span>
+
+<span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;MyName&#39;</span><span class="p">;</span>
+<span class="nv">$foo</span> <span class="o">=</span> <span class="s1">&#39;Foo&#39;</span><span class="p">;</span>
+<span class="nv">$foobar</span> <span class="o">=</span> <span class="s1">&#39;Bar2&#39;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s">&lt;&lt;&lt;EOT</span>
+<span class="s">Mon nom est &quot;$name&quot;. J&#39;affiche quelques ${foo}.</span>
+<span class="s">Maintenant, j&#39;affiche quelques {$foobar}.</span>
+<span class="s">Et ceci devrait afficher un &#39;A&#39; majuscule : \x41</span>
+<span class="s">EOT;</span>
+
+<span class="c1">// Affiche</span>
+<span class="c1">// Mon nom est &quot;MyName&quot;. J&#39;affiche quelques Foo.</span>
+<span class="c1">// Maintenant, j&#39;affiche quelques Bar2.</span>
+<span class="c1">// Et ceci devrait afficher un &#39;A&#39; majuscule : A</span>
+
+<span class="s">&lt;&lt;&lt;FOOBAR</span>
+<span class="s">My text</span>
+<span class="s">FOOBAR;</span>
+
+<span class="c1">// Depuis PHP 5.3.0, l&#39;identifiant de début de syntaxe Heredoc peut éventuellement être écrit entre guillemets doubles :</span>
+<span class="k">echo</span> <span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;FOOBAR&quot;</span>
+<span class="nx">Hello</span> <span class="nx">World</span><span class="o">!</span>
+<span class="nx">FOOBAR</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Syntaxe Nowdoc (depuis PHP 5.3.0)</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;&#39;EOD&#39;</span>
+<span class="s">Exemple de chaîne</span>
+<span class="s">sur plusieurs lignes</span>
+<span class="s">en utilisant la syntaxe Nowdoc.</span>
+<span class="s">EOD;</span>
+
+<span class="k">echo</span> <span class="s">&lt;&lt;&lt;&#39;EOT&#39;</span>
+<span class="s">Mom nom est &quot;$name&quot;. J&#39;affiche quelques $foo-&gt;foo.</span>
+<span class="s">Maintenant, j&#39;affiche quelques {$foo-&gt;bar[1]}.</span>
+<span class="s">Ceci ne devrait pas afficher un &#39;A&#39; : \x41</span>
+<span class="s">EOT;</span>
+
+<span class="c1">// Affiche</span>
+<span class="c1">// Mom nom est &quot;$name&quot;. J&#39;affiche quelques $foo-&gt;foo.</span>
+<span class="c1">// Maintenant, j&#39;affiche quelques {$foo-&gt;bar[1]}.</span>
+<span class="c1">// Ceci ne devrait pas afficher un &#39;A&#39; : \x41</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="les-tableaux">
+<h2>Les tableaux<a class="headerlink" href="#les-tableaux" title="Permalink to this headline">¶</a></h2>
+<p>Un tableau est un ensemble qui associe une clé à une valeur.
+Une clé est un entier ou une chaîne de caractères.
+La valeur peut être de n&#8217;importe quel type.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nb">key</span>  <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">,</span>
+    <span class="nx">key2</span> <span class="o">=&gt;</span> <span class="nx">value2</span><span class="p">,</span>
+    <span class="nx">key3</span> <span class="o">=&gt;</span> <span class="nx">value3</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Depuis PHP 5.4.0, il existe une syntaxe courte pour déclarer un tableau :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span>
+     <span class="nb">key</span>  <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">,</span>
+     <span class="nx">key2</span> <span class="o">=&gt;</span> <span class="nx">value2</span><span class="p">,</span>
+     <span class="nx">key3</span> <span class="o">=&gt;</span> <span class="nx">value3</span><span class="p">,</span>
+     <span class="o">...</span>
+ <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-objets">
+<h2>Les objets<a class="headerlink" href="#les-objets" title="Permalink to this headline">¶</a></h2>
+<p>Pour intancier un nouvel objet, il faut utiliser le mot clé <tt class="docutils literal"><span class="pre">new</span></tt> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DateTime</span><span class="p">(</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>On utilise le synbole <tt class="docutils literal"><span class="pre">-&gt;</span></tt> pour accéder au méthodes et attributs de l&#8217;objet :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$date</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">&#39;d/m/Y&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

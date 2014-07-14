@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>La syntaxe &mdash; PHP 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="PHP 1.0.0 documentation" href="index.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">PHP</a>
+      <span class="navbar-text pull-left"><b>1.0.0</b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="avant_de_commencer.html">Avant de commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">La syntaxe</a></li>
+</ul>
+</ul>
+</li>
+            <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">La syntaxe</a><ul>
+<li><a class="reference internal" href="#generalites">Généralités</a><ul>
+<li><a class="reference internal" href="#les-balises-php">Les balises PHP</a></li>
+<li><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
+<li><a class="reference internal" href="#les-variables">Les variables</a></li>
+<li><a class="reference internal" href="#les-constantes">Les constantes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#les-types">Les types</a><ul>
+<li><a class="reference internal" href="#les-booleens">Les booléens</a></li>
+<li><a class="reference internal" href="#les-numeriques">Les numériques</a></li>
+<li><a class="reference internal" href="#les-chaines-de-caracteres">Les chaînes de caractères</a></li>
+<li><a class="reference internal" href="#les-tableaux">Les tableaux</a></li>
+<li><a class="reference internal" href="#les-objets">Les objets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#les-operateurs">Les opérateurs</a><ul>
+<li><a class="reference internal" href="#les-operateurs-arithmetiques">Les opérateurs arithmétiques</a></li>
+<li><a class="reference internal" href="#les-operateurs-d-affectation">Les opérateurs d&#8217;affectation</a></li>
+<li><a class="reference internal" href="#les-operateurs-sur-les-bits">Les opérateurs sur les bits</a></li>
+<li><a class="reference internal" href="#operateurs-de-comparaison">Opérateurs de comparaison</a></li>
+<li><a class="reference internal" href="#operateur-de-controle-d-erreur">Opérateur de contrôle d&#8217;erreur</a></li>
+<li><a class="reference internal" href="#operateur-d-execution">Opérateur d&#8217;exécution</a></li>
+<li><a class="reference internal" href="#operateurs-d-incrementation-et-decrementation">Opérateurs d&#8217;incrémentation et décrémentation</a></li>
+<li><a class="reference internal" href="#les-operateurs-logiques">Les opérateurs logiques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+  <li><a href="introduction.html"
+         title="previous chapter">&laquo; Introduction</a></li>
+          
+          
+            <li>
+  <a href="_sources/syntaxe.txt"
+     rel="nofollow">Source</a></li>
+          
+        </ul>
+
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section" id="la-syntaxe">
+<h1><a class="toc-backref" href="#id1">La syntaxe</a><a class="headerlink" href="#la-syntaxe" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#la-syntaxe" id="id1">La syntaxe</a><ul>
+<li><a class="reference internal" href="#generalites" id="id2">Généralités</a></li>
+<li><a class="reference internal" href="#les-types" id="id3">Les types</a></li>
+<li><a class="reference internal" href="#les-operateurs" id="id4">Les opérateurs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="generalites">
+<h2><a class="toc-backref" href="#id2">Généralités</a><a class="headerlink" href="#generalites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="les-balises-php">
+<h3>Les balises PHP<a class="headerlink" href="#les-balises-php" title="Permalink to this headline">¶</a></h3>
+<p>Tout code PHP doit être inclus dans une balise <tt class="docutils literal"><span class="pre">&lt;?php</span> <span class="pre">...</span> <span class="pre">?&gt;</span></tt>.
+Les balises courtes <tt class="docutils literal"><span class="pre">&lt;?</span> <span class="pre">...</span> <span class="pre">?&gt;</span></tt> et <tt class="docutils literal"><span class="pre">&lt;?=</span> <span class="pre">...</span> <span class="pre">?&gt;</span></tt> sont acceptées si la configuration les autorisent,
+mais ne sont pas recommandées.</p>
+<p>Les instructions sont séparées par le point-virgule <tt class="docutils literal"><span class="pre">;</span></tt>.</p>
+</div>
+<div class="section" id="les-commentaires">
+<h3>Les commentaires<a class="headerlink" href="#les-commentaires" title="Permalink to this headline">¶</a></h3>
+<p>Il existe trois manières d&#8217;inclure un commentaire dans du code PHP :</p>
+<ul class="simple">
+<li>entre les signes <tt class="docutils literal"><span class="pre">/*</span></tt> et <tt class="docutils literal"><span class="pre">*/</span></tt></li>
+<li>en commencant une ligne par <tt class="docutils literal"><span class="pre">//</span></tt></li>
+<li>en commencant une ligne par <tt class="docutils literal"><span class="pre">#</span></tt></li>
+</ul>
+<p>Les signes <tt class="docutils literal"><span class="pre">/*</span></tt> et <tt class="docutils literal"><span class="pre">*/</span></tt> sont les seules qui permettent de faire un commentaire sur plusieurs lignes.
+Pour les deux autres symboles, il faudra le remettre au début de chaque ligne de commentaire.</p>
+<p>On peut mixer les types de commentaire dans un même script.</p>
+</div>
+<div class="section" id="les-variables">
+<h3>Les variables<a class="headerlink" href="#les-variables" title="Permalink to this headline">¶</a></h3>
+<p>Un nom de variable commencent toujours par un dollar <tt class="docutils literal"><span class="pre">$</span></tt>,
+suivit d&#8217;au moins un caractère non numérique (<tt class="docutils literal"><span class="pre">_</span></tt> est autorisé) puis de n&#8217;importe quel caractère.</p>
+<p>Les noms de variables sont sensibles à la case, donc $maVariable est différentnde $ma_variable.
+Il est donc vivement recommendé de fixer une norme pour le nommage des variables.</p>
+<p>Les varaibles ne sont pas typées. Au cours de l&#8217;exécution du script, le type de la valeur affectée à une varible peut changer.
+L&#8217;interpréteur se charge de gérer les allocations de mémoire nécessaires au stockage des valeurs référencées par les variables.</p>
+<p>Il n&#8217;y a pas de déclaration de variable en PHP.
+L&#8217;interpréteur crée automatiquement une variable dès qu&#8217;un nouveau symbole préfixé par <tt class="docutils literal"><span class="pre">$</span></tt> apparaît dans un script.</p>
+</div>
+<div class="section" id="les-constantes">
+<h3>Les constantes<a class="headerlink" href="#les-constantes" title="Permalink to this headline">¶</a></h3>
+<p>Une constante est un symbole associé à une valeur mais, contrairement aux variables, sa valeur ne change jamais.
+Elles sont définies par la commande <tt class="docutils literal"><span class="pre">define()</span></tt>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">define(&quot;PI&quot;, 3.14116);</span>
+<span class="x">define(&quot;FOO&quot;, &quot;something&quot;);</span>
+
+<span class="x">// Noms invalides</span>
+<span class="x">define(&quot;2FOO&quot;, &quot;something&quot;);</span>
+
+<span class="x">// Ce nom est valide, mais évitez-le:</span>
+<span class="x">// PHP peut un jour fournir une constante magique nommée</span>
+<span class="x">// ainsi, ce qui va corrompre vos scripts.</span>
+<span class="x">define(&quot;__FOO__&quot;, &quot;something&quot;);</span>
+</pre></div>
+</div>
+<p>Par convention, les nom des constantes sont en majuscule.</p>
+</div>
+</div>
+<div class="section" id="les-types">
+<h2><a class="toc-backref" href="#id3">Les types</a><a class="headerlink" href="#les-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="les-booleens">
+<h3>Les booléens<a class="headerlink" href="#les-booleens" title="Permalink to this headline">¶</a></h3>
+<p>Il peut valoir <tt class="docutils literal"><span class="pre">TRUE</span></tt> ou <tt class="docutils literal"><span class="pre">FALSE</span></tt>.</p>
+<p>Lors d&#8217;une conversion en booléen, les valeurs suivantes sont considérées comme <tt class="docutils literal"><span class="pre">FALSE</span></tt> :</p>
+<ul class="simple">
+<li>le booléen <tt class="docutils literal"><span class="pre">FALSE</span></tt>, lui-même</li>
+<li>l&#8217;entier <tt class="docutils literal"><span class="pre">0</span></tt></li>
+<li>le nombre à virgule flottante <tt class="docutils literal"><span class="pre">0.0</span></tt></li>
+<li>la chaîne vide, et la chaîne <tt class="docutils literal"><span class="pre">&quot;0&quot;</span></tt></li>
+<li>un tableau avec aucun élément</li>
+<li>le type spécial <tt class="docutils literal"><span class="pre">NULL</span></tt> (incluant les variables non définies)</li>
+</ul>
+</div>
+<div class="section" id="les-numeriques">
+<h3>Les numériques<a class="headerlink" href="#les-numeriques" title="Permalink to this headline">¶</a></h3>
+<p>Il comprènnent les entiers et les flottants.</p>
+<p>Les entiers peuvent être spécifiés en notation décimale (base 10), hexadécimaled(base 16), octaled(base 8), ou binaire
+(base 2) optionnellement précédée d&#8217;undsigne (- ou +).</p>
+<p>Les entiers littéraux binaires sont disponibles depuis PHP 5.4.0.</p>
+<p>Pour utiliser la notation octale, précédez le nombre d&#8217;un 0 (zéro).
+Pour utiliser la notation hexadécimale, précédez le nombre d&#8217;un 0x.
+Pour utiliser l&#8217;anotation binaire, précédez le nombre d&#8217;un 0b.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$a = 1234; // un nombre décimal</span>
+<span class="x">$a = -123; // un nombre négatif</span>
+<span class="x">$a = 0123; // un nombre octal (équivalent à 83 en décimal)</span>
+<span class="x">$a = 0x1A; // un nombre héxadecimal (équivalent à 26 en décimal)</span>
+<span class="x">$a = 0b11111111; // un nombre binaire (équivalent à 255 en decimal)</span>
+</pre></div>
+</div>
+<p>Les flottants peuvent être spécifiés en utilisant les syntaxes suivantes :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$a = 1.234;</span>
+<span class="x">$b = 1.2e3;</span>
+<span class="x">$c = 7E-10;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-chaines-de-caracteres">
+<h3>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Permalink to this headline">¶</a></h3>
+<p>Une chaîne de caractères littérale peut être spécifiée de 4 façons différentes :</p>
+<ul>
+<li><p class="first">Entourée de guillemets simples</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo &#39;Arnold a dit : &quot;I\&#39;ll be back&quot;&#39;              // Affiche : Arnold a dit : &quot;I&#39;ll be back&quot;</span>
+<span class="x">echo &#39;Ceci n\&#39;affichera pas \n de nouvelle ligne&#39;  // Affiche : Ceci n&#39;affichera pas \n de nouvelle ligne</span>
+<span class="x">echo &#39;Les variables ne seront pas $traitees $ici&#39;  // Affiche : Les variables ne seront pas $traitees $ici</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Entourée de guillemets doubles</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$juice = &quot;pomme&quot;;</span>
+<span class="x">echo &quot;Il a bu du jus de $juice.&quot;.PHP_EOL;     // Affiche : Il a bu du jus de pomme.&quot;</span>
+<span class="x">echo &quot;Il a bu du jus constitué de $juices.&quot;   // Affiche : Il a bu du jus constitué de .</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Syntaxe Heredoc</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$str = &lt;&lt;&lt;EOD</span>
+<span class="x">Exemple de chaîne</span>
+<span class="x">sur plusieurs lignes</span>
+<span class="x">en utilisant la syntaxe Heredoc.</span>
+<span class="x">EOD;</span>
+
+<span class="x">$name = &#39;MyName&#39;;</span>
+<span class="x">$foo = &#39;Foo&#39;;</span>
+<span class="x">$foobar = &#39;Bar2&#39;;</span>
+<span class="x">echo &lt;&lt;&lt;EOT</span>
+<span class="x">Mon nom est &quot;$name&quot;. J&#39;affiche quelques ${foo}.</span>
+<span class="x">Maintenant, j&#39;affiche quelques {$foobar}.</span>
+<span class="x">Et ceci devrait afficher un &#39;A&#39; majuscule : \x41</span>
+<span class="x">EOT;</span>
+
+<span class="x">// Affiche</span>
+<span class="x">// Mon nom est &quot;MyName&quot;. J&#39;affiche quelques Foo.</span>
+<span class="x">// Maintenant, j&#39;affiche quelques Bar2.</span>
+<span class="x">// Et ceci devrait afficher un &#39;A&#39; majuscule : A</span>
+
+<span class="x">&lt;&lt;&lt;FOOBAR</span>
+<span class="x">My text</span>
+<span class="x">FOOBAR;</span>
+
+<span class="x">// Depuis PHP 5.3.0, l&#39;identifiant de début de syntaxe Heredoc peut éventuellement être écrit entre guillemets doubles :</span>
+<span class="x">echo &lt;&lt;&lt;&quot;FOOBAR&quot;</span>
+<span class="x">Hello World!</span>
+<span class="x">FOOBAR;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Syntaxe Nowdoc (depuis PHP 5.3.0)</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$str = &lt;&lt;&lt;&#39;EOD&#39;</span>
+<span class="x">Exemple de chaîne</span>
+<span class="x">sur plusieurs lignes</span>
+<span class="x">en utilisant la syntaxe Nowdoc.</span>
+<span class="x">EOD;</span>
+
+<span class="x">echo &lt;&lt;&lt;&#39;EOT&#39;</span>
+<span class="x">Mom nom est &quot;$name&quot;. J&#39;affiche quelques $foo-&gt;foo.</span>
+<span class="x">Maintenant, j&#39;affiche quelques {$foo-&gt;bar[1]}.</span>
+<span class="x">Ceci ne devrait pas afficher un &#39;A&#39; : \x41</span>
+<span class="x">EOT;</span>
+
+<span class="x">// Affiche</span>
+<span class="x">// Mom nom est &quot;$name&quot;. J&#39;affiche quelques $foo-&gt;foo.</span>
+<span class="x">// Maintenant, j&#39;affiche quelques {$foo-&gt;bar[1]}.</span>
+<span class="x">// Ceci ne devrait pas afficher un &#39;A&#39; : \x41</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="les-tableaux">
+<h3>Les tableaux<a class="headerlink" href="#les-tableaux" title="Permalink to this headline">¶</a></h3>
+<p>Un tableau est un ensemble qui associe une clé à une valeur.
+Une clé est un entier ou une chaîne de caractères.
+La valeur peut être de n&#8217;importe quel type.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$array = array(</span>
+<span class="x">    key  =&gt; value,</span>
+<span class="x">    key2 =&gt; value2,</span>
+<span class="x">    key3 =&gt; value3,</span>
+<span class="x">    ...</span>
+<span class="x">)</span>
+</pre></div>
+</div>
+<p>Depuis PHP 5.4.0, il existe une syntaxe courte pour déclarer un tableau :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$array = [</span>
+<span class="x">     key  =&gt; value,</span>
+<span class="x">     key2 =&gt; value2,</span>
+<span class="x">     key3 =&gt; value3,</span>
+<span class="x">     ...</span>
+<span class="x"> ]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-objets">
+<h3>Les objets<a class="headerlink" href="#les-objets" title="Permalink to this headline">¶</a></h3>
+<p>Pour intancier un nouvel objet, il faut utiliser le mot clé <tt class="docutils literal"><span class="pre">new</span></tt> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$date = new DateTime(&#39;2015-01-01&#39;);</span>
+</pre></div>
+</div>
+<p>On utilise le synbole <tt class="docutils literal"><span class="pre">-&gt;</span></tt> pour accéder au méthodes et attributs de l&#8217;objet :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$date-&gt;format(&#39;d/m/Y&#39;);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="les-operateurs">
+<h2><a class="toc-backref" href="#id4">Les opérateurs</a><a class="headerlink" href="#les-operateurs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="les-operateurs-arithmetiques">
+<h3>Les opérateurs arithmétiques<a class="headerlink" href="#les-operateurs-arithmetiques" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Négation <tt class="docutils literal"><span class="pre">-</span></tt> : <tt class="docutils literal"><span class="pre">-$a</span></tt></li>
+<li>Addition <tt class="docutils literal"><span class="pre">+</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">+</span> <span class="pre">$b</span></tt></li>
+<li>Soustraction <tt class="docutils literal"><span class="pre">-</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">-</span> <span class="pre">$b</span></tt></li>
+<li>Multiplication <tt class="docutils literal"><span class="pre">*</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">*</span> <span class="pre">$b</span></tt></li>
+<li>Division <tt class="docutils literal"><span class="pre">/</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">/</span> <span class="pre">$b</span></tt></li>
+<li>Modulo <tt class="docutils literal"><span class="pre">%</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">%</span> <span class="pre">$b</span></tt></li>
+<li>Exponentielle <tt class="docutils literal"><span class="pre">**</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">**</span> <span class="pre">$b</span></tt></li>
+</ul>
+</div>
+<div class="section" id="les-operateurs-d-affectation">
+<h3>Les opérateurs d&#8217;affectation<a class="headerlink" href="#les-operateurs-d-affectation" title="Permalink to this headline">¶</a></h3>
+<p>L&#8217;opérateur d&#8217;affectation le plus simple est le signe &#8220;=&#8221;.</p>
+<p>En plus du simple opérateur d&#8217;affectation, il existe des &#8220;opérateurs combinés&#8221; pour tous les opérateurs arithmétiques,
+l&#8217;union de tableaux et pour les opérateurs sur les chaînes de caractères :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$a = 3;</span>
+<span class="x">$a += 5; // affecte la valeur 8 à la variable $a correspond à l&#39;instruction &#39;$a = $a + 5&#39;;</span>
+
+<span class="x">$b = &quot;Bonjour &quot;;</span>
+<span class="x">$b .= &quot; tout le monde!&quot;;  // affecte la valeur &quot;Bonjour tout le monde!&quot;</span>
+<span class="x">                          // à la variable $b</span>
+<span class="x">                          // identique à $b = $b . &quot; tout le monde!&quot;;</span>
+
+<span class="x">$c = array(&quot;a&quot; =&gt; &quot;pomme&quot;, &quot;b&quot; =&gt; &quot;banane&quot;);</span>
+<span class="x">$d = array(&quot;a&quot; =&gt;&quot;poire&quot;, &quot;b&quot; =&gt; &quot;fraise&quot;, &quot;c&quot; =&gt; &quot;cerise&quot;);</span>
+<span class="x">$c += $d;  // affecte la valeur array(&quot;a&quot; =&gt;&quot;pomme&quot;, &quot;b&quot; =&gt; &quot;banane&quot;, &quot;c&quot; =&gt; &quot;cerise&quot;)</span>
+<span class="x">           // à la variable $c</span>
+<span class="x">           // correspond à l&#39;instruction &#39;$c = $c + $d&#39;;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-operateurs-sur-les-bits">
+<h3>Les opérateurs sur les bits<a class="headerlink" href="#les-operateurs-sur-les-bits" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>And (Et) <tt class="docutils literal"><span class="pre">&amp;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&amp;</span> <span class="pre">$b</span></tt></li>
+<li>Or (Ou) <tt class="docutils literal"><span class="pre">|</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">|</span> <span class="pre">$b</span></tt></li>
+<li>Xor (ou exclusif) <tt class="docutils literal"><span class="pre">^</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">^</span> <span class="pre">$b</span></tt></li>
+<li>Not (Non) <tt class="docutils literal"><span class="pre">~</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">~</span> <span class="pre">$b</span></tt></li>
+<li>Décalage à gauche <tt class="docutils literal"><span class="pre">&lt;&lt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;&lt;</span> <span class="pre">$b</span></tt></li>
+<li>Décalage à droite <tt class="docutils literal"><span class="pre">&gt;&gt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&gt;&gt;</span> <span class="pre">$b</span></tt></li>
+</ul>
+</div>
+<div class="section" id="operateurs-de-comparaison">
+<h3>Opérateurs de comparaison<a class="headerlink" href="#operateurs-de-comparaison" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Egal <tt class="docutils literal"><span class="pre">==</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">==</span> <span class="pre">$b</span></tt> (égals après transtypage)</li>
+<li>Identique <tt class="docutils literal"><span class="pre">===</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">===</span> <span class="pre">$b</span></tt> (égals et de même type)</li>
+<li>Différent <tt class="docutils literal"><span class="pre">!=</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">!=</span> <span class="pre">$b</span></tt> (différents après transtypage)</li>
+<li>Différent <tt class="docutils literal"><span class="pre">&lt;&gt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;&gt;</span> <span class="pre">$b</span></tt> (différents après transtypage)</li>
+<li>Différent <tt class="docutils literal"><span class="pre">!==</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">!==</span> <span class="pre">$b</span></tt> (différents et de même type)</li>
+<li>Plus petit que <tt class="docutils literal"><span class="pre">&lt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;</span> <span class="pre">$b</span></tt></li>
+<li>Plus grand <tt class="docutils literal"><span class="pre">&gt;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&gt;</span> <span class="pre">$b</span></tt></li>
+<li>Inférieur ou égal <tt class="docutils literal"><span class="pre">&lt;=</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&lt;=</span> <span class="pre">$b</span></tt></li>
+<li>Supérieur ou égal <tt class="docutils literal"><span class="pre">&gt;=</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&gt;=</span> <span class="pre">$b</span></tt></li>
+</ul>
+</div>
+<div class="section" id="operateur-de-controle-d-erreur">
+<h3>Opérateur de contrôle d&#8217;erreur<a class="headerlink" href="#operateur-de-controle-d-erreur" title="Permalink to this headline">¶</a></h3>
+<p>PHP supporte un opérateur de contrôle d&#8217;erreur : c&#8217;est <tt class="docutils literal"><span class="pre">&#64;</span></tt>.
+Lorsque cet opérateur est ajouté en préfixe d&#8217;une expression PHP, les messages d&#8217;erreur qui peuvent être générés par cette expression seront ignorés.</p>
+</div>
+<div class="section" id="operateur-d-execution">
+<h3>Opérateur d&#8217;exécution<a class="headerlink" href="#operateur-d-execution" title="Permalink to this headline">¶</a></h3>
+<p>PHP supporte un opérateur d&#8217;exécution : guillemets obliques (&#8220;``&#8221;). Notez bien qu&#8217;il ne s&#8217;agit pas de guillemets simples.
+PHP essaie d&#8217;exécuter le contenu de ces guillemets obliques comme une commande shell.
+Le résultat sera retourné (i.e. : il ne sera pas simplement envoyé à la sortie standard, il peut être affecté à une variable).
+Utilisez les guillemets obliques revient à utiliser la fonction shell_exec().</p>
+</div>
+<div class="section" id="operateurs-d-incrementation-et-decrementation">
+<h3>Opérateurs d&#8217;incrémentation et décrémentation<a class="headerlink" href="#operateurs-d-incrementation-et-decrementation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Pre-incrémente <tt class="docutils literal"><span class="pre">++</span></tt> : <tt class="docutils literal"><span class="pre">++$a</span></tt></li>
+<li>Post-incrémente <tt class="docutils literal"><span class="pre">++</span></tt> : <tt class="docutils literal"><span class="pre">$a++</span></tt></li>
+<li>Pré-décrémente <tt class="docutils literal"><span class="pre">--</span></tt> : <tt class="docutils literal"><span class="pre">--$a</span></tt></li>
+<li>Post-décrémente <tt class="docutils literal"><span class="pre">--</span></tt> : <tt class="docutils literal"><span class="pre">$a++</span></tt></li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$a = 5;</span>
+<span class="x">echo $a++; // Affiche 5</span>
+<span class="x">echo $a; // Affiche 6</span>
+
+<span class="x">$a = 5;</span>
+<span class="x">echo ++$a; // Affiche 6</span>
+<span class="x">echo $a; // Affiche 6</span>
+
+<span class="x">$a = 5;</span>
+<span class="x">echo $a--; // Affiche 5</span>
+<span class="x">echo $a; // Affiche 4</span>
+
+<span class="x">$a = 5;</span>
+<span class="x">echo --$a; // Affiche 4</span>
+<span class="x">echo $a; // Affiche 4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-operateurs-logiques">
+<h3>Les opérateurs logiques<a class="headerlink" href="#les-operateurs-logiques" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>And (Et) <tt class="docutils literal"><span class="pre">&amp;&amp;</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">&amp;&amp;</span> <span class="pre">$b</span></tt></li>
+<li>Or (Ou) <tt class="docutils literal"><span class="pre">||</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">||</span> <span class="pre">$b</span></tt></li>
+<li>XOR <tt class="docutils literal"><span class="pre">xor</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">xor</span> <span class="pre">$b</span></tt></li>
+<li>Not (Non) <tt class="docutils literal"><span class="pre">!</span></tt> : <tt class="docutils literal"><span class="pre">!$a</span></tt></li>
+<li>And (Et) <tt class="docutils literal"><span class="pre">and</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">and</span> <span class="pre">$b</span></tt></li>
+<li>Or (Ou) <tt class="docutils literal"><span class="pre">or</span></tt> : <tt class="docutils literal"><span class="pre">$a</span> <span class="pre">or</span> <span class="pre">$b</span></tt></li>
+</ul>
+<p>La raison pour laquelle il existe deux types de &#8220;ET&#8221; et de &#8220;OU&#8221; est qu&#8217;ils ont des priorités différentes.
+Voir le paragraphe  <a class="reference external" href="http://fr2.php.net/manual/fr/language.operators.precedence.php">précédence d&#8217;opérateurs</a> de la doc de PHP.</p>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

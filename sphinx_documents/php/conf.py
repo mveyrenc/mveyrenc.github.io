@@ -14,6 +14,12 @@
 
 import sys
 import os
+from sphinx.highlighting import lexers
+from pygments.lexers.web import PhpLexer
+
+# active la coloration syntaxique par défaut pour le code PHP qui n'est pas entre ``<?php ... ?>``
+lexers['php'] = PhpLexer(startinline=True)
+lexers['php-annotations'] = PhpLexer(startinline=True)
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Généralités &mdash; PHP 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="PHP 1.0.0 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+<div class="container">
+  
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="index.html">PHP</a>
+      <span class="navbar-text pull-left"><b>1.0.0</b></span>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          
+            <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="100_avant_de_commencer.html">Avant de commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="200_introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="300_syntaxe.html">La syntaxe</a></li>
+</ul>
+</ul>
+</li>
+            <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Généralités</a><ul>
+<li><a class="reference internal" href="#les-balises-php">Les balises PHP</a></li>
+<li><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
+<li><a class="reference internal" href="#les-variables">Les variables</a></li>
+<li><a class="reference internal" href="#les-constantes">Les constantes</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          
+          
+            
+          
+          
+            <li>
+  <a href="_sources/310_generalites.txt"
+     rel="nofollow">Source</a></li>
+          
+        </ul>
+
+        
+          
+<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section" id="generalites">
+<h1>Généralités<a class="headerlink" href="#generalites" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="les-balises-php">
+<h2>Les balises PHP<a class="headerlink" href="#les-balises-php" title="Permalink to this headline">¶</a></h2>
+<p>Tout code PHP doit être inclus dans une balise <tt class="docutils literal"><span class="pre">&lt;?php</span> <span class="pre">...</span> <span class="pre">?&gt;</span></tt>.
+Les balises courtes <tt class="docutils literal"><span class="pre">&lt;?</span> <span class="pre">...</span> <span class="pre">?&gt;</span></tt> et <tt class="docutils literal"><span class="pre">&lt;?=</span> <span class="pre">...</span> <span class="pre">?&gt;</span></tt> sont acceptées si la configuration les autorisent,
+mais ne sont pas recommandées.</p>
+<p>Les instructions sont séparées par le point-virgule <tt class="docutils literal"><span class="pre">;</span></tt>.</p>
+</div>
+<div class="section" id="les-commentaires">
+<h2>Les commentaires<a class="headerlink" href="#les-commentaires" title="Permalink to this headline">¶</a></h2>
+<p>Il existe trois manières d&#8217;inclure un commentaire dans du code PHP :</p>
+<ul class="simple">
+<li>entre les signes <tt class="docutils literal"><span class="pre">/*</span></tt> et <tt class="docutils literal"><span class="pre">*/</span></tt></li>
+<li>en commencant une ligne par <tt class="docutils literal"><span class="pre">//</span></tt></li>
+<li>en commencant une ligne par <tt class="docutils literal"><span class="pre">#</span></tt></li>
+</ul>
+<p>Les signes <tt class="docutils literal"><span class="pre">/*</span></tt> et <tt class="docutils literal"><span class="pre">*/</span></tt> sont les seules qui permettent de faire un commentaire sur plusieurs lignes.
+Pour les deux autres symboles, il faudra le remettre au début de chaque ligne de commentaire.</p>
+<p>On peut mixer les types de commentaire dans un même script.</p>
+</div>
+<div class="section" id="les-variables">
+<h2>Les variables<a class="headerlink" href="#les-variables" title="Permalink to this headline">¶</a></h2>
+<p>Un nom de variable commencent toujours par un dollar <tt class="docutils literal"><span class="pre">$</span></tt>,
+suivit d&#8217;au moins un caractère non numérique (<tt class="docutils literal"><span class="pre">_</span></tt> est autorisé) puis de n&#8217;importe quel caractère.</p>
+<p>Les noms de variables sont sensibles à la case, donc $maVariable est différentnde $ma_variable.
+Il est donc vivement recommendé de fixer une norme pour le nommage des variables.</p>
+<p>Les varaibles ne sont pas typées. Au cours de l&#8217;exécution du script, le type de la valeur affectée à une varible peut changer.
+L&#8217;interpréteur se charge de gérer les allocations de mémoire nécessaires au stockage des valeurs référencées par les variables.</p>
+<p>Il n&#8217;y a pas de déclaration de variable en PHP.
+L&#8217;interpréteur crée automatiquement une variable dès qu&#8217;un nouveau symbole préfixé par <tt class="docutils literal"><span class="pre">$</span></tt> apparaît dans un script.</p>
+</div>
+<div class="section" id="les-constantes">
+<h2>Les constantes<a class="headerlink" href="#les-constantes" title="Permalink to this headline">¶</a></h2>
+<p>Une constante est un symbole associé à une valeur mais, contrairement aux variables, sa valeur ne change jamais.
+Elles sont définies par la commande <tt class="docutils literal"><span class="pre">define()</span></tt>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;PI&quot;</span><span class="p">,</span> <span class="mf">3.14116</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;FOO&quot;</span><span class="p">,</span> <span class="s2">&quot;something&quot;</span><span class="p">);</span>
+
+<span class="c1">// Noms invalides</span>
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;2FOO&quot;</span><span class="p">,</span> <span class="s2">&quot;something&quot;</span><span class="p">);</span>
+
+<span class="c1">// Ce nom est valide, mais évitez-le:</span>
+<span class="c1">// PHP peut un jour fournir une constante magique nommée</span>
+<span class="c1">// ainsi, ce qui va corrompre vos scripts.</span>
+<span class="nb">define</span><span class="p">(</span><span class="s2">&quot;__FOO__&quot;</span><span class="p">,</span> <span class="s2">&quot;something&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Par convention, les nom des constantes sont en majuscule.</p>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
