@@ -1,5 +1,5 @@
 =====================
-Documentation Symfony
+PHP/Symfony
 =====================
 
 - introduction au framework Symfony
