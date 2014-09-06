@@ -3,7 +3,7 @@ Documentation Symfony
 =====================
 
 - introduction au framework Symfony
-- beaucoup de points traités dans aller dans les détails par soucis de temps et de densité
+- beaucoup de points traités sans aller dans les détails par soucis de temps et de densité
 - la maîtrise d'un tel framework représente des mois de pratique et de recherche
 
 - projet taskManager : l'utilisateur peut :

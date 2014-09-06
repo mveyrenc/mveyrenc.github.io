@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Symfony 1.0.0 documentation</title>
+  <title>Introduction à Symfony &mdash; Symfony 1.0.0 documentation</title>
   
 
   
@@ -29,7 +28,9 @@
   
 
   
-    <link rel="top" title="Symfony 1.0.0 documentation" href="index.html"/> 
+    <link rel="top" title="Symfony 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Rappels sur de développement orienté objet" href="02_rappel.html"/>
+        <link rel="prev" title="Documentation Symfony" href="index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -58,27 +59,15 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
-<li class="toctree-l1"><a class="reference internal" href="01_introduction.html">Introduction à Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_introduction.html#l-architecture-du-framework">L&#8217;architecture du framework</a></li>
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Introduction à Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#l-architecture-du-framework">L&#8217;architecture du framework</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Quelques rappels</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Rappels sur de développement orienté objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="02_rappel.html#convention-de-nommage">Convention de nommage</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="03_pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_netbeans.html">Le projet avec Netbeans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html">Créer une application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_routing.html">Le routing et les contrôleur</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_twig.html">Les vues avec Twig</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_controleur.html">Les contrôleurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_doctrine.html">Doctrine et la base de donnée</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_afficher_entite.html">Afficher des entités</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_modifer_entite.html">Modifier une entité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_creer_entite.html">Créer une entité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_supprimer_entite.html">Supprimer une entité avec Ajax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_securite.html">La sécurité Symfony</a></li>
 </ul>
 
         
@@ -102,8 +91,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Introduction à Symfony</li>
       <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/01_introduction.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -111,16 +102,41 @@
 </div>
           <div role="main" class="document">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="introduction-a-symfony">
+<h1>Introduction à Symfony<a class="headerlink" href="#introduction-a-symfony" title="Permalink to this headline">¶</a></h1>
+<p>Symfony est un framework MVC libre écrit en PHP 5. Symfony 2.x requiert une version de PHP supérieure ou égale à 5.3.3.</p>
+<div class="section" id="l-architecture-du-framework">
+<h2>L&#8217;architecture du framework<a class="headerlink" href="#l-architecture-du-framework" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modeles-vues-controleurs">
+<h3>Modèles, vues &amp; controleurs<a class="headerlink" href="#modeles-vues-controleurs" title="Permalink to this headline">¶</a></h3>
+<p>Lidée de l&#8217;achitecture dite MVC, est d&#8217;organiser le code en séparant les données, la présentation et les traiments.
+Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
+<p>Elle se sépare donc en trois couches :</p>
+<ul class="simple">
+<li>Le <strong>modèle</strong> est responsable des données et de tous les traitements faits sur les données.
+Rien d&#8217;autre dans l&#8217;application ne doit manipuler les données afin de garantir leur intégrité.</li>
+<li>La <strong>vue</strong> est chargée de générer les interfaces utilisateurs, généralement basées sur les données.
+Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.</li>
+<li>Le <strong>controleur</strong> est le chef d&#8217;orchestre de l&#8217;application.
+Il reçois des événements depuis le monde extérieur, intéragit avec le modèle et affiche la vue appropriée.</li>
+</ul>
+<p>(image MVC)</p>
+</div>
+</div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02_rappel.html" class="btn btn-neutral float-right" title="Rappels sur de développement orienté objet">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Documentation Symfony"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

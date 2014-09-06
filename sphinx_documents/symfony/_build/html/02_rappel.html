@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Symfony 1.0.0 documentation</title>
+  <title>Quelques rappels &mdash; Symfony 1.0.0 documentation</title>
   
 
   
@@ -29,7 +28,9 @@
   
 
   
-    <link rel="top" title="Symfony 1.0.0 documentation" href="index.html"/> 
+    <link rel="top" title="Symfony 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Pré-requis et installation du framework" href="03_pre-requis_installation.html"/>
+        <link rel="prev" title="Introduction à Symfony" href="01_introduction.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -58,27 +59,17 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="01_introduction.html">Introduction à Symfony</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="01_introduction.html#l-architecture-du-framework">L&#8217;architecture du framework</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Quelques rappels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_rappel.html#convention-de-nommage">Convention de nommage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Quelques rappels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#convention-de-nommage">Convention de nommage</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03_pre-requis_installation.html">Pré-requis et installation du framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_netbeans.html">Le projet avec Netbeans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html">Créer une application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_routing.html">Le routing et les contrôleur</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_twig.html">Les vues avec Twig</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_controleur.html">Les contrôleurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_doctrine.html">Doctrine et la base de donnée</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_afficher_entite.html">Afficher des entités</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_modifer_entite.html">Modifier une entité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_creer_entite.html">Créer une entité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_supprimer_entite.html">Supprimer une entité avec Ajax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_securite.html">La sécurité Symfony</a></li>
 </ul>
 
         
@@ -102,8 +93,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Quelques rappels</li>
       <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/02_rappel.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -111,16 +104,51 @@
 </div>
           <div role="main" class="document">
             
+  <div class="section" id="quelques-rappels">
+<h1>Quelques rappels<a class="headerlink" href="#quelques-rappels" title="Permalink to this headline">¶</a></h1>
+<p>Les 10 commandements du bon développeur (PHP ou autre)</p>
+<ol class="arabic">
+<li><p class="first">Apprenez les différences entre du bon et du mauvais code.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Mettre ses chaines de caractères entre simple quotes <tt class="docutils literal"><span class="pre">'..'</span></tt> est plus rapide qu’entre des doubles quotes <tt class="docutils literal"><span class="pre">&quot;..&quot;</span></tt> car</dt>
+<dd><p class="first last">PHP analyse s’il y’a des variables entre les doubles quotes. Utiliser les simple quote pour du texte pur.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Utiliser sprintf au lieu de mettre des variables dans des double quotes, C’est 10x plus rapide.</p>
+</li>
+<li><p class="first">Utiliser le plus possible des variables pour les calculs, éviter de les mettre dans les boucles.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="c1">// Ne pas faire</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$x</span> <span class="o">&lt;</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span> <span class="nv">$x</span><span class="p">)</span>
 
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+<span class="c1">// A faire</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$x</span> <span class="o">&lt;</span> <span class="nv">$count</span><span class="p">;</span> <span class="nv">$x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="convention-de-nommage">
+<h2>Convention de nommage<a class="headerlink" href="#convention-de-nommage" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03_pre-requis_installation.html" class="btn btn-neutral float-right" title="Pré-requis et installation du framework">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01_introduction.html" class="btn btn-neutral" title="Introduction à Symfony"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
