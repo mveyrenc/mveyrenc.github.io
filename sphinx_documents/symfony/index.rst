@@ -2,15 +2,12 @@
 PHP/Symfony
 =====================
 
-- introduction au framework Symfony
-- beaucoup de points traités sans aller dans les détails par soucis de temps et de densité
-- la maîtrise d'un tel framework représente des mois de pratique et de recherche
+Ce document a pour but de vous faire acquerir les compétences suivantes :
 
-- projet taskManager : l'utilisateur peut :
-    - créer des projets
-    - créer des tâches dans les projets
-    - assigner des personnes à des tâches
-    - suivre l'avancement de la réalisation des tâches
+* Assimiler chaque élément du concept MVC
+* Accéder aux données via Doctrine
+* Développer une application qui exploite une base de données
+* Comprendre l'architecture du framework Sumfony2, et savoir le mettre en œuvre dans un développement PHP5
 
 Contents
 ========
