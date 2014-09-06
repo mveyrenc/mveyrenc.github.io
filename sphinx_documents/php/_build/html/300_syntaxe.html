@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,11 +8,8 @@
     
     <title>La syntaxe &mdash; PHP 1.0.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/bootstrap-2.2.1.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/bootstrap-responsive-2.2.1.min.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -25,122 +23,28 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/js/bootstrap-2.2.1.min.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="PHP 1.0.0 documentation" href="index.html" />
-    <link rel="prev" title="Introduction" href="200_introduction.html" />
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
-<meta name="apple-mobile-web-app-capable" content="yes">
-
+    <link rel="prev" title="Introduction" href="200_introduction.html" /> 
   </head>
   <body>
-<div class="container">
-  
-  <div id="navbar" class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="200_introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PHP 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-      <a class="brand" href="index.html">PHP</a>
-      <span class="navbar-text pull-left"><b>1.0.0</b></span>
-
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li class="divider-vertical"></li>
-          
-            <li class="dropdown">
-  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
-  <ul class="dropdown-menu globaltoc"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="100_avant_de_commencer.html">Avant de commencer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="200_introduction.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">La syntaxe</a></li>
-</ul>
-</ul>
-</li>
-            <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">La syntaxe</a><ul>
-<li><a class="reference internal" href="#generalites">Généralités</a><ul>
-<li><a class="reference internal" href="#les-balises-php">Les balises PHP</a></li>
-<li><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
-<li><a class="reference internal" href="#les-variables">Les variables</a></li>
-<li><a class="reference internal" href="#les-constantes">Les constantes</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#les-types">Les types</a><ul>
-<li><a class="reference internal" href="#les-booleens">Les booléens</a></li>
-<li><a class="reference internal" href="#les-numeriques">Les numériques</a></li>
-<li><a class="reference internal" href="#les-chaines-de-caracteres">Les chaînes de caractères</a></li>
-<li><a class="reference internal" href="#les-tableaux">Les tableaux</a></li>
-<li><a class="reference internal" href="#les-objets">Les objets</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#les-operateurs">Les opérateurs</a><ul>
-<li><a class="reference internal" href="#les-operateurs-arithmetiques">Les opérateurs arithmétiques</a></li>
-<li><a class="reference internal" href="#les-operateurs-d-affectation">Les opérateurs d&#8217;affectation</a></li>
-<li><a class="reference internal" href="#les-operateurs-sur-les-bits">Les opérateurs sur les bits</a></li>
-<li><a class="reference internal" href="#operateurs-de-comparaison">Opérateurs de comparaison</a></li>
-<li><a class="reference internal" href="#operateur-de-controle-d-erreur">Opérateur de contrôle d&#8217;erreur</a></li>
-<li><a class="reference internal" href="#operateur-d-execution">Opérateur d&#8217;exécution</a></li>
-<li><a class="reference internal" href="#operateurs-d-incrementation-et-decrementation">Opérateurs d&#8217;incrémentation et décrémentation</a></li>
-<li><a class="reference internal" href="#les-operateurs-logiques">Les opérateurs logiques</a></li>
-<li><a class="reference internal" href="#operateur-de-chaines">Opérateur de chaînes</a></li>
-<li><a class="reference internal" href="#operateurs-de-tableaux">Opérateurs de tableaux</a></li>
-<li><a class="reference internal" href="#operateurs-de-types">Opérateurs de types</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a><ul>
-<li><a class="reference internal" href="#if-elseif-else">if/elseif/else</a></li>
-<li><a class="reference internal" href="#while-do-while">while/do-while</a></li>
-<li><a class="reference internal" href="#for">for</a></li>
-<li><a class="reference internal" href="#foreach">foreach</a></li>
-<li><a class="reference internal" href="#break">break</a></li>
-<li><a class="reference internal" href="#continue">continue</a></li>
-<li><a class="reference internal" href="#switch">switch</a></li>
-<li><a class="reference internal" href="#declare">declare</a></li>
-<li><a class="reference internal" href="#return">return</a></li>
-<li><a class="reference internal" href="#include-require-include-once-require-once">include/require/include_once/require_once</a></li>
-<li><a class="reference internal" href="#goto">goto</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</ul>
-</li>
-          
-          
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
             
-  <li><a href="200_introduction.html"
-         title="previous chapter">&laquo; Introduction</a></li>
-          
-          
-            <li>
-  <a href="_sources/300_syntaxe.txt"
-     rel="nofollow">Source</a></li>
-          
-        </ul>
-
-        
-          
-<form class="navbar-search pull-right" style="margin-bottom:-3px;" action="search.html" method="get">
-  <input type="text" name="q" placeholder="Search" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        
-      </div>
-    </div>
-  </div>
-
-  
   <div class="section" id="la-syntaxe">
 <h1><a class="toc-backref" href="#id1">La syntaxe</a><a class="headerlink" href="#la-syntaxe" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="contents">
@@ -630,18 +534,101 @@ La cible est spécifiée par un label, suivi de deux-point.</p>
 </div>
 
 
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">La syntaxe</a><ul>
+<li><a class="reference internal" href="#generalites">Généralités</a><ul>
+<li><a class="reference internal" href="#les-balises-php">Les balises PHP</a></li>
+<li><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
+<li><a class="reference internal" href="#les-variables">Les variables</a></li>
+<li><a class="reference internal" href="#les-constantes">Les constantes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#les-types">Les types</a><ul>
+<li><a class="reference internal" href="#les-booleens">Les booléens</a></li>
+<li><a class="reference internal" href="#les-numeriques">Les numériques</a></li>
+<li><a class="reference internal" href="#les-chaines-de-caracteres">Les chaînes de caractères</a></li>
+<li><a class="reference internal" href="#les-tableaux">Les tableaux</a></li>
+<li><a class="reference internal" href="#les-objets">Les objets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#les-operateurs">Les opérateurs</a><ul>
+<li><a class="reference internal" href="#les-operateurs-arithmetiques">Les opérateurs arithmétiques</a></li>
+<li><a class="reference internal" href="#les-operateurs-d-affectation">Les opérateurs d&#8217;affectation</a></li>
+<li><a class="reference internal" href="#les-operateurs-sur-les-bits">Les opérateurs sur les bits</a></li>
+<li><a class="reference internal" href="#operateurs-de-comparaison">Opérateurs de comparaison</a></li>
+<li><a class="reference internal" href="#operateur-de-controle-d-erreur">Opérateur de contrôle d&#8217;erreur</a></li>
+<li><a class="reference internal" href="#operateur-d-execution">Opérateur d&#8217;exécution</a></li>
+<li><a class="reference internal" href="#operateurs-d-incrementation-et-decrementation">Opérateurs d&#8217;incrémentation et décrémentation</a></li>
+<li><a class="reference internal" href="#les-operateurs-logiques">Les opérateurs logiques</a></li>
+<li><a class="reference internal" href="#operateur-de-chaines">Opérateur de chaînes</a></li>
+<li><a class="reference internal" href="#operateurs-de-tableaux">Opérateurs de tableaux</a></li>
+<li><a class="reference internal" href="#operateurs-de-types">Opérateurs de types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a><ul>
+<li><a class="reference internal" href="#if-elseif-else">if/elseif/else</a></li>
+<li><a class="reference internal" href="#while-do-while">while/do-while</a></li>
+<li><a class="reference internal" href="#for">for</a></li>
+<li><a class="reference internal" href="#foreach">foreach</a></li>
+<li><a class="reference internal" href="#break">break</a></li>
+<li><a class="reference internal" href="#continue">continue</a></li>
+<li><a class="reference internal" href="#switch">switch</a></li>
+<li><a class="reference internal" href="#declare">declare</a></li>
+<li><a class="reference internal" href="#return">return</a></li>
+<li><a class="reference internal" href="#include-require-include-once-require-once">include/require/include_once/require_once</a></li>
+<li><a class="reference internal" href="#goto">goto</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="200_introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/300_syntaxe.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
 </div>
-<footer class="footer">
-  <div class="container">
-    <p class="pull-right">
-      <a href="#">Back to top</a>
-      
-    </p>
-    <p>
-        &copy; Copyright 2014, Madeline VEYRENC.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
-    </p>
-  </div>
-</footer>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="200_introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li><a href="index.html">PHP 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Madeline VEYRENC.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
   </body>
 </html>
