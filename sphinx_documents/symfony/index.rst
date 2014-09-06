@@ -15,8 +15,22 @@ Documentation Symfony
 Contents
 ========
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
    
-   100_introduction
-   200_rappel
+    01_introduction
+    02_rappel
+    03_pre-requis_installation
+    04_netbeans
+    05_application_symfony
+    06_routing
+    07_twig
+    08_controleur
+    09_doctrine
+    10_afficher_entite
+    11_modifer_entite
+    12_creer_entite
+    13_supprimer_entite
+    14_securite
+    
+   
 
