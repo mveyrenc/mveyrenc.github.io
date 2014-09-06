@@ -20,12 +20,3 @@ Contents
    100_introduction
    200_rappel
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
