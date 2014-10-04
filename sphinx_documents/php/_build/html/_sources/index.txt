@@ -12,6 +12,7 @@ Contents
    100_avant_de_commencer
    200_introduction
    300_syntaxe
+   400_fonctions
 
 
 
