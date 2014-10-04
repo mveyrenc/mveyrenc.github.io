@@ -1,49 +1,114 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>La syntaxe &mdash; PHP 1.0.0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PHP 1.0.0 documentation" href="index.html" />
-    <link rel="prev" title="Introduction" href="200_introduction.html" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="200_introduction.html" title="Introduction"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">PHP 1.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>La syntaxe &mdash; PHP 1.0.0 documentation</title>
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="PHP 1.0.0 documentation" href="index.html"/>
+        <link rel="prev" title="Introduction" href="200_introduction.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> PHP</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="100_avant_de_commencer.html">Avant de commencer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="100_avant_de_commencer.html#qu-est-ce-que-c-est">Qu&#8217;est ce que c&#8217;est ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="100_avant_de_commencer.html#que-peut-faire-php">Que peut faire PHP ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="200_introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="200_introduction.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="200_introduction.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">La syntaxe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generalites">Généralités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-types">Les types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-operateurs">Les opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">PHP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>La syntaxe</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/300_syntaxe.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
             
   <div class="section" id="la-syntaxe">
 <h1><a class="toc-backref" href="#id1">La syntaxe</a><a class="headerlink" href="#la-syntaxe" title="Permalink to this headline">¶</a></h1>
@@ -84,9 +149,9 @@ Pour les deux autres symboles, il faudra le remettre au début de chaque ligne d
 <h3>Les variables<a class="headerlink" href="#les-variables" title="Permalink to this headline">¶</a></h3>
 <p>Un nom de variable commencent toujours par un dollar <tt class="docutils literal"><span class="pre">$</span></tt>,
 suivit d&#8217;au moins un caractère non numérique (<tt class="docutils literal"><span class="pre">_</span></tt> est autorisé) puis de n&#8217;importe quel caractère.</p>
-<p>Les noms de variables sont sensibles à la case, donc $maVariable est différentnde $ma_variable.
+<p>Les noms de variables sont sensibles à la case, donc $maVariable est différente de $ma_variable.
 Il est donc vivement recommendé de fixer une norme pour le nommage des variables.</p>
-<p>Les varaibles ne sont pas typées. Au cours de l&#8217;exécution du script, le type de la valeur affectée à une varible peut changer.
+<p>Les varaibles ne sont pas typées. Au cours de l&#8217;exécution du script, le type de la valeur affectée à une variable peut changer.
 L&#8217;interpréteur se charge de gérer les allocations de mémoire nécessaires au stockage des valeurs référencées par les variables.</p>
 <p>Il n&#8217;y a pas de déclaration de variable en PHP.
 L&#8217;interpréteur crée automatiquement une variable dès qu&#8217;un nouveau symbole préfixé par <tt class="docutils literal"><span class="pre">$</span></tt> apparaît dans un script.</p>
@@ -121,7 +186,7 @@ Elles sont définies par la commande <tt class="docutils literal"><span class="p
 <li>l&#8217;entier <tt class="docutils literal"><span class="pre">0</span></tt></li>
 <li>le nombre à virgule flottante <tt class="docutils literal"><span class="pre">0.0</span></tt></li>
 <li>la chaîne vide, et la chaîne <tt class="docutils literal"><span class="pre">&quot;0&quot;</span></tt></li>
-<li>un tableau avec aucun élément</li>
+<li>un tableau avec aucun élément <tt class="docutils literal"><span class="pre">array()</span></tt></li>
 <li>le type spécial <tt class="docutils literal"><span class="pre">NULL</span></tt> (incluant les variables non définies)</li>
 </ul>
 </div>
@@ -489,8 +554,8 @@ héritées, d&#8217;une interface ou s&#8217;il est de la même classe qu&#8217;
 </div>
 <p>Il existe deux directives :</p>
 <ul class="simple">
-<li>ticks=N : un tick est un événement qui intervient toutes les N commandes bas niveau tickables.</li>
-<li>encoding=&#8217;UTF-8&#8217; : pour spécifier l&#8217;endocage du script.</li>
+<li><tt class="docutils literal"><span class="pre">ticks=N</span></tt> : un tick est un événement qui intervient toutes les N commandes bas niveau tickables.</li>
+<li><tt class="docutils literal"><span class="pre">encoding='UTF-8'</span></tt> : pour spécifier l&#8217;endocage du script.</li>
 </ul>
 </div>
 <div class="section" id="return">
@@ -535,100 +600,65 @@ La cible est spécifiée par un label, suivi de deux-point.</p>
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">La syntaxe</a><ul>
-<li><a class="reference internal" href="#generalites">Généralités</a><ul>
-<li><a class="reference internal" href="#les-balises-php">Les balises PHP</a></li>
-<li><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
-<li><a class="reference internal" href="#les-variables">Les variables</a></li>
-<li><a class="reference internal" href="#les-constantes">Les constantes</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#les-types">Les types</a><ul>
-<li><a class="reference internal" href="#les-booleens">Les booléens</a></li>
-<li><a class="reference internal" href="#les-numeriques">Les numériques</a></li>
-<li><a class="reference internal" href="#les-chaines-de-caracteres">Les chaînes de caractères</a></li>
-<li><a class="reference internal" href="#les-tableaux">Les tableaux</a></li>
-<li><a class="reference internal" href="#les-objets">Les objets</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#les-operateurs">Les opérateurs</a><ul>
-<li><a class="reference internal" href="#les-operateurs-arithmetiques">Les opérateurs arithmétiques</a></li>
-<li><a class="reference internal" href="#les-operateurs-d-affectation">Les opérateurs d&#8217;affectation</a></li>
-<li><a class="reference internal" href="#les-operateurs-sur-les-bits">Les opérateurs sur les bits</a></li>
-<li><a class="reference internal" href="#operateurs-de-comparaison">Opérateurs de comparaison</a></li>
-<li><a class="reference internal" href="#operateur-de-controle-d-erreur">Opérateur de contrôle d&#8217;erreur</a></li>
-<li><a class="reference internal" href="#operateur-d-execution">Opérateur d&#8217;exécution</a></li>
-<li><a class="reference internal" href="#operateurs-d-incrementation-et-decrementation">Opérateurs d&#8217;incrémentation et décrémentation</a></li>
-<li><a class="reference internal" href="#les-operateurs-logiques">Les opérateurs logiques</a></li>
-<li><a class="reference internal" href="#operateur-de-chaines">Opérateur de chaînes</a></li>
-<li><a class="reference internal" href="#operateurs-de-tableaux">Opérateurs de tableaux</a></li>
-<li><a class="reference internal" href="#operateurs-de-types">Opérateurs de types</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a><ul>
-<li><a class="reference internal" href="#if-elseif-else">if/elseif/else</a></li>
-<li><a class="reference internal" href="#while-do-while">while/do-while</a></li>
-<li><a class="reference internal" href="#for">for</a></li>
-<li><a class="reference internal" href="#foreach">foreach</a></li>
-<li><a class="reference internal" href="#break">break</a></li>
-<li><a class="reference internal" href="#continue">continue</a></li>
-<li><a class="reference internal" href="#switch">switch</a></li>
-<li><a class="reference internal" href="#declare">declare</a></li>
-<li><a class="reference internal" href="#return">return</a></li>
-<li><a class="reference internal" href="#include-require-include-once-require-once">include/require/include_once/require_once</a></li>
-<li><a class="reference internal" href="#goto">goto</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="200_introduction.html" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="200_introduction.html"
-                        title="previous chapter">Introduction</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/300_syntaxe.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="200_introduction.html" title="Introduction"
-             >previous</a> |</li>
-        <li><a href="index.html">PHP 1.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2014, Madeline VEYRENC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

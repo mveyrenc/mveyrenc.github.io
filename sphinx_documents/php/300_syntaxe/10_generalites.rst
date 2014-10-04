@@ -31,10 +31,10 @@ Les variables
 Un nom de variable commencent toujours par un dollar ``$``,
 suivit d'au moins un caractère non numérique (``_`` est autorisé) puis de n'importe quel caractère.
   
-Les noms de variables sont sensibles à la case, donc $maVariable est différentnde $ma_variable.
+Les noms de variables sont sensibles à la case, donc $maVariable est différente de $ma_variable.
 Il est donc vivement recommendé de fixer une norme pour le nommage des variables.
 
-Les varaibles ne sont pas typées. Au cours de l'exécution du script, le type de la valeur affectée à une varible peut changer.
+Les varaibles ne sont pas typées. Au cours de l'exécution du script, le type de la valeur affectée à une variable peut changer.
 L'interpréteur se charge de gérer les allocations de mémoire nécessaires au stockage des valeurs référencées par les variables.
 
 Il n'y a pas de déclaration de variable en PHP.

@@ -29,7 +29,7 @@
 
   
     <link rel="top" title="Symfony 1.0.0 documentation" href="index.html"/>
-        <link rel="next" title="Rappels sur de développement orienté objet" href="02_rappel.html"/>
+        <link rel="next" title="Quelques rappels" href="02_rappel.html"/>
         <link rel="prev" title="PHP/Symfony" href="index.html"/> 
 
   
@@ -61,13 +61,26 @@
         
             <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Introduction à Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#l-architecture-du-framework">L&#8217;architecture du framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-architecture-des-frameworks-mvc">L&#8217;architecture des frameworks MVC</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Rappels sur de développement orienté objet</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Quelques rappels</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="02_rappel.html#convention-de-nommage">Convention de nommage</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="03_pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_netbeans.html">Le projet avec Netbeans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html">Créer une application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_routing.html">Le routing et les contrôleur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_afficher_entite.html">Afficher des entités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_modifer_entite.html">Modifier une entité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_creer_entite.html">Créer une entité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_supprimer_entite.html">Supprimer une entité avec Ajax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_securite.html">La sécurité Symfony</a></li>
 </ul>
 
         
@@ -104,12 +117,36 @@
             
   <div class="section" id="introduction-a-symfony">
 <h1>Introduction à Symfony<a class="headerlink" href="#introduction-a-symfony" title="Permalink to this headline">¶</a></h1>
-<p>Symfony est un framework MVC libre écrit en PHP 5. Symfony 2.x requiert une version de PHP supérieure ou égale à 5.3.3.</p>
-<div class="section" id="l-architecture-du-framework">
-<h2>L&#8217;architecture du framework<a class="headerlink" href="#l-architecture-du-framework" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="modeles-vues-controleurs">
-<h3>Modèles, vues &amp; controleurs<a class="headerlink" href="#modeles-vues-controleurs" title="Permalink to this headline">¶</a></h3>
-<p>Lidée de l&#8217;achitecture dite MVC, est d&#8217;organiser le code en séparant les données, la présentation et les traiments.
+<p>Symfony est un framework MVC open-source écrit en PHP 5.</p>
+<div class="section" id="pourquoi-utiliser-un-framework">
+<h2>Pourquoi utiliser un framework ?<a class="headerlink" href="#pourquoi-utiliser-un-framework" title="Permalink to this headline">¶</a></h2>
+<p>Pour améliorer fortement la maintenabilité et l&#8217;évolutivité des applications.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Il permet d&#8217;organiser les développements</dt>
+<dd><ul class="first last simple">
+<li>découpage logique des sources</li>
+<li>séparation de la logique métier de la présentation</li>
+<li>incitation aux bonnes pratiques</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Composants et bibliothèques réutilisables</dt>
+<dd><ul class="first last simple">
+<li>collection de composants réutilisables (modules, librairie, bundles)</li>
+<li>concentration des dévelopements sur les partie purement métier, celles à valeur ajoutée</li>
+<li>maintemance de ce code faite par des milliers de développeurs à travers le monde</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="l-architecture-des-frameworks-mvc">
+<h2>L&#8217;architecture des frameworks MVC<a class="headerlink" href="#l-architecture-des-frameworks-mvc" title="Permalink to this headline">¶</a></h2>
+<p>L&#8217;idée de l&#8217;achitecture dite MVC, est d&#8217;organiser le code en séparant les données, leurs présentations et leurs traitements.
 Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
 <p>Elle se sépare donc en trois couches :</p>
 <ul class="simple">
@@ -117,11 +154,10 @@ Cette séparation rends les applications, même complexes, plus facile à mainte
 Rien d&#8217;autre dans l&#8217;application ne doit manipuler les données afin de garantir leur intégrité.</li>
 <li>La <strong>vue</strong> est chargée de générer les interfaces utilisateurs, généralement basées sur les données.
 Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.</li>
-<li>Le <strong>controleur</strong> est le chef d&#8217;orchestre de l&#8217;application.
-Il reçois des événements depuis le monde extérieur, intéragit avec le modèle et affiche la vue appropriée.</li>
+<li>Le <strong>contrôleur</strong> est le chef d&#8217;orchestre de l&#8217;application.
+Il reçoit des événements depuis le monde extérieur, intéragit avec le modèle et affiche la vue appropriée.</li>
 </ul>
-<p>(image MVC)</p>
-</div>
+<img alt="_images/MVC.png" src="_images/MVC.png" />
 </div>
 </div>
 
@@ -131,7 +167,7 @@ Il reçois des événements depuis le monde extérieur, intéragit avec le modè
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="02_rappel.html" class="btn btn-neutral float-right" title="Rappels sur de développement orienté objet">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="02_rappel.html" class="btn btn-neutral float-right" title="Quelques rappels">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="PHP/Symfony"><span class="fa fa-arrow-circle-left"></span> Previous</a>

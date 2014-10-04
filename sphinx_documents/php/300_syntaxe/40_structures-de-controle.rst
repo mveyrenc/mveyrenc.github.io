@@ -96,8 +96,8 @@ declare
     
 Il existe deux directives :
 
-* ticks=N : un tick est un événement qui intervient toutes les N commandes bas niveau tickables.
-* encoding='UTF-8' : pour spécifier l'endocage du script.
+* ``ticks=N`` : un tick est un événement qui intervient toutes les N commandes bas niveau tickables.
+* ``encoding='UTF-8'`` : pour spécifier l'endocage du script.
 
 return
 ======

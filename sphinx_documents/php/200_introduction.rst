@@ -1,12 +1,16 @@
-------------
+############
 Introduction
-------------
+############
 
+************
 Installation
-============
+************
 
 Il faut installer un serveur web (``apache2``), l'interpréteur PHP (``php5`` et ``php5-cli``), un SGBD (``mysql-server``) 
-et le connecteur entre PHP e le SGBD (``php5-mysql``).
+et le connecteur entre PHP et le SGBD (``php5-mysql``).
+
+Sous Linux (Debian/Ubuntu)
+==========================
 
 .. code-block:: bash
 
@@ -24,12 +28,18 @@ En option, on peut installer PHPMyAdmin :
 .. code-block:: bash
 
 	$ sudo apt-get install phpmyadmin
+
+Sous Windows
+============
+
+Il fait télécharger et installer `Wamp <http://www.wampserver.com/>`_.
 	
+*************
 Configuration
-=============
+*************
 
 Fichier de configuration
-------------------------
+========================
 
 La configuration de PHP se fait dans le fichier ``php.ini``.
 
@@ -39,7 +49,7 @@ Sous Débian et ses dérivées, il y a un ``php.ini`` pour le serveur web, un au
 * ``/etc/php5/cli/php.ini``
 
 Quelques éléménts à configurer
-------------------------------
+==============================
 
 * ``date.timezone = 'Europe/Paris'`` : le fuseau horaire à utiliser pour les fontions date
 * ``short_open_tag = Off`` : ne pas interpréter les basises <? ?> et <?= ?> comme du PHP

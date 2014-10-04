@@ -13,7 +13,7 @@ Lors d'une conversion en booléen, les valeurs suivantes sont considérées comm
 * l'entier ``0``
 * le nombre à virgule flottante ``0.0``
 * la chaîne vide, et la chaîne ``"0"``
-* un tableau avec aucun élément
+* un tableau avec aucun élément ``array()``
 * le type spécial ``NULL`` (incluant les variables non définies)
 
 Les numériques

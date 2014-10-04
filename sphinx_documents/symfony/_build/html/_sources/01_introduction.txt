@@ -2,15 +2,28 @@
 Introduction à Symfony
 ----------------------
     
-Symfony est un framework MVC libre écrit en PHP 5. Symfony 2.x requiert une version de PHP supérieure ou égale à 5.3.3.
+Symfony est un framework MVC open-source écrit en PHP 5.
 
-L'architecture du framework
-===========================
+Pourquoi utiliser un framework ?
+================================
 
-Modèles, vues & controleurs
-***************************
+Pour améliorer fortement la maintenabilité et l'évolutivité des applications.
 
-Lidée de l'achitecture dite MVC, est d'organiser le code en séparant les données, la présentation et les traiments.
+* Il permet d'organiser les développements
+    * découpage logique des sources
+    * séparation de la logique métier de la présentation
+    * incitation aux bonnes pratiques
+
+* Composants et bibliothèques réutilisables
+    * collection de composants réutilisables (modules, librairie, bundles)
+    * concentration des dévelopements sur les partie purement métier, celles à valeur ajoutée
+    * maintemance de ce code faite par des milliers de développeurs à travers le monde
+
+
+L'architecture des frameworks MVC
+=================================
+
+L'idée de l'achitecture dite MVC, est d'organiser le code en séparant les données, leurs présentations et leurs traitements.
 Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.
  
 Elle se sépare donc en trois couches :
@@ -21,7 +34,7 @@ Elle se sépare donc en trois couches :
 * La **vue** est chargée de générer les interfaces utilisateurs, généralement basées sur les données.
   Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.
   
-* Le **controleur** est le chef d'orchestre de l'application.
-  Il reçois des événements depuis le monde extérieur, intéragit avec le modèle et affiche la vue appropriée.
+* Le **contrôleur** est le chef d'orchestre de l'application.
+  Il reçoit des événements depuis le monde extérieur, intéragit avec le modèle et affiche la vue appropriée.
   
-(image MVC)
+.. image:: _static/images/MVC.png

@@ -4,10 +4,10 @@ La syntaxe
 
 .. contents:: :depth: 2
 
-.. include:: 310_generalites.rst
-.. include:: 320_types.rst
-.. include:: 330_operateurs.rst
-.. include:: 330_structures-de-controle.rst
+.. include:: 300_syntaxe/10_generalites.rst
+.. include:: 300_syntaxe/20_types.rst
+.. include:: 300_syntaxe/30_operateurs.rst
+.. include:: 300_syntaxe/40_structures-de-controle.rst
 
 
 
