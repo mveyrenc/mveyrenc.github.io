@@ -18,7 +18,7 @@ Une fonction peut être définie en utilisant la syntaxe suivante :
     ?>
 
 Les noms de fonctions suivent les mêmes règles que les autres labels en PHP. 
-Un nom de fonction valide commence par une lettre ou un `_`, suivi par un nombre quelconque de lettres, de nombres ou de `_`.
+Un nom de fonction valide commence par une lettre ou un underscore, suivi par un nombre quelconque de lettres, de nombres ou d'underscore.
 
 Si il n'y a pas d'instruction ``return``, la fonction retoune ``NULL``.
 
@@ -94,7 +94,7 @@ Nombre d'arguments variable
 ===========================
 
 PHP supporte les fonctions à nombre d'arguments variable. 
-Ceci est implémenté en utilisant le mot clé ``...`` en PHP 5.6 et suivants, et en utilisant les fonctions `func_num_args()`, `func_get_arg()` et `func_get_args()` en PHP 5.5 et antérieurs.
+Ceci est implémenté en utilisant le mot-clé ``...`` en PHP 5.6 et suivants, et en utilisant les fonctions `func_num_args()`, `func_get_arg()` et `func_get_args()` en PHP 5.5 et antérieurs.
 
 En PHP 5.6
 ^^^^^^^^^^
@@ -113,7 +113,7 @@ En PHP 5.6
     echo sum(1, 2, 3, 4); // Affiche 10
     ?>
 
-Le mot clé `...` peut aussi servir à passer des arguments à une fonction :
+Le mot-clé `...` peut aussi servir à passer des arguments à une fonction :
 
 .. code-block:: php
 

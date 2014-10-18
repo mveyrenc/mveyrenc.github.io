@@ -29,6 +29,7 @@
 
   
     <link rel="top" title="PHP 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Les classes et les objets" href="500_classes-et-objets.html"/>
         <link rel="prev" title="La syntaxe" href="300_syntaxe.html"/> 
 
   
@@ -83,6 +84,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#fonctions-anonymes">Fonctions anonymes</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="500_classes-et-objets.html">Les classes et les objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_classes-et-objets.html#syntaxe-de-base">Syntaxe de base</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="500_classes-et-objets.html#definition-d-un-classe">Définition d&#8217;un classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="500_classes-et-objets.html#instances-de-classe">Instances de classe</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -131,7 +138,7 @@
 </pre></div>
 </div>
 <p>Les noms de fonctions suivent les mêmes règles que les autres labels en PHP.
-Un nom de fonction valide commence par une lettre ou un <cite>_</cite>, suivi par un nombre quelconque de lettres, de nombres ou de <cite>_</cite>.</p>
+Un nom de fonction valide commence par une lettre ou un underscore, suivi par un nombre quelconque de lettres, de nombres ou d&#8217;underscore.</p>
 <p>Si il n&#8217;y a pas d&#8217;instruction <tt class="docutils literal"><span class="pre">return</span></tt>, la fonction retoune <tt class="docutils literal"><span class="pre">NULL</span></tt>.</p>
 </div>
 <div class="section" id="arguments-de-fonction">
@@ -195,7 +202,7 @@ le passage par référence, et des valeurs d&#8217;arguments par défaut. Une li
 <div class="section" id="nombre-d-arguments-variable">
 <h3>Nombre d&#8217;arguments variable<a class="headerlink" href="#nombre-d-arguments-variable" title="Permalink to this headline">¶</a></h3>
 <p>PHP supporte les fonctions à nombre d&#8217;arguments variable.
-Ceci est implémenté en utilisant le mot clé <tt class="docutils literal"><span class="pre">...</span></tt> en PHP 5.6 et suivants, et en utilisant les fonctions <cite>func_num_args()</cite>, <cite>func_get_arg()</cite> et <cite>func_get_args()</cite> en PHP 5.5 et antérieurs.</p>
+Ceci est implémenté en utilisant le mot-clé <tt class="docutils literal"><span class="pre">...</span></tt> en PHP 5.6 et suivants, et en utilisant les fonctions <cite>func_num_args()</cite>, <cite>func_get_arg()</cite> et <cite>func_get_args()</cite> en PHP 5.5 et antérieurs.</p>
 <div class="section" id="en-php-5-6">
 <h4>En PHP 5.6<a class="headerlink" href="#en-php-5-6" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
@@ -211,7 +218,7 @@ Ceci est implémenté en utilisant le mot clé <tt class="docutils literal"><spa
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
-<p>Le mot clé <cite>...</cite> peut aussi servir à passer des arguments à une fonction :</p>
+<p>Le mot-clé <cite>...</cite> peut aussi servir à passer des arguments à une fonction :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
@@ -324,6 +331,8 @@ Cela peut servir, entre autres, pour faire des fonctions de rappel, des tables d
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="500_classes-et-objets.html" class="btn btn-neutral float-right" title="Les classes et les objets">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="300_syntaxe.html" class="btn btn-neutral" title="La syntaxe"><span class="fa fa-arrow-circle-left"></span> Previous</a>
