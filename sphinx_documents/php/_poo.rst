@@ -14,5 +14,4 @@ La programmation orientée objet
 .. include:: _poo/interfaces.rst
 .. include:: _poo/references-clonage.rst
 .. include:: _poo/exception.rst
-.. include:: _poo/fonctions-contantes-utiles.rst
 .. include:: _poo/namespace.rst
