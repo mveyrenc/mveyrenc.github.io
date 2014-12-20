@@ -9,11 +9,11 @@ Contents
 .. toctree::
    :maxdepth: 2
    
-   100_avant_de_commencer
-   200_introduction
-   300_syntaxe
-   400_fonctions
-
+   _avant_de_commencer
+   _introduction
+   _syntaxe
+   _fonctions
+   _poo
 
 
 Indices and tables

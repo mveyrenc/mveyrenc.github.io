@@ -1,7 +1,0 @@
-#########################
-Les classes et les objets
-#########################
-
-.. contents:: :depth: 2
-
-.. include:: 500_classes-et-objets/10_syntaxe.rst
