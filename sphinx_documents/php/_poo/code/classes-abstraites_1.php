@@ -55,4 +55,3 @@ var_dump($velo instanceof Velo);        //Affiche true
 var_dump($velo instanceof Vehicule);    //Affiche true
 
 $vehicule = new Vehicule();             // PHP Fatal error:  Cannot instantiate abstract class Vehicule
-?>

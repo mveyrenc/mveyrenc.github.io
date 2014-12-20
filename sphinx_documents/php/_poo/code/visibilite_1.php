@@ -37,4 +37,3 @@ var_dump($objet->private);          // PHP Notice:  Undefined property: MyClass:
 var_dump($objet->myPublic());       // Affiche string(6) "Public"
 var_dump($objet->myProtected());    // PHP Fatal error:  Call to protected method MyClass::myProtected()
 var_dump($objet->myPrivate());      // PHP Fatal error:  Call to private method MyParentClass::myPrivate()
-?>

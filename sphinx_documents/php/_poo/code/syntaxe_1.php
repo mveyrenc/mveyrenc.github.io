@@ -26,4 +26,3 @@ $voiture2 = new $className(); // Voiture()
 $voiture1->roule( 60 );
 $voiture2->peutEncoreRouler( );
 var_dump( Voiture::CONSOMMATION );  // Affiche int(4)
-?>

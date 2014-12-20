@@ -5,7 +5,6 @@ class Vehicule {
     
     public function roule( $distance ) {
         $this->kilometrage += $distance;
-        $this->resteReservoir -= self::CONSOMMATION * $distance;
     }
 
 }
@@ -49,4 +48,3 @@ var_dump( $voiture instanceof Vehicule);    //Affiche true
 var_dump( $velo instanceof Voiture);        //Affiche false
 var_dump( $velo instanceof Velo);           //Affiche true
 var_dump( $velo instanceof Vehicule);       //Affiche true
-?>
