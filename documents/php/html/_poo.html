@@ -94,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#interfaces">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#references-et-clonage">Références et clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exceptions">Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#namespace">Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
 </ul>
 </li>
 </ul>
@@ -147,7 +147,7 @@
 <li><a class="reference internal" href="#interfaces" id="id9">Interfaces</a></li>
 <li><a class="reference internal" href="#references-et-clonage" id="id10">Références et clonage</a></li>
 <li><a class="reference internal" href="#exceptions" id="id11">Exceptions</a></li>
-<li><a class="reference internal" href="#namespace" id="id12">Namespace</a></li>
+<li><a class="reference internal" href="#espace-de-nom-ou-namespace" id="id12">Espace de nom ou namespace</a></li>
 </ul>
 </li>
 </ul>
@@ -538,8 +538,26 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 <p>Lorsqu&#8217;une exception est lancée depuis un bloc <tt class="docutils literal"><span class="pre">try</span></tt>, le bloc <tt class="docutils literal"><span class="pre">catch</span></tt> permet de l&#8217;attraper et de traiter l&#8217;incident.</p>
 </div>
-<div class="section" id="namespace">
-<h2><a class="toc-backref" href="#id12">Namespace</a><a class="headerlink" href="#namespace" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="espace-de-nom-ou-namespace">
+<h2><a class="toc-backref" href="#id12">Espace de nom ou namespace</a><a class="headerlink" href="#espace-de-nom-ou-namespace" title="Permalink to this headline">¶</a></h2>
+<p>Dans leur définition la plus large, ils représentent un moyen d&#8217;encapsuler des éléménts. Ils peuvent s&#8217;apparenter à un système de fichier. D&#8217;ailleur dans la convention Symfony, le namespace d&#8217;une classes reflète son chemin.</p>
+<p>Dans le monde PHP, les espaces de noms sont conçus pour résoudre deux problèmes que les auteurs de bibliothèques et applications rencontrent lors de la réutilisation d&#8217;éléments tels que des classes ou des bibliothèques de fonctions :</p>
+<ul class="simple">
+<li>collisions de noms entre le code que vous créez (les classes, fonctions, constantes) et celle de bibliothèques tièces</li>
+<li>les noms extèmement longs de classes</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PHPUnit_Extensions_Database_DB_MetaData_MySQL</span> <span class="k">extends</span> <span class="nx">PHPUnit_Extensions_Database_DB_MetaData_InformationSchema</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">PHPUnit\Extensions\Database\DB\MetaData</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MySQL</span> <span class="k">extends</span> <span class="nx">InformationSchema</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 
