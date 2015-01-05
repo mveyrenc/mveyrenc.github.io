@@ -1,6 +1,6 @@
-----------------
+################
 Quelques rappels
-----------------
+################
 
 * La programmation orientée objet
     * Terminologie

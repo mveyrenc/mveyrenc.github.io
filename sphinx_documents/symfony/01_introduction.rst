@@ -1,11 +1,12 @@
-----------------------
+######################
 Introduction à Symfony
-----------------------
+######################
     
 Symfony est un framework MVC open-source écrit en PHP 5.
 
+********************************
 Pourquoi utiliser un framework ?
-================================
+********************************
 
 Pour améliorer fortement la maintenabilité et l'évolutivité des applications.
 
@@ -20,8 +21,9 @@ Pour améliorer fortement la maintenabilité et l'évolutivité des applications
     * maintemance de ce code faite par des milliers de développeurs à travers le monde
 
 
+*********************************
 L'architecture des frameworks MVC
-=================================
+*********************************
 
 L'idée de l'achitecture dite MVC, est d'organiser le code en séparant les données, leurs présentations et leurs traitements.
 Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.
