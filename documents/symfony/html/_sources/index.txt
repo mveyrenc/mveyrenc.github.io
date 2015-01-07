@@ -17,7 +17,7 @@ Contents
     01_introduction
     02_rappel
     03_pre-requis_installation
-    04_netbeans
+    04_architecture
     05_application_symfony
     06_routing
     07_twig
