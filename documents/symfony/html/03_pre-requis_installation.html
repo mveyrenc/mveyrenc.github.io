@@ -161,141 +161,77 @@
 <li>Via <tt class="docutils literal"><span class="pre">Composer</span></tt></li>
 </ul>
 <p>Nous allons préféré la seconde.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -s https://getcomposer.org/installer | php
-<span class="nv">$ </span>php composer.phar create-project symfony/framework-standard-edition /path/to/webroot/Symfony <span class="o">[</span>version<span class="o">]</span>
+<p>Dans un premier temps, installons <tt class="docutils literal"><span class="pre">Composer</span></tt> :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="nv">$ </span>sudo mv composer.phar /usr/local/bin/composer
+<span class="nv">$ </span>composer -h
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">Composer</span></tt> va télécharger et installer toutes les librairies nécessaires au fonctionnent de Symfony :</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">Installing symfony/framework-standard-edition (v2.6.1)</span>
-<span class="l-Scalar-Plain">- Installing symfony/framework-standard-edition (v2.6.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="l-Scalar-Plain">Created project in symfony/</span>
-<span class="l-Scalar-Plain">Loading composer repositories with package information</span>
-<span class="l-Scalar-Plain">Installing dependencies (including require-dev)</span>
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing psr/log (1.0.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing twig/twig (v1.16.3)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/lexer (v1.0.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/annotations (v1.2.3)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/collections (v1.2)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/cache (v1.3.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/inflector (v1.0.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/common (v2.4.2)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing symfony/symfony (v2.6.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/dbal (v2.5.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/orm (v2.4.7)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/doctrine-cache-bundle (v1.0.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing jdorn/sql-formatter (v1.2.17)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing doctrine/doctrine-bundle (v1.3.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing twig/extensions (v1.2.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing kriswallsmith/assetic (v1.2.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing symfony/assetic-bundle (v2.5.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing swiftmailer/swiftmailer (v5.3.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing symfony/swiftmailer-bundle (v2.3.8)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing monolog/monolog (1.12.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing symfony/monolog-bundle (v2.7.1)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing sensio/distribution-bundle (v3.0.2)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing sensio/framework-extra-bundle (v3.0.4)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing incenteev/composer-parameter-handler (v2.1.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Installing sensio/generator-bundle (v2.5.0)</span>
-    <span class="l-Scalar-Plain">Downloading</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">100%</span>
-
-<span class="l-Scalar-Plain">kriswallsmith/assetic suggests installing leafo/lessphp (Assetic provides the integration with the lessphp LESS compiler)</span>
-<span class="l-Scalar-Plain">kriswallsmith/assetic suggests installing leafo/scssphp (Assetic provides the integration with the scssphp SCSS compiler)</span>
-<span class="l-Scalar-Plain">kriswallsmith/assetic suggests installing ptachoire/cssembed (Assetic provides the integration with phpcssembed to embed data uris)</span>
-<span class="l-Scalar-Plain">kriswallsmith/assetic suggests installing leafo/scssphp-compass (Assetic provides the integration with the SCSS compass plugin)</span>
-<span class="l-Scalar-Plain">kriswallsmith/assetic suggests installing patchwork/jsqueeze (Assetic provides the integration with the JSqueeze JavaScript compressor)</span>
-<span class="l-Scalar-Plain">symfony/assetic-bundle suggests installing kriswallsmith/spork (to be able to dump assets in parallel)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing graylog2/gelf-php (Allow sending log messages to a GrayLog2 server)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing raven/raven (Allow sending log messages to a Sentry server)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing doctrine/couchdb (Allow sending log messages to a CouchDB server)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing ruflin/elastica (Allow sending log messages to an Elastic Search server)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing videlalvaro/php-amqplib (Allow sending log messages to an AMQP server using php-amqplib)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing ext-amqp (Allow sending log messages to an AMQP server (1.0+ required))</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing ext-mongo (Allow sending log messages to a MongoDB server)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing aws/aws-sdk-php (Allow sending log messages to AWS services like DynamoDB)</span>
-<span class="l-Scalar-Plain">monolog/monolog suggests installing rollbar/rollbar (Allow sending log messages to Rollbar)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>composer create-project symfony/framework-standard-edition /var/www/html/Symfony <span class="o">[</span>version<span class="o">]</span>
 </pre></div>
 </div>
-<p>Il va ensuite paramétrer Symfony :</p>
-<blockquote>
-<div><div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">Writing lock file</span>
-<span class="l-Scalar-Plain">Generating autoload files</span>
-<span class="l-Scalar-Plain">Would you like to install Acme demo bundle? [y/N] y</span>
-<span class="l-Scalar-Plain">Installing the Acme demo bundle.</span>
-<span class="l-Scalar-Plain">Creating the &quot;app/config/parameters.yml&quot; file</span>
-<span class="l-Scalar-Plain">Some parameters are missing. Please provide them.</span>
+<p><tt class="docutils literal"><span class="pre">Composer</span></tt> va télécharger et installer toutes les librairies nécessaires au fonctionnent de Symfony dans le répertoire <tt class="docutils literal"><span class="pre">/var/www/html/Symfony</span></tt>. il est possible de spécifier une version. S&#8217;il n&#8217;y en a pas, c&#8217;est la dernière version stable qui sera installée.</p>
+<p>À la fin l&#8217;installation de Symfony, il vous propose une série de question pour le paramétrage :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">Would you like to install Acme demo bundle? [y/N] y</span>
 <span class="l-Scalar-Plain">database_driver (pdo_mysql)</span><span class="p-Indicator">:</span>
 <span class="l-Scalar-Plain">database_host (127.0.0.1)</span><span class="p-Indicator">:</span>
 <span class="l-Scalar-Plain">database_port (null)</span><span class="p-Indicator">:</span>
 <span class="l-Scalar-Plain">database_name (symfony)</span><span class="p-Indicator">:</span>
-<span class="l-Scalar-Plain">database_user (root)</span><span class="p-Indicator">:</span>
-<span class="l-Scalar-Plain">database_password (null)</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">mot de passe de la base de données</span><span class="p-Indicator">]</span>
-<span class="l-Scalar-Plain">mailer_transport (smtp)</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sendmail</span>
+<span class="l-Scalar-Plain">database_user (root)</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+<span class="l-Scalar-Plain">database_password (null)</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+<span class="l-Scalar-Plain">mailer_transport (smtp)</span><span class="p-Indicator">:</span>
 <span class="l-Scalar-Plain">mailer_host (127.0.0.1)</span><span class="p-Indicator">:</span>
 <span class="l-Scalar-Plain">mailer_user (null)</span><span class="p-Indicator">:</span>
 <span class="l-Scalar-Plain">mailer_password (null)</span><span class="p-Indicator">:</span>
 <span class="l-Scalar-Plain">locale (en)</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">fr</span>
-<span class="l-Scalar-Plain">secret (ThisTokenIsNotSoSecretChangeIt)</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">token généré sur http</span><span class="p-Indicator">:</span><span class="nv">//nux.net/secret</span><span class="p-Indicator">]</span>
-<span class="l-Scalar-Plain">Clearing the cache for the dev environment with debug true</span>
-<span class="l-Scalar-Plain">Trying to install assets as symbolic links.</span>
-<span class="l-Scalar-Plain">Installing assets for Symfony\Bundle\FrameworkBundle into web/bundles/framework</span>
-<span class="l-Scalar-Plain">The assets were installed using symbolic links.</span>
-<span class="l-Scalar-Plain">Installing assets for Acme\DemoBundle into web/bundles/acmedemo</span>
-<span class="l-Scalar-Plain">The assets were installed using symbolic links.</span>
-<span class="l-Scalar-Plain">Installing assets for Sensio\Bundle\DistributionBundle into web/bundles/sensiodistribution</span>
-<span class="l-Scalar-Plain">The assets were installed using symbolic links.</span>
+<span class="l-Scalar-Plain">secret (ThisTokenIsNotSoSecretChangeIt)</span><span class="p-Indicator">:</span>
+</pre></div>
+</div>
+<p>Tous ces paramètres sont enregistrés dans le fichier <tt class="docutils literal"><span class="pre">app/config/parameters.yml</span></tt>.</p>
+</div>
+<div class="section" id="verifier-votre-configuration-de-php">
+<h3>Vérifier votre configuration de PHP<a class="headerlink" href="#verifier-votre-configuration-de-php" title="Permalink to this headline">¶</a></h3>
+<p>Allez à l&#8217;adresse <a class="reference external" href="http://localhost/Symfony/web/config.php">http://localhost/Symfony/web/config.php</a> :</p>
+<img alt="_images/symfony_config_error.png" src="_images/symfony_config_error.png" />
+<p>Corrigez tous les problèmes avant de continuer :</p>
+<ul>
+<li><p class="first">Change the permissions of either &#8220;app/cache/&#8221; or &#8220;var/cache/&#8221; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>chmod -R 777 app/cache/
 </pre></div>
 </div>
 </div></blockquote>
+</li>
+<li><p class="first">Change the permissions of either &#8220;app/logs/&#8221; or &#8220;var/logs/&#8221; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>chmod -R 777 app/logs/
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set the &#8220;date.timezone&#8221; setting in php.ini* (like Europe/Paris).</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+
+<span class="c1"># /etc/php5/cli/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<img alt="_images/symfony_config_success.png" src="_images/symfony_config_success.png" />
+<p>L&#8217;installation de Symfony est terminée. Rendez-vous sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/">http://localhost/Symfony/web/app_dev.php/</a>, vous devriez voir une page ressemblant à l&#8217;image ci-dessous :</p>
+<img alt="_images/symfony_homepage_post_install.png" src="_images/symfony_homepage_post_install.png" />
+</div>
+<div class="section" id="verifier-la-configuration-de-php-en-console">
+<h3>Vérifier la configuration de PHP en console<a class="headerlink" href="#verifier-la-configuration-de-php-en-console" title="Permalink to this headline">¶</a></h3>
+<p>Pour gagner du temps, vous aurez besoin d&#8217;exécuter des commandes PHP via la console, vérifions donc que la configuration de PHP soit correcte :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/check.php
+</pre></div>
+</div>
+<img alt="_images/symfony_config_cli.png" class="align-center" src="_images/symfony_config_cli.png" />
 </div>
 </div>
 </div>
