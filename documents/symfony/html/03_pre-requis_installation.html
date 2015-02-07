@@ -61,8 +61,8 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="01_introduction.html">Introduction à Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01_introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_introduction.html#l-architecture-des-frameworks-mvc">L&#8217;architecture des frameworks MVC</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Quelques rappels</a></li>
@@ -71,7 +71,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#installation-de-symfony">Installation de Symfony</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="04_architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_architecture.html">Architecture de Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_architecture.html#l-architecture-des-frameworks-mvc">L&#8217;architecture des frameworks MVC</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html">Créer une application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_routing.html">Le routing et les contrôleur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_twig.html">Les vues avec Twig</a></li>
@@ -126,15 +129,9 @@
 <li>ctype doit être activé</li>
 <li>Votre PHP.ini doit avoir le paramètre date.timezone défini</li>
 </ul>
-<div class="section" id="installation-de-php">
-<h3>Installation de PHP<a class="headerlink" href="#installation-de-php" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install apache2 php5 php5-cli
-</pre></div>
-</div>
-</div>
 <div class="section" id="installation-de-mysql">
 <h3>Installation de MySQL<a class="headerlink" href="#installation-de-mysql" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install mysql-server php5-mysql
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install mysql-server mysql-client
 </pre></div>
 </div>
 </div>
@@ -146,7 +143,13 @@
 </div>
 <div class="section" id="installation-de-librairies-et-outils-supplementaires">
 <h3>Installation de librairies et outils supplémentaires<a class="headerlink" href="#installation-de-librairies-et-outils-supplementaires" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install curl git tree
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install curl git
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-de-php">
+<h3>Installation de PHP<a class="headerlink" href="#installation-de-php" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install php5 php5-cli php5-intl php5-xsl php5-curl php5-mysql
 </pre></div>
 </div>
 </div>

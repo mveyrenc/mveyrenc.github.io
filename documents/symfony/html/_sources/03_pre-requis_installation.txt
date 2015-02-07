@@ -10,20 +10,13 @@ Pré-requis
 * JSON doit être activé
 * ctype doit être activé
 * Votre PHP.ini doit avoir le paramètre date.timezone défini
-
-Installation de PHP
-===================
-
-.. code-block:: bash
-
-    $ sudo apt-get install apache2 php5 php5-cli
     
 Installation de MySQL
 =====================
 
 .. code-block:: bash
 
-    $ sudo apt-get install mysql-server php5-mysql
+    $ sudo apt-get install mysql-server mysql-client
 
 Installation d'Apache
 =====================
@@ -37,9 +30,14 @@ Installation de librairies et outils supplémentaires
 
 .. code-block:: bash
 
-    $ sudo apt-get install curl git tree
+    $ sudo apt-get install curl git
 
-.. Ajouter l'installation et la configuration de sendmail
+Installation de PHP
+===================
+
+.. code-block:: bash
+
+    $ sudo apt-get install php5 php5-cli php5-intl php5-xsl php5-curl php5-mysql
 
 
 ***********************
