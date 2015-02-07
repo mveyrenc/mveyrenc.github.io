@@ -4,39 +4,22 @@ Introduction à Symfony
     
 Symfony est un framework MVC open-source écrit en PHP 5.
 
+***************************
+Qu'est ce qu'un framework ?
+***************************
+
+Le mot *framework* provient de l'anglais *frame* qui signifie *cadre* et *work* qui veut dire *travail*. Donc un framework est littéralement un *cadre de travail*.
+
+Concrètement, un framework est une boite à outils, un ensemble de composants, conçues par un ou plusieurs **développeurs** à destination d'autres **développeurs**.
+
 ********************************
 Pourquoi utiliser un framework ?
 ********************************
 
-Pour améliorer fortement la maintenabilité et l'évolutivité des applications.
+Premièrement pour le gain de temps. En effet, tous les composants intégrés dans le framework ne sont plus à coder, ce qui vous évite de réinventer la roue et de vous concentrer des développements purement 'métier', ceux qui ont la plus forte valeur ajoutée. De plus ces composants sont souvent développés par plusieurs personnes et utiliser par des centaines d'autres, ils sont donc améliorés et testés en permanence ce qui les rends flexibles et très robustes.
 
-* Il permet d'organiser les développements
-    * découpage logique des sources
-    * séparation de la logique métier de la présentation
-    * incitation aux bonnes pratiques
+Ensuite, comme l'indique sont nom, il vous fournit une cadre de travail. De par son architecture, il vous incite à bien organiser votre code et du code bien organisé, c'est du code plus facile à maintenir et à faire évoluer.
 
-* Composants et bibliothèques réutilisables
-    * collection de composants réutilisables (modules, librairie, bundles)
-    * concentration des dévelopements sur les partie purement métier, celles à valeur ajoutée
-    * maintemance de ce code faite par des milliers de développeurs à travers le monde
+Enfin, Symfony est un framework populaire qui a une grande communauté qui produit beaucoup de bundles, des composants suplémentaires pour ne pas réinventer la roue, ainsi que de la documentation et de tutoriels qui permet d'avoir de nombreuses sources d'apprentissage et des solutions à certains problèmes.
 
-
-*********************************
-L'architecture des frameworks MVC
-*********************************
-
-L'idée de l'achitecture dite MVC, est d'organiser le code en séparant les données, leurs présentations et leurs traitements.
-Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.
- 
-Elle se sépare donc en trois couches :
-
-* Le **modèle** est responsable des données et de tous les traitements faits sur les données.
-  Rien d'autre dans l'application ne doit manipuler les données afin de garantir leur intégrité.
-  
-* La **vue** est chargée de générer les interfaces utilisateurs, généralement basées sur les données.
-  Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.
-  
-* Le **contrôleur** est le chef d'orchestre de l'application.
-  Il reçoit des événements depuis le monde extérieur, intéragit avec le modèle et affiche la vue appropriée.
-  
-.. image:: _static/images/MVC.png
+**Cependant**, les frameworks ont quelques inconvénients. Le principal est leur courbe d'apprentissage. En effet, maîtriser un framework demande du beaucoup temps et de la pratique, et chaque brique supplémentaire demandera elle aussi, du temps pour en comprendre le fonctionnement et la maîtriser.

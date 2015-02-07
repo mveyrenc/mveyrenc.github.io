@@ -61,8 +61,8 @@
         
             <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Introduction à Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#l-architecture-des-frameworks-mvc">L&#8217;architecture des frameworks MVC</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Quelques rappels</a></li>
@@ -71,7 +71,10 @@
 <li class="toctree-l2"><a class="reference internal" href="03_pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="04_architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_architecture.html">Architecture de Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_architecture.html#l-architecture-des-frameworks-mvc">L&#8217;architecture des frameworks MVC</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html">Créer une application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_routing.html">Le routing et les contrôleur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_twig.html">Les vues avec Twig</a></li>
@@ -119,46 +122,17 @@
   <div class="section" id="introduction-a-symfony">
 <h1>Introduction à Symfony<a class="headerlink" href="#introduction-a-symfony" title="Permalink to this headline">¶</a></h1>
 <p>Symfony est un framework MVC open-source écrit en PHP 5.</p>
+<div class="section" id="qu-est-ce-qu-un-framework">
+<h2>Qu&#8217;est ce qu&#8217;un framework ?<a class="headerlink" href="#qu-est-ce-qu-un-framework" title="Permalink to this headline">¶</a></h2>
+<p>Le mot <em>framework</em> provient de l&#8217;anglais <em>frame</em> qui signifie <em>cadre</em> et <em>work</em> qui veut dire <em>travail</em>. Donc un framework est littéralement un <em>cadre de travail</em>.</p>
+<p>Concrètement, un framework est une boite à outils, un ensemble de composants, conçues par un ou plusieurs <strong>développeurs</strong> à destination d&#8217;autres <strong>développeurs</strong>.</p>
+</div>
 <div class="section" id="pourquoi-utiliser-un-framework">
 <h2>Pourquoi utiliser un framework ?<a class="headerlink" href="#pourquoi-utiliser-un-framework" title="Permalink to this headline">¶</a></h2>
-<p>Pour améliorer fortement la maintenabilité et l&#8217;évolutivité des applications.</p>
-<ul>
-<li><dl class="first docutils">
-<dt>Il permet d&#8217;organiser les développements</dt>
-<dd><ul class="first last simple">
-<li>découpage logique des sources</li>
-<li>séparation de la logique métier de la présentation</li>
-<li>incitation aux bonnes pratiques</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Composants et bibliothèques réutilisables</dt>
-<dd><ul class="first last simple">
-<li>collection de composants réutilisables (modules, librairie, bundles)</li>
-<li>concentration des dévelopements sur les partie purement métier, celles à valeur ajoutée</li>
-<li>maintemance de ce code faite par des milliers de développeurs à travers le monde</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div>
-<div class="section" id="l-architecture-des-frameworks-mvc">
-<h2>L&#8217;architecture des frameworks MVC<a class="headerlink" href="#l-architecture-des-frameworks-mvc" title="Permalink to this headline">¶</a></h2>
-<p>L&#8217;idée de l&#8217;achitecture dite MVC, est d&#8217;organiser le code en séparant les données, leurs présentations et leurs traitements.
-Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
-<p>Elle se sépare donc en trois couches :</p>
-<ul class="simple">
-<li>Le <strong>modèle</strong> est responsable des données et de tous les traitements faits sur les données.
-Rien d&#8217;autre dans l&#8217;application ne doit manipuler les données afin de garantir leur intégrité.</li>
-<li>La <strong>vue</strong> est chargée de générer les interfaces utilisateurs, généralement basées sur les données.
-Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.</li>
-<li>Le <strong>contrôleur</strong> est le chef d&#8217;orchestre de l&#8217;application.
-Il reçoit des événements depuis le monde extérieur, intéragit avec le modèle et affiche la vue appropriée.</li>
-</ul>
-<img alt="_images/MVC.png" src="_images/MVC.png" />
+<p>Premièrement pour le gain de temps. En effet, tous les composants intégrés dans le framework ne sont plus à coder, ce qui vous évite de réinventer la roue et de vous concentrer des développements purement &#8216;métier&#8217;, ceux qui ont la plus forte valeur ajoutée. De plus ces composants sont souvent développés par plusieurs personnes et utiliser par des centaines d&#8217;autres, ils sont donc améliorés et testés en permanence ce qui les rends flexibles et très robustes.</p>
+<p>Ensuite, comme l&#8217;indique sont nom, il vous fournit une cadre de travail. De par son architecture, il vous incite à bien organiser votre code et du code bien organisé, c&#8217;est du code plus facile à maintenir et à faire évoluer.</p>
+<p>Enfin, Symfony est un framework populaire qui a une grande communauté qui produit beaucoup de bundles, des composants suplémentaires pour ne pas réinventer la roue, ainsi que de la documentation et de tutoriels qui permet d&#8217;avoir de nombreuses sources d&#8217;apprentissage et des solutions à certains problèmes.</p>
+<p><strong>Cependant</strong>, les frameworks ont quelques inconvénients. Le principal est leur courbe d&#8217;apprentissage. En effet, maîtriser un framework demande du beaucoup temps et de la pratique, et chaque brique supplémentaire demandera elle aussi, du temps pour en comprendre le fonctionnement et la maîtriser.</p>
 </div>
 </div>
 
