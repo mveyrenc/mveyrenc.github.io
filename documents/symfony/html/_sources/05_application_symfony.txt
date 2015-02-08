@@ -2,7 +2,7 @@
 Création d'un bundle
 ####################
 
-Bine que tous les répertoires et les fichiers d'un bundle peuvent être créés manuellement, nous allons utilisé la console Symfony pour générer le bundle et l'activer.
+Bien que tous les répertoires et les fichiers d'un bundle peuvent être créés manuellement, nous allons utilisé la console Symfony pour générer le bundle et l'activer.
 
 *************************
 Utilisation de la console
@@ -84,5 +84,17 @@ Que s'est-il passé ?
 #. Symfony enregistre notre bundle dans le Kernel (``app/AppKernel.php``)
 
 #. Symfony ajoute les routes de notre bundle dans le Routeur (``app/config/routing.yml``)
+
+##################################
+Objectif de notre bundle : un blog
+##################################
+
+Le blog que nous allons créer est très simple. En voici les grandes lignes :
+
+* Nous aurons des articles auxquels nous attacherons des tags.
+* Nous pourrons lire, écrire, éditer et rechercher des articles.
+* Nous pourrons créer, modifier et supprimer des tags.
+* Au début, nous n'aurons pas de système de gestion des utilisateurs : nous devrons saisir notre nom lorsque nous rédigerons un article. Puis nous rajouterons la couche utilisateur.
+* Au début, il n'y aura pas de système de commentaires. Puis nous ajouterons cette couche commentaire.
 
 
