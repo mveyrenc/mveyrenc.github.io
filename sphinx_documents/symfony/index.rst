@@ -20,8 +20,8 @@ Contents
     04_architecture
     05_application_symfony
     06_routing
-    07_twig
-    08_controleur
+    07_controleur
+    08_twig
     09_doctrine
     10_afficher_entite
     11_modifer_entite
