@@ -39,6 +39,12 @@ Installation de PHP
 
     $ sudo apt-get install php5 php5-cli php5-intl php5-xsl php5-curl php5-mysql
 
+Comme on est sur un post de développement, on installe xDebug :
+
+.. code-block:: bash
+
+    $ sudo apt-get install php5-xdebug
+
 
 ***********************
 Installation de Symfony

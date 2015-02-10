@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Le routing et les contrôleur &mdash; Symfony 1.0.0 documentation</title>
+  <title>Le routing &mdash; Symfony 1.0.0 documentation</title>
   
 
   
@@ -84,7 +84,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Le routing et les contrôleur</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Le routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnement">Fonctionnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="07_controleur.html">Les contrôleurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_twig.html">Les vues avec Twig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_doctrine.html">Doctrine et la base de donnée</a></li>
@@ -116,7 +120,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Le routing et les contrôleur</li>
+    <li>Le routing</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="_sources/06_routing.txt" rel="nofollow"> View page source</a>
@@ -127,8 +131,75 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="le-routing-et-les-controleur">
-<h1>Le routing et les contrôleur<a class="headerlink" href="#le-routing-et-les-controleur" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="le-routing">
+<h1>Le routing<a class="headerlink" href="#le-routing" title="Permalink to this headline">¶</a></h1>
+<p>Le routing fait la correspondance entre les URLs et les les contrôleurs. La configuration de ce mapping se fait dans les fichiers <tt class="docutils literal"><span class="pre">routing.yml</span></tt> se trouvant dans le répertoire <tt class="docutils literal"><span class="pre">config</span></tt> de l&#8217;application et des bundles.</p>
+<p>Créons les premières routes de notre blog :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># src/Epsi/Bundle/BlogBundle/Resources/config/routing.yml</span>
+
+<span class="l-Scalar-Plain">epsi_blog_homepage</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/posts</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">index</span> <span class="p-Indicator">}</span>
+<span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span> <span class="p-Indicator">}</span>
+<span class="l-Scalar-Plain">epsi_blog_add</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/add</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">add</span> <span class="p-Indicator">}</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="first admonition-title">Format de fichiers YAML</p>
+<p class="last">L&#8217;indentation des fichiers YAML se fait avec des espaces et non des indentations.</p>
+</div>
+<div class="section" id="fonctionnement">
+<h2>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Permalink to this headline">¶</a></h2>
+<p>Les routes ci-dessus sont composés de trois éléments :</p>
+<ul class="simple">
+<li>un identifiant. Il doit être unique dans l&#8217;application, c&#8217;est pour cela que l&#8217;on reprend les éléments du nom du bundle ;</li>
+<li>un chemin (<tt class="docutils literal"><span class="pre">path</span></tt>). C&#8217;est URL de la route. Les éléments entre <tt class="docutils literal"><span class="pre">{}</span></tt> sont des paramètres de l&#8217;URL, comme l&#8217;ID d&#8217;un objet ;</li>
+<li>les paramètres de la route <tt class="docutils literal"><span class="pre">defaults</span></tt> qui contient notamment le contrôleur à appeler.</li>
+</ul>
+<p>Voici comment fonctionne le routeur pas à pas :</p>
+<ol class="arabic">
+<li><p class="first">On appelle l&#8217;URL <tt class="docutils literal"><span class="pre">/post/5</span></tt> ;</p>
+</li>
+<li><p class="first">Le routeur essaie de faire correspondre cette URL avec le <tt class="docutils literal"><span class="pre">path</span></tt> de la première route. Ici, <tt class="docutils literal"><span class="pre">/post/5</span></tt> ne correspond pas du tout à <tt class="docutils literal"><span class="pre">/posts</span></tt> (ligne <tt class="docutils literal"><span class="pre">path</span></tt> de la première route) ;</p>
+</li>
+<li><dl class="first docutils">
+<dt>Le routeur passe donc à la route suivante. Il essaie de faire correspondre <tt class="docutils literal"><span class="pre">/post/5</span></tt> avec <tt class="docutils literal"><span class="pre">/post/{id}</span></tt>. Cette route correspond, car nous avons bien <span class="classifier-delimiter">:</span> <span class="classifier">* <tt class="docutils literal"><span class="pre">/post</span></tt> (URL) = <tt class="docutils literal"><span class="pre">/post</span></tt> (route) ;</span></dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">5</span></tt> (URL) = <tt class="docutils literal"><span class="pre">{id}</span></tt> (route) ;</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Le routeur s&#8217;arrête donc, il a trouvé sa route ;</p>
+</li>
+<li><p class="first">Dans le paramétrage de la route, il trouve quel contrôleur appeler : <tt class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:show</span></tt> ;</p>
+</li>
+<li><p class="first">Le routeur renvoie donc ces informations au Kernel ;</p>
+</li>
+<li><p class="first">Le noyau va exécuter le contrôleur.</p>
+</li>
+</ol>
+<p>Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404.</p>
+<p>Allons sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/posts">http://localhost/Symfony/web/app_dev.php/posts</a> :</p>
+<img alt="_images/symfony_exception.png" class="align-center" src="_images/symfony_exception.png" />
+<p>En haut de la page est affiché un message d&#8217;erreur, un exception a été détectée.</p>
+<p>Dans la seconde partie, la stack trace. Il s&#8217;agit de la liste des fonctions appelées depuis le contrôleur frontal jusqu&#8217;à la ligne qui a levé l&#8217;exception.</p>
+<p>Tout en bas, on trouve le Profiler, un outil de développement où l&#8217;on peut trouver de nombreuses informations pouvant aider à la correction de bugs et d&#8217;erreurs, ou à l&#8217;optimisation. En cliquant sur la barre de profiling, on arrive sur une interface plus complète :</p>
+<img alt="_images/symfony_profiler.png" class="align-center" src="_images/symfony_profiler.png" />
+</div>
+<div class="section" id="convention-de-nommage-des-controleurs">
+<h2>Convention de nommage des contrôleurs<a class="headerlink" href="#convention-de-nommage-des-controleurs" title="Permalink to this headline">¶</a></h2>
+<p>Revenons à vos route. Lors de la configuration des routes dans le fichier <tt class="docutils literal"><span class="pre">routing.yml</span></tt>, les contrôleurs sont spécifiés avec la notation suivante <tt class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index</span></tt>. Elle est composée de trois éléments :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">EpsiBlogBundle</span></tt> : le nom du bundle</li>
+<li><tt class="docutils literal"><span class="pre">Blog</span></tt> : le nom du contrôleur à ouvrir, en terme de fichier, cela correspond à <tt class="docutils literal"><span class="pre">controller/BlogController.php</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">index</span></tt> : le nom de l&#8217;action à exécuter au sein du contrôleur, il s&#8217;agit de la fonction <tt class="docutils literal"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">indexAction()</span></tt> implémentée dans le contrôleur <tt class="docutils literal"><span class="pre">Blog</span></tt></li>
+</ul>
+</div>
 </div>
 
 
