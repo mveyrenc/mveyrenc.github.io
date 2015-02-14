@@ -86,6 +86,11 @@
 <li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_routing.html">Le routing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="06_routing.html#fonctionnement">Fonctionnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="07_controleur.html">Les contrôleurs</a></li>
@@ -135,7 +140,21 @@
 <div class="section" id="l-architecture-des-fichiers">
 <h2>L&#8217;architecture des fichiers<a class="headerlink" href="#l-architecture-des-fichiers" title="Permalink to this headline">¶</a></h2>
 <p>Dans les sources que nous venons de d&#8217;installer, il n&#8217;y a pas beaucoup de fichiers :</p>
-<img alt="_images/symfony_arbo_fichiers.png" class="align-center" src="_images/symfony_arbo_fichiers.png" />
+<div class="highlight-bash"><div class="highlight"><pre>app
+bin
+composer.json
+composer.lock
+LICENSE
+README.md
+src
+UPGRADE-2.2.md
+UPGRADE-2.3.md
+UPGRADE-2.4.md
+UPGRADE.md
+vendor
+web
+</pre></div>
+</div>
 <p>Voyons à quoi ils correspondent.</p>
 <div class="section" id="le-repertoire-app">
 <h3>Le répertoire <em>/app</em><a class="headerlink" href="#le-repertoire-app" title="Permalink to this headline">¶</a></h3>
@@ -222,15 +241,28 @@
 <h2>Les bundles<a class="headerlink" href="#les-bundles" title="Permalink to this headline">¶</a></h2>
 <p>Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s&#8217;agit des contrôleurs, modèles, vues, classes personnelles, etc.
 Tout ces éléments sont organisés dans des répertoires comme on peut le voir dans le bundle de démo qui se trouve dans <tt class="docutils literal"><span class="pre">Acme/DemoBundle</span></tt> :</p>
-<div class="highlight-bash"><div class="highlight"><pre>/Controller          | Contient vos contrôleurs
-/DependencyInjection | Contient des informations sur votre bundle <span class="o">(</span>chargement automatique de la configuration par exemple<span class="o">)</span>
-/Entity              | Contient vos modèles
-/Form                | Contient vos éventuels formulaires
-/Resources
--- /config           | Contient les fichiers de configuration de votre bundle <span class="o">(</span>nous placerons les routes ici, par exemple<span class="o">)</span>
--- /public           | Contient les fichiers publics de votre bundle : fichiers CSS et JavaScript, images, etc.
--- /views            | Contient les vues de notre bundle, les templates Twig
-/Tests               | Contient vos éventuels tests unitaires et fonctionnels
+<div class="highlight-bash"><div class="highlight"><pre>Controller                          | Contrôleurs
+└── DefaultController.php
+DependencyInjection                 | Informations sur le bundle <span class="o">(</span>chargement automatique de la configuration par exemple<span class="o">)</span>
+└── Configuration.php
+Resources
+├── config                          | Fichier de configuration du bundle
+│   ├── routing.yml
+│   └── services.yml
+├── doc                             | Documentation du bundle
+│   └── index.rst
+├── public                          | Fichiers à destination des internautes
+│   ├── css
+│   ├── images
+│   └── js
+├── translations                    | Fichiers de traductions
+│   └── messages.fr.xlf
+└── views                           | Template Twig
+    └── Default
+        └── index.html.twig
+Tests                               | Tests
+└── Controller
+    └── DefaultControllerTest.php
 </pre></div>
 </div>
 </div>

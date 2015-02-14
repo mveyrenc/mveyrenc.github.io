@@ -8,8 +8,21 @@ L'architecture des fichiers
 
 Dans les sources que nous venons de d'installer, il n'y a pas beaucoup de fichiers :
 
-.. image:: _static/images/symfony_arbo_fichiers.png
-    :align: center
+.. code-block:: bash
+
+    app
+    bin
+    composer.json
+    composer.lock
+    LICENSE
+    README.md
+    src
+    UPGRADE-2.2.md
+    UPGRADE-2.3.md
+    UPGRADE-2.4.md
+    UPGRADE.md
+    vendor
+    web
 
 Voyons à quoi ils correspondent.
 
@@ -110,15 +123,28 @@ Tout ces éléments sont organisés dans des répertoires comme on peut le voir 
 
 .. code-block:: bash
 
-    /Controller          | Contient vos contrôleurs
-    /DependencyInjection | Contient des informations sur votre bundle (chargement automatique de la configuration par exemple)
-    /Entity              | Contient vos modèles
-    /Form                | Contient vos éventuels formulaires
-    /Resources
-    -- /config           | Contient les fichiers de configuration de votre bundle (nous placerons les routes ici, par exemple)
-    -- /public           | Contient les fichiers publics de votre bundle : fichiers CSS et JavaScript, images, etc.
-    -- /views            | Contient les vues de notre bundle, les templates Twig
-    /Tests               | Contient vos éventuels tests unitaires et fonctionnels
+    Controller                          | Contrôleurs
+    └── DefaultController.php
+    DependencyInjection                 | Informations sur le bundle (chargement automatique de la configuration par exemple)
+    └── Configuration.php
+    Resources
+    ├── config                          | Fichier de configuration du bundle
+    │   ├── routing.yml
+    │   └── services.yml
+    ├── doc                             | Documentation du bundle
+    │   └── index.rst
+    ├── public                          | Fichiers à destination des internautes
+    │   ├── css
+    │   ├── images
+    │   └── js
+    ├── translations                    | Fichiers de traductions
+    │   └── messages.fr.xlf
+    └── views                           | Template Twig
+        └── Default
+            └── index.html.twig
+    Tests                               | Tests
+    └── Controller
+        └── DefaultControllerTest.php
 
 
 
