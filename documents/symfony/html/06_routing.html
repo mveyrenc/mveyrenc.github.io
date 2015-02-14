@@ -87,6 +87,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Le routing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fonctionnement">Fonctionnement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comment-generer-des-url">Comment générer des URL ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creons-les-routes-du-blog">Créons les routes du blog</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="07_controleur.html">Les contrôleurs</a></li>
@@ -184,7 +188,7 @@
 </li>
 </ol>
 <p>Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404.</p>
-<p>Allons sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/posts">http://localhost/Symfony/web/app_dev.php/posts</a> :</p>
+<p>Allons sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5">http://localhost/Symfony/web/app_dev.php/post/5</a> :</p>
 <img alt="_images/symfony_exception.png" class="align-center" src="_images/symfony_exception.png" />
 <p>En haut de la page est affiché un message d&#8217;erreur, un exception a été détectée.</p>
 <p>Dans la seconde partie, la stack trace. Il s&#8217;agit de la liste des fonctions appelées depuis le contrôleur frontal jusqu&#8217;à la ligne qui a levé l&#8217;exception.</p>
@@ -197,8 +201,128 @@
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">EpsiBlogBundle</span></tt> : le nom du bundle</li>
 <li><tt class="docutils literal"><span class="pre">Blog</span></tt> : le nom du contrôleur à ouvrir, en terme de fichier, cela correspond à <tt class="docutils literal"><span class="pre">controller/BlogController.php</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">index</span></tt> : le nom de l&#8217;action à exécuter au sein du contrôleur, il s&#8217;agit de la fonction <tt class="docutils literal"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">indexAction()</span></tt> implémentée dans le contrôleur <tt class="docutils literal"><span class="pre">Blog</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">show</span></tt> : le nom de l&#8217;action à exécuter au sein du contrôleur, il s&#8217;agit de la fonction <tt class="docutils literal"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">showAction()</span></tt> implémentée dans le contrôleur <tt class="docutils literal"><span class="pre">Blog</span></tt></li>
 </ul>
+<p>Faisons rapidement un contrôleur pour afficher autre chose qu&#8217;une erreur :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Controller</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Symfony\Bundle\FrameworkBundle\Controller\Controller</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// On fera des truc ici, plus tard</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s2">&quot;Affichage du post avec l&#39;id : &quot;</span> <span class="o">.</span> <span class="nv">$id</span> <span class="o">.</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Lorsq&#8217;on va sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5">http://localhost/Symfony/web/app_dev.php/post/5</a>, elle affiche &#8220;Affichage du post avec l&#8217;id : 5.&#8221;.</p>
+</div>
+<div class="section" id="controles-des-parametres-des-routes">
+<h2>Contrôles des paramètres des routes<a class="headerlink" href="#controles-des-parametres-des-routes" title="Permalink to this headline">¶</a></h2>
+<p>Lorsq&#8217;on va sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj">http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj</a>, elle affiche &#8220;Affichage du post avec l&#8217;id : fvndfjvnj.&#8221;. Donc ajoutons un validation pour vérifier que l&#8217;ID soit bien un entier.</p>
+<p>La validation des paramètres se fait grâce à des expressions régulières. Voici les éléments de base pour les construire :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">[abc]</span></tt> : le caractère &#8220;a&#8221;, &#8220;b&#8221; ou &#8220;c&#8221;</li>
+<li><tt class="docutils literal"><span class="pre">[^abc]</span></tt> : n&#8217;importe quel caractère sauf &#8220;a&#8221;, &#8220;b&#8221;, ou &#8220;c&#8221;</li>
+<li><tt class="docutils literal"><span class="pre">[a-z]</span></tt> : n&#8217;importe quel caractère dans l&#8217;intervalle a-z</li>
+<li><tt class="docutils literal"><span class="pre">[a-zA-Z]</span></tt> : n&#8217;importe quel caractère dans les intervalles a-z ou A-Z</li>
+<li><tt class="docutils literal"><span class="pre">^</span></tt> : début de ligne</li>
+<li><tt class="docutils literal"><span class="pre">$</span></tt> : fin de ligne</li>
+<li><tt class="docutils literal"><span class="pre">.</span></tt> : n&#8217;importe quel caractère unique</li>
+<li><tt class="docutils literal"><span class="pre">\s</span></tt> : tout caractère blanc</li>
+<li><tt class="docutils literal"><span class="pre">\S</span></tt> : tout caractère qui n&#8217;est pas un caractère blanc</li>
+<li><tt class="docutils literal"><span class="pre">\d</span></tt> : tout caractère décimal</li>
+<li><tt class="docutils literal"><span class="pre">\D</span></tt> : tout caractère qui n&#8217;est pas un caractère décimal</li>
+<li><tt class="docutils literal"><span class="pre">\w</span></tt> : tout caractère de &#8220;mot&#8221; (lettre, nombre, underscore)</li>
+<li><tt class="docutils literal"><span class="pre">\W</span></tt> : tout caractère qui n&#8217;est pas un caractère de &#8220;mot&#8221;</li>
+<li><tt class="docutils literal"><span class="pre">\b</span></tt> : limite de mot</li>
+<li><tt class="docutils literal"><span class="pre">(...)</span></tt> : sous ensemble</li>
+<li><tt class="docutils literal"><span class="pre">(a|b)</span></tt> : &#8220;a&#8221; ou &#8220;b&#8221;</li>
+<li><tt class="docutils literal"><span class="pre">a?</span></tt> : zéro ou un &#8220;a&#8221;</li>
+<li><tt class="docutils literal"><span class="pre">a*</span></tt> : zéro &#8220;a&#8221; ou plus</li>
+<li><tt class="docutils literal"><span class="pre">a+</span></tt> : un &#8220;a&#8221; ou plus</li>
+<li><tt class="docutils literal"><span class="pre">a{3}</span></tt> : exactement trois &#8220;a&#8221;</li>
+<li><tt class="docutils literal"><span class="pre">a{3,}</span></tt> : trois &#8220;a&#8221; ou plus</li>
+<li><tt class="docutils literal"><span class="pre">a{3,6}</span></tt> : entre trois ou six &#8220;a&#8221;</li>
+</ul>
+<p>L&#8217;ID est un chiffre qui sera composé de un ou plusieurs chiffres, ce qui nous donne : <tt class="docutils literal"><span class="pre">\d+</span></tt>.</p>
+<p>Ajoutons cette règle dans le <tt class="docutils literal"><span class="pre">routing.yml</span></tt> :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span> <span class="p-Indicator">}</span>
+    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
+</pre></div>
+</div>
+<p>Ensuite lorsqu&#8217;on recharge les deux pages précédentes, <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5">http://localhost/Symfony/web/app_dev.php/post/5</a> affiche &#8220;Affichage du post avec l&#8217;id : 5.&#8221;. <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj">http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj</a> affiche une message d&#8217;erreur.</p>
+<p>On peut également utiliser des paramètres suivants :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}.{_format}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span><span class="p-Indicator">,</span> <span class="nv">_format</span><span class="p-Indicator">:</span> <span class="nv">html</span> <span class="p-Indicator">}</span>
+    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
+        <span class="l-Scalar-Plain">_format</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">html|xml|json</span>
+</pre></div>
+</div>
+<p>Avec cette route, les URL suivantes vont valides :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5">http://localhost/Symfony/web/app_dev.php/post/5</a></li>
+<li><a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5.html">http://localhost/Symfony/web/app_dev.php/post/5.html</a></li>
+<li><a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5.xml">http://localhost/Symfony/web/app_dev.php/post/5.xml</a></li>
+<li><a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5.json">http://localhost/Symfony/web/app_dev.php/post/5.json</a></li>
+</ul>
+</div>
+<div class="section" id="parametres-speciaux-de-routing">
+<h2>Paramètres spéciaux de routing<a class="headerlink" href="#parametres-speciaux-de-routing" title="Permalink to this headline">¶</a></h2>
+<p>Il existe trois paramètres spéciaux :</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">_controller</span></tt> : comme nous l&#8217;avons vu, ce paramètre est utilisé pour déterminer quel contrôleur est exécuté lorsque l&#8217;URL est reconnue ;</p>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">_format</span></tt> <span class="classifier-delimiter">:</span> <span class="classifier">il est utilisé pour définir le format de la requête</span></dt>
+<dd><p class="first last">Lorsque vous utilisez ce paramètre Symfony va automatique remplir le header <tt class="docutils literal"><span class="pre">Content-Type</span></tt> avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec <tt class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getRequestFormat()</span></tt>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">_locale</span></tt> <span class="classifier-delimiter">:</span> <span class="classifier">il est utilisé pour définir la locale de la session</span></dt>
+<dd><p class="first last">Ce paramètre permet de choisir la langue à afficher. Cette valeur sera également stockée en session pour que les futures requêtes la conservent. Dans le contrôleur, on peut récupérer sa valeur avec <tt class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getLocale()</span></tt>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="comment-generer-des-url">
+<h2>Comment générer des URL ?<a class="headerlink" href="#comment-generer-des-url" title="Permalink to this headline">¶</a></h2>
+<p>Depuis un contrôleur, c&#8217;est la méthode <tt class="docutils literal"><span class="pre">$this-&gt;generateUrl()</span></tt> qu&#8217;il faut appeler. Par exemple : <tt class="docutils literal"><span class="pre">$url</span> <span class="pre">=</span> <span class="pre">$this-&gt;generateUrl(</span> <span class="pre">'epsi_blog_show',</span> <span class="pre">array(</span> <span class="pre">'id'</span> <span class="pre">=&gt;</span> <span class="pre">$id</span> <span class="pre">)</span> <span class="pre">);</span></tt></p>
+<p>Depuis les tempaltes Twig, on utilise l&#8217;opérateur <tt class="docutils literal"><span class="pre">path</span></tt>. Par exemple : <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">path(</span> <span class="pre">'epsi_blog_show',</span> <span class="pre">{</span> <span class="pre">'id':</span> <span class="pre">article_id</span> <span class="pre">}</span> <span class="pre">)</span> <span class="pre">}}</span></tt></p>
+</div>
+<div class="section" id="creons-les-routes-du-blog">
+<h2>Créons les routes du blog<a class="headerlink" href="#creons-les-routes-du-blog" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="page-d-accueil">
+<h3>Page d&#8217;accueil<a class="headerlink" href="#page-d-accueil" title="Permalink to this headline">¶</a></h3>
+<p>Pour la page d&#8217;accueil, nous souhaitons mettre en place une pagination et avoir les URL suivantes :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">/blogs</span></tt> : page = 1</li>
+<li><tt class="docutils literal"><span class="pre">/blogs/1</span></tt> : page = 1</li>
+<li><tt class="docutils literal"><span class="pre">/blogs/2</span></tt> : page = 2</li>
+<li><tt class="docutils literal"><span class="pre">/blogs/n</span></tt> : page = n</li>
+</ul>
+<p>Le numéro de la page sera récupéré dans un paramètre <tt class="docutils literal"><span class="pre">{page}</span></tt> qui devra être composer de 0 ou plusieurs chiffres. Voici la route :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_homepage</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/posts/{page}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">index</span><span class="p-Indicator">,</span> <span class="nv">page</span><span class="p-Indicator">:</span> <span class="nv">1</span> <span class="p-Indicator">}</span>
+    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">page</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d*</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
