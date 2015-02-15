@@ -305,8 +305,16 @@
 </div>
 <div class="section" id="creons-les-routes-du-blog">
 <h2>Créons les routes du blog<a class="headerlink" href="#creons-les-routes-du-blog" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="page-d-accueil">
-<h3>Page d&#8217;accueil<a class="headerlink" href="#page-d-accueil" title="Permalink to this headline">¶</a></h3>
+<p>Nous voulons créer les pages suivantes :</p>
+<ul class="simple">
+<li>liste des posts du blog, qui sera aussi la page d&#8217;accueil</li>
+<li>visualisation d&#8217;un post</li>
+<li>ajout d&#8217;un post</li>
+<li>modification d&#8217;un post</li>
+<li>suppression d&#8217;un post</li>
+</ul>
+<div class="section" id="liste-des-posts">
+<h3>Liste des posts<a class="headerlink" href="#liste-des-posts" title="Permalink to this headline">¶</a></h3>
 <p>Pour la page d&#8217;accueil, nous souhaitons mettre en place une pagination et avoir les URL suivantes :</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">/blogs</span></tt> : page = 1</li>
@@ -314,12 +322,52 @@
 <li><tt class="docutils literal"><span class="pre">/blogs/2</span></tt> : page = 2</li>
 <li><tt class="docutils literal"><span class="pre">/blogs/n</span></tt> : page = n</li>
 </ul>
-<p>Le numéro de la page sera récupéré dans un paramètre <tt class="docutils literal"><span class="pre">{page}</span></tt> qui devra être composer de 0 ou plusieurs chiffres. Voici la route :</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_homepage</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/posts/{page}</span>
-    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">index</span><span class="p-Indicator">,</span> <span class="nv">page</span><span class="p-Indicator">:</span> <span class="nv">1</span> <span class="p-Indicator">}</span>
+<p>Le numéro de la page sera récupéré dans un paramètre <tt class="docutils literal"><span class="pre">{page}</span></tt> qui devra être composer de zéro ou plusieurs chiffres. Voici la route :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_index</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/posts/{page}.{_format}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">index</span><span class="p-Indicator">,</span> <span class="nv">page</span><span class="p-Indicator">:</span> <span class="nv">1</span><span class="p-Indicator">,</span> <span class="nv">_format</span><span class="p-Indicator">:</span> <span class="nv">html</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
         <span class="l-Scalar-Plain">page</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d*</span>
+        <span class="l-Scalar-Plain">_format</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">html|xml|json</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualisation-d-un-post">
+<h3>Visualisation d&#8217;un post<a class="headerlink" href="#visualisation-d-un-post" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}.{_format}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span><span class="p-Indicator">,</span> <span class="nv">_format</span><span class="p-Indicator">:</span> <span class="nv">html</span> <span class="p-Indicator">}</span>
+    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">page</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
+        <span class="l-Scalar-Plain">_format</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">html|xml|json</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ajout-d-un-post">
+<h3>Ajout d&#8217;un post<a class="headerlink" href="#ajout-d-un-post" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_add</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/add</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">add</span> <span class="p-Indicator">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modification-d-un-post">
+<h3>Modification d&#8217;un post<a class="headerlink" href="#modification-d-un-post" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_edit</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}/edit</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">edit</span> <span class="p-Indicator">}</span>
+    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">page</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="suppression-d-un-post">
+<h3>Suppression d&#8217;un post<a class="headerlink" href="#suppression-d-un-post" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_delete</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}/delete</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">delete</span> <span class="p-Indicator">}</span>
+    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">page</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
 </pre></div>
 </div>
 </div>

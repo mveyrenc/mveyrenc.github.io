@@ -183,8 +183,16 @@ Depuis les tempaltes Twig, on utilise l'opérateur ``path``. Par exemple : ``{{ 
 Créons les routes du blog
 *************************
 
-Page d'accueil
-==============
+Nous voulons créer les pages suivantes :
+
+* liste des posts du blog, qui sera aussi la page d'accueil
+* visualisation d'un post
+* ajout d'un post
+* modification d'un post
+* suppression d'un post
+
+Liste des posts
+===============
 
 Pour la page d'accueil, nous souhaitons mettre en place une pagination et avoir les URL suivantes :
 
@@ -193,12 +201,56 @@ Pour la page d'accueil, nous souhaitons mettre en place une pagination et avoir 
 * ``/blogs/2`` : page = 2
 * ``/blogs/n`` : page = n
 
-Le numéro de la page sera récupéré dans un paramètre ``{page}`` qui devra être composer de 0 ou plusieurs chiffres. Voici la route :
+Le numéro de la page sera récupéré dans un paramètre ``{page}`` qui devra être composer de zéro ou plusieurs chiffres. Voici la route :
 
 .. code-block:: yaml
 
-    epsi_blog_homepage:
-        path:      /posts/{page}
-        defaults:  { _controller: EpsiBlogBundle:Blog:index, page: 1 }
+    epsi_blog_index:
+        path:      /posts/{page}.{_format}
+        defaults:  { _controller: EpsiBlogBundle:Blog:index, page: 1, _format: html }
         requirements:
             page:  \d*
+            _format: html|xml|json
+
+Visualisation d'un post
+=======================
+
+.. code-block:: yaml
+
+    epsi_blog_show:
+        path:      /post/{id}.{_format}
+        defaults:  { _controller: EpsiBlogBundle:Blog:show, _format: html }
+        requirements:
+            page:  \d+
+            _format: html|xml|json
+
+Ajout d'un post
+===============
+
+.. code-block:: yaml
+
+    epsi_blog_add:
+        path:      /post/add
+        defaults:  { _controller: EpsiBlogBundle:Blog:add }
+
+Modification d'un post
+======================
+
+.. code-block:: yaml
+
+    epsi_blog_edit:
+        path:      /post/{id}/edit
+        defaults:  { _controller: EpsiBlogBundle:Blog:edit }
+        requirements:
+            page:  \d+
+
+Suppression d'un post
+=====================
+
+.. code-block:: yaml
+
+    epsi_blog_delete:
+        path:      /post/{id}/delete
+        defaults:  { _controller: EpsiBlogBundle:Blog:delete }
+        requirements:
+            page:  \d+
