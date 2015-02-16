@@ -2763,7 +2763,7 @@ select[disabled],textarea[disabled],input[readonly],select[readonly],textarea[re
     font-size:90%;
     overflow:visible;
     margin:0;
-    padding:8px 16px;
+    padding:8px 10px;
 }
 
 .wy-table td:first-child,.rst-content table.docutils td:first-child,.rst-content table.field-list td:first-child,.wy-table th:first-child,.rst-content table.docutils th:first-child,.rst-content table.field-list th:first-child {
@@ -3861,7 +3861,7 @@ big,small,.wy-text-normal,h6 {
     clear:left;
 }
 
-.wy-input-prefix,.wy-input-suffix,.wy-inline-validate,.wy-table-responsive table td,.wy-table-responsive table th {
+.wy-input-prefix,.wy-input-suffix,.wy-inline-validate {
     white-space:nowrap;
 }
 
