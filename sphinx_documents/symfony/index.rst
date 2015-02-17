@@ -21,6 +21,7 @@ Contents
     05_application_symfony
     06_routing
     07_controleur
+    08_services
     08_twig
     09_doctrine
     10_afficher_entite
