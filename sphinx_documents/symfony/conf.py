@@ -43,6 +43,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinxcontrib.programoutput',
     'sphinxcontrib.phpdomain',
+    'hieroglyph'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

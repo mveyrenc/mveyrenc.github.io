@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PHP/Symfony &mdash; Symfony 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/slides.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    <link rel="top" title="Symfony 1.0.0 documentation" href="#" />
+    <link rel="next" title="Introduction à Symfony" href="01_introduction.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="php-symfony">
+<h1>PHP/Symfony</h1>
+
+</article>
+<article class="admonition-php-symfony slide level-2">
+<h2>PHP/Symfony</h2>
+<p>Ce document a pour but de vous faire acquerir les compétences suivantes :</p>
+<ul class="simple">
+<li>Assimiler chaque élément du concept MVC</li>
+<li>Accéder aux données via Doctrine</li>
+<li>Développer une application qui exploite une base de données</li>
+<li>Comprendre l'architecture du framework Sumfony2, et savoir le mettre en œuvre dans un développement PHP5</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="contents">
+<h2>Contents</h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_introduction.html">Introduction à Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_introduction.html#qu-est-ce-qu-un-framework">Qu'est ce qu'un framework ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_rappel.html">Quelques rappels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_pre-requis_installation.html#pre-requis">Pré-requis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_architecture.html">Architecture de Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_architecture.html#l-architecture-des-fichiers">L'architecture des fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_architecture.html#les-bundles">Les bundles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html">Création d'un bundle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="05_application_symfony.html#utilisation-de-la-console">Utilisation de la console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_application_symfony.html#creation-du-bundle">Création du bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_application_symfony.html#que-s-est-il-passe">Que s'est-il passé ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05_application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_routing.html">Le routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#fonctionnement">Fonctionnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07_controleur.html">Les contrôleurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="07_controleur.html#request-et-response"><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_controleur.html#l-objet-request">L'objet <tt class="docutils literal"><span class="pre">Request</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_controleur.html#l-objet-response">L'objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="08_services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_afficher_entite.html">Afficher des entités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_modifer_entite.html">Modifier une entité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_creer_entite.html">Créer une entité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_supprimer_entite.html">Supprimer une entité avec Ajax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_securite.html">La sécurité Symfony</a></li>
+</ul>
+</div>
+
+</article>
+
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Pré-requis et installation du framework &mdash; Symfony 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/slides.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    <link rel="top" title="Symfony 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Architecture de Symfony" href="04_architecture.html" />
+    <link rel="prev" title="Quelques rappels" href="02_rappel.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="pre-requis-et-installation-du-framework">
+<h1>Pré-requis et installation du framework</h1>
+
+</article>
+<article class="slide level-2" id="pre-requis">
+<h2>Pré-requis</h2>
+<ul class="simple">
+<li>PHP doit être au minimum à la version PHP 5.3.3</li>
+<li>JSON doit être activé</li>
+<li>ctype doit être activé</li>
+<li>Votre PHP.ini doit avoir le paramètre date.timezone défini</li>
+</ul>
+
+</article>
+<article class="slide level-3" id="installation-de-mysql">
+<h3>Installation de MySQL</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install mysql-server mysql-client
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-3" id="installation-d-apache">
+<h3>Installation d'Apache</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install apache2
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-3" id="installation-de-librairies-et-outils-supplementaires">
+<h3>Installation de librairies et outils supplémentaires</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install curl git
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-3" id="installation-de-php">
+<h3>Installation de PHP</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install php5 php5-cli php5-intl php5-xsl php5-curl php5-mysql
+</pre></div>
+</div>
+<p>Comme on est sur un post de développement, on installe xDebug :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install php5-xdebug
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="installation-de-symfony">
+<h2>Installation de Symfony</h2>
+
+</article>
+<article class="slide level-3" id="telechargement-de-symfony">
+<h3>Téléchargement de Symfony</h3>
+<p>Deux méthodes existent :</p>
+<ul class="simple">
+<li>Via le site Symfony <a class="reference external" href="http://symfony.com/download">http://symfony.com/download</a></li>
+<li>Via <tt class="docutils literal"><span class="pre">Composer</span></tt></li>
+</ul>
+<p>Nous allons préféré la seconde.</p>
+<p>Dans un premier temps, installons <tt class="docutils literal"><span class="pre">Composer</span></tt> :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="nv">$ </span>sudo mv composer.phar /usr/local/bin/composer
+<span class="nv">$ </span>composer -h
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>composer create-project symfony/framework-standard-edition /var/www/html/Symfony <span class="o">[</span>version<span class="o">]</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">Composer</span></tt> va télécharger et installer toutes les librairies nécessaires au fonctionnent de Symfony dans le répertoire <tt class="docutils literal"><span class="pre">/var/www/html/Symfony</span></tt>. il est possible de spécifier une version. S'il n'y en a pas, c'est la dernière version stable qui sera installée.</p>
+<p>À la fin l'installation de Symfony, il vous propose une série de question pour le paramétrage :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">Would you like to install Acme demo bundle? [y/N] y</span>
+<span class="l-Scalar-Plain">database_driver (pdo_mysql)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">database_host (127.0.0.1)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">database_port (null)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">database_name (symfony)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">database_user (root)</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+<span class="l-Scalar-Plain">database_password (null)</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+<span class="l-Scalar-Plain">mailer_transport (smtp)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">mailer_host (127.0.0.1)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">mailer_user (null)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">mailer_password (null)</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">locale (en)</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">fr</span>
+<span class="l-Scalar-Plain">secret (ThisTokenIsNotSoSecretChangeIt)</span><span class="p-Indicator">:</span>
+</pre></div>
+</div>
+<p>Tous ces paramètres sont enregistrés dans le fichier <tt class="docutils literal"><span class="pre">app/config/parameters.yml</span></tt>.</p>
+
+</article>
+<article class="slide level-3" id="verifier-votre-configuration-de-php">
+<h3>Vérifier votre configuration de PHP</h3>
+<p>Allez à l'adresse <a class="reference external" href="http://localhost/Symfony/web/config.php">http://localhost/Symfony/web/config.php</a> :</p>
+<img alt="_images/symfony_config_error.png" src="_images/symfony_config_error.png" />
+<p>Corrigez tous les problèmes avant de continuer :</p>
+<ul>
+<li><p class="first">Change the permissions of either &quot;app/cache/&quot; or &quot;var/cache/&quot; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>chmod -R 777 app/cache/
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Change the permissions of either &quot;app/logs/&quot; or &quot;var/logs/&quot; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>chmod -R 777 app/logs/
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set the &quot;date.timezone&quot; setting in php.ini* (like Europe/Paris).</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+
+<span class="c1"># /etc/php5/cli/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<img alt="_images/symfony_config_success.png" src="_images/symfony_config_success.png" />
+<p>L'installation de Symfony est terminée. Rendez-vous sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/">http://localhost/Symfony/web/app_dev.php/</a>, vous devriez voir une page ressemblant à l'image ci-dessous :</p>
+<img alt="_images/symfony_homepage_post_install.png" src="_images/symfony_homepage_post_install.png" />
+
+</article>
+<article class="slide level-3" id="verifier-la-configuration-de-php-en-console">
+<h3>Vérifier la configuration de PHP en console</h3>
+<p>Pour gagner du temps, vous aurez besoin d'exécuter des commandes PHP via la console, vérifions donc que la configuration de PHP soit correcte :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/check.php
+</pre></div>
+</div>
+<img alt="_images/symfony_config_cli.png" class="align-center" src="_images/symfony_config_cli.png" />
+
+</article>
+
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>
