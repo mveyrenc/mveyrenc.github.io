@@ -14,21 +14,21 @@ Contents
 .. toctree::
     :maxdepth: 2
    
-    01_introduction
-    02_rappel
-    03_pre-requis_installation
-    04_architecture
-    05_application_symfony
-    06_routing
-    07_controleur
-    08_services
-    08_twig
-    09_doctrine
-    10_afficher_entite
-    11_modifer_entite
-    12_creer_entite
-    13_supprimer_entite
-    14_securite
+    introduction
+    rappel
+    pre-requis_installation
+    architecture
+    application_symfony
+    routing
+    controleur
+    services
+    twig
+    doctrine
+    afficher_entite
+    modifer_entite
+    creer_entite
+    supprimer_entite
+    securite
     
    
 

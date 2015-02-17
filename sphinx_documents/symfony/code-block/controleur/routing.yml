@@ -1,0 +1,6 @@
+epsi_blog_show:
+    path:      /post/{id}.{_format}
+    defaults:  { _controller: EpsiBlogBundle:Blog:show, _format: html }
+    requirements:
+        id:  \d+
+        _format: html|xml|json

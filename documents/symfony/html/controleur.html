@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Les contrôleurs &mdash; Symfony 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Symfony 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Les services" href="services.html"/>
+        <link rel="prev" title="Le routing" href="routing.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> Symfony</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rappel.html">Quelques rappels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#utilisation-de-la-console">Utilisation de la console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#creation-du-bundle">Création du bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#fonctionnement">Fonctionnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Les contrôleurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#request-et-response"><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-objet-request">L&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="afficher_entite.html">Afficher des entités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifer_entite.html">Modifier une entité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creer_entite.html">Créer une entité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supprimer_entite.html">Supprimer une entité avec Ajax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="securite.html">La sécurité Symfony</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Les contrôleurs</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/controleur.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="les-controleurs">
+<h1>Les contrôleurs<a class="headerlink" href="#les-controleurs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="request-et-response">
+<h2><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt><a class="headerlink" href="#request-et-response" title="Permalink to this headline">¶</a></h2>
+<p>Comme vue précédemment, le contrôleur est le chef d&#8217;orchestre de votre application, il va utiliser les autres composants (services, modèles, vue) afin de construire la page demandé par l&#8217;internaute.</p>
+<p>Peut importe ce que vous souhaitez faire, un contrôleur reçoit toujours un objet <tt class="docutils literal"><span class="pre">Request</span></tt> et doit toujours retourner un objet <tt class="docutils literal"><span class="pre">Response</span></tt>.
+La demande de l&#8217;internaute se trouve dans un objet <tt class="docutils literal"><span class="pre">Request</span></tt> dans lequel le contrôleur toute les informations contenues dans la requête HTTP. La <tt class="docutils literal"><span class="pre">Response</span></tt> quant à elle correspond à la réponse HTTP.</p>
+</div>
+<div class="section" id="l-objet-request">
+<h2>L&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt><a class="headerlink" href="#l-objet-request" title="Permalink to this headline">¶</a></h2>
+<p>La requête peut contenir des paramètres : l&#8217;Id d&#8217;un objet à afficher, un nom à chercher dans la base de données, etc. Ces paramètres peuvent être passés au contrôleurs via la route, des paramètres POST ou GET, etc.</p>
+<div class="section" id="les-parametres-contenus-dans-les-routes">
+<h3>Les paramètres contenus dans les routes<a class="headerlink" href="#les-parametres-contenus-dans-les-routes" title="Permalink to this headline">¶</a></h3>
+<p>Les paramètres passée par la route deviendront des arguments de la méthode appelée dans le contrôleur. Prenons cette route par exemple :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}.{_format}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span><span class="p-Indicator">,</span> <span class="nv">_format</span><span class="p-Indicator">:</span> <span class="nv">html</span> <span class="p-Indicator">}</span>
+    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
+        <span class="l-Scalar-Plain">_format</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">html|xml|json</span>
+</pre></div>
+</div>
+<p>La fonction appelée dans le contrôleur aura la définition suivante : <tt class="docutils literal"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">showAction($id)</span></tt>.</p>
+</div>
+<div class="section" id="les-parametres-hors-routes">
+<h3>Les paramètres hors routes<a class="headerlink" href="#les-parametres-hors-routes" title="Permalink to this headline">¶</a></h3>
+<p>Pour les autres paramètres ils peuvent tous être récupérés via l&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt>. Il faut tout d&#8217;abord récupérer l&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt> dans le contrôleur : <tt class="docutils literal"><span class="pre">$request</span> <span class="pre">=</span> <span class="pre">$this-&gt;getRequest();</span></tt>. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="19%" />
+<col width="18%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type de paramètres</th>
+<th class="head">Méthode Symfony2</th>
+<th class="head">Méthode traditionnelle</th>
+<th class="head">Exemple</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Variables d&#8217;URL</td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;query</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$_GET</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;query-&gt;get('tag')</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Variables de formulaire</td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;request</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$_POST</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;request-&gt;get('tag')</span></tt></td>
+</tr>
+<tr class="row-even"><td>Variables de cookie</td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;cookies</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$_COOKIE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;cookies-&gt;get('tag')</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Variables de serveur</td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;server</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$_SERVER</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;server-&gt;get('REQUEST_URI')</span></tt></td>
+</tr>
+<tr class="row-even"><td>Variables d&#8217;entête</td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;headers</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$_SERVER['HTTP*']</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;headers-&gt;get('USER_AGENT')</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Paramètres de route</td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;attributes</span></tt></td>
+<td>n/a</td>
+<td><tt class="docutils literal"><span class="pre">$request-&gt;attributes-&gt;get('id')</span></tt>, est équivalent à <tt class="docutils literal"><span class="pre">$id</span></tt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="les-autres-methodes-de-l-objet-request">
+<h3>Les autres méthodes de l&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt><a class="headerlink" href="#les-autres-methodes-de-l-objet-request" title="Permalink to this headline">¶</a></h3>
+<p>Une requête ne se compose pas que e paramètres et l&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt> permet de les récupérer :</p>
+<ul>
+<li><dl class="first docutils">
+<dt>récupérer la méthode de la requête HTTP :</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">$request-&gt;getMethod()</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>savoir si la requête est une requête AJAX :</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">$request-&gt;isXmlHttpRequest()</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>pour tout le reste :</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Request.html">http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Request.html</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="l-objet-response">
+<h2>L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt><a class="headerlink" href="#l-objet-response" title="Permalink to this headline">¶</a></h2>
+<p>Voici en version longue de qu&#8217;il faut faire pour construire et retourner une réponse :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// on instancie une réponse</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+    <span class="c1">// on définit le contenu</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="s1">&#39;Ceci est le contenu de la page&#39;</span><span class="p">);</span>
+    <span class="c1">// on définit le code HTTP</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Reponse</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
+    <span class="c1">// on retourne la réponse</span>
+    <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Mais généralement, on préfère utiliser les vues pour générer le contenu de la réponse :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Blog:show.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span>
+    <span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <tt class="docutils literal"><span class="pre">Response</span></tt> en paramètre.</p>
+<p>On peut également faire des redirections dans le contrôleur avec la méthode <tt class="docutils literal"><span class="pre">redirect()</span></tt>. La méthode <tt class="docutils literal"><span class="pre">generateUrl</span></tt> permet quant à elle de générer l&#8217;URL de la page de destination :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;epsi_blog_index&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;page&#39;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">)));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Response.html">http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Response.html</a></p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="services.html" class="btn btn-neutral float-right" title="Les services">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="routing.html" class="btn btn-neutral" title="Le routing"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

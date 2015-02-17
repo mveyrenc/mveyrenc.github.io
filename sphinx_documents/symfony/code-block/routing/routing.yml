@@ -1,0 +1,47 @@
+# src/Epsi/Bundle/BlogBundle/Resources/config/routing.yml
+
+epsi_blog_homepage:
+    path:      /posts
+    defaults:  { _controller: EpsiBlogBundle:Blog:index }
+epsi_blog_show:
+    path:      /post/{id}
+    defaults:  { _controller: EpsiBlogBundle:Blog:show }
+epsi_blog_add:
+    path:      /post/add
+    defaults:  { _controller: EpsiBlogBundle:Blog:add }
+    
+epsi_blog_show:
+    path:      /post/{id}
+    defaults:  { _controller: EpsiBlogBundle:Blog:show }
+    requirements:
+        id:  \d+
+        
+epsi_blog_index:
+    path:      /posts/{page}.{_format}
+    defaults:  { _controller: EpsiBlogBundle:Blog:index, page: 1, _format: html }
+    requirements:
+        page:  \d*
+        _format: html|xml|json
+        
+epsi_blog_show:
+    path:      /post/{id}.{_format}
+    defaults:  { _controller: EpsiBlogBundle:Blog:show, _format: html }
+    requirements:
+        id:  \d+
+        _format: html|xml|json
+        
+epsi_blog_add:
+    path:      /post/add
+    defaults:  { _controller: EpsiBlogBundle:Blog:add }
+    
+epsi_blog_edit:
+    path:      /post/{id}/edit
+    defaults:  { _controller: EpsiBlogBundle:Blog:edit }
+    requirements:
+        page:  \d+
+        
+epsi_blog_delete:
+    path:      /post/{id}/delete
+    defaults:  { _controller: EpsiBlogBundle:Blog:delete }
+    requirements:
+        page:  \d+
