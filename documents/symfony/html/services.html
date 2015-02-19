@@ -99,7 +99,12 @@
 <li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Les services</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Les services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#acceder-un-service">Accéder un service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemple-de-services">Exemple de services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a></li>
 <li class="toctree-l1"><a class="reference internal" href="afficher_entite.html">Afficher des entités</a></li>
@@ -143,6 +148,56 @@
             
   <div class="section" id="les-services">
 <h1>Les services<a class="headerlink" href="#les-services" title="Permalink to this headline">¶</a></h1>
+<p>Comme dit précédemment, un contrôleur ne fait qu&#8217;utiliser d&#8217;autres composants pour construire la réponse. Certains de ces composants sont des services, des scripts qui remplissent un rôle précis comme envoyer un mail, gérer les sessions de l&#8217;utilisateur, etc. Dans ce chapitre, vous n&#8217;allons pas voir comment créer un service, nous n&#8217;en sommes pas là, mais comment s&#8217;en servir et quels services Symfony nous propose.</p>
+<div class="section" id="acceder-un-service">
+<h2>Accéder un service<a class="headerlink" href="#acceder-un-service" title="Permalink to this headline">¶</a></h2>
+<p>Il faut juste appeler la méthode du contrôleur <tt class="docutils literal"><span class="pre">get()</span></tt> en passant en argument l&#8217;identifiant su service que vous voulez comme par exemple : <tt class="docutils literal"><span class="pre">$this-&gt;get('mailer');</span></tt>.
+Ensuite il faut utiliser l&#8217;API que met à disposition le service.</p>
+</div>
+<div class="section" id="exemple-de-services">
+<h2>Exemple de services<a class="headerlink" href="#exemple-de-services" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="templating">
+<h3>Templating<a class="headerlink" href="#templating" title="Permalink to this headline">¶</a></h3>
+<p>La méthode <tt class="docutils literal"><span class="pre">render</span></tt> du contrôleur est un raccourcie pour appeler le service de templating. Ce code :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Blog:show.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span>
+    <span class="p">));</span>
+</pre></div>
+</div>
+<p>Est équivalent à :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$templating</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;templating&#39;</span><span class="p">);</span>
+<span class="nv">$contenu</span> <span class="o">=</span> <span class="nv">$templating</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Blog:show.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span>
+    <span class="p">));</span>
+<span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="nv">$contenu</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ce service comporte une autre méthode intéressante qui permet tester si un template existe ou pas : <tt class="docutils literal"><span class="pre">exists</span></tt>.</p>
+</div>
+<div class="section" id="request">
+<h3>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<p>Là aussi, dans le contrôleur, quand on appelle la méthode <tt class="docutils literal"><span class="pre">getRequest</span></tt>, c&#8217;est un raccourcie qui appelle le service <tt class="docutils literal"><span class="pre">request</span></tt>.</p>
+</div>
+<div class="section" id="session">
+<h3>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
+<p>Le service <tt class="docutils literal"><span class="pre">session</span></tt> contient toute les méthodes nécessaire pour manipuler les sessions utilisateur : <tt class="docutils literal"><span class="pre">has</span></tt>, <tt class="docutils literal"><span class="pre">get</span></tt>, <tt class="docutils literal"><span class="pre">set</span></tt>, <tt class="docutils literal"><span class="pre">remove</span></tt>, etc.</p>
+</div>
+</div>
+<div class="section" id="obtenir-des-informations-sur-les-services">
+<h2>Obtenir des informations sur les services<a class="headerlink" href="#obtenir-des-informations-sur-les-services" title="Permalink to this headline">¶</a></h2>
+<p>Une commande permet d&#8217;obtenir la liste des services disponibles avec la classe qui les implémente :</p>
+<div class="highlight-python"><div class="highlight"><pre>$ php app/console debug:container
+[container] Public services
+ Service ID                     Class name                                                                                 
+ acme.demo.listener             Acme\DemoBundle\EventListener\ControllerListener                                           
+ annotation_reader              Doctrine\Common\Annotations\FileCacheReader                                                
+ assetic.asset_manager          Assetic\Factory\LazyAssetManager                                                           
+ assetic.controller             Symfony\Bundle\AsseticBundle\Controller\AsseticController                                  
+ assetic.filter.cssrewrite      Assetic\Filter\CssRewriteFilter
+...
+</pre></div>
+</div>
+</div>
 </div>
 
 

@@ -1,0 +1,9 @@
+$ php app/console debug:container
+[container] Public services
+ Service ID                     Class name                                                                                 
+ acme.demo.listener             Acme\DemoBundle\EventListener\ControllerListener                                           
+ annotation_reader              Doctrine\Common\Annotations\FileCacheReader                                                
+ assetic.asset_manager          Assetic\Factory\LazyAssetManager                                                           
+ assetic.controller             Symfony\Bundle\AsseticBundle\Controller\AsseticController                                  
+ assetic.filter.cssrewrite      Assetic\Filter\CssRewriteFilter
+...
