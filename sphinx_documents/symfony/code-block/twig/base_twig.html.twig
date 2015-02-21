@@ -1,0 +1,60 @@
+{# name = 'Jack' #}
+{{ name }}
+
+{# user = array( 'name' => 'Jack' ) #}
+{{ user.name }}
+{{ user['name'] }}
+
+{# user = new User( 'Jack' ) #}
+{{ user.name }}
+{{ user.getName }}
+
+{# pour forcer l'appel à une méthode #}
+{{ user.name() }}
+{{ user.getName() }}
+
+{# passage d'argument à une méthode #}
+{{ user.date('Y-m-d') }}
+
+{# On peut aussi utiliser la fonction attribute #}
+{{ attribute(object, method) }}
+{{ attribute(object, method, arguments) }}
+{{ attribute(array, item) }}
+
+{# affectation de variables #}
+{% set foo = 'foo' %}
+{% set foo = [1, 2] %}
+{% set foo = {'foo': 'bar'} %}
+
+{# filtres #}
+{{ name|striptags|title }}
+{{ list|join(', ') }}
+
+{% filter upper %}
+    This text becomes uppercase
+{% endfilter %}
+
+{# fonction #}
+{% for i in range(0, 3) %}
+    {{ i }},
+{% endfor %}
+
+{# conditons #}
+{% if user.isSuperAdmin() %}
+    ...
+{% elseif user.isMember() %}
+    ...
+{% else %}
+    ...
+{% endif %}
+
+{# boucles #}
+{% for user in users if iser.isActive() %}
+    ...
+{% endfor %}
+
+{# include #}
+{% include 'header.html' with {'foo': 'bar'} %}
+{% include 'body.html' only %}
+{% include 'footer.html' with {'foo': 'bar'} only %}
+    

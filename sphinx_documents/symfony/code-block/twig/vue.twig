@@ -1,0 +1,7 @@
+<ul id="navigation">
+    {% for item in navigation %}
+        <li>
+            <a href="{{ item.href }}">{{ item.name }}</a>
+        </li>
+    {% endfor %}
+</ul>

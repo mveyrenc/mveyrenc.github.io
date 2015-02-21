@@ -52,7 +52,7 @@ Pour les autres paramètres ils peuvent tous être récupérés via l'objet ``Re
 Les autres méthodes de l'objet ``Request``
 ==========================================
 
-Une requête ne se compose pas que e paramètres et l'objet ``Request`` permet de les récupérer :
+Une requête ne se compose pas que le paramètres et l'objet ``Request`` permet de les récupérer :
 
 * récupérer la méthode de la requête HTTP :
     * ``$request->getMethod()``
@@ -77,7 +77,15 @@ Mais généralement, on préfère utiliser les vues pour générer le contenu de
     :language: php
     :lines: 12-16
 
-Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet ``Response`` en paramètre.
+Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Le contenu de la réponse est généré par le template ``src/Epsi/Bundle/BlogBundle/Resources/views/Blog/show.html.twig`` :
+
+.. literalinclude:: code-block/controleur/show.html.twig
+    :language: jinja
+    :lines: 1
+
+Allez voir la page http://localhost/Symfony/web/app_dev.php/post/5.
+
+Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet ``Response`` en paramètre.
 
 On peut également faire des redirections dans le contrôleur avec la méthode ``redirect()``. La méthode ``generateUrl`` permet quant à elle de générer l'URL de la page de destination :
 

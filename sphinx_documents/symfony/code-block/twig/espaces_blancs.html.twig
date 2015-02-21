@@ -1,0 +1,10 @@
+{% spaceless %}
+    <div>
+        <strong>foo bar</strong>
+    </div>
+{% endspaceless %}
+{# donne <div><strong>foo bar</strong></div> #}
+
+{% set value = 'no spaces' %}
+<li>    {{- value }}    </li>
+{# done <li>no spaces    </li> #}

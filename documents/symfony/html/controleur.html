@@ -99,8 +99,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
-<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="services.html#acceder-un-service">Accéder un service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html#exemple-de-services">Exemple de services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-bases">Les bases</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a></li>
 <li class="toctree-l1"><a class="reference internal" href="afficher_entite.html">Afficher des entités</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifer_entite.html">Modifier une entité</a></li>
@@ -218,7 +226,7 @@ La demande de l&#8217;internaute se trouve dans un objet <tt class="docutils lit
 </div>
 <div class="section" id="les-autres-methodes-de-l-objet-request">
 <h3>Les autres méthodes de l&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt><a class="headerlink" href="#les-autres-methodes-de-l-objet-request" title="Permalink to this headline">¶</a></h3>
-<p>Une requête ne se compose pas que e paramètres et l&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt> permet de les récupérer :</p>
+<p>Une requête ne se compose pas que le paramètres et l&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt> permet de les récupérer :</p>
 <ul>
 <li><dl class="first docutils">
 <dt>récupérer la méthode de la requête HTTP :</dt>
@@ -270,7 +278,12 @@ La demande de l&#8217;internaute se trouve dans un objet <tt class="docutils lit
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <tt class="docutils literal"><span class="pre">Response</span></tt> en paramètre.</p>
+<p>Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Le contenu de la réponse est généré par le template <tt class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/Blog/show.html.twig</span></tt> :</p>
+<div class="highlight-jinja"><div class="highlight"><pre><span class="x">Affichage du post avec l&#39;id : </span><span class="cp">{{</span> <span class="nv">id</span> <span class="cp">}}</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Allez voir la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5">http://localhost/Symfony/web/app_dev.php/post/5</a>.</p>
+<p>Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <tt class="docutils literal"><span class="pre">Response</span></tt> en paramètre.</p>
 <p>On peut également faire des redirections dans le contrôleur avec la méthode <tt class="docutils literal"><span class="pre">redirect()</span></tt>. La méthode <tt class="docutils literal"><span class="pre">generateUrl</span></tt> permet quant à elle de générer l&#8217;URL de la page de destination :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;epsi_blog_index&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;page&#39;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">)));</span>

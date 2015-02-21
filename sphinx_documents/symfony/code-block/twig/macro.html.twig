@@ -1,0 +1,9 @@
+{# dans le template où l'on veut utiliser la macro #}
+{% import macro.html.twig as forms %}
+
+<p>{{ forms.input('username') }}</p>
+
+{# dans le template où l'on implémente les macros #}
+{% macro input(name, value = "", type = "text", size = 20) %}
+    <input type="{{ type }}" name="{{ name }}" value="{{ value|e }}" size="{{ size }}" />
+{% endmacro %}
