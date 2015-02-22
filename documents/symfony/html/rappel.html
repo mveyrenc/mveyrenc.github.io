@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quelques rappels &mdash; Symfony 1.0.0 documentation</title>
+  <title>La programmation orientée objet &mdash; Symfony 1.0.0 documentation</title>
   
 
   
@@ -65,7 +65,16 @@
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Quelques rappels</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">La programmation orientée objet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#terminologie">Terminologie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mots-reserves">Mots réservés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxe-de-base">Syntaxe de base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heritage">Héritage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes-abstraites">Classes abstraites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visibilite">Visibilité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
@@ -143,7 +152,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Quelques rappels</li>
+    <li>La programmation orientée objet</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -152,28 +161,328 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="quelques-rappels">
-<h1>Quelques rappels<a class="headerlink" href="#quelques-rappels" title="Permalink to this headline">¶</a></h1>
-<ul>
-<li><dl class="first docutils">
-<dt>La programmation orientée objet</dt>
-<dd><ul class="first last simple">
-<li>Terminologie</li>
-<li>Mots réservés</li>
-<li>Syntaxe de base</li>
-<li>Héritage</li>
-<li>Classes abstraites</li>
-<li>Visibilité</li>
-<li>L’opérateur de résolution de portée (::)</li>
-<li>Interfaces</li>
-<li>Références et clonage</li>
-<li>Exceptions</li>
-<li>Espace de nom ou namespace</li>
+  <div class="section" id="la-programmation-orientee-objet">
+<h1>La programmation orientée objet<a class="headerlink" href="#la-programmation-orientee-objet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="terminologie">
+<h2>Terminologie<a class="headerlink" href="#terminologie" title="Permalink to this headline">¶</a></h2>
+<p>Une <strong>classe</strong> est une représentation abstraite d&#8217;un <strong>objet</strong>.
+C&#8217;est la somme des propriétés de l&#8217;objet et des traitements dont il est capable.
+Une classe peut généralement être rendu concrète au moyen d&#8217;une <strong>instance de classe</strong>, que l&#8217;on appelle objet : on parle d&#8217;<em>instancier</em> la classe.
+Un objet est donc un exemple concret de la définition abstraite qu&#8217;est la classe.</p>
+</div>
+<div class="section" id="mots-reserves">
+<h2>Mots réservés<a class="headerlink" href="#mots-reserves" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">class</span></tt> : déclaration de classe</li>
+<li><tt class="docutils literal"><span class="pre">const</span></tt> : déclaration de constante de classe</li>
+<li><tt class="docutils literal"><span class="pre">function</span></tt> : déclaration d&#8217;une méthode</li>
+<li><tt class="docutils literal"><span class="pre">public</span></tt>/<tt class="docutils literal"><span class="pre">protected</span></tt>/<tt class="docutils literal"><span class="pre">private</span></tt> : visibilité de l&#8217;attribut ou de la méthode (par défaut &#8220;public&#8221; si aucun accès n&#8217;est explicitement défini)</li>
+<li><tt class="docutils literal"><span class="pre">new</span></tt> : création d&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">self</span></tt> : résolution de portée (la classe elle-même)</li>
+<li><tt class="docutils literal"><span class="pre">parent</span></tt> : résolution de portée (la classe &#8220;parent&#8221;)</li>
+<li><tt class="docutils literal"><span class="pre">static</span></tt> : résolution de portée (appel statique)</li>
+<li><tt class="docutils literal"><span class="pre">extends</span></tt> : héritage de classe</li>
+<li><tt class="docutils literal"><span class="pre">implements</span></tt> : implémentation d&#8217;une interface</li>
 </ul>
-</dd>
-</dl>
-</li>
+<p>Les <strong>méthodes magiques</strong> sont des méthodes qui, si elles sont déclarées dans une classe, ont une fonction déjà prévue par le langage.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">__construct()</span></tt> : constructeur de la classe, est appelé lors de le création d&#8217;un objet</li>
+<li><tt class="docutils literal"><span class="pre">__destruct()</span></tt> : destructeur de la classe, est appelé lors de la destruction d&#8217;un objet</li>
+<li><tt class="docutils literal"><span class="pre">__set()</span></tt> : déclenchée lors de l&#8217;accès en écriture à une propriété de l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__get()</span></tt> : déclenchée lors de l&#8217;accès en lecture à une propriété de l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__call()</span></tt> : déclenchée lors de l&#8217;appel d&#8217;une méthode inexistante de la classe</li>
+<li><tt class="docutils literal"><span class="pre">__callstatic()</span></tt> : déclenchée lors de l&#8217;appel d&#8217;une méthode statique inexistante de la classe</li>
+<li><tt class="docutils literal"><span class="pre">__isset()</span></tt> : déclenchée si on applique <tt class="docutils literal"><span class="pre">isset()</span></tt> à une propriété de l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__unset()</span></tt> : déclenchée si on applique <tt class="docutils literal"><span class="pre">unset()</span></tt> à une propriété de l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__sleep()</span></tt> : exécutée si la fonction <tt class="docutils literal"><span class="pre">serialize()</span></tt> est appliquée à l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__wakeup()</span></tt> : exécutée si la fonction <tt class="docutils literal"><span class="pre">unserialize()</span></tt> est appliquée à l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__toString()</span></tt> : appelée lorsque l&#8217;on essaie d&#8217;afficher directement l&#8217;objet : <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">$object;</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">__set_state()</span></tt> : méthode statique lancée lorsque l&#8217;on applique la fonction <tt class="docutils literal"><span class="pre">var_export()</span></tt> à l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__clone()</span></tt> : appelé lorsque l&#8217;on essaie de cloner l&#8217;objet</li>
+<li><tt class="docutils literal"><span class="pre">__autoload()</span></tt> : cette fonction n&#8217;est pas une méthode, elle est déclarée dans le scope global et permet d&#8217;automatiser les <tt class="docutils literal"><span class="pre">include</span></tt>/<tt class="docutils literal"><span class="pre">require</span></tt> de classes PHP</li>
 </ul>
+<p>Enfin, la variable <tt class="docutils literal"><span class="pre">$this</span></tt> utilisée à l&#8217;intérieur d&#8217;une classe, faut toujours référence à l&#8217;objet lui-même.</p>
+</div>
+<div class="section" id="syntaxe-de-base">
+<h2>Syntaxe de base<a class="headerlink" href="#syntaxe-de-base" title="Permalink to this headline">¶</a></h2>
+<p>Les définitions des attributs et des méthodes sot rassemblés dans la structure <tt class="docutils literal"><span class="pre">class</span></tt>.
+Le mot-clé <tt class="docutils literal"><span class="pre">class</span></tt> est suivi du nom de la classe, suivit par une paire d&#8217;accolades contenant la définition de la classe.
+Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#8217;importe quel nombre de chiffres, ou de lettres, ou d&#8217;underscores, et ne pas être un mot réservé PHP.</p>
+<p>La création d&#8217;une instance de classe (un objet) se faite en utilisant le mot-clé <tt class="docutils literal"><span class="pre">new</span></tt>.</p>
+<p>L&#8217;accès aux propriétés et au méthodes l&#8217;objet se fait par la flèche <tt class="docutils literal"><span class="pre">-&gt;</span></tt>, et l&#8217;accès statique par l&#8217;opérateur de porté <tt class="docutils literal"><span class="pre">::</span></tt>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONSOMMATION</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1"># L/100km</span>
+    <span class="k">const</span> <span class="no">CAPACITE_RESERVOIR</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">#L</span>
+    
+    <span class="k">public</span> <span class="nv">$kilometrage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$resteReservoir</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">+=</span> <span class="nv">$distance</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">-=</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="o">*</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">peutEncoreRouler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">*</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
+<span class="c1">// Ceci peut également être réalisé avec une variable :</span>
+<span class="nv">$className</span> <span class="o">=</span> <span class="s1">&#39;Voiture&#39;</span><span class="p">;</span>
+<span class="nv">$voiture2</span> <span class="o">=</span> <span class="k">new</span> <span class="nv">$className</span><span class="p">();</span> <span class="c1">// Voiture()</span>
+
+<span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span> <span class="mi">60</span> <span class="p">);</span>
+<span class="nv">$voiture2</span><span class="o">-&gt;</span><span class="na">peutEncoreRouler</span><span class="p">(</span> <span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nx">Voiture</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="p">);</span>  <span class="c1">// Affiche int(4)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="heritage">
+<h2>Héritage<a class="headerlink" href="#heritage" title="Permalink to this headline">¶</a></h2>
+<p>On parle d&#8217;<strong>héritage</strong> lorsque l&#8217;on définit une hiérarchie de classes. L&#8217;héritage est très utile pour définir et abstraire certaines fonctionnalités communes à plusieurs classes, tout en permettant la mise en place de fonctionnalités supplémentaires dans les classes enfants, sans avoir à réimplémenter en leur sein toutes les fonctionnalités communes.</p>
+<p>Lorsque vous étendez une classe, la classe fille hérite de toutes les méthodes publiques et protégées de la classe parente. Tant qu&#8217;une classe n&#8217;écrase pas ces méthodes, elles conservent leur fonctionnalité d&#8217;origine.</p>
+<p>L&#8217;héritage est très utile pour définir et abstraire certaines fonctionnalités communes à plusieurs classes, tout en permettant la mise en place de fonctionnalités supplémentaires dans les classes enfants, sans avoir à réimplémenter en leur sein toutes les fonctionnalités communes.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
+    
+    <span class="k">public</span> <span class="nv">$kilometrage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">+=</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Voiture</span> <span class="k">extends</span> <span class="nx">Vehicule</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONSOMMATION</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1"># L/100km</span>
+    <span class="k">const</span> <span class="no">CAPACITE_RESERVOIR</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">#L</span>
+    
+    <span class="k">protected</span> <span class="nv">$resteReservoir</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">-=</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="o">*</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">peutEncoreRouler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">*</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Velo</span> <span class="k">extends</span> <span class="nx">Vehicule</span> <span class="p">{}</span>
+
+<span class="nv">$vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vehicule</span><span class="p">();</span>
+<span class="nv">$voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
+<span class="nv">$velo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Velo</span><span class="p">();</span>
+
+<span class="nv">$vehicule</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span> <span class="mi">60</span> <span class="p">);</span>
+<span class="nv">$voiture</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span> <span class="mi">100</span> <span class="p">);</span>
+<span class="nv">$velo</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
+
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$vehicule</span> <span class="nx">instanceof</span> <span class="nx">Voiture</span><span class="p">);</span>    <span class="c1">//Affiche false</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$vehicule</span> <span class="nx">instanceof</span> <span class="nx">Velo</span><span class="p">);</span>       <span class="c1">//Affiche false</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$vehicule</span> <span class="nx">instanceof</span> <span class="nx">Vehicule</span><span class="p">);</span>   <span class="c1">//Affiche true</span>
+
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$voiture</span> <span class="nx">instanceof</span> <span class="nx">Voiture</span><span class="p">);</span>     <span class="c1">//Affiche true</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$voiture</span> <span class="nx">instanceof</span> <span class="nx">Velo</span><span class="p">);</span>        <span class="c1">//Affiche false</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$voiture</span> <span class="nx">instanceof</span> <span class="nx">Vehicule</span><span class="p">);</span>    <span class="c1">//Affiche true</span>
+
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$velo</span> <span class="nx">instanceof</span> <span class="nx">Voiture</span><span class="p">);</span>        <span class="c1">//Affiche false</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$velo</span> <span class="nx">instanceof</span> <span class="nx">Velo</span><span class="p">);</span>           <span class="c1">//Affiche true</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$velo</span> <span class="nx">instanceof</span> <span class="nx">Vehicule</span><span class="p">);</span>       <span class="c1">//Affiche true</span>
+</pre></div>
+</div>
+<p>Le mot clé <tt class="docutils literal"><span class="pre">final</span></tt> empêche les classes filles de surcharger une méthode. Si la classe elle-même est définie comme finale, elle ne pourra pas être étendue.</p>
+</div>
+<div class="section" id="classes-abstraites">
+<h2>Classes abstraites<a class="headerlink" href="#classes-abstraites" title="Permalink to this headline">¶</a></h2>
+<p>Les classes définies comme abstraites ne peuvent pas être instanciées, et toute classe contenant au moins une méthode abstraite doit elle-aussi être abstraite. Les méthodes définies comme abstraites déclarent simplement la signature de la méthode - elles ne peuvent définir son implémentation. Lors de l&#8217;héritage d&#8217;une classe abstraite, toutes les méthodes marquées comme abstraites dans la déclaration de la classe parente doivent être définies par l&#8217;enfant.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">abstract</span> <span class="k">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="nv">$kilometrage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span><span class="nv">$distance</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">+=</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">nombreDeRoues</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Voiture</span> <span class="k">extends</span> <span class="nx">Vehicule</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONSOMMATION</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1"># L/100km</span>
+    <span class="k">const</span> <span class="no">CAPACITE_RESERVOIR</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">#L</span>
+
+    <span class="k">protected</span> <span class="nv">$resteReservoir</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span><span class="nv">$distance</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">roule</span><span class="p">(</span><span class="nv">$distance</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">-=</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="o">*</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">peutEncoreRouler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">*</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">nombreDeRoues</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Velo</span> <span class="k">extends</span> <span class="nx">Vehicule</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">nombreDeRoues</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nv">$voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
+<span class="nv">$velo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Velo</span><span class="p">();</span>
+
+<span class="nv">$voiture</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="nv">$velo</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture</span> <span class="nx">instanceof</span> <span class="nx">Voiture</span><span class="p">);</span>     <span class="c1">//Affiche true</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture</span> <span class="nx">instanceof</span> <span class="nx">Velo</span><span class="p">);</span>        <span class="c1">//Affiche false</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture</span> <span class="nx">instanceof</span> <span class="nx">Vehicule</span><span class="p">);</span>    <span class="c1">//Affiche true</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$velo</span> <span class="nx">instanceof</span> <span class="nx">Voiture</span><span class="p">);</span>     <span class="c1">//Affiche false</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$velo</span> <span class="nx">instanceof</span> <span class="nx">Velo</span><span class="p">);</span>        <span class="c1">//Affiche true</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$velo</span> <span class="nx">instanceof</span> <span class="nx">Vehicule</span><span class="p">);</span>    <span class="c1">//Affiche true</span>
+
+<span class="nv">$vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vehicule</span><span class="p">();</span>             <span class="c1">// PHP Fatal error:  Cannot instantiate abstract class Vehicule</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="visibilite">
+<h2>Visibilité<a class="headerlink" href="#visibilite" title="Permalink to this headline">¶</a></h2>
+<p>La visibilité d&#8217;une propriété ou d&#8217;une méthode peut être définie en préfixant sa déclaration avec un mot-clé : <tt class="docutils literal"><span class="pre">public</span></tt>, <tt class="docutils literal"><span class="pre">protected</span></tt>, ou <tt class="docutils literal"><span class="pre">private</span></tt>.</p>
+<p>Les éléments déclarés comme <strong>publics</strong> peuvent être utilisés par n&#8217;importe quelle partie du programme.</p>
+<p>L&#8217;accès aux éléments <strong>protégés</strong> est limité à la classe elle-même, ainsi qu&#8217;aux classes qui en héritent, et à ses classes parentes.</p>
+<p>L&#8217;accès aux éléments <strong>privés</strong> est uniquement réservé à la classe qui les a défini.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">class</span> <span class="nc">MyParentClass</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="nv">$public</span> <span class="o">=</span> <span class="s1">&#39;Public&#39;</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$protected</span> <span class="o">=</span> <span class="s1">&#39;Protected&#39;</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$private</span> <span class="o">=</span> <span class="s1">&#39;Private&#39;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">myPublic</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">myProtected</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">myPrivate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyClass</span> <span class="k">extends</span> <span class="nx">MyParentClass</span> <span class="p">{}</span>
+
+<span class="nv">$parentObjet</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyParentClass</span><span class="p">();</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$parentObjet</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">);</span>           <span class="c1">// Affiche string(6) &quot;Public&quot;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$parentObjet</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">);</span>        <span class="c1">// PHP Fatal error:  Cannot access protected property MyParentClass::$protected</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$parentObjet</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">);</span>          <span class="c1">// PHP Fatal error:  Cannot access private property MyParentClass::$private</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$objet</span><span class="o">-&gt;</span><span class="na">myPublic</span><span class="p">());</span>       <span class="c1">// Affiche string(6) &quot;Public&quot;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$parentObjet</span><span class="o">-&gt;</span><span class="na">myProtected</span><span class="p">());</span>    <span class="c1">// PHP Fatal error:  Call to protected method MyParentClass::myProtected()</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$parentObjet</span><span class="o">-&gt;</span><span class="na">myPrivate</span><span class="p">());</span>      <span class="c1">// PHP Fatal error:  Call to protected method MyParentClass::myPrivate()</span>
+
+<span class="nv">$objet</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$objet</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">);</span>           <span class="c1">// Affiche string(6) &quot;Public&quot;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$objet</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">);</span>        <span class="c1">// PHP Fatal error:  Cannot access protected property MyClass::$protected</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$objet</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">);</span>          <span class="c1">// PHP Notice:  Undefined property: MyClass::$private</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$objet</span><span class="o">-&gt;</span><span class="na">myPublic</span><span class="p">());</span>       <span class="c1">// Affiche string(6) &quot;Public&quot;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$objet</span><span class="o">-&gt;</span><span class="na">myProtected</span><span class="p">());</span>    <span class="c1">// PHP Fatal error:  Call to protected method MyClass::myProtected()</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$objet</span><span class="o">-&gt;</span><span class="na">myPrivate</span><span class="p">());</span>      <span class="c1">// PHP Fatal error:  Call to private method MyParentClass::myPrivate()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="l-operateur-de-resolution-de-portee">
+<h2>L&#8217;opérateur de résolution de portée (::)<a class="headerlink" href="#l-operateur-de-resolution-de-portee" title="Permalink to this headline">¶</a></h2>
+<p>L&#8217;opérateur de résolution de portée, le symbole &#8220;double deux-points&#8221; (::), fournit un moyen d&#8217;accéder aux membres <tt class="docutils literal"><span class="pre">static</span></tt> ou <tt class="docutils literal"><span class="pre">constant</span></tt>, ainsi qu&#8217;aux propriétés ou méthodes surchargées d&#8217;une classe.</p>
+<p>Lorsque vous référencez ces éléments en dehors de la définition de la classe, utilisez le nom de la classe.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONST_VALUE</span> <span class="o">=</span> <span class="s1">&#39;Une valeur constante&#39;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">displayConst</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONST_VALUE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nx">MyClass</span><span class="o">::</span><span class="na">CONST_VALUE</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Trois mots-clé spéciaux, <tt class="docutils literal"><span class="pre">self</span></tt>, <tt class="docutils literal"><span class="pre">parent</span></tt>, et <tt class="docutils literal"><span class="pre">static</span></tt> sont utilisés pour accéder aux propriétés ou aux méthodes depuis la définition de la classe.</p>
+<p>Les mots clefs <tt class="docutils literal"><span class="pre">self</span></tt> et <tt class="docutils literal"><span class="pre">parent</span></tt> sont utilisés pour accéder à une propriété ou méthode (statique ou non) de la classe elle-même ou de son parent.</p>
+<p>Le mot clef <tt class="docutils literal"><span class="pre">static</span></tt> a la même utilité mais il résout la portée au moment de l&#8217;exécution du script.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="o">::</span><span class="na">qui</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="k">extends</span> <span class="nx">A</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">B</span><span class="o">::</span><span class="na">test</span><span class="p">();</span>      <span class="c1">// Affiche A</span>
+
+<span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">static</span><span class="o">::</span><span class="na">qui</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">D</span> <span class="k">extends</span> <span class="nx">C</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">D</span><span class="o">::</span><span class="na">test</span><span class="p">();</span>      <span class="c1">// Affiche D</span>
+</pre></div>
+</div>
+<p>#.. include:: _poo/interfaces.rst
+.. include:: _poo/references-clonage.rst
+.. include:: _poo/exception.rst
+.. include:: _poo/namespace.rst</p>
+</div>
 </div>
 
 

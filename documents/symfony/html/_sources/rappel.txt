@@ -1,17 +1,15 @@
-################
-Quelques rappels
-################
+###############################
+La programmation orientée objet
+###############################
 
-* La programmation orientée objet
-    * Terminologie
-    * Mots réservés
-    * Syntaxe de base
-    * Héritage
-    * Classes abstraites
-    * Visibilité
-    * L’opérateur de résolution de portée (::)
-    * Interfaces
-    * Références et clonage
-    * Exceptions
-    * Espace de nom ou namespace
-
+.. include:: _poo/terminologie.rst
+.. include:: _poo/mots-reserves.rst
+.. include:: _poo/syntaxe.rst
+.. include:: _poo/heritage.rst
+.. include:: _poo/classes-abstraites.rst
+.. include:: _poo/visibilite.rst
+.. include:: _poo/resolution-portee.rst
+#.. include:: _poo/interfaces.rst
+.. include:: _poo/references-clonage.rst
+.. include:: _poo/exception.rst
+.. include:: _poo/namespace.rst
