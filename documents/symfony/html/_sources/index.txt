@@ -1,13 +1,13 @@
-=====================
+===========
 PHP/Symfony
-=====================
+===========
 
-Ce document a pour but de vous faire acquerir les compétences suivantes :
+Ce document a pour but de vous faire acquérir les compétences suivantes :
 
 * Assimiler chaque élément du concept MVC
 * Accéder aux données via Doctrine
 * Développer une application qui exploite une base de données
-* Comprendre l'architecture du framework Sumfony2, et savoir le mettre en œuvre dans un développement PHP5
+* Comprendre l'architecture du framework Symfony2, et savoir le mettre en œuvre dans un développement PHP5
 
 Contents
 ========
