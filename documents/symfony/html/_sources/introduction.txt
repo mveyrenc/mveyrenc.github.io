@@ -10,7 +10,7 @@ Qu'est ce qu'un framework ?
 
 Le mot *framework* provient de l'anglais *frame* qui signifie *cadre* et *work* qui veut dire *travail*. Donc un framework est littéralement un *cadre de travail*.
 
-Concrètement, un framework est une boite à outils, un ensemble de composants, conçues par un ou plusieurs **développeurs** à destination d'autres **développeurs**.
+Concrètement, un framework est une boite à outils, un ensemble de composants conçus par un ou plusieurs **développeurs** à destination d'autres **développeurs**.
 
 ********************************
 Pourquoi utiliser un framework ?

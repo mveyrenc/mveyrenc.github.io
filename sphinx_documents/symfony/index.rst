@@ -23,6 +23,7 @@ Contents
     controleur
     services
     twig
+    assets
     doctrine
    
 

@@ -63,8 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../rappel.html">Quelques rappels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#la-programmation-orientee-objet">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappel.html">La programmation orientée objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#terminologie">Terminologie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#mots-reserves">Mots réservés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
@@ -72,7 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#classes-abstraites">Classes abstraites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#visibilite">Visibilité</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#interfaces">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#references-et-clonage">Références et clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
@@ -131,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../twig.html#les-operateurs">Les opérateurs</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doctrine.html">Doctrine et la base de donnée</a></li>
 </ul>
 
@@ -167,7 +166,55 @@
   <div class="section" id="references-et-clonage">
 <h1>Références et clonage<a class="headerlink" href="#references-et-clonage" title="Permalink to this headline">¶</a></h1>
 <p>Depuis PHP 5, les objets sont tous des références. Ainsi, copier un objet vers un autre au moyen de l&#8217;opérateur &#8220;=&#8221; ne duplique pas l&#8217;objet, au contraire il créé une deuxième référence vers le même objet.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
+<span class="nv">$voiture2</span> <span class="o">=</span> <span class="nv">$voiture1</span><span class="p">;</span>
+<span class="nv">$voiture3</span> <span class="o">=</span> <span class="o">&amp;</span> <span class="nv">$voiture1</span><span class="p">;</span>
+
+<span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+<span class="nv">$voiture2</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">kilometrage</span><span class="p">);</span>   <span class="c1">// Affiche int(40)</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture2</span><span class="o">-&gt;</span><span class="na">kilometrage</span><span class="p">);</span>   <span class="c1">// Affiche int(40)</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture3</span><span class="o">-&gt;</span><span class="na">kilometrage</span><span class="p">);</span>   <span class="c1">// Affiche int(40)</span>
+
+<span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span> <span class="c1">// $voiture1 et $voiture3 deviennent null</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture1</span><span class="p">);</span>    <span class="c1">// Affiche NULL</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture2</span><span class="p">);</span>    <span class="c1">// Affiche </span>
+                        <span class="c1">//      object(Voiture)#3 (2) {                                                                                                 </span>
+                        <span class="c1">//          [&quot;kilometrage&quot;]=&gt;                                                                                                     </span>
+                        <span class="c1">//          int(60)                                                                                                               </span>
+                        <span class="c1">//          [&quot;resteReservoir&quot;:protected]=&gt;                                                                                        </span>
+                        <span class="c1">//          int(60)                                                                                                               </span>
+                        <span class="c1">//       }</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture3</span><span class="p">);</span>    <span class="c1">// Affiche NULL</span>
+</pre></div>
+</div>
 <p>Pour copier un objet, il faut utiliser l&#8217;opérateur <tt class="docutils literal"><span class="pre">clone</span></tt> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
+<span class="nv">$voiture2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$voiture1</span><span class="p">;</span>
+
+<span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+<span class="nv">$voiture2</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">kilometrage</span><span class="p">);</span>   <span class="c1">// Affiche int(60)</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture2</span><span class="o">-&gt;</span><span class="na">kilometrage</span><span class="p">);</span>   <span class="c1">// Affiche int(40)</span>
+
+<span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture1</span><span class="p">);</span>    <span class="c1">// Affiche NULL</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture2</span><span class="p">);</span>    <span class="c1">// Affiche </span>
+                        <span class="c1">//      object(Voiture)#3 (2) {                                                                                                 </span>
+                        <span class="c1">//          [&quot;kilometrage&quot;]=&gt;                                                                                                     </span>
+                        <span class="c1">//          int(40)                                                                                                               </span>
+                        <span class="c1">//          [&quot;resteReservoir&quot;:protected]=&gt;                                                                                        </span>
+                        <span class="c1">//          int(60)                                                                                                               </span>
+                        <span class="c1">//       }</span>
+</pre></div>
+</div>
 </div>
 
 

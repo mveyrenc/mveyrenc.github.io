@@ -63,8 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../rappel.html">Quelques rappels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#la-programmation-orientee-objet">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappel.html">La programmation orientée objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#terminologie">Terminologie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#mots-reserves">Mots réservés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
@@ -72,7 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#classes-abstraites">Classes abstraites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#visibilite">Visibilité</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#interfaces">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#references-et-clonage">Références et clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
@@ -131,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../twig.html#les-operateurs">Les opérateurs</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doctrine.html">Doctrine et la base de donnée</a></li>
 </ul>
 
@@ -168,9 +167,69 @@
 <h1>L&#8217;opérateur de résolution de portée (::)<a class="headerlink" href="#l-operateur-de-resolution-de-portee" title="Permalink to this headline">¶</a></h1>
 <p>L&#8217;opérateur de résolution de portée, le symbole &#8220;double deux-points&#8221; (::), fournit un moyen d&#8217;accéder aux membres <tt class="docutils literal"><span class="pre">static</span></tt> ou <tt class="docutils literal"><span class="pre">constant</span></tt>, ainsi qu&#8217;aux propriétés ou méthodes surchargées d&#8217;une classe.</p>
 <p>Lorsque vous référencez ces éléments en dehors de la définition de la classe, utilisez le nom de la classe.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONST_VALUE</span> <span class="o">=</span> <span class="s1">&#39;Une valeur constante&#39;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">displayConst</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONST_VALUE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nx">MyClass</span><span class="o">::</span><span class="na">CONST_VALUE</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>Trois mots-clé spéciaux, <tt class="docutils literal"><span class="pre">self</span></tt>, <tt class="docutils literal"><span class="pre">parent</span></tt>, et <tt class="docutils literal"><span class="pre">static</span></tt> sont utilisés pour accéder aux propriétés ou aux méthodes depuis la définition de la classe.</p>
 <p>Les mots clefs <tt class="docutils literal"><span class="pre">self</span></tt> et <tt class="docutils literal"><span class="pre">parent</span></tt> sont utilisés pour accéder à une propriété ou méthode (statique ou non) de la classe elle-même ou de son parent.</p>
 <p>Le mot clef <tt class="docutils literal"><span class="pre">static</span></tt> a la même utilité mais il résout la portée au moment de l&#8217;exécution du script.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="o">::</span><span class="na">qui</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="k">extends</span> <span class="nx">A</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">B</span><span class="o">::</span><span class="na">test</span><span class="p">();</span>      <span class="c1">// Affiche A</span>
+
+<span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">static</span><span class="o">::</span><span class="na">qui</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">D</span> <span class="k">extends</span> <span class="nx">C</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">qui</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">__CLASS__</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">D</span><span class="o">::</span><span class="na">test</span><span class="p">();</span>      <span class="c1">// Affiche D</span>
+</pre></div>
+</div>
 </div>
 
 

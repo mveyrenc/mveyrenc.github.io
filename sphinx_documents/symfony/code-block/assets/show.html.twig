@@ -1,0 +1,22 @@
+{# src/Epsi/Bundle/BlogBundle/Resources/views/Blog/show.html.twig #}
+{% extends "EpsiBlogBundle::base.html.twig" %}
+
+{% block title 'Blog' %}
+{% block header 'Blog' %}
+    
+{% block content %}
+    <h2>{{ name }}</h2>
+    <p>{{ date|date("m/d/Y") }}</p>
+    <ul>
+        {% for tag in tags %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+    </ul>
+    <p>{{ html }}</p>
+    <p>{{ html|raw }}</p>
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+    - <a href="{{ path('epsi_blog_index') }}">Lien vers la liste des postes</a>
+{% endblock %}

@@ -63,8 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../rappel.html">Quelques rappels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#la-programmation-orientee-objet">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappel.html">La programmation orientée objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#terminologie">Terminologie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#mots-reserves">Mots réservés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
@@ -72,7 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#classes-abstraites">Classes abstraites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#visibilite">Visibilité</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#interfaces">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#references-et-clonage">Références et clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
@@ -131,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../twig.html#les-operateurs">Les opérateurs</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doctrine.html">Doctrine et la base de donnée</a></li>
 </ul>
 
@@ -167,6 +166,15 @@
   <div class="section" id="exceptions">
 <h1>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h1>
 <p>Les exception ne sont pas un système élaboré de gestion d&#8217;erreur. Une erreur est dans la majorité des cas assimilable à un bug, c&#8217;est à dire une réaction non désirée. Une exception est un traitement qui sera appelé lorsqu&#8217;un cas marginal est détecté pendant le déroulement du programme.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s1">&#39;Incident XY&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span> <span class="c1">//affiche &quot;Incident XY&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Lorsqu&#8217;une exception est lancée depuis un bloc <tt class="docutils literal"><span class="pre">try</span></tt>, le bloc <tt class="docutils literal"><span class="pre">catch</span></tt> permet de l&#8217;attraper et de traiter l&#8217;incident.</p>
 </div>
 

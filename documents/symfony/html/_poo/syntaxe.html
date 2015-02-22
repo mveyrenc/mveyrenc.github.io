@@ -63,8 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../rappel.html">Quelques rappels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#la-programmation-orientee-objet">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappel.html">La programmation orientée objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#terminologie">Terminologie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#mots-reserves">Mots réservés</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
@@ -72,7 +71,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#classes-abstraites">Classes abstraites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#visibilite">Visibilité</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rappel.html#interfaces">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#references-et-clonage">Références et clonage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
@@ -131,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../twig.html#les-operateurs">Les opérateurs</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doctrine.html">Doctrine et la base de donnée</a></li>
 </ul>
 
@@ -171,6 +170,36 @@ Le mot-clé <tt class="docutils literal"><span class="pre">class</span></tt> est
 Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#8217;importe quel nombre de chiffres, ou de lettres, ou d&#8217;underscores, et ne pas être un mot réservé PHP.</p>
 <p>La création d&#8217;une instance de classe (un objet) se faite en utilisant le mot-clé <tt class="docutils literal"><span class="pre">new</span></tt>.</p>
 <p>L&#8217;accès aux propriétés et au méthodes l&#8217;objet se fait par la flèche <tt class="docutils literal"><span class="pre">-&gt;</span></tt>, et l&#8217;accès statique par l&#8217;opérateur de porté <tt class="docutils literal"><span class="pre">::</span></tt>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONSOMMATION</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1"># L/100km</span>
+    <span class="k">const</span> <span class="no">CAPACITE_RESERVOIR</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">#L</span>
+    
+    <span class="k">public</span> <span class="nv">$kilometrage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$resteReservoir</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">+=</span> <span class="nv">$distance</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">-=</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="o">*</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">peutEncoreRouler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">*</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
+<span class="c1">// Ceci peut également être réalisé avec une variable :</span>
+<span class="nv">$className</span> <span class="o">=</span> <span class="s1">&#39;Voiture&#39;</span><span class="p">;</span>
+<span class="nv">$voiture2</span> <span class="o">=</span> <span class="k">new</span> <span class="nv">$className</span><span class="p">();</span> <span class="c1">// Voiture()</span>
+
+<span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span> <span class="mi">60</span> <span class="p">);</span>
+<span class="nv">$voiture2</span><span class="o">-&gt;</span><span class="na">peutEncoreRouler</span><span class="p">(</span> <span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nx">Voiture</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="p">);</span>  <span class="c1">// Affiche int(4)</span>
+</pre></div>
+</div>
 </div>
 
 
