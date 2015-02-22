@@ -24,11 +24,5 @@ Contents
     services
     twig
     doctrine
-    afficher_entite
-    modifer_entite
-    creer_entite
-    supprimer_entite
-    securite
-    
    
 
