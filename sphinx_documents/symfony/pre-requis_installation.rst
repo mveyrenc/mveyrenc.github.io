@@ -2,6 +2,11 @@
 Pré-requis et installation du framework
 #######################################
 
+.. admonition:: Avant de commencer
+    :class: warning
+
+    Cette procédure est donnée pour une installation sur une Ubuntu 10.04.
+
 **********
 Pré-requis
 **********

@@ -15,11 +15,3 @@ Contents
    _fonctions
    _poo
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
