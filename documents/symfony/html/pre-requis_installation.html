@@ -169,7 +169,7 @@
 <h1>Pré-requis et installation du framework<a class="headerlink" href="#pre-requis-et-installation-du-framework" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="first admonition-title">Avant de commencer</p>
-<p class="last">Cette procédure est donnée pour une installation sur une Ubuntu 10.04.</p>
+<p class="last">Cette procédure est donnée pour une installation sur une Ubuntu 10.04. En fonction de la version d&#8217;Ubuntu ou de la distribution utilisée, les paquets à installer peuvent être différents.</p>
 </div>
 <div class="section" id="pre-requis">
 <h2>Pré-requis<a class="headerlink" href="#pre-requis" title="Permalink to this headline">¶</a></h2>
@@ -277,6 +277,14 @@ secret <span class="o">(</span>ThisTokenIsNotSoSecretChangeIt<span class="o">)</
 </div>
 </div></blockquote>
 </li>
+<li><p class="first">Set &#8220;xdebug.max_nesting_level&#8221; to e.g. &#8220;250&#8221; in php.ini</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
+<span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ul>
 <img alt="_images/symfony_config_success.png" src="_images/symfony_config_success.png" />
 <p>L&#8217;installation de Symfony est terminée. Rendez-vous sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/">http://localhost/Symfony/web/app_dev.php/</a>, vous devriez voir une page ressemblant à l&#8217;image ci-dessous :</p>
@@ -289,6 +297,61 @@ secret <span class="o">(</span>ThisTokenIsNotSoSecretChangeIt<span class="o">)</
 </pre></div>
 </div>
 <img alt="_images/symfony_config_cli.png" class="align-center" src="_images/symfony_config_cli.png" />
+</div>
+<div class="section" id="correction-des-droits-sur-les-fichiers">
+<h3>Correction des droits sur les fichiers<a class="headerlink" href="#correction-des-droits-sur-les-fichiers" title="Permalink to this headline">¶</a></h3>
+<p>Afin corriger les droits sur les fichiers une bonne fois pour toute :</p>
+<ul>
+<li><p class="first">Ajoutons l&#8217;utilisateur d&#8217;Apache (<tt class="docutils literal"><span class="pre">www-data</span></tt>) dans notre groupe</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo usermod -a -G www-data <span class="k">$(</span>whoami<span class="k">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Ajoutons dans le groupe <tt class="docutils literal"><span class="pre">www-data</span></tt></p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo usermod -a -G <span class="k">$(</span>whoami<span class="k">)</span> www-data
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Forçons les droits à 775 pour tous les nouveaux fichiers créés par notre utilisateur</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># ~/.profile</span>
+<span class="nb">umask </span>002
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Rechargeons notre profil</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> ~/.profile
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Faisons de même pour www-data</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># /etc/init.d/apache2</span>
+do_start<span class="o">()</span>
+<span class="o">{</span>
+    <span class="c"># Return</span>
+    <span class="c"># ...</span>
+
+    <span class="nb">umask </span>002
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Redémarrons Apache</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo service apache2 restart
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
 </div>
 </div>
 </div>
