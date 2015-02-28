@@ -50,7 +50,7 @@ La syntaxe est très simple :
 Accès aux variables
 *******************
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
+.. literalinclude:: code-block/twig/layout_twig.html.twig
     :language: html+jinja
     :lines: 1-22
 
@@ -58,7 +58,7 @@ Accès aux variables
 Affectation de variables
 ************************
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
+.. literalinclude:: code-block/twig/layout_twig.html.twig
     :language: html+jinja
     :lines: 25-27
 
@@ -68,13 +68,13 @@ Les filtres
 
 Les variables peuvent être modifiées par des filtres. Les filtres sont séparés par des pipes (``|``) et peuvent avoir des paramètres supplémentaire entre parenthèses.
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
+.. literalinclude:: code-block/twig/layout_twig.html.twig
     :language: html+jinja
     :lines: 30-31
 
 On peut également appliquer un filtre sur une portion de code :
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
+.. literalinclude:: code-block/twig/layout_twig.html.twig
     :language: html+jinja
     :lines: 33-35
 
@@ -84,7 +84,7 @@ Les fonctions
 
 Les fonctions sont appelées pour générer du contenu. Elles sont appelées par leur nom suivi de paramètres entre parenthèses :
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
+.. literalinclude:: code-block/twig/layout_twig.html.twig
     :language: html+jinja
     :lines: 38-40
 
@@ -97,53 +97,26 @@ Les structures de contrôle sont des tags dans Twig.
 Conditions
 ==========
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
+.. literalinclude:: code-block/twig/layout_twig.html.twig
     :language: html+jinja
     :lines: 43-49
 
 Boucle
 ======
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
+.. literalinclude:: code-block/twig/layout_twig.html.twig
     :language: html+jinja
     :lines: 52-54
 
-*********************
-Inclusion de template
-*********************
+Le tag ``{% for %}`` met à disposition au sein de la boucle un variable ``loop`` qui contient les attributs suivantes :
 
-.. literalinclude:: code-block/twig/base_twig.html.twig
-    :language: html+jinja
-    :lines: 57-59
-
-Lors de l'inclusion de template, le template inclus a accès à toutes les variables du contexte courant sauf si on utilise le mot clé ``only``. Le mot clé ``with`` permet quand à lui de passer des variables au template.
-
-********************
-Héritage de template
-********************
-
-L'héritage permet de créer un squelette définissant la structure générale des pages dans lequel on définit des blocs qui seront surchargés par les templates enfants.
-
-Reprenons le template ``show.html.twig`` et copions le code dans le template ``src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig`` en remplaçant les parties spécifiques par des blocs et en l'enrichissant un peu :
-
-.. literalinclude:: code-block/twig/base.html.twig
-    :language: html+jinja
-
-Il faut maintenant modifier le template ``show.html.twig`` pour lui dire d'hériter du tempalte de base et remplir les blocs :
-
-.. literalinclude:: code-block/twig/show_extend.html.twig
-    :language: html+jinja
-
-Twig propose beaucoup de filtres, méthodes et fonctions que vous pouvez retrouver sur la documentation officielle : http://twig.sensiolabs.org/ 
-
-**********
-Les macros
-**********
-
-Les macros sont similaires à des fonctions excepté qu'elles sont écrites directement en Twig :
-
-.. literalinclude:: code-block/twig/macro.html.twig
-    :language: html+jinja
+* ``index`` : numéro de l'itération courante en commençant par 1
+* ``index0`` :  : numéro de l'itération courante en commençant par 0
+* ``revindex`` : nombre d'itérations restantes avant la fin de la boucle en finissant par 1
+* ``revindex0`` : nombre d'itérations restantes avant la fin de la boucle en finissant par 0
+* ``first`` : est-ce la première itération
+* ``last`` : est-ce la dernière itération
+* ``length`` : nombre total d'itération
 
 **********************
 Les types de variables
@@ -214,16 +187,90 @@ Les opérateurs
     * Supprime tous les espaces, tabulations et saut de lignes inutiles :
     * ``{% spaceless %}{% endspaceless %}``
 
-        .. literalinclude:: code-block/twig/base_twig.html.twig
+        .. literalinclude:: code-block/twig/layout_twig.html.twig
             :language: html+jinja
             :lines: 1-6
 
     * ``{%-``, ``-%}``, ``{{-`` et ``-}}``
 
-        .. literalinclude:: code-block/twig/base_twig.html.twig
+        .. literalinclude:: code-block/twig/layout_twig.html.twig
             :language: html+jinja
             :lines: 8-10
     
+**********************
+Les variables globales
+**********************
 
+Quelques variables sont disponibles dans les templates afin nous faciliter la vie :
+
+* ``app.request`` : la requête qui a été passé au contrôleur
+* ``app.session`` : la session de l'utilisateur
+* ``app.environment`` : l'environnement sur lequel on travaille (dev, prod, etc.)
+* ``app.debug`` : le débug est-il activé ou non
+* ``app.security`` : le service security
+* ``app.user`` : l'utilisateur courant
+
+On peut également injecter nos propres variables en ajoutant la configuration suivante :
+
+.. literalinclude:: code-block/twig/config.yml
+    :language: yaml
+
+Ensuite dans les templates, il ne reste plus qu'à appeller la variable : ``{{ auteur }}``
+
+**********
+Les macros
+**********
+
+Les macros sont similaires à des fonctions excepté qu'elles sont écrites directement en Twig :
+
+.. literalinclude:: code-block/twig/macro.html.twig
+    :language: html+jinja
+
+*********************
+Héritage de templates
+*********************
+
+L'héritage permet de créer un squelette définissant la structure générale des pages dans lequel on définit des blocs qui seront surchargés par les templates enfants.
+
+Une des bonne pratique pour organiser ses templates est de mettre trois niveaux d'héritage :
+
+* le **layout général** : il s'agit du design du site. Il est indépendant de celui des bundles. Il contient la structure des page de votre site : header, footer, menu principal, etc. Son chemin exact est ``app/Resources/views/layout.html.twig`` et voici la syntaxe pour l'appeler dans vos bundles : ``::layout.html.twig``
+* le **layout du bundle** : il hérite du layout général et contient tous les éléments communs aux pages d'un même bundle comme un menu secondaire par exemple
+* le **template de la page** : il hérite du layout du bundle et contient la partie centrale de la page
+
+Reprenons le template ``show.html.twig`` et répartissons le code dans les templates ``app/Resources/views/layout.html.twig`` et ``src/Epsi/Bundle/BlogBundle/Resources/views/layout.html.twig`` en remplaçant les parties spécifiques par des blocs et en l'enrichissant un peu :
+
+.. literalinclude:: code-block/twig/layout.html.twig
+    :language: html+jinja
+
+.. literalinclude:: code-block/twig/layout_bundle.html.twig
+    :language: html+jinja
+
+.. literalinclude:: code-block/twig/show_extend.html.twig
+    :language: html+jinja
+
+**********************
+Inclusion de templates
+**********************
+
+.. literalinclude:: code-block/twig/layout_twig.html.twig
+    :language: html+jinja
+    :lines: 57-59
+
+Lors de l'inclusion de template, le template inclus a accès à toutes les variables du contexte courant sauf si on utilise le mot clé ``only``. Le mot clé ``with`` permet quand à lui de passer des variables au template.
+
+************************
+Inclusion de contrôleurs
+************************
+
+Pour inclure un contôleur, c'est très simple il suffit d'utiliser la fonction ``render`` :
+
+.. code-block:: html+jinja
+    
+    {{ render(controller("EpsiBlogBundle:Blog:menu")) }}
+
+Ici, contrairement à un inclusion de template qui va utiliser les variables de sont template parent, le contrôleur appelé va récupérer tous les données qu'il lui sont nécessaire et les afficher dans une vue.
+
+Twig propose beaucoup de filtres, méthodes et fonctions que vous pouvez retrouver sur la documentation officielle : http://twig.sensiolabs.org/
 
 

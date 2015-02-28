@@ -1,3 +1,4 @@
+{# app/Resources/views/layout.html.twig #}
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,6 +9,10 @@
     </head>
     <body>
         <div class="container">
+            <header class="well">
+                {% block header %}
+                {% endblock %}
+            </header>
             <div id="content">
                 {% block content %}
                 {% endblock %}

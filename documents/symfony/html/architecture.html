@@ -269,8 +269,19 @@ web
 </div>
 <div class="section" id="les-bundles">
 <h2>Les bundles<a class="headerlink" href="#les-bundles" title="Permalink to this headline">¶</a></h2>
-<p>Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s&#8217;agit des contrôleurs, modèles, vues, classes personnelles, etc.
-Tout ces éléments sont organisés dans des répertoires comme on peut le voir dans le bundle de démo qui se trouve dans <tt class="docutils literal"><span class="pre">Acme/DemoBundle</span></tt> :</p>
+<p>Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s&#8217;agit :</p>
+<ul class="simple">
+<li>des contrôleurs</li>
+<li>des modèles</li>
+<li>des vues</li>
+<li>des commandes</li>
+<li>des services</li>
+<li>des assets (images, javascript, CSS)</li>
+<li>des dépendances (librairies)</li>
+<li>des outils de débug</li>
+<li>etc.</li>
+</ul>
+<p>Tout ces éléments sont organisés dans des répertoires comme on peut le voir dans le bundle de démo qui se trouve dans <tt class="docutils literal"><span class="pre">Acme/DemoBundle</span></tt> :</p>
 <div class="highlight-bash"><div class="highlight"><pre>Controller                          | Contrôleurs
 └── DefaultController.php
 DependencyInjection                 | Informations sur le bundle <span class="o">(</span>chargement automatique de la configuration par exemple<span class="o">)</span>

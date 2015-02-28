@@ -1,0 +1,11 @@
+{# src/Epsi/Bundle/BlogBundle/Resources/views/layout.html.twig #}
+{% extends "::layout.html.twig" %}
+
+{% block title 'Blog' %}
+
+{% block header %}<h1>Blog</h1>{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+    - <a href="{{ path('epsi_blog_index') }}">Lien vers la liste des postes</a>
+{% endblock %}

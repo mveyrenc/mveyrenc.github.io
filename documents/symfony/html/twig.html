@@ -124,11 +124,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#les-filtres">Les filtres</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-fonctions">Les fonctions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#inclusion-de-template">Inclusion de template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#heritage-de-template">Héritage de template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#les-macros">Les macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-types-de-variables">Les types de variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-operateurs">Les opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-variables-globales">Les variables globales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-macros">Les macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heritage-de-templates">Héritage de templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inclusion-de-templates">Inclusion de templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inclusion-de-controleurs">Inclusion de contrôleurs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
@@ -317,86 +319,16 @@
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="inclusion-de-template">
-<h2>Inclusion de template<a class="headerlink" href="#inclusion-de-template" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;header.html&#39;</span> <span class="k">with</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="cp">%}</span>
-<span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;body.html&#39;</span> <span class="nv">only</span> <span class="cp">%}</span>
-<span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;footer.html&#39;</span> <span class="k">with</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="nv">only</span> <span class="cp">%}</span>
-</pre></div>
-</div>
-<p>Lors de l&#8217;inclusion de template, le template inclus a accès à toutes les variables du contexte courant sauf si on utilise le mot clé <tt class="docutils literal"><span class="pre">only</span></tt>. Le mot clé <tt class="docutils literal"><span class="pre">with</span></tt> permet quand à lui de passer des variables au template.</p>
-</div>
-<div class="section" id="heritage-de-template">
-<h2>Héritage de template<a class="headerlink" href="#heritage-de-template" title="Permalink to this headline">¶</a></h2>
-<p>L&#8217;héritage permet de créer un squelette définissant la structure générale des pages dans lequel on définit des blocs qui seront surchargés par les templates enfants.</p>
-<p>Reprenons le template <tt class="docutils literal"><span class="pre">show.html.twig</span></tt> et copions le code dans le template <tt class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig</span></tt> en remplaçant les parties spécifiques par des blocs et en l&#8217;enrichissant un peu :</p>
-<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-    <span class="nt">&lt;head&gt;</span>
-        <span class="nt">&lt;meta</span> <span class="na">http-equic=</span><span class="s">&quot;Content-type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;title&gt;</span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">title</span> <span class="cp">%}{%</span> <span class="k">endblock</span> <span class="cp">%}</span> - Blog<span class="nt">&lt;/title&gt;</span>
-        <span class="cp">{%</span> <span class="k">block</span> <span class="nv">stylesheets</span> <span class="cp">%}</span>
-        <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
-    <span class="nt">&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
-                <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
-                <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
-            <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;footer&gt;</span>
-                <span class="cp">{%</span> <span class="k">block</span> <span class="nv">footer</span> <span class="cp">%}</span>
-                    <span class="ni">&amp;copy;</span> Copyright 2015
-                <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
-            <span class="nt">&lt;/footer&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="cp">{%</span> <span class="k">block</span> <span class="nv">javascripts</span> <span class="cp">%}</span>
-        <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
-    <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre></div>
-</div>
-<p>Il faut maintenant modifier le template <tt class="docutils literal"><span class="pre">show.html.twig</span></tt> pour lui dire d&#8217;hériter du tempalte de base et remplir les blocs :</p>
-<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;EpsiBlogBundle::base.html.twig&quot;</span> <span class="cp">%}</span>
-
-<span class="cp">{%</span> <span class="k">block</span> <span class="nv">title</span> <span class="s1">&#39;Blog&#39;</span> <span class="cp">%}</span>
-
-<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
-    <span class="nt">&lt;h1&gt;</span>Blog<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">date</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s2">&quot;m/d/Y&quot;</span><span class="o">)</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">tags</span> <span class="cp">%}</span>
-            <span class="nt">&lt;li&gt;</span><span class="cp">{{</span> <span class="nv">tag</span> <span class="cp">}}</span><span class="nt">&lt;/li&gt;</span>
-            <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-    <span class="nt">&lt;/ul&gt;</span>
-    <span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">html</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">html</span><span class="o">|</span><span class="nf">raw</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
-<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
-
-<span class="cp">{%</span> <span class="k">block</span> <span class="nv">footer</span> <span class="cp">%}</span>
-    <span class="cp">{{</span> <span class="nv">parent</span><span class="o">()</span> <span class="cp">}}</span>
-    - <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">path</span><span class="o">(</span><span class="s1">&#39;epsi_blog_index&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>Lien vers la liste des postes<span class="nt">&lt;/a&gt;</span>
-<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
-</pre></div>
-</div>
-<p>Twig propose beaucoup de filtres, méthodes et fonctions que vous pouvez retrouver sur la documentation officielle : <a class="reference external" href="http://twig.sensiolabs.org/">http://twig.sensiolabs.org/</a></p>
-</div>
-<div class="section" id="les-macros">
-<h2>Les macros<a class="headerlink" href="#les-macros" title="Permalink to this headline">¶</a></h2>
-<p>Les macros sont similaires à des fonctions excepté qu&#8217;elles sont écrites directement en Twig :</p>
-<div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# dans le template où l&#39;on veut utiliser la macro #}</span>
-<span class="cp">{%</span> <span class="k">import</span> <span class="nv">macro.html.twig</span> <span class="k">as</span> <span class="nv">forms</span> <span class="cp">%}</span>
-
-<span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">forms.input</span><span class="o">(</span><span class="s1">&#39;username&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
-
-<span class="c">{# dans le template où l&#39;on implémente les macros #}</span>
-<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">input</span><span class="o">(</span><span class="nv">name</span><span class="o">,</span> <span class="nv">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">,</span> <span class="nv">type</span> <span class="o">=</span> <span class="s2">&quot;text&quot;</span><span class="o">,</span> <span class="nv">size</span> <span class="o">=</span> <span class="m">20</span><span class="o">)</span> <span class="cp">%}</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">type</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">name=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">value=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">value</span><span class="o">|</span><span class="nf">e</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">size=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">size</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="nt">/&gt;</span>
-<span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span>
-</pre></div>
+<p>Le tag <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">%}</span></tt> met à disposition au sein de la boucle un variable <tt class="docutils literal"><span class="pre">loop</span></tt> qui contient les attributs suivantes :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">index</span></tt> : numéro de l&#8217;itération courante en commençant par 1</li>
+<li><tt class="docutils literal"><span class="pre">index0</span></tt> :  : numéro de l&#8217;itération courante en commençant par 0</li>
+<li><tt class="docutils literal"><span class="pre">revindex</span></tt> : nombre d&#8217;itérations restantes avant la fin de la boucle en finissant par 1</li>
+<li><tt class="docutils literal"><span class="pre">revindex0</span></tt> : nombre d&#8217;itérations restantes avant la fin de la boucle en finissant par 0</li>
+<li><tt class="docutils literal"><span class="pre">first</span></tt> : est-ce la première itération</li>
+<li><tt class="docutils literal"><span class="pre">last</span></tt> : est-ce la dernière itération</li>
+<li><tt class="docutils literal"><span class="pre">length</span></tt> : nombre total d&#8217;itération</li>
+</ul>
 </div>
 </div>
 <div class="section" id="les-types-de-variables">
@@ -557,6 +489,131 @@
 </dl>
 </li>
 </ul>
+</div>
+<div class="section" id="les-variables-globales">
+<h2>Les variables globales<a class="headerlink" href="#les-variables-globales" title="Permalink to this headline">¶</a></h2>
+<p>Quelques variables sont disponibles dans les templates afin nous faciliter la vie :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">app.request</span></tt> : la requête qui a été passé au contrôleur</li>
+<li><tt class="docutils literal"><span class="pre">app.session</span></tt> : la session de l&#8217;utilisateur</li>
+<li><tt class="docutils literal"><span class="pre">app.environment</span></tt> : l&#8217;environnement sur lequel on travaille (dev, prod, etc.)</li>
+<li><tt class="docutils literal"><span class="pre">app.debug</span></tt> : le débug est-il activé ou non</li>
+<li><tt class="docutils literal"><span class="pre">app.security</span></tt> : le service security</li>
+<li><tt class="docutils literal"><span class="pre">app.user</span></tt> : l&#8217;utilisateur courant</li>
+</ul>
+<p>On peut également injecter nos propres variables en ajoutant la configuration suivante :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/config.yml</span>
+
+<span class="l-Scalar-Plain">twig</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">globals</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">auteur</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">moi</span>
+</pre></div>
+</div>
+<p>Ensuite dans les templates, il ne reste plus qu&#8217;à appeller la variable : <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">auteur</span> <span class="pre">}}</span></tt></p>
+</div>
+<div class="section" id="les-macros">
+<h2>Les macros<a class="headerlink" href="#les-macros" title="Permalink to this headline">¶</a></h2>
+<p>Les macros sont similaires à des fonctions excepté qu&#8217;elles sont écrites directement en Twig :</p>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# dans le template où l&#39;on veut utiliser la macro #}</span>
+<span class="cp">{%</span> <span class="k">import</span> <span class="nv">macro.html.twig</span> <span class="k">as</span> <span class="nv">forms</span> <span class="cp">%}</span>
+
+<span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">forms.input</span><span class="o">(</span><span class="s1">&#39;username&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
+
+<span class="c">{# dans le template où l&#39;on implémente les macros #}</span>
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">input</span><span class="o">(</span><span class="nv">name</span><span class="o">,</span> <span class="nv">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">,</span> <span class="nv">type</span> <span class="o">=</span> <span class="s2">&quot;text&quot;</span><span class="o">,</span> <span class="nv">size</span> <span class="o">=</span> <span class="m">20</span><span class="o">)</span> <span class="cp">%}</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">type</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">name=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">value=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">value</span><span class="o">|</span><span class="nf">e</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">size=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">size</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="nt">/&gt;</span>
+<span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="heritage-de-templates">
+<h2>Héritage de templates<a class="headerlink" href="#heritage-de-templates" title="Permalink to this headline">¶</a></h2>
+<p>L&#8217;héritage permet de créer un squelette définissant la structure générale des pages dans lequel on définit des blocs qui seront surchargés par les templates enfants.</p>
+<p>Une des bonne pratique pour organiser ses templates est de mettre trois niveaux d&#8217;héritage :</p>
+<ul class="simple">
+<li>le <strong>layout général</strong> : il s&#8217;agit du design du site. Il est indépendant de celui des bundles. Il contient la structure des page de votre site : header, footer, menu principal, etc. Son chemin exact est <tt class="docutils literal"><span class="pre">app/Resources/views/layout.html.twig</span></tt> et voici la syntaxe pour l&#8217;appeler dans vos bundles : <tt class="docutils literal"><span class="pre">::layout.html.twig</span></tt></li>
+<li>le <strong>layout du bundle</strong> : il hérite du layout général et contient tous les éléments communs aux pages d&#8217;un même bundle comme un menu secondaire par exemple</li>
+<li>le <strong>template de la page</strong> : il hérite du layout du bundle et contient la partie centrale de la page</li>
+</ul>
+<p>Reprenons le template <tt class="docutils literal"><span class="pre">show.html.twig</span></tt> et répartissons le code dans les templates <tt class="docutils literal"><span class="pre">app/Resources/views/layout.html.twig</span></tt> et <tt class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/layout.html.twig</span></tt> en remplaçant les parties spécifiques par des blocs et en l&#8217;enrichissant un peu :</p>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# app/Resources/views/layout.html.twig #}</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equic=</span><span class="s">&quot;Content-type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;</span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">title</span> <span class="cp">%}{%</span> <span class="k">endblock</span> <span class="cp">%}</span> - Blog<span class="nt">&lt;/title&gt;</span>
+        <span class="cp">{%</span> <span class="k">block</span> <span class="nv">stylesheets</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;well&quot;</span><span class="nt">&gt;</span>
+                <span class="cp">{%</span> <span class="k">block</span> <span class="nv">header</span> <span class="cp">%}</span>
+                <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+            <span class="nt">&lt;/header&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+                <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+                <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;footer&gt;</span>
+                <span class="cp">{%</span> <span class="k">block</span> <span class="nv">footer</span> <span class="cp">%}</span>
+                    <span class="ni">&amp;copy;</span> Copyright 2015
+                <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+            <span class="nt">&lt;/footer&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="cp">{%</span> <span class="k">block</span> <span class="nv">javascripts</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# src/Epsi/Bundle/BlogBundle/Resources/views/layout.html.twig #}</span>
+<span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;::layout.html.twig&quot;</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">title</span> <span class="s1">&#39;Blog&#39;</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">header</span> <span class="cp">%}</span><span class="nt">&lt;h1&gt;</span>Blog<span class="nt">&lt;/h1&gt;</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">footer</span> <span class="cp">%}</span>
+    <span class="cp">{{</span> <span class="nv">parent</span><span class="o">()</span> <span class="cp">}}</span>
+    - <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">path</span><span class="o">(</span><span class="s1">&#39;epsi_blog_index&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>Lien vers la liste des postes<span class="nt">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# src/Epsi/Bundle/BlogBundle/Resources/views/Blog/show.html.twig #}</span>
+<span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;EpsiBlogBundle::layout.html.twig&quot;</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+    <span class="nt">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">date</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s2">&quot;m/d/Y&quot;</span><span class="o">)</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">tags</span> <span class="cp">%}</span>
+            <span class="nt">&lt;li&gt;</span><span class="cp">{{</span> <span class="nv">tag</span> <span class="cp">}}</span><span class="nt">&lt;/li&gt;</span>
+            <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">html</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">html</span><span class="o">|</span><span class="nf">raw</span> <span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inclusion-de-templates">
+<h2>Inclusion de templates<a class="headerlink" href="#inclusion-de-templates" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;header.html&#39;</span> <span class="k">with</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;body.html&#39;</span> <span class="nv">only</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;footer.html&#39;</span> <span class="k">with</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="nv">only</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Lors de l&#8217;inclusion de template, le template inclus a accès à toutes les variables du contexte courant sauf si on utilise le mot clé <tt class="docutils literal"><span class="pre">only</span></tt>. Le mot clé <tt class="docutils literal"><span class="pre">with</span></tt> permet quand à lui de passer des variables au template.</p>
+</div>
+<div class="section" id="inclusion-de-controleurs">
+<h2>Inclusion de contrôleurs<a class="headerlink" href="#inclusion-de-controleurs" title="Permalink to this headline">¶</a></h2>
+<p>Pour inclure un contôleur, c&#8217;est très simple il suffit d&#8217;utiliser la fonction <tt class="docutils literal"><span class="pre">render</span></tt> :</p>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">render</span><span class="o">(</span><span class="nv">controller</span><span class="o">(</span><span class="s2">&quot;EpsiBlogBundle:Blog:menu&quot;</span><span class="o">))</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<p>Ici, contrairement à un inclusion de template qui va utiliser les variables de sont template parent, le contrôleur appelé va récupérer tous les données qu&#8217;il lui sont nécessaire et les afficher dans une vue.</p>
+<p>Twig propose beaucoup de filtres, méthodes et fonctions que vous pouvez retrouver sur la documentation officielle : <a class="reference external" href="http://twig.sensiolabs.org/">http://twig.sensiolabs.org/</a></p>
 </div>
 </div>
 

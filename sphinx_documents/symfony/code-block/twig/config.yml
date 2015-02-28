@@ -1,0 +1,5 @@
+# app/config/config.yml
+
+twig:
+    globals:
+        auteur: moi

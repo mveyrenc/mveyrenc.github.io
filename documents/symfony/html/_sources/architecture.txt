@@ -105,8 +105,21 @@ Déroulement d'une requête dans Symfony
 Les bundles
 ***********
 
-Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s'agit des contrôleurs, modèles, vues, classes personnelles, etc.
+Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s'agit :
+
+* des contrôleurs
+* des modèles
+* des vues
+* des commandes
+* des services
+* des assets (images, javascript, CSS)
+* des dépendances (librairies)
+* des outils de débug
+* etc.
+
 Tout ces éléments sont organisés dans des répertoires comme on peut le voir dans le bundle de démo qui se trouve dans ``Acme/DemoBundle`` :
 
 .. literalinclude:: code-block/architecture/arbo-bundle.txt
     :language: bash
+
+.. http://jolicode.github.io/best-bundle-conf

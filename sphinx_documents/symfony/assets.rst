@@ -22,8 +22,5 @@ L'option ``symlink`` permet de créer des liens symboliques au lieu de copies ph
 
 Chargeons la CSS et les javascripts dans nos templates :
 
-.. literalinclude:: code-block/assets/base.html.twig
-    :language: html+jinja
-
-.. literalinclude:: code-block/assets/show.html.twig
+.. literalinclude:: code-block/assets/layout.html.twig
     :language: html+jinja
