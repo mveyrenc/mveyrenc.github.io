@@ -177,10 +177,31 @@
             
   <div class="section" id="tp">
 <h1>TP<a class="headerlink" href="#tp" title="Permalink to this headline">¶</a></h1>
-<ol class="arabic simple">
-<li>Créez le bundle EpsiBlogBundle</li>
-<li>Créez les entités Post, User, Comment et Tag avec leur relation</li>
-<li>Créez les routes nécessaires aux actions sur les utilateurs</li>
+<ol class="arabic">
+<li><p class="first">Créez le bundle EpsiBlogBundle</p>
+</li>
+<li><p class="first">Créez les entités Post, User, Comment et Tag avec leur relation</p>
+</li>
+<li><p class="first">Créez les interfaces pour gérer chacune des entités avec la commande <tt class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:doctrine:crud</span></tt></p>
+</li>
+<li><p class="first">Ajouter la route <tt class="docutils literal"><span class="pre">epsi_blog_homepage</span></tt> qui doit afficher la liste des posts du blog</p>
+</li>
+<li><p class="first">Reprenez dans le cours les templates <tt class="docutils literal"><span class="pre">base.html.twig</span></tt> de l&#8217;application et du bundle, ceux qui contiennent les assets</p>
+</li>
+<li><p class="first">Modifiez le template d&#8217;affichage de la liste des posts pour mettre les différents éléments dans les blocks des templates de base. Pensez à modifier l&#8217;héritage.</p>
+</li>
+<li><p class="first">Ajoutez un menu en haut de la page vers les listes des différentes entités</p>
+</li>
+<li><dl class="first docutils">
+<dt>Commencez par l&#8217;entité Tag</dt>
+<dd><ol class="first last arabic simple">
+<li>Supprimez le champ <tt class="docutils literal"><span class="pre">post</span></tt> dans le formulaire d&#8217;ajout</li>
+<li>Après la validation du formulaire, modifiez la redirection pour allez sur la liste des tags</li>
+<li>Mettez en forme la liste des tags</li>
+</ol>
+</dd>
+</dl>
+</li>
 </ol>
 </div>
 
