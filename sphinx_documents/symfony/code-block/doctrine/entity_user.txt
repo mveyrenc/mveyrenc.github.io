@@ -1,0 +1,27 @@
+$ php app/console doctrine:generate:entity
+
+...
+
+The Entity shortcut name: EpsiBlogBundle:User
+
+...
+                       
+New field name (press <return> to stop adding fields): username
+Field type [string]:
+Field length [255]: 30
+                                                                                                        
+New field name (press <return> to stop adding fields): email
+Field type [string]:
+Field length [255]: 100
+
+New field name (press <return> to stop adding fields): password
+Field type [string]: 
+Field length [255]: 100
+
+New field name (press <return> to stop adding fields): 
+
+Do you want to generate an empty repository class [no]? yes
+
+...
+
+Do you confirm generation [yes]? yes

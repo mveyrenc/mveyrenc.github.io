@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
   
     <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+        <link rel="next" title="TP" href="tp.html"/>
         <link rel="prev" title="Les assets" href="assets.html"/> 
 
   
@@ -123,15 +124,26 @@
 <li class="toctree-l2"><a class="reference internal" href="twig.html#les-filtres">Les filtres</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twig.html#les-fonctions">Les fonctions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twig.html#les-structures-de-controle">Les structures de contrôle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-template">Inclusion de template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#heritage-de-template">Héritage de template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-macros">Les macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twig.html#les-types-de-variables">Les types de variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twig.html#les-operateurs">Les opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-variables-globales">Les variables globales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-macros">Les macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#heritage-de-templates">Héritage de templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-templates">Inclusion de templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-controleurs">Inclusion de contrôleurs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Doctrine et la base de donnée</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-des-entites">Création des entités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-relations">Définition des relations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manipulation-des-donnees">Manipulation des données</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
 </ul>
 
         
@@ -166,6 +178,811 @@
             
   <div class="section" id="doctrine-et-la-base-de-donnee">
 <h1>Doctrine et la base de donnée<a class="headerlink" href="#doctrine-et-la-base-de-donnee" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="qu-est-ce-qu-un-orm">
+<h2>Qu&#8217;est ce qu&#8217;un ORM ?<a class="headerlink" href="#qu-est-ce-qu-un-orm" title="Permalink to this headline">¶</a></h2>
+<p>Un ORM (Object-Relation Mapper, ou mapping objet-relationnel en français) et un composant qui permet de créer l&#8217;illusion qu&#8217;une base de données relationnelle est une base de données orientée objet en définissant des correspondances entre la base de données et les objets manipulés dans le code.</p>
+</div>
+<div class="section" id="creation-des-entites">
+<h2>Création des entités<a class="headerlink" href="#creation-des-entites" title="Permalink to this headline">¶</a></h2>
+<p>Les entités Doctrine sont de simples classes PHP avec des propriétés et des méthodes. Comme pour les bundles, Symfony propose un générateur créer ces classes.</p>
+<div class="section" id="l-entite-user">
+<h3>L&#8217;entité <tt class="docutils literal"><span class="pre">User</span></tt><a class="headerlink" href="#l-entite-user" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="structure-de-l-entite">
+<h4>Structure de l&#8217;entité<a class="headerlink" href="#structure-de-l-entite" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="33%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>username</td>
+<td>string</td>
+<td>30</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string</td>
+<td>100</td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td>string</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="utilisation-du-generateur">
+<h4>Utilisation du générateur<a class="headerlink" href="#utilisation-du-generateur" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre>$ php app/console doctrine:generate:entity
+
+...
+
+The Entity shortcut name: EpsiBlogBundle:User
+
+...
+                       
+New field name (press &lt;return&gt; to stop adding fields): username
+Field type [string]:
+Field length [255]: 30
+                                                                                                        
+New field name (press &lt;return&gt; to stop adding fields): email
+Field type [string]:
+Field length [255]: 100
+
+New field name (press &lt;return&gt; to stop adding fields): password
+Field type [string]: 
+Field length [255]: 100
+
+New field name (press &lt;return&gt; to stop adding fields): 
+
+Do you want to generate an empty repository class [no]? yes
+
+...
+
+Do you confirm generation [yes]? yes
+</pre></div>
+</div>
+<p>Le générateur crée deux fichiers dans le répertoire <tt class="docutils literal"><span class="pre">Entity</span></tt> de notre bundle : <tt class="docutils literal"><span class="pre">User.php</span></tt> et <tt class="docutils literal"><span class="pre">UserRepository.php</span></tt>. La classe <tt class="docutils literal"><span class="pre">User</span></tt> est la classe représentant l&#8217;entité en elle même, est propriétés et ses méthodes. La classe <tt class="docutils literal"><span class="pre">UserRepository</span></tt> est une classe de dépôt où l&#8217;on va mettre les méthodes qui vont permettent de récupérer les entités depuis la base de données.</p>
+</div>
+<div class="section" id="la-classe-user">
+<h4>La classe <tt class="docutils literal"><span class="pre">User</span></tt><a class="headerlink" href="#la-classe-user" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * User</span>
+<span class="sd"> *</span>
+<span class="sd"> * @ORM\Table()</span>
+<span class="sd"> * @ORM\Entity(repositoryClass=&quot;Epsi\Bundle\BlogBundle\Entity\UserRepository&quot;)</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var integer</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;id&quot;, type=&quot;integer&quot;)</span>
+<span class="sd">     * @ORM\Id</span>
+<span class="sd">     * @ORM\GeneratedValue(strategy=&quot;AUTO&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;username&quot;, type=&quot;string&quot;, length=30)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$username</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;email&quot;, type=&quot;string&quot;, length=100)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$email</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;password&quot;, type=&quot;string&quot;, length=100)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$password</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get id</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return integer </span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Set username</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $username</span>
+<span class="sd">     * @return User</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setUsername</span><span class="p">(</span><span class="nv">$username</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">username</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get username</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string </span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUsername</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">username</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Set email</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $email</span>
+<span class="sd">     * @return User</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setEmail</span><span class="p">(</span><span class="nv">$email</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get email</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string </span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getEmail</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Set password</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $password</span>
+<span class="sd">     * @return User</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setPassword</span><span class="p">(</span><span class="nv">$password</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">password</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get password</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string </span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPassword</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">password</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Le générateur a automatiquement ajouté un champ <tt class="docutils literal"><span class="pre">id</span></tt> ainsi que tous les getter et setter pour toutes les propriétés.</p>
+<ul>
+<li><p class="first">L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\Entity</span></tt> doit être placé avant la définition de la classe. Elle définit que notre objet est une entité et donc qu&#8217;il doit être persisté par Doctrine. Cette annotation un seul paramètre facultatif, <tt class="docutils literal"><span class="pre">repositoryClass</span></tt> qui permet de préciser le namespace complet du repository qui gère cette entité.</p>
+</li>
+<li><p class="first">L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\Table</span></tt> doit être également placé avant la définition de la classe, mais elle est facultative. Elle permet juste de personnaliser le nom de la table créée en base de données, par exemple <tt class="docutils literal"><span class="pre">&#64;ORM\Table(name=&quot;epsi_user&quot;)</span></tt>, et d&#8217;ajouter des paramètres pour le création de la table. Par défaut, si ne nom n&#8217;est pas personnalisé, Doctrine utilisera la nom de l&#8217;entité comme nom de table, ici <tt class="docutils literal"><span class="pre">User</span></tt>. Par conséquent, les noms de vos tables peuvent comporter des majuscules, or la convention de nommage des tables d&#8217;une base de donnée et de ne pas mettre de majuscule car sur un serveur Linux, vous aurez des erreurs. Pour éviter de personnaliser le nom de la table pour chaque entité, on peut paramétré Doctrine pour qu&#8217;il utilise une autre convention de nommage pour ses tables :</p>
+<blockquote>
+<div><div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/config.yml</span>
+
+<span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
+    <span class="l-Scalar-Plain">orm</span><span class="p-Indicator">:</span>
+        <span class="c1"># ...</span>
+        <span class="l-Scalar-Plain">naming_strategy</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">doctrine.orm.naming_strategy.underscore</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\Column</span></tt> s&#8217;applique aux attributs de classe et se positionne juste avant leur définition. Elle permet de définir les caractéristiqued de la colonne :</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">type</span></tt> : le type <strong>Doctrine</strong> de la colonne, par défaut <tt class="docutils literal"><span class="pre">string</span></tt>. Voici la liste des types utilisables :</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">array</span></tt> : tableau sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">serialize()</span></tt> et <tt class="docutils literal"><span class="pre">unserialize()</span></tt> stocké dans un CLOB</li>
+<li><tt class="docutils literal"><span class="pre">simple_array</span></tt> : tableau sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">implode()</span></tt> et <tt class="docutils literal"><span class="pre">explode()</span></tt> avec la virgule comme séparateur stocké dans un CLOB</li>
+<li><tt class="docutils literal"><span class="pre">json_array</span></tt> : tableau sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">json_encode()</span></tt> et <tt class="docutils literal"><span class="pre">json_decode()</span></tt> stocké dans un CLOB</li>
+<li><tt class="docutils literal"><span class="pre">object</span></tt> : objet sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">serialize()</span></tt> et <tt class="docutils literal"><span class="pre">unserialize()</span></tt> stocké dans un CLOB</li>
+<li><tt class="docutils literal"><span class="pre">boolean</span></tt> : booléen stocké dans un BOOLEAN ou un TINYINT</li>
+<li><tt class="docutils literal"><span class="pre">integer</span></tt> : entier jusqu&#8217;à 2 147 483 647 stocké dans un INT</li>
+<li><tt class="docutils literal"><span class="pre">smallint</span></tt> : entier jusqu&#8217;à 32 767 stocké dans un SMALLINT</li>
+<li><tt class="docutils literal"><span class="pre">bigint</span></tt> : entier jusqu&#8217;à 9 223 372 036 854 775 807 stocké dans un BIGINT. Si vous êtes en 32bits, PHP recevra une chaîne de caractères</li>
+<li><tt class="docutils literal"><span class="pre">string</span></tt> : chaîne de caractères stockée dans un VARCHAR</li>
+<li><tt class="docutils literal"><span class="pre">text</span></tt> : texte stocké dans un CLOB</li>
+<li><tt class="docutils literal"><span class="pre">datetime</span></tt> : date et heure stockées dans un DATETIME ou un TIMESTAMP</li>
+<li><tt class="docutils literal"><span class="pre">datetimetz</span></tt> : date et heure avec le fuseau horaire stockées dans un DATETIME ou un TIMESTAMP</li>
+<li><tt class="docutils literal"><span class="pre">date</span></tt> : date stockée dans un DATETIME</li>
+<li><tt class="docutils literal"><span class="pre">time</span></tt> : heure stockée dans un TIME</li>
+<li><tt class="docutils literal"><span class="pre">decimal</span></tt> : nombre flottant stocké dans un DECIMAL</li>
+<li><tt class="docutils literal"><span class="pre">float</span></tt> : nomre flottant stocké dans un FLOAT</li>
+<li><tt class="docutils literal"><span class="pre">blob</span></tt> : binaire stocké dans un BLOB</li>
+<li><tt class="docutils literal"><span class="pre">guid</span></tt> : identifiant stocké dans un GUID ou un UUID</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">name</span></tt> : le nom de la colonne dans la table. Par défaut : le nom de l&#8217;attribut</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">length</span></tt> : taille de la colonne pour les colonnes de type <tt class="docutils literal"><span class="pre">string</span></tt>. Par défaut <tt class="docutils literal"><span class="pre">255</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">unique</span></tt> : ajoute un index <tt class="docutils literal"><span class="pre">UNIQUE</span></tt> si le paramètre vaut <tt class="docutils literal"><span class="pre">true</span></tt>. Par défaut <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">nullable</span></tt> : permet à la colonne de contenir des <tt class="docutils literal"><span class="pre">NULL</span></tt> si le parametre vaut <tt class="docutils literal"><span class="pre">true</span></tt>. Par défaut <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">precision</span></tt> : précision des <tt class="docutils literal"><span class="pre">decimal</span></tt> (nombre de chiffres en tout)</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">scale</span></tt> : nombre de chiffres après la virgule d&#8217;un <tt class="docutils literal"><span class="pre">decimal</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options</span></tt> : des options supplémentaires :</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">default</span></tt> : valeur par défaut du champ</li>
+<li><tt class="docutils literal"><span class="pre">unsigned</span></tt> : supporte des entiers signés</li>
+<li><tt class="docutils literal"><span class="pre">fixed</span></tt> : la taille de la chaîne doit être fixe où doit-elle variée</li>
+<li><tt class="docutils literal"><span class="pre">comment</span></tt> : commentaire dans la déclaration de la colonne</li>
+<li><tt class="docutils literal"><span class="pre">customSchemaOptions</span></tt> : permet d&#8217;ajouter des options supplémentaires en fonction du type de champ et du SGBD utilisé</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Pour plus d&#8217;information sur les annotations Doctrine, voici la doc : <a class="reference external" href="http://doctrine-orm.readthedocs.org/en/latest/reference/annotations-reference.html">http://doctrine-orm.readthedocs.org/en/latest/reference/annotations-reference.html</a></p>
+</div>
+<div class="section" id="la-classe-userrepository">
+<h4>La classe <tt class="docutils literal"><span class="pre">UserRepository</span></tt><a class="headerlink" href="#la-classe-userrepository" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityRepository</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * UserRepository</span>
+<span class="sd"> *</span>
+<span class="sd"> * This class was generated by the Doctrine ORM. Add your own custom</span>
+<span class="sd"> * repository methods below.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">UserRepository</span> <span class="k">extends</span> <span class="nx">EntityRepository</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Quant à la classe <tt class="docutils literal"><span class="pre">UserRepository</span></tt> pour l&#8217;instant , elle attend nos méthodes.</p>
+</div>
+</div>
+<div class="section" id="creation-des-autres-entites">
+<h3>Création des autres entités<a class="headerlink" href="#creation-des-autres-entites" title="Permalink to this headline">¶</a></h3>
+<p>Créez maintenant les autres entités du blog :</p>
+<div class="section" id="l-entite-post">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Post</span></tt><a class="headerlink" href="#l-entite-post" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="33%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>255</td>
+</tr>
+<tr class="row-odd"><td>date</td>
+<td>datetime</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>body</td>
+<td>text</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="l-entite-tag">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Tag</span></tt><a class="headerlink" href="#l-entite-tag" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="33%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="l-entite-comment">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Comment</span></tt><a class="headerlink" href="#l-entite-comment" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="33%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>date</td>
+<td>datetime</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>comment</td>
+<td>text</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="l-entite-image">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Image</span></tt><a class="headerlink" href="#l-entite-image" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="33%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>url</td>
+<td>string</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>alt</td>
+<td>string</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="definition-de-valeur-par-defaut">
+<h2>Définition de valeur par défaut<a class="headerlink" href="#definition-de-valeur-par-defaut" title="Permalink to this headline">¶</a></h2>
+<p>Les entités <tt class="docutils literal"><span class="pre">Post</span></tt> et <tt class="docutils literal"><span class="pre">Comment</span></tt> ont une date qui correspond à leur date de création. Pour éviter d&#8217;avoir à le saisir à chaque fois, on peut placer l&#8217;initialisation de ce champ dans le constructeur :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="sd">/**</span>
+<span class="sd">    * Constructor</span>
+<span class="sd">    */</span>
+   <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\DateTime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="definition-des-relations">
+<h2>Définition des relations<a class="headerlink" href="#definition-des-relations" title="Permalink to this headline">¶</a></h2>
+<p>Le générateur d&#8217;entités ne crée pas propriétés et méthodes nécessaires à la manipulation des relations entre les entités. Il faut les ajouter manuellement après la génération de l&#8217;entité.</p>
+<p>Doctrine gère plusieurs types de relations dans les entités : <tt class="docutils literal"><span class="pre">OneToOne</span></tt>, <tt class="docutils literal"><span class="pre">OneToMany</span></tt> et <tt class="docutils literal"><span class="pre">ManyToMany</span></tt>.</p>
+<div class="section" id="notions-techniques-a-savoir">
+<h3>Notions techniques à savoir<a class="headerlink" href="#notions-techniques-a-savoir" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="notion-du-proprietaire-et-de-l-inverse">
+<h4>Notion du propriétaire et de l&#8217;inverse<a class="headerlink" href="#notion-du-proprietaire-et-de-l-inverse" title="Permalink to this headline">¶</a></h4>
+<p>Dans une relation, il y a toujours un entité <strong>propriétaire</strong>, et une dite <strong>inverse</strong>. L&#8217;entité propriétaire est celle qui contient la référence à l&#8217;autre entité. Par contre, attention, la logique propriétaire-inverse n&#8217;est pas lié à la logique métier, mais elle est purement technique. Le propriétaire de la relation est celui qui porte la clé étrangère.</p>
+</div>
+<div class="section" id="notion-d-unidirectionnalite-et-de-bidirectionnalite">
+<h4>Notion d&#8217;unidirectionnalité et de bidirectionnalité<a class="headerlink" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite" title="Permalink to this headline">¶</a></h4>
+<p>Une relation peut être unidirectionnalité, à sens unique, ou bidirectionnalité, à double sens.</p>
+<p>Dans le cas d&#8217;une relation unidirectionnelle, on peut récupérer les entités inverses à partir de l&#8217;entité propriétaire (<tt class="docutils literal"><span class="pre">$entiteProprietaire-&gt;getEntiteInverse()</span></tt>) mais on ne peut pas récupéré l&#8217;entité propriétaire à partir des entités inverses (<tt class="docutils literal"><span class="pre">$entiteInverse-&gt;getEntiteProprietaire()</span></tt>).
+Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
+</div>
+</div>
+<div class="section" id="relation-one-to-one">
+<h3>Relation One-To-One<a class="headerlink" href="#relation-one-to-one" title="Permalink to this headline">¶</a></h3>
+<p>Comme l&#8217;indique son nom, c&#8217;est une relation unique entre deux objets.</p>
+<div class="section" id="dans-l-entite-proprietaire">
+<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#dans-l-entite-proprietaire" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+  <span class="sd">/**</span>
+<span class="sd">   * @ORM\OneToOne(targetEntity=&quot;Image&quot;, cascade={&quot;persist&quot;})</span>
+<span class="sd">   */</span>
+  <span class="k">private</span> <span class="nv">$avatar</span><span class="p">;</span>
+
+  <span class="c1">// …</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dans-l-entite-inverse">
+<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#dans-l-entite-inverse" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Image</span>
+<span class="p">{</span>
+  <span class="c1">// Nul besoin d&#39;ajouter une propriété ici</span>
+
+  <span class="c1">// …</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\OneToOne</span></tt> définit la relation vers l&#8217;autre entité. Elle possède au moins l&#8217;option <tt class="docutils literal"><span class="pre">targetEntity</span></tt> qui vaut le namespace complet vers l&#8217;entité liée. L&#8217;option <tt class="docutils literal"><span class="pre">cascade</span></tt> permet de &#8220;cascader&#8221; les actions effectuées sur l&#8217;entité sur ses entités liées par la relation (<tt class="docutils literal"><span class="pre">persist</span></tt>, <tt class="docutils literal"><span class="pre">remove`,</span> <span class="pre">``merge</span></tt>, <tt class="docutils literal"><span class="pre">detach</span></tt>, <tt class="docutils literal"><span class="pre">refresh</span></tt>).</p>
+<p>Comme tout attribut de l&#8217;entité, il faut implémenter son getter et son setter. Vous pouvez utilisez la commande suivante :</p>
+<div class="highlight-bash"><div class="highlight"><pre>php app/console doctrine:generate:entities EpsiBlogBundle:User
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="relation-one-to-many">
+<h3>Relation One-To-Many<a class="headerlink" href="#relation-one-to-many" title="Permalink to this headline">¶</a></h3>
+<p>Cette relation permet à une entité d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, un <tt class="docutils literal"><span class="pre">User</span></tt> qui est lié à plusieurs <tt class="docutils literal"><span class="pre">Post</span></tt>.</p>
+<div class="section" id="id1">
+<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var User</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\ManyToOne(</span>
+<span class="sd">     *      targetEntity=&quot;User&quot;,</span>
+<span class="sd">     *      inversedBy=&quot;posts&quot;</span>
+<span class="sd">     * )</span>
+<span class="sd">     * @ORM\JoinColumn(nullable=false)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$author</span><span class="p">;</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var ArrayCollection</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\OneToMany(</span>
+<span class="sd">     *      targetEntity=&quot;Epsi\Bundle\BlogBundle\Entity\Post&quot;,</span>
+<span class="sd">     *      mappedBy=&quot;author&quot;,</span>
+<span class="sd">     *      cascade={&quot;persist&quot;}</span>
+<span class="sd">     * )</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$posts</span><span class="p">;</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\ManyToOne</span></tt> a comme paramètre <tt class="docutils literal"><span class="pre">inversedBy</span></tt> qui prend comme valeur le nom de l&#8217;attribut dans l&#8217;entité inverse.</p>
+<p>L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\OneToMany</span></tt> a quant à elle le paramètre <tt class="docutils literal"><span class="pre">mappedBy</span></tt> qui prend comme valeur le nom de l&#8217;attribut dans l&#8217;entité propriétaire.</p>
+<p>L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\JoinColumn(nullable=false)</span></tt> permet de rendre la relation obligatoire.</p>
+</div>
+</div>
+<div class="section" id="relation-many-to-many">
+<h3>Relation Many-To-Many<a class="headerlink" href="#relation-many-to-many" title="Permalink to this headline">¶</a></h3>
+<p>Cette relation permet à plusieurs entités d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, des <tt class="docutils literal"><span class="pre">Post</span></tt> qui sont liés à plusieurs <tt class="docutils literal"><span class="pre">Tag</span></tt>.</p>
+<div class="section" id="id3">
+<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var Tag</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\ManyToMany(</span>
+<span class="sd">     *      targetEntity=&quot;Tag&quot;,</span>
+<span class="sd">     *      inversedBy=&quot;posts&quot;</span>
+<span class="sd">     * )</span>
+<span class="sd">     * @ORM\JoinTable(name=&quot;posts_tags&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$tags</span><span class="p">;</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Tag</span> <span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var Post</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\ManyToMany(</span>
+<span class="sd">     *      targetEntity=&quot;Post&quot;,</span>
+<span class="sd">     *      mappedBy=&quot;tags&quot;</span>
+<span class="sd">     * )</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$posts</span><span class="p">;</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Lorsque vous ajoutez des propriétés dans une entité, pensez à générer les getter et setter en lançant la commande :</p>
+<div class="last highlight-bash"><div class="highlight"><pre>php app/console doctrine:generate:entities
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creation-de-la-base-de-donnees-et-des-tables">
+<h2>Création de la base de données et des tables<a class="headerlink" href="#creation-de-la-base-de-donnees-et-des-tables" title="Permalink to this headline">¶</a></h2>
+<p>Les paramètres de connexion à la base de données se trouvent habituellement dans le fichier <tt class="docutils literal"><span class="pre">app/config/parameters.yml</span></tt> :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">parameters</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">database_driver</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">pdo_mysql</span>
+    <span class="l-Scalar-Plain">database_host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">127.0.0.1</span>
+    <span class="l-Scalar-Plain">database_port</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">null</span>
+    <span class="l-Scalar-Plain">database_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+    <span class="l-Scalar-Plain">database_user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+    <span class="l-Scalar-Plain">database_password</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+</pre></div>
+</div>
+<p>Ces paramètres sont repris dans le fichier <tt class="docutils literal"><span class="pre">app/config/config.yml</span></tt> :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">dbal</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">driver</span><span class="p-Indicator">:</span>   <span class="s">&quot;%database_driver%&quot;</span>
+        <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span>     <span class="s">&quot;%database_host%&quot;</span>
+        <span class="l-Scalar-Plain">dbname</span><span class="p-Indicator">:</span>   <span class="s">&quot;%database_name%&quot;</span>
+        <span class="l-Scalar-Plain">user</span><span class="p-Indicator">:</span>     <span class="s">&quot;%database_user%&quot;</span>
+        <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span> <span class="s">&quot;%database_password%&quot;</span>
+</pre></div>
+</div>
+<p>Maintenant que Doctrine connaît vos paramètres de connexion, vous pouvez lui demander de créer votre base de données :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:database:create
+</pre></div>
+</div>
+<p>Si l&#8217;utilisateur <tt class="docutils literal"><span class="pre">symfony</span></tt> ne peut pas se connecter à la base de données, ajoutez lui les droits puis relancer la création de la base :</p>
+<div class="highlight-mysql"><div class="highlight"><pre><span class="c1"># mysql -uroot -p</span>
+<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">symfony</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">symfony</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;symfony&#39;</span><span class="p">;</span>
+<span class="n">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">Pour supprimer la base de données</p>
+<blockquote class="last">
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:database:drop --force
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<p>Ensuite, pour créer le schéma dans la base de données, il suffit de taper la commande :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:schema:update --dump-sql --force
+</pre></div>
+</div>
+<p>Cette commande compare à quoi votre base <em>devrait</em> ressembler en se basant sur le mapping de vos entités, à ce quoi quoi en ressemble <em>vraiment</em>, et génère les requêtes SQL nécessaires pour mettre à jour la base de données.</p>
+</div>
+<div class="section" id="manipulation-des-donnees">
+<h2>Manipulation des données<a class="headerlink" href="#manipulation-des-donnees" title="Permalink to this headline">¶</a></h2>
+<p>Les données sont manipulées par le service EntityManager qui est appelé depuis le contrôleur de la façon suivante :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Comme tout service qui se respecte, il peut aussi être appelé de la façon suivante :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;doctrine.orm.entity_manager&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="enregistrer-les-entites-dans-la-base-de-donnee">
+<h3>Enregistrer les entités dans la base de donnée<a class="headerlink" href="#enregistrer-les-entites-dans-la-base-de-donnee" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$tag</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tag</span><span class="p">();</span>
+<span class="nv">$tag</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span> <span class="s1">&#39;symfony&#39;</span> <span class="p">);</span>
+
+<span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
+<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">(</span><span class="nv">$tag</span><span class="p">);</span>
+<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">flush</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>La méthode <tt class="docutils literal"><span class="pre">persist</span></tt> traite indifféremment les nouvelles entités de celles déjà en base de données. Vous pouvez donc lui passer une entité fraîchement créée ou une entité que vous avez modifié. Cette méthode ne fait pas la requête SQL qui permet d&#8217;enregistrer les données dans la base, elle permet juste de dire à l&#8217;EntityManager de garder la modification en mémoire et de l&#8217;enregistrer au prochain appel de la méthode <tt class="docutils literal"><span class="pre">flush</span></tt>.</p>
+<p>La méthode <tt class="docutils literal"><span class="pre">flush</span></tt> quant à elle, elle ouvre une transation et enregistre toutes les entités qui lui ont été données depuis le dernier <tt class="docutils literal"><span class="pre">flush</span></tt>.</p>
+<p>En plus des méthodes <tt class="docutils literal"><span class="pre">persist</span></tt> et <tt class="docutils literal"><span class="pre">flush</span></tt>, l&#8217;EntityManager dispose d&#8217;autres méthodes intéressantes :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">clear(</span> <span class="pre">$nomEntity</span> <span class="pre">)</span></tt> : annule tous les <tt class="docutils literal"><span class="pre">persist</span></tt> effectués. Si un nom d&#8217;entité est passé en paramètre, alors seuls les <tt class="docutils literal"><span class="pre">persist</span></tt> sur les entités de ce type seront annulés</li>
+<li><tt class="docutils literal"><span class="pre">detach(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : annule le <tt class="docutils literal"><span class="pre">persist</span></tt> sur l&#8217;entité passé en argument</li>
+<li><tt class="docutils literal"><span class="pre">contains(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : retourne <tt class="docutils literal"><span class="pre">true</span></tt> si l&#8217;entité est gérée pas l&#8217;EntityManager, c&#8217;est à dire s&#8217;il y a eu un <tt class="docutils literal"><span class="pre">persist</span></tt> sur l&#8217;entité</li>
+<li><tt class="docutils literal"><span class="pre">refresh(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : met à jour l&#8217;entité donnée en argument dans l&#8217;état où elle est en base de données</li>
+<li><tt class="docutils literal"><span class="pre">remove(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : supprime l&#8217;entité donnée en argument de la base de données lors du prochain <tt class="docutils literal"><span class="pre">flush</span></tt></li>
+</ul>
+</div>
+<div class="section" id="recuperer-ses-entites-avec-un-entityrepository">
+<h3>Récupérer ses entités avec un EntityRepository<a class="headerlink" href="#recuperer-ses-entites-avec-un-entityrepository" title="Permalink to this headline">¶</a></h3>
+<p>À partir d&#8217;un repository, nous pouvons utiliser du DQL pour composer une requête. Le DQL (Doctrine Qauery Language) est le pseudo-SQL de Doctrine, il est compatible avec les bases de données supportées par Doctrine. Sa syntaxe est très proche du SQL, amis il propose moins d&#8217;opérateurs et de fonctions pas soucis de portabilité entre ces systèmes.</p>
+<p>Les repositories nous proposent également d&#8217;utiliser un QueryBuilder. C&#8217;est un outil qui permet de construire des requêtes en utilisant des instructions chaînées et reflétant d&#8217;assez près la construction d&#8217;une requête SQL.</p>
+<p>Tout d&#8217;abord, il faut récupérer le repository de l&#8217;entité :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span>
+               <span class="o">-&gt;</span><span class="na">getManager</span><span class="p">()</span>
+               <span class="o">-&gt;</span><span class="na">getRepository</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Post&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Depuis ce repository, sans rien implémenter on peut déjà :</p>
+<ul>
+<li><p class="first">récupérer une entité à partir de son ID</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">récupérer tous les entités</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">récupérer les entités en fonction de critères</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findBy</span><span class="p">(</span><span class="k">array</span> <span class="nv">$criteres</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$orderBy</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$limite</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$offset</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">récupérer une entité en fonction de critères</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findOneBy</span><span class="p">(</span><span class="k">array</span> <span class="nv">$criteres</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>On a aussi à disposition des méthodes magiques qui permettent rapidement de récupérer une ou plusieurs entités en fonction d&#8217;un critère :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">findByX($valeur)</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">findOneByX($valeur)</span></tt></li>
+</ul>
+<p>X doit être remplacé par le nom d&#8217;une propriété, Par exemple <tt class="docutils literal"><span class="pre">findByTitre()</span></tt>, <tt class="docutils literal"><span class="pre">findOneByTitre()</span></tt>, <tt class="docutils literal"><span class="pre">findByDate()</span></tt>, <tt class="docutils literal"><span class="pre">findOneByDate()</span></tt></p>
+<p>Pour toutes les autres requêtes, il va falloir les construire dans le repository grâce au QueryBuilder.</p>
+<p>Par exemple, recréons la méthode <tt class="docutils literal"><span class="pre">findAll</span></tt> dans le repository <tt class="docutils literal"><span class="pre">Post</span></tt> pour que les <tt class="docutils literal"><span class="pre">Post</span></tt> soient triés par date :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostRepository</span> <span class="k">extends</span> <span class="nx">EntityRepository</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">findAllOrderByDate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$queryBuilder</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
+
+        <span class="nv">$queryBuilder</span><span class="o">-&gt;</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;p.date&#39;</span><span class="p">,</span> <span class="s1">&#39;ASC&#39;</span><span class="p">);</span>
+
+        <span class="c1">// On a fini de construire notre requête</span>
+        <span class="c1">// On récupère la Query à partir du QueryBuilder</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$queryBuilder</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">();</span>
+
+        <span class="c1">// On récupère les résultats à partir de la Query</span>
+        <span class="nv">$resultats</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getResult</span><span class="p">();</span>
+
+        <span class="c1">// On retourne ces résultats</span>
+        <span class="k">return</span> <span class="nv">$resultats</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Voici la liste des méthodes disponibles dans le QueryBuilder :</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">QueryBuilder</span> <span class="p">{</span>
+
+    <span class="c1">// Example - $qb-&gt;select(&#39;u&#39;)</span>
+    <span class="c1">// Example - $qb-&gt;select(array(&#39;u&#39;, &#39;p&#39;))</span>
+    <span class="c1">// Example - $qb-&gt;select($qb-&gt;expr()-&gt;select(&#39;u&#39;, &#39;p&#39;))</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">select</span><span class="p">(</span><span class="nv">$select</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// addSelect does not override previous calls to select</span>
+    <span class="c1">//</span>
+    <span class="c1">// Example - $qb-&gt;select(&#39;u&#39;);</span>
+    <span class="c1">//              -&gt;addSelect(&#39;p.area_code&#39;);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addSelect</span><span class="p">(</span><span class="nv">$select</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;delete(&#39;User&#39;, &#39;u&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">delete</span><span class="p">(</span><span class="nv">$delete</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$alias</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;update(&#39;Group&#39;, &#39;g&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nv">$update</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$alias</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;set(&#39;u.firstName&#39;, $qb-&gt;expr()-&gt;literal(&#39;Arnold&#39;))</span>
+    <span class="c1">// Example - $qb-&gt;set(&#39;u.numChilds&#39;, &#39;u.numChilds + ?1&#39;)</span>
+    <span class="c1">// Example - $qb-&gt;set(&#39;u.numChilds&#39;, $qb-&gt;expr()-&gt;sum(&#39;u.numChilds&#39;, &#39;?1&#39;))</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">set</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;from(&#39;Phonenumber&#39;, &#39;p&#39;)</span>
+    <span class="c1">// Example - $qb-&gt;from(&#39;Phonenumber&#39;, &#39;p&#39;, &#39;p.id&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">from</span><span class="p">(</span><span class="nv">$from</span><span class="p">,</span> <span class="nv">$alias</span><span class="p">,</span> <span class="nv">$indexBy</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;join(&#39;u.Group&#39;, &#39;g&#39;, Expr\Join::WITH, $qb-&gt;expr()-&gt;eq(&#39;u.status_id&#39;, &#39;?1&#39;))</span>
+    <span class="c1">// Example - $qb-&gt;join(&#39;u.Group&#39;, &#39;g&#39;, &#39;WITH&#39;, &#39;u.status = ?1&#39;)</span>
+    <span class="c1">// Example - $qb-&gt;join(&#39;u.Group&#39;, &#39;g&#39;, &#39;WITH&#39;, &#39;u.status = ?1&#39;, &#39;g.id&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$join</span><span class="p">,</span> <span class="nv">$alias</span><span class="p">,</span> <span class="nv">$conditionType</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$condition</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$indexBy</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;innerJoin(&#39;u.Group&#39;, &#39;g&#39;, Expr\Join::WITH, $qb-&gt;expr()-&gt;eq(&#39;u.status_id&#39;, &#39;?1&#39;))</span>
+    <span class="c1">// Example - $qb-&gt;innerJoin(&#39;u.Group&#39;, &#39;g&#39;, &#39;WITH&#39;, &#39;u.status = ?1&#39;)</span>
+    <span class="c1">// Example - $qb-&gt;innerJoin(&#39;u.Group&#39;, &#39;g&#39;, &#39;WITH&#39;, &#39;u.status = ?1&#39;, &#39;g.id&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">innerJoin</span><span class="p">(</span><span class="nv">$join</span><span class="p">,</span> <span class="nv">$alias</span><span class="p">,</span> <span class="nv">$conditionType</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$condition</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$indexBy</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;leftJoin(&#39;u.Phonenumbers&#39;, &#39;p&#39;, Expr\Join::WITH, $qb-&gt;expr()-&gt;eq(&#39;p.area_code&#39;, 55))</span>
+    <span class="c1">// Example - $qb-&gt;leftJoin(&#39;u.Phonenumbers&#39;, &#39;p&#39;, &#39;WITH&#39;, &#39;p.area_code = 55&#39;)</span>
+    <span class="c1">// Example - $qb-&gt;leftJoin(&#39;u.Phonenumbers&#39;, &#39;p&#39;, &#39;WITH&#39;, &#39;p.area_code = 55&#39;, &#39;p.id&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">leftJoin</span><span class="p">(</span><span class="nv">$join</span><span class="p">,</span> <span class="nv">$alias</span><span class="p">,</span> <span class="nv">$conditionType</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$condition</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$indexBy</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// NOTE: -&gt;where() overrides all previously set conditions</span>
+    <span class="c1">//</span>
+    <span class="c1">// Example - $qb-&gt;where(&#39;u.firstName = ?1&#39;, $qb-&gt;expr()-&gt;eq(&#39;u.surname&#39;, &#39;?2&#39;))</span>
+    <span class="c1">// Example - $qb-&gt;where($qb-&gt;expr()-&gt;andX($qb-&gt;expr()-&gt;eq(&#39;u.firstName&#39;, &#39;?1&#39;), $qb-&gt;expr()-&gt;eq(&#39;u.surname&#39;, &#39;?2&#39;)))</span>
+    <span class="c1">// Example - $qb-&gt;where(&#39;u.firstName = ?1 AND u.surname = ?2&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">where</span><span class="p">(</span><span class="nv">$where</span><span class="p">);</span>
+
+    <span class="c1">// NOTE: -&gt;andWhere() can be used directly, without any -&gt;where() before</span>
+    <span class="c1">//</span>
+    <span class="c1">// Example - $qb-&gt;andWhere($qb-&gt;expr()-&gt;orX($qb-&gt;expr()-&gt;lte(&#39;u.age&#39;, 40), &#39;u.numChild = 0&#39;))</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">andWhere</span><span class="p">(</span><span class="nv">$where</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;orWhere($qb-&gt;expr()-&gt;between(&#39;u.id&#39;, 1, 10));</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">orWhere</span><span class="p">(</span><span class="nv">$where</span><span class="p">);</span>
+
+    <span class="c1">// NOTE: -&gt; groupBy() overrides all previously set grouping conditions</span>
+    <span class="c1">//</span>
+    <span class="c1">// Example - $qb-&gt;groupBy(&#39;u.id&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">groupBy</span><span class="p">(</span><span class="nv">$groupBy</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;addGroupBy(&#39;g.name&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addGroupBy</span><span class="p">(</span><span class="nv">$groupBy</span><span class="p">);</span>
+
+    <span class="c1">// NOTE: -&gt; having() overrides all previously set having conditions</span>
+    <span class="c1">//</span>
+    <span class="c1">// Example - $qb-&gt;having(&#39;u.salary &gt;= ?1&#39;)</span>
+    <span class="c1">// Example - $qb-&gt;having($qb-&gt;expr()-&gt;gte(&#39;u.salary&#39;, &#39;?1&#39;))</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">having</span><span class="p">(</span><span class="nv">$having</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;andHaving($qb-&gt;expr()-&gt;gt($qb-&gt;expr()-&gt;count(&#39;u.numChild&#39;), 0))</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">andHaving</span><span class="p">(</span><span class="nv">$having</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;orHaving($qb-&gt;expr()-&gt;lte(&#39;g.managerLevel&#39;, &#39;100&#39;))</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">orHaving</span><span class="p">(</span><span class="nv">$having</span><span class="p">);</span>
+
+    <span class="c1">// NOTE: -&gt; orderBy() overrides all previously set ordering conditions</span>
+    <span class="c1">//</span>
+    <span class="c1">// Example - $qb-&gt;orderBy(&#39;u.surname&#39;, &#39;DESC&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">orderBy</span><span class="p">(</span><span class="nv">$sort</span><span class="p">,</span> <span class="nv">$order</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+
+    <span class="c1">// Example - $qb-&gt;addOrderBy(&#39;u.firstName&#39;)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addOrderBy</span><span class="p">(</span><span class="nv">$sort</span><span class="p">,</span> <span class="nv">$order</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span> <span class="c1">// Default $order = &#39;ASC&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Pour plus d&#8217;info : <a class="reference external" href="http://doctrine-orm.readthedocs.org/en/latest/reference/query-builder.html">http://doctrine-orm.readthedocs.org/en/latest/reference/query-builder.html</a></p>
+</div>
+</div>
 </div>
 
 
@@ -173,6 +990,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tp.html" class="btn btn-neutral float-right" title="TP"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="assets.html" class="btn btn-neutral" title="Les assets"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -50,7 +50,7 @@ La syntaxe est très simple :
 Accès aux variables
 *******************
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 1-22
 
@@ -58,7 +58,7 @@ Accès aux variables
 Affectation de variables
 ************************
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 25-27
 
@@ -68,13 +68,13 @@ Les filtres
 
 Les variables peuvent être modifiées par des filtres. Les filtres sont séparés par des pipes (``|``) et peuvent avoir des paramètres supplémentaire entre parenthèses.
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 30-31
 
 On peut également appliquer un filtre sur une portion de code :
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 33-35
 
@@ -84,7 +84,7 @@ Les fonctions
 
 Les fonctions sont appelées pour générer du contenu. Elles sont appelées par leur nom suivi de paramètres entre parenthèses :
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 38-40
 
@@ -97,14 +97,14 @@ Les structures de contrôle sont des tags dans Twig.
 Conditions
 ==========
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 43-49
 
 Boucle
 ======
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 52-54
 
@@ -187,13 +187,13 @@ Les opérateurs
     * Supprime tous les espaces, tabulations et saut de lignes inutiles :
     * ``{% spaceless %}{% endspaceless %}``
 
-        .. literalinclude:: code-block/twig/layout_twig.html.twig
+        .. literalinclude:: code-block/twig/base_twig.html.twig
             :language: html+jinja
             :lines: 1-6
 
     * ``{%-``, ``-%}``, ``{{-`` et ``-}}``
 
-        .. literalinclude:: code-block/twig/layout_twig.html.twig
+        .. literalinclude:: code-block/twig/base_twig.html.twig
             :language: html+jinja
             :lines: 8-10
     
@@ -234,16 +234,16 @@ L'héritage permet de créer un squelette définissant la structure générale d
 
 Une des bonne pratique pour organiser ses templates est de mettre trois niveaux d'héritage :
 
-* le **layout général** : il s'agit du design du site. Il est indépendant de celui des bundles. Il contient la structure des page de votre site : header, footer, menu principal, etc. Son chemin exact est ``app/Resources/views/layout.html.twig`` et voici la syntaxe pour l'appeler dans vos bundles : ``::layout.html.twig``
+* le **layout général** : il s'agit du design du site. Il est indépendant de celui des bundles. Il contient la structure des page de votre site : header, footer, menu principal, etc. Son chemin exact est ``app/Resources/views/base.html.twig`` et voici la syntaxe pour l'appeler dans vos bundles : ``::base.html.twig``
 * le **layout du bundle** : il hérite du layout général et contient tous les éléments communs aux pages d'un même bundle comme un menu secondaire par exemple
 * le **template de la page** : il hérite du layout du bundle et contient la partie centrale de la page
 
-Reprenons le template ``show.html.twig`` et répartissons le code dans les templates ``app/Resources/views/layout.html.twig`` et ``src/Epsi/Bundle/BlogBundle/Resources/views/layout.html.twig`` en remplaçant les parties spécifiques par des blocs et en l'enrichissant un peu :
+Reprenons le template ``show.html.twig`` et répartissons le code dans les templates ``app/Resources/views/base.html.twig`` et ``src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig`` en remplaçant les parties spécifiques par des blocs et en l'enrichissant un peu :
 
-.. literalinclude:: code-block/twig/layout.html.twig
+.. literalinclude:: code-block/twig/base.html.twig
     :language: html+jinja
 
-.. literalinclude:: code-block/twig/layout_bundle.html.twig
+.. literalinclude:: code-block/twig/base_bundle.html.twig
     :language: html+jinja
 
 .. literalinclude:: code-block/twig/show_extend.html.twig
@@ -253,7 +253,7 @@ Reprenons le template ``show.html.twig`` et répartissons le code dans les templ
 Inclusion de templates
 **********************
 
-.. literalinclude:: code-block/twig/layout_twig.html.twig
+.. literalinclude:: code-block/twig/base_twig.html.twig
     :language: html+jinja
     :lines: 57-59
 
