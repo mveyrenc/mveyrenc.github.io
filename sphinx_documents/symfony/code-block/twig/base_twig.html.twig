@@ -49,7 +49,7 @@
 {% endif %}
 
 {# boucles #}
-{% for user in users if iser.isActive() %}
+{% for user in users if user.isActive() %}
     ...
 {% endfor %}
 

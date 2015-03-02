@@ -231,7 +231,7 @@ Dans l'entité inverse
       // …
     }
 
-L'annotation ``@ORM\OneToOne`` définit la relation vers l'autre entité. Elle possède au moins l'option ``targetEntity`` qui vaut le namespace complet vers l'entité liée. L'option ``cascade`` permet de "cascader" les actions effectuées sur l'entité sur ses entités liées par la relation (``persist``, ``remove`, ``merge``, ``detach``, ``refresh``).
+L'annotation ``@ORM\OneToOne`` définit la relation vers l'autre entité. Elle possède au moins l'option ``targetEntity`` qui vaut le namespace complet vers l'entité liée. L'option ``cascade`` permet de "cascader" les actions effectuées sur l'entité sur ses entités liées par la relation (``persist``, ``remove``, ``merge``, ``detach``, ``refresh``).
 
 Comme tout attribut de l'entité, il faut implémenter son getter et son setter. Vous pouvez utilisez la commande suivante :
 
