@@ -178,19 +178,30 @@
   <div class="section" id="tp">
 <h1>TP<a class="headerlink" href="#tp" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
-<li><p class="first">Créez le bundle EpsiBlogBundle</p>
+<li><p class="first">Créez le bundle EpsiBlogBundle (chapitre <em>Création d’un bundle</em>)</p>
 </li>
-<li><p class="first">Créez les entités Post, User, Comment et Tag avec leurs relations</p>
+<li><p class="first">Créez les entités Post, User, Comment et Tag avec leurs relations (chapitre <em>Doctrine et la base de donnée</em>)</p>
+<blockquote>
+<div><ul class="simple">
+<li>un post a un auteur de type user</li>
+<li>un user est l&#8217;auteur de zéro ou plusieurs posts</li>
+<li>un post peut avoir zéro ou plusieurs commentaires</li>
+<li>un commentaire est lié à un post</li>
+<li>un commentaire a un auteur</li>
+<li>un utilisateur peut être l&#8217;auteur de zéro ou plusieurs commentaires</li>
+<li>un post a un ou plusieurs tags</li>
+</ul>
+</div></blockquote>
 </li>
 <li><p class="first">Créez les interfaces pour gérer chacune des entités avec la commande <tt class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:doctrine:crud</span></tt></p>
 </li>
-<li><p class="first">Ajouter la route <tt class="docutils literal"><span class="pre">epsi_blog_homepage</span></tt> qui doit afficher la liste des posts du blog</p>
+<li><p class="first">Ajouter la route <tt class="docutils literal"><span class="pre">epsi_blog_homepage</span></tt> qui doit afficher la liste des posts du blog (chapitre <em>Le routing</em>)</p>
 </li>
-<li><p class="first">Reprenez dans le cours les templates <tt class="docutils literal"><span class="pre">base.html.twig</span></tt> de l&#8217;application et du bundle, ceux qui contiennent les assets</p>
+<li><p class="first">Reprenez dans le cours les templates <tt class="docutils literal"><span class="pre">base.html.twig</span></tt> de l&#8217;application et du bundle, ceux qui contiennent les assets (chapitres <em>Les vues avec Twig</em> et <em>Les assets</em>)</p>
 </li>
-<li><p class="first">Modifiez le template d&#8217;affichage de la liste des posts pour mettre les différents éléments dans les blocks des templates de base. Pensez à modifier l&#8217;héritage.</p>
+<li><p class="first">Modifiez le template d&#8217;affichage de la liste des posts pour mettre les différents éléments dans les blocks des templates de base. Pensez à modifier l&#8217;héritage  (chapitres <em>Les vues avec Twig</em>)</p>
 </li>
-<li><p class="first">Ajoutez un menu en haut de la page vers les listes des différentes entités</p>
+<li><p class="first">Ajoutez un menu en haut de la page vers les listes des différentes entités (chapitres <em>Les vues avec Twig</em>)</p>
 </li>
 <li><p class="first">Commencez par l&#8217;entité Tag</p>
 <blockquote>
