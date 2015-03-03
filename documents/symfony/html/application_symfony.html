@@ -199,11 +199,13 @@
 </li>
 <li><p class="first">La namespace du bundle</p>
 <blockquote>
-<div><p>Vous pouvez nommer votre namespace comme bon vous semble, du moment qu&#8217;il se termine par <tt class="docutils literal"><span class="pre">Bundle</span></tt>. Mais convention, le namespace d&#8217;un bundle pour être former ainsi :
-* Un namespace racine, il s&#8217;agit du vendor : l&#8217;auteur, une société, un projet, un client, etc.
-* Le namespace optionnel <tt class="docutils literal"><span class="pre">Bundle</span></tt>
-* Un ou plusieurs namespaces de catégorisation (optionnel)
-* Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suit de <tt class="docutils literal"><span class="pre">Bundle</span></tt></p>
+<div><p>Vous pouvez nommer votre namespace comme bon vous semble, du moment qu&#8217;il se termine par <tt class="docutils literal"><span class="pre">Bundle</span></tt>. Mais convention, le namespace d&#8217;un bundle pour être former ainsi :</p>
+<ul class="simple">
+<li>Un namespace racine, il s&#8217;agit du vendor : l&#8217;auteur, une société, un projet, un client, etc.</li>
+<li>Le namespace optionnel <tt class="docutils literal"><span class="pre">Bundle</span></tt></li>
+<li>Un ou plusieurs namespaces de catégorisation (optionnel)</li>
+<li>Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de <tt class="docutils literal"><span class="pre">Bundle</span></tt></li>
+</ul>
 <p>Ce qui nous donne par exemple : <tt class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></tt>, <tt class="docutils literal"><span class="pre">Epsi\Bundle\Social\BlogBundle</span></tt> ou <tt class="docutils literal"><span class="pre">Epsi\BlogBundle</span></tt>.</p>
 <p>Nous allons appelé notre bundle <tt class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></tt>.</p>
 </div></blockquote>
@@ -248,17 +250,16 @@
 </li>
 <li><p class="first">les classes permettant de la configuration du bundle dans le répertoire <tt class="docutils literal"><span class="pre">DependencyInjection</span></tt></p>
 </li>
-<li><dl class="first docutils">
-<dt>les ressources dans le répertoire <tt class="docutils literal"><span class="pre">Resources</span></tt></dt>
-<dd><ul class="first last simple">
+<li><p class="first">les ressources dans le répertoire <tt class="docutils literal"><span class="pre">Resources</span></tt></p>
+<blockquote>
+<div><ul class="simple">
 <li>les fichiers de configuration dans <tt class="docutils literal"><span class="pre">config</span></tt></li>
 <li>la documentation dans <tt class="docutils literal"><span class="pre">doc</span></tt></li>
 <li>les fichiers à destination du visiteur (CSS, Javascript, images) dans <tt class="docutils literal"><span class="pre">public</span></tt></li>
 <li>les fichiers de traduction dans <tt class="docutils literal"><span class="pre">translations</span></tt></li>
 <li>les templates Twig dans <tt class="docutils literal"><span class="pre">views</span></tt></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 <li><p class="first">les tests dans <tt class="docutils literal"><span class="pre">Tests</span></tt></p>
 </li>

@@ -29,10 +29,11 @@ Création du bundle
 #. La namespace du bundle
 
     Vous pouvez nommer votre namespace comme bon vous semble, du moment qu'il se termine par ``Bundle``. Mais convention, le namespace d'un bundle pour être former ainsi :
+
     * Un namespace racine, il s'agit du vendor : l'auteur, une société, un projet, un client, etc.
     * Le namespace optionnel ``Bundle``
     * Un ou plusieurs namespaces de catégorisation (optionnel)
-    * Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suit de ``Bundle``
+    * Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de ``Bundle``
 
     Ce qui nous donne par exemple : ``Epsi\Bundle\BlogBundle``, ``Epsi\Bundle\Social\BlogBundle`` ou ``Epsi\BlogBundle``.
 
@@ -73,11 +74,13 @@ Que s'est-il passé ?
     * un contrôleur dans le répertoire ``Controller``
     * les classes permettant de la configuration du bundle dans le répertoire ``DependencyInjection``
     * les ressources dans le répertoire ``Resources``
+
         * les fichiers de configuration dans ``config``
         * la documentation dans ``doc``
         * les fichiers à destination du visiteur (CSS, Javascript, images) dans ``public``
         * les fichiers de traduction dans ``translations``
         * les templates Twig dans ``views``
+
     * les tests dans ``Tests``
     * enfin, le seul fichier obligatoire dans un bundle : la classe ``EpsiBlogBundle.php``
 

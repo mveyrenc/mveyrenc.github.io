@@ -243,11 +243,13 @@ web
 <h3>Architecture MVC<a class="headerlink" href="#architecture-mvc" title="Permalink to this headline">¶</a></h3>
 <p>MVC signifie Modèle/Vue/Contrôleur. C&#8217;est un découpage très répandu dans les frameworks web. L&#8217;idée est d&#8217;organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
 <p>Elle se compose de trois couches :</p>
-<dl class="docutils">
-<dt>Le <strong>contrôleur</strong> (<em>controller</em>)</dt>
-<dd>Son rôle est de générer la réponse à la requête HTTP demandée par le visiteur. Il analyse la requête du visiteur, et utilise les autres composants pour composer la réponse et la renvoie au visiteur.</dd>
-</dl>
 <ul>
+<li><dl class="first docutils">
+<dt>Le <strong>contrôleur</strong> (<em>controller</em>)</dt>
+<dd><p class="first last">Son rôle est de générer la réponse à la requête HTTP demandée par le visiteur. Il analyse la requête du visiteur, et utilise les autres composants pour composer la réponse et la renvoie au visiteur.</p>
+</dd>
+</dl>
+</li>
 <li><dl class="first docutils">
 <dt>Le <strong>modèle</strong> (<em>model</em>)</dt>
 <dd><p class="first last">Il est responsable des données et de tous les traitements faits sur les données. Rien d&#8217;autre dans l&#8217;application ne doit manipuler les données afin de garantir leur intégrité.</p>

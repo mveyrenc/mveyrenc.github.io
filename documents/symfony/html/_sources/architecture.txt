@@ -75,7 +75,7 @@ MVC signifie Modèle/Vue/Contrôleur. C'est un découpage très répandu dans le
  
 Elle se compose de trois couches :
   
-Le **contrôleur** (*controller*)
+* Le **contrôleur** (*controller*)
     Son rôle est de générer la réponse à la requête HTTP demandée par le visiteur. Il analyse la requête du visiteur, et utilise les autres composants pour composer la réponse et la renvoie au visiteur.
 
 * Le **modèle** (*model*) 

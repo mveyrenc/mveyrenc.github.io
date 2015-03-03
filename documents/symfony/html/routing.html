@@ -212,8 +212,9 @@
 <li><p class="first">Le routeur essaie de faire correspondre cette URL avec le <tt class="docutils literal"><span class="pre">path</span></tt> de la première route. Ici, <tt class="docutils literal"><span class="pre">/post/5</span></tt> ne correspond pas du tout à <tt class="docutils literal"><span class="pre">/posts</span></tt> (ligne <tt class="docutils literal"><span class="pre">path</span></tt> de la première route) ;</p>
 </li>
 <li><dl class="first docutils">
-<dt>Le routeur passe donc à la route suivante. Il essaie de faire correspondre <tt class="docutils literal"><span class="pre">/post/5</span></tt> avec <tt class="docutils literal"><span class="pre">/post/{id}</span></tt>. Cette route correspond, car nous avons bien <span class="classifier-delimiter">:</span> <span class="classifier">* <tt class="docutils literal"><span class="pre">/post</span></tt> (URL) = <tt class="docutils literal"><span class="pre">/post</span></tt> (route) ;</span></dt>
+<dt>Le routeur passe donc à la route suivante. Il essaie de faire correspondre <tt class="docutils literal"><span class="pre">/post/5</span></tt> avec <tt class="docutils literal"><span class="pre">/post/{id}</span></tt>. Cette route correspond, car nous avons bien :</dt>
 <dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">/post</span></tt> (URL) = <tt class="docutils literal"><span class="pre">/post</span></tt> (route) ;</li>
 <li><tt class="docutils literal"><span class="pre">5</span></tt> (URL) = <tt class="docutils literal"><span class="pre">{id}</span></tt> (route) ;</li>
 </ul>
 </dd>
@@ -323,17 +324,15 @@
 <ul>
 <li><p class="first"><tt class="docutils literal"><span class="pre">_controller</span></tt> : comme nous l&#8217;avons vu, ce paramètre est utilisé pour déterminer quel contrôleur est exécuté lorsque l&#8217;URL est reconnue ;</p>
 </li>
-<li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">_format</span></tt> <span class="classifier-delimiter">:</span> <span class="classifier">il est utilisé pour définir le format de la requête</span></dt>
-<dd><p class="first last">Lorsque vous utilisez ce paramètre Symfony va automatique remplir le header <tt class="docutils literal"><span class="pre">Content-Type</span></tt> avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec <tt class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getRequestFormat()</span></tt>.</p>
-</dd>
-</dl>
+<li><p class="first"><tt class="docutils literal"><span class="pre">_format</span></tt> : il est utilisé pour définir le format de la requête</p>
+<blockquote>
+<div><p>Lorsque vous utilisez ce paramètre Symfony va automatique remplir le header <tt class="docutils literal"><span class="pre">Content-Type</span></tt> avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec <tt class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getRequestFormat()</span></tt>.</p>
+</div></blockquote>
 </li>
-<li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">_locale</span></tt> <span class="classifier-delimiter">:</span> <span class="classifier">il est utilisé pour définir la locale de la session</span></dt>
-<dd><p class="first last">Ce paramètre permet de choisir la langue à afficher. Cette valeur sera également stockée en session pour que les futures requêtes la conservent. Dans le contrôleur, on peut récupérer sa valeur avec <tt class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getLocale()</span></tt>.</p>
-</dd>
-</dl>
+<li><p class="first"><tt class="docutils literal"><span class="pre">_locale</span></tt> : il est utilisé pour définir la locale de la session</p>
+<blockquote>
+<div><p>Ce paramètre permet de choisir la langue à afficher. Cette valeur sera également stockée en session pour que les futures requêtes la conservent. Dans le contrôleur, on peut récupérer sa valeur avec <tt class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getLocale()</span></tt>.</p>
+</div></blockquote>
 </li>
 </ul>
 </div>

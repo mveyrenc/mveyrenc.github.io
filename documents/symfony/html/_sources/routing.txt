@@ -29,8 +29,10 @@ Voici comment fonctionne le routeur pas à pas :
 
 #. On appelle l'URL ``/post/5`` ;
 #. Le routeur essaie de faire correspondre cette URL avec le ``path`` de la première route. Ici, ``/post/5`` ne correspond pas du tout à ``/posts`` (ligne ``path`` de la première route) ;
-#. Le routeur passe donc à la route suivante. Il essaie de faire correspondre ``/post/5`` avec ``/post/{id}``. Cette route correspond, car nous avons bien :    * ``/post`` (URL) = ``/post`` (route) ;
+#. Le routeur passe donc à la route suivante. Il essaie de faire correspondre ``/post/5`` avec ``/post/{id}``. Cette route correspond, car nous avons bien :
+    * ``/post`` (URL) = ``/post`` (route) ;
     * ``5`` (URL) = ``{id}`` (route) ;
+
 #. Le routeur s'arrête donc, il a trouvé sa route ;
 #. Dans le paramétrage de la route, il trouve quel contrôleur appeler : ``EpsiBlogBundle:Blog:show`` ;
 #. Le routeur renvoie donc ces informations au Kernel ;
@@ -134,8 +136,11 @@ Il existe trois paramètres spéciaux :
 
 * ``_controller`` : comme nous l'avons vu, ce paramètre est utilisé pour déterminer quel contrôleur est exécuté lorsque l'URL est reconnue ;
 * ``_format`` : il est utilisé pour définir le format de la requête
+
     Lorsque vous utilisez ce paramètre Symfony va automatique remplir le header ``Content-Type`` avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec ``$this->get('request')->getRequestFormat()``.
+
 * ``_locale`` : il est utilisé pour définir la locale de la session
+
     Ce paramètre permet de choisir la langue à afficher. Cette valeur sera également stockée en session pour que les futures requêtes la conservent. Dans le contrôleur, on peut récupérer sa valeur avec ``$this->get('request')->getLocale()``.
 
 *************************
