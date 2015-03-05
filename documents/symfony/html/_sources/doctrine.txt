@@ -181,7 +181,14 @@ Définition des relations
 
 Le générateur d'entités ne crée pas propriétés et méthodes nécessaires à la manipulation des relations entre les entités. Il faut les ajouter manuellement après la génération de l'entité.
 
-Doctrine gère plusieurs types de relations dans les entités : ``OneToOne``, ``OneToMany`` et ``ManyToMany``.
+Doctrine gère plusieurs types de relations dans les entités : ``OneToOne``, ``OneToMany``, ``ManyToOne`` et ``ManyToMany``.
+
+Les relations sont traitées comme les autres champs gérés par Doctrine. Il faut ajouter un attribut à la classe et le précéder d'annotations décrivant la relation. Ensuite, vous pouvez utiliser la commande suivante pour générer le getter et setter nécessaire pour le nouvel attribut :
+
+.. code-block:: bash
+    
+    php app/console doctrine:generate:entities EpsiBlogBundle:User
+
 
 Notions techniques à savoir
 ===========================
@@ -196,83 +203,207 @@ Notion d'unidirectionnalité et de bidirectionnalité
 
 Une relation peut être unidirectionnalité, à sens unique, ou bidirectionnalité, à double sens.
 
+Une relation bidirectionnelle a toujours une entité propriétaire et une entité inverse. Une relation unidirectionnelle n'a qu'une entité propriété. 
+
 Dans le cas d'une relation unidirectionnelle, on peut récupérer les entités inverses à partir de l'entité propriétaire (``$entiteProprietaire->getEntiteInverse()``) mais on ne peut pas récupéré l'entité propriétaire à partir des entités inverses (``$entiteInverse->getEntiteProprietaire()``).
 Dans les relations bidirectionnelles, les deux actions sont possibles.
+
+Les cas présentés ci-dessous sont tous des relations bidirectionnelles.
 
 Relation One-To-One
 ===================
 
 Comme l'indique son nom, c'est une relation unique entre deux objets.
 
+L'annotation ``@ORM\OneToOne`` définit la relation vers l'autre entité. Elle possède au moins l'option ``targetEntity`` qui vaut le namespace complet vers l'entité liée. L'option ``cascade`` permet de "cascader" les actions effectuées sur l'entité sur ses entités liées par la relation (``persist``, ``remove``, ``merge``, ``detach``, ``refresh``).
+
 Dans l'entité propriétaire
 --------------------------
         
 .. code-block:: php
 
-    class User
-    {
-      /**
-       * @ORM\OneToOne(targetEntity="Image", cascade={"persist"})
-       */
-      private $avatar;
+    class User {
+        // ...
 
-      // …
+        /**
+         * @var Image
+         * 
+         * @ORM\OneToOne(
+         *        targetEntity="Epsi\Bundle\BlogBundle\Entity\Image", 
+         *        inversedBy="user",
+         *        cascade={"persist"}
+         * )
+         */
+        private $avatar;
+
+        // ...
     }
+
+Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``User`` :
+
+.. code-block:: php
+
+    class User {
+        // ...
+    
+        /**
+         * Set avatar
+         *
+         * @param \Epsi\Bundle\BlogBundle\Entity\Image $avatar
+         * @return User
+         */
+        public function setAvatar(\Epsi\Bundle\BlogBundle\Entity\Image $avatar = null) {
+            $this->avatar = $avatar;
+            return $this;
+        }
+
+        /**
+         * Get avatar
+         *
+         * @return \Epsi\Bundle\BlogBundle\Entity\Image 
+         */
+        public function getAvatar() {
+            return $this->avatar;
+        }
+
+        // ...
+    }
+
+Dans la base de données, Doctrine ajoutera un champ ``avatar_id`` dans la table ``user`` et une contrainte d'intégrité sur ce champ :
+
+.. code-block:: mysql
+
+    ALTER TABLE user ADD avatar_id INT DEFAULT NULL;
+    ALTER TABLE user ADD CONSTRAINT FK_8D93D64986383B10 FOREIGN KEY (avatar_id) REFERENCES image (id);
+
 
 Dans l'entité inverse
 ---------------------
 
 .. code-block:: php
 
-    class Image
-    {
-      // Nul besoin d'ajouter une propriété ici
+    class Image {
+        // ...
 
-      // …
+        /**
+         * @var User
+         * 
+         * @ORM\OneToOne(
+         *        targetEntity="Epsi\Bundle\BlogBundle\Entity\User", 
+         *        mappedBy="avatar"
+         * )
+         */
+        private $user;
+
+        // ...
     }
 
-L'annotation ``@ORM\OneToOne`` définit la relation vers l'autre entité. Elle possède au moins l'option ``targetEntity`` qui vaut le namespace complet vers l'entité liée. L'option ``cascade`` permet de "cascader" les actions effectuées sur l'entité sur ses entités liées par la relation (``persist``, ``remove``, ``merge``, ``detach``, ``refresh``).
+Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``Image`` :
 
-Comme tout attribut de l'entité, il faut implémenter son getter et son setter. Vous pouvez utilisez la commande suivante :
+.. code-block:: php
 
-.. code-block:: bash
-    
-    php app/console doctrine:generate:entities EpsiBlogBundle:User
+    class Image {
+        // ...
 
-Relation One-To-Many
-====================
+        /**
+         * Set user
+         *
+         * @param \Epsi\Bundle\BlogBundle\Entity\User $user
+         * @return Image
+         */
+        public function setUser(\Epsi\Bundle\BlogBundle\Entity\User $user = null) {
+            $this->user = $user;
+            return $this;
+        }
+
+        /**
+         * Get user
+         *
+         * @return \Epsi\Bundle\BlogBundle\Entity\User 
+         */
+        public function getUser() {
+            return $this->user;
+        }
+
+        // ...
+    }
+
+Aucune modification n'est nécessaire sur la table ``image``.
+
+Relation Many-To-One et One-To-Many
+===================================
 
 Cette relation permet à une entité d'avoir une relation vers plusieurs autres entités comme par exemple, un ``User`` qui est lié à plusieurs ``Post``.
+
+Dans le cas des relations OneToMany et ManyToOne, le paramètre ``inversedBy`` est toujours du côté de la relation propriétaire et l'attribut ``mappedBy`` est toujours du côté de l'inverse.
 
 Dans l'entité propriétaire
 --------------------------
 
 .. code-block:: php
 
-    class Post
-    {
+    class Post {
+        // ...
 
         /**
          * @var User
          * 
          * @ORM\ManyToOne(
-         *      targetEntity="User",
+         *      targetEntity="Epsi\Bundle\BlogBundle\Entity\User",
          *      inversedBy="posts"
          * )
          * @ORM\JoinColumn(nullable=false)
          */
         private $author;
 
-      // ...
+        // ...
     }
+
+Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``Post`` :
+
+.. code-block:: php
+
+    class Post {
+        // ...
+
+        /**
+         * Set author
+         *
+         * @param User $author
+         * @return Post
+         */
+        public function setAuthor(User $author = null) {
+            $this->author = $author;
+            return $this;
+        }
+
+        /**
+         * Get author
+         *
+         * @return User 
+         */
+        public function getAuthor() {
+            return $this->author;
+        }
+
+        // ...
+    }
+
+Dans la base de données, Doctrine ajoutera un champ ``author_id`` dans la table ``post`` et une contrainte d'intégrité sur ce champ :
+
+.. code-block:: mysql
+
+    ALTER TABLE user ADD author_id INT NOT NULL;
+    ALTER TABLE user ADD CONSTRAINT FK_5A8A6C8DF675F31B FOREIGN KEY (author_id) REFERENCES user (id);
 
 Dans l'entité inverse
 ---------------------
 
 .. code-block:: php
 
-    class User
-    {
+    class User {
+        // ...
+
         /**
          * @var ArrayCollection
          * 
@@ -284,15 +415,60 @@ Dans l'entité inverse
          */
         private $posts;
 
-      // ...
+         // ...
     }
 
-L'annotation ``@ORM\ManyToOne`` a comme paramètre ``inversedBy`` qui prend comme valeur le nom de l'attribut dans l'entité inverse.
+Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``User`` :
 
-L'annotation ``@ORM\OneToMany`` a quant à elle le paramètre ``mappedBy`` qui prend comme valeur le nom de l'attribut dans l'entité propriétaire.
+.. code-block:: php
 
-L'annotation ``@ORM\JoinColumn(nullable=false)`` permet de rendre la relation obligatoire.
+    class User {
+        // ...
 
+        /**
+         * Constructor
+         */
+        public function __construct() {
+            // ...
+            $this->posts = new ArrayCollection();
+            // ...
+        }
+
+        // ...
+
+        /**
+         * Add posts
+         *
+         * @param Post $posts
+         * @return User
+         */
+        public function addPost(Post $posts) {
+            $this->posts[] = $posts;
+            return $this;
+        }
+
+        /**
+         * Remove posts
+         *
+         * @param Post $posts
+         */
+        public function removePost(Post $posts) {
+            $this->posts->removeElement($posts);
+        }
+
+        /**
+         * Get posts
+         *
+         * @return Collection 
+         */
+        public function getPosts() {
+            return $this->posts;
+        }
+
+        // ...
+    }
+
+Aucune modification n'est nécessaire sur la table ``user``.
 
 Relation Many-To-Many
 =====================
@@ -305,6 +481,7 @@ Dans l'entité propriétaire
 .. code-block:: php
 
     class Post {
+        // ...
 
         /**
          * @var Tag
@@ -313,12 +490,73 @@ Dans l'entité propriétaire
          *      targetEntity="Tag",
          *      inversedBy="posts"
          * )
-         * @ORM\JoinTable(name="posts_tags")
          */
         private $tags;
 
-      // ...
+        // ...
     }
+
+Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``Post`` :
+
+.. code-block:: php
+
+    class Post {
+        // ...
+
+        /**
+         * Constructor
+         */
+        public function __construct() {
+            // ...
+            $this->tags = new ArrayCollection();
+            // ...
+        }
+
+        // ...
+
+        /**
+         * Add tags
+         *
+         * @param Tag $tags
+         * @return Post
+         */
+        public function addTag(Tag $tags) {
+            $this->tags[] = $tags;
+            return $this;
+        }
+
+        /**
+         * Remove tags
+         *
+         * @param Tag $tags
+         */
+        public function removeTag(Tag $tags) {
+            $this->tags->removeElement($tags);
+        }
+
+        /**
+         * Get tags
+         *
+         * @return Collection 
+         */
+        public function getTags() {
+            return $this->tags;
+        }
+
+        // ...
+    }
+
+En base de données, Doctrine crée la table de jointure :
+
+.. code-block:: mysql
+
+    CREATE TABLE post_tag (
+        post_id int(11) NOT NULL,
+        tag_id int(11) NOT NULL,
+        PRIMARY KEY (post_id,tag_id)
+    );
+    ALTER TABLE post_tag ADD CONSTRAINT FK_5ACE3AF04B89032C FOREIGN KEY (post_id) REFERENCES post (id) ON DELETE CASCADE;
+    ALTER TABLE post_tag ADD CONSTRAINT FK_5ACE3AF0BAD26311 FOREIGN KEY (tag_id) REFERENCES tag (id) ON DELETE CASCADE;
 
 Dans l'entité inverse
 ---------------------
@@ -326,6 +564,7 @@ Dans l'entité inverse
 .. code-block:: php
 
     class Tag {
+        // ...
 
         /**
          * @var Post
@@ -340,13 +579,63 @@ Dans l'entité inverse
         // ...
     }
 
+Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``Tag`` :
+
+.. code-block:: php
+
+    class Tag {
+        // ...
+
+        /**
+         * Constructor
+         */
+        public function __construct() {
+            // ...
+            $this->posts = new ArrayCollection();
+            // ...
+        }
+
+        // ...
+
+        /**
+         * Add posts
+         *
+         * @param Post $posts
+         * @return Tag
+         */
+        public function addPost(Post $posts) {
+            $this->posts[] = $posts;
+            return $this;
+        }
+
+        /**
+         * Remove posts
+         *
+         * @param Post $posts
+         */
+        public function removePost(Post $posts) {
+            $this->posts->removeElement($posts);
+        }
+
+        /**
+         * Get posts
+         *
+         * @return Collection 
+         */
+        public function getPosts() {
+            return $this->posts;
+        }
+
+        // ...
+    }
+
 .. note::
 
     Lorsque vous ajoutez des propriétés dans une entité, pensez à générer les getter et setter en lançant la commande :
 
     .. code-block:: bash
 
-        php app/console doctrine:generate:entities
+        php app/console doctrine:generate:entities [BundleName[:Entity]]
 
 ********************************************
 Création de la base de données et des tables
