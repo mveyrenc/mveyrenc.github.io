@@ -3,7 +3,7 @@ TP
 ##
 
 #. Créez le bundle EpsiBlogBundle (chapitre *Création d’un bundle*)
-#. Créez les entités Post, User, Comment et Tag avec leurs relations (chapitre *Doctrine et la base de donnée*)
+#. Créez les entités Post, User, Comment, Tag et Image avec leurs relations (chapitre *Doctrine et la base de donnée*)
     
     * un post a un auteur de type user
     * un user est l'auteur de zéro ou plusieurs posts
@@ -21,5 +21,8 @@ TP
 #. Commencez par l'entité Tag
 
     #. Supprimez le champ ``post`` dans le formulaire d'ajout
+    #. Ajouter la validation sur le champ du formulaire, le nom est requis
     #. Après la validation du formulaire, modifiez la redirection pour allez sur la liste des tags
     #. Mettez en forme la liste des tags 
+
+#. Continuez avec les autres entités

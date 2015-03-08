@@ -21,5 +21,8 @@ TP
 #. Commencez par l'entité Tag
 
     #. Supprimez le champ ``post`` dans le formulaire d'ajout
+    #. Ajouter la validation sur le champ du formulaire, le nom est requis
     #. Après la validation du formulaire, modifiez la redirection pour allez sur la liste des tags
     #. Mettez en forme la liste des tags 
+
+#. Continuez avec les autres entités

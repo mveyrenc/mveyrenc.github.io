@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
   
     <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
-        <link rel="prev" title="Doctrine et la base de donnée" href="doctrine.html"/> 
+        <link rel="prev" title="Aide mémoire" href="aide_memoire.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -142,6 +142,16 @@
 <li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#le-console-et-doctrine">Le console et Doctrine</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">TP</a></li>
 </ul>
 
@@ -180,7 +190,7 @@
 <ol class="arabic">
 <li><p class="first">Créez le bundle EpsiBlogBundle (chapitre <em>Création d’un bundle</em>)</p>
 </li>
-<li><p class="first">Créez les entités Post, User, Comment et Tag avec leurs relations (chapitre <em>Doctrine et la base de donnée</em>)</p>
+<li><p class="first">Créez les entités Post, User, Comment, Tag et Image avec leurs relations (chapitre <em>Doctrine et la base de donnée</em>)</p>
 <blockquote>
 <div><ul class="simple">
 <li>un post a un auteur de type user</li>
@@ -207,10 +217,13 @@
 <blockquote>
 <div><ol class="arabic simple">
 <li>Supprimez le champ <tt class="docutils literal"><span class="pre">post</span></tt> dans le formulaire d&#8217;ajout</li>
+<li>Ajouter la validation sur le champ du formulaire, le nom est requis</li>
 <li>Après la validation du formulaire, modifiez la redirection pour allez sur la liste des tags</li>
 <li>Mettez en forme la liste des tags</li>
 </ol>
 </div></blockquote>
+</li>
+<li><p class="first">Continuez avec les autres entités</p>
 </li>
 </ol>
 </div>
@@ -222,7 +235,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="doctrine.html" class="btn btn-neutral" title="Doctrine et la base de donnée"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="aide_memoire.html" class="btn btn-neutral" title="Aide mémoire"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
