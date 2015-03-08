@@ -3,7 +3,7 @@ TP
 ##
 
 #. Créez le bundle EpsiBlogBundle (chapitre *Création d’un bundle*)
-#. Créez les entités Post, User, Comment et Tag avec leurs relations (chapitre *Doctrine et la base de donnée*)
+#. Créez les entités Post, User, Comment, Tag et Image avec leurs relations (chapitre *Doctrine et la base de donnée*)
     
     * un post a un auteur de type user
     * un user est l'auteur de zéro ou plusieurs posts

@@ -25,6 +25,8 @@ Contents
     twig
     assets
     doctrine
+    formulaire
+    aide_memoire
     tp
    
 
