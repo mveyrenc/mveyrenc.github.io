@@ -152,7 +152,11 @@
 <li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#le-console-et-doctrine">Le console et Doctrine</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">TP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">TP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description-de-l-application">Description de l&#8217;application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#travail-a-effectuer">Travail à effectuer</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -187,21 +191,245 @@
             
   <div class="section" id="tp">
 <h1>TP<a class="headerlink" href="#tp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description-de-l-application">
+<h2>Description de l&#8217;application<a class="headerlink" href="#description-de-l-application" title="Permalink to this headline">¶</a></h2>
+<p>Le blog que nous allons créer est très simple. En voici les grandes lignes :</p>
+<ul class="simple">
+<li>Nous aurons des posts auxquels nous attacherons des tags.</li>
+<li>Nous pourrons lire, écrire, éditer et rechercher des posts.</li>
+<li>Nous pourrons créer, modifier et supprimer des tags.</li>
+<li>Nous pourrons également commenter les posts.</li>
+<li>Nous n&#8217;aurons pas de système de gestion des utilisateurs : nous devrons choisir l&#8217;utilisateur lorsque nous rédigerons un post ou un commentaire.</li>
+</ul>
+<div class="section" id="description-des-entites">
+<h3>Description des entités<a class="headerlink" href="#description-des-entites" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="l-entite-user">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">User</span></tt><a class="headerlink" href="#l-entite-user" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="28%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+<th class="head">Validation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>username</td>
+<td>string</td>
+<td>30</td>
+<td>requis, unique</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string</td>
+<td>100</td>
+<td>requis, unique</td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td>string</td>
+<td>100</td>
+<td>requis</td>
+</tr>
+<tr class="row-odd"><td>posts</td>
+<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Post</span></tt></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>comments</td>
+<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Comment</span></tt></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>La suppression d&#8217;un utilisateur entraîne la suppression de ses posts et de ses commentaires.</p>
+</div>
+<div class="section" id="l-entite-post">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Post</span></tt><a class="headerlink" href="#l-entite-post" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="28%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+<th class="head">Validation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>255</td>
+<td>requis</td>
+</tr>
+<tr class="row-odd"><td>date</td>
+<td>datetime</td>
+<td>&nbsp;</td>
+<td>requis</td>
+</tr>
+<tr class="row-even"><td>body</td>
+<td>text</td>
+<td>&nbsp;</td>
+<td>requis</td>
+</tr>
+<tr class="row-odd"><td>author</td>
+<td colspan="2">Relation vers une <tt class="docutils literal"><span class="pre">User</span></tt></td>
+<td>requis</td>
+</tr>
+<tr class="row-even"><td>comments</td>
+<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Comment</span></tt></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>La suppression d&#8217;un post entraîne la suppression des commentaire qui lui sont associés.</p>
+</div>
+<div class="section" id="l-entite-tag">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Tag</span></tt><a class="headerlink" href="#l-entite-tag" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="28%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+<th class="head">Validation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>30</td>
+<td>requis</td>
+</tr>
+<tr class="row-odd"><td>posts</td>
+<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Post</span></tt></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="l-entite-comment">
+<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Comment</span></tt><a class="headerlink" href="#l-entite-comment" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="28%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+<th class="head">Validation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>date</td>
+<td>datetime</td>
+<td>&nbsp;</td>
+<td>requis</td>
+</tr>
+<tr class="row-odd"><td>comment</td>
+<td>text</td>
+<td>&nbsp;</td>
+<td>requis</td>
+</tr>
+<tr class="row-even"><td>author</td>
+<td colspan="2">Relation vers une <tt class="docutils literal"><span class="pre">User</span></tt></td>
+<td>requis</td>
+</tr>
+<tr class="row-odd"><td>post</td>
+<td colspan="2">Relation vers une <tt class="docutils literal"><span class="pre">Post</span></tt></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="les-interfaces">
+<h3>Les interfaces<a class="headerlink" href="#les-interfaces" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="les-posts">
+<h4>Les posts<a class="headerlink" href="#les-posts" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="liste-des-posts">
+<h5>Liste des posts<a class="headerlink" href="#liste-des-posts" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/PostIndex.png" class="align-center" src="_images/PostIndex.png" />
+<p>Cette page affiche la liste des posts sous forme d&#8217;un tableau, triés par date du plus récent au plus ancien.</p>
+</div>
+<div class="section" id="formulaire">
+<h5>Formulaire<a class="headerlink" href="#formulaire" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/PostForm.png" class="align-center" src="_images/PostForm.png" />
+<p>Le formulaire permet de remplir le titre, la date, le corp et d&#8217;associer le post à un utilisateur et à des tags.</p>
+</div>
+<div class="section" id="affichage-d-un-post">
+<h5>Affichage d&#8217;un post<a class="headerlink" href="#affichage-d-un-post" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/PostShow.png" class="align-center" src="_images/PostShow.png" />
+<p>Cette page d&#8217;affiche les données du post : titre, auteur, date, corps et tags. Elle affiche aussi les commentaires laisser par les visiteurs et permet de laisser d&#8217;autres commentaires.</p>
+</div>
+</div>
+<div class="section" id="les-commentaires">
+<h4>Les commentaires<a class="headerlink" href="#les-commentaires" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id1">
+<h5>Formulaire<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/CommentForm.png" class="align-center" src="_images/CommentForm.png" />
+</div>
+</div>
+<div class="section" id="les-utilisateurs">
+<h4>Les utilisateurs<a class="headerlink" href="#les-utilisateurs" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="liste-des-utilisateurs">
+<h5>Liste des utilisateurs<a class="headerlink" href="#liste-des-utilisateurs" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/UserIndex.png" class="align-center" src="_images/UserIndex.png" />
+<p>Cette page affiche la liste des utilisateurs sous forme d&#8217;un tableau, triés par username.</p>
+</div>
+<div class="section" id="id2">
+<h5>Formulaire<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/UserForm.png" class="align-center" src="_images/UserForm.png" />
+</div>
+<div class="section" id="affichage-d-un-utilisateur">
+<h5>Affichage d&#8217;un utilisateur<a class="headerlink" href="#affichage-d-un-utilisateur" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/UserShow.png" class="align-center" src="_images/UserShow.png" />
+<p>En dessous du username et de l&#8217;email, la page affiche la liste des posts créés par l&#8217;utilisateur.</p>
+</div>
+</div>
+<div class="section" id="les-tags">
+<h4>Les tags<a class="headerlink" href="#les-tags" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="liste-des-tags">
+<h5>Liste des tags<a class="headerlink" href="#liste-des-tags" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/TagIndex.png" class="align-center" src="_images/TagIndex.png" />
+<p>Cette page affiche la liste des tags ordonnés par nom avec le nombre de posts associés.</p>
+</div>
+<div class="section" id="id3">
+<h5>Formulaire<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/TagForm.png" class="align-center" src="_images/TagForm.png" />
+</div>
+<div class="section" id="affichage-d-un-tag">
+<h5>Affichage d&#8217;un tag<a class="headerlink" href="#affichage-d-un-tag" title="Permalink to this headline">¶</a></h5>
+<img alt="_images/TagShow.png" class="align-center" src="_images/TagShow.png" />
+<p>La page affiche la liste des posts associés au tag.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="travail-a-effectuer">
+<h2>Travail à effectuer<a class="headerlink" href="#travail-a-effectuer" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Créez le bundle EpsiBlogBundle (chapitre <em>Création d’un bundle</em>)</p>
 </li>
-<li><p class="first">Créez les entités Post, User, Comment, Tag et Image avec leurs relations (chapitre <em>Doctrine et la base de donnée</em>)</p>
-<blockquote>
-<div><ul class="simple">
-<li>un post a un auteur de type user</li>
-<li>un user est l&#8217;auteur de zéro ou plusieurs posts</li>
-<li>un post peut avoir zéro ou plusieurs commentaires</li>
-<li>un commentaire est lié à un post</li>
-<li>un commentaire a un auteur</li>
-<li>un utilisateur peut être l&#8217;auteur de zéro ou plusieurs commentaires</li>
-<li>un post a un ou plusieurs tags</li>
-</ul>
-</div></blockquote>
+<li><p class="first">Créez les entités Post, User, Comment et Tag</p>
+</li>
+<li><p class="first">Ajoutez les relations entre les entités</p>
 </li>
 <li><p class="first">Créez les interfaces pour gérer chacune des entités avec la commande <tt class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:doctrine:crud</span></tt></p>
 <blockquote>
@@ -215,25 +443,48 @@
 </li>
 <li><p class="first">Ajouter la route <tt class="docutils literal"><span class="pre">epsi_blog_homepage</span></tt> qui doit afficher la liste des posts du blog (chapitre <em>Le routing</em>)</p>
 </li>
-<li><p class="first">Reprenez dans le cours les templates <tt class="docutils literal"><span class="pre">base.html.twig</span></tt> de l&#8217;application et du bundle, ceux qui contiennent les assets (chapitres <em>Les vues avec Twig</em> et <em>Les assets</em>)</p>
+<li><p class="first">Mettez en place le triple héritage de template (chapitres <em>Les vues avec Twig</em>)</p>
 </li>
-<li><p class="first">Modifiez le template d&#8217;affichage de la liste des posts pour mettre les différents éléments dans les blocks des templates de base. Pensez à modifier l&#8217;héritage  (chapitres <em>Les vues avec Twig</em>)</p>
+</ol>
+<ol class="arabic">
+<li><p class="first">Ajputer jQuery et Bootstrap (chapitres <em>Les assets</em>)</p>
 </li>
-<li><p class="first">Ajoutez un menu en haut de la page vers les listes des différentes entités (chapitres <em>Les vues avec Twig</em>)</p>
+<li><p class="first">Ajoutez un menu en haut de la page vers les listes les entités post, user et tag (chapitres <em>Les vues avec Twig</em>)</p>
 </li>
 <li><p class="first">Commencez par l&#8217;entité Tag</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Supprimez le champ <tt class="docutils literal"><span class="pre">post</span></tt> dans le formulaire d&#8217;ajout</li>
-<li>Ajouter la validation sur le champ du formulaire, le nom est requis</li>
-<li>Après la validation du formulaire, modifiez la redirection pour allez sur la liste des tags</li>
+<li>Supprimez les champs non nécessaire dans le formulaire</li>
+<li>Ajouter la validation sur le champ du formulaire</li>
 <li>Mettez en forme la liste des tags</li>
+<li>Mettez en forme la page d&#8217;affichage d&#8217;un tag</li>
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">Continuez avec les autres entités</p>
+<li><p class="first">Continuez avec les entités user et posts</p>
+</li>
+<li><p class="first">Ajouter le formulaire ajout de commentaires grâce à une inclusion de contrôleur</p>
+</li>
+<li><p class="first">Continuez l&#8217;intégration des commentaires</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Supprimez les champs non nécessaire dans le formulaire</li>
+<li>Ajouter la validation sur le champ du formulaire</li>
+<li>Après la validation du formulaire, redirigez l&#8217;utilisateur vers le post sur lequel on a ajouté le commentaire</li>
+<li>Mettez en forme la liste des commentaires</li>
+</ol>
+</div></blockquote>
 </li>
 </ol>
+<p>A rendre</p>
+<blockquote>
+<div><ul class="simple">
+<li>une archive avec tout Symfony + un dump de votre base de données (<tt class="docutils literal"><span class="pre">mysqldump</span> <span class="pre">-usymfony</span> <span class="pre">-p</span> <span class="pre">symfony</span> <span class="pre">&gt;</span> <span class="pre">symfony.sql</span></tt>)</li>
+<li>par mail à l&#8217;adresse <a class="reference external" href="mailto:madeline&#37;&#52;&#48;veyrenc&#46;fr">madeline<span>&#64;</span>veyrenc<span>&#46;</span>fr</a></li>
+<li>le 31/03/2015 dernier délais</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 
 

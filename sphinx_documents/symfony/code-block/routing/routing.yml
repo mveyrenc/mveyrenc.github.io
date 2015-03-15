@@ -16,11 +16,11 @@ epsi_blog_show:
     requirements:
         id:  \d+
         
-epsi_blog_index:
-    path:      /posts/{page}.{_format}
-    defaults:  { _controller: EpsiBlogBundle:Blog:index, page: 1, _format: html }
+epsi_blog_show:
+    path:      /post/{id}
+    defaults:  { _controller: EpsiBlogBundle:Blog:show }
     requirements:
-        page:  \d*
+        id:  \d+
         _format: html|xml|json
         
 epsi_blog_show:

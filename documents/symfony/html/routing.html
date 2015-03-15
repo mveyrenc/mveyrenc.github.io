@@ -143,7 +143,21 @@
 <li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#le-console-et-doctrine">Le console et Doctrine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tp.html#description-de-l-application">Description de l&#8217;application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tp.html#travail-a-effectuer">Travail à effectuer</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -302,11 +316,11 @@
 </div>
 <p>Ensuite lorsqu&#8217;on recharge les deux pages précédentes, <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5">http://localhost/Symfony/web/app_dev.php/post/5</a> affiche &#8220;Affichage du post avec l&#8217;id : 5.&#8221;. <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj">http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj</a> affiche une message d&#8217;erreur.</p>
 <p>On peut également utiliser des paramètres suivants :</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_index</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/posts/{page}.{_format}</span>
-    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">index</span><span class="p-Indicator">,</span> <span class="nv">page</span><span class="p-Indicator">:</span> <span class="nv">1</span><span class="p-Indicator">,</span> <span class="nv">_format</span><span class="p-Indicator">:</span> <span class="nv">html</span> <span class="p-Indicator">}</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">page</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d*</span>
+        <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
         <span class="l-Scalar-Plain">_format</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">html|xml|json</span>
 </pre></div>
 </div>
@@ -361,11 +375,11 @@
 <li><tt class="docutils literal"><span class="pre">/blogs/n</span></tt> : page = n</li>
 </ul>
 <p>Le numéro de la page sera récupéré dans un paramètre <tt class="docutils literal"><span class="pre">{page}</span></tt> qui devra être composer de zéro ou plusieurs chiffres. Voici la route :</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_index</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/posts/{page}.{_format}</span>
-    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">index</span><span class="p-Indicator">,</span> <span class="nv">page</span><span class="p-Indicator">:</span> <span class="nv">1</span><span class="p-Indicator">,</span> <span class="nv">_format</span><span class="p-Indicator">:</span> <span class="nv">html</span> <span class="p-Indicator">}</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}</span>
+    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">page</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d*</span>
+        <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
         <span class="l-Scalar-Plain">_format</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">html|xml|json</span>
 </pre></div>
 </div>
