@@ -149,7 +149,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#le-console-et-doctrine">Le console et Doctrine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-une-entite">Création d&#8217;une entité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#generation-de-code">Génération de code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#debug">Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#depuis-un-controleur">Depuis un contrôleur</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">TP</a><ul>
@@ -444,9 +450,15 @@
 <li><p class="first">Ajouter la route <tt class="docutils literal"><span class="pre">epsi_blog_homepage</span></tt> qui doit afficher la liste des posts du blog (chapitre <em>Le routing</em>)</p>
 </li>
 <li><p class="first">Mettez en place le triple héritage de template (chapitres <em>Les vues avec Twig</em>)</p>
+<blockquote>
+<div><img alt="_images/TemplateHeritage.png" class="align-center" src="_images/TemplateHeritage.png" />
+<ul class="simple">
+<li>en rouge : le template de l&#8217;application <tt class="docutils literal"><span class="pre">app/Resources/views/base.html.twig</span></tt></li>
+<li>en bleu : le template du bundle <tt class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig</span></tt></li>
+<li>en vert : le template de la page</li>
+</ul>
+</div></blockquote>
 </li>
-</ol>
-<ol class="arabic">
 <li><p class="first">Ajputer jQuery et Bootstrap (chapitres <em>Les assets</em>)</p>
 </li>
 <li><p class="first">Ajoutez un menu en haut de la page vers les listes les entités post, user et tag (chapitres <em>Les vues avec Twig</em>)</p>

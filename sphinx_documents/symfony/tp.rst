@@ -196,8 +196,8 @@ Travail à effectuer
 
 #. Mettez en place le triple héritage de template (chapitres *Les vues avec Twig*)
 
-.. image:: _static/images/tp/TemplateHeritage.png
-    :align: center
+    .. image:: _static/images/tp/TemplateHeritage.png
+        :align: center
 
     * en rouge : le template de l'application ``app/Resources/views/base.html.twig``
     * en bleu : le template du bundle ``src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig``

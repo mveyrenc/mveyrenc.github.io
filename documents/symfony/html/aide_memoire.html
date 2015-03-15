@@ -143,12 +143,27 @@
 <li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Aide mémoire</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#le-console-et-doctrine">Le console et Doctrine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Aide mémoire</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-d-une-entite">Création d&#8217;une entité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generation-de-code">Génération de code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug">Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#depuis-un-controleur">Depuis un contrôleur</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tp.html#description-de-l-application">Description de l&#8217;application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tp.html#travail-a-effectuer">Travail à effectuer</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -183,32 +198,117 @@
             
   <div class="section" id="aide-memoire">
 <h1>Aide mémoire<a class="headerlink" href="#aide-memoire" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="le-console-et-doctrine">
-<h2>Le console et Doctrine<a class="headerlink" href="#le-console-et-doctrine" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="manipuler-la-base-de-donnees">
-<h3>Manipuler la base de données<a class="headerlink" href="#manipuler-la-base-de-donnees" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">doctrine:database:create</span></tt> : crée la base de données configurée</li>
-<li><tt class="docutils literal"><span class="pre">doctrine:database:drop</span></tt> : supprime la base de données configurée</li>
-</ul>
+<div class="section" id="creation-d-un-bundle">
+<h2>Création d&#8217;un bundle<a class="headerlink" href="#creation-d-un-bundle" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>php app/console generate:bundle
+<span class="c"># puis répondre aux questions</span>
+</pre></div>
 </div>
-<div class="section" id="manipuler-le-schema-de-la-base">
-<h3>Manipuler le schéma de la base<a class="headerlink" href="#manipuler-le-schema-de-la-base" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">doctrine:schema:create</span></tt> : exécute ou affiche les requêtes SQL nécessaire pour créer le schéma de la base</li>
-<li><tt class="docutils literal"><span class="pre">doctrine:schema:drop</span></tt> : exécute ou affiche les requêtes SQL nécessaire pour supprimer le schéma de la base</li>
-<li><tt class="docutils literal"><span class="pre">doctrine:schema:update</span></tt> : exécute ou affiche les requêtes SQL nécessaire pour mettre à jour le schéma de la base</li>
-<li><tt class="docutils literal"><span class="pre">doctrine:schema:validate</span></tt> : vérifie les entités Doctrine et si le schéma de la base de données est à jour</li>
-</ul>
+</div>
+<div class="section" id="creation-d-une-entite">
+<h2>Création d&#8217;une entité<a class="headerlink" href="#creation-d-une-entite" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>php app/console doctrine:generate:entity
+<span class="c"># puis répondre aux questions</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deployer-les-fichiers-statiques-des-bundles-dans-web">
+<h2>Déployer les fichiers statiques des bundles dans web/<a class="headerlink" href="#deployer-les-fichiers-statiques-des-bundles-dans-web" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>php app/console assets:install web --symlink
+</pre></div>
+</div>
+</div>
+<div class="section" id="manipuler-la-base-de-donnees">
+<h2>Manipuler la base de données<a class="headerlink" href="#manipuler-la-base-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># créer la base de données</span>
+php app/console doctrine:database:create
+
+<span class="c"># supprimer la base de données</span>
+php app/console doctrine:database:drop
+
+<span class="c"># exécuter ou afficher les requêtes SQL nécessaire pour créer le schéma de la base</span>
+php app/console doctrine:schema:create --dump-sql --force
+
+<span class="c"># exécuter ou afficher les requêtes SQL nécessaire pour supprimer le schéma de la base</span>
+php app/console doctrine:schema:drop --dump-sql --force
+
+<span class="c"># exécuter ou afficher les requêtes SQL nécessaire pour mettre à jour le schéma de la base</span>
+php app/console doctrine:schema:update --dump-sql --force
+
+<span class="c"># vérifier les entités Doctrine et si le schéma de la base de données est à jour</span>
+php app/console doctrine:schema:validate
+</pre></div>
+</div>
 </div>
 <div class="section" id="generation-de-code">
-<h3>Génération de code<a class="headerlink" href="#generation-de-code" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">doctrine:generate:entities</span></tt> : complète les entité en fonction des annotation présente dans les entités</li>
-<li><tt class="docutils literal"><span class="pre">doctrine:generate:entity</span></tt> : génère une nouvelle entité Doctrine</li>
-<li><tt class="docutils literal"><span class="pre">doctrine:generate:form</span></tt> : génère la classe de formulaire associée à une entité</li>
-<li><tt class="docutils literal"><span class="pre">doctrine:generate:crud</span></tt> : génère le contrôleur, les templates et le formulaire pour gérer une entité</li>
-</ul>
+<h2>Génération de code<a class="headerlink" href="#generation-de-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># générer la classe de formulaire associée à une entité</span>
+php app/console doctrine:generate:form EpsiBlogBundle:User
+
+<span class="c"># générer le contrôleur, les templates et le formulaire pour gérer une entité</span>
+php app/console doctrine:generate:crud
+<span class="c"># puis répondre aux questions</span>
+
+<span class="c"># compléter les entités en fonction des annotations présentes dans les entités</span>
+php app/console doctrine:generate:entities EpsiBlogBundle<span class="o">[</span>:User<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="debug">
+<h2>Debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># voir toutes les routes</span>
+php app/console router:debug
+
+<span class="c"># effacer le cache</span>
+php app/console cache:clear
+
+<span class="c"># voir la liste des services</span>
+php app/console container:debug
+</pre></div>
+</div>
+</div>
+<div class="section" id="depuis-un-controleur">
+<h2>Depuis un contrôleur<a class="headerlink" href="#depuis-un-controleur" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="c1">// récupérer l&#39;objet request</span>
+<span class="nv">$request</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequest</span><span class="p">();</span>
+
+<span class="c1">// Ajax request?</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">isXmlHttpRequest</span><span class="p">();</span>
+
+<span class="c1">// quel est le langage préféré ?</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPreferredLanguage</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">));</span>
+
+<span class="c1">// get a $_GET parameter</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">query</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;page&#39;</span><span class="p">);</span>
+
+<span class="c1">// get a $_POST parameter</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;page&#39;</span><span class="p">);</span>
+
+<span class="c1">// get a cookie parameter</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">cookies</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;page&#39;</span><span class="p">);</span>
+
+<span class="c1">// get REQUEST_URI</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPathInfo</span><span class="p">()</span>
+
+<span class="c1">// récupérer l&#39;entity manager de Doctrine</span>
+<span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getEntityManager</span><span class="p">();</span>
+
+<span class="c1">// récupérer un paramètre de l&#39;application défini par exemple dans config.yml</span>
+<span class="nv">$param</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">container</span><span class="o">-&gt;</span><span class="na">getParameter</span><span class="p">(</span><span class="s1">&#39;my_parameter&#39;</span><span class="p">);</span>
+
+<span class="c1">// récupérer la locale courante :</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getLocale</span><span class="p">();</span>
+
+<span class="c1">// récupérer un service</span>
+<span class="nv">$service</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;myService&quot;</span><span class="p">);</span>
+
+<span class="c1">// récupérer le &quot;baseUrl (+ ou - complet)&quot; de l&#39;appli</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequest</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getBasePath</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequest</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getBaseUrl</span><span class="p">();</span>
+
+<span class="c1">// voir tous les paramètres enregistrés :</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">container</span><span class="o">-&gt;</span><span class="na">parameters</span><span class="p">);</span>
+</pre></div>
 </div>
 </div>
 </div>
