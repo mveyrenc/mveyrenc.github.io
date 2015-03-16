@@ -68,6 +68,14 @@ Génération de code
     # compléter les entités en fonction des annotations présentes dans les entités
     php app/console doctrine:generate:entities EpsiBlogBundle[:User]
 
+****************************************
+Transformer la configuration des entités
+****************************************
+
+.. code-block:: bash
+
+    $ php app/console doctrine:mapping:convert annotation ./src/Epsi/Bundle/BlogBundle/Entity
+
 *****
 Debug
 *****
