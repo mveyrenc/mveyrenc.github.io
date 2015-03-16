@@ -490,10 +490,20 @@
 </ol>
 <p>A rendre</p>
 <blockquote>
-<div><ul class="simple">
-<li>une archive avec tout Symfony + un dump de votre base de données (<tt class="docutils literal"><span class="pre">mysqldump</span> <span class="pre">-usymfony</span> <span class="pre">-p</span> <span class="pre">symfony</span> <span class="pre">&gt;</span> <span class="pre">symfony.sql</span></tt>)</li>
-<li>par mail à l&#8217;adresse <a class="reference external" href="mailto:madeline&#37;&#52;&#48;veyrenc&#46;fr">madeline<span>&#64;</span>veyrenc<span>&#46;</span>fr</a></li>
-<li>le 31/03/2015 dernier délais</li>
+<div><ul>
+<li><p class="first">une archive avec vos développements Symfony + un dump de votre base de données</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /var/www/html/
+<span class="nv">$ </span>mysqldump -usymfony -p symfony &gt; symfony.sql
+<span class="nv">$ </span>tar -cf symfony.tar Symfony/app/config/ Symfony/app/Resources/  Symfony/src/Epsi/ Symfony/composer.* symfony.sql
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">par mail à l&#8217;adresse <a class="reference external" href="mailto:madeline&#37;&#52;&#48;veyrenc&#46;fr">madeline<span>&#64;</span>veyrenc<span>&#46;</span>fr</a></p>
+</li>
+<li><p class="first">le 31/03/2015 dernier délais</p>
+</li>
 </ul>
 </div></blockquote>
 </div>

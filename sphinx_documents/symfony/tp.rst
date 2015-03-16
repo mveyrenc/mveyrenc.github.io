@@ -227,6 +227,13 @@ Travail à effectuer
 
 A rendre
 
-    * une archive avec tout Symfony + un dump de votre base de données (``mysqldump -usymfony -p symfony > symfony.sql``)
+    * une archive avec vos développements Symfony + un dump de votre base de données
+
+        .. code-block:: bash
+
+            $ cd /var/www/html/
+            $ mysqldump -usymfony -p symfony > symfony.sql
+            $ tar -cf symfony.tar Symfony/app/config/ Symfony/app/Resources/  Symfony/src/Epsi/ Symfony/composer.* symfony.sql
+
     * par mail à l'adresse madeline@veyrenc.fr
     * le 31/03/2015 dernier délais
