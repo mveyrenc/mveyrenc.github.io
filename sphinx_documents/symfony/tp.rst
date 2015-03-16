@@ -52,6 +52,8 @@ L'entité ``Post``
 +-----------+-----------------------------------+-----------------------+
 | comments  | Relation vers des ``Comment``     |                       |
 +-----------+-----------------------------------+-----------------------+
+| tags      | Relation vers des ``Tag``         |                       |
++-----------+-----------------------------------+-----------------------+
 
 La suppression d'un post entraîne la suppression des commentaire qui lui sont associés.
 
