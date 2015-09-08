@@ -1,6 +1,6 @@
-[submodule "sphinx_documents/_themes/sphinx_rtd_theme"]
-	path = sphinx_documents/_themes/sphinx_rtd_theme
+[submodule "_themes/sphinx_rtd_theme"]
+	path = _themes/sphinx_rtd_theme
 	url = https://github.com/Open-Wide/sphinx_rtd_theme.git
-[submodule "sphinx_documents/_themes/sphinxjp.themes.revealjs"]
-	path = sphinx_documents/_themes/sphinxjp.themes.revealjs
+[submodule "_themes/sphinxjp.themes.revealjs"]
+	path = _themes/sphinxjp.themes.revealjs
 	url = https://github.com/Open-Wide/sphinxjp.themes.revealjs.git
