@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Création d’un bundle &mdash; Symfony 1.0.1 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -30,12 +30,17 @@
   
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
   
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
         <link rel="next" title="Le routing" href="routing.html"/>
         <link rel="prev" title="Architecture de Symfony" href="architecture.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -46,49 +51,43 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> Symfony</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
+        
+
+        
+            
+              <a href="index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            False
+          </div>
+        
+
+        
+          <div class="reference">
+            False
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#terminologie">Terminologie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#mots-reserves">Mots réservés</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#heritage">Héritage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#classes-abstraites">Classes abstraites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#visibilite">Visibilité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#references-et-clonage">Références et clonage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#exceptions">Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>
-</ul>
-</li>
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Création d&#8217;un bundle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-de-la-console">Utilisation de la console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-du-bundle">Création du bundle</a></li>
@@ -96,79 +95,31 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#fonctionnement">Fonctionnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#request-et-response"><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-request">L&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="services.html#acceder-un-service">Accéder un service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#exemple-de-services">Exemple de services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#le-base">Le base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#acces-aux-variables">Accès aux variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#affectation-de-variables">Affectation de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-filtres">Les filtres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-fonctions">Les fonctions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-structures-de-controle">Les structures de contrôle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-types-de-variables">Les types de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-operateurs">Les opérateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-variables-globales">Les variables globales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-macros">Les macros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#heritage-de-templates">Héritage de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-templates">Inclusion de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-controleurs">Inclusion de contrôleurs</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-des-entites">Création des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-des-relations">Définition des relations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-une-entite">Création d&#8217;une entité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#generation-de-code">Génération de code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#debug">Debug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#depuis-un-controleur">Depuis un contrôleur</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#description-de-l-application">Description de l&#8217;application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#travail-a-effectuer">Travail à effectuer</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
 </ul>
 
+          
         
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -183,18 +134,28 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>Création d&#8217;un bundle</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
+
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="creation-d-un-bundle">
 <h1>Création d&#8217;un bundle<a class="headerlink" href="#creation-d-un-bundle" title="Permalink to this headline">¶</a></h1>
@@ -202,7 +163,7 @@
 <div class="section" id="utilisation-de-la-console">
 <h2>Utilisation de la console<a class="headerlink" href="#utilisation-de-la-console" title="Permalink to this headline">¶</a></h2>
 <p>La console permet de lancer des actions en ligne de commande pour aider au développement, lancer des tâches planifiées (cron), etc.</p>
-<p>Pour lancer la console, il faut exécuter le script <tt class="docutils literal"><span class="pre">app/console</span></tt> suivit d&#8217;arguments pour lancer les différentes commandes. Pour avoir la liste des commandes disponible, il suffit de lanncer le script <tt class="docutils literal"><span class="pre">app/console</span></tt> sans arguments :</p>
+<p>Pour lancer la console, il faut exécuter le script <code class="docutils literal"><span class="pre">app/console</span></code> suivit d&#8217;arguments pour lancer les différentes commandes. Pour avoir la liste des commandes disponible, il suffit de lanncer le script <code class="docutils literal"><span class="pre">app/console</span></code> sans arguments :</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console
 </pre></div>
 </div>
@@ -219,15 +180,15 @@
 </li>
 <li><p class="first">La namespace du bundle</p>
 <blockquote>
-<div><p>Vous pouvez nommer votre namespace comme bon vous semble, du moment qu&#8217;il se termine par <tt class="docutils literal"><span class="pre">Bundle</span></tt>. Mais convention, le namespace d&#8217;un bundle pour être former ainsi :</p>
+<div><p>Vous pouvez nommer votre namespace comme bon vous semble, du moment qu&#8217;il se termine par <code class="docutils literal"><span class="pre">Bundle</span></code>. Mais convention, le namespace d&#8217;un bundle pour être former ainsi :</p>
 <ul class="simple">
 <li>Un namespace racine, il s&#8217;agit du vendor : l&#8217;auteur, une société, un projet, un client, etc.</li>
-<li>Le namespace optionnel <tt class="docutils literal"><span class="pre">Bundle</span></tt></li>
+<li>Le namespace optionnel <code class="docutils literal"><span class="pre">Bundle</span></code></li>
 <li>Un ou plusieurs namespaces de catégorisation (optionnel)</li>
-<li>Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de <tt class="docutils literal"><span class="pre">Bundle</span></tt></li>
+<li>Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de <code class="docutils literal"><span class="pre">Bundle</span></code></li>
 </ul>
-<p>Ce qui nous donne par exemple : <tt class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></tt>, <tt class="docutils literal"><span class="pre">Epsi\Bundle\Social\BlogBundle</span></tt> ou <tt class="docutils literal"><span class="pre">Epsi\BlogBundle</span></tt>.</p>
-<p>Nous allons appelé notre bundle <tt class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></tt>.</p>
+<p>Ce qui nous donne par exemple : <code class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></code>, <code class="docutils literal"><span class="pre">Epsi\Bundle\Social\BlogBundle</span></code> ou <code class="docutils literal"><span class="pre">Epsi\BlogBundle</span></code>.</p>
+<p>Nous allons appelé notre bundle <code class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Le nom du bundle</p>
@@ -237,24 +198,24 @@
 </li>
 <li><p class="first">L&#8217;emplacement du bundle</p>
 <blockquote>
-<div><p>Par défaut Symfony le place dans le répertoire <tt class="docutils literal"><span class="pre">/src</span></tt>. On laisse la valeur par défaut.</p>
+<div><p>Par défaut Symfony le place dans le répertoire <code class="docutils literal"><span class="pre">/src</span></code>. On laisse la valeur par défaut.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Le format de la configuration</p>
 <blockquote>
 <div><p>Symfony propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n&#8217;a pas d&#8217;impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s&#8217;agit juste de choisir le format avec lequel vous êtes le plus alèse.</p>
-<p>Dans notre cas, nous allons choisir le <tt class="docutils literal"><span class="pre">yml</span></tt>.</p>
+<p>Dans notre cas, nous allons choisir le <code class="docutils literal"><span class="pre">yml</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p class="first">La structure générer</p>
 <blockquote>
 <div><p>Ici, Symfony vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s&#8217;ils ne sont pas utilisés.</p>
-<p>Répondez <tt class="docutils literal"><span class="pre">yes</span></tt>.</p>
+<p>Répondez <code class="docutils literal"><span class="pre">yes</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Confirmer et c&#8217;est parti</p>
 <blockquote>
-<div><p>Répondez <tt class="docutils literal"><span class="pre">yes</span></tt> à toutes les autres questions et votre bundle sera généré et installé : <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/hello/World">http://localhost/Symfony/web/app_dev.php/hello/World</a></p>
+<div><p>Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé : <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/hello/World">http://localhost/Symfony/web/app_dev.php/hello/World</a></p>
 </div></blockquote>
 </li>
 </ol>
@@ -266,31 +227,31 @@
 <blockquote>
 <div><p>Dans le répertoire généré par Symfony on trouve :</p>
 <ul>
-<li><p class="first">un contrôleur dans le répertoire <tt class="docutils literal"><span class="pre">Controller</span></tt></p>
+<li><p class="first">un contrôleur dans le répertoire <code class="docutils literal"><span class="pre">Controller</span></code></p>
 </li>
-<li><p class="first">les classes permettant de la configuration du bundle dans le répertoire <tt class="docutils literal"><span class="pre">DependencyInjection</span></tt></p>
+<li><p class="first">les classes permettant de la configuration du bundle dans le répertoire <code class="docutils literal"><span class="pre">DependencyInjection</span></code></p>
 </li>
-<li><p class="first">les ressources dans le répertoire <tt class="docutils literal"><span class="pre">Resources</span></tt></p>
+<li><p class="first">les ressources dans le répertoire <code class="docutils literal"><span class="pre">Resources</span></code></p>
 <blockquote>
 <div><ul class="simple">
-<li>les fichiers de configuration dans <tt class="docutils literal"><span class="pre">config</span></tt></li>
-<li>la documentation dans <tt class="docutils literal"><span class="pre">doc</span></tt></li>
-<li>les fichiers à destination du visiteur (CSS, Javascript, images) dans <tt class="docutils literal"><span class="pre">public</span></tt></li>
-<li>les fichiers de traduction dans <tt class="docutils literal"><span class="pre">translations</span></tt></li>
-<li>les templates Twig dans <tt class="docutils literal"><span class="pre">views</span></tt></li>
+<li>les fichiers de configuration dans <code class="docutils literal"><span class="pre">config</span></code></li>
+<li>la documentation dans <code class="docutils literal"><span class="pre">doc</span></code></li>
+<li>les fichiers à destination du visiteur (CSS, Javascript, images) dans <code class="docutils literal"><span class="pre">public</span></code></li>
+<li>les fichiers de traduction dans <code class="docutils literal"><span class="pre">translations</span></code></li>
+<li>les templates Twig dans <code class="docutils literal"><span class="pre">views</span></code></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">les tests dans <tt class="docutils literal"><span class="pre">Tests</span></tt></p>
+<li><p class="first">les tests dans <code class="docutils literal"><span class="pre">Tests</span></code></p>
 </li>
-<li><p class="first">enfin, le seul fichier obligatoire dans un bundle : la classe <tt class="docutils literal"><span class="pre">EpsiBlogBundle.php</span></tt></p>
+<li><p class="first">enfin, le seul fichier obligatoire dans un bundle : la classe <code class="docutils literal"><span class="pre">EpsiBlogBundle.php</span></code></p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Symfony enregistre notre bundle dans le Kernel (<tt class="docutils literal"><span class="pre">app/AppKernel.php</span></tt>)</p>
+<li><p class="first">Symfony enregistre notre bundle dans le Kernel (<code class="docutils literal"><span class="pre">app/AppKernel.php</span></code>)</p>
 </li>
-<li><p class="first">Symfony ajoute les routes de notre bundle dans le Routeur (<tt class="docutils literal"><span class="pre">app/config/routing.yml</span></tt>)</p>
+<li><p class="first">Symfony ajoute les routes de notre bundle dans le Routeur (<code class="docutils literal"><span class="pre">app/config/routing.yml</span></code>)</p>
 </li>
 </ol>
 </div>
@@ -308,15 +269,16 @@
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="routing.html" class="btn btn-neutral float-right" title="Le routing"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="routing.html" class="btn btn-neutral float-right" title="Le routing" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="architecture.html" class="btn btn-neutral" title="Architecture de Symfony"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="architecture.html" class="btn btn-neutral" title="Architecture de Symfony" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -324,13 +286,16 @@
   <hr/>
 
   <div role="contentinfo">
+
     <p>
         &copy; Copyright 2014, Madeline VEYRENC.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
@@ -351,9 +316,6 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
 
   
 

@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>TP &mdash; Symfony 1.0.1 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -30,11 +30,16 @@
   
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
   
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
         <link rel="prev" title="Aide mémoire" href="aide_memoire.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -45,129 +50,90 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> Symfony</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
+        
+
+        
+            
+              <a href="index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            False
+          </div>
+        
+
+        
+          <div class="reference">
+            False
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#terminologie">Terminologie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#mots-reserves">Mots réservés</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#heritage">Héritage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#classes-abstraites">Classes abstraites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#visibilite">Visibilité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#references-et-clonage">Références et clonage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#exceptions">Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#utilisation-de-la-console">Utilisation de la console</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#creation-du-bundle">Création du bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
-</ul>
-</li>
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#fonctionnement">Fonctionnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#request-et-response"><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-request">L&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="services.html#acceder-un-service">Accéder un service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#exemple-de-services">Exemple de services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#le-base">Le base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#acces-aux-variables">Accès aux variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#affectation-de-variables">Affectation de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-filtres">Les filtres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-fonctions">Les fonctions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-structures-de-controle">Les structures de contrôle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-types-de-variables">Les types de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-operateurs">Les opérateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-variables-globales">Les variables globales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-macros">Les macros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#heritage-de-templates">Héritage de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-templates">Inclusion de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-controleurs">Inclusion de contrôleurs</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-des-entites">Création des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-des-relations">Définition des relations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-une-entite">Création d&#8217;une entité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#generation-de-code">Génération de code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#debug">Debug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#depuis-un-controleur">Depuis un contrôleur</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">TP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#description-de-l-application">Description de l&#8217;application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#description-de-l-application">Description de l&#8217;application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description-des-entites">Description des entités</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-user">L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-post">L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-tag">L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-comment">L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#les-interfaces">Les interfaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#les-posts">Les posts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#les-utilisateurs">Les utilisateurs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#les-tags">Les tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#travail-a-effectuer">Travail à effectuer</a></li>
 </ul>
 </li>
 </ul>
 
+          
         
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -182,18 +148,28 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>TP</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
+
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="tp">
 <h1>TP<a class="headerlink" href="#tp" title="Permalink to this headline">¶</a></h1>
@@ -210,7 +186,7 @@
 <div class="section" id="description-des-entites">
 <h3>Description des entités<a class="headerlink" href="#description-des-entites" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="l-entite-user">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">User</span></tt><a class="headerlink" href="#l-entite-user" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#l-entite-user" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -242,11 +218,11 @@
 <td>requis</td>
 </tr>
 <tr class="row-odd"><td>posts</td>
-<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Post</span></tt></td>
+<td colspan="2">Relation vers des <code class="docutils literal"><span class="pre">Post</span></code></td>
 <td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>comments</td>
-<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Comment</span></tt></td>
+<td colspan="2">Relation vers des <code class="docutils literal"><span class="pre">Comment</span></code></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>
@@ -254,7 +230,7 @@
 <p>La suppression d&#8217;un utilisateur entraîne la suppression de ses posts et de ses commentaires.</p>
 </div>
 <div class="section" id="l-entite-post">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Post</span></tt><a class="headerlink" href="#l-entite-post" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code><a class="headerlink" href="#l-entite-post" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -286,15 +262,15 @@
 <td>requis</td>
 </tr>
 <tr class="row-odd"><td>author</td>
-<td colspan="2">Relation vers une <tt class="docutils literal"><span class="pre">User</span></tt></td>
+<td colspan="2">Relation vers une <code class="docutils literal"><span class="pre">User</span></code></td>
 <td>requis</td>
 </tr>
 <tr class="row-even"><td>comments</td>
-<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Comment</span></tt></td>
+<td colspan="2">Relation vers des <code class="docutils literal"><span class="pre">Comment</span></code></td>
 <td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>tags</td>
-<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Tag</span></tt></td>
+<td colspan="2">Relation vers des <code class="docutils literal"><span class="pre">Tag</span></code></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>
@@ -302,7 +278,7 @@
 <p>La suppression d&#8217;un post entraîne la suppression des commentaire qui lui sont associés.</p>
 </div>
 <div class="section" id="l-entite-tag">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Tag</span></tt><a class="headerlink" href="#l-entite-tag" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code><a class="headerlink" href="#l-entite-tag" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -324,14 +300,14 @@
 <td>requis</td>
 </tr>
 <tr class="row-odd"><td>posts</td>
-<td colspan="2">Relation vers des <tt class="docutils literal"><span class="pre">Post</span></tt></td>
+<td colspan="2">Relation vers des <code class="docutils literal"><span class="pre">Post</span></code></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="l-entite-comment">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Comment</span></tt><a class="headerlink" href="#l-entite-comment" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code><a class="headerlink" href="#l-entite-comment" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -358,11 +334,11 @@
 <td>requis</td>
 </tr>
 <tr class="row-even"><td>author</td>
-<td colspan="2">Relation vers un <tt class="docutils literal"><span class="pre">User</span></tt></td>
+<td colspan="2">Relation vers un <code class="docutils literal"><span class="pre">User</span></code></td>
 <td>requis</td>
 </tr>
 <tr class="row-odd"><td>post</td>
-<td colspan="2">Relation vers un <tt class="docutils literal"><span class="pre">Post</span></tt></td>
+<td colspan="2">Relation vers un <code class="docutils literal"><span class="pre">Post</span></code></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>
@@ -441,24 +417,24 @@
 </li>
 <li><p class="first">Ajoutez les relations entre les entités</p>
 </li>
-<li><p class="first">Créez les interfaces pour gérer chacune des entités avec la commande <tt class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:doctrine:crud</span></tt></p>
+<li><p class="first">Créez les interfaces pour gérer chacune des entités avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:doctrine:crud</span></code></p>
 <blockquote>
 <div><p>Pour avoir le l&#8217;aide sur comment utiliser cette commande :</p>
 <div class="highlight-bash"><div class="highlight"><pre>php app/console <span class="nb">help </span>generate:doctrine:crud
 </pre></div>
 </div>
-<p>Lorsque vous allez la lancer elle va vous demander si vous souhaitez créer les actions d&#8217;écriture (<tt class="docutils literal"><span class="pre">new</span></tt>, <tt class="docutils literal"><span class="pre">update</span></tt> et <tt class="docutils literal"><span class="pre">delete</span></tt>), répondez <tt class="docutils literal"><span class="pre">yes</span></tt>.</p>
-<p>Elle vous demandera également le format de la configuration de vos routes (<tt class="docutils literal"><span class="pre">yml</span></tt>, <tt class="docutils literal"><span class="pre">xml</span></tt>, <tt class="docutils literal"><span class="pre">php</span></tt>, ou <tt class="docutils literal"><span class="pre">annotation</span></tt>), répondez <tt class="docutils literal"><span class="pre">yml</span></tt>.</p>
+<p>Lorsque vous allez la lancer elle va vous demander si vous souhaitez créer les actions d&#8217;écriture (<code class="docutils literal"><span class="pre">new</span></code>, <code class="docutils literal"><span class="pre">update</span></code> et <code class="docutils literal"><span class="pre">delete</span></code>), répondez <code class="docutils literal"><span class="pre">yes</span></code>.</p>
+<p>Elle vous demandera également le format de la configuration de vos routes (<code class="docutils literal"><span class="pre">yml</span></code>, <code class="docutils literal"><span class="pre">xml</span></code>, <code class="docutils literal"><span class="pre">php</span></code>, ou <code class="docutils literal"><span class="pre">annotation</span></code>), répondez <code class="docutils literal"><span class="pre">yml</span></code>.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Ajouter la route <tt class="docutils literal"><span class="pre">epsi_blog_homepage</span></tt> qui doit afficher la liste des posts du blog (chapitre <em>Le routing</em>)</p>
+<li><p class="first">Ajouter la route <code class="docutils literal"><span class="pre">epsi_blog_homepage</span></code> qui doit afficher la liste des posts du blog (chapitre <em>Le routing</em>)</p>
 </li>
 <li><p class="first">Mettez en place le triple héritage de template (chapitres <em>Les vues avec Twig</em>)</p>
 <blockquote>
 <div><img alt="_images/TemplateHeritage.png" class="align-center" src="_images/TemplateHeritage.png" />
 <ul class="simple">
-<li>en rouge : le template de l&#8217;application <tt class="docutils literal"><span class="pre">app/Resources/views/base.html.twig</span></tt></li>
-<li>en bleu : le template du bundle <tt class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig</span></tt></li>
+<li>en rouge : le template de l&#8217;application <code class="docutils literal"><span class="pre">app/Resources/views/base.html.twig</span></code></li>
+<li>en bleu : le template du bundle <code class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig</span></code></li>
 <li>en vert : le template de la page</li>
 </ul>
 </div></blockquote>
@@ -514,13 +490,14 @@
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="aide_memoire.html" class="btn btn-neutral" title="Aide mémoire"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="aide_memoire.html" class="btn btn-neutral" title="Aide mémoire" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -528,13 +505,16 @@
   <hr/>
 
   <div role="contentinfo">
+
     <p>
         &copy; Copyright 2014, Madeline VEYRENC.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
@@ -555,9 +535,6 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
 
   
 

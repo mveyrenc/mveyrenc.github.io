@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Doctrine et la base de donnée &mdash; Symfony 1.0.1 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -30,12 +30,17 @@
   
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
   
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
         <link rel="next" title="Les formulaires" href="formulaire.html"/>
         <link rel="prev" title="Les assets" href="assets.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -46,129 +51,120 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> Symfony</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+        
+
+        
+            
+              <a href="index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            False
+          </div>
+        
+
+        
+          <div class="reference">
+            False
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Doctrine et la base de donnée</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-des-entites">Création des entités</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#l-entite-user">L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#structure-de-l-entite">Structure de l&#8217;entité</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-du-generateur">Utilisation du générateur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#la-classe-user">La classe <code class="docutils literal"><span class="pre">User</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#la-classe-userrepository">La classe <code class="docutils literal"><span class="pre">UserRepository</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creation-des-autres-entites">Création des autres entités</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-post">L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-tag">L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-comment">L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#l-entite-image">L&#8217;entité <code class="docutils literal"><span class="pre">Image</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-relations">Définition des relations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notions-techniques-a-savoir">Notions techniques à savoir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#notion-du-proprietaire-et-de-l-inverse">Notion du propriétaire et de l&#8217;inverse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite">Notion d&#8217;unidirectionnalité et de bidirectionnalité</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#relation-one-to-one">Relation One-To-One</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dans-l-entite-proprietaire">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dans-l-entite-inverse">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#relation-many-to-one-et-one-to-many">Relation Many-To-One et One-To-Many</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#relation-many-to-many">Relation Many-To-Many</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manipulation-des-donnees">Manipulation des données</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enregistrer-les-entites-dans-la-base-de-donnee">Enregistrer les entités dans la base de donnée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recuperer-ses-entites-avec-un-entityrepository">Récupérer ses entités avec un EntityRepository</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
       </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#terminologie">Terminologie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#mots-reserves">Mots réservés</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#heritage">Héritage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#classes-abstraites">Classes abstraites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#visibilite">Visibilité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#references-et-clonage">Références et clonage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#exceptions">Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#utilisation-de-la-console">Utilisation de la console</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#creation-du-bundle">Création du bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#fonctionnement">Fonctionnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#request-et-response"><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-request">L&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="services.html#acceder-un-service">Accéder un service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#exemple-de-services">Exemple de services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#le-base">Le base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#acces-aux-variables">Accès aux variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#affectation-de-variables">Affectation de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-filtres">Les filtres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-fonctions">Les fonctions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-structures-de-controle">Les structures de contrôle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-types-de-variables">Les types de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-operateurs">Les opérateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-variables-globales">Les variables globales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-macros">Les macros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#heritage-de-templates">Héritage de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-templates">Inclusion de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-controleurs">Inclusion de contrôleurs</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Doctrine et la base de donnée</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creation-des-entites">Création des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#definition-des-relations">Définition des relations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manipulation-des-donnees">Manipulation des données</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-une-entite">Création d&#8217;une entité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#generation-de-code">Génération de code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#debug">Debug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#depuis-un-controleur">Depuis un contrôleur</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#description-de-l-application">Description de l&#8217;application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#travail-a-effectuer">Travail à effectuer</a></li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -183,18 +179,28 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>Doctrine et la base de donnée</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
+
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="doctrine-et-la-base-de-donnee">
 <h1>Doctrine et la base de donnée<a class="headerlink" href="#doctrine-et-la-base-de-donnee" title="Permalink to this headline">¶</a></h1>
@@ -206,7 +212,7 @@
 <h2>Création des entités<a class="headerlink" href="#creation-des-entites" title="Permalink to this headline">¶</a></h2>
 <p>Les entités Doctrine sont de simples classes PHP avec des propriétés et des méthodes. Comme pour les bundles, Symfony propose un générateur créer ces classes.</p>
 <div class="section" id="l-entite-user">
-<h3>L&#8217;entité <tt class="docutils literal"><span class="pre">User</span></tt><a class="headerlink" href="#l-entite-user" title="Permalink to this headline">¶</a></h3>
+<h3>L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#l-entite-user" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="structure-de-l-entite">
 <h4>Structure de l&#8217;entité<a class="headerlink" href="#structure-de-l-entite" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
@@ -268,10 +274,10 @@ Do you want to generate an empty repository class [no]? yes
 Do you confirm generation [yes]? yes
 </pre></div>
 </div>
-<p>Le générateur crée deux fichiers dans le répertoire <tt class="docutils literal"><span class="pre">Entity</span></tt> de notre bundle : <tt class="docutils literal"><span class="pre">User.php</span></tt> et <tt class="docutils literal"><span class="pre">UserRepository.php</span></tt>. La classe <tt class="docutils literal"><span class="pre">User</span></tt> est la classe représentant l&#8217;entité en elle même, est propriétés et ses méthodes. La classe <tt class="docutils literal"><span class="pre">UserRepository</span></tt> est une classe de dépôt où l&#8217;on va mettre les méthodes qui vont permettent de récupérer les entités depuis la base de données.</p>
+<p>Le générateur crée deux fichiers dans le répertoire <code class="docutils literal"><span class="pre">Entity</span></code> de notre bundle : <code class="docutils literal"><span class="pre">User.php</span></code> et <code class="docutils literal"><span class="pre">UserRepository.php</span></code>. La classe <code class="docutils literal"><span class="pre">User</span></code> est la classe représentant l&#8217;entité en elle même, est propriétés et ses méthodes. La classe <code class="docutils literal"><span class="pre">UserRepository</span></code> est une classe de dépôt où l&#8217;on va mettre les méthodes qui vont permettent de récupérer les entités depuis la base de données.</p>
 </div>
 <div class="section" id="la-classe-user">
-<h4>La classe <tt class="docutils literal"><span class="pre">User</span></tt><a class="headerlink" href="#la-classe-user" title="Permalink to this headline">¶</a></h4>
+<h4>La classe <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#la-classe-user" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
@@ -391,11 +397,11 @@ Do you confirm generation [yes]? yes
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Le générateur a automatiquement ajouté un champ <tt class="docutils literal"><span class="pre">id</span></tt> ainsi que tous les getter et setter pour toutes les propriétés.</p>
+<p>Le générateur a automatiquement ajouté un champ <code class="docutils literal"><span class="pre">id</span></code> ainsi que tous les getter et setter pour toutes les propriétés.</p>
 <ul>
-<li><p class="first">L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\Entity</span></tt> doit être placé avant la définition de la classe. Elle définit que notre objet est une entité et donc qu&#8217;il doit être persisté par Doctrine. Cette annotation un seul paramètre facultatif, <tt class="docutils literal"><span class="pre">repositoryClass</span></tt> qui permet de préciser le namespace complet du repository qui gère cette entité.</p>
+<li><p class="first">L&#8217;annotation <code class="docutils literal"><span class="pre">&#64;ORM\Entity</span></code> doit être placé avant la définition de la classe. Elle définit que notre objet est une entité et donc qu&#8217;il doit être persisté par Doctrine. Cette annotation un seul paramètre facultatif, <code class="docutils literal"><span class="pre">repositoryClass</span></code> qui permet de préciser le namespace complet du repository qui gère cette entité.</p>
 </li>
-<li><p class="first">L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\Table</span></tt> doit être également placé avant la définition de la classe, mais elle est facultative. Elle permet juste de personnaliser le nom de la table créée en base de données, par exemple <tt class="docutils literal"><span class="pre">&#64;ORM\Table(name=&quot;epsi_user&quot;)</span></tt>, et d&#8217;ajouter des paramètres pour le création de la table. Par défaut, si ne nom n&#8217;est pas personnalisé, Doctrine utilisera la nom de l&#8217;entité comme nom de table, ici <tt class="docutils literal"><span class="pre">User</span></tt>. Par conséquent, les noms de vos tables peuvent comporter des majuscules, or la convention de nommage des tables d&#8217;une base de donnée et de ne pas mettre de majuscule car sur un serveur Linux, vous aurez des erreurs. Pour éviter de personnaliser le nom de la table pour chaque entité, on peut paramétré Doctrine pour qu&#8217;il utilise une autre convention de nommage pour ses tables :</p>
+<li><p class="first">L&#8217;annotation <code class="docutils literal"><span class="pre">&#64;ORM\Table</span></code> doit être également placé avant la définition de la classe, mais elle est facultative. Elle permet juste de personnaliser le nom de la table créée en base de données, par exemple <code class="docutils literal"><span class="pre">&#64;ORM\Table(name=&quot;epsi_user&quot;)</span></code>, et d&#8217;ajouter des paramètres pour le création de la table. Par défaut, si ne nom n&#8217;est pas personnalisé, Doctrine utilisera la nom de l&#8217;entité comme nom de table, ici <code class="docutils literal"><span class="pre">User</span></code>. Par conséquent, les noms de vos tables peuvent comporter des majuscules, or la convention de nommage des tables d&#8217;une base de donnée et de ne pas mettre de majuscule car sur un serveur Linux, vous aurez des erreurs. Pour éviter de personnaliser le nom de la table pour chaque entité, on peut paramétré Doctrine pour qu&#8217;il utilise une autre convention de nommage pour ses tables :</p>
 <blockquote>
 <div><div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/config.yml</span>
 
@@ -409,53 +415,53 @@ Do you confirm generation [yes]? yes
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\Column</span></tt> s&#8217;applique aux attributs de classe et se positionne juste avant leur définition. Elle permet de définir les caractéristiqued de la colonne :</p>
+<li><p class="first">L&#8217;annotation <code class="docutils literal"><span class="pre">&#64;ORM\Column</span></code> s&#8217;applique aux attributs de classe et se positionne juste avant leur définition. Elle permet de définir les caractéristiqued de la colonne :</p>
 <blockquote>
 <div><ul>
-<li><p class="first"><tt class="docutils literal"><span class="pre">type</span></tt> : le type <strong>Doctrine</strong> de la colonne, par défaut <tt class="docutils literal"><span class="pre">string</span></tt>. Voici la liste des types utilisables :</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">type</span></code> : le type <strong>Doctrine</strong> de la colonne, par défaut <code class="docutils literal"><span class="pre">string</span></code>. Voici la liste des types utilisables :</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">array</span></tt> : tableau sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">serialize()</span></tt> et <tt class="docutils literal"><span class="pre">unserialize()</span></tt> stocké dans un CLOB</li>
-<li><tt class="docutils literal"><span class="pre">simple_array</span></tt> : tableau sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">implode()</span></tt> et <tt class="docutils literal"><span class="pre">explode()</span></tt> avec la virgule comme séparateur stocké dans un CLOB</li>
-<li><tt class="docutils literal"><span class="pre">json_array</span></tt> : tableau sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">json_encode()</span></tt> et <tt class="docutils literal"><span class="pre">json_decode()</span></tt> stocké dans un CLOB</li>
-<li><tt class="docutils literal"><span class="pre">object</span></tt> : objet sérialisé en utilisant les méthodes <tt class="docutils literal"><span class="pre">serialize()</span></tt> et <tt class="docutils literal"><span class="pre">unserialize()</span></tt> stocké dans un CLOB</li>
-<li><tt class="docutils literal"><span class="pre">boolean</span></tt> : booléen stocké dans un BOOLEAN ou un TINYINT</li>
-<li><tt class="docutils literal"><span class="pre">integer</span></tt> : entier jusqu&#8217;à 2 147 483 647 stocké dans un INT</li>
-<li><tt class="docutils literal"><span class="pre">smallint</span></tt> : entier jusqu&#8217;à 32 767 stocké dans un SMALLINT</li>
-<li><tt class="docutils literal"><span class="pre">bigint</span></tt> : entier jusqu&#8217;à 9 223 372 036 854 775 807 stocké dans un BIGINT. Si vous êtes en 32bits, PHP recevra une chaîne de caractères</li>
-<li><tt class="docutils literal"><span class="pre">string</span></tt> : chaîne de caractères stockée dans un VARCHAR</li>
-<li><tt class="docutils literal"><span class="pre">text</span></tt> : texte stocké dans un CLOB</li>
-<li><tt class="docutils literal"><span class="pre">datetime</span></tt> : date et heure stockées dans un DATETIME ou un TIMESTAMP</li>
-<li><tt class="docutils literal"><span class="pre">datetimetz</span></tt> : date et heure avec le fuseau horaire stockées dans un DATETIME ou un TIMESTAMP</li>
-<li><tt class="docutils literal"><span class="pre">date</span></tt> : date stockée dans un DATETIME</li>
-<li><tt class="docutils literal"><span class="pre">time</span></tt> : heure stockée dans un TIME</li>
-<li><tt class="docutils literal"><span class="pre">decimal</span></tt> : nombre flottant stocké dans un DECIMAL</li>
-<li><tt class="docutils literal"><span class="pre">float</span></tt> : nomre flottant stocké dans un FLOAT</li>
-<li><tt class="docutils literal"><span class="pre">blob</span></tt> : binaire stocké dans un BLOB</li>
-<li><tt class="docutils literal"><span class="pre">guid</span></tt> : identifiant stocké dans un GUID ou un UUID</li>
+<li><code class="docutils literal"><span class="pre">array</span></code> : tableau sérialisé en utilisant les méthodes <code class="docutils literal"><span class="pre">serialize()</span></code> et <code class="docutils literal"><span class="pre">unserialize()</span></code> stocké dans un CLOB</li>
+<li><code class="docutils literal"><span class="pre">simple_array</span></code> : tableau sérialisé en utilisant les méthodes <code class="docutils literal"><span class="pre">implode()</span></code> et <code class="docutils literal"><span class="pre">explode()</span></code> avec la virgule comme séparateur stocké dans un CLOB</li>
+<li><code class="docutils literal"><span class="pre">json_array</span></code> : tableau sérialisé en utilisant les méthodes <code class="docutils literal"><span class="pre">json_encode()</span></code> et <code class="docutils literal"><span class="pre">json_decode()</span></code> stocké dans un CLOB</li>
+<li><code class="docutils literal"><span class="pre">object</span></code> : objet sérialisé en utilisant les méthodes <code class="docutils literal"><span class="pre">serialize()</span></code> et <code class="docutils literal"><span class="pre">unserialize()</span></code> stocké dans un CLOB</li>
+<li><code class="docutils literal"><span class="pre">boolean</span></code> : booléen stocké dans un BOOLEAN ou un TINYINT</li>
+<li><code class="docutils literal"><span class="pre">integer</span></code> : entier jusqu&#8217;à 2 147 483 647 stocké dans un INT</li>
+<li><code class="docutils literal"><span class="pre">smallint</span></code> : entier jusqu&#8217;à 32 767 stocké dans un SMALLINT</li>
+<li><code class="docutils literal"><span class="pre">bigint</span></code> : entier jusqu&#8217;à 9 223 372 036 854 775 807 stocké dans un BIGINT. Si vous êtes en 32bits, PHP recevra une chaîne de caractères</li>
+<li><code class="docutils literal"><span class="pre">string</span></code> : chaîne de caractères stockée dans un VARCHAR</li>
+<li><code class="docutils literal"><span class="pre">text</span></code> : texte stocké dans un CLOB</li>
+<li><code class="docutils literal"><span class="pre">datetime</span></code> : date et heure stockées dans un DATETIME ou un TIMESTAMP</li>
+<li><code class="docutils literal"><span class="pre">datetimetz</span></code> : date et heure avec le fuseau horaire stockées dans un DATETIME ou un TIMESTAMP</li>
+<li><code class="docutils literal"><span class="pre">date</span></code> : date stockée dans un DATETIME</li>
+<li><code class="docutils literal"><span class="pre">time</span></code> : heure stockée dans un TIME</li>
+<li><code class="docutils literal"><span class="pre">decimal</span></code> : nombre flottant stocké dans un DECIMAL</li>
+<li><code class="docutils literal"><span class="pre">float</span></code> : nomre flottant stocké dans un FLOAT</li>
+<li><code class="docutils literal"><span class="pre">blob</span></code> : binaire stocké dans un BLOB</li>
+<li><code class="docutils literal"><span class="pre">guid</span></code> : identifiant stocké dans un GUID ou un UUID</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">name</span></tt> : le nom de la colonne dans la table. Par défaut : le nom de l&#8217;attribut</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">name</span></code> : le nom de la colonne dans la table. Par défaut : le nom de l&#8217;attribut</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">length</span></tt> : taille de la colonne pour les colonnes de type <tt class="docutils literal"><span class="pre">string</span></tt>. Par défaut <tt class="docutils literal"><span class="pre">255</span></tt></p>
+<li><p class="first"><code class="docutils literal"><span class="pre">length</span></code> : taille de la colonne pour les colonnes de type <code class="docutils literal"><span class="pre">string</span></code>. Par défaut <code class="docutils literal"><span class="pre">255</span></code></p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">unique</span></tt> : ajoute un index <tt class="docutils literal"><span class="pre">UNIQUE</span></tt> si le paramètre vaut <tt class="docutils literal"><span class="pre">true</span></tt>. Par défaut <tt class="docutils literal"><span class="pre">false</span></tt></p>
+<li><p class="first"><code class="docutils literal"><span class="pre">unique</span></code> : ajoute un index <code class="docutils literal"><span class="pre">UNIQUE</span></code> si le paramètre vaut <code class="docutils literal"><span class="pre">true</span></code>. Par défaut <code class="docutils literal"><span class="pre">false</span></code></p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">nullable</span></tt> : permet à la colonne de contenir des <tt class="docutils literal"><span class="pre">NULL</span></tt> si le parametre vaut <tt class="docutils literal"><span class="pre">true</span></tt>. Par défaut <tt class="docutils literal"><span class="pre">false</span></tt></p>
+<li><p class="first"><code class="docutils literal"><span class="pre">nullable</span></code> : permet à la colonne de contenir des <code class="docutils literal"><span class="pre">NULL</span></code> si le parametre vaut <code class="docutils literal"><span class="pre">true</span></code>. Par défaut <code class="docutils literal"><span class="pre">false</span></code></p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">precision</span></tt> : précision des <tt class="docutils literal"><span class="pre">decimal</span></tt> (nombre de chiffres en tout)</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">precision</span></code> : précision des <code class="docutils literal"><span class="pre">decimal</span></code> (nombre de chiffres en tout)</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">scale</span></tt> : nombre de chiffres après la virgule d&#8217;un <tt class="docutils literal"><span class="pre">decimal</span></tt></p>
+<li><p class="first"><code class="docutils literal"><span class="pre">scale</span></code> : nombre de chiffres après la virgule d&#8217;un <code class="docutils literal"><span class="pre">decimal</span></code></p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">options</span></tt> : des options supplémentaires :</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">options</span></code> : des options supplémentaires :</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">default</span></tt> : valeur par défaut du champ</li>
-<li><tt class="docutils literal"><span class="pre">unsigned</span></tt> : supporte des entiers signés</li>
-<li><tt class="docutils literal"><span class="pre">fixed</span></tt> : la taille de la chaîne doit être fixe où doit-elle variée</li>
-<li><tt class="docutils literal"><span class="pre">comment</span></tt> : commentaire dans la déclaration de la colonne</li>
-<li><tt class="docutils literal"><span class="pre">customSchemaOptions</span></tt> : permet d&#8217;ajouter des options supplémentaires en fonction du type de champ et du SGBD utilisé</li>
+<li><code class="docutils literal"><span class="pre">default</span></code> : valeur par défaut du champ</li>
+<li><code class="docutils literal"><span class="pre">unsigned</span></code> : supporte des entiers signés</li>
+<li><code class="docutils literal"><span class="pre">fixed</span></code> : la taille de la chaîne doit être fixe où doit-elle variée</li>
+<li><code class="docutils literal"><span class="pre">comment</span></code> : commentaire dans la déclaration de la colonne</li>
+<li><code class="docutils literal"><span class="pre">customSchemaOptions</span></code> : permet d&#8217;ajouter des options supplémentaires en fonction du type de champ et du SGBD utilisé</li>
 </ul>
 </div></blockquote>
 </li>
@@ -466,7 +472,7 @@ Do you confirm generation [yes]? yes
 <p>Pour plus d&#8217;information sur les annotations Doctrine, voici la doc : <a class="reference external" href="http://doctrine-orm.readthedocs.org/en/latest/reference/annotations-reference.html">http://doctrine-orm.readthedocs.org/en/latest/reference/annotations-reference.html</a></p>
 </div>
 <div class="section" id="la-classe-userrepository">
-<h4>La classe <tt class="docutils literal"><span class="pre">UserRepository</span></tt><a class="headerlink" href="#la-classe-userrepository" title="Permalink to this headline">¶</a></h4>
+<h4>La classe <code class="docutils literal"><span class="pre">UserRepository</span></code><a class="headerlink" href="#la-classe-userrepository" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
@@ -484,14 +490,14 @@ Do you confirm generation [yes]? yes
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Quant à la classe <tt class="docutils literal"><span class="pre">UserRepository</span></tt> pour l&#8217;instant , elle attend nos méthodes.</p>
+<p>Quant à la classe <code class="docutils literal"><span class="pre">UserRepository</span></code> pour l&#8217;instant , elle attend nos méthodes.</p>
 </div>
 </div>
 <div class="section" id="creation-des-autres-entites">
 <h3>Création des autres entités<a class="headerlink" href="#creation-des-autres-entites" title="Permalink to this headline">¶</a></h3>
 <p>Créez maintenant les autres entités du blog :</p>
 <div class="section" id="l-entite-post">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Post</span></tt><a class="headerlink" href="#l-entite-post" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code><a class="headerlink" href="#l-entite-post" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -521,7 +527,7 @@ Do you confirm generation [yes]? yes
 </table>
 </div>
 <div class="section" id="l-entite-tag">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Tag</span></tt><a class="headerlink" href="#l-entite-tag" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code><a class="headerlink" href="#l-entite-tag" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -543,7 +549,7 @@ Do you confirm generation [yes]? yes
 </table>
 </div>
 <div class="section" id="l-entite-comment">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Comment</span></tt><a class="headerlink" href="#l-entite-comment" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code><a class="headerlink" href="#l-entite-comment" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -569,7 +575,7 @@ Do you confirm generation [yes]? yes
 </table>
 </div>
 <div class="section" id="l-entite-image">
-<h4>L&#8217;entité <tt class="docutils literal"><span class="pre">Image</span></tt><a class="headerlink" href="#l-entite-image" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Image</span></code><a class="headerlink" href="#l-entite-image" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -598,7 +604,7 @@ Do you confirm generation [yes]? yes
 </div>
 <div class="section" id="definition-de-valeur-par-defaut">
 <h2>Définition de valeur par défaut<a class="headerlink" href="#definition-de-valeur-par-defaut" title="Permalink to this headline">¶</a></h2>
-<p>Les entités <tt class="docutils literal"><span class="pre">Post</span></tt> et <tt class="docutils literal"><span class="pre">Comment</span></tt> ont une date qui correspond à leur date de création. Pour éviter d&#8217;avoir à le saisir à chaque fois, on peut placer l&#8217;initialisation de ce champ dans le constructeur :</p>
+<p>Les entités <code class="docutils literal"><span class="pre">Post</span></code> et <code class="docutils literal"><span class="pre">Comment</span></code> ont une date qui correspond à leur date de création. Pour éviter d&#8217;avoir à le saisir à chaque fois, on peut placer l&#8217;initialisation de ce champ dans le constructeur :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="o">...</span>
     <span class="sd">/**</span>
@@ -615,7 +621,7 @@ Do you confirm generation [yes]? yes
 <div class="section" id="definition-des-relations">
 <h2>Définition des relations<a class="headerlink" href="#definition-des-relations" title="Permalink to this headline">¶</a></h2>
 <p>Le générateur d&#8217;entités ne crée pas propriétés et méthodes nécessaires à la manipulation des relations entre les entités. Il faut les ajouter manuellement après la génération de l&#8217;entité.</p>
-<p>Doctrine gère plusieurs types de relations dans les entités : <tt class="docutils literal"><span class="pre">OneToOne</span></tt>, <tt class="docutils literal"><span class="pre">OneToMany</span></tt>, <tt class="docutils literal"><span class="pre">ManyToOne</span></tt> et <tt class="docutils literal"><span class="pre">ManyToMany</span></tt>.</p>
+<p>Doctrine gère plusieurs types de relations dans les entités : <code class="docutils literal"><span class="pre">OneToOne</span></code>, <code class="docutils literal"><span class="pre">OneToMany</span></code>, <code class="docutils literal"><span class="pre">ManyToOne</span></code> et <code class="docutils literal"><span class="pre">ManyToMany</span></code>.</p>
 <p>Les relations sont traitées comme les autres champs gérés par Doctrine. Il faut ajouter un attribut à la classe et le précéder d&#8217;annotations décrivant la relation. Ensuite, vous pouvez utiliser la commande suivante pour générer le getter et setter nécessaire pour le nouvel attribut :</p>
 <div class="highlight-bash"><div class="highlight"><pre>php app/console doctrine:generate:entities EpsiBlogBundle:User
 </pre></div>
@@ -630,7 +636,7 @@ Do you confirm generation [yes]? yes
 <h4>Notion d&#8217;unidirectionnalité et de bidirectionnalité<a class="headerlink" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite" title="Permalink to this headline">¶</a></h4>
 <p>Une relation peut être unidirectionnalité, à sens unique, ou bidirectionnalité, à double sens.</p>
 <p>Une relation bidirectionnelle a toujours une entité propriétaire et une entité inverse. Une relation unidirectionnelle n&#8217;a qu&#8217;une entité propriété.</p>
-<p>Dans le cas d&#8217;une relation unidirectionnelle, on peut récupérer les entités inverses à partir de l&#8217;entité propriétaire (<tt class="docutils literal"><span class="pre">$entiteProprietaire-&gt;getEntiteInverse()</span></tt>) mais on ne peut pas récupéré l&#8217;entité propriétaire à partir des entités inverses (<tt class="docutils literal"><span class="pre">$entiteInverse-&gt;getEntiteProprietaire()</span></tt>).
+<p>Dans le cas d&#8217;une relation unidirectionnelle, on peut récupérer les entités inverses à partir de l&#8217;entité propriétaire (<code class="docutils literal"><span class="pre">$entiteProprietaire-&gt;getEntiteInverse()</span></code>) mais on ne peut pas récupéré l&#8217;entité propriétaire à partir des entités inverses (<code class="docutils literal"><span class="pre">$entiteInverse-&gt;getEntiteProprietaire()</span></code>).
 Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <p>Les cas présentés ci-dessous sont tous des relations bidirectionnelles.</p>
 </div>
@@ -638,7 +644,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <div class="section" id="relation-one-to-one">
 <h3>Relation One-To-One<a class="headerlink" href="#relation-one-to-one" title="Permalink to this headline">¶</a></h3>
 <p>Comme l&#8217;indique son nom, c&#8217;est une relation unique entre deux objets.</p>
-<p>L&#8217;annotation <tt class="docutils literal"><span class="pre">&#64;ORM\OneToOne</span></tt> définit la relation vers l&#8217;autre entité. Elle possède au moins l&#8217;option <tt class="docutils literal"><span class="pre">targetEntity</span></tt> qui vaut le namespace complet vers l&#8217;entité liée. L&#8217;option <tt class="docutils literal"><span class="pre">cascade</span></tt> permet de &#8220;cascader&#8221; les actions effectuées sur l&#8217;entité sur ses entités liées par la relation (<tt class="docutils literal"><span class="pre">persist</span></tt>, <tt class="docutils literal"><span class="pre">remove</span></tt>, <tt class="docutils literal"><span class="pre">merge</span></tt>, <tt class="docutils literal"><span class="pre">detach</span></tt>, <tt class="docutils literal"><span class="pre">refresh</span></tt>).</p>
+<p>L&#8217;annotation <code class="docutils literal"><span class="pre">&#64;ORM\OneToOne</span></code> définit la relation vers l&#8217;autre entité. Elle possède au moins l&#8217;option <code class="docutils literal"><span class="pre">targetEntity</span></code> qui vaut le namespace complet vers l&#8217;entité liée. L&#8217;option <code class="docutils literal"><span class="pre">cascade</span></code> permet de &#8220;cascader&#8221; les actions effectuées sur l&#8217;entité sur ses entités liées par la relation (<code class="docutils literal"><span class="pre">persist</span></code>, <code class="docutils literal"><span class="pre">remove</span></code>, <code class="docutils literal"><span class="pre">merge</span></code>, <code class="docutils literal"><span class="pre">detach</span></code>, <code class="docutils literal"><span class="pre">refresh</span></code>).</p>
 <div class="section" id="dans-l-entite-proprietaire">
 <h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#dans-l-entite-proprietaire" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
@@ -659,7 +665,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <tt class="docutils literal"><span class="pre">User</span></tt> :</p>
+<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">User</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -687,7 +693,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Dans la base de données, Doctrine ajoutera un champ <tt class="docutils literal"><span class="pre">avatar_id</span></tt> dans la table <tt class="docutils literal"><span class="pre">user</span></tt> et une contrainte d&#8217;intégrité sur ce champ :</p>
+<p>Dans la base de données, Doctrine ajoutera un champ <code class="docutils literal"><span class="pre">avatar_id</span></code> dans la table <code class="docutils literal"><span class="pre">user</span></code> et une contrainte d&#8217;intégrité sur ce champ :</p>
 <div class="highlight-mysql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="n">avatar_id</span> <span class="kt">INT</span> <span class="k">DEFAULT</span> <span class="no">NULL</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">FK_8D93D64986383B10</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">avatar_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nf">image</span> <span class="p">(</span><span class="n">id</span><span class="p">);</span>
 </pre></div>
@@ -712,7 +718,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <tt class="docutils literal"><span class="pre">Image</span></tt> :</p>
+<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Image</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Image</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -740,13 +746,13 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Aucune modification n&#8217;est nécessaire sur la table <tt class="docutils literal"><span class="pre">image</span></tt>.</p>
+<p>Aucune modification n&#8217;est nécessaire sur la table <code class="docutils literal"><span class="pre">image</span></code>.</p>
 </div>
 </div>
 <div class="section" id="relation-many-to-one-et-one-to-many">
 <h3>Relation Many-To-One et One-To-Many<a class="headerlink" href="#relation-many-to-one-et-one-to-many" title="Permalink to this headline">¶</a></h3>
-<p>Cette relation permet à une entité d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, un <tt class="docutils literal"><span class="pre">User</span></tt> qui est lié à plusieurs <tt class="docutils literal"><span class="pre">Post</span></tt>.</p>
-<p>Dans le cas des relations OneToMany et ManyToOne, le paramètre <tt class="docutils literal"><span class="pre">inversedBy</span></tt> est toujours du côté de la relation propriétaire et l&#8217;attribut <tt class="docutils literal"><span class="pre">mappedBy</span></tt> est toujours du côté de l&#8217;inverse.</p>
+<p>Cette relation permet à une entité d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, un <code class="docutils literal"><span class="pre">User</span></code> qui est lié à plusieurs <code class="docutils literal"><span class="pre">Post</span></code>.</p>
+<p>Dans le cas des relations OneToMany et ManyToOne, le paramètre <code class="docutils literal"><span class="pre">inversedBy</span></code> est toujours du côté de la relation propriétaire et l&#8217;attribut <code class="docutils literal"><span class="pre">mappedBy</span></code> est toujours du côté de l&#8217;inverse.</p>
 <div class="section" id="id1">
 <h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
@@ -767,7 +773,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <tt class="docutils literal"><span class="pre">Post</span></tt> :</p>
+<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Post</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -795,7 +801,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Dans la base de données, Doctrine ajoutera un champ <tt class="docutils literal"><span class="pre">author_id</span></tt> dans la table <tt class="docutils literal"><span class="pre">post</span></tt> et une contrainte d&#8217;intégrité sur ce champ :</p>
+<p>Dans la base de données, Doctrine ajoutera un champ <code class="docutils literal"><span class="pre">author_id</span></code> dans la table <code class="docutils literal"><span class="pre">post</span></code> et une contrainte d&#8217;intégrité sur ce champ :</p>
 <div class="highlight-mysql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="n">author_id</span> <span class="kt">INT</span> <span class="k">NOT</span> <span class="no">NULL</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">FK_5A8A6C8DF675F31B</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">author_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nf">user</span> <span class="p">(</span><span class="n">id</span><span class="p">);</span>
 </pre></div>
@@ -821,7 +827,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <tt class="docutils literal"><span class="pre">User</span></tt> :</p>
+<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">User</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -869,12 +875,12 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Aucune modification n&#8217;est nécessaire sur la table <tt class="docutils literal"><span class="pre">user</span></tt>.</p>
+<p>Aucune modification n&#8217;est nécessaire sur la table <code class="docutils literal"><span class="pre">user</span></code>.</p>
 </div>
 </div>
 <div class="section" id="relation-many-to-many">
 <h3>Relation Many-To-Many<a class="headerlink" href="#relation-many-to-many" title="Permalink to this headline">¶</a></h3>
-<p>Cette relation permet à plusieurs entités d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, des <tt class="docutils literal"><span class="pre">Post</span></tt> qui sont liés à plusieurs <tt class="docutils literal"><span class="pre">Tag</span></tt>.</p>
+<p>Cette relation permet à plusieurs entités d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, des <code class="docutils literal"><span class="pre">Post</span></code> qui sont liés à plusieurs <code class="docutils literal"><span class="pre">Tag</span></code>.</p>
 <div class="section" id="id3">
 <h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
@@ -894,7 +900,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <tt class="docutils literal"><span class="pre">Post</span></tt> :</p>
+<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Post</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -972,7 +978,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <tt class="docutils literal"><span class="pre">Tag</span></tt> :</p>
+<p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Tag</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Tag</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -1032,7 +1038,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 <div class="section" id="creation-de-la-base-de-donnees-et-des-tables">
 <h2>Création de la base de données et des tables<a class="headerlink" href="#creation-de-la-base-de-donnees-et-des-tables" title="Permalink to this headline">¶</a></h2>
-<p>Les paramètres de connexion à la base de données se trouvent habituellement dans le fichier <tt class="docutils literal"><span class="pre">app/config/parameters.yml</span></tt> :</p>
+<p>Les paramètres de connexion à la base de données se trouvent habituellement dans le fichier <code class="docutils literal"><span class="pre">app/config/parameters.yml</span></code> :</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">parameters</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">database_driver</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">pdo_mysql</span>
     <span class="l-Scalar-Plain">database_host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">127.0.0.1</span>
@@ -1042,7 +1048,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
     <span class="l-Scalar-Plain">database_password</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
 </pre></div>
 </div>
-<p>Ces paramètres sont repris dans le fichier <tt class="docutils literal"><span class="pre">app/config/config.yml</span></tt> :</p>
+<p>Ces paramètres sont repris dans le fichier <code class="docutils literal"><span class="pre">app/config/config.yml</span></code> :</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">dbal</span><span class="p-Indicator">:</span>
         <span class="l-Scalar-Plain">driver</span><span class="p-Indicator">:</span>   <span class="s">&quot;%database_driver%&quot;</span>
@@ -1056,7 +1062,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:database:create
 </pre></div>
 </div>
-<p>Si l&#8217;utilisateur <tt class="docutils literal"><span class="pre">symfony</span></tt> ne peut pas se connecter à la base de données, ajoutez lui les droits puis relancer la création de la base :</p>
+<p>Si l&#8217;utilisateur <code class="docutils literal"><span class="pre">symfony</span></code> ne peut pas se connecter à la base de données, ajoutez lui les droits puis relancer la création de la base :</p>
 <div class="highlight-mysql"><div class="highlight"><pre><span class="c1"># mysql -uroot -p</span>
 <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">symfony</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">symfony</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;symfony&#39;</span><span class="p">;</span>
 <span class="n">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
@@ -1096,15 +1102,15 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">flush</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>La méthode <tt class="docutils literal"><span class="pre">persist</span></tt> traite indifféremment les nouvelles entités de celles déjà en base de données. Vous pouvez donc lui passer une entité fraîchement créée ou une entité que vous avez modifié. Cette méthode ne fait pas la requête SQL qui permet d&#8217;enregistrer les données dans la base, elle permet juste de dire à l&#8217;EntityManager de garder la modification en mémoire et de l&#8217;enregistrer au prochain appel de la méthode <tt class="docutils literal"><span class="pre">flush</span></tt>.</p>
-<p>La méthode <tt class="docutils literal"><span class="pre">flush</span></tt> quant à elle, elle ouvre une transation et enregistre toutes les entités qui lui ont été données depuis le dernier <tt class="docutils literal"><span class="pre">flush</span></tt>.</p>
-<p>En plus des méthodes <tt class="docutils literal"><span class="pre">persist</span></tt> et <tt class="docutils literal"><span class="pre">flush</span></tt>, l&#8217;EntityManager dispose d&#8217;autres méthodes intéressantes :</p>
+<p>La méthode <code class="docutils literal"><span class="pre">persist</span></code> traite indifféremment les nouvelles entités de celles déjà en base de données. Vous pouvez donc lui passer une entité fraîchement créée ou une entité que vous avez modifié. Cette méthode ne fait pas la requête SQL qui permet d&#8217;enregistrer les données dans la base, elle permet juste de dire à l&#8217;EntityManager de garder la modification en mémoire et de l&#8217;enregistrer au prochain appel de la méthode <code class="docutils literal"><span class="pre">flush</span></code>.</p>
+<p>La méthode <code class="docutils literal"><span class="pre">flush</span></code> quant à elle, elle ouvre une transation et enregistre toutes les entités qui lui ont été données depuis le dernier <code class="docutils literal"><span class="pre">flush</span></code>.</p>
+<p>En plus des méthodes <code class="docutils literal"><span class="pre">persist</span></code> et <code class="docutils literal"><span class="pre">flush</span></code>, l&#8217;EntityManager dispose d&#8217;autres méthodes intéressantes :</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">clear(</span> <span class="pre">$nomEntity</span> <span class="pre">)</span></tt> : annule tous les <tt class="docutils literal"><span class="pre">persist</span></tt> effectués. Si un nom d&#8217;entité est passé en paramètre, alors seuls les <tt class="docutils literal"><span class="pre">persist</span></tt> sur les entités de ce type seront annulés</li>
-<li><tt class="docutils literal"><span class="pre">detach(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : annule le <tt class="docutils literal"><span class="pre">persist</span></tt> sur l&#8217;entité passé en argument</li>
-<li><tt class="docutils literal"><span class="pre">contains(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : retourne <tt class="docutils literal"><span class="pre">true</span></tt> si l&#8217;entité est gérée pas l&#8217;EntityManager, c&#8217;est à dire s&#8217;il y a eu un <tt class="docutils literal"><span class="pre">persist</span></tt> sur l&#8217;entité</li>
-<li><tt class="docutils literal"><span class="pre">refresh(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : met à jour l&#8217;entité donnée en argument dans l&#8217;état où elle est en base de données</li>
-<li><tt class="docutils literal"><span class="pre">remove(</span> <span class="pre">$entite</span> <span class="pre">)</span></tt> : supprime l&#8217;entité donnée en argument de la base de données lors du prochain <tt class="docutils literal"><span class="pre">flush</span></tt></li>
+<li><code class="docutils literal"><span class="pre">clear(</span> <span class="pre">$nomEntity</span> <span class="pre">)</span></code> : annule tous les <code class="docutils literal"><span class="pre">persist</span></code> effectués. Si un nom d&#8217;entité est passé en paramètre, alors seuls les <code class="docutils literal"><span class="pre">persist</span></code> sur les entités de ce type seront annulés</li>
+<li><code class="docutils literal"><span class="pre">detach(</span> <span class="pre">$entite</span> <span class="pre">)</span></code> : annule le <code class="docutils literal"><span class="pre">persist</span></code> sur l&#8217;entité passé en argument</li>
+<li><code class="docutils literal"><span class="pre">contains(</span> <span class="pre">$entite</span> <span class="pre">)</span></code> : retourne <code class="docutils literal"><span class="pre">true</span></code> si l&#8217;entité est gérée pas l&#8217;EntityManager, c&#8217;est à dire s&#8217;il y a eu un <code class="docutils literal"><span class="pre">persist</span></code> sur l&#8217;entité</li>
+<li><code class="docutils literal"><span class="pre">refresh(</span> <span class="pre">$entite</span> <span class="pre">)</span></code> : met à jour l&#8217;entité donnée en argument dans l&#8217;état où elle est en base de données</li>
+<li><code class="docutils literal"><span class="pre">remove(</span> <span class="pre">$entite</span> <span class="pre">)</span></code> : supprime l&#8217;entité donnée en argument de la base de données lors du prochain <code class="docutils literal"><span class="pre">flush</span></code></li>
 </ul>
 </div>
 <div class="section" id="recuperer-ses-entites-avec-un-entityrepository">
@@ -1150,12 +1156,12 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </ul>
 <p>On a aussi à disposition des méthodes magiques qui permettent rapidement de récupérer une ou plusieurs entités en fonction d&#8217;un critère :</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">findByX($valeur)</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">findOneByX($valeur)</span></tt></li>
+<li><code class="docutils literal"><span class="pre">findByX($valeur)</span></code></li>
+<li><code class="docutils literal"><span class="pre">findOneByX($valeur)</span></code></li>
 </ul>
-<p>X doit être remplacé par le nom d&#8217;une propriété, Par exemple <tt class="docutils literal"><span class="pre">findByTitre()</span></tt>, <tt class="docutils literal"><span class="pre">findOneByTitre()</span></tt>, <tt class="docutils literal"><span class="pre">findByDate()</span></tt>, <tt class="docutils literal"><span class="pre">findOneByDate()</span></tt></p>
+<p>X doit être remplacé par le nom d&#8217;une propriété, Par exemple <code class="docutils literal"><span class="pre">findByTitre()</span></code>, <code class="docutils literal"><span class="pre">findOneByTitre()</span></code>, <code class="docutils literal"><span class="pre">findByDate()</span></code>, <code class="docutils literal"><span class="pre">findOneByDate()</span></code></p>
 <p>Pour toutes les autres requêtes, il va falloir les construire dans le repository grâce au QueryBuilder.</p>
-<p>Par exemple, recréons la méthode <tt class="docutils literal"><span class="pre">findAll</span></tt> dans le repository <tt class="docutils literal"><span class="pre">Post</span></tt> pour que les <tt class="docutils literal"><span class="pre">Post</span></tt> soient triés par date :</p>
+<p>Par exemple, recréons la méthode <code class="docutils literal"><span class="pre">findAll</span></code> dans le repository <code class="docutils literal"><span class="pre">Post</span></code> pour que les <code class="docutils literal"><span class="pre">Post</span></code> soient triés par date :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostRepository</span> <span class="k">extends</span> <span class="nx">EntityRepository</span> <span class="p">{</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">findAllOrderByDate</span><span class="p">()</span> <span class="p">{</span>
@@ -1274,15 +1280,16 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="formulaire.html" class="btn btn-neutral float-right" title="Les formulaires"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="formulaire.html" class="btn btn-neutral float-right" title="Les formulaires" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="assets.html" class="btn btn-neutral" title="Les assets"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="assets.html" class="btn btn-neutral" title="Les assets" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -1290,13 +1297,16 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
   <hr/>
 
   <div role="contentinfo">
+
     <p>
         &copy; Copyright 2014, Madeline VEYRENC.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
@@ -1317,9 +1327,6 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
 
   
 

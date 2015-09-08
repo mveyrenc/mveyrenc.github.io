@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>La programmation orientée objet &mdash; Symfony 1.0.1 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -30,12 +30,17 @@
   
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
   
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
         <link rel="next" title="Pré-requis et installation du framework" href="pre-requis_installation.html"/>
         <link rel="prev" title="Introduction à Symfony" href="introduction.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -46,25 +51,40 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> Symfony</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
+        
+
+        
+            
+              <a href="index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            False
+          </div>
+        
+
+        
+          <div class="reference">
+            False
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
-</ul>
-</li>
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">La programmation orientée objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#terminologie">Terminologie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mots-reserves">Mots réservés</a></li>
@@ -78,97 +98,35 @@
 <li class="toctree-l2"><a class="reference internal" href="#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#utilisation-de-la-console">Utilisation de la console</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#creation-du-bundle">Création du bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#fonctionnement">Fonctionnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#request-et-response"><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-request">L&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="services.html#acceder-un-service">Accéder un service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#exemple-de-services">Exemple de services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#le-base">Le base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#acces-aux-variables">Accès aux variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#affectation-de-variables">Affectation de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-filtres">Les filtres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-fonctions">Les fonctions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-structures-de-controle">Les structures de contrôle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-types-de-variables">Les types de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-operateurs">Les opérateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-variables-globales">Les variables globales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#les-macros">Les macros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#heritage-de-templates">Héritage de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-templates">Inclusion de templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-controleurs">Inclusion de contrôleurs</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-des-entites">Création des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-des-relations">Définition des relations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-une-entite">Création d&#8217;une entité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#generation-de-code">Génération de code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#debug">Debug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#depuis-un-controleur">Depuis un contrôleur</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#description-de-l-application">Description de l&#8217;application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#travail-a-effectuer">Travail à effectuer</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
 </ul>
 
+          
         
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -183,18 +141,28 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>La programmation orientée objet</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
+
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="la-programmation-orientee-objet">
 <h1>La programmation orientée objet<a class="headerlink" href="#la-programmation-orientee-objet" title="Permalink to this headline">¶</a></h1>
@@ -208,43 +176,43 @@ Un objet est donc un exemple concret de la définition abstraite qu&#8217;est la
 <div class="section" id="mots-reserves">
 <h2>Mots réservés<a class="headerlink" href="#mots-reserves" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">class</span></tt> : déclaration de classe</li>
-<li><tt class="docutils literal"><span class="pre">const</span></tt> : déclaration de constante de classe</li>
-<li><tt class="docutils literal"><span class="pre">function</span></tt> : déclaration d&#8217;une méthode</li>
-<li><tt class="docutils literal"><span class="pre">public</span></tt>/<tt class="docutils literal"><span class="pre">protected</span></tt>/<tt class="docutils literal"><span class="pre">private</span></tt> : visibilité de l&#8217;attribut ou de la méthode (par défaut &#8220;public&#8221; si aucun accès n&#8217;est explicitement défini)</li>
-<li><tt class="docutils literal"><span class="pre">new</span></tt> : création d&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">self</span></tt> : résolution de portée (la classe elle-même)</li>
-<li><tt class="docutils literal"><span class="pre">parent</span></tt> : résolution de portée (la classe &#8220;parent&#8221;)</li>
-<li><tt class="docutils literal"><span class="pre">static</span></tt> : résolution de portée (appel statique)</li>
-<li><tt class="docutils literal"><span class="pre">extends</span></tt> : héritage de classe</li>
-<li><tt class="docutils literal"><span class="pre">implements</span></tt> : implémentation d&#8217;une interface</li>
+<li><code class="docutils literal"><span class="pre">class</span></code> : déclaration de classe</li>
+<li><code class="docutils literal"><span class="pre">const</span></code> : déclaration de constante de classe</li>
+<li><code class="docutils literal"><span class="pre">function</span></code> : déclaration d&#8217;une méthode</li>
+<li><code class="docutils literal"><span class="pre">public</span></code>/<code class="docutils literal"><span class="pre">protected</span></code>/<code class="docutils literal"><span class="pre">private</span></code> : visibilité de l&#8217;attribut ou de la méthode (par défaut &#8220;public&#8221; si aucun accès n&#8217;est explicitement défini)</li>
+<li><code class="docutils literal"><span class="pre">new</span></code> : création d&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">self</span></code> : résolution de portée (la classe elle-même)</li>
+<li><code class="docutils literal"><span class="pre">parent</span></code> : résolution de portée (la classe &#8220;parent&#8221;)</li>
+<li><code class="docutils literal"><span class="pre">static</span></code> : résolution de portée (appel statique)</li>
+<li><code class="docutils literal"><span class="pre">extends</span></code> : héritage de classe</li>
+<li><code class="docutils literal"><span class="pre">implements</span></code> : implémentation d&#8217;une interface</li>
 </ul>
 <p>Les <strong>méthodes magiques</strong> sont des méthodes qui, si elles sont déclarées dans une classe, ont une fonction déjà prévue par le langage.</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">__construct()</span></tt> : constructeur de la classe, est appelé lors de le création d&#8217;un objet</li>
-<li><tt class="docutils literal"><span class="pre">__destruct()</span></tt> : destructeur de la classe, est appelé lors de la destruction d&#8217;un objet</li>
-<li><tt class="docutils literal"><span class="pre">__set()</span></tt> : déclenchée lors de l&#8217;accès en écriture à une propriété de l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__get()</span></tt> : déclenchée lors de l&#8217;accès en lecture à une propriété de l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__call()</span></tt> : déclenchée lors de l&#8217;appel d&#8217;une méthode inexistante de la classe</li>
-<li><tt class="docutils literal"><span class="pre">__callstatic()</span></tt> : déclenchée lors de l&#8217;appel d&#8217;une méthode statique inexistante de la classe</li>
-<li><tt class="docutils literal"><span class="pre">__isset()</span></tt> : déclenchée si on applique <tt class="docutils literal"><span class="pre">isset()</span></tt> à une propriété de l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__unset()</span></tt> : déclenchée si on applique <tt class="docutils literal"><span class="pre">unset()</span></tt> à une propriété de l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__sleep()</span></tt> : exécutée si la fonction <tt class="docutils literal"><span class="pre">serialize()</span></tt> est appliquée à l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__wakeup()</span></tt> : exécutée si la fonction <tt class="docutils literal"><span class="pre">unserialize()</span></tt> est appliquée à l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__toString()</span></tt> : appelée lorsque l&#8217;on essaie d&#8217;afficher directement l&#8217;objet : <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">$object;</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">__set_state()</span></tt> : méthode statique lancée lorsque l&#8217;on applique la fonction <tt class="docutils literal"><span class="pre">var_export()</span></tt> à l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__clone()</span></tt> : appelé lorsque l&#8217;on essaie de cloner l&#8217;objet</li>
-<li><tt class="docutils literal"><span class="pre">__autoload()</span></tt> : cette fonction n&#8217;est pas une méthode, elle est déclarée dans le scope global et permet d&#8217;automatiser les <tt class="docutils literal"><span class="pre">include</span></tt>/<tt class="docutils literal"><span class="pre">require</span></tt> de classes PHP</li>
+<li><code class="docutils literal"><span class="pre">__construct()</span></code> : constructeur de la classe, est appelé lors de le création d&#8217;un objet</li>
+<li><code class="docutils literal"><span class="pre">__destruct()</span></code> : destructeur de la classe, est appelé lors de la destruction d&#8217;un objet</li>
+<li><code class="docutils literal"><span class="pre">__set()</span></code> : déclenchée lors de l&#8217;accès en écriture à une propriété de l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__get()</span></code> : déclenchée lors de l&#8217;accès en lecture à une propriété de l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__call()</span></code> : déclenchée lors de l&#8217;appel d&#8217;une méthode inexistante de la classe</li>
+<li><code class="docutils literal"><span class="pre">__callstatic()</span></code> : déclenchée lors de l&#8217;appel d&#8217;une méthode statique inexistante de la classe</li>
+<li><code class="docutils literal"><span class="pre">__isset()</span></code> : déclenchée si on applique <code class="docutils literal"><span class="pre">isset()</span></code> à une propriété de l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__unset()</span></code> : déclenchée si on applique <code class="docutils literal"><span class="pre">unset()</span></code> à une propriété de l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__sleep()</span></code> : exécutée si la fonction <code class="docutils literal"><span class="pre">serialize()</span></code> est appliquée à l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__wakeup()</span></code> : exécutée si la fonction <code class="docutils literal"><span class="pre">unserialize()</span></code> est appliquée à l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__toString()</span></code> : appelée lorsque l&#8217;on essaie d&#8217;afficher directement l&#8217;objet : <code class="docutils literal"><span class="pre">echo</span> <span class="pre">$object;</span></code></li>
+<li><code class="docutils literal"><span class="pre">__set_state()</span></code> : méthode statique lancée lorsque l&#8217;on applique la fonction <code class="docutils literal"><span class="pre">var_export()</span></code> à l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__clone()</span></code> : appelé lorsque l&#8217;on essaie de cloner l&#8217;objet</li>
+<li><code class="docutils literal"><span class="pre">__autoload()</span></code> : cette fonction n&#8217;est pas une méthode, elle est déclarée dans le scope global et permet d&#8217;automatiser les <code class="docutils literal"><span class="pre">include</span></code>/<code class="docutils literal"><span class="pre">require</span></code> de classes PHP</li>
 </ul>
-<p>Enfin, la variable <tt class="docutils literal"><span class="pre">$this</span></tt> utilisée à l&#8217;intérieur d&#8217;une classe, faut toujours référence à l&#8217;objet lui-même.</p>
+<p>Enfin, la variable <code class="docutils literal"><span class="pre">$this</span></code> utilisée à l&#8217;intérieur d&#8217;une classe, faut toujours référence à l&#8217;objet lui-même.</p>
 </div>
 <div class="section" id="syntaxe-de-base">
 <h2>Syntaxe de base<a class="headerlink" href="#syntaxe-de-base" title="Permalink to this headline">¶</a></h2>
-<p>Les définitions des attributs et des méthodes sot rassemblés dans la structure <tt class="docutils literal"><span class="pre">class</span></tt>.
-Le mot-clé <tt class="docutils literal"><span class="pre">class</span></tt> est suivi du nom de la classe, suivit par une paire d&#8217;accolades contenant la définition de la classe.
+<p>Les définitions des attributs et des méthodes sot rassemblés dans la structure <code class="docutils literal"><span class="pre">class</span></code>.
+Le mot-clé <code class="docutils literal"><span class="pre">class</span></code> est suivi du nom de la classe, suivit par une paire d&#8217;accolades contenant la définition de la classe.
 Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#8217;importe quel nombre de chiffres, ou de lettres, ou d&#8217;underscores, et ne pas être un mot réservé PHP.</p>
-<p>La création d&#8217;une instance de classe (un objet) se faite en utilisant le mot-clé <tt class="docutils literal"><span class="pre">new</span></tt>.</p>
-<p>L&#8217;accès aux propriétés et au méthodes l&#8217;objet se fait par la flèche <tt class="docutils literal"><span class="pre">-&gt;</span></tt>, et l&#8217;accès statique par l&#8217;opérateur de porté <tt class="docutils literal"><span class="pre">::</span></tt>.</p>
+<p>La création d&#8217;une instance de classe (un objet) se faite en utilisant le mot-clé <code class="docutils literal"><span class="pre">new</span></code>.</p>
+<p>L&#8217;accès aux propriétés et au méthodes l&#8217;objet se fait par la flèche <code class="docutils literal"><span class="pre">-&gt;</span></code>, et l&#8217;accès statique par l&#8217;opérateur de porté <code class="docutils literal"><span class="pre">::</span></code>.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
@@ -333,7 +301,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$velo</span> <span class="nx">instanceof</span> <span class="nx">Vehicule</span><span class="p">);</span>       <span class="c1">//Affiche true</span>
 </pre></div>
 </div>
-<p>Le mot clé <tt class="docutils literal"><span class="pre">final</span></tt> empêche les classes filles de surcharger une méthode. Si la classe elle-même est définie comme finale, elle ne pourra pas être étendue.</p>
+<p>Le mot clé <code class="docutils literal"><span class="pre">final</span></code> empêche les classes filles de surcharger une méthode. Si la classe elle-même est définie comme finale, elle ne pourra pas être étendue.</p>
 </div>
 <div class="section" id="classes-abstraites">
 <h2>Classes abstraites<a class="headerlink" href="#classes-abstraites" title="Permalink to this headline">¶</a></h2>
@@ -400,7 +368,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 <div class="section" id="visibilite">
 <h2>Visibilité<a class="headerlink" href="#visibilite" title="Permalink to this headline">¶</a></h2>
-<p>La visibilité d&#8217;une propriété ou d&#8217;une méthode peut être définie en préfixant sa déclaration avec un mot-clé : <tt class="docutils literal"><span class="pre">public</span></tt>, <tt class="docutils literal"><span class="pre">protected</span></tt>, ou <tt class="docutils literal"><span class="pre">private</span></tt>.</p>
+<p>La visibilité d&#8217;une propriété ou d&#8217;une méthode peut être définie en préfixant sa déclaration avec un mot-clé : <code class="docutils literal"><span class="pre">public</span></code>, <code class="docutils literal"><span class="pre">protected</span></code>, ou <code class="docutils literal"><span class="pre">private</span></code>.</p>
 <p>Les éléments déclarés comme <strong>publics</strong> peuvent être utilisés par n&#8217;importe quelle partie du programme.</p>
 <p>L&#8217;accès aux éléments <strong>protégés</strong> est limité à la classe elle-même, ainsi qu&#8217;aux classes qui en héritent, et à ses classes parentes.</p>
 <p>L&#8217;accès aux éléments <strong>privés</strong> est uniquement réservé à la classe qui les a défini.</p>
@@ -448,7 +416,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 <div class="section" id="l-operateur-de-resolution-de-portee">
 <h2>L&#8217;opérateur de résolution de portée (::)<a class="headerlink" href="#l-operateur-de-resolution-de-portee" title="Permalink to this headline">¶</a></h2>
-<p>L&#8217;opérateur de résolution de portée, le symbole &#8220;double deux-points&#8221; (::), fournit un moyen d&#8217;accéder aux membres <tt class="docutils literal"><span class="pre">static</span></tt> ou <tt class="docutils literal"><span class="pre">constant</span></tt>, ainsi qu&#8217;aux propriétés ou méthodes surchargées d&#8217;une classe.</p>
+<p>L&#8217;opérateur de résolution de portée, le symbole &#8220;double deux-points&#8221; (::), fournit un moyen d&#8217;accéder aux membres <code class="docutils literal"><span class="pre">static</span></code> ou <code class="docutils literal"><span class="pre">constant</span></code>, ainsi qu&#8217;aux propriétés ou méthodes surchargées d&#8217;une classe.</p>
 <p>Lorsque vous référencez ces éléments en dehors de la définition de la classe, utilisez le nom de la classe.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
 
@@ -463,9 +431,9 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 <span class="k">echo</span> <span class="nx">MyClass</span><span class="o">::</span><span class="na">CONST_VALUE</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Trois mots-clé spéciaux, <tt class="docutils literal"><span class="pre">self</span></tt>, <tt class="docutils literal"><span class="pre">parent</span></tt>, et <tt class="docutils literal"><span class="pre">static</span></tt> sont utilisés pour accéder aux propriétés ou aux méthodes depuis la définition de la classe.</p>
-<p>Les mots clefs <tt class="docutils literal"><span class="pre">self</span></tt> et <tt class="docutils literal"><span class="pre">parent</span></tt> sont utilisés pour accéder à une propriété ou méthode (statique ou non) de la classe elle-même ou de son parent.</p>
-<p>Le mot clef <tt class="docutils literal"><span class="pre">static</span></tt> a la même utilité mais il résout la portée au moment de l&#8217;exécution du script.</p>
+<p>Trois mots-clé spéciaux, <code class="docutils literal"><span class="pre">self</span></code>, <code class="docutils literal"><span class="pre">parent</span></code>, et <code class="docutils literal"><span class="pre">static</span></code> sont utilisés pour accéder aux propriétés ou aux méthodes depuis la définition de la classe.</p>
+<p>Les mots clefs <code class="docutils literal"><span class="pre">self</span></code> et <code class="docutils literal"><span class="pre">parent</span></code> sont utilisés pour accéder à une propriété ou méthode (statique ou non) de la classe elle-même ou de son parent.</p>
+<p>Le mot clef <code class="docutils literal"><span class="pre">static</span></code> a la même utilité mais il résout la portée au moment de l&#8217;exécution du script.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
@@ -542,7 +510,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$voiture3</span><span class="p">);</span>    <span class="c1">// Affiche NULL</span>
 </pre></div>
 </div>
-<p>Pour copier un objet, il faut utiliser l&#8217;opérateur <tt class="docutils literal"><span class="pre">clone</span></tt> :</p>
+<p>Pour copier un objet, il faut utiliser l&#8217;opérateur <code class="docutils literal"><span class="pre">clone</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
@@ -579,7 +547,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Lorsqu&#8217;une exception est lancée depuis un bloc <tt class="docutils literal"><span class="pre">try</span></tt>, le bloc <tt class="docutils literal"><span class="pre">catch</span></tt> permet de l&#8217;attraper et de traiter l&#8217;incident.</p>
+<p>Lorsqu&#8217;une exception est lancée depuis un bloc <code class="docutils literal"><span class="pre">try</span></code>, le bloc <code class="docutils literal"><span class="pre">catch</span></code> permet de l&#8217;attraper et de traiter l&#8217;incident.</p>
 </div>
 <div class="section" id="espace-de-nom-ou-namespace">
 <h2>Espace de nom ou namespace<a class="headerlink" href="#espace-de-nom-ou-namespace" title="Permalink to this headline">¶</a></h2>
@@ -603,20 +571,21 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Pour utiliser la classe de ce namespace, il faut ajouter <tt class="docutils literal"><span class="pre">use</span> <span class="pre">PHPUnit\Extensions\Database\DB\MetaData\MySQL</span></tt> avant la définition de votre classe.</p>
+<p>Pour utiliser la classe de ce namespace, il faut ajouter <code class="docutils literal"><span class="pre">use</span> <span class="pre">PHPUnit\Extensions\Database\DB\MetaData\MySQL</span></code> avant la définition de votre classe.</p>
 </div>
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pre-requis_installation.html" class="btn btn-neutral float-right" title="Pré-requis et installation du framework"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pre-requis_installation.html" class="btn btn-neutral float-right" title="Pré-requis et installation du framework" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction à Symfony"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction à Symfony" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -624,13 +593,16 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
   <hr/>
 
   <div role="contentinfo">
+
     <p>
         &copy; Copyright 2014, Madeline VEYRENC.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
@@ -651,9 +623,6 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
 
   
 

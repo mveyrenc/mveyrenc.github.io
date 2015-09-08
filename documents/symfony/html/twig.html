@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Les vues avec Twig &mdash; Symfony 1.0.1 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -30,12 +30,17 @@
   
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
   
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
         <link rel="next" title="Les assets" href="assets.html"/>
         <link rel="prev" title="Les services" href="services.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -46,84 +51,59 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> Symfony</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
+        
+
+        
+            
+              <a href="index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            False
+          </div>
+        
+
+        
+          <div class="reference">
+            False
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#terminologie">Terminologie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#mots-reserves">Mots réservés</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#heritage">Héritage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#classes-abstraites">Classes abstraites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#visibilite">Visibilité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#references-et-clonage">Références et clonage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#exceptions">Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#utilisation-de-la-console">Utilisation de la console</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#creation-du-bundle">Création du bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
-</ul>
-</li>
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#fonctionnement">Fonctionnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html#creons-les-routes-du-blog">Créons les routes du blog</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#request-et-response"><tt class="docutils literal"><span class="pre">Request</span></tt> et <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-request">L&#8217;objet <tt class="docutils literal"><span class="pre">Request</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-response">L&#8217;objet <tt class="docutils literal"><span class="pre">Response</span></tt></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="services.html#acceder-un-service">Accéder un service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#exemple-de-services">Exemple de services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services.html#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Les vues avec Twig</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#le-base">Le base</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#acces-aux-variables">Accès aux variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#affectation-de-variables">Affectation de variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-filtres">Les filtres</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-fonctions">Les fonctions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conditions">Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boucle">Boucle</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#les-types-de-variables">Les types de variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-operateurs">Les opérateurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-variables-globales">Les variables globales</a></li>
@@ -134,41 +114,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-des-entites">Création des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-des-relations">Définition des relations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-une-entite">Création d&#8217;une entité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#generation-de-code">Génération de code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#debug">Debug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#depuis-un-controleur">Depuis un contrôleur</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#description-de-l-application">Description de l&#8217;application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tp.html#travail-a-effectuer">Travail à effectuer</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
 </ul>
 
+          
         
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -183,18 +148,28 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>Les vues avec Twig</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
+
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="les-vues-avec-twig">
 <h1>Les vues avec Twig<a class="headerlink" href="#les-vues-avec-twig" title="Permalink to this headline">¶</a></h1>
@@ -263,9 +238,9 @@
 <img alt="_images/twig_resultat1.png" class="align-center" src="_images/twig_resultat1.png" />
 <p>La syntaxe est très simple :</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">{{</span> <span class="pre">...</span> <span class="pre">}}</span></tt> <strong>affiche</strong> quelque chose ;</li>
-<li><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></tt> <strong>fait</strong> quelque chose ;</li>
-<li><tt class="docutils literal"><span class="pre">{#</span> <span class="pre">...</span> <span class="pre">#}</span></tt> n&#8217;affiche rien et ne fait rien : c&#8217;est la syntaxe pour les commentaires, qui peuvent être sur plusieurs lignes ;</li>
+<li><code class="docutils literal"><span class="pre">{{</span> <span class="pre">...</span> <span class="pre">}}</span></code> <strong>affiche</strong> quelque chose ;</li>
+<li><code class="docutils literal"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></code> <strong>fait</strong> quelque chose ;</li>
+<li><code class="docutils literal"><span class="pre">{#</span> <span class="pre">...</span> <span class="pre">#}</span></code> n&#8217;affiche rien et ne fait rien : c&#8217;est la syntaxe pour les commentaires, qui peuvent être sur plusieurs lignes ;</li>
 </ul>
 </div>
 <div class="section" id="acces-aux-variables">
@@ -305,7 +280,7 @@
 </div>
 <div class="section" id="les-filtres">
 <h2>Les filtres<a class="headerlink" href="#les-filtres" title="Permalink to this headline">¶</a></h2>
-<p>Les variables peuvent être modifiées par des filtres. Les filtres sont séparés par des pipes (<tt class="docutils literal"><span class="pre">|</span></tt>) et peuvent avoir des paramètres supplémentaire entre parenthèses.</p>
+<p>Les variables peuvent être modifiées par des filtres. Les filtres sont séparés par des pipes (<code class="docutils literal"><span class="pre">|</span></code>) et peuvent avoir des paramètres supplémentaire entre parenthèses.</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">name</span><span class="o">|</span><span class="nf">striptags</span><span class="o">|</span><span class="nf">title</span> <span class="cp">}}</span>
 <span class="cp">{{</span> <span class="nv">list</span><span class="o">|</span><span class="nf">join</span><span class="o">(</span><span class="s1">&#39;, &#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </pre></div>
@@ -348,15 +323,15 @@
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-<p>Le tag <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">%}</span></tt> met à disposition au sein de la boucle un variable <tt class="docutils literal"><span class="pre">loop</span></tt> qui contient les attributs suivantes :</p>
+<p>Le tag <code class="docutils literal"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">%}</span></code> met à disposition au sein de la boucle un variable <code class="docutils literal"><span class="pre">loop</span></code> qui contient les attributs suivantes :</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">index</span></tt> : numéro de l&#8217;itération courante en commençant par 1</li>
-<li><tt class="docutils literal"><span class="pre">index0</span></tt> :  : numéro de l&#8217;itération courante en commençant par 0</li>
-<li><tt class="docutils literal"><span class="pre">revindex</span></tt> : nombre d&#8217;itérations restantes avant la fin de la boucle en finissant par 1</li>
-<li><tt class="docutils literal"><span class="pre">revindex0</span></tt> : nombre d&#8217;itérations restantes avant la fin de la boucle en finissant par 0</li>
-<li><tt class="docutils literal"><span class="pre">first</span></tt> : est-ce la première itération</li>
-<li><tt class="docutils literal"><span class="pre">last</span></tt> : est-ce la dernière itération</li>
-<li><tt class="docutils literal"><span class="pre">length</span></tt> : nombre total d&#8217;itération</li>
+<li><code class="docutils literal"><span class="pre">index</span></code> : numéro de l&#8217;itération courante en commençant par 1</li>
+<li><code class="docutils literal"><span class="pre">index0</span></code> :  : numéro de l&#8217;itération courante en commençant par 0</li>
+<li><code class="docutils literal"><span class="pre">revindex</span></code> : nombre d&#8217;itérations restantes avant la fin de la boucle en finissant par 1</li>
+<li><code class="docutils literal"><span class="pre">revindex0</span></code> : nombre d&#8217;itérations restantes avant la fin de la boucle en finissant par 0</li>
+<li><code class="docutils literal"><span class="pre">first</span></code> : est-ce la première itération</li>
+<li><code class="docutils literal"><span class="pre">last</span></code> : est-ce la dernière itération</li>
+<li><code class="docutils literal"><span class="pre">length</span></code> : nombre total d&#8217;itération</li>
 </ul>
 </div>
 </div>
@@ -364,13 +339,13 @@
 <h2>Les types de variables<a class="headerlink" href="#les-types-de-variables" title="Permalink to this headline">¶</a></h2>
 <p>Les types de valeurs sont similaires aux types natifs de PHP excepté qu&#8217;il fait la différence entre les tableaux et les hashs (tableaux associatifs) :</p>
 <ul class="simple">
-<li>les chaînes de caractères <tt class="docutils literal"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;</span></tt></li>
-<li>les entiers <tt class="docutils literal"><span class="pre">42</span></tt></li>
-<li>les flottants <tt class="docutils literal"><span class="pre">42.56</span></tt></li>
-<li>les tableaux <tt class="docutils literal"><span class="pre">[&quot;foo&quot;,</span> <span class="pre">&quot;bar&quot;]</span></tt></li>
-<li>les hashs <tt class="docutils literal"><span class="pre">{&quot;foo&quot;:</span> <span class="pre">&quot;bar&quot;}</span></tt> <tt class="docutils literal"><span class="pre">{'foo':</span> <span class="pre">'foo',</span> <span class="pre">'bar':</span> <span class="pre">'bar'}</span></tt> <tt class="docutils literal"><span class="pre">{foo:</span> <span class="pre">'foo',</span> <span class="pre">bar:</span> <span class="pre">'bar'}</span></tt> <tt class="docutils literal"><span class="pre">{2:</span> <span class="pre">'foo',</span> <span class="pre">4:</span> <span class="pre">'bar'}</span></tt></li>
-<li>les booleans <tt class="docutils literal"><span class="pre">true</span></tt> et <tt class="docutils literal"><span class="pre">false</span></tt></li>
-<li>le null <tt class="docutils literal"><span class="pre">null</span></tt></li>
+<li>les chaînes de caractères <code class="docutils literal"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;</span></code></li>
+<li>les entiers <code class="docutils literal"><span class="pre">42</span></code></li>
+<li>les flottants <code class="docutils literal"><span class="pre">42.56</span></code></li>
+<li>les tableaux <code class="docutils literal"><span class="pre">[&quot;foo&quot;,</span> <span class="pre">&quot;bar&quot;]</span></code></li>
+<li>les hashs <code class="docutils literal"><span class="pre">{&quot;foo&quot;:</span> <span class="pre">&quot;bar&quot;}</span></code> <code class="docutils literal"><span class="pre">{'foo':</span> <span class="pre">'foo',</span> <span class="pre">'bar':</span> <span class="pre">'bar'}</span></code> <code class="docutils literal"><span class="pre">{foo:</span> <span class="pre">'foo',</span> <span class="pre">bar:</span> <span class="pre">'bar'}</span></code> <code class="docutils literal"><span class="pre">{2:</span> <span class="pre">'foo',</span> <span class="pre">4:</span> <span class="pre">'bar'}</span></code></li>
+<li>les booleans <code class="docutils literal"><span class="pre">true</span></code> et <code class="docutils literal"><span class="pre">false</span></code></li>
+<li>le null <code class="docutils literal"><span class="pre">null</span></code></li>
 </ul>
 </div>
 <div class="section" id="les-operateurs">
@@ -379,13 +354,13 @@
 <li><dl class="first docutils">
 <dt>Mathématiques</dt>
 <dd><ul class="first last simple">
-<li>addition <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">}}</span></tt> = 2</li>
-<li>soustraction <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">}}</span></tt> = 1</li>
-<li>multiplication <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">}}</span></tt> = 4</li>
-<li>division <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">}}</span></tt> = 0.5</li>
-<li>division avec arrondi <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">20</span> <span class="pre">//</span> <span class="pre">7</span> <span class="pre">}}</span></tt> = 2</li>
-<li>modulo <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">20</span> <span class="pre">%</span> <span class="pre">7</span> <span class="pre">}}</span></tt> = 6</li>
-<li>puissance <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">2</span> <span class="pre">**</span> <span class="pre">3</span> <span class="pre">}}</span></tt> = 8</li>
+<li>addition <code class="docutils literal"><span class="pre">{{</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">}}</span></code> = 2</li>
+<li>soustraction <code class="docutils literal"><span class="pre">{{</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">}}</span></code> = 1</li>
+<li>multiplication <code class="docutils literal"><span class="pre">{{</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">}}</span></code> = 4</li>
+<li>division <code class="docutils literal"><span class="pre">{{</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">}}</span></code> = 0.5</li>
+<li>division avec arrondi <code class="docutils literal"><span class="pre">{{</span> <span class="pre">20</span> <span class="pre">//</span> <span class="pre">7</span> <span class="pre">}}</span></code> = 2</li>
+<li>modulo <code class="docutils literal"><span class="pre">{{</span> <span class="pre">20</span> <span class="pre">%</span> <span class="pre">7</span> <span class="pre">}}</span></code> = 6</li>
+<li>puissance <code class="docutils literal"><span class="pre">{{</span> <span class="pre">2</span> <span class="pre">**</span> <span class="pre">3</span> <span class="pre">}}</span></code> = 8</li>
 </ul>
 </dd>
 </dl>
@@ -393,9 +368,9 @@
 <li><dl class="first docutils">
 <dt>Logiques</dt>
 <dd><ul class="first last simple">
-<li>ET <tt class="docutils literal"><span class="pre">and</span></tt> (équivalent du <tt class="docutils literal"><span class="pre">&amp;&amp;</span></tt> PHP)</li>
-<li>OU <tt class="docutils literal"><span class="pre">or</span></tt> (équivalent du <tt class="docutils literal"><span class="pre">||</span></tt> PHP)</li>
-<li>Négation <tt class="docutils literal"><span class="pre">not</span></tt> (équivalent du <tt class="docutils literal"><span class="pre">!</span></tt> PHP)</li>
+<li>ET <code class="docutils literal"><span class="pre">and</span></code> (équivalent du <code class="docutils literal"><span class="pre">&amp;&amp;</span></code> PHP)</li>
+<li>OU <code class="docutils literal"><span class="pre">or</span></code> (équivalent du <code class="docutils literal"><span class="pre">||</span></code> PHP)</li>
+<li>Négation <code class="docutils literal"><span class="pre">not</span></code> (équivalent du <code class="docutils literal"><span class="pre">!</span></code> PHP)</li>
 </ul>
 </dd>
 </dl>
@@ -403,9 +378,9 @@
 <li><dl class="first docutils">
 <dt>Binaires</dt>
 <dd><ul class="first last simple">
-<li>ET <tt class="docutils literal"><span class="pre">b-and</span></tt> (équivalent du <tt class="docutils literal"><span class="pre">&amp;</span></tt> PHP)</li>
-<li>OU <tt class="docutils literal"><span class="pre">b-or</span></tt> (équivalent du <tt class="docutils literal"><span class="pre">|</span></tt> PHP)</li>
-<li>OU exclusif <tt class="docutils literal"><span class="pre">not</span></tt> (équivalent du <tt class="docutils literal"><span class="pre">^</span></tt> PHP)</li>
+<li>ET <code class="docutils literal"><span class="pre">b-and</span></code> (équivalent du <code class="docutils literal"><span class="pre">&amp;</span></code> PHP)</li>
+<li>OU <code class="docutils literal"><span class="pre">b-or</span></code> (équivalent du <code class="docutils literal"><span class="pre">|</span></code> PHP)</li>
+<li>OU exclusif <code class="docutils literal"><span class="pre">not</span></code> (équivalent du <code class="docutils literal"><span class="pre">^</span></code> PHP)</li>
 </ul>
 </dd>
 </dl>
@@ -413,24 +388,24 @@
 <li><dl class="first docutils">
 <dt>Comparaisons</dt>
 <dd><ul class="first last">
-<li><p class="first">égalité <tt class="docutils literal"><span class="pre">==</span></tt></p>
+<li><p class="first">égalité <code class="docutils literal"><span class="pre">==</span></code></p>
 </li>
-<li><p class="first">différence <tt class="docutils literal"><span class="pre">!=</span></tt></p>
+<li><p class="first">différence <code class="docutils literal"><span class="pre">!=</span></code></p>
 </li>
-<li><p class="first">inférieur <tt class="docutils literal"><span class="pre">&lt;</span></tt></p>
+<li><p class="first">inférieur <code class="docutils literal"><span class="pre">&lt;</span></code></p>
 </li>
-<li><p class="first">supérieur <tt class="docutils literal"><span class="pre">&gt;</span></tt></p>
+<li><p class="first">supérieur <code class="docutils literal"><span class="pre">&gt;</span></code></p>
 </li>
-<li><p class="first">inférieur ou égal <tt class="docutils literal"><span class="pre">&lt;=</span></tt></p>
+<li><p class="first">inférieur ou égal <code class="docutils literal"><span class="pre">&lt;=</span></code></p>
 </li>
-<li><p class="first">supérieur ou égal <tt class="docutils literal"><span class="pre">&gt;=</span></tt></p>
+<li><p class="first">supérieur ou égal <code class="docutils literal"><span class="pre">&gt;=</span></code></p>
 </li>
 <li><dl class="first docutils">
 <dt>pour les chaîne de caractères</dt>
 <dd><ul class="first last simple">
-<li>commence par <tt class="docutils literal"><span class="pre">starts</span></tt></li>
-<li>finit par <tt class="docutils literal"><span class="pre">ends</span></tt></li>
-<li>corresponds à <tt class="docutils literal"><span class="pre">matches</span></tt> (test avec une expression régulière)</li>
+<li>commence par <code class="docutils literal"><span class="pre">starts</span></code></li>
+<li>finit par <code class="docutils literal"><span class="pre">ends</span></code></li>
+<li>corresponds à <code class="docutils literal"><span class="pre">matches</span></code> (test avec une expression régulière)</li>
 </ul>
 </dd>
 </dl>
@@ -442,15 +417,15 @@
 <li><dl class="first docutils">
 <dt>Test</dt>
 <dd><ul class="first last simple">
-<li>est égal à une constante <tt class="docutils literal"><span class="pre">is</span> <span class="pre">constant()</span></tt></li>
-<li>est définit <tt class="docutils literal"><span class="pre">is</span> <span class="pre">defined</span></tt></li>
-<li>est divisible par <tt class="docutils literal"><span class="pre">is</span> <span class="pre">divisible</span> <span class="pre">by()</span></tt></li>
-<li>est vide <tt class="docutils literal"><span class="pre">is</span> <span class="pre">empty</span></tt></li>
-<li>est un nombre pair <tt class="docutils literal"><span class="pre">is</span> <span class="pre">even</span></tt></li>
-<li>est un nombre impair <tt class="docutils literal"><span class="pre">is</span> <span class="pre">odd</span></tt></li>
-<li>est itérable <tt class="docutils literal"><span class="pre">is</span> <span class="pre">iterable</span></tt></li>
-<li>est null <tt class="docutils literal"><span class="pre">is</span> <span class="pre">null</span></tt></li>
-<li>est identique à <tt class="docutils literal"><span class="pre">is</span> <span class="pre">same</span> <span class="pre">as()</span></tt> (équivalent du <tt class="docutils literal"><span class="pre">===</span></tt> PHP)</li>
+<li>est égal à une constante <code class="docutils literal"><span class="pre">is</span> <span class="pre">constant()</span></code></li>
+<li>est définit <code class="docutils literal"><span class="pre">is</span> <span class="pre">defined</span></code></li>
+<li>est divisible par <code class="docutils literal"><span class="pre">is</span> <span class="pre">divisible</span> <span class="pre">by()</span></code></li>
+<li>est vide <code class="docutils literal"><span class="pre">is</span> <span class="pre">empty</span></code></li>
+<li>est un nombre pair <code class="docutils literal"><span class="pre">is</span> <span class="pre">even</span></code></li>
+<li>est un nombre impair <code class="docutils literal"><span class="pre">is</span> <span class="pre">odd</span></code></li>
+<li>est itérable <code class="docutils literal"><span class="pre">is</span> <span class="pre">iterable</span></code></li>
+<li>est null <code class="docutils literal"><span class="pre">is</span> <span class="pre">null</span></code></li>
+<li>est identique à <code class="docutils literal"><span class="pre">is</span> <span class="pre">same</span> <span class="pre">as()</span></code> (équivalent du <code class="docutils literal"><span class="pre">===</span></code> PHP)</li>
 </ul>
 </dd>
 </dl>
@@ -458,19 +433,19 @@
 <li><dl class="first docutils">
 <dt>Autres opérateurs</dt>
 <dd><ul class="first last">
-<li><p class="first">crée un séquence <tt class="docutils literal"><span class="pre">..</span></tt> (équivalent de la fonction range) <tt class="docutils literal"><span class="pre">1..4</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></tt></p>
+<li><p class="first">crée un séquence <code class="docutils literal"><span class="pre">..</span></code> (équivalent de la fonction range) <code class="docutils literal"><span class="pre">1..4</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code></p>
 </li>
-<li><p class="first">applique un filtre <tt class="docutils literal"><span class="pre">|</span></tt></p>
+<li><p class="first">applique un filtre <code class="docutils literal"><span class="pre">|</span></code></p>
 </li>
-<li><p class="first">convertie les opérandes en chaînes de caractères et les concatènes <tt class="docutils literal"><span class="pre">~</span></tt>. <tt class="docutils literal"><span class="pre">&quot;Hello</span> <span class="pre">&quot;</span> <span class="pre">~</span> <span class="pre">name</span> <span class="pre">~</span> <span class="pre">&quot;!&quot;</span> <span class="pre">=</span> <span class="pre">&quot;Hello</span> <span class="pre">John!&quot;</span></tt></p>
+<li><p class="first">convertie les opérandes en chaînes de caractères et les concatènes <code class="docutils literal"><span class="pre">~</span></code>. <code class="docutils literal"><span class="pre">&quot;Hello</span> <span class="pre">&quot;</span> <span class="pre">~</span> <span class="pre">name</span> <span class="pre">~</span> <span class="pre">&quot;!&quot;</span> <span class="pre">=</span> <span class="pre">&quot;Hello</span> <span class="pre">John!&quot;</span></code></p>
 </li>
-<li><p class="first">récupère un attribut d&#8217;un objet <tt class="docutils literal"><span class="pre">.</span></tt> ou <tt class="docutils literal"><span class="pre">[]</span></tt>. <tt class="docutils literal"><span class="pre">user.name</span></tt> ou <tt class="docutils literal"><span class="pre">user['name']</span></tt></p>
+<li><p class="first">récupère un attribut d&#8217;un objet <code class="docutils literal"><span class="pre">.</span></code> ou <code class="docutils literal"><span class="pre">[]</span></code>. <code class="docutils literal"><span class="pre">user.name</span></code> ou <code class="docutils literal"><span class="pre">user['name']</span></code></p>
 </li>
 <li><dl class="first docutils">
-<dt>opérateur tertiaire <tt class="docutils literal"><span class="pre">?:</span></tt> . <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">'yes'</span> <span class="pre">:</span> <span class="pre">'no'</span> <span class="pre">}}</span></tt></dt>
+<dt>opérateur tertiaire <code class="docutils literal"><span class="pre">?:</span></code> . <code class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">'yes'</span> <span class="pre">:</span> <span class="pre">'no'</span> <span class="pre">}}</span></code></dt>
 <dd><ul class="first last simple">
-<li><tt class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?:</span> <span class="pre">'no'</span> <span class="pre">}}</span></tt> est équivalent à <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">foo</span> <span class="pre">:</span> <span class="pre">'no'</span> <span class="pre">}}</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">'yes'</span> <span class="pre">}}</span></tt> est équivalent à <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">'yes'</span> <span class="pre">:</span> <span class="pre">''</span> <span class="pre">}}</span></tt></li>
+<li><code class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?:</span> <span class="pre">'no'</span> <span class="pre">}}</span></code> est équivalent à <code class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">foo</span> <span class="pre">:</span> <span class="pre">'no'</span> <span class="pre">}}</span></code></li>
+<li><code class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">'yes'</span> <span class="pre">}}</span></code> est équivalent à <code class="docutils literal"><span class="pre">{{</span> <span class="pre">foo</span> <span class="pre">?</span> <span class="pre">'yes'</span> <span class="pre">:</span> <span class="pre">''</span> <span class="pre">}}</span></code></li>
 </ul>
 </dd>
 </dl>
@@ -482,7 +457,7 @@
 <li><dl class="first docutils">
 <dt>Substitution de chaînes de caractères</dt>
 <dd><ul class="first last simple">
-<li><tt class="docutils literal"><span class="pre">#{}</span></tt> dans un chaîne ouverte ace des double quote. <tt class="docutils literal"><span class="pre">&quot;foo</span> <span class="pre">#{1</span> <span class="pre">+</span> <span class="pre">2}</span> <span class="pre">baz&quot;</span> <span class="pre">=</span> <span class="pre">&quot;foo</span> <span class="pre">2</span> <span class="pre">bar&quot;</span></tt></li>
+<li><code class="docutils literal"><span class="pre">#{}</span></code> dans un chaîne ouverte ace des double quote. <code class="docutils literal"><span class="pre">&quot;foo</span> <span class="pre">#{1</span> <span class="pre">+</span> <span class="pre">2}</span> <span class="pre">baz&quot;</span> <span class="pre">=</span> <span class="pre">&quot;foo</span> <span class="pre">2</span> <span class="pre">bar&quot;</span></code></li>
 </ul>
 </dd>
 </dl>
@@ -492,7 +467,7 @@
 <dd><ul class="first last">
 <li><p class="first">Supprime tous les espaces, tabulations et saut de lignes inutiles :</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">spaceless</span> <span class="pre">%}{%</span> <span class="pre">endspaceless</span> <span class="pre">%}</span></tt></p>
+<li><p class="first"><code class="docutils literal"><span class="pre">{%</span> <span class="pre">spaceless</span> <span class="pre">%}{%</span> <span class="pre">endspaceless</span> <span class="pre">%}</span></code></p>
 <blockquote>
 <div><div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# name = &#39;Jack&#39; #}</span>
 <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span>
@@ -504,7 +479,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">{%-</span></tt>, <tt class="docutils literal"><span class="pre">-%}</span></tt>, <tt class="docutils literal"><span class="pre">{{-</span></tt> et <tt class="docutils literal"><span class="pre">-}}</span></tt></p>
+<li><p class="first"><code class="docutils literal"><span class="pre">{%-</span></code>, <code class="docutils literal"><span class="pre">-%}</span></code>, <code class="docutils literal"><span class="pre">{{-</span></code> et <code class="docutils literal"><span class="pre">-}}</span></code></p>
 <blockquote>
 <div><div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# user = new User( &#39;Jack&#39; ) #}</span>
 <span class="cp">{{</span> <span class="nv">user.name</span> <span class="cp">}}</span>
@@ -523,12 +498,12 @@
 <h2>Les variables globales<a class="headerlink" href="#les-variables-globales" title="Permalink to this headline">¶</a></h2>
 <p>Quelques variables sont disponibles dans les templates afin nous faciliter la vie :</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">app.request</span></tt> : la requête qui a été passé au contrôleur</li>
-<li><tt class="docutils literal"><span class="pre">app.session</span></tt> : la session de l&#8217;utilisateur</li>
-<li><tt class="docutils literal"><span class="pre">app.environment</span></tt> : l&#8217;environnement sur lequel on travaille (dev, prod, etc.)</li>
-<li><tt class="docutils literal"><span class="pre">app.debug</span></tt> : le débug est-il activé ou non</li>
-<li><tt class="docutils literal"><span class="pre">app.security</span></tt> : le service security</li>
-<li><tt class="docutils literal"><span class="pre">app.user</span></tt> : l&#8217;utilisateur courant</li>
+<li><code class="docutils literal"><span class="pre">app.request</span></code> : la requête qui a été passé au contrôleur</li>
+<li><code class="docutils literal"><span class="pre">app.session</span></code> : la session de l&#8217;utilisateur</li>
+<li><code class="docutils literal"><span class="pre">app.environment</span></code> : l&#8217;environnement sur lequel on travaille (dev, prod, etc.)</li>
+<li><code class="docutils literal"><span class="pre">app.debug</span></code> : le débug est-il activé ou non</li>
+<li><code class="docutils literal"><span class="pre">app.security</span></code> : le service security</li>
+<li><code class="docutils literal"><span class="pre">app.user</span></code> : l&#8217;utilisateur courant</li>
 </ul>
 <p>On peut également injecter nos propres variables en ajoutant la configuration suivante :</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/config.yml</span>
@@ -538,7 +513,7 @@
         <span class="l-Scalar-Plain">auteur</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">moi</span>
 </pre></div>
 </div>
-<p>Ensuite dans les templates, il ne reste plus qu&#8217;à appeller la variable : <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">auteur</span> <span class="pre">}}</span></tt></p>
+<p>Ensuite dans les templates, il ne reste plus qu&#8217;à appeller la variable : <code class="docutils literal"><span class="pre">{{</span> <span class="pre">auteur</span> <span class="pre">}}</span></code></p>
 </div>
 <div class="section" id="les-macros">
 <h2>Les macros<a class="headerlink" href="#les-macros" title="Permalink to this headline">¶</a></h2>
@@ -560,11 +535,11 @@
 <p>L&#8217;héritage permet de créer un squelette définissant la structure générale des pages dans lequel on définit des blocs qui seront surchargés par les templates enfants.</p>
 <p>Une des bonne pratique pour organiser ses templates est de mettre trois niveaux d&#8217;héritage :</p>
 <ul class="simple">
-<li>le <strong>layout général</strong> : il s&#8217;agit du design du site. Il est indépendant de celui des bundles. Il contient la structure des page de votre site : header, footer, menu principal, etc. Son chemin exact est <tt class="docutils literal"><span class="pre">app/Resources/views/base.html.twig</span></tt> et voici la syntaxe pour l&#8217;appeler dans vos bundles : <tt class="docutils literal"><span class="pre">::base.html.twig</span></tt></li>
+<li>le <strong>layout général</strong> : il s&#8217;agit du design du site. Il est indépendant de celui des bundles. Il contient la structure des page de votre site : header, footer, menu principal, etc. Son chemin exact est <code class="docutils literal"><span class="pre">app/Resources/views/base.html.twig</span></code> et voici la syntaxe pour l&#8217;appeler dans vos bundles : <code class="docutils literal"><span class="pre">::base.html.twig</span></code></li>
 <li>le <strong>layout du bundle</strong> : il hérite du layout général et contient tous les éléments communs aux pages d&#8217;un même bundle comme un menu secondaire par exemple</li>
 <li>le <strong>template de la page</strong> : il hérite du layout du bundle et contient la partie centrale de la page</li>
 </ul>
-<p>Reprenons le template <tt class="docutils literal"><span class="pre">show.html.twig</span></tt> et répartissons le code dans les templates <tt class="docutils literal"><span class="pre">app/Resources/views/base.html.twig</span></tt> et <tt class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig</span></tt> en remplaçant les parties spécifiques par des blocs et en l&#8217;enrichissant un peu :</p>
+<p>Reprenons le template <code class="docutils literal"><span class="pre">show.html.twig</span></code> et répartissons le code dans les templates <code class="docutils literal"><span class="pre">app/Resources/views/base.html.twig</span></code> et <code class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig</span></code> en remplaçant les parties spécifiques par des blocs et en l&#8217;enrichissant un peu :</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# app/Resources/views/base.html.twig #}</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -635,11 +610,11 @@
 <span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;footer.html&#39;</span> <span class="k">with</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="nv">only</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-<p>Lors de l&#8217;inclusion de template, le template inclus a accès à toutes les variables du contexte courant sauf si on utilise le mot clé <tt class="docutils literal"><span class="pre">only</span></tt>. Le mot clé <tt class="docutils literal"><span class="pre">with</span></tt> permet quand à lui de passer des variables au template.</p>
+<p>Lors de l&#8217;inclusion de template, le template inclus a accès à toutes les variables du contexte courant sauf si on utilise le mot clé <code class="docutils literal"><span class="pre">only</span></code>. Le mot clé <code class="docutils literal"><span class="pre">with</span></code> permet quand à lui de passer des variables au template.</p>
 </div>
 <div class="section" id="inclusion-de-controleurs">
 <h2>Inclusion de contrôleurs<a class="headerlink" href="#inclusion-de-controleurs" title="Permalink to this headline">¶</a></h2>
-<p>Pour inclure un contôleur, c&#8217;est très simple il suffit d&#8217;utiliser la fonction <tt class="docutils literal"><span class="pre">render</span></tt> :</p>
+<p>Pour inclure un contôleur, c&#8217;est très simple il suffit d&#8217;utiliser la fonction <code class="docutils literal"><span class="pre">render</span></code> :</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">render</span><span class="o">(</span><span class="nv">controller</span><span class="o">(</span><span class="s2">&quot;EpsiBlogBundle:Blog:menu&quot;</span><span class="o">))</span> <span class="cp">}}</span>
 </pre></div>
 </div>
@@ -649,15 +624,16 @@
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="assets.html" class="btn btn-neutral float-right" title="Les assets"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="assets.html" class="btn btn-neutral float-right" title="Les assets" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="services.html" class="btn btn-neutral" title="Les services"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="services.html" class="btn btn-neutral" title="Les services" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -665,13 +641,16 @@
   <hr/>
 
   <div role="contentinfo">
+
     <p>
         &copy; Copyright 2014, Madeline VEYRENC.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
@@ -692,9 +671,6 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
 
   
 
