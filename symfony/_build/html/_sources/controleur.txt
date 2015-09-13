@@ -83,7 +83,7 @@ Cette méthode est un raccourcie qui permet de générer une réponse en une seu
     :language: jinja
     :lines: 1
 
-Allez voir la page http://localhost/Symfony/web/app_dev.php/post/5.
+Allez voir la page http://symfony.loc.epsi.fr/app_dev.php/post/5.
 
 Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet ``Response`` en paramètre.
 

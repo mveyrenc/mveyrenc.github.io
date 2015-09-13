@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Création d’un bundle &mdash; Symfony 1.0.1 documentation</title>
+  <title>Création d’un bundle &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="Le routing" href="routing.html"/>
         <link rel="prev" title="Architecture de Symfony" href="architecture.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Création d&#8217;un bundle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-de-la-console">Utilisation de la console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-du-bundle">Création du bundle</a></li>
@@ -156,10 +163,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="creation-d-un-bundle">
-<h1>Création d&#8217;un bundle<a class="headerlink" href="#creation-d-un-bundle" title="Permalink to this headline">¶</a></h1>
-<p>Bien que tous les répertoires et les fichiers d&#8217;un bundle peuvent être créés manuellement, nous allons utilisé la console Symfony pour générer le bundle et l&#8217;activer.</p>
+<h1>Création d&#8217;un bundle<a class="headerlink" href="#creation-d-un-bundle" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Bien que tous les répertoires et les fichiers d&#8217;un bundle peuvent être créés manuellement, nous allons utilisé la console <strong class="program">Symfony</strong> pour générer le bundle et l&#8217;activer.</p>
 <div class="section" id="utilisation-de-la-console">
-<h2>Utilisation de la console<a class="headerlink" href="#utilisation-de-la-console" title="Permalink to this headline">¶</a></h2>
+<h2>Utilisation de la console<a class="headerlink" href="#utilisation-de-la-console" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La console permet de lancer des actions en ligne de commande pour aider au développement, lancer des tâches planifiées (cron), etc.</p>
 <p>Pour lancer la console, il faut exécuter le script <code class="docutils literal"><span class="pre">app/console</span></code> suivit d&#8217;arguments pour lancer les différentes commandes. Pour avoir la liste des commandes disponible, il suffit de lanncer le script <code class="docutils literal"><span class="pre">app/console</span></code> sans arguments :</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console
@@ -167,7 +174,7 @@
 </div>
 </div>
 <div class="section" id="creation-du-bundle">
-<h2>Création du bundle<a class="headerlink" href="#creation-du-bundle" title="Permalink to this headline">¶</a></h2>
+<h2>Création du bundle<a class="headerlink" href="#creation-du-bundle" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Exécutez la commande suivante :</p>
 <blockquote>
@@ -191,37 +198,37 @@
 </li>
 <li><p class="first">Le nom du bundle</p>
 <blockquote>
-<div><p>Symfony génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu&#8217;il soit unique.</p>
+<div><p><strong class="program">Symfony</strong> génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu&#8217;il soit unique.</p>
 </div></blockquote>
 </li>
 <li><p class="first">L&#8217;emplacement du bundle</p>
 <blockquote>
-<div><p>Par défaut Symfony le place dans le répertoire <code class="docutils literal"><span class="pre">/src</span></code>. On laisse la valeur par défaut.</p>
+<div><p>Par défaut <strong class="program">Symfony</strong> le place dans le répertoire <code class="docutils literal"><span class="pre">/src</span></code>. On laisse la valeur par défaut.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Le format de la configuration</p>
 <blockquote>
-<div><p>Symfony propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n&#8217;a pas d&#8217;impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s&#8217;agit juste de choisir le format avec lequel vous êtes le plus alèse.</p>
+<div><p><strong class="program">Symfony</strong> propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n&#8217;a pas d&#8217;impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s&#8217;agit juste de choisir le format avec lequel vous êtes le plus alèse.</p>
 <p>Dans notre cas, nous allons choisir le <code class="docutils literal"><span class="pre">yml</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p class="first">La structure générer</p>
 <blockquote>
-<div><p>Ici, Symfony vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s&#8217;ils ne sont pas utilisés.</p>
+<div><p>Ici, <strong class="program">Symfony</strong> vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s&#8217;ils ne sont pas utilisés.</p>
 <p>Répondez <code class="docutils literal"><span class="pre">yes</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Confirmer et c&#8217;est parti</p>
 <blockquote>
-<div><p>Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé : <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/hello/World">http://localhost/Symfony/web/app_dev.php/hello/World</a></p>
+<div><p>Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé : <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a></p>
 </div></blockquote>
 </li>
 </ol>
 </div>
 <div class="section" id="que-s-est-il-passe">
-<h2>Que s&#8217;est-il passé ?<a class="headerlink" href="#que-s-est-il-passe" title="Permalink to this headline">¶</a></h2>
+<h2>Que s&#8217;est-il passé ?<a class="headerlink" href="#que-s-est-il-passe" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Symfony a généré la structure du bundle</p>
+<li><p class="first"><strong class="program">Symfony</strong> a généré la structure du bundle</p>
 <blockquote>
 <div><p>Dans le répertoire généré par Symfony on trouve :</p>
 <ul>
@@ -247,15 +254,15 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Symfony enregistre notre bundle dans le Kernel (<code class="docutils literal"><span class="pre">app/AppKernel.php</span></code>)</p>
+<li><p class="first"><strong class="program">Symfony</strong> enregistre notre bundle dans le Kernel (<code class="docutils literal"><span class="pre">app/AppKernel.php</span></code>)</p>
 </li>
-<li><p class="first">Symfony ajoute les routes de notre bundle dans le Routeur (<code class="docutils literal"><span class="pre">app/config/routing.yml</span></code>)</p>
+<li><p class="first"><strong class="program">Symfony</strong> ajoute les routes de notre bundle dans le Routeur (<code class="docutils literal"><span class="pre">app/config/routing.yml</span></code>)</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="section" id="objectif-de-notre-bundle-un-blog">
-<h1>Objectif de notre bundle : un blog<a class="headerlink" href="#objectif-de-notre-bundle-un-blog" title="Permalink to this headline">¶</a></h1>
+<h1>Objectif de notre bundle : un blog<a class="headerlink" href="#objectif-de-notre-bundle-un-blog" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Le blog que nous allons créer est très simple. En voici les grandes lignes :</p>
 <ul class="simple">
 <li>Nous aurons des posts auxquels nous attacherons des tags.</li>

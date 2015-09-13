@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les formulaires &mdash; Symfony 1.0.1 documentation</title>
+  <title>Les formulaires &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="Aide mémoire" href="aide_memoire.html"/>
         <link rel="prev" title="Doctrine et la base de donnée" href="doctrine.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -156,10 +163,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="les-formulaires">
-<h1>Les formulaires<a class="headerlink" href="#les-formulaires" title="Permalink to this headline">¶</a></h1>
-<p>Symfony dispose du composant <code class="docutils literal"><span class="pre">Form</span></code> pour faciliter la création des formulaires. Ce composant permet de créer un formulaire à partir d&#8217;un objet existant, et son objectif est d&#8217;hydrater cet objet.</p>
+<h1>Les formulaires<a class="headerlink" href="#les-formulaires" title="Lien permanent vers ce titre">¶</a></h1>
+<p><strong class="program">Symfony</strong> dispose du composant <code class="docutils literal"><span class="pre">Form</span></code> pour faciliter la création des formulaires. Ce composant permet de créer un formulaire à partir d&#8217;un objet existant, et son objectif est d&#8217;hydrater cet objet.</p>
 <div class="section" id="gestion-basique-d-un-formulaire">
-<h2>Gestion basique d&#8217;un formulaire<a class="headerlink" href="#gestion-basique-d-un-formulaire" title="Permalink to this headline">¶</a></h2>
+<h2>Gestion basique d&#8217;un formulaire<a class="headerlink" href="#gestion-basique-d-un-formulaire" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Prenons comme exemple le formulaire associé à l&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="c1">// Epsi\Bundle\BlogBundle\Form\PostType</span>
@@ -264,7 +271,7 @@
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-<p>Lorsque l&#8217;on affiche le formulaire, Symfony choisit le champ HTML qui sera le plus adapté à l&#8217;attribut : le titre est une ligne de texte, la date est un ensemble de 5 listes déroulantes (jour, mois, années, heure, minute), le boby est un textarea et les tags, une sélection multiple.</p>
+<p>Lorsque l&#8217;on affiche le formulaire, <strong class="program">Symfony</strong> choisit le champ HTML qui sera le plus adapté à l&#8217;attribut : le titre est une ligne de texte, la date est un ensemble de 5 listes déroulantes (jour, mois, années, heure, minute), le boby est un textarea et les tags, une sélection multiple.</p>
 <p>Lors de la construction du formulaire, il est possible d&#8217;adapter en ajoutant un paramètre à la méthode <code class="docutils literal"><span class="pre">add()</span></code> dans <code class="docutils literal"><span class="pre">buildForm()</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$builder</span>
             <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">)</span>
@@ -275,12 +282,12 @@
     <span class="p">;</span>
 </pre></div>
 </div>
-<p>Certains types peuvent prendre des paramètres. Pour plus d&#8217;informations voici la page de documentation de Symfony : <a class="reference external" href="http://symfony.com/fr/doc/current/reference/forms/types.html">http://symfony.com/fr/doc/current/reference/forms/types.html</a></p>
+<p>Certains types peuvent prendre des paramètres. Pour plus d&#8217;informations voici la page de documentation de <strong class="program">Symfony</strong> : <a class="reference external" href="http://symfony.com/fr/doc/current/reference/forms/types.html">http://symfony.com/fr/doc/current/reference/forms/types.html</a></p>
 </div>
 <div class="section" id="validation-des-donnees">
-<h2>Validation des données<a class="headerlink" href="#validation-des-donnees" title="Permalink to this headline">¶</a></h2>
-<p>Le composant <code class="docutils literal"><span class="pre">Form</span></code> de Symfony permet de créer facilement des formulaires et d&#8217;hydrater l&#8217;objet qui lui est associé, mais il ne valide pas les données du formulaire tout simplement car ce n&#8217;est pas à lui le faire. Pour rappel, dans un modèle MVC, le seul et unique responsable des données est le modèle, l&#8217;entité.</p>
-<p>Premièrement voici le namespace à utiliser dans les annotations pour ajouter des contraintes : <code class="docutils literal"><span class="pre">use</span> <span class="pre">Symfony\Component\Validator\Constraints</span> <span class="pre">as</span> <span class="pre">Assert;</span></code></p>
+<h2>Validation des données<a class="headerlink" href="#validation-des-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le composant <code class="docutils literal"><span class="pre">Form</span></code> de <strong class="program">Symfony</strong> permet de créer facilement des formulaires et d&#8217;hydrater l&#8217;objet qui lui est associé, mais il ne valide pas les données du formulaire tout simplement car ce n&#8217;est pas à lui le faire. Pour rappel, dans un modèle MVC, le seul et unique responsable des données est le modèle, l&#8217;entité.</p>
+<p>Premièrement voici le namespace à utiliser dans les annotations pour ajouter des contraintes : <code class="docutils literal"><span class="pre">use</span> <span class="pre">:program:`Symfony`\Component\Validator\Constraints</span> <span class="pre">as</span> <span class="pre">Assert;</span></code></p>
 <p>Ensuite pour chaque champ, il ne reste plus qu&#8217;à ajouter les contraintes pour chaque champs. Voici quelques exemples :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -326,11 +333,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Pour plus d&#8217;informations voici la page de documentation de Symfony : <a class="reference external" href="http://symfony.com/fr/doc/current/reference/constraints.html">http://symfony.com/fr/doc/current/reference/constraints.html</a></p>
+<p>Pour plus d&#8217;informations voici la page de documentation de <strong class="program">Symfony</strong> : <a class="reference external" href="http://symfony.com/fr/doc/current/reference/constraints.html">http://symfony.com/fr/doc/current/reference/constraints.html</a></p>
 </div>
 <div class="section" id="personnalisation-de-l-affichage">
-<h2>Personnalisation de l&#8217;affichage<a class="headerlink" href="#personnalisation-de-l-affichage" title="Permalink to this headline">¶</a></h2>
-<p>Depuis sa version 2.6, Symfony intègre deux layouts basés sur Bootstrap. Nous allons utilisé le layout <code class="docutils literal"><span class="pre">bootstrap_3_horizontal</span></code>.</p>
+<h2>Personnalisation de l&#8217;affichage<a class="headerlink" href="#personnalisation-de-l-affichage" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Depuis sa version 2.6, <strong class="program">Symfony</strong> intègre deux layouts basés sur Bootstrap. Nous allons utilisé le layout <code class="docutils literal"><span class="pre">bootstrap_3_horizontal</span></code>.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">twig</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">form</span><span class="p-Indicator">:</span>
         <span class="c1"># resources: [&#39;bootstrap_3_layout.html.twig&#39;]</span>

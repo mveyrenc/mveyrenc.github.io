@@ -2,7 +2,7 @@
 Les services
 ############
 
-Comme dit précédemment, un contrôleur ne fait qu'utiliser d'autres composants pour construire la réponse. Certains de ces composants sont des services, des scripts qui remplissent un rôle précis comme envoyer un mail, gérer les sessions de l'utilisateur, etc. Dans ce chapitre, vous n'allons pas voir comment créer un service, nous n'en sommes pas là, mais comment s'en servir et quels services Symfony nous propose.
+Comme dit précédemment, un contrôleur ne fait qu'utiliser d'autres composants pour construire la réponse. Certains de ces composants sont des services, des scripts qui remplissent un rôle précis comme envoyer un mail, gérer les sessions de l'utilisateur, etc. Dans ce chapitre, vous n'allons pas voir comment créer un service, nous n'en sommes pas là, mais comment s'en servir et quels services :program:`Symfony` nous propose.
 
 ******************
 Accéder un service

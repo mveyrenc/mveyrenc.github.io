@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les services &mdash; Symfony 1.0.1 documentation</title>
+  <title>Les services &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="Les vues avec Twig" href="twig.html"/>
         <link rel="prev" title="Les contrôleurs" href="controleur.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -161,17 +168,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="les-services">
-<h1>Les services<a class="headerlink" href="#les-services" title="Permalink to this headline">¶</a></h1>
-<p>Comme dit précédemment, un contrôleur ne fait qu&#8217;utiliser d&#8217;autres composants pour construire la réponse. Certains de ces composants sont des services, des scripts qui remplissent un rôle précis comme envoyer un mail, gérer les sessions de l&#8217;utilisateur, etc. Dans ce chapitre, vous n&#8217;allons pas voir comment créer un service, nous n&#8217;en sommes pas là, mais comment s&#8217;en servir et quels services Symfony nous propose.</p>
+<h1>Les services<a class="headerlink" href="#les-services" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Comme dit précédemment, un contrôleur ne fait qu&#8217;utiliser d&#8217;autres composants pour construire la réponse. Certains de ces composants sont des services, des scripts qui remplissent un rôle précis comme envoyer un mail, gérer les sessions de l&#8217;utilisateur, etc. Dans ce chapitre, vous n&#8217;allons pas voir comment créer un service, nous n&#8217;en sommes pas là, mais comment s&#8217;en servir et quels services <strong class="program">Symfony</strong> nous propose.</p>
 <div class="section" id="acceder-un-service">
-<h2>Accéder un service<a class="headerlink" href="#acceder-un-service" title="Permalink to this headline">¶</a></h2>
+<h2>Accéder un service<a class="headerlink" href="#acceder-un-service" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il faut juste appeler la méthode du contrôleur <code class="docutils literal"><span class="pre">get()</span></code> en passant en argument l&#8217;identifiant su service que vous voulez comme par exemple : <code class="docutils literal"><span class="pre">$this-&gt;get('mailer');</span></code>.
 Ensuite il faut utiliser l&#8217;API que met à disposition le service.</p>
 </div>
 <div class="section" id="exemple-de-services">
-<h2>Exemple de services<a class="headerlink" href="#exemple-de-services" title="Permalink to this headline">¶</a></h2>
+<h2>Exemple de services<a class="headerlink" href="#exemple-de-services" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="templating">
-<h3>Templating<a class="headerlink" href="#templating" title="Permalink to this headline">¶</a></h3>
+<h3>Templating<a class="headerlink" href="#templating" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La méthode <code class="docutils literal"><span class="pre">render</span></code> du contrôleur est un raccourcie pour appeler le service de templating. Ce code :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Blog:show.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span>
@@ -189,16 +196,16 @@ Ensuite il faut utiliser l&#8217;API que met à disposition le service.</p>
 <p>Ce service comporte une autre méthode intéressante qui permet tester si un template existe ou pas : <code class="docutils literal"><span class="pre">exists</span></code>.</p>
 </div>
 <div class="section" id="request">
-<h3>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<h3>Request<a class="headerlink" href="#request" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Là aussi, dans le contrôleur, quand on appelle la méthode <code class="docutils literal"><span class="pre">getRequest</span></code>, c&#8217;est un raccourcie qui appelle le service <code class="docutils literal"><span class="pre">request</span></code>.</p>
 </div>
 <div class="section" id="session">
-<h3>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
+<h3>Session<a class="headerlink" href="#session" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Le service <code class="docutils literal"><span class="pre">session</span></code> contient toute les méthodes nécessaire pour manipuler les sessions utilisateur : <code class="docutils literal"><span class="pre">has</span></code>, <code class="docutils literal"><span class="pre">get</span></code>, <code class="docutils literal"><span class="pre">set</span></code>, <code class="docutils literal"><span class="pre">remove</span></code>, etc.</p>
 </div>
 </div>
 <div class="section" id="obtenir-des-informations-sur-les-services">
-<h2>Obtenir des informations sur les services<a class="headerlink" href="#obtenir-des-informations-sur-les-services" title="Permalink to this headline">¶</a></h2>
+<h2>Obtenir des informations sur les services<a class="headerlink" href="#obtenir-des-informations-sur-les-services" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une commande permet d&#8217;obtenir la liste des services disponibles avec la classe qui les implémente :</p>
 <div class="highlight-python"><div class="highlight"><pre>$ php app/console debug:container
 [container] Public services

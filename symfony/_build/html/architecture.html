@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Architecture de Symfony &mdash; Symfony 1.0.1 documentation</title>
+  <title>Architecture de Symfony &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="Création d’un bundle" href="application_symfony.html"/>
         <link rel="prev" title="Pré-requis et installation du framework" href="pre-requis_installation.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Architecture de Symfony</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Architecture de <strong class="program">Symfony</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#le-repertoire-app">Le répertoire <em>/app</em></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#le-repertoire-bin">Le répertoire <em>/bin</em></a></li>
@@ -96,11 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#les-fichiers-md">Les fichiers <em>/*.md</em></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#architecture-conceptuelle">Architecture conceptuelle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#architecture-mvc">Architecture MVC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deroulement-d-une-requete-dans-symfony">Déroulement d&#8217;une requête dans Symfony</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-conceptuelle">Architecture conceptuelle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-bundles">Les bundles</a></li>
 </ul>
 </li>
@@ -155,7 +158,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Architecture de Symfony</li>
+    <li>Architecture de <strong class="program">Symfony</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -169,9 +172,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="architecture-de-symfony">
-<h1>Architecture de Symfony<a class="headerlink" href="#architecture-de-symfony" title="Permalink to this headline">¶</a></h1>
+<h1>Architecture de <strong class="program">Symfony</strong><a class="headerlink" href="#architecture-de-symfony" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="l-architecture-des-fichiers">
-<h2>L&#8217;architecture des fichiers<a class="headerlink" href="#l-architecture-des-fichiers" title="Permalink to this headline">¶</a></h2>
+<h2>L&#8217;architecture des fichiers<a class="headerlink" href="#l-architecture-des-fichiers" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dans les sources que nous venons de d&#8217;installer, il n&#8217;y a pas beaucoup de fichiers :</p>
 <div class="highlight-bash"><div class="highlight"><pre>app
 bin
@@ -190,55 +193,54 @@ web
 </div>
 <p>Voyons à quoi ils correspondent.</p>
 <div class="section" id="le-repertoire-app">
-<h3>Le répertoire <em>/app</em><a class="headerlink" href="#le-repertoire-app" title="Permalink to this headline">¶</a></h3>
+<h3>Le répertoire <em>/app</em><a class="headerlink" href="#le-repertoire-app" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ce répertoire contient tout ce qui concerne votre application, sauf son code source.</p>
 <p>Le code source de votre application implémente ses fonctionnalités. Tout le reste comme la configuration, le cache, les logs, etc., c&#8217;est dans le répertoire <em>/app</em></p>
 </div>
 <div class="section" id="le-repertoire-bin">
-<h3>Le répertoire <em>/bin</em><a class="headerlink" href="#le-repertoire-bin" title="Permalink to this headline">¶</a></h3>
+<h3>Le répertoire <em>/bin</em><a class="headerlink" href="#le-repertoire-bin" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ce répertoire n&#8217;est pas tout le temps présent. Il contient des exécutables fournis par les bundles.</p>
 </div>
 <div class="section" id="le-repertoire-src">
-<h3>Le répertoire <em>/src</em><a class="headerlink" href="#le-repertoire-src" title="Permalink to this headline">¶</a></h3>
+<h3>Le répertoire <em>/src</em><a class="headerlink" href="#le-repertoire-src" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Voici le répertoire dans lequel on mettra notre code source ! Ce code est découpé en <em>bundles</em>.</p>
-<p>Après l&#8217;installation de Symfony, ce répertoire n&#8217;est pas vide. Il contient un bundle de démo (Acme) et une ébauche de bundle. Ces deux bundles seront supprimés.</p>
+<p>Après l&#8217;installation de <strong class="program">Symfony</strong>, ce répertoire n&#8217;est pas vide. Il contient un bundle de démo (Acme) et une ébauche de bundle. Ces deux bundles seront supprimés.</p>
 </div>
 <div class="section" id="le-repertoire-vendor">
-<h3>Le répertoire <em>/vendor</em><a class="headerlink" href="#le-repertoire-vendor" title="Permalink to this headline">¶</a></h3>
-<p>Ce répertoire contient toutes les librairies externes de notre application comme Symfony, Doctrine, Twig, SwiftMailer, etc.</p>
+<h3>Le répertoire <em>/vendor</em><a class="headerlink" href="#le-repertoire-vendor" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Ce répertoire contient toutes les librairies externes de notre application comme <strong class="program">Symfony</strong>, Doctrine, Twig, SwiftMailer, etc.</p>
 <div class="hint admonition">
 <p class="first admonition-title">Qu&#8217;est ce qu&#8217;une librairie ?</p>
 <p class="last">Un librairie est une boite noire qui rempli une fonction bien précise et dont on peut se servir dans notre code. On ne sais pas comment elle fonctionne, mais on sais comment s&#8217;en servir.</p>
 </div>
 </div>
 <div class="section" id="le-repertoire-web">
-<h3>Le répertoire <em>/web</em><a class="headerlink" href="#le-repertoire-web" title="Permalink to this headline">¶</a></h3>
+<h3>Le répertoire <em>/web</em><a class="headerlink" href="#le-repertoire-web" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ce répertoire contient tous les fichiers destinés aux visiteurs : image, CSS, Javascript, etc. Il contient également les contrôleurs frontaux <code class="docutils literal"><span class="pre">app.php</span></code> et <code class="docutils literal"><span class="pre">app_dev.php</span></code>. C&#8217;est le seul répertoire accessible aux visiteurs.</p>
 <div class="hint admonition">
 <p class="first admonition-title">Contrôleur frontal</p>
-<p class="last">Le contrôleur front est le point d&#8217;entrée par lequel passe toutes les pages. Dans Symfony, il y en a deux : un pour le développement l&#8217;autre pour les autres environnement.</p>
+<p class="last">Le contrôleur front est le point d&#8217;entrée par lequel passe toutes les pages. Dans <strong class="program">Symfony</strong>, il y en a deux : un pour le développement l&#8217;autre pour les autres environnement.</p>
 </div>
 </div>
 <div class="section" id="les-fichiers-composer">
-<h3>Les fichiers <em>/composer.*</em><a class="headerlink" href="#les-fichiers-composer" title="Permalink to this headline">¶</a></h3>
+<h3>Les fichiers <em>/composer.*</em><a class="headerlink" href="#les-fichiers-composer" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Le fichier <code class="docutils literal"><span class="pre">composer.json</span></code> contient les instructions destinées à composer pour qu&#8217;il installe les librairies externes. À chaque installation ou mise à jour de librairie, il écrit dans le fichier <code class="docutils literal"><span class="pre">composer.lock</span></code> les versions exactes de chaque librairie qu&#8217;il a installé. Ensuite, lors du déploiement de l&#8217;application sur les autres environnements, comme en production, on pourra installer les mêmes versions que lors des développements grâce à composer.</p>
 </div>
 <div class="section" id="les-fichiers-md">
-<h3>Les fichiers <em>/*.md</em><a class="headerlink" href="#les-fichiers-md" title="Permalink to this headline">¶</a></h3>
+<h3>Les fichiers <em>/*.md</em><a class="headerlink" href="#les-fichiers-md" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Le reste des fichiers contient de la documentation.</p>
 </div>
 </div>
 <div class="section" id="architecture-conceptuelle">
-<h2>Architecture conceptuelle<a class="headerlink" href="#architecture-conceptuelle" title="Permalink to this headline">¶</a></h2>
+<h2>Architecture conceptuelle<a class="headerlink" href="#architecture-conceptuelle" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Maintenant que nous avons vu comment s&#8217;organisait les fichiers de Symfony, nous allons voir comment s&#8217;organise l&#8217;exécution du code.</p>
-<div class="section" id="architecture-mvc">
-<h3>Architecture MVC<a class="headerlink" href="#architecture-mvc" title="Permalink to this headline">¶</a></h3>
-<p>MVC signifie Modèle/Vue/Contrôleur. C&#8217;est un découpage très répandu dans les frameworks web. L&#8217;idée est d&#8217;organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
+<p><strong class="program">Symfony</strong> est basée sur une architecture MVC qui signifie Modèle/Vue/Contrôleur. C&#8217;est un découpage très répandu dans les frameworks web.</p>
+<p>L&#8217;idée est d&#8217;organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
 <p>Elle se compose de trois couches :</p>
 <ul>
 <li><dl class="first docutils">
 <dt>Le <strong>contrôleur</strong> (<em>controller</em>)</dt>
-<dd><p class="first last">Son rôle est de générer la réponse à la requête HTTP demandée par le visiteur. Il analyse la requête du visiteur, et utilise les autres composants pour composer la réponse et la renvoie au visiteur.</p>
+<dd><p class="first last">Son rôle est de générer la <strong>réponse</strong> à la <strong>requête</strong> HTTP demandée par le visiteur. Il analyse la requête du visiteur, et <strong>utilise les autres composants</strong> pour composer la réponse et la renvoie au visiteur.</p>
 </dd>
 </dl>
 </li>
@@ -256,24 +258,8 @@ web
 </li>
 </ul>
 </div>
-<div class="section" id="deroulement-d-une-requete-dans-symfony">
-<h3>Déroulement d&#8217;une requête dans Symfony<a class="headerlink" href="#deroulement-d-une-requete-dans-symfony" title="Permalink to this headline">¶</a></h3>
-<img alt="_images/symfony_request_flow.png" class="align-center" src="_images/symfony_request_flow.png" />
-<ol class="arabic simple">
-<li>Le visiteur demande une page ;</li>
-<li>Le <strong>contrôleur frontal</strong> reçoit la requête, charge le <strong>Kernel</strong> et la lui transmet ;</li>
-<li>Le <strong>Kernel</strong> demande au <strong>Router</strong> quel contrôleur&nbsp;exécuter pour la page demandée ;</li>
-<li>Le <strong>Kernel</strong> exécute le <strong>contrôleur</strong>.</li>
-<li>Le <strong>contrôleur</strong> retourne la réponse.</li>
-</ol>
-<div class="hint admonition">
-<p class="first admonition-title">Le routeur</p>
-<p class="last">C&#8217;est un composant Symfony qui a pour mission de faire la correspondance en les URL et les contrôleurs.</p>
-</div>
-</div>
-</div>
 <div class="section" id="les-bundles">
-<h2>Les bundles<a class="headerlink" href="#les-bundles" title="Permalink to this headline">¶</a></h2>
+<h2>Les bundles<a class="headerlink" href="#les-bundles" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s&#8217;agit :</p>
 <ul class="simple">
 <li>des contrôleurs</li>

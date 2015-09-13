@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>La programmation orientée objet &mdash; Symfony 1.0.1 documentation</title>
+  <title>La programmation orientée objet &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,13 +28,19 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Pré-requis et installation du framework" href="pre-requis_installation.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
+        <link rel="next" title="Du navigateur vers Symfony" href="navigateur_vers_symfony.html"/>
         <link rel="prev" title="Introduction à Symfony" href="introduction.html"/> 
 
   
@@ -82,7 +88,7 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">La programmation orientée objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#terminologie">Terminologie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mots-reserves">Mots réservés</a></li>
@@ -96,8 +102,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -163,16 +170,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="la-programmation-orientee-objet">
-<h1>La programmation orientée objet<a class="headerlink" href="#la-programmation-orientee-objet" title="Permalink to this headline">¶</a></h1>
+<h1>La programmation orientée objet<a class="headerlink" href="#la-programmation-orientee-objet" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="terminologie">
-<h2>Terminologie<a class="headerlink" href="#terminologie" title="Permalink to this headline">¶</a></h2>
+<h2>Terminologie<a class="headerlink" href="#terminologie" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une <strong>classe</strong> est une représentation abstraite d&#8217;un <strong>objet</strong>.
 C&#8217;est la somme des propriétés de l&#8217;objet et des traitements dont il est capable.
 Une classe peut généralement être rendu concrète au moyen d&#8217;une <strong>instance de classe</strong>, que l&#8217;on appelle objet : on parle d&#8217;<em>instancier</em> la classe.
 Un objet est donc un exemple concret de la définition abstraite qu&#8217;est la classe.</p>
 </div>
 <div class="section" id="mots-reserves">
-<h2>Mots réservés<a class="headerlink" href="#mots-reserves" title="Permalink to this headline">¶</a></h2>
+<h2>Mots réservés<a class="headerlink" href="#mots-reserves" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">class</span></code> : déclaration de classe</li>
 <li><code class="docutils literal"><span class="pre">const</span></code> : déclaration de constante de classe</li>
@@ -205,7 +212,7 @@ Un objet est donc un exemple concret de la définition abstraite qu&#8217;est la
 <p>Enfin, la variable <code class="docutils literal"><span class="pre">$this</span></code> utilisée à l&#8217;intérieur d&#8217;une classe, faut toujours référence à l&#8217;objet lui-même.</p>
 </div>
 <div class="section" id="syntaxe-de-base">
-<h2>Syntaxe de base<a class="headerlink" href="#syntaxe-de-base" title="Permalink to this headline">¶</a></h2>
+<h2>Syntaxe de base<a class="headerlink" href="#syntaxe-de-base" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les définitions des attributs et des méthodes sot rassemblés dans la structure <code class="docutils literal"><span class="pre">class</span></code>.
 Le mot-clé <code class="docutils literal"><span class="pre">class</span></code> est suivi du nom de la classe, suivit par une paire d&#8217;accolades contenant la définition de la classe.
 Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#8217;importe quel nombre de chiffres, ou de lettres, ou d&#8217;underscores, et ne pas être un mot réservé PHP.</p>
@@ -243,7 +250,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 </div>
 <div class="section" id="heritage">
-<h2>Héritage<a class="headerlink" href="#heritage" title="Permalink to this headline">¶</a></h2>
+<h2>Héritage<a class="headerlink" href="#heritage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On parle d&#8217;<strong>héritage</strong> lorsque l&#8217;on définit une hiérarchie de classes. L&#8217;héritage est très utile pour définir et abstraire certaines fonctionnalités communes à plusieurs classes, tout en permettant la mise en place de fonctionnalités supplémentaires dans les classes enfants, sans avoir à réimplémenter en leur sein toutes les fonctionnalités communes.</p>
 <p>Lorsque vous étendez une classe, la classe fille hérite de toutes les méthodes publiques et protégées de la classe parente. Tant qu&#8217;une classe n&#8217;écrase pas ces méthodes, elles conservent leur fonctionnalité d&#8217;origine.</p>
 <p>L&#8217;héritage est très utile pour définir et abstraire certaines fonctionnalités communes à plusieurs classes, tout en permettant la mise en place de fonctionnalités supplémentaires dans les classes enfants, sans avoir à réimplémenter en leur sein toutes les fonctionnalités communes.</p>
@@ -302,7 +309,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 <p>Le mot clé <code class="docutils literal"><span class="pre">final</span></code> empêche les classes filles de surcharger une méthode. Si la classe elle-même est définie comme finale, elle ne pourra pas être étendue.</p>
 </div>
 <div class="section" id="classes-abstraites">
-<h2>Classes abstraites<a class="headerlink" href="#classes-abstraites" title="Permalink to this headline">¶</a></h2>
+<h2>Classes abstraites<a class="headerlink" href="#classes-abstraites" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les classes définies comme abstraites ne peuvent pas être instanciées, et toute classe contenant au moins une méthode abstraite doit elle-aussi être abstraite. Les méthodes définies comme abstraites déclarent simplement la signature de la méthode - elles ne peuvent définir son implémentation. Lors de l&#8217;héritage d&#8217;une classe abstraite, toutes les méthodes marquées comme abstraites dans la déclaration de la classe parente doivent être définies par l&#8217;enfant.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
@@ -365,7 +372,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 </div>
 <div class="section" id="visibilite">
-<h2>Visibilité<a class="headerlink" href="#visibilite" title="Permalink to this headline">¶</a></h2>
+<h2>Visibilité<a class="headerlink" href="#visibilite" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La visibilité d&#8217;une propriété ou d&#8217;une méthode peut être définie en préfixant sa déclaration avec un mot-clé : <code class="docutils literal"><span class="pre">public</span></code>, <code class="docutils literal"><span class="pre">protected</span></code>, ou <code class="docutils literal"><span class="pre">private</span></code>.</p>
 <p>Les éléments déclarés comme <strong>publics</strong> peuvent être utilisés par n&#8217;importe quelle partie du programme.</p>
 <p>L&#8217;accès aux éléments <strong>protégés</strong> est limité à la classe elle-même, ainsi qu&#8217;aux classes qui en héritent, et à ses classes parentes.</p>
@@ -413,7 +420,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 </div>
 <div class="section" id="l-operateur-de-resolution-de-portee">
-<h2>L&#8217;opérateur de résolution de portée (::)<a class="headerlink" href="#l-operateur-de-resolution-de-portee" title="Permalink to this headline">¶</a></h2>
+<h2>L&#8217;opérateur de résolution de portée (::)<a class="headerlink" href="#l-operateur-de-resolution-de-portee" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L&#8217;opérateur de résolution de portée, le symbole &#8220;double deux-points&#8221; (::), fournit un moyen d&#8217;accéder aux membres <code class="docutils literal"><span class="pre">static</span></code> ou <code class="docutils literal"><span class="pre">constant</span></code>, ainsi qu&#8217;aux propriétés ou méthodes surchargées d&#8217;une classe.</p>
 <p>Lorsque vous référencez ces éléments en dehors de la définition de la classe, utilisez le nom de la classe.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
@@ -481,7 +488,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 </div>
 <div class="section" id="references-et-clonage">
-<h2>Références et clonage<a class="headerlink" href="#references-et-clonage" title="Permalink to this headline">¶</a></h2>
+<h2>Références et clonage<a class="headerlink" href="#references-et-clonage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Depuis PHP 5, les objets sont tous des références. Ainsi, copier un objet vers un autre au moyen de l&#8217;opérateur &#8220;=&#8221; ne duplique pas l&#8217;objet, au contraire il créé une deuxième référence vers le même objet.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
@@ -534,7 +541,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 </div>
 </div>
 <div class="section" id="exceptions">
-<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les exception ne sont pas un système élaboré de gestion d&#8217;erreur. Une erreur est dans la majorité des cas assimilable à un bug, c&#8217;est à dire une réaction non désirée. Une exception est un traitement qui sera appelé lorsqu&#8217;un cas marginal est détecté pendant le déroulement du programme.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -548,8 +555,8 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
 <p>Lorsqu&#8217;une exception est lancée depuis un bloc <code class="docutils literal"><span class="pre">try</span></code>, le bloc <code class="docutils literal"><span class="pre">catch</span></code> permet de l&#8217;attraper et de traiter l&#8217;incident.</p>
 </div>
 <div class="section" id="espace-de-nom-ou-namespace">
-<h2>Espace de nom ou namespace<a class="headerlink" href="#espace-de-nom-ou-namespace" title="Permalink to this headline">¶</a></h2>
-<p>Dans leur définition la plus large, ils représentent un moyen d&#8217;encapsuler des éléments. Ils peuvent s&#8217;apparenter à un système de fichier. D&#8217;ailleurs dans la convention Symfony, le namespace d&#8217;une classes reflète son chemin.</p>
+<h2>Espace de nom ou namespace<a class="headerlink" href="#espace-de-nom-ou-namespace" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans leur définition la plus large, ils représentent un moyen d&#8217;encapsuler des éléments. Ils peuvent s&#8217;apparenter à un système de fichier. D&#8217;ailleurs dans la convention <strong class="program">Symfony</strong>, le namespace d&#8217;une classes reflète son chemin.</p>
 <p>Dans le monde PHP, les espaces de noms sont conçus pour résoudre deux problèmes que les auteurs de bibliothèques et applications rencontrent lors de la réutilisation d&#8217;éléments tels que des classes ou des bibliothèques de fonctions :</p>
 <ul class="simple">
 <li>collisions de noms entre le code que vous créez (les classes, fonctions, constantes) et celle de bibliothèques tièces</li>
@@ -580,7 +587,7 @@ Un nom de classe valide commence par une lettre ou un underscore, suivi de n&#82
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pre-requis_installation.html" class="btn btn-neutral float-right" title="Pré-requis et installation du framework" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="navigateur_vers_symfony.html" class="btn btn-neutral float-right" title="Du navigateur vers Symfony" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="introduction.html" class="btn btn-neutral" title="Introduction à Symfony" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>

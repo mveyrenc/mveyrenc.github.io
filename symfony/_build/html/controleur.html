@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les contrôleurs &mdash; Symfony 1.0.1 documentation</title>
+  <title>Les contrôleurs &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="Les services" href="services.html"/>
         <link rel="prev" title="Le routing" href="routing.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -161,18 +168,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="les-controleurs">
-<h1>Les contrôleurs<a class="headerlink" href="#les-controleurs" title="Permalink to this headline">¶</a></h1>
+<h1>Les contrôleurs<a class="headerlink" href="#les-controleurs" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="request-et-response">
-<h2><code class="docutils literal"><span class="pre">Request</span></code> et <code class="docutils literal"><span class="pre">Response</span></code><a class="headerlink" href="#request-et-response" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal"><span class="pre">Request</span></code> et <code class="docutils literal"><span class="pre">Response</span></code><a class="headerlink" href="#request-et-response" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme vue précédemment, le contrôleur est le chef d&#8217;orchestre de votre application, il va utiliser les autres composants (services, modèles, vue) afin de construire la page demandé par l&#8217;internaute.</p>
 <p>Peut importe ce que vous souhaitez faire, un contrôleur reçoit toujours un objet <code class="docutils literal"><span class="pre">Request</span></code> et doit toujours retourner un objet <code class="docutils literal"><span class="pre">Response</span></code>.
 La demande de l&#8217;internaute se trouve dans un objet <code class="docutils literal"><span class="pre">Request</span></code> dans lequel le contrôleur toute les informations contenues dans la requête HTTP. La <code class="docutils literal"><span class="pre">Response</span></code> quant à elle correspond à la réponse HTTP.</p>
 </div>
 <div class="section" id="l-objet-request">
-<h2>L&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code><a class="headerlink" href="#l-objet-request" title="Permalink to this headline">¶</a></h2>
+<h2>L&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code><a class="headerlink" href="#l-objet-request" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La requête peut contenir des paramètres : l&#8217;Id d&#8217;un objet à afficher, un nom à chercher dans la base de données, etc. Ces paramètres peuvent être passés au contrôleurs via la route, des paramètres POST ou GET, etc.</p>
 <div class="section" id="les-parametres-contenus-dans-les-routes">
-<h3>Les paramètres contenus dans les routes<a class="headerlink" href="#les-parametres-contenus-dans-les-routes" title="Permalink to this headline">¶</a></h3>
+<h3>Les paramètres contenus dans les routes<a class="headerlink" href="#les-parametres-contenus-dans-les-routes" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Les paramètres passée par la route deviendront des arguments de la méthode appelée dans le contrôleur. Prenons cette route par exemple :</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}.{_format}</span>
@@ -185,7 +192,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <p>La fonction appelée dans le contrôleur aura la définition suivante : <code class="docutils literal"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">showAction($id)</span></code>.</p>
 </div>
 <div class="section" id="les-parametres-hors-routes">
-<h3>Les paramètres hors routes<a class="headerlink" href="#les-parametres-hors-routes" title="Permalink to this headline">¶</a></h3>
+<h3>Les paramètres hors routes<a class="headerlink" href="#les-parametres-hors-routes" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour les autres paramètres ils peuvent tous être récupérés via l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code>. Il faut tout d&#8217;abord récupérer l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> dans le contrôleur : <code class="docutils literal"><span class="pre">$request</span> <span class="pre">=</span> <span class="pre">$this-&gt;getRequest();</span></code>. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -236,7 +243,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </table>
 </div>
 <div class="section" id="les-autres-methodes-de-l-objet-request">
-<h3>Les autres méthodes de l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code><a class="headerlink" href="#les-autres-methodes-de-l-objet-request" title="Permalink to this headline">¶</a></h3>
+<h3>Les autres méthodes de l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code><a class="headerlink" href="#les-autres-methodes-de-l-objet-request" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une requête ne se compose pas que le paramètres et l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> permet de les récupérer :</p>
 <ul>
 <li><dl class="first docutils">
@@ -267,7 +274,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </div>
 </div>
 <div class="section" id="l-objet-response">
-<h2>L&#8217;objet <code class="docutils literal"><span class="pre">Response</span></code><a class="headerlink" href="#l-objet-response" title="Permalink to this headline">¶</a></h2>
+<h2>L&#8217;objet <code class="docutils literal"><span class="pre">Response</span></code><a class="headerlink" href="#l-objet-response" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Voici en version longue de qu&#8217;il faut faire pour construire et retourner une réponse :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// on instancie une réponse</span>
@@ -293,7 +300,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <div class="highlight-jinja"><div class="highlight"><pre><span class="x">Affichage du post avec l&#39;id : </span><span class="cp">{{</span> <span class="nv">id</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
 </div>
-<p>Allez voir la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/post/5">http://localhost/Symfony/web/app_dev.php/post/5</a>.</p>
+<p>Allez voir la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/post/5">http://symfony.loc.epsi.fr/app_dev.php/post/5</a>.</p>
 <p>Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <code class="docutils literal"><span class="pre">Response</span></code> en paramètre.</p>
 <p>On peut également faire des redirections dans le contrôleur avec la méthode <code class="docutils literal"><span class="pre">redirect()</span></code>. La méthode <code class="docutils literal"><span class="pre">generateUrl</span></code> permet quant à elle de générer l&#8217;URL de la page de destination :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>

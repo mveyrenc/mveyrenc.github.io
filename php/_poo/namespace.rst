@@ -2,7 +2,7 @@
 Espace de nom ou namespace
 **************************
 
-Dans leur définition la plus large, ils représentent un moyen d'encapsuler des éléments. Ils peuvent s'apparenter à un système de fichier. D'ailleurs dans la convention Symfony, le namespace d'une classes reflète son chemin.
+Dans leur définition la plus large, ils représentent un moyen d'encapsuler des éléments. Ils peuvent s'apparenter à un système de fichier. D'ailleurs dans la convention :program:`Symfony`, le namespace d'une classes reflète son chemin.
 
 Dans le monde PHP, les espaces de noms sont conçus pour résoudre deux problèmes que les auteurs de bibliothèques et applications rencontrent lors de la réutilisation d'éléments tels que des classes ou des bibliothèques de fonctions :
 

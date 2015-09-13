@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PHP/Symfony &mdash; Symfony 1.0.1 documentation</title>
+  <title>PHP/Symfony &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="#"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="#"/>
         <link rel="next" title="Introduction à Symfony" href="introduction.html"/> 
 
   
@@ -81,10 +87,11 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -150,21 +157,22 @@
            <div itemprop="articleBody">
             
   <div class="section" id="php-symfony">
-<h1>PHP/Symfony<a class="headerlink" href="#php-symfony" title="Permalink to this headline">¶</a></h1>
+<h1>PHP/Symfony<a class="headerlink" href="#php-symfony" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Ce document a pour but de vous faire acquérir les compétences suivantes :</p>
 <ul class="simple">
 <li>Assimiler chaque élément du concept MVC</li>
 <li>Accéder aux données via Doctrine</li>
 <li>Développer une application qui exploite une base de données</li>
-<li>Comprendre l&#8217;architecture du framework Symfony2, et savoir le mettre en œuvre dans un développement PHP5</li>
+<li>Comprendre l&#8217;architecture du framework <strong class="program">Symfony2</strong>, et savoir le mettre en œuvre dans un développement PHP5</li>
 </ul>
 <div class="section" id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<h2>Contents<a class="headerlink" href="#contents" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-que-php">Qu&#8217;est ce que PHP ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-que-l-open-source">Qu&#8217;est ce que l&#8217;open-source ?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a><ul>
@@ -180,12 +188,18 @@
 <li class="toctree-l2"><a class="reference internal" href="rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigateur_vers_symfony.html#de-votre-navigateur">De votre navigateur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigateur_vers_symfony.html#en-passant-par-le-serveur-web">En passant par le serveur web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigateur_vers_symfony.html#vers-symfony">Vers <strong class="program">Symfony</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#pre-requis">Pré-requis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pre-requis_installation.html#installation-de-symfony">Installation de <strong class="program">Symfony</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>

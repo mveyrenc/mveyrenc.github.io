@@ -1,6 +1,6 @@
-#######################
-Architecture de Symfony
-#######################
+##################################
+Architecture de :program:`Symfony`
+##################################
 
 ***************************
 L'architecture des fichiers
@@ -30,12 +30,12 @@ Le répertoire */src*
 
 Voici le répertoire dans lequel on mettra notre code source ! Ce code est découpé en *bundles*.
 
-Après l'installation de Symfony, ce répertoire n'est pas vide. Il contient un bundle de démo (Acme) et une ébauche de bundle. Ces deux bundles seront supprimés.
+Après l'installation de :program:`Symfony`, ce répertoire n'est pas vide. Il contient un bundle de démo (Acme) et une ébauche de bundle. Ces deux bundles seront supprimés.
 
 Le répertoire */vendor*
 =======================
 
-Ce répertoire contient toutes les librairies externes de notre application comme Symfony, Doctrine, Twig, SwiftMailer, etc.
+Ce répertoire contient toutes les librairies externes de notre application comme :program:`Symfony`, Doctrine, Twig, SwiftMailer, etc.
 
 .. admonition:: Qu'est ce qu'une librairie ?
     :class: hint
@@ -50,7 +50,7 @@ Ce répertoire contient tous les fichiers destinés aux visiteurs : image, CSS, 
 .. admonition:: Contrôleur frontal
     :class: hint
 
-    Le contrôleur front est le point d'entrée par lequel passe toutes les pages. Dans Symfony, il y en a deux : un pour le développement l'autre pour les autres environnement.
+    Le contrôleur front est le point d'entrée par lequel passe toutes les pages. Dans :program:`Symfony`, il y en a deux : un pour le développement l'autre pour les autres environnement.
 
 Les fichiers */composer.\**
 ===========================
@@ -68,38 +68,20 @@ Architecture conceptuelle
 
 Maintenant que nous avons vu comment s'organisait les fichiers de Symfony, nous allons voir comment s'organise l'exécution du code.
 
-Architecture MVC
-=================
+:program:`Symfony` est basée sur une architecture MVC qui signifie Modèle/Vue/Contrôleur. C'est un découpage très répandu dans les frameworks web. 
 
-MVC signifie Modèle/Vue/Contrôleur. C'est un découpage très répandu dans les frameworks web. L'idée est d'organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.
+L'idée est d'organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.
  
 Elle se compose de trois couches :
   
 * Le **contrôleur** (*controller*)
-    Son rôle est de générer la réponse à la requête HTTP demandée par le visiteur. Il analyse la requête du visiteur, et utilise les autres composants pour composer la réponse et la renvoie au visiteur.
+    Son rôle est de générer la **réponse** à la **requête** HTTP demandée par le visiteur. Il analyse la requête du visiteur, et **utilise les autres composants** pour composer la réponse et la renvoie au visiteur. 
 
 * Le **modèle** (*model*) 
     Il est responsable des données et de tous les traitements faits sur les données. Rien d'autre dans l'application ne doit manipuler les données afin de garantir leur intégrité.
   
 * La **vue** (*vue*)
     Elle est chargée de générer les interfaces utilisateurs, généralement basées sur les données. Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.
-
-Déroulement d'une requête dans Symfony
-======================================
-
-.. image:: _static/images/symfony_request_flow.png
-    :align: center
-
-#. Le visiteur demande une page ;
-#. Le **contrôleur frontal** reçoit la requête, charge le **Kernel** et la lui transmet ;
-#. Le **Kernel** demande au **Router** quel contrôleur exécuter pour la page demandée ;
-#. Le **Kernel** exécute le **contrôleur**.
-#. Le **contrôleur** retourne la réponse.
-
-.. admonition:: Le routeur
-    :class: hint
-
-    C'est un composant Symfony qui a pour mission de faire la correspondance en les URL et les contrôleurs.
 
 ***********
 Les bundles

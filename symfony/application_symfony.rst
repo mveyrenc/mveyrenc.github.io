@@ -2,7 +2,7 @@
 Création d'un bundle
 ####################
 
-Bien que tous les répertoires et les fichiers d'un bundle peuvent être créés manuellement, nous allons utilisé la console Symfony pour générer le bundle et l'activer.
+Bien que tous les répertoires et les fichiers d'un bundle peuvent être créés manuellement, nous allons utilisé la console :program:`Symfony` pour générer le bundle et l'activer.
 
 *************************
 Utilisation de la console
@@ -41,33 +41,33 @@ Création du bundle
 
 #. Le nom du bundle
 
-    Symfony génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu'il soit unique.
+    :program:`Symfony` génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu'il soit unique.
 
 #. L'emplacement du bundle
 
-    Par défaut Symfony le place dans le répertoire ``/src``. On laisse la valeur par défaut.
+    Par défaut :program:`Symfony` le place dans le répertoire ``/src``. On laisse la valeur par défaut.
 
 #. Le format de la configuration
 
-    Symfony propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n'a pas d'impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s'agit juste de choisir le format avec lequel vous êtes le plus alèse.
+    :program:`Symfony` propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n'a pas d'impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s'agit juste de choisir le format avec lequel vous êtes le plus alèse.
 
     Dans notre cas, nous allons choisir le ``yml``.
 
 #. La structure générer
 
-    Ici, Symfony vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s'ils ne sont pas utilisés.
+    Ici, :program:`Symfony` vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s'ils ne sont pas utilisés.
 
     Répondez ``yes``.
 
 #. Confirmer et c'est parti
 
-    Répondez ``yes`` à toutes les autres questions et votre bundle sera généré et installé : http://localhost/Symfony/web/app_dev.php/hello/World
+    Répondez ``yes`` à toutes les autres questions et votre bundle sera généré et installé : http://symfony.loc.epsi.fr/app_dev.php/hello/World
 
 ********************
 Que s'est-il passé ?
 ********************
 
-#. Symfony a généré la structure du bundle
+#. :program:`Symfony` a généré la structure du bundle
 
     Dans le répertoire généré par Symfony on trouve :
     
@@ -84,9 +84,9 @@ Que s'est-il passé ?
     * les tests dans ``Tests``
     * enfin, le seul fichier obligatoire dans un bundle : la classe ``EpsiBlogBundle.php``
 
-#. Symfony enregistre notre bundle dans le Kernel (``app/AppKernel.php``)
+#. :program:`Symfony` enregistre notre bundle dans le Kernel (``app/AppKernel.php``)
 
-#. Symfony ajoute les routes de notre bundle dans le Routeur (``app/config/routing.yml``)
+#. :program:`Symfony` ajoute les routes de notre bundle dans le Routeur (``app/config/routing.yml``)
 
 ##################################
 Objectif de notre bundle : un blog

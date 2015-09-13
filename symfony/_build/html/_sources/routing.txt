@@ -40,7 +40,7 @@ Voici comment fonctionne le routeur pas à pas :
 
 Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404.
 
-Allons sur la page http://localhost/Symfony/web/app_dev.php/post/5 :
+Allons sur la page http://symfony.loc.epsi.fr/app_dev.php/post/5 :
 
 .. image:: _static/images/symfony_exception.png
     :align: center
@@ -70,13 +70,13 @@ Faisons rapidement un contrôleur pour afficher autre chose qu'une erreur :
     :language: php
     :lines: 3-15
 
-Lorsq'on va sur la page http://localhost/Symfony/web/app_dev.php/post/5, elle affiche "Affichage du post avec l'id : 5.".
+Lorsq'on va sur la page http://symfony.loc.epsi.fr/app_dev.php/post/5, elle affiche "Affichage du post avec l'id : 5.".
 
 ***********************************
 Contrôles des paramètres des routes
 ***********************************
 
-Lorsq'on va sur la page http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj, elle affiche "Affichage du post avec l'id : fvndfjvnj.". Donc ajoutons un validation pour vérifier que l'ID soit bien un entier.
+Lorsq'on va sur la page http://symfony.loc.epsi.fr/app_dev.php/post/fvndfjvnj, elle affiche "Affichage du post avec l'id : fvndfjvnj.". Donc ajoutons un validation pour vérifier que l'ID soit bien un entier.
 
 La validation des paramètres se fait grâce à des expressions régulières. Voici les éléments de base pour les construire :
 
@@ -111,7 +111,7 @@ Ajoutons cette règle dans le ``routing.yml`` :
     :language: yaml
     :lines: 13-17
 
-Ensuite lorsqu'on recharge les deux pages précédentes, http://localhost/Symfony/web/app_dev.php/post/5 affiche "Affichage du post avec l'id : 5.". http://localhost/Symfony/web/app_dev.php/post/fvndfjvnj affiche une message d'erreur.
+Ensuite lorsqu'on recharge les deux pages précédentes, http://symfony.loc.epsi.fr/app_dev.php/post/5 affiche "Affichage du post avec l'id : 5.". http://symfony.loc.epsi.fr/app_dev.php/post/fvndfjvnj affiche une message d'erreur.
 
 On peut également utiliser des paramètres suivants :
 
@@ -121,10 +121,10 @@ On peut également utiliser des paramètres suivants :
 
 Avec cette route, les URL suivantes vont valides :
 
-* http://localhost/Symfony/web/app_dev.php/post/5
-* http://localhost/Symfony/web/app_dev.php/post/5.html
-* http://localhost/Symfony/web/app_dev.php/post/5.xml
-* http://localhost/Symfony/web/app_dev.php/post/5.json
+* http://symfony.loc.epsi.fr/app_dev.php/post/5
+* http://symfony.loc.epsi.fr/app_dev.php/post/5.html
+* http://symfony.loc.epsi.fr/app_dev.php/post/5.xml
+* http://symfony.loc.epsi.fr/app_dev.php/post/5.json
 
 
 
@@ -137,7 +137,7 @@ Il existe trois paramètres spéciaux :
 * ``_controller`` : comme nous l'avons vu, ce paramètre est utilisé pour déterminer quel contrôleur est exécuté lorsque l'URL est reconnue ;
 * ``_format`` : il est utilisé pour définir le format de la requête
 
-    Lorsque vous utilisez ce paramètre Symfony va automatique remplir le header ``Content-Type`` avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec ``$this->get('request')->getRequestFormat()``.
+    Lorsque vous utilisez ce paramètre :program:`Symfony` va automatique remplir le header ``Content-Type`` avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec ``$this->get('request')->getRequestFormat()``.
 
 * ``_locale`` : il est utilisé pour définir la locale de la session
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Doctrine et la base de donnée &mdash; Symfony 1.0.1 documentation</title>
+  <title>Doctrine et la base de donnée &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="Les formulaires" href="formulaire.html"/>
         <link rel="prev" title="Les assets" href="assets.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -201,18 +208,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="doctrine-et-la-base-de-donnee">
-<h1>Doctrine et la base de donnée<a class="headerlink" href="#doctrine-et-la-base-de-donnee" title="Permalink to this headline">¶</a></h1>
+<h1>Doctrine et la base de donnée<a class="headerlink" href="#doctrine-et-la-base-de-donnee" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="qu-est-ce-qu-un-orm">
-<h2>Qu&#8217;est ce qu&#8217;un ORM ?<a class="headerlink" href="#qu-est-ce-qu-un-orm" title="Permalink to this headline">¶</a></h2>
+<h2>Qu&#8217;est ce qu&#8217;un ORM ?<a class="headerlink" href="#qu-est-ce-qu-un-orm" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un ORM (Object-Relation Mapper, ou mapping objet-relationnel en français) et un composant qui permet de créer l&#8217;illusion qu&#8217;une base de données relationnelle est une base de données orientée objet en définissant des correspondances entre la base de données et les objets manipulés dans le code.</p>
 </div>
 <div class="section" id="creation-des-entites">
-<h2>Création des entités<a class="headerlink" href="#creation-des-entites" title="Permalink to this headline">¶</a></h2>
-<p>Les entités Doctrine sont de simples classes PHP avec des propriétés et des méthodes. Comme pour les bundles, Symfony propose un générateur créer ces classes.</p>
+<h2>Création des entités<a class="headerlink" href="#creation-des-entites" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les entités Doctrine sont de simples classes PHP avec des propriétés et des méthodes. Comme pour les bundles, <strong class="program">Symfony</strong> propose un générateur créer ces classes.</p>
 <div class="section" id="l-entite-user">
-<h3>L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#l-entite-user" title="Permalink to this headline">¶</a></h3>
+<h3>L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#l-entite-user" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="structure-de-l-entite">
-<h4>Structure de l&#8217;entité<a class="headerlink" href="#structure-de-l-entite" title="Permalink to this headline">¶</a></h4>
+<h4>Structure de l&#8217;entité<a class="headerlink" href="#structure-de-l-entite" title="Lien permanent vers ce titre">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -242,7 +249,7 @@
 </table>
 </div>
 <div class="section" id="utilisation-du-generateur">
-<h4>Utilisation du générateur<a class="headerlink" href="#utilisation-du-generateur" title="Permalink to this headline">¶</a></h4>
+<h4>Utilisation du générateur<a class="headerlink" href="#utilisation-du-generateur" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-python"><div class="highlight"><pre>$ php app/console doctrine:generate:entity
 
 ...
@@ -275,7 +282,7 @@ Do you confirm generation [yes]? yes
 <p>Le générateur crée deux fichiers dans le répertoire <code class="docutils literal"><span class="pre">Entity</span></code> de notre bundle : <code class="docutils literal"><span class="pre">User.php</span></code> et <code class="docutils literal"><span class="pre">UserRepository.php</span></code>. La classe <code class="docutils literal"><span class="pre">User</span></code> est la classe représentant l&#8217;entité en elle même, est propriétés et ses méthodes. La classe <code class="docutils literal"><span class="pre">UserRepository</span></code> est une classe de dépôt où l&#8217;on va mettre les méthodes qui vont permettent de récupérer les entités depuis la base de données.</p>
 </div>
 <div class="section" id="la-classe-user">
-<h4>La classe <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#la-classe-user" title="Permalink to this headline">¶</a></h4>
+<h4>La classe <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#la-classe-user" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
@@ -470,7 +477,7 @@ Do you confirm generation [yes]? yes
 <p>Pour plus d&#8217;information sur les annotations Doctrine, voici la doc : <a class="reference external" href="http://doctrine-orm.readthedocs.org/en/latest/reference/annotations-reference.html">http://doctrine-orm.readthedocs.org/en/latest/reference/annotations-reference.html</a></p>
 </div>
 <div class="section" id="la-classe-userrepository">
-<h4>La classe <code class="docutils literal"><span class="pre">UserRepository</span></code><a class="headerlink" href="#la-classe-userrepository" title="Permalink to this headline">¶</a></h4>
+<h4>La classe <code class="docutils literal"><span class="pre">UserRepository</span></code><a class="headerlink" href="#la-classe-userrepository" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
@@ -492,10 +499,10 @@ Do you confirm generation [yes]? yes
 </div>
 </div>
 <div class="section" id="creation-des-autres-entites">
-<h3>Création des autres entités<a class="headerlink" href="#creation-des-autres-entites" title="Permalink to this headline">¶</a></h3>
+<h3>Création des autres entités<a class="headerlink" href="#creation-des-autres-entites" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Créez maintenant les autres entités du blog :</p>
 <div class="section" id="l-entite-post">
-<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code><a class="headerlink" href="#l-entite-post" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code><a class="headerlink" href="#l-entite-post" title="Lien permanent vers ce titre">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -525,7 +532,7 @@ Do you confirm generation [yes]? yes
 </table>
 </div>
 <div class="section" id="l-entite-tag">
-<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code><a class="headerlink" href="#l-entite-tag" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code><a class="headerlink" href="#l-entite-tag" title="Lien permanent vers ce titre">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -547,7 +554,7 @@ Do you confirm generation [yes]? yes
 </table>
 </div>
 <div class="section" id="l-entite-comment">
-<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code><a class="headerlink" href="#l-entite-comment" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code><a class="headerlink" href="#l-entite-comment" title="Lien permanent vers ce titre">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -573,7 +580,7 @@ Do you confirm generation [yes]? yes
 </table>
 </div>
 <div class="section" id="l-entite-image">
-<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Image</span></code><a class="headerlink" href="#l-entite-image" title="Permalink to this headline">¶</a></h4>
+<h4>L&#8217;entité <code class="docutils literal"><span class="pre">Image</span></code><a class="headerlink" href="#l-entite-image" title="Lien permanent vers ce titre">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -601,7 +608,7 @@ Do you confirm generation [yes]? yes
 </div>
 </div>
 <div class="section" id="definition-de-valeur-par-defaut">
-<h2>Définition de valeur par défaut<a class="headerlink" href="#definition-de-valeur-par-defaut" title="Permalink to this headline">¶</a></h2>
+<h2>Définition de valeur par défaut<a class="headerlink" href="#definition-de-valeur-par-defaut" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les entités <code class="docutils literal"><span class="pre">Post</span></code> et <code class="docutils literal"><span class="pre">Comment</span></code> ont une date qui correspond à leur date de création. Pour éviter d&#8217;avoir à le saisir à chaque fois, on peut placer l&#8217;initialisation de ce champ dans le constructeur :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="o">...</span>
@@ -617,7 +624,7 @@ Do you confirm generation [yes]? yes
 </div>
 </div>
 <div class="section" id="definition-des-relations">
-<h2>Définition des relations<a class="headerlink" href="#definition-des-relations" title="Permalink to this headline">¶</a></h2>
+<h2>Définition des relations<a class="headerlink" href="#definition-des-relations" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le générateur d&#8217;entités ne crée pas propriétés et méthodes nécessaires à la manipulation des relations entre les entités. Il faut les ajouter manuellement après la génération de l&#8217;entité.</p>
 <p>Doctrine gère plusieurs types de relations dans les entités : <code class="docutils literal"><span class="pre">OneToOne</span></code>, <code class="docutils literal"><span class="pre">OneToMany</span></code>, <code class="docutils literal"><span class="pre">ManyToOne</span></code> et <code class="docutils literal"><span class="pre">ManyToMany</span></code>.</p>
 <p>Les relations sont traitées comme les autres champs gérés par Doctrine. Il faut ajouter un attribut à la classe et le précéder d&#8217;annotations décrivant la relation. Ensuite, vous pouvez utiliser la commande suivante pour générer le getter et setter nécessaire pour le nouvel attribut :</p>
@@ -625,13 +632,13 @@ Do you confirm generation [yes]? yes
 </pre></div>
 </div>
 <div class="section" id="notions-techniques-a-savoir">
-<h3>Notions techniques à savoir<a class="headerlink" href="#notions-techniques-a-savoir" title="Permalink to this headline">¶</a></h3>
+<h3>Notions techniques à savoir<a class="headerlink" href="#notions-techniques-a-savoir" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="notion-du-proprietaire-et-de-l-inverse">
-<h4>Notion du propriétaire et de l&#8217;inverse<a class="headerlink" href="#notion-du-proprietaire-et-de-l-inverse" title="Permalink to this headline">¶</a></h4>
+<h4>Notion du propriétaire et de l&#8217;inverse<a class="headerlink" href="#notion-du-proprietaire-et-de-l-inverse" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Dans une relation, il y a toujours un entité <strong>propriétaire</strong>, et une dite <strong>inverse</strong>. L&#8217;entité propriétaire est celle qui contient la référence à l&#8217;autre entité. Par contre, attention, la logique propriétaire-inverse n&#8217;est pas lié à la logique métier, mais elle est purement technique. Le propriétaire de la relation est celui qui porte la clé étrangère.</p>
 </div>
 <div class="section" id="notion-d-unidirectionnalite-et-de-bidirectionnalite">
-<h4>Notion d&#8217;unidirectionnalité et de bidirectionnalité<a class="headerlink" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite" title="Permalink to this headline">¶</a></h4>
+<h4>Notion d&#8217;unidirectionnalité et de bidirectionnalité<a class="headerlink" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Une relation peut être unidirectionnalité, à sens unique, ou bidirectionnalité, à double sens.</p>
 <p>Une relation bidirectionnelle a toujours une entité propriétaire et une entité inverse. Une relation unidirectionnelle n&#8217;a qu&#8217;une entité propriété.</p>
 <p>Dans le cas d&#8217;une relation unidirectionnelle, on peut récupérer les entités inverses à partir de l&#8217;entité propriétaire (<code class="docutils literal"><span class="pre">$entiteProprietaire-&gt;getEntiteInverse()</span></code>) mais on ne peut pas récupéré l&#8217;entité propriétaire à partir des entités inverses (<code class="docutils literal"><span class="pre">$entiteInverse-&gt;getEntiteProprietaire()</span></code>).
@@ -640,11 +647,11 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 </div>
 <div class="section" id="relation-one-to-one">
-<h3>Relation One-To-One<a class="headerlink" href="#relation-one-to-one" title="Permalink to this headline">¶</a></h3>
+<h3>Relation One-To-One<a class="headerlink" href="#relation-one-to-one" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Comme l&#8217;indique son nom, c&#8217;est une relation unique entre deux objets.</p>
 <p>L&#8217;annotation <code class="docutils literal"><span class="pre">&#64;ORM\OneToOne</span></code> définit la relation vers l&#8217;autre entité. Elle possède au moins l&#8217;option <code class="docutils literal"><span class="pre">targetEntity</span></code> qui vaut le namespace complet vers l&#8217;entité liée. L&#8217;option <code class="docutils literal"><span class="pre">cascade</span></code> permet de &#8220;cascader&#8221; les actions effectuées sur l&#8217;entité sur ses entités liées par la relation (<code class="docutils literal"><span class="pre">persist</span></code>, <code class="docutils literal"><span class="pre">remove</span></code>, <code class="docutils literal"><span class="pre">merge</span></code>, <code class="docutils literal"><span class="pre">detach</span></code>, <code class="docutils literal"><span class="pre">refresh</span></code>).</p>
 <div class="section" id="dans-l-entite-proprietaire">
-<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#dans-l-entite-proprietaire" title="Permalink to this headline">¶</a></h4>
+<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#dans-l-entite-proprietaire" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -698,7 +705,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 </div>
 <div class="section" id="dans-l-entite-inverse">
-<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#dans-l-entite-inverse" title="Permalink to this headline">¶</a></h4>
+<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#dans-l-entite-inverse" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Image</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -748,11 +755,11 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 </div>
 <div class="section" id="relation-many-to-one-et-one-to-many">
-<h3>Relation Many-To-One et One-To-Many<a class="headerlink" href="#relation-many-to-one-et-one-to-many" title="Permalink to this headline">¶</a></h3>
+<h3>Relation Many-To-One et One-To-Many<a class="headerlink" href="#relation-many-to-one-et-one-to-many" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette relation permet à une entité d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, un <code class="docutils literal"><span class="pre">User</span></code> qui est lié à plusieurs <code class="docutils literal"><span class="pre">Post</span></code>.</p>
 <p>Dans le cas des relations OneToMany et ManyToOne, le paramètre <code class="docutils literal"><span class="pre">inversedBy</span></code> est toujours du côté de la relation propriétaire et l&#8217;attribut <code class="docutils literal"><span class="pre">mappedBy</span></code> est toujours du côté de l&#8217;inverse.</p>
 <div class="section" id="id1">
-<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -806,7 +813,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -877,10 +884,10 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 </div>
 <div class="section" id="relation-many-to-many">
-<h3>Relation Many-To-Many<a class="headerlink" href="#relation-many-to-many" title="Permalink to this headline">¶</a></h3>
+<h3>Relation Many-To-Many<a class="headerlink" href="#relation-many-to-many" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette relation permet à plusieurs entités d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, des <code class="docutils literal"><span class="pre">Post</span></code> qui sont liés à plusieurs <code class="docutils literal"><span class="pre">Tag</span></code>.</p>
 <div class="section" id="id3">
-<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -958,7 +965,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 </div>
 <div class="section" id="id4">
-<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Tag</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
@@ -1035,7 +1042,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 </div>
 <div class="section" id="creation-de-la-base-de-donnees-et-des-tables">
-<h2>Création de la base de données et des tables<a class="headerlink" href="#creation-de-la-base-de-donnees-et-des-tables" title="Permalink to this headline">¶</a></h2>
+<h2>Création de la base de données et des tables<a class="headerlink" href="#creation-de-la-base-de-donnees-et-des-tables" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les paramètres de connexion à la base de données se trouvent habituellement dans le fichier <code class="docutils literal"><span class="pre">app/config/parameters.yml</span></code> :</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">parameters</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">database_driver</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">pdo_mysql</span>
@@ -1081,7 +1088,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <p>Cette commande compare à quoi votre base <em>devrait</em> ressembler en se basant sur le mapping de vos entités, à ce quoi quoi en ressemble <em>vraiment</em>, et génère les requêtes SQL nécessaires pour mettre à jour la base de données.</p>
 </div>
 <div class="section" id="manipulation-des-donnees">
-<h2>Manipulation des données<a class="headerlink" href="#manipulation-des-donnees" title="Permalink to this headline">¶</a></h2>
+<h2>Manipulation des données<a class="headerlink" href="#manipulation-des-donnees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les données sont manipulées par le service EntityManager qui est appelé depuis le contrôleur de la façon suivante :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
 </pre></div>
@@ -1091,7 +1098,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <div class="section" id="enregistrer-les-entites-dans-la-base-de-donnee">
-<h3>Enregistrer les entités dans la base de donnée<a class="headerlink" href="#enregistrer-les-entites-dans-la-base-de-donnee" title="Permalink to this headline">¶</a></h3>
+<h3>Enregistrer les entités dans la base de donnée<a class="headerlink" href="#enregistrer-les-entites-dans-la-base-de-donnee" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$tag</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tag</span><span class="p">();</span>
 <span class="nv">$tag</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span> <span class="s1">&#39;symfony&#39;</span> <span class="p">);</span>
 
@@ -1112,7 +1119,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </ul>
 </div>
 <div class="section" id="recuperer-ses-entites-avec-un-entityrepository">
-<h3>Récupérer ses entités avec un EntityRepository<a class="headerlink" href="#recuperer-ses-entites-avec-un-entityrepository" title="Permalink to this headline">¶</a></h3>
+<h3>Récupérer ses entités avec un EntityRepository<a class="headerlink" href="#recuperer-ses-entites-avec-un-entityrepository" title="Lien permanent vers ce titre">¶</a></h3>
 <p>À partir d&#8217;un repository, nous pouvons utiliser du DQL pour composer une requête. Le DQL (Doctrine Qauery Language) est le pseudo-SQL de Doctrine, il est compatible avec les bases de données supportées par Doctrine. Sa syntaxe est très proche du SQL, amis il propose moins d&#8217;opérateurs et de fonctions pas soucis de portabilité entre ces systèmes.</p>
 <p>Les repositories nous proposent également d&#8217;utiliser un QueryBuilder. C&#8217;est un outil qui permet de construire des requêtes en utilisant des instructions chaînées et reflétant d&#8217;assez près la construction d&#8217;une requête SQL.</p>
 <p>Tout d&#8217;abord, il faut récupérer le repository de l&#8217;entité :</p>

@@ -2,7 +2,7 @@
 Les vues avec Twig
 ##################
 
-Symfony utilise le moteur de templating Twig pour aider au rendu des pages. Il présente plusieurs avantages :
+:program:`Symfony` utilise le moteur de templating Twig pour aider au rendu des pages. Il présente plusieurs avantages :
 
 * il compile les templates en code PHP optimisé
 * il possède toutes les structures de contrôle classiques

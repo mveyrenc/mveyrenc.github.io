@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les vues avec Twig &mdash; Symfony 1.0.1 documentation</title>
+  <title>Les vues avec Twig &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="Les assets" href="assets.html"/>
         <link rel="prev" title="Les services" href="services.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -170,8 +177,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="les-vues-avec-twig">
-<h1>Les vues avec Twig<a class="headerlink" href="#les-vues-avec-twig" title="Permalink to this headline">¶</a></h1>
-<p>Symfony utilise le moteur de templating Twig pour aider au rendu des pages. Il présente plusieurs avantages :</p>
+<h1>Les vues avec Twig<a class="headerlink" href="#les-vues-avec-twig" title="Lien permanent vers ce titre">¶</a></h1>
+<p><strong class="program">Symfony</strong> utilise le moteur de templating Twig pour aider au rendu des pages. Il présente plusieurs avantages :</p>
 <ul class="simple">
 <li>il compile les templates en code PHP optimisé</li>
 <li>il possède toutes les structures de contrôle classiques</li>
@@ -199,7 +206,7 @@
 </pre></div>
 </div>
 <div class="section" id="le-base">
-<h2>Le base<a class="headerlink" href="#le-base" title="Permalink to this headline">¶</a></h2>
+<h2>Le base<a class="headerlink" href="#le-base" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retournons à l&#8217;origine de l&#8217;appel du template, c&#8217;est à dire dans le contrôleur et ajoutons quelques paramètres au template :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Blog:show.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
             <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span>
@@ -242,7 +249,7 @@
 </ul>
 </div>
 <div class="section" id="acces-aux-variables">
-<h2>Accès aux variables<a class="headerlink" href="#acces-aux-variables" title="Permalink to this headline">¶</a></h2>
+<h2>Accès aux variables<a class="headerlink" href="#acces-aux-variables" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# name = &#39;Jack&#39; #}</span>
 <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span>
 
@@ -269,7 +276,7 @@
 </div>
 </div>
 <div class="section" id="affectation-de-variables">
-<h2>Affectation de variables<a class="headerlink" href="#affectation-de-variables" title="Permalink to this headline">¶</a></h2>
+<h2>Affectation de variables<a class="headerlink" href="#affectation-de-variables" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">set</span> <span class="nv">foo</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">set</span> <span class="nv">foo</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">2</span><span class="o">]</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">set</span> <span class="nv">foo</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="cp">%}</span>
@@ -277,7 +284,7 @@
 </div>
 </div>
 <div class="section" id="les-filtres">
-<h2>Les filtres<a class="headerlink" href="#les-filtres" title="Permalink to this headline">¶</a></h2>
+<h2>Les filtres<a class="headerlink" href="#les-filtres" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les variables peuvent être modifiées par des filtres. Les filtres sont séparés par des pipes (<code class="docutils literal"><span class="pre">|</span></code>) et peuvent avoir des paramètres supplémentaire entre parenthèses.</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">name</span><span class="o">|</span><span class="nf">striptags</span><span class="o">|</span><span class="nf">title</span> <span class="cp">}}</span>
 <span class="cp">{{</span> <span class="nv">list</span><span class="o">|</span><span class="nf">join</span><span class="o">(</span><span class="s1">&#39;, &#39;</span><span class="o">)</span> <span class="cp">}}</span>
@@ -291,7 +298,7 @@
 </div>
 </div>
 <div class="section" id="les-fonctions">
-<h2>Les fonctions<a class="headerlink" href="#les-fonctions" title="Permalink to this headline">¶</a></h2>
+<h2>Les fonctions<a class="headerlink" href="#les-fonctions" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les fonctions sont appelées pour générer du contenu. Elles sont appelées par leur nom suivi de paramètres entre parenthèses :</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">i</span> <span class="k">in</span> <span class="nv">range</span><span class="o">(</span><span class="m">0</span><span class="o">,</span> <span class="m">3</span><span class="o">)</span> <span class="cp">%}</span>
     <span class="cp">{{</span> <span class="nv">i</span> <span class="cp">}}</span>,
@@ -300,10 +307,10 @@
 </div>
 </div>
 <div class="section" id="les-structures-de-controle">
-<h2>Les structures de contrôle<a class="headerlink" href="#les-structures-de-controle" title="Permalink to this headline">¶</a></h2>
+<h2>Les structures de contrôle<a class="headerlink" href="#les-structures-de-controle" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les structures de contrôle sont des tags dans Twig.</p>
 <div class="section" id="conditions">
-<h3>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h3>
+<h3>Conditions<a class="headerlink" href="#conditions" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">user.isSuperAdmin</span><span class="o">()</span> <span class="cp">%}</span>
     ...
 <span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">user.isMember</span><span class="o">()</span> <span class="cp">%}</span>
@@ -315,7 +322,7 @@
 </div>
 </div>
 <div class="section" id="boucle">
-<h3>Boucle<a class="headerlink" href="#boucle" title="Permalink to this headline">¶</a></h3>
+<h3>Boucle<a class="headerlink" href="#boucle" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">user</span> <span class="k">in</span> <span class="nv">users</span> <span class="k">if</span> <span class="nv">user.isActive</span><span class="o">()</span> <span class="cp">%}</span>
     ...
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
@@ -334,7 +341,7 @@
 </div>
 </div>
 <div class="section" id="les-types-de-variables">
-<h2>Les types de variables<a class="headerlink" href="#les-types-de-variables" title="Permalink to this headline">¶</a></h2>
+<h2>Les types de variables<a class="headerlink" href="#les-types-de-variables" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les types de valeurs sont similaires aux types natifs de PHP excepté qu&#8217;il fait la différence entre les tableaux et les hashs (tableaux associatifs) :</p>
 <ul class="simple">
 <li>les chaînes de caractères <code class="docutils literal"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;</span></code></li>
@@ -347,7 +354,7 @@
 </ul>
 </div>
 <div class="section" id="les-operateurs">
-<h2>Les opérateurs<a class="headerlink" href="#les-operateurs" title="Permalink to this headline">¶</a></h2>
+<h2>Les opérateurs<a class="headerlink" href="#les-operateurs" title="Lien permanent vers ce titre">¶</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Mathématiques</dt>
@@ -493,7 +500,7 @@
 </ul>
 </div>
 <div class="section" id="les-variables-globales">
-<h2>Les variables globales<a class="headerlink" href="#les-variables-globales" title="Permalink to this headline">¶</a></h2>
+<h2>Les variables globales<a class="headerlink" href="#les-variables-globales" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Quelques variables sont disponibles dans les templates afin nous faciliter la vie :</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">app.request</span></code> : la requête qui a été passé au contrôleur</li>
@@ -514,7 +521,7 @@
 <p>Ensuite dans les templates, il ne reste plus qu&#8217;à appeller la variable : <code class="docutils literal"><span class="pre">{{</span> <span class="pre">auteur</span> <span class="pre">}}</span></code></p>
 </div>
 <div class="section" id="les-macros">
-<h2>Les macros<a class="headerlink" href="#les-macros" title="Permalink to this headline">¶</a></h2>
+<h2>Les macros<a class="headerlink" href="#les-macros" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les macros sont similaires à des fonctions excepté qu&#8217;elles sont écrites directement en Twig :</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# dans le template où l&#39;on veut utiliser la macro #}</span>
 <span class="cp">{%</span> <span class="k">import</span> <span class="nv">macro.html.twig</span> <span class="k">as</span> <span class="nv">forms</span> <span class="cp">%}</span>
@@ -529,7 +536,7 @@
 </div>
 </div>
 <div class="section" id="heritage-de-templates">
-<h2>Héritage de templates<a class="headerlink" href="#heritage-de-templates" title="Permalink to this headline">¶</a></h2>
+<h2>Héritage de templates<a class="headerlink" href="#heritage-de-templates" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L&#8217;héritage permet de créer un squelette définissant la structure générale des pages dans lequel on définit des blocs qui seront surchargés par les templates enfants.</p>
 <p>Une des bonne pratique pour organiser ses templates est de mettre trois niveaux d&#8217;héritage :</p>
 <ul class="simple">
@@ -602,7 +609,7 @@
 </div>
 </div>
 <div class="section" id="inclusion-de-templates">
-<h2>Inclusion de templates<a class="headerlink" href="#inclusion-de-templates" title="Permalink to this headline">¶</a></h2>
+<h2>Inclusion de templates<a class="headerlink" href="#inclusion-de-templates" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;header.html&#39;</span> <span class="k">with</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;body.html&#39;</span> <span class="nv">only</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;footer.html&#39;</span> <span class="k">with</span> <span class="o">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="o">}</span> <span class="nv">only</span> <span class="cp">%}</span>
@@ -611,7 +618,7 @@
 <p>Lors de l&#8217;inclusion de template, le template inclus a accès à toutes les variables du contexte courant sauf si on utilise le mot clé <code class="docutils literal"><span class="pre">only</span></code>. Le mot clé <code class="docutils literal"><span class="pre">with</span></code> permet quand à lui de passer des variables au template.</p>
 </div>
 <div class="section" id="inclusion-de-controleurs">
-<h2>Inclusion de contrôleurs<a class="headerlink" href="#inclusion-de-controleurs" title="Permalink to this headline">¶</a></h2>
+<h2>Inclusion de contrôleurs<a class="headerlink" href="#inclusion-de-controleurs" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour inclure un contôleur, c&#8217;est très simple il suffit d&#8217;utiliser la fonction <code class="docutils literal"><span class="pre">render</span></code> :</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">render</span><span class="o">(</span><span class="nv">controller</span><span class="o">(</span><span class="s2">&quot;EpsiBlogBundle:Blog:menu&quot;</span><span class="o">))</span> <span class="cp">}}</span>
 </pre></div>

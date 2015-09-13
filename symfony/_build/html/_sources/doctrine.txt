@@ -12,7 +12,7 @@ Un ORM (Object-Relation Mapper, ou mapping objet-relationnel en français) et un
 Création des entités
 ********************
 
-Les entités Doctrine sont de simples classes PHP avec des propriétés et des méthodes. Comme pour les bundles, Symfony propose un générateur créer ces classes.
+Les entités Doctrine sont de simples classes PHP avec des propriétés et des méthodes. Comme pour les bundles, :program:`Symfony` propose un générateur créer ces classes.
 
 L'entité ``User``
 =================

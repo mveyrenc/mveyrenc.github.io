@@ -229,7 +229,7 @@ Travail à effectuer
 
 A rendre
 
-    * une archive avec vos développements Symfony + un dump de votre base de données
+    * une archive avec vos développements :program:`Symfony` + un dump de votre base de données
 
         .. code-block:: bash
 

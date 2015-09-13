@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Aide mémoire &mdash; Symfony 1.0.1 documentation</title>
+  <title>Aide mémoire &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -28,12 +28,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
 
   
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
         <link rel="next" title="TP" href="tp.html"/>
         <link rel="prev" title="Les formulaires" href="formulaire.html"/> 
 
@@ -82,10 +88,11 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
@@ -161,29 +168,29 @@
            <div itemprop="articleBody">
             
   <div class="section" id="aide-memoire">
-<h1>Aide mémoire<a class="headerlink" href="#aide-memoire" title="Permalink to this headline">¶</a></h1>
+<h1>Aide mémoire<a class="headerlink" href="#aide-memoire" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="creation-d-un-bundle">
-<h2>Création d&#8217;un bundle<a class="headerlink" href="#creation-d-un-bundle" title="Permalink to this headline">¶</a></h2>
+<h2>Création d&#8217;un bundle<a class="headerlink" href="#creation-d-un-bundle" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre>php app/console generate:bundle
 <span class="c"># puis répondre aux questions</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creation-d-une-entite">
-<h2>Création d&#8217;une entité<a class="headerlink" href="#creation-d-une-entite" title="Permalink to this headline">¶</a></h2>
+<h2>Création d&#8217;une entité<a class="headerlink" href="#creation-d-une-entite" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre>php app/console doctrine:generate:entity
 <span class="c"># puis répondre aux questions</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="deployer-les-fichiers-statiques-des-bundles-dans-web">
-<h2>Déployer les fichiers statiques des bundles dans web/<a class="headerlink" href="#deployer-les-fichiers-statiques-des-bundles-dans-web" title="Permalink to this headline">¶</a></h2>
+<h2>Déployer les fichiers statiques des bundles dans web/<a class="headerlink" href="#deployer-les-fichiers-statiques-des-bundles-dans-web" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre>php app/console assets:install web --symlink
 </pre></div>
 </div>
 </div>
 <div class="section" id="manipuler-la-base-de-donnees">
-<h2>Manipuler la base de données<a class="headerlink" href="#manipuler-la-base-de-donnees" title="Permalink to this headline">¶</a></h2>
+<h2>Manipuler la base de données<a class="headerlink" href="#manipuler-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># créer la base de données</span>
 php app/console doctrine:database:create
 
@@ -205,7 +212,7 @@ php app/console doctrine:schema:validate
 </div>
 </div>
 <div class="section" id="generation-de-code">
-<h2>Génération de code<a class="headerlink" href="#generation-de-code" title="Permalink to this headline">¶</a></h2>
+<h2>Génération de code<a class="headerlink" href="#generation-de-code" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># générer la classe de formulaire associée à une entité</span>
 php app/console doctrine:generate:form EpsiBlogBundle:User
 
@@ -219,13 +226,13 @@ php app/console doctrine:generate:entities EpsiBlogBundle<span class="o">[</span
 </div>
 </div>
 <div class="section" id="transformer-la-configuration-des-entites">
-<h2>Transformer la configuration des entités<a class="headerlink" href="#transformer-la-configuration-des-entites" title="Permalink to this headline">¶</a></h2>
+<h2>Transformer la configuration des entités<a class="headerlink" href="#transformer-la-configuration-des-entites" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:mapping:convert annotation ./src/Epsi/Bundle/BlogBundle/Entity
 </pre></div>
 </div>
 </div>
 <div class="section" id="debug">
-<h2>Debug<a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h2>
+<h2>Debug<a class="headerlink" href="#debug" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># voir toutes les routes</span>
 php app/console router:debug
 
@@ -238,7 +245,7 @@ php app/console container:debug
 </div>
 </div>
 <div class="section" id="depuis-un-controleur">
-<h2>Depuis un contrôleur<a class="headerlink" href="#depuis-un-controleur" title="Permalink to this headline">¶</a></h2>
+<h2>Depuis un contrôleur<a class="headerlink" href="#depuis-un-controleur" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-php"><div class="highlight"><pre><span class="c1">// récupérer l&#39;objet request</span>
 <span class="nv">$request</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequest</span><span class="p">();</span>
 
