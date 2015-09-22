@@ -2,14 +2,44 @@
 Architecture de :program:`Symfony`
 ##################################
 
+*************************
+Architecture conceptuelle
+*************************
+
+Modèle/Vue/Contrôleur
+=====================
+
+:program:`Symfony` est basée sur une architecture **MVC** qui signifie **Modèle/Vue/Contrôleur**. C'est un découpage très répandu dans les frameworks web. 
+
+L'idée est d'organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.
+ 
+Elle se compose de trois couches :
+  
+* Le **contrôleur** (*controller*)
+    Son rôle est de générer la **réponse** à la **requête** HTTP demandée par le visiteur. Il analyse la requête du visiteur, et **utilise les autres composants** pour composer la réponse et la renvoie au visiteur.
+
+* Le **modèle** (*model*) 
+    Il est responsable des données et de tous les traitements faits sur les données. Rien d'autre dans l'application ne doit manipuler les données afin de garantir leur intégrité.
+  
+* La **vue** (*vue*)
+    Elle est chargée de générer les interfaces utilisateurs, généralement basées sur les données. Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.
+
+Service-oriented
+================
+
+Comme dit précédemment, un contrôleur ne fait qu'utiliser d'autres composants pour construire la réponse. La plupart de ces composants sont des services.
+
+L'objectif de l'architecture orientée services (service oriented architecture, SOA, en anglais) est de déposer une fonctionnalité en un ensemble de fonctions basiques, appelées **services**.
+
+Concrètement, les services sont des objets PHP qui gèrent une tâche précise comme envoyer un mail, gérer les sessions de l'utilisateur ou persister des données. Tous les services sont regroupé dans le **service container** qui se charge de les instancier.
+
 ***************************
 L'architecture des fichiers
 ***************************
 
 Dans les sources que nous venons de d'installer, il n'y a pas beaucoup de fichiers :
 
-.. literalinclude:: code-block/architecture/arbo-symfony.txt
-    :language: bash
+.. command-output:: ls -A1 /var/www/symfony
 
 Voyons à quoi ils correspondent.
 
@@ -62,32 +92,11 @@ Les fichiers */\*.md*
 
 Le reste des fichiers contient de la documentation.
 
-*************************
-Architecture conceptuelle
-*************************
-
-Maintenant que nous avons vu comment s'organisait les fichiers de Symfony, nous allons voir comment s'organise l'exécution du code.
-
-:program:`Symfony` est basée sur une architecture MVC qui signifie Modèle/Vue/Contrôleur. C'est un découpage très répandu dans les frameworks web. 
-
-L'idée est d'organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.
- 
-Elle se compose de trois couches :
-  
-* Le **contrôleur** (*controller*)
-    Son rôle est de générer la **réponse** à la **requête** HTTP demandée par le visiteur. Il analyse la requête du visiteur, et **utilise les autres composants** pour composer la réponse et la renvoie au visiteur. 
-
-* Le **modèle** (*model*) 
-    Il est responsable des données et de tous les traitements faits sur les données. Rien d'autre dans l'application ne doit manipuler les données afin de garantir leur intégrité.
-  
-* La **vue** (*vue*)
-    Elle est chargée de générer les interfaces utilisateurs, généralement basées sur les données. Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.
-
 ***********
 Les bundles
 ***********
 
-Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s'agit :
+Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévu. Quand on dit tout le code source, il s'agit :
 
 * des contrôleurs
 * des modèles
@@ -99,9 +108,30 @@ Comme dit précédemment, un bundle contient tout le code source nécessaire pou
 * des outils de débug
 * etc.
 
-Tout ces éléments sont organisés dans des répertoires comme on peut le voir dans le bundle de démo qui se trouve dans ``Acme/DemoBundle`` :
+Tout ces éléments sont organisés dans des répertoires. Par convention les voici :
 
-.. literalinclude:: code-block/architecture/arbo-bundle.txt
-    :language: bash
+.. list-table::
+    :header-rows: 1
 
-.. http://jolicode.github.io/best-bundle-conf
+    *   - Type
+        - Répertoire
+    *   - Commandes	
+        - Command/
+    *   - Contrôleurs	
+        - Controller/
+    *   - Extensions du Conteneur de Services	
+        - DependencyInjection/
+    *   - Listeners d'Évènements	
+        - EventListener/
+    *   - Configuration	
+        - Resources/config/
+    *   - Ressources Web	
+        - Resources/public/
+    *   - Fichiers de traduction	
+        - Resources/translations/
+    *   - Templates	
+        - Resources/views/
+    *   - Tests Unitaires et Fonctionnels
+        - Tests/
+    *   - Exceptions
+        - Exception

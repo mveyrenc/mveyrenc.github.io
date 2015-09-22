@@ -66,13 +66,13 @@
 
         
           <div class="subtitle">
-            False
+            Cours
           </div>
         
 
         
           <div class="reference">
-            False
+            EPSI/B2
 
             
             - v1.0.1
@@ -93,14 +93,15 @@
 <li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="sujet_tp.html">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Les contrôleurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#request-et-response"><code class="docutils literal"><span class="pre">Request</span></code> et <code class="docutils literal"><span class="pre">Response</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-objet-request">L&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#les-parametres-contenus-dans-les-routes">Les paramètres contenus dans les routes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#les-parametres-hors-routes">Les paramètres hors routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametres-de-la-route">Paramètres de la route</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#autres-parametres">Autres paramètres</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#les-autres-methodes-de-l-objet-request">Les autres méthodes de l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code></a></li>
 </ul>
 </li>
@@ -171,29 +172,31 @@
 <h1>Les contrôleurs<a class="headerlink" href="#les-controleurs" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="request-et-response">
 <h2><code class="docutils literal"><span class="pre">Request</span></code> et <code class="docutils literal"><span class="pre">Response</span></code><a class="headerlink" href="#request-et-response" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Comme vue précédemment, le contrôleur est le chef d&#8217;orchestre de votre application, il va utiliser les autres composants (services, modèles, vue) afin de construire la page demandé par l&#8217;internaute.</p>
-<p>Peut importe ce que vous souhaitez faire, un contrôleur reçoit toujours un objet <code class="docutils literal"><span class="pre">Request</span></code> et doit toujours retourner un objet <code class="docutils literal"><span class="pre">Response</span></code>.
+<p>Comme vue précédemment, le contrôleur est le chef d&#8217;orchestre de votre application, il va utiliser les autres composants (services, modèles, vues) afin de construire la page demandée par l&#8217;internaute.</p>
+<p>Peu importe ce que vous souhaitez faire, un contrôleur reçoit toujours un objet <code class="docutils literal"><span class="pre">Request</span></code> et doit toujours retourner un objet <code class="docutils literal"><span class="pre">Response</span></code>.
 La demande de l&#8217;internaute se trouve dans un objet <code class="docutils literal"><span class="pre">Request</span></code> dans lequel le contrôleur toute les informations contenues dans la requête HTTP. La <code class="docutils literal"><span class="pre">Response</span></code> quant à elle correspond à la réponse HTTP.</p>
 </div>
 <div class="section" id="l-objet-request">
 <h2>L&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code><a class="headerlink" href="#l-objet-request" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La requête peut contenir des paramètres : l&#8217;Id d&#8217;un objet à afficher, un nom à chercher dans la base de données, etc. Ces paramètres peuvent être passés au contrôleurs via la route, des paramètres POST ou GET, etc.</p>
-<div class="section" id="les-parametres-contenus-dans-les-routes">
-<h3>Les paramètres contenus dans les routes<a class="headerlink" href="#les-parametres-contenus-dans-les-routes" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Les paramètres passée par la route deviendront des arguments de la méthode appelée dans le contrôleur. Prenons cette route par exemple :</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog_show</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">/post/{id}.{_format}</span>
-    <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span>  <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">EpsiBlogBundle</span><span class="p-Indicator">:</span><span class="nv">Blog</span><span class="p-Indicator">:</span><span class="nv">show</span><span class="p-Indicator">,</span> <span class="nv">_format</span><span class="p-Indicator">:</span> <span class="nv">html</span> <span class="p-Indicator">}</span>
-    <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">id</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">\d+</span>
-        <span class="l-Scalar-Plain">_format</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">html|xml|json</span>
+<div class="section" id="parametres-de-la-route">
+<h3>Paramètres de la route<a class="headerlink" href="#parametres-de-la-route" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les paramètres passés par dans l&#8217;URL (hors paramètres GET) doivent êtres récupérés comme paramètre dans dans la route. Il seront ensuite transmis au contrôleur comme arguments de celui-ci :</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Route(&quot;/hello/{name}&quot;)</span>
+<span class="sd"> * @Template()</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>La fonction appelée dans le contrôleur aura la définition suivante : <code class="docutils literal"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">showAction($id)</span></code>.</p>
+</div></blockquote>
 </div>
-<div class="section" id="les-parametres-hors-routes">
-<h3>Les paramètres hors routes<a class="headerlink" href="#les-parametres-hors-routes" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Pour les autres paramètres ils peuvent tous être récupérés via l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code>. Il faut tout d&#8217;abord récupérer l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> dans le contrôleur : <code class="docutils literal"><span class="pre">$request</span> <span class="pre">=</span> <span class="pre">$this-&gt;getRequest();</span></code>. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :</p>
+<div class="section" id="autres-parametres">
+<h3>Autres paramètres<a class="headerlink" href="#autres-parametres" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les autres paramètres peuvent tous être récupérés via l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> dans le contrôleur que l&#8217;on peut obtenir en faisant <code class="docutils literal"><span class="pre">$request</span> <span class="pre">=</span> <span class="pre">$this-&gt;getRequest();</span></code>. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -244,43 +247,22 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </div>
 <div class="section" id="les-autres-methodes-de-l-objet-request">
 <h3>Les autres méthodes de l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code><a class="headerlink" href="#les-autres-methodes-de-l-objet-request" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une requête ne se compose pas que le paramètres et l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> permet de les récupérer :</p>
-<ul>
-<li><dl class="first docutils">
-<dt>récupérer la méthode de la requête HTTP :</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">$request-&gt;getMethod()</span></code></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>savoir si la requête est une requête AJAX :</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">$request-&gt;isXmlHttpRequest()</span></code></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>pour tout le reste :</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Request.html">http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Request.html</a></li>
-</ul>
-</dd>
-</dl>
-</li>
+<p>Une requête ne se compose pas que le paramètres et l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> permet de les récupérer d&#8217;autres informations comme :</p>
+<ul class="simple">
+<li>la méthode de la requête HTTP : <code class="docutils literal"><span class="pre">$request-&gt;getMethod()</span></code></li>
+<li>savoir si la requête est une requête AJAX : <code class="docutils literal"><span class="pre">$request-&gt;isXmlHttpRequest()</span></code></li>
+<li>pour tout le reste : <a class="reference external" href="http://api.symfony.com/2.7/Symfony/Component/HttpFoundation/Request.html">http://api.symfony.com/2.7/Symfony/Component/HttpFoundation/Request.html</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="l-objet-response">
 <h2>L&#8217;objet <code class="docutils literal"><span class="pre">Response</span></code><a class="headerlink" href="#l-objet-response" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Voici en version longue de qu&#8217;il faut faire pour construire et retourner une réponse :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
     <span class="c1">// on instancie une réponse</span>
     <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
     <span class="c1">// on définit le contenu</span>
-    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="s1">&#39;Ceci est le contenu de la page&#39;</span><span class="p">);</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;!&#39;</span><span class="p">);</span>
     <span class="c1">// on définit le code HTTP</span>
     <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Reponse</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
     <span class="c1">// on retourne la réponse</span>
@@ -289,26 +271,34 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </pre></div>
 </div>
 <p>Mais généralement, on préfère utiliser les vues pour générer le contenu de la réponse :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Blog:show.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-                <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Default:index.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
     <span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Le contenu de la réponse est généré par le template <code class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/Blog/show.html.twig</span></code> :</p>
-<div class="highlight-jinja"><div class="highlight"><pre><span class="x">Affichage du post avec l&#39;id : </span><span class="cp">{{</span> <span class="nv">id</span> <span class="cp">}}</span><span class="x"></span>
+</div></blockquote>
+<p>Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Le contenu de la réponse est généré par le template <code class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/Default/index.html.twig</span></code> :</p>
+<blockquote>
+<div><div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;::base.html.twig&quot;</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">body</span> <span class="cp">%}</span>
+    Hello <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span>!
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-<p>Allez voir la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/post/5">http://symfony.loc.epsi.fr/app_dev.php/post/5</a>.</p>
-<p>Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <code class="docutils literal"><span class="pre">Response</span></code> en paramètre.</p>
+</div></blockquote>
+<p>Allez voir la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a>.</p>
+<p>Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <code class="docutils literal"><span class="pre">Response</span></code> en paramètre à la méthode <code class="docutils literal"><span class="pre">render()</span></code>.</p>
 <p>On peut également faire des redirections dans le contrôleur avec la méthode <code class="docutils literal"><span class="pre">redirect()</span></code>. La méthode <code class="docutils literal"><span class="pre">generateUrl</span></code> permet quant à elle de générer l&#8217;URL de la page de destination :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;epsi_blog_index&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;page&#39;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">)));</span>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;epsi_blog_default_index&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;the world&#39;</span><span class="p">)));</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Response.html">http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Response.html</a></p>
+</div></blockquote>
 </div>
 </div>
 

@@ -6,32 +6,35 @@ Les contrôleurs
 ``Request`` et ``Response``
 ***************************
 
-Comme vue précédemment, le contrôleur est le chef d'orchestre de votre application, il va utiliser les autres composants (services, modèles, vue) afin de construire la page demandé par l'internaute.
+Comme vue précédemment, le contrôleur est le chef d'orchestre de votre application, il va utiliser les autres composants (services, modèles, vues) afin de construire la page demandée par l'internaute.
 
-Peut importe ce que vous souhaitez faire, un contrôleur reçoit toujours un objet ``Request`` et doit toujours retourner un objet ``Response``.
+Peu importe ce que vous souhaitez faire, un contrôleur reçoit toujours un objet ``Request`` et doit toujours retourner un objet ``Response``.
 La demande de l'internaute se trouve dans un objet ``Request`` dans lequel le contrôleur toute les informations contenues dans la requête HTTP. La ``Response`` quant à elle correspond à la réponse HTTP.
 
 *******************
 L'objet ``Request``
 *******************
 
-La requête peut contenir des paramètres : l'Id d'un objet à afficher, un nom à chercher dans la base de données, etc. Ces paramètres peuvent être passés au contrôleurs via la route, des paramètres POST ou GET, etc.
+Paramètres de la route
+======================
 
-Les paramètres contenus dans les routes
-=======================================
+Les paramètres passés par dans l'URL (hors paramètres GET) doivent êtres récupérés comme paramètre dans dans la route. Il seront ensuite transmis au contrôleur comme arguments de celui-ci :
 
-Les paramètres passée par la route deviendront des arguments de la méthode appelée dans le contrôleur. Prenons cette route par exemple :
+    .. code-block:: php
 
-.. literalinclude:: code-block/controleur/routing.yml
-    :language: yaml
-    :lines: 1-6
+        /**
+         * @Route("/hello/{name}")
+         * @Template()
+         */
+        public function indexAction($name)
+        {
+            return array('name' => $name);
+        }
 
-La fonction appelée dans le contrôleur aura la définition suivante : ``public function showAction($id)``.
+Autres paramètres
+=================
 
-Les paramètres hors routes
-==========================
-
-Pour les autres paramètres ils peuvent tous être récupérés via l'objet ``Request``. Il faut tout d'abord récupérer l'objet ``Request`` dans le contrôleur : ``$request = $this->getRequest();``. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :
+Les autres paramètres peuvent tous être récupérés via l'objet ``Request`` dans le contrôleur que l'on peut obtenir en faisant ``$request = $this->getRequest();``. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :
 
 +---------------------------+-----------------------------+---------------------------+------------------------------------------------------------------+
 | Type de paramètres        | Méthode Symfony2            | Méthode traditionnelle    | Exemple                                                          |
@@ -52,14 +55,13 @@ Pour les autres paramètres ils peuvent tous être récupérés via l'objet ``Re
 Les autres méthodes de l'objet ``Request``
 ==========================================
 
-Une requête ne se compose pas que le paramètres et l'objet ``Request`` permet de les récupérer :
+Une requête ne se compose pas que le paramètres et l'objet ``Request`` permet de les récupérer d'autres informations comme :
 
-* récupérer la méthode de la requête HTTP :
-    * ``$request->getMethod()``
-* savoir si la requête est une requête AJAX :
-    * ``$request->isXmlHttpRequest()``
-* pour tout le reste :
-    * http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Request.html
+* la méthode de la requête HTTP : ``$request->getMethod()``
+
+* savoir si la requête est une requête AJAX : ``$request->isXmlHttpRequest()``
+
+* pour tout le reste : http://api.symfony.com/2.7/Symfony/Component/HttpFoundation/Request.html
 
 ********************
 L'objet ``Response``
@@ -67,31 +69,46 @@ L'objet ``Response``
 
 Voici en version longue de qu'il faut faire pour construire et retourner une réponse :
 
-.. literalinclude:: code-block/controleur/controleur.php
-    :language: php
-    :lines: 1-10
+.. code-block:: php
+
+    public function indexAction($name)
+        // on instancie une réponse
+        $response = new Response();
+        // on définit le contenu
+        $response->setContent('Hello ' . $name . '!');
+        // on définit le code HTTP
+        $response->setStatusCode(Reponse::HTTP_OK);
+        // on retourne la réponse
+        return $response;
+    }
 
 Mais généralement, on préfère utiliser les vues pour générer le contenu de la réponse :
 
-.. literalinclude:: code-block/controleur/controleur.php
-    :language: php
-    :lines: 12-16
+    .. code-block:: php
 
-Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Le contenu de la réponse est généré par le template ``src/Epsi/Bundle/BlogBundle/Resources/views/Blog/show.html.twig`` :
+        public function showAction($id) {
+            return $this->render('EpsiBlogBundle:Default:index.html.twig', array(
+                'name' => $name,
+            ));
+        }
 
-.. literalinclude:: code-block/controleur/show.html.twig
-    :language: jinja
-    :lines: 1
+Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Le contenu de la réponse est généré par le template ``src/Epsi/Bundle/BlogBundle/Resources/views/Default/index.html.twig`` :
 
-Allez voir la page http://symfony.loc.epsi.fr/app_dev.php/post/5.
+    .. code-block:: html+jinja
 
-Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet ``Response`` en paramètre.
+        {% extends "::base.html.twig" %}
+        {% block body %}
+            Hello {{ name }}!
+        {% endblock %}
+
+Allez voir la page http://symfony.loc.epsi.fr/app_dev.php/hello/World.
+
+Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet ``Response`` en paramètre à la méthode ``render()``.
 
 On peut également faire des redirections dans le contrôleur avec la méthode ``redirect()``. La méthode ``generateUrl`` permet quant à elle de générer l'URL de la page de destination :
 
-.. literalinclude:: code-block/controleur/controleur.php
-    :language: php
-    :lines: 18-20
+    .. code-block:: php
 
-
-http://api.symfony.com/2.6/Symfony/Component/HttpFoundation/Response.html
+        public function showAction($id) {
+            return $this->redirect($this->generateUrl('epsi_blog_default_index', array('name' => 'the world')));
+        }

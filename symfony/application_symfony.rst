@@ -12,9 +12,9 @@ La console permet de lancer des actions en ligne de commande pour aider au déve
 
 Pour lancer la console, il faut exécuter le script ``app/console`` suivit d'arguments pour lancer les différentes commandes. Pour avoir la liste des commandes disponible, il suffit de lanncer le script ``app/console`` sans arguments :
 
-.. literalinclude:: code-block/application_symfony/creation-bundle.txt
-    :language: bash
-    :lines: 1
+.. code-block:: console
+    
+    php app/console
 
 ******************
 Création du bundle
@@ -22,9 +22,9 @@ Création du bundle
 
 #. Exécutez la commande suivante :
 
-    .. literalinclude:: code-block/application_symfony/creation-bundle.txt
-        :language: bash
-        :lines: 2
+    .. code-block:: console
+
+        php app/console generate:bundle
 
 #. La namespace du bundle
 
@@ -51,7 +51,12 @@ Création du bundle
 
     :program:`Symfony` propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n'a pas d'impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s'agit juste de choisir le format avec lequel vous êtes le plus alèse.
 
-    Dans notre cas, nous allons choisir le ``yml``.
+    Dans notre cas, nous allons choisir le ``annotation``.
+
+    .. admonition:: Format de fichiers YAML
+        :class: warning
+
+        L'indentation des fichiers YAML se fait avec des espaces et non des indentations.
 
 #. La structure générer
 
@@ -59,9 +64,7 @@ Création du bundle
 
     Répondez ``yes``.
 
-#. Confirmer et c'est parti
-
-    Répondez ``yes`` à toutes les autres questions et votre bundle sera généré et installé : http://symfony.loc.epsi.fr/app_dev.php/hello/World
+#. Répondez ``yes`` à toutes les autres questions et votre bundle sera généré et installé
 
 ********************
 Que s'est-il passé ?
@@ -86,19 +89,29 @@ Que s'est-il passé ?
 
 #. :program:`Symfony` enregistre notre bundle dans le Kernel (``app/AppKernel.php``)
 
+    .. code-block:: php
+
+        class AppKernel extends Kernel
+        {
+            public function registerBundles()
+            {
+                $bundles = array(
+                    ...
+                    new Epsi\Bundle\BlogBundle\EpsiBlogBundle(),
+                    ...
+                return $bundles;
+            }
+            ...
+        }
+
 #. :program:`Symfony` ajoute les routes de notre bundle dans le Routeur (``app/config/routing.yml``)
 
-##################################
-Objectif de notre bundle : un blog
-##################################
+    .. code-block:: yaml
 
-Le blog que nous allons créer est très simple. En voici les grandes lignes :
-
-* Nous aurons des posts auxquels nous attacherons des tags.
-* Nous pourrons lire, écrire, éditer et rechercher des posts.
-* Nous pourrons créer, modifier et supprimer des tags.
-* Nous pourrons également commenter les posts.
-* Nous n'aurons pas de système de gestion des utilisateurs : nous devrons choisir l'utilisateur lorsque nous rédigerons un post ou un commentaire.
+        epsi_blog:
+            resource: "@EpsiBlogBundle/Controller/"
+            type:     annotation
+            prefix:   /
 
 
 

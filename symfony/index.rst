@@ -19,7 +19,9 @@ Contents
     navigateur_vers_symfony
     pre-requis_installation
     architecture
+    sujet_tp
     application_symfony
+    web_profiler
     routing
     controleur
     services

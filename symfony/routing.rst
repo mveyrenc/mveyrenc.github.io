@@ -2,81 +2,207 @@
 Le routing
 ##########
 
-Le routing fait la correspondance entre les URLs et les les contrôleurs. La configuration de ce mapping se fait dans les fichiers ``routing.yml`` se trouvant dans le répertoire ``config`` de l'application et des bundles.
+Le routing fait la correspondance entre les URLs et les les contrôleurs. La configuration de ce mapping se fait
 
-Créons les premières routes de notre blog :
+    * dans le fichier ``routing.yml`` se trouvant dans le répertoire ``config`` de l'application ;
+    * dans les bundles sous forme de fichiers de configuration ou d'annotations dans les contrôleurs.
 
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 1-11
+Dans le fichier ``routing.yml`` se trouvant dans le répertoire ``config`` de l'application, on inclus les routes des bundles en leur mettant des préfixes :
 
-.. admonition:: Format de fichiers YAML
-    :class: warning
+.. code-block:: yaml
 
-    L'indentation des fichiers YAML se fait avec des espaces et non des indentations.
+    # app/config/routing.yml
+
+    epsi_blog:
+        resource: "@EpsiBlogBundle/Controller/"
+        type:     annotation
+        prefix:   /
+
+    app:
+        resource: "@AppBundle/Controller/"
+        type:     annotation
+
+Dans le bundle, on décrit par quelle URL sera accessible chaque méthode du contrôleur :
+
+.. code-block:: php
+
+    // src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php
+
+    namespace Epsi\Bundle\BlogBundle\Controller;
+
+    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
+    class DefaultController extends Controller
+    {
+        /**
+         * @Route("/hello/{name}")
+         * @Template()
+         */
+        public function indexAction($name)
+        {
+            return array('name' => $name);
+        }
+    }
+
+Ce qui produit les routes suivantes :
+
+.. code-block:: console 
+
+    > php app/console debug:router --show-controllers
+
+     Name                     Method Scheme Host Path                              Controller
+     _wdt                     ANY    ANY    ANY  /_wdt/{token}                     web_profiler.controller.profiler:toolbarAction       
+     _profiler_home           ANY    ANY    ANY  /_profiler/                       web_profiler.controller.profiler:homeAction          
+     _profiler_search         ANY    ANY    ANY  /_profiler/search                 web_profiler.controller.profiler:searchAction        
+     _profiler_search_bar     ANY    ANY    ANY  /_profiler/search_bar             web_profiler.controller.profiler:searchBarAction     
+     _profiler_purge          ANY    ANY    ANY  /_profiler/purge                  web_profiler.controller.profiler:purgeAction         
+     _profiler_info           ANY    ANY    ANY  /_profiler/info/{about}           web_profiler.controller.profiler:infoAction          
+     _profiler_phpinfo        ANY    ANY    ANY  /_profiler/phpinfo                web_profiler.controller.profiler:phpinfoAction       
+     _profiler_search_results ANY    ANY    ANY  /_profiler/{token}/search/results web_profiler.controller.profiler:searchResultsAction 
+     _profiler                ANY    ANY    ANY  /_profiler/{token}                web_profiler.controller.profiler:panelAction         
+     _profiler_router         ANY    ANY    ANY  /_profiler/{token}/router         web_profiler.controller.router:panelAction           
+     _profiler_exception      ANY    ANY    ANY  /_profiler/{token}/exception      web_profiler.controller.exception:showAction         
+     _profiler_exception_css  ANY    ANY    ANY  /_profiler/{token}/exception.css  web_profiler.controller.exception:cssAction          
+     _configurator_home       ANY    ANY    ANY  /_configurator/                   SensioDistributionBundle:Configurator:check          
+     _configurator_step       ANY    ANY    ANY  /_configurator/step/{index}       SensioDistributionBundle:Configurator:step           
+     _configurator_final      ANY    ANY    ANY  /_configurator/final              SensioDistributionBundle:Configurator:final          
+     _twig_error_test         ANY    ANY    ANY  /_error/{code}.{_format}          twig.controller.preview_error:previewErrorPageAction 
+     epsi_blog_default_index  ANY    ANY    ANY  /hello/{name}                     EpsiBlogBundle:Default:index                         
+     homepage                 ANY    ANY    ANY  /                                 AppBundle:Default:index
+
+..
+    Créons les premières routes de notre blog :
+
+    .. literalinclude:: code-block/routing/routing.yml
+        :language: yaml
+        :lines: 1-11
 
 **************
 Fonctionnement
 **************
 
-Les routes ci-dessus sont composés de trois éléments :
+Les routes sont composés à minima de trois éléments suivants :
 
-* un identifiant. Il doit être unique dans l'application, c'est pour cela que l'on reprend les éléments du nom du bundle ;
-* un chemin (``path``). C'est URL de la route. Les éléments entre ``{}`` sont des paramètres de l'URL, comme l'ID d'un objet ;
-* les paramètres de la route ``defaults`` qui contient notamment le contrôleur à appeler.
+* un **identifiant**. Il doit être unique dans l'application. Quand on utilise les annotations, :program:`Symfony` génère lui même cet identifiant. Pour les autres configurations, il faudra le faire à la main ;
+* un **chemin** (``path``). C'est URL de la route. Les éléments entre ``{}`` sont des paramètres de l'URL, comme l'ID d'un objet ;
+* le **contrôleur** à appeler.
 
 Voici comment fonctionne le routeur pas à pas :
 
-#. On appelle l'URL ``/post/5`` ;
-#. Le routeur essaie de faire correspondre cette URL avec le ``path`` de la première route. Ici, ``/post/5`` ne correspond pas du tout à ``/posts`` (ligne ``path`` de la première route) ;
-#. Le routeur passe donc à la route suivante. Il essaie de faire correspondre ``/post/5`` avec ``/post/{id}``. Cette route correspond, car nous avons bien :
-    * ``/post`` (URL) = ``/post`` (route) ;
-    * ``5`` (URL) = ``{id}`` (route) ;
+#. On appelle l'URL ``/hello/World`` ;
+#. Le routeur essaie de faire correspondre cette URL avec le chemin de chaque route. On d'ailleurs le voir dans le profiler :
 
-#. Le routeur s'arrête donc, il a trouvé sa route ;
-#. Dans le paramétrage de la route, il trouve quel contrôleur appeler : ``EpsiBlogBundle:Blog:show`` ;
+    .. image:: /_static/images/profiler_routes.png
+        :align: center
+        :class: box
+
+#. Le routeur s'arrête dès qu'il a trouvé un route qui correspond ;
+#. À partir de la route, il trouve qu'il faut appelé le contrôleur ``EpsiBlogBundle:Default:index`` avec comme paramètre ``name = World`` ;
 #. Le routeur renvoie donc ces informations au Kernel ;
 #. Le noyau va exécuter le contrôleur.
 
-Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404.
+Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404, comme par exemple pour la page, http://symfony.loc.epsi.fr/app_dev.php/hello/The/World :
 
-Allons sur la page http://symfony.loc.epsi.fr/app_dev.php/post/5 :
+    .. image:: _static/images/symfony_exception.png
+        :align: center
+        :class: box
 
-.. image:: _static/images/symfony_exception.png
-    :align: center
+    En haut de la page est affiché un message d'erreur, un exception a été détectée.
 
-En haut de la page est affiché un message d'erreur, un exception a été détectée.
+    Dans la seconde partie, la stack trace. Il s'agit de la liste des fonctions appelées depuis le contrôleur frontal jusqu'à la ligne qui a levé l'exception.
 
-Dans la seconde partie, la stack trace. Il s'agit de la liste des fonctions appelées depuis le contrôleur frontal jusqu'à la ligne qui a levé l'exception.
+******************************
+Les annotation pour le routeur
+******************************
 
-Tout en bas, on trouve le Profiler, un outil de développement où l'on peut trouver de nombreuses informations pouvant aider à la correction de bugs et d'erreurs, ou à l'optimisation. En cliquant sur la barre de profiling, on arrive sur une interface plus complète :
+@Route
+======
 
-.. image:: _static/images/symfony_profiler.png
-    :align: center
+* Il faut importer le namespace ``Sensio\Bundle\FrameworkExtraBundle\Configuration\Route``
 
-*************************************
-Convention de nommage des contrôleurs
-*************************************
+* Définit le chemin avec ses paramètres
 
-Revenons à vos route. Lors de la configuration des routes dans le fichier ``routing.yml``, les contrôleurs sont spécifiés avec la notation suivante ``EpsiBlogBundle:Blog:index``. Elle est composée de trois éléments :
+    .. code-block:: php
 
-* ``EpsiBlogBundle`` : le nom du bundle
-* ``Blog`` : le nom du contrôleur à ouvrir, en terme de fichier, cela correspond à ``controller/BlogController.php``
-* ``show`` : le nom de l'action à exécuter au sein du contrôleur, il s'agit de la fonction ``public function showAction()`` implémentée dans le contrôleur ``Blog``
+        /**
+         * @Route("/")
+         */
+        public function indexAction()
+        {
+        }
 
-Faisons rapidement un contrôleur pour afficher autre chose qu'une erreur :
+    .. code-block:: php
 
-.. literalinclude:: code-block/routing/controleur.php
-    :language: php
-    :lines: 3-15
+        /**
+         * @Route("/{id}", requirements={"id" = "\d+"}, defaults={"id" = 1})
+         */
+        public function showAction($id)
+        {
+        }
 
-Lorsq'on va sur la page http://symfony.loc.epsi.fr/app_dev.php/post/5, elle affiche "Affichage du post avec l'id : 5.".
+* Elle peut être utilisée avant la déclaration du contrôleur, ou avant une méthode du contrôleur
 
-***********************************
+    .. code-block:: php
+
+        /**
+         * @Route("/blog")
+         */
+        class BlogController extends Controller
+        {
+            /**
+             * @Route("/")
+             */
+            public function indexAction()
+            {
+            }
+
+            /**
+             * @Route("/{id}")
+             */
+            public function showAction($id)
+            {
+            }
+       }
+
+@Method
+=======
+
+* Il faut importer le namespace ``Sensio\Bundle\FrameworkExtraBundle\Configuration\Method``
+
+* Définit la méthode HTTP utilisée
+
+    .. code-block:: php
+
+        /**
+         * @Route("/blog")
+         */
+        class PostController extends Controller
+        {
+            /**
+             * @Route("/edit/{id}")
+             * @Method({"GET", "POST"})
+             */
+            public function editAction($id)
+            {
+            }
+
+            /**
+             * @Route("/update/{id}")
+             * @Method({"POST"})
+             */
+            public function updateAction($id)
+            {
+            }
+        }
+
 Contrôles des paramètres des routes
-***********************************
+-----------------------------------
 
-Lorsq'on va sur la page http://symfony.loc.epsi.fr/app_dev.php/post/fvndfjvnj, elle affiche "Affichage du post avec l'id : fvndfjvnj.". Donc ajoutons un validation pour vérifier que l'ID soit bien un entier.
+Lorsq'on va sur la page http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World, elle affiche "Hello The World!".
+
+Ajoutons un validation pour vérifier que le nom soit bien un mot ou un ensemble de mots.
 
 La validation des paramètres se fait grâce à des expressions régulières. Voici les éléments de base pour les construire :
 
@@ -93,7 +219,6 @@ La validation des paramètres se fait grâce à des expressions régulières. Vo
 * ``\D`` : tout caractère qui n'est pas un caractère décimal
 * ``\w`` : tout caractère de "mot" (lettre, nombre, underscore)
 * ``\W`` : tout caractère qui n'est pas un caractère de "mot"
-* ``\b`` : limite de mot
 * ``(...)`` : sous ensemble
 * ``(a|b)`` : "a" ou "b"
 * ``a?`` : zéro ou un "a"
@@ -103,45 +228,171 @@ La validation des paramètres se fait grâce à des expressions régulières. Vo
 * ``a{3,}`` : trois "a" ou plus
 * ``a{3,6}`` : entre trois ou six "a"
 
-L'ID est un chiffre qui sera composé de un ou plusieurs chiffres, ce qui nous donne : ``\d+``.
+Le nom est une chaîne de caractères qui est composé de un ou plusieurs mots séparés par un espace, ce qui nous donne : ``(\w\s?)+``
 
-Ajoutons cette règle dans le ``routing.yml`` :
+    * un mot
+    * suivit de zéro ou un espace
+    * le tout répété au moins une fois
 
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 13-17
+Ajoutons cette règle dans le contrôleur :
 
-Ensuite lorsqu'on recharge les deux pages précédentes, http://symfony.loc.epsi.fr/app_dev.php/post/5 affiche "Affichage du post avec l'id : 5.". http://symfony.loc.epsi.fr/app_dev.php/post/fvndfjvnj affiche une message d'erreur.
+    .. code-block:: php
 
-On peut également utiliser des paramètres suivants :
+        # src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php
+        class DefaultController extends Controller
+        {
+            /**
+             * @Route("/hello/{name}", requirements={"name" = "(\w+[\s]?)+"})
+             * @Template()
+             */
+            public function indexAction($name)
+            {
+                return array('name' => $name);
+            }
+        }
 
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 19-24
+Ensuite lorsqu'on affiche les pages suivantes
 
-Avec cette route, les URL suivantes vont valides :
+    * http://symfony.loc.epsi.fr/app_dev.php/hello/World affiche "Hello World!"
+    * http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World affiche "Hello The World!"
+    * http://symfony.loc.epsi.fr/app_dev.php/hello/125 affiche "Hello 125"
+    * http://symfony.loc.epsi.fr/app_dev.php/hello/hého affiche une message d'erreur (404).
 
-* http://symfony.loc.epsi.fr/app_dev.php/post/5
-* http://symfony.loc.epsi.fr/app_dev.php/post/5.html
-* http://symfony.loc.epsi.fr/app_dev.php/post/5.xml
-* http://symfony.loc.epsi.fr/app_dev.php/post/5.json
+..
+    On peut également utiliser des paramètres suivants :
 
+    .. literalinclude:: code-block/routing/routing.yml
+        :language: yaml
+        :lines: 19-24
 
+    Avec cette route, les URL suivantes vont valides :
 
-******************************
+    * http://symfony.loc.epsi.fr/app_dev.php/post/5
+    * http://symfony.loc.epsi.fr/app_dev.php/post/5.html
+    * http://symfony.loc.epsi.fr/app_dev.php/post/5.xml
+    * http://symfony.loc.epsi.fr/app_dev.php/post/5.json
+
 Paramètres spéciaux de routing
-******************************
+------------------------------
 
-Il existe trois paramètres spéciaux :
+Il existe deux paramètres spéciaux :
 
-* ``_controller`` : comme nous l'avons vu, ce paramètre est utilisé pour déterminer quel contrôleur est exécuté lorsque l'URL est reconnue ;
 * ``_format`` : il est utilisé pour définir le format de la requête
 
     Lorsque vous utilisez ce paramètre :program:`Symfony` va automatique remplir le header ``Content-Type`` avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec ``$this->get('request')->getRequestFormat()``.
 
+    .. code-block:: php
+
+        # src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php
+        class DefaultController extends Controller
+        {
+            /**
+             * @Route("/hello/{name}.{_format}", 
+             *         requirements={"name" = "(\w+[\s]?)+", "format" = "html|json"}, 
+             *         defaults={ "_format" = "html"})
+             * @Template()
+             */
+            public function indexAction($name)
+            {
+                return array('name' => $name);
+            }
+        }
+
+    Avec cette configuration :
+
+        * http://symfony.loc.epsi.fr/app_dev.php/hello/World et http://symfony.loc.epsi.fr/app_dev.php/hello/World.html affiche la version HTML de la page ;
+        * http://symfony.loc.epsi.fr/app_dev.php/hello/World.json affiche la page en json
+
 * ``_locale`` : il est utilisé pour définir la locale de la session
 
     Ce paramètre permet de choisir la langue à afficher. Cette valeur sera également stockée en session pour que les futures requêtes la conservent. Dans le contrôleur, on peut récupérer sa valeur avec ``$this->get('request')->getLocale()``.
+
+@ParamConverter
+===============
+
+* Il faut importer le namespace ``Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter``
+
+* Il permet de convertir un paramètre de l'URL en objet
+
+    .. code-block:: php
+
+        /**
+         * @Route("/blog/{id}")
+         * @ParamConverter("post", class="EpsiBlogBundle:Post")
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+    .. code-block:: php
+
+        /**
+         * @Route("/blog/{id}/comments/{comment_id}")
+         * @ParamConverter("comment", class="EpsiBlogBundle:Comment", options={"id" = "comment_id"})
+         */
+        public function showAction(Post $post, Comment $comment)
+        {
+        }
+
+@Template
+=========
+
+* Il faut importer le namespace ``Sensio\Bundle\FrameworkExtraBundle\Configuration\Template``
+
+* Il permet de spécifier quel template utilise le contrôleur
+
+    .. code-block:: php
+
+        /**
+         * @Template("EpsiBlogBundle:Post:show.html.twig")
+         */
+        public function showAction($id)
+        {
+            // get the Post
+            $post = ...;
+
+            return array('post' => $post);
+        }
+
+    .. code-block:: php
+
+        /**
+         * @ParamConverter("post", class="EpsiBlogBundle:Post")
+         * @Template("EpsiBlogBundle:Post:show.html.twig", vars={"post"})
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+    .. code-block:: php
+
+        /**
+         * @Template(vars={"post"})
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+    .. code-block:: php
+
+        /**
+         * @Template
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+    Les 3 exemples ci-dessus sont équivalents.
+
+@Cache
+======
+
+* Permet de contrôler le cache HTTP.
+
+@Security
+=========
+
+* Permet de gérer les droits d'accès.
 
 *************************
 Comment générer des URL ?
@@ -149,60 +400,4 @@ Comment générer des URL ?
 
 Depuis un contrôleur, c'est la méthode ``$this->generateUrl()`` qu'il faut appeler. Par exemple : ``$url = $this->generateUrl( 'epsi_blog_show', array( 'id' => $id ) );``
 
-Depuis les tempaltes Twig, on utilise l'opérateur ``path``. Par exemple : ``{{ path( 'epsi_blog_show', { 'id': article_id } ) }}``
-
-*************************
-Créons les routes du blog
-*************************
-
-Nous voulons créer les pages suivantes :
-
-* liste des posts du blog, qui sera aussi la page d'accueil
-* visualisation d'un post
-* ajout d'un post
-* modification d'un post
-* suppression d'un post
-
-Liste des posts
-===============
-
-Pour la page d'accueil, nous souhaitons mettre en place une pagination et avoir les URL suivantes :
-
-* ``/blogs`` : page = 1
-* ``/blogs/1`` : page = 1
-* ``/blogs/2`` : page = 2
-* ``/blogs/n`` : page = n
-
-Le numéro de la page sera récupéré dans un paramètre ``{page}`` qui devra être composer de zéro ou plusieurs chiffres. Voici la route :
-
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 19-24
-
-Visualisation d'un post
-=======================
-
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 26-31
-
-Ajout d'un post
-===============
-
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 33-35
-
-Modification d'un post
-======================
-
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 37-41
-
-Suppression d'un post
-=====================
-
-.. literalinclude:: code-block/routing/routing.yml
-    :language: yaml
-    :lines: 43-47
+Depuis les tempaltes Twig, on utilise l'opérateur ``path``. Par exemple : ``{{ path( 'epsi_blog_show', { 'id': article_id } ) }}``.

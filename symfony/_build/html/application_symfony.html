@@ -40,8 +40,8 @@
     <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
-        <link rel="next" title="Le routing" href="routing.html"/>
-        <link rel="prev" title="Architecture de Symfony" href="architecture.html"/> 
+        <link rel="next" title="Le web-profiler" href="web_profiler.html"/>
+        <link rel="prev" title="Objectif de notre bundle : un blog" href="sujet_tp.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -66,13 +66,13 @@
 
         
           <div class="subtitle">
-            False
+            Cours
           </div>
         
 
         
           <div class="reference">
-            False
+            EPSI/B2
 
             
             - v1.0.1
@@ -93,13 +93,14 @@
 <li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de <strong class="program">Symfony</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="sujet_tp.html">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Création d&#8217;un bundle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-de-la-console">Utilisation de la console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-du-bundle">Création du bundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
@@ -169,7 +170,7 @@
 <h2>Utilisation de la console<a class="headerlink" href="#utilisation-de-la-console" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La console permet de lancer des actions en ligne de commande pour aider au développement, lancer des tâches planifiées (cron), etc.</p>
 <p>Pour lancer la console, il faut exécuter le script <code class="docutils literal"><span class="pre">app/console</span></code> suivit d&#8217;arguments pour lancer les différentes commandes. Pour avoir la liste des commandes disponible, il suffit de lanncer le script <code class="docutils literal"><span class="pre">app/console</span></code> sans arguments :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console
+<div class="highlight-console"><div class="highlight"><pre><span class="go">php app/console</span>
 </pre></div>
 </div>
 </div>
@@ -178,7 +179,7 @@
 <ol class="arabic">
 <li><p class="first">Exécutez la commande suivante :</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console generate:bundle
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">php app/console generate:bundle</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -209,7 +210,11 @@
 <li><p class="first">Le format de la configuration</p>
 <blockquote>
 <div><p><strong class="program">Symfony</strong> propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n&#8217;a pas d&#8217;impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s&#8217;agit juste de choisir le format avec lequel vous êtes le plus alèse.</p>
-<p>Dans notre cas, nous allons choisir le <code class="docutils literal"><span class="pre">yml</span></code>.</p>
+<p>Dans notre cas, nous allons choisir le <code class="docutils literal"><span class="pre">annotation</span></code>.</p>
+<div class="warning admonition">
+<p class="first admonition-title">Format de fichiers YAML</p>
+<p class="last">L&#8217;indentation des fichiers YAML se fait avec des espaces et non des indentations.</p>
+</div>
 </div></blockquote>
 </li>
 <li><p class="first">La structure générer</p>
@@ -218,10 +223,7 @@
 <p>Répondez <code class="docutils literal"><span class="pre">yes</span></code>.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Confirmer et c&#8217;est parti</p>
-<blockquote>
-<div><p>Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé : <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a></p>
-</div></blockquote>
+<li><p class="first">Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé</p>
 </li>
 </ol>
 </div>
@@ -255,22 +257,35 @@
 </div></blockquote>
 </li>
 <li><p class="first"><strong class="program">Symfony</strong> enregistre notre bundle dans le Kernel (<code class="docutils literal"><span class="pre">app/AppKernel.php</span></code>)</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">AppKernel</span> <span class="k">extends</span> <span class="nx">Kernel</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">registerBundles</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$bundles</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="o">...</span>
+            <span class="k">new</span> <span class="nx">Epsi\Bundle\BlogBundle\EpsiBlogBundle</span><span class="p">(),</span>
+            <span class="o">...</span>
+        <span class="k">return</span> <span class="nv">$bundles</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p class="first"><strong class="program">Symfony</strong> ajoute les routes de notre bundle dans le Routeur (<code class="docutils literal"><span class="pre">app/config/routing.yml</span></code>)</p>
+<blockquote>
+<div><div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">resource</span><span class="p-Indicator">:</span> <span class="s">&quot;@EpsiBlogBundle/Controller/&quot;</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span>     <span class="l-Scalar-Plain">annotation</span>
+    <span class="l-Scalar-Plain">prefix</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">/</span>
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </div>
-</div>
-<div class="section" id="objectif-de-notre-bundle-un-blog">
-<h1>Objectif de notre bundle : un blog<a class="headerlink" href="#objectif-de-notre-bundle-un-blog" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Le blog que nous allons créer est très simple. En voici les grandes lignes :</p>
-<ul class="simple">
-<li>Nous aurons des posts auxquels nous attacherons des tags.</li>
-<li>Nous pourrons lire, écrire, éditer et rechercher des posts.</li>
-<li>Nous pourrons créer, modifier et supprimer des tags.</li>
-<li>Nous pourrons également commenter les posts.</li>
-<li>Nous n&#8217;aurons pas de système de gestion des utilisateurs : nous devrons choisir l&#8217;utilisateur lorsque nous rédigerons un post ou un commentaire.</li>
-</ul>
 </div>
 
 
@@ -280,10 +295,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="routing.html" class="btn btn-neutral float-right" title="Le routing" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="web_profiler.html" class="btn btn-neutral float-right" title="Le web-profiler" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="architecture.html" class="btn btn-neutral" title="Architecture de Symfony" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="sujet_tp.html" class="btn btn-neutral" title="Objectif de notre bundle : un blog" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   

@@ -89,15 +89,11 @@ Afin d corriger les droits sur les fichiers une bonne fois pour toute :
 
         sudo usermod -a -G www-data $(whoami)
 
-    .. command-output:: groups www-data
-
 * Ajoutons dans le groupe ``www-data``
 
     .. code-block:: console
 
         sudo usermod -a -G $(whoami) www-data
-
-    .. command-output:: groups mveyrenc
 
 * Forçons les droits à 775 pour tous les nouveaux fichiers créés par notre utilisateur
 
@@ -138,7 +134,11 @@ Afin d corriger les droits sur les fichiers une bonne fois pour toute :
         sudo chown www-data:www-data -R /var/www
         sudo chmod g+w -R /var/www
 
-    .. command-output:: ls -l /var/www
+    .. code-block:: console
+
+        $ ls -l /var/www
+        total 4
+        drwxrwxr-x 2 www-data www-data 4096 mai   18 13:09 html
 
 **********************************
 Installation de :program:`Symfony`
@@ -179,42 +179,74 @@ Ensuite, on utilise :program:`Composer` pour télécharger :program:`Symfony`, e
 
 .. code-block:: console
 
-    Would you like to install Acme demo bundle? [y/N] y
-    database_driver (pdo_mysql):
-    database_host (127.0.0.1):
-    database_port (null):
-    database_name (symfony):
+    Creating the "app/config/parameters.yml" file
+    Some parameters are missing. Please provide them.
+    database_host (127.0.0.1): 
+    database_port (null): 
+    database_name (symfony): 
     database_user (root): symfony
-    database_password (null): symfony
+    database_password (null): symfony_pass
     mailer_transport (smtp): 
-    mailer_host (127.0.0.1):
-    mailer_user (null):
-    mailer_password (null):
-    locale (en): fr
-    secret (ThisTokenIsNotSoSecretChangeIt):
+    mailer_host (127.0.0.1): 
+    mailer_user (null): 
+    mailer_password (null): 
+    secret (ThisTokenIsNotSoSecretChangeIt): 
+
 
 .. note::
 
-    | ``[y/N]`` signifie que la réponse par défaut est ``n`` (non).
-    | Dans ``database_driver (pdo_mysql):``, la valeur entre parenthèse est la valeur par défaut.
+    | Quand une commande de :program:`Symfony` vous pose une question
+    | * la lettre en majuscule dans ``[y/N]`` représente la réponse par défaut dans une réponse oui/non, ici non.
+    | * l'élément entre parenthèses, comme dans ``database_driver (pdo_mysql):``, est la valeur par défaut pour les question ouvertes.
     
 
 Tous ces paramètres sont enregistrés dans le fichier :file:`app/config/parameters.yml`.
+
+Pour finir, déplacez le fichier :file:`composer.phar` dans le répertoire de Symfony :
+
+.. code-block:: console
+    
+    cd /var/www
+    mv composer.phar symfony/
 
 Mise en place du VHost
 ======================
 
 Le **VHost**, ou *Virtual Host*, est un paramétrage au niveau du serveur web pour qu'il oriente les requêtes HTTP entrantes vers la bonne application.
 
-.. todo::
-
-    VHost de Symfony
+Dans un premier temps, nous allons créé un hostname qui nous permettra s'accéder à notre application :
 
 .. code-block:: bash
 
     # /etc/hosts
 
     127.0.1.1  symfony.loc.epsi.fr
+
+Ensuite, on crée le Vhost :
+
+.. code-block:: apache
+    
+    # /etc/apache2/sites-available/symfony.conf
+
+    <VirtualHost *:80>
+        ServerName symfony.loc.epsi.fr
+
+        DocumentRoot /var/www/symfony/web
+        <Directory /var/www/symfony/web>
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        ErrorLog /var/log/apache2/symfony.loc.epsi.fr_error.log
+        CustomLog /var/log/apache2/symfony.loc.epsi.fr_access.log combined
+    </VirtualHost>
+
+Pour finir, on active le VHost et on recharche Apache :
+
+.. code-block:: console
+
+    sudo a2ensite symfony.conf
+    sudo service apache2 reload
 
 Vérifier votre configuration de PHP
 ===================================
@@ -273,6 +305,7 @@ Pour gagner du temps, vous aurez besoin d'exécuter des commandes PHP via la con
 
 .. code-block:: console
 
+    cd /var/www/symfony
     php app/check.php
 
 .. image:: _static/images/symfony_config_cli.png

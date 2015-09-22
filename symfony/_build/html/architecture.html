@@ -40,7 +40,7 @@
     <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="index.html"/>
-        <link rel="next" title="Création d’un bundle" href="application_symfony.html"/>
+        <link rel="next" title="Objectif de notre bundle : un blog" href="sujet_tp.html"/>
         <link rel="prev" title="Pré-requis et installation du framework" href="pre-requis_installation.html"/> 
 
   
@@ -66,13 +66,13 @@
 
         
           <div class="subtitle">
-            False
+            Cours
           </div>
         
 
         
           <div class="reference">
-            False
+            EPSI/B2
 
             
             - v1.0.1
@@ -93,6 +93,11 @@
 <li class="toctree-l1"><a class="reference internal" href="navigateur_vers_symfony.html">Du navigateur vers <strong class="program">Symfony</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Architecture de <strong class="program">Symfony</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-conceptuelle">Architecture conceptuelle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modele-vue-controleur">Modèle/Vue/Contrôleur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service-oriented">Service-oriented</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#le-repertoire-app">Le répertoire <em>/app</em></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#le-repertoire-bin">Le répertoire <em>/bin</em></a></li>
@@ -103,12 +108,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#les-fichiers-md">Les fichiers <em>/*.md</em></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#architecture-conceptuelle">Architecture conceptuelle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-bundles">Les bundles</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="sujet_tp.html">Objectif de notre bundle : un blog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
@@ -173,14 +178,54 @@
             
   <div class="section" id="architecture-de-symfony">
 <h1>Architecture de <strong class="program">Symfony</strong><a class="headerlink" href="#architecture-de-symfony" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="architecture-conceptuelle">
+<h2>Architecture conceptuelle<a class="headerlink" href="#architecture-conceptuelle" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="modele-vue-controleur">
+<h3>Modèle/Vue/Contrôleur<a class="headerlink" href="#modele-vue-controleur" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong class="program">Symfony</strong> est basée sur une architecture <strong>MVC</strong> qui signifie <strong>Modèle/Vue/Contrôleur</strong>. C&#8217;est un découpage très répandu dans les frameworks web.</p>
+<p>L&#8217;idée est d&#8217;organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
+<p>Elle se compose de trois couches :</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Le <strong>contrôleur</strong> (<em>controller</em>)</dt>
+<dd><p class="first last">Son rôle est de générer la <strong>réponse</strong> à la <strong>requête</strong> HTTP demandée par le visiteur. Il analyse la requête du visiteur, et <strong>utilise les autres composants</strong> pour composer la réponse et la renvoie au visiteur.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Le <strong>modèle</strong> (<em>model</em>)</dt>
+<dd><p class="first last">Il est responsable des données et de tous les traitements faits sur les données. Rien d&#8217;autre dans l&#8217;application ne doit manipuler les données afin de garantir leur intégrité.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>La <strong>vue</strong> (<em>vue</em>)</dt>
+<dd><p class="first last">Elle est chargée de générer les interfaces utilisateurs, généralement basées sur les données. Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="service-oriented">
+<h3>Service-oriented<a class="headerlink" href="#service-oriented" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Comme dit précédemment, un contrôleur ne fait qu&#8217;utiliser d&#8217;autres composants pour construire la réponse. La plupart de ces composants sont des services.</p>
+<p>L&#8217;objectif de l&#8217;architecture orientée services (service oriented architecture, SOA, en anglais) est de déposer une fonctionnalité en un ensemble de fonctions basiques, appelées <strong>services</strong>.</p>
+<p>Concrètement, les services sont des objets PHP qui gèrent une tâche précise comme envoyer un mail, gérer les sessions de l&#8217;utilisateur ou persister des données. Tous les services sont regroupé dans le <strong>service container</strong> qui se charge de les instancier.</p>
+</div>
+</div>
 <div class="section" id="l-architecture-des-fichiers">
 <h2>L&#8217;architecture des fichiers<a class="headerlink" href="#l-architecture-des-fichiers" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dans les sources que nous venons de d&#8217;installer, il n&#8217;y a pas beaucoup de fichiers :</p>
-<div class="highlight-bash"><div class="highlight"><pre>app
+<div class="highlight-text"><div class="highlight"><pre>$ ls -A1 /var/www/symfony
+app
 bin
 composer.json
 composer.lock
+composer.phar
+.git
+.gitignore
 LICENSE
+nbproject
 README.md
 src
 UPGRADE-2.2.md
@@ -231,36 +276,9 @@ web
 <p>Le reste des fichiers contient de la documentation.</p>
 </div>
 </div>
-<div class="section" id="architecture-conceptuelle">
-<h2>Architecture conceptuelle<a class="headerlink" href="#architecture-conceptuelle" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Maintenant que nous avons vu comment s&#8217;organisait les fichiers de Symfony, nous allons voir comment s&#8217;organise l&#8217;exécution du code.</p>
-<p><strong class="program">Symfony</strong> est basée sur une architecture MVC qui signifie Modèle/Vue/Contrôleur. C&#8217;est un découpage très répandu dans les frameworks web.</p>
-<p>L&#8217;idée est d&#8217;organiser le code en séparant les données, leurs présentations et leurs traitements. Cette séparation rends les applications, même complexes, plus facile à maintenir et à faire évoluer.</p>
-<p>Elle se compose de trois couches :</p>
-<ul>
-<li><dl class="first docutils">
-<dt>Le <strong>contrôleur</strong> (<em>controller</em>)</dt>
-<dd><p class="first last">Son rôle est de générer la <strong>réponse</strong> à la <strong>requête</strong> HTTP demandée par le visiteur. Il analyse la requête du visiteur, et <strong>utilise les autres composants</strong> pour composer la réponse et la renvoie au visiteur.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Le <strong>modèle</strong> (<em>model</em>)</dt>
-<dd><p class="first last">Il est responsable des données et de tous les traitements faits sur les données. Rien d&#8217;autre dans l&#8217;application ne doit manipuler les données afin de garantir leur intégrité.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>La <strong>vue</strong> (<em>vue</em>)</dt>
-<dd><p class="first last">Elle est chargée de générer les interfaces utilisateurs, généralement basées sur les données. Elle peut présenter les données sous plusieurs formes : HTML, json, XML, etc.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</div>
 <div class="section" id="les-bundles">
 <h2>Les bundles<a class="headerlink" href="#les-bundles" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévue. Quand on dit tout le code source, il s&#8217;agit :</p>
+<p>Comme dit précédemment, un bundle contient tout le code source nécessaire pour implémenter la ou les fonctionnalités pour lesquelles il est prévu. Quand on dit tout le code source, il s&#8217;agit :</p>
 <ul class="simple">
 <li>des contrôleurs</li>
 <li>des modèles</li>
@@ -272,31 +290,50 @@ web
 <li>des outils de débug</li>
 <li>etc.</li>
 </ul>
-<p>Tout ces éléments sont organisés dans des répertoires comme on peut le voir dans le bundle de démo qui se trouve dans <code class="docutils literal"><span class="pre">Acme/DemoBundle</span></code> :</p>
-<div class="highlight-bash"><div class="highlight"><pre>Controller                          <span class="p">|</span> Contrôleurs
-└── DefaultController.php
-DependencyInjection                 <span class="p">|</span> Informations sur le bundle <span class="o">(</span>chargement automatique de la configuration par exemple<span class="o">)</span>
-└── Configuration.php
-Resources
-├── config                          <span class="p">|</span> Fichier de configuration du bundle
-│   ├── routing.yml
-│   └── services.yml
-├── doc                             <span class="p">|</span> Documentation du bundle
-│   └── index.rst
-├── public                          <span class="p">|</span> Fichiers à destination des internautes
-│   ├── css
-│   ├── images
-│   └── js
-├── translations                    <span class="p">|</span> Fichiers de traductions
-│   └── messages.fr.xlf
-└── views                           <span class="p">|</span> Template Twig
-    └── Default
-        └── index.html.twig
-Tests                               <span class="p">|</span> Tests
-└── Controller
-    └── DefaultControllerTest.php
-</pre></div>
-</div>
+<p>Tout ces éléments sont organisés dans des répertoires. Par convention les voici :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Répertoire</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Commandes</td>
+<td>Command/</td>
+</tr>
+<tr class="row-odd"><td>Contrôleurs</td>
+<td>Controller/</td>
+</tr>
+<tr class="row-even"><td>Extensions du Conteneur de Services</td>
+<td>DependencyInjection/</td>
+</tr>
+<tr class="row-odd"><td>Listeners d&#8217;Évènements</td>
+<td>EventListener/</td>
+</tr>
+<tr class="row-even"><td>Configuration</td>
+<td>Resources/config/</td>
+</tr>
+<tr class="row-odd"><td>Ressources Web</td>
+<td>Resources/public/</td>
+</tr>
+<tr class="row-even"><td>Fichiers de traduction</td>
+<td>Resources/translations/</td>
+</tr>
+<tr class="row-odd"><td>Templates</td>
+<td>Resources/views/</td>
+</tr>
+<tr class="row-even"><td>Tests Unitaires et Fonctionnels</td>
+<td>Tests/</td>
+</tr>
+<tr class="row-odd"><td>Exceptions</td>
+<td>Exception</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -307,7 +344,7 @@ Tests                               <span class="p">|</span> Tests
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="application_symfony.html" class="btn btn-neutral float-right" title="Création d’un bundle" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sujet_tp.html" class="btn btn-neutral float-right" title="Objectif de notre bundle : un blog" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pre-requis_installation.html" class="btn btn-neutral" title="Pré-requis et installation du framework" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
