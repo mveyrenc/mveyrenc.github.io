@@ -394,7 +394,6 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </div>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># ~/.profile</span>
 ...
-
 <span class="c"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
 <span class="nb">umask </span>002
 </pre></div>
@@ -411,6 +410,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </div>
 <div class="last highlight-console"><div class="highlight"><pre><span class="go">sudo chown www-data:www-data -R /var/www</span>
 <span class="go">sudo chmod g+w -R /var/www</span>
+<span class="go">sudo service apache2 restart</span>
 </pre></div>
 </div>
 </section>

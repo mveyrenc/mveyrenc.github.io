@@ -44,7 +44,6 @@
 
             # ~/.profile
             ...
-
             # umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775
             umask 002
 
@@ -64,6 +63,7 @@
 
             sudo chown www-data:www-data -R /var/www
             sudo chmod g+w -R /var/www
+            sudo service apache2 restart
 
     .. revealjs:: Installation de Symfony
 
