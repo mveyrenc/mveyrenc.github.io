@@ -171,7 +171,6 @@ Ensuite, on utilise :program:`Composer` pour télécharger :program:`Symfony`, e
 
     cd /var/www
     php composer.phar create-project symfony/framework-standard-edition ./symfony
-    mv composer.phar Symfony
     
 :program:`Composer` va télécharger et installer toutes les librairies nécessaires au fonctionnent de :program:`Symfony` dans le répertoire ``/var/www/symfony``.
 

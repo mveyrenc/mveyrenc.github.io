@@ -32,7 +32,7 @@ Une réponse HTTP contient :
         * :abbr:`200 (OK)`
         * :abbr:`301 (redirection permanente)`/:abbr:`302 (redirection temporaire)`
         * :abbr:`401 (authentification requise)`/:abbr:`403 (accès refusé)`/:abbr:`404 (page non trouvée)`/:abbr:`410 (page supprimée)`
-        * :abbr:`500 et 5003 (erreur serveur)`
+        * :abbr:`500 (erreur serveur)`
 
     * des entêtes (headers)
     * le contenu de la réponse

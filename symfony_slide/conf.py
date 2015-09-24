@@ -37,13 +37,13 @@ lexers['php-annotations'] = PhpLexer(startinline=True)
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.pngmath',
     'sphinx.ext.ifconfig',
     'sphinxcontrib.programoutput',
     'sphinxcontrib.phpdomain',
+    'sphinxjp.themes.revealjs'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -83,7 +83,7 @@ release = '1.0.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['parts/*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -114,12 +114,16 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'revealjs'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+    "lang": "fr",
+    "theme": "openwide",
+    "slide_number": True,
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -272,27 +276,3 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
-
-
-# -- Hieroglyph Slide Configuration ------------
-
-extensions += [
-    'hieroglyph',
-]
-
-slide_theme = 'slides'
-slide_levels = 3
-
-# Place custom static assets in the _static directory and uncomment
-# the following lines to include them
-slide_theme_options = {
-   'custom_css': 'css/custom.css',
-#     'custom_js': 'custom.js',
-}
-
-# ----------------------------------------------
-
-
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}

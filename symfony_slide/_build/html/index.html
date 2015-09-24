@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Symfony</title>
+
+    
+
+    
+<link rel="stylesheet" href="_static/css/reveal.css">
+<link rel="stylesheet" href="_static/css/theme/openwide.css" id="theme">
+<link rel="stylesheet" href="_static/lib/css/zenburn.css">
+<link rel="stylesheet" href="_static/revealjs.css" type="text/css" />
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if(window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '_static/css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="_static/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+  <section class="first-slide">
+<h1>PHP/Symfony</h1>
+<h2>EPSI/B2</h2>
+</section>
+<section>
+<section class="first last">
+<h1>Supports de cours</h1>
+<a class="reference external" href="http://mveyrenc.github.io">http://mveyrenc.github.io</a></section>
+</section>
+<section>
+<section class="first last">
+<h1>Symfony</h1>
+<p class="first">Framework
++ PHP
++ Open source</p>
+<aside class="last notes">
+open source = l’utilisation, l’étude, la modification et la duplication en vue de sa diffusion sont permises, techniquement et légalement.</aside>
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Rappels PHP</h1>
+</section>
+<section>
+<h2>Terminologie</h2>
+<dl class="first last docutils">
+<dt>Classe</dt>
+<dd><ul class="first last simple">
+<li>représentation abstraite d’un objet</li>
+<li>somme des propriétés (attributs) de l’objet et des traitements (méthodes) dont il est capable</li>
+</ul>
+</dd>
+<dt>Objet</dt>
+<dd><ul class="first last simple">
+<li>instance de classe</li>
+</ul>
+</dd>
+</dl>
+</section>
+<section>
+<h2>Mots réservés</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>class</strong></td>
+<td>déclaration de classe</td>
+</tr>
+<tr class="row-even"><td><strong>const</strong></td>
+<td>déclaration de constante de classe</td>
+</tr>
+<tr class="row-odd"><td><strong>function</strong></td>
+<td>déclaration d&#8217;une méthode</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><strong>public</strong></div>
+<div class="line"><strong>protected</strong></div>
+<div class="line">private</div>
+</div>
+</td>
+<td>visibilité de l&#8217;attribut ou de la méthode (par défaut &#8220;public&#8221; si aucun accès n&#8217;est explicitement défini)</td>
+</tr>
+<tr class="row-odd"><td><strong>new</strong></td>
+<td>création d&#8217;objet</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Mots réservés</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>self</td>
+<td>résolution de portée (la classe elle-même)</td>
+</tr>
+<tr class="row-even"><td><strong>parent</strong></td>
+<td>résolution de portée (la classe &#8220;parent&#8221;)</td>
+</tr>
+<tr class="row-odd"><td>static</td>
+<td>résolution de portée (appel statique)</td>
+</tr>
+<tr class="row-even"><td><strong>extends</strong></td>
+<td>héritage de classe</td>
+</tr>
+<tr class="row-odd"><td>implements</td>
+<td>implémentation d&#8217;une interface</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Méthodes magiques</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>__construct()</strong></td>
+<td>constructeur de la classe, est appelé lors de le création d&#8217;un objet</td>
+</tr>
+<tr class="row-even"><td>__destruct()</td>
+<td>destructeur de la classe, est appelé lors de la destruction d&#8217;un objet</td>
+</tr>
+<tr class="row-odd"><td><strong>__set()</strong></td>
+<td>déclenchée lors de l&#8217;accès en écriture à une propriété de l&#8217;objet</td>
+</tr>
+<tr class="row-even"><td><strong>__get()</strong></td>
+<td>déclenchée lors de l&#8217;accès en lecture à une propriété de l&#8217;objet</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Méthodes magiques</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>__call()</strong></td>
+<td>déclenchée lors de l&#8217;appel d&#8217;une méthode inexistante de la classe</td>
+</tr>
+<tr class="row-even"><td>__callstatic()</td>
+<td>déclenchée lors de l&#8217;appel d&#8217;une méthode statique inexistante de la classe</td>
+</tr>
+<tr class="row-odd"><td><strong>__isset()</strong></td>
+<td>déclenchée si on applique <code class="docutils literal"><span class="pre">isset()</span></code> à une propriété de l&#8217;objet</td>
+</tr>
+<tr class="row-even"><td>__unset()</td>
+<td>déclenchée si on applique <code class="docutils literal"><span class="pre">unset()</span></code> à une propriété de l&#8217;objet</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Méthodes magiques</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>__sleep()</td>
+<td>exécutée si la fonction <code class="docutils literal"><span class="pre">serialize()</span></code> est appliquée à l&#8217;objet</td>
+</tr>
+<tr class="row-even"><td>__wakeup()</td>
+<td>exécutée si la fonction <code class="docutils literal"><span class="pre">unserialize()</span></code> est appliquée à l&#8217;objet</td>
+</tr>
+<tr class="row-odd"><td><strong>__toString()</strong></td>
+<td>appelée lorsque l&#8217;on essaie d&#8217;afficher directement l&#8217;objet : <code class="docutils literal"><span class="pre">echo</span> <span class="pre">$object;</span></code></td>
+</tr>
+<tr class="row-even"><td>__set_state()</td>
+<td>méthode statique lancée lorsque l&#8217;on applique la fonction <code class="docutils literal"><span class="pre">var_export()</span></code> à l&#8217;objet</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Méthodes magiques</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>__clone()</td>
+<td>appelé lorsque l&#8217;on essaie de cloner l&#8217;objet</td>
+</tr>
+<tr class="row-even"><td>__autoload()</td>
+<td>cette fonction n&#8217;est pas une méthode, elle est déclarée dans le scope global et permet d&#8217;automatiser les <code class="docutils literal"><span class="pre">include</span></code>/<code class="docutils literal"><span class="pre">require</span></code> de classes PHP</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Variables réservés</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>$this</strong></td>
+<td>objet lui-même à l’intérieur d’une classe</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Syntaxe de base</h2>
+<div class="first last highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONSOMMATION</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1"># L/100km</span>
+    <span class="k">const</span> <span class="no">CAPACITE_RESERVOIR</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">#L</span>
+
+    <span class="k">public</span> <span class="nv">$kilometrage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$resteReservoir</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">+=</span> <span class="nv">$distance</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">-=</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="o">*</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">peutEncoreRouler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">*</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nv">$voiture1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Voiture</span><span class="p">();</span>
+<span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">roule</span><span class="p">(</span> <span class="mi">60</span> <span class="p">);</span>
+<span class="nv">$voiture1</span><span class="o">-&gt;</span><span class="na">peutEncoreRouler</span><span class="p">(</span> <span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nx">Voiture</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="p">);</span>  <span class="c1">// Affiche int(4)</span>
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Héritage</h2>
+<div class="first last highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="nv">$kilometrage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">kilometrage</span> <span class="o">+=</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Voiture</span> <span class="k">extends</span> <span class="nx">Vehicule</span> <span class="p">{</span>
+
+    <span class="k">const</span> <span class="no">CONSOMMATION</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1"># L/100km</span>
+    <span class="k">const</span> <span class="no">CAPACITE_RESERVOIR</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">#L</span>
+
+    <span class="k">protected</span> <span class="nv">$resteReservoir</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">roule</span><span class="p">(</span> <span class="nv">$distance</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">-=</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span> <span class="o">*</span> <span class="nv">$distance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">peutEncoreRouler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resteReservoir</span> <span class="o">*</span> <span class="nx">self</span><span class="o">::</span><span class="na">CONSOMMATION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Exceptions</h2>
+<div class="first last highlight-php"><div class="highlight"><pre><span class="k">try</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s1">&#39;Incident XY&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span> <span class="c1">//affiche &quot;Incident XY&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section class="last">
+<h2>Namespace</h2>
+<div class="first last highlight-php"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">PHPUnit\Extensions\Database\DB\MetaData</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MySQL</span> <span class="k">extends</span> <span class="nx">InformationSchema</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Du navigateur vers Symfony</h1>
+</section>
+<section>
+<h2>De votre navigateur</h2>
+<img alt="_images/http.png" class="box first align-center" src="_images/http.png" />
+<dl class="last docutils">
+<dt>Requête HTTP</dt>
+<dd><ul class="first last simple">
+<li>la méthode utilisée (GET, POST, PUT, DELETE, etc.)</li>
+<li>la page demandée</li>
+<li>le type de requête (HTTP/1.1 par exemple)</li>
+<li>des entêtes (headers)</li>
+<li>le contenu de la requête</li>
+</ul>
+</dd>
+</dl>
+</section>
+<section>
+<h2>De votre navigateur</h2>
+<img alt="_images/http.png" class="box first align-center" src="_images/http.png" />
+<dl class="last docutils">
+<dt>Réponse HTTP</dt>
+<dd><ul class="first last simple">
+<li>le type de requête (HTTP/1.1 par exemple)</li>
+<li>le code de retour 200, 301/302, 401/403/404/410, 500</li>
+<li>des entêtes (headers)</li>
+<li>le contenu de la réponse</li>
+</ul>
+</dd>
+</dl>
+</section>
+<section>
+<h2>En passant par le serveur web</h2>
+<img alt="_images/web_to_sf.png" class="box first last align-center" src="_images/web_to_sf.png" />
+</section>
+<section class="last">
+<h2>Vers Symfony</h2>
+<img alt="_images/symfony_request_flow.png" class="box first last align-center" src="_images/symfony_request_flow.png" />
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Installation</h1>
+</section>
+<section>
+<h2>Installation des paquets</h2>
+<div class="first last highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install mysql-server mysql-client</span>
+<span class="go">sudo apt-get install apache2</span>
+<span class="go">sudo apt-get install curl git</span>
+<span class="go">sudo apt-get install php5 php5-cli php5-intl php5-xsl php5-curl php5-mysql</span>
+<span class="go">sudo apt-get install php5-xdebug</span>
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Configuration de PHP</h2>
+<div class="first highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+</pre></div>
+</div>
+<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/cli/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+</pre></div>
+</div>
+<div class="last highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
+<span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Correction des droits sur les fichiers</h2>
+<div class="first highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G www-data $(whoami)</span>
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G $(whoami) www-data</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># ~/.profile</span>
+...
+
+<span class="c"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
+<span class="nb">umask </span>002
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">source ~/.profile</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># /etc/apache2/envvars</span>
+...
+
+<span class="c"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
+<span class="nb">umask </span>002
+</pre></div>
+</div>
+<div class="last highlight-console"><div class="highlight"><pre><span class="go">sudo chown www-data:www-data -R /var/www</span>
+<span class="go">sudo chmod g+w -R /var/www</span>
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Installation de Symfony</h2>
+<div class="first highlight-console"><div class="highlight"><pre><span class="go">cd /var/www</span>
+<span class="go">curl -sS https://getcomposer.org/installer | php</span>
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">cd /var/www</span>
+<span class="go">php composer.phar create-project symfony/framework-standard-edition ./symfony</span>
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Creating the &quot;app/config/parameters.yml&quot; file</span>
+<span class="go">Some parameters are missing. Please provide them.</span>
+<span class="go">database_host (127.0.0.1):</span>
+<span class="go">database_port (null):</span>
+<span class="go">database_name (symfony):</span>
+<span class="go">database_user (root): symfony</span>
+<span class="go">database_password (null): symfony_pass</span>
+<span class="go">mailer_transport (smtp):</span>
+<span class="go">mailer_host (127.0.0.1):</span>
+<span class="go">mailer_user (null):</span>
+<span class="go">mailer_password (null):</span>
+<span class="go">secret (ThisTokenIsNotSoSecretChangeIt):</span>
+</pre></div>
+</div>
+<div class="last highlight-console"><div class="highlight"><pre><span class="go">mv composer.phar symfony</span>
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Mise en place du VHost</h2>
+<div class="first highlight-bash"><div class="highlight"><pre><span class="c"># /etc/hosts</span>
+
+127.0.1.1  symfony.loc.epsi.fr
+</pre></div>
+</div>
+<div class="highlight-apache"><div class="highlight"><pre><span class="c"># /etc/apache2/sites-available/symfony.conf</span>
+
+<span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+    <span class="nb">ServerName</span> symfony.loc.epsi.fr
+
+    <span class="nb">DocumentRoot</span> <span class="sx">/var/www/symfony/web</span>
+    <span class="nt">&lt;Directory</span> <span class="s">/var/www/symfony/web</span><span class="nt">&gt;</span>
+        <span class="nb">AllowOverride</span> <span class="k">All</span>
+        <span class="nb">Require</span> <span class="k">all</span> granted
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    <span class="nb">ErrorLog</span> <span class="sx">/var/log/apache2/symfony.loc.epsi.fr_error.log</span>
+    <span class="nb">CustomLog</span> <span class="sx">/var/log/apache2/symfony.loc.epsi.fr_access.log</span> combined
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+<div class="last highlight-console"><div class="highlight"><pre><span class="go">sudo a2ensite symfony.conf</span>
+<span class="go">sudo service apache2 reload</span>
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Vérification de votre configuration de PHP</h2>
+<p class="first"><a class="reference external" href="http://symfony.loc.epsi.fr/config.php">http://symfony.loc.epsi.fr/config.php</a></p>
+<img alt="_images/symfony_config_success.png" class="last" src="_images/symfony_config_success.png" />
+</section>
+<section class="last">
+<h2>Vérification de votre configuration de PHP</h2>
+<div class="first highlight-console"><div class="highlight"><pre><span class="go">cd /var/www/symfony</span>
+<span class="go">php app/check.php</span>
+</pre></div>
+</div>
+<img alt="_images/symfony_config_cli.png" class="last" src="_images/symfony_config_cli.png" />
+</section>
+</section>
+
+
+      </div>
+    </div>
+    
+<script src="_static/js/jquery.min.js"></script>
+<script src="_static/lib/js/head.min.js"></script>
+<script src="_static/js/reveal.js"></script>
+    <script>
+
+      // change DOM for reveal.js
+      $("div.section h1").remove();
+      var content = $("div.section").html();
+      $("div.section").remove();
+      $("div.slides").html(content);
+
+      Reveal.initialize({
+        width: 960,
+        height: 700,
+
+        margin: 0.1,
+
+        minScale: 0.2,
+        maxScale: 1.0,
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        keyboard : true,
+        overview: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        fragments: true,
+
+        autoSlide: 0,
+        mouseWheel: false,
+        rollingLinks: false,
+        previewLinks: false,
+
+        transitionSpeed: "default",
+        backgroundTransition: "default",
+
+        slideNumber: true,
+        embedded: false,
+        autoSlideStoppable: true,
+        hideAddressBar: true,
+
+        parallaxBackgroundImage: "",
+        parallaxBackgroundSize: "",
+
+        focusBodyOnPageVisiblityChange: true,
+
+        viewDistance: 3,
+
+        transition: Reveal.getQueryHash().transition || "default",
+
+        
+
+        dependencies: [
+           { src: '_static/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+           { src: '_static/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+           { src: '_static/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+           { src: '_static/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+    
+  </body>
+</html>
