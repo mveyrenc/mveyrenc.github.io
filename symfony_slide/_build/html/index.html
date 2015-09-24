@@ -371,15 +371,15 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </section>
 <section>
 <h2>Configuration de PHP</h2>
-<div class="first highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/php.ini</span>
+<div class="first highlight-ini"><div class="highlight"><pre><span class="c1"># sudo vim /etc/php5/apache2/php.ini</span>
 <span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
 </pre></div>
 </div>
-<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/cli/php.ini</span>
+<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># sudo vim /etc/php5/cli/php.ini</span>
 <span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
 </pre></div>
 </div>
-<div class="last highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
+<div class="last highlight-ini"><div class="highlight"><pre><span class="c1"># sudo vim /etc/php5/apache2/conf.d/20-xdebug.ini</span>
 <span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
 </pre></div>
 </div>
@@ -482,6 +482,62 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </pre></div>
 </div>
 <img alt="_images/symfony_config_cli.png" class="last" src="_images/symfony_config_cli.png" />
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Architecture</h1>
+</section>
+<section>
+<h2>MVC</h2>
+<dl class="first last docutils">
+<dt>Contrôleur (controller)</dt>
+<dd>Génère la réponse à la requête HTTP demandée par le visiteur en utilisant les composants du framework</dd>
+<dt>Modèle (model)</dt>
+<dd>Responsable des données et de tous les traitements faits sur les données</dd>
+<dt>Vue (vue)</dt>
+<dd>Affiche les données</dd>
+</dl>
+</section>
+<section>
+<h2>Service-oriented - SOA</h2>
+Déposer une fonctionnalité en un ensemble de fonctions basiques, appelées services</section>
+<section class="last">
+<h2>Fichiers</h2>
+<div class="first last highlight-console"><div class="highlight"><pre><span class="gp">$</span> ls -A1 /var/www/symfony
+<span class="go">app</span>
+<span class="go">bin</span>
+<span class="go">composer.json</span>
+<span class="go">composer.lock</span>
+<span class="go">composer.phar</span>
+<span class="go">.git</span>
+<span class="go">.gitignore</span>
+<span class="go">LICENSE</span>
+<span class="go">nbproject</span>
+<span class="go">README.md</span>
+<span class="go">src</span>
+<span class="go">UPGRADE-2.2.md</span>
+<span class="go">UPGRADE-2.3.md</span>
+<span class="go">UPGRADE-2.4.md</span>
+<span class="go">UPGRADE.md</span>
+<span class="go">vendor</span>
+<span class="go">web</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section>
+<section class="first last">
+<h2>Blog</h2>
+<ul class="first last simple">
+<li>Nous aurons des posts écris par des auteurs, auxquels nous attacherons des tags.</li>
+<li>Les tags pourront être attachés à plusieurs posts.</li>
+<li>Les auteurs peuvent écrire plusieurs posts.</li>
+<li>Nous pourrons lire, écrire, éditer et rechercher des posts.</li>
+<li>Nous pourrons créer, modifier et supprimer des tags.</li>
+<li>Nous pourrons également commenter les posts.</li>
+<li>Nous n’aurons pas de système de gestion des utilisateurs : nous devrons choisir l’utilisateur lorsque nous rédigerons un post ou un commentaire.</li>
+</ul>
 </section>
 </section>
 

@@ -17,17 +17,17 @@
 
         .. code-block:: ini
 
-            # /etc/php5/apache2/php.ini
+            # sudo vim /etc/php5/apache2/php.ini
             date.timezone = Europe/Paris
 
         .. code-block:: ini
 
-            # /etc/php5/cli/php.ini
+            # sudo vim /etc/php5/cli/php.ini
             date.timezone = Europe/Paris
 
         .. code-block:: ini
 
-            # /etc/php5/apache2/conf.d/20-xdebug.ini
+            # sudo vim /etc/php5/apache2/conf.d/20-xdebug.ini
             xdebug.max_nesting_level = 250
 
     .. revealjs:: Correction des droits sur les fichiers

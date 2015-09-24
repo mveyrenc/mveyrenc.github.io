@@ -11,3 +11,5 @@
 .. include:: parts/rappel.rst
 .. include:: parts/navigateur_vers_symfony.rst
 .. include:: parts/installation.rst
+.. include:: parts/architecture.rst
+.. include:: parts/blog.rst
