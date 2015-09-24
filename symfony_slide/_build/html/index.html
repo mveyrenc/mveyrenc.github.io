@@ -443,6 +443,16 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </div>
 </section>
 <section>
+<h2>Création de la base de données</h2>
+<div class="first highlight-console"><div class="highlight"><pre><span class="go">mysql -uroot -proot</span>
+</pre></div>
+</div>
+<div class="last highlight-mysql"><div class="highlight"><pre><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">symfony</span><span class="p">;</span>
+<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">symfony</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">symfony</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;symfony_pass&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section>
 <h2>Mise en place du VHost</h2>
 <div class="first highlight-bash"><div class="highlight"><pre><span class="c"># /etc/hosts</span>
 

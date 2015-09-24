@@ -96,6 +96,17 @@
 
             mv composer.phar symfony
 
+    .. revealjs:: Création de la base de données
+
+        .. code-block:: console
+
+            mysql -uroot -proot
+
+        .. code-block:: mysql
+
+           CREATE DATABASE symfony;
+           GRANT ALL ON symfony.* TO symfony@localhost IDENTIFIED BY 'symfony_pass';
+
     .. revealjs:: Mise en place du VHost
 
         .. code-block:: bash
