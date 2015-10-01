@@ -105,10 +105,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#paramconverter">&#64;ParamConverter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#template">&#64;Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cache">&#64;Cache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#security">&#64;Security</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#comment-generer-des-url">Comment générer des URL ?</a></li>
@@ -465,96 +461,6 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="paramconverter">
-<h3>&#64;ParamConverter<a class="headerlink" href="#paramconverter" title="Lien permanent vers ce titre">¶</a></h3>
-<ul>
-<li><p class="first">Il faut importer le namespace <code class="docutils literal"><span class="pre">Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter</span></code></p>
-</li>
-<li><p class="first">Il permet de convertir un paramètre de l&#8217;URL en objet</p>
-<blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @Route(&quot;/blog/{id}&quot;)</span>
-<span class="sd"> * @ParamConverter(&quot;post&quot;, class=&quot;EpsiBlogBundle:Post&quot;)</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @Route(&quot;/blog/{id}/comments/{comment_id}&quot;)</span>
-<span class="sd"> * @ParamConverter(&quot;comment&quot;, class=&quot;EpsiBlogBundle:Comment&quot;, options={&quot;id&quot; = &quot;comment_id&quot;})</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">,</span> <span class="nx">Comment</span> <span class="nv">$comment</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
-</div>
-<div class="section" id="template">
-<h3>&#64;Template<a class="headerlink" href="#template" title="Lien permanent vers ce titre">¶</a></h3>
-<ul>
-<li><p class="first">Il faut importer le namespace <code class="docutils literal"><span class="pre">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span></code></p>
-</li>
-<li><p class="first">Il permet de spécifier quel template utilise le contrôleur</p>
-<blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @Template(&quot;EpsiBlogBundle:Post:show.html.twig&quot;)</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// get the Post</span>
-    <span class="nv">$post</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;post&#39;</span> <span class="o">=&gt;</span> <span class="nv">$post</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @ParamConverter(&quot;post&quot;, class=&quot;EpsiBlogBundle:Post&quot;)</span>
-<span class="sd"> * @Template(&quot;EpsiBlogBundle:Post:show.html.twig&quot;, vars={&quot;post&quot;})</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @Template(vars={&quot;post&quot;})</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @Template</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Les 3 exemples ci-dessus sont équivalents.</p>
-</div></blockquote>
-</li>
-</ul>
-</div>
-<div class="section" id="cache">
-<h3>&#64;Cache<a class="headerlink" href="#cache" title="Lien permanent vers ce titre">¶</a></h3>
-<ul class="simple">
-<li>Permet de contrôler le cache HTTP.</li>
-</ul>
-</div>
-<div class="section" id="security">
-<h3>&#64;Security<a class="headerlink" href="#security" title="Lien permanent vers ce titre">¶</a></h3>
-<ul class="simple">
-<li>Permet de gérer les droits d&#8217;accès.</li>
-</ul>
 </div>
 </div>
 <div class="section" id="comment-generer-des-url">

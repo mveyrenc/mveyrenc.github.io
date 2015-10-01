@@ -105,7 +105,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#les-autres-methodes-de-l-objet-request">Les autres méthodes de l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#l-objet-response">L&#8217;objet <code class="docutils literal"><span class="pre">Response</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-objet-response">L&#8217;objet <code class="docutils literal"><span class="pre">Response</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#paramconverter">&#64;ParamConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template">&#64;Template</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
@@ -196,7 +200,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </div>
 <div class="section" id="autres-parametres">
 <h3>Autres paramètres<a class="headerlink" href="#autres-parametres" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Les autres paramètres peuvent tous être récupérés via l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> dans le contrôleur que l&#8217;on peut obtenir en faisant <code class="docutils literal"><span class="pre">$request</span> <span class="pre">=</span> <span class="pre">$this-&gt;getRequest();</span></code>. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :</p>
+<p>Les autres paramètres peuvent tous être récupérés via l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> dans le contrôleur, on peut l&#8217;obtenir en faisant <code class="docutils literal"><span class="pre">$request</span> <span class="pre">=</span> <span class="pre">$this-&gt;getRequest();</span></code>. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -247,7 +251,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </div>
 <div class="section" id="les-autres-methodes-de-l-objet-request">
 <h3>Les autres méthodes de l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code><a class="headerlink" href="#les-autres-methodes-de-l-objet-request" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une requête ne se compose pas que le paramètres et l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> permet de les récupérer d&#8217;autres informations comme :</p>
+<p>Une requête ne se compose pas que de paramètres et l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code> permet de les récupérer d&#8217;autres informations comme :</p>
 <ul class="simple">
 <li>la méthode de la requête HTTP : <code class="docutils literal"><span class="pre">$request-&gt;getMethod()</span></code></li>
 <li>savoir si la requête est une requête AJAX : <code class="docutils literal"><span class="pre">$request-&gt;isXmlHttpRequest()</span></code></li>
@@ -290,6 +294,95 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </div>
 </div></blockquote>
 <p>Allez voir la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a>.</p>
+<p>Des annotations permettent de raccourcir encore le code.</p>
+<div class="section" id="paramconverter">
+<h3>&#64;ParamConverter<a class="headerlink" href="#paramconverter" title="Lien permanent vers ce titre">¶</a></h3>
+<ul>
+<li><p class="first">Il faut importer le namespace <code class="docutils literal"><span class="pre">Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter</span></code></p>
+</li>
+<li><p class="first">Il permet de convertir un paramètre de l&#8217;URL en objet</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Route(&quot;/blog/{id}&quot;)</span>
+<span class="sd"> * @ParamConverter(&quot;post&quot;, class=&quot;EpsiBlogBundle:Post&quot;)</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Dans la configuration de Symfony, on peut activer la conversion automatique</p>
+<blockquote>
+<div><div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/config.yml</span>
+<span class="l-Scalar-Plain">sensio_framework_extra</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">request</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">converters</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+        <span class="l-Scalar-Plain">auto_convert</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Route(&quot;/blog/{id}/comments/{comment_id}&quot;)</span>
+<span class="sd"> * @ParamConverter(&quot;comment&quot;, class=&quot;EpsiBlogBundle:Comment&quot;, options={&quot;id&quot; = &quot;comment_id&quot;})</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">,</span> <span class="nx">Comment</span> <span class="nv">$comment</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="template">
+<h3>&#64;Template<a class="headerlink" href="#template" title="Lien permanent vers ce titre">¶</a></h3>
+<ul>
+<li><p class="first">Il faut importer le namespace <code class="docutils literal"><span class="pre">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span></code></p>
+</li>
+<li><p class="first">Il permet de spécifier quel template utilise le contrôleur</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Template(&quot;EpsiBlogBundle:Post:show.html.twig&quot;)</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// get the Post</span>
+    <span class="nv">$post</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;post&#39;</span> <span class="o">=&gt;</span> <span class="nv">$post</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @ParamConverter(&quot;post&quot;, class=&quot;EpsiBlogBundle:Post&quot;)</span>
+<span class="sd"> * @Template(&quot;EpsiBlogBundle:Post:show.html.twig&quot;, vars={&quot;post&quot;})</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Template(vars={&quot;post&quot;})</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Template</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Les 3 exemples ci-dessus sont équivalents.</p>
+</div></blockquote>
+</li>
+</ul>
 <p>Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <code class="docutils literal"><span class="pre">Response</span></code> en paramètre à la méthode <code class="docutils literal"><span class="pre">render()</span></code>.</p>
 <p>On peut également faire des redirections dans le contrôleur avec la méthode <code class="docutils literal"><span class="pre">redirect()</span></code>. La méthode <code class="docutils literal"><span class="pre">generateUrl</span></code> permet quant à elle de générer l&#8217;URL de la page de destination :</p>
 <blockquote>
@@ -299,6 +392,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </pre></div>
 </div>
 </div></blockquote>
+</div>
 </div>
 </div>
 

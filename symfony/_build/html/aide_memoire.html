@@ -198,13 +198,19 @@ php app/console doctrine:database:create
 <span class="c"># supprimer la base de données</span>
 php app/console doctrine:database:drop
 
-<span class="c"># exécuter ou afficher les requêtes SQL nécessaire pour créer le schéma de la base</span>
-php app/console doctrine:schema:create --dump-sql --force
+<span class="c"># afficher les requêtes SQL nécessaire pour créer le schéma de la base</span>
+php app/console doctrine:schema:create --dump-sql
 
-<span class="c"># exécuter ou afficher les requêtes SQL nécessaire pour supprimer le schéma de la base</span>
+<span class="c"># exécuter les requêtes SQL nécessaire pour créer le schéma de la base</span>
+php app/console doctrine:schema:create
+
+<span class="c"># afficher les requêtes SQL nécessaire pour supprimer le schéma de la base</span>
+php app/console doctrine:schema:drop --dump-sql
+
+<span class="c"># exécuter et/ou afficher les requêtes SQL nécessaire pour supprimer le schéma de la base</span>
 php app/console doctrine:schema:drop --dump-sql --force
 
-<span class="c"># exécuter ou afficher les requêtes SQL nécessaire pour mettre à jour le schéma de la base</span>
+<span class="c"># exécuter et/ou afficher les requêtes SQL nécessaire pour mettre à jour le schéma de la base</span>
 php app/console doctrine:schema:update --dump-sql --force
 
 <span class="c"># vérifier les entités Doctrine et si le schéma de la base de données est à jour</span>

@@ -34,7 +34,7 @@ Les paramètres passés par dans l'URL (hors paramètres GET) doivent êtres ré
 Autres paramètres
 =================
 
-Les autres paramètres peuvent tous être récupérés via l'objet ``Request`` dans le contrôleur que l'on peut obtenir en faisant ``$request = $this->getRequest();``. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :
+Les autres paramètres peuvent tous être récupérés via l'objet ``Request`` dans le contrôleur, on peut l'obtenir en faisant ``$request = $this->getRequest();``. Ensuite on peut récupérer les paramètres avec les méthodes suivantes :
 
 +---------------------------+-----------------------------+---------------------------+------------------------------------------------------------------+
 | Type de paramètres        | Méthode Symfony2            | Méthode traditionnelle    | Exemple                                                          |
@@ -55,7 +55,7 @@ Les autres paramètres peuvent tous être récupérés via l'objet ``Request`` d
 Les autres méthodes de l'objet ``Request``
 ==========================================
 
-Une requête ne se compose pas que le paramètres et l'objet ``Request`` permet de les récupérer d'autres informations comme :
+Une requête ne se compose pas que de paramètres et l'objet ``Request`` permet de les récupérer d'autres informations comme :
 
 * la méthode de la requête HTTP : ``$request->getMethod()``
 
@@ -102,6 +102,95 @@ Cette méthode est un raccourcie qui permet de générer une réponse en une seu
         {% endblock %}
 
 Allez voir la page http://symfony.loc.epsi.fr/app_dev.php/hello/World.
+
+Des annotations permettent de raccourcir encore le code.
+
+@ParamConverter
+===============
+
+* Il faut importer le namespace ``Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter``
+
+* Il permet de convertir un paramètre de l'URL en objet
+
+    .. code-block:: php
+
+        /**
+         * @Route("/blog/{id}")
+         * @ParamConverter("post", class="EpsiBlogBundle:Post")
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+* Dans la configuration de Symfony, on peut activer la conversion automatique
+
+    .. code-block:: yaml
+
+        # app/config/config.yml
+        sensio_framework_extra:
+            request:
+                converters: true
+                auto_convert: true
+
+    .. code-block:: php
+
+        /**
+         * @Route("/blog/{id}/comments/{comment_id}")
+         * @ParamConverter("comment", class="EpsiBlogBundle:Comment", options={"id" = "comment_id"})
+         */
+        public function showAction(Post $post, Comment $comment)
+        {
+        }
+
+@Template
+=========
+
+* Il faut importer le namespace ``Sensio\Bundle\FrameworkExtraBundle\Configuration\Template``
+
+* Il permet de spécifier quel template utilise le contrôleur
+
+    .. code-block:: php
+
+        /**
+         * @Template("EpsiBlogBundle:Post:show.html.twig")
+         */
+        public function showAction($id)
+        {
+            // get the Post
+            $post = ...;
+
+            return array('post' => $post);
+        }
+
+    .. code-block:: php
+
+        /**
+         * @ParamConverter("post", class="EpsiBlogBundle:Post")
+         * @Template("EpsiBlogBundle:Post:show.html.twig", vars={"post"})
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+    .. code-block:: php
+
+        /**
+         * @Template(vars={"post"})
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+    .. code-block:: php
+
+        /**
+         * @Template
+         */
+        public function showAction(Post $post)
+        {
+        }
+
+    Les 3 exemples ci-dessus sont équivalents.
 
 Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet ``Response`` en paramètre à la méthode ``render()``.
 

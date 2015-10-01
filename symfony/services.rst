@@ -4,6 +4,25 @@ Les services
 
 Comme dit précédemment, un contrôleur ne fait qu'utiliser d'autres composants pour construire la réponse. Certains de ces composants sont des services, des scripts qui remplissent un rôle précis comme envoyer un mail, gérer les sessions de l'utilisateur, etc. Dans ce chapitre, vous n'allons pas voir comment créer un service, nous n'en sommes pas là, mais comment s'en servir et quels services :program:`Symfony` nous propose.
 
+*******************
+Déclarer un service
+*******************
+
+.. code-block:: yaml
+
+    # Resources/config/services.yml
+
+    parameters:
+        epsi_blog.example.class: Epsi\Bundle\BlogBundle\Services\Example
+        epsi_blog.example_bis.class: Epsi\Bundle\BlogBundle\Services\ExampleBis
+
+    services:
+        epsi_blog.example:
+            class:        %epsi_blog.example.class%
+        epsi_blog.example_bis:
+            class:        %epsi_blog.example_bis.class%
+            arguments:    ["@epsi_blog.example"]
+
 ******************
 Accéder un service
 ******************

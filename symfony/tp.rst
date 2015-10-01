@@ -188,11 +188,11 @@ Travail à effectuer
 
     .. code-block:: bash
 
-        php app/console help generate:doctrine:crud
+        php app/console generate:doctrine:crud
 
     Lorsque vous allez la lancer elle va vous demander si vous souhaitez créer les actions d'écriture (``new``, ``update`` et ``delete``), répondez ``yes``.
 
-    Elle vous demandera également le format de la configuration de vos routes (``yml``, ``xml``, ``php``, ou ``annotation``), répondez ``yml``.
+    Elle vous demandera également le format de la configuration de vos routes (``yml``, ``xml``, ``php``, ou ``annotation``), répondez ``annotation``.
 
 #. Ajouter la route ``epsi_blog_homepage`` qui doit afficher la liste des posts du blog (chapitre *Le routing*)
 

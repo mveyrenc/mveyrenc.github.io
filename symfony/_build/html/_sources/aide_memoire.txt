@@ -40,13 +40,19 @@ Manipuler la base de données
     # supprimer la base de données
     php app/console doctrine:database:drop
 
-    # exécuter ou afficher les requêtes SQL nécessaire pour créer le schéma de la base
-    php app/console doctrine:schema:create --dump-sql --force
+    # afficher les requêtes SQL nécessaire pour créer le schéma de la base
+    php app/console doctrine:schema:create --dump-sql 
 
-    # exécuter ou afficher les requêtes SQL nécessaire pour supprimer le schéma de la base
+    # exécuter les requêtes SQL nécessaire pour créer le schéma de la base
+    php app/console doctrine:schema:create 
+
+    # afficher les requêtes SQL nécessaire pour supprimer le schéma de la base
+    php app/console doctrine:schema:drop --dump-sql
+
+    # exécuter et/ou afficher les requêtes SQL nécessaire pour supprimer le schéma de la base
     php app/console doctrine:schema:drop --dump-sql --force
 
-    # exécuter ou afficher les requêtes SQL nécessaire pour mettre à jour le schéma de la base
+    # exécuter et/ou afficher les requêtes SQL nécessaire pour mettre à jour le schéma de la base
     php app/console doctrine:schema:update --dump-sql --force
 
     # vérifier les entités Doctrine et si le schéma de la base de données est à jour
