@@ -13,3 +13,6 @@
 .. include:: parts/installation.rst
 .. include:: parts/architecture.rst
 .. include:: parts/blog.rst
+.. include:: parts/bundle.rst
+.. include:: parts/web-profiler.rst
+.. include:: parts/routeur.rst

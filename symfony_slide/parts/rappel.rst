@@ -126,7 +126,6 @@
                 public function peutEncoreRouler() {
                     echo $this->resteReservoir * self::CONSOMMATION;
                 }
-
             }
 
             $voiture1 = new Voiture();
@@ -145,7 +144,6 @@
                 public function roule( $distance ) {
                     $this->kilometrage += $distance;
                 }
-
             }
 
             class Voiture extends Vehicule {
@@ -163,7 +161,6 @@
                 public function peutEncoreRouler() {
                     echo $this->resteReservoir * self::CONSOMMATION;
                 }
-
             }
 
     .. revealjs:: Exceptions

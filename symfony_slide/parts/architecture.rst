@@ -4,13 +4,20 @@
         :title-heading: h1
 
     .. revealjs:: MVC
-
-        Contrôleur (controller)
-            Génère la réponse à la requête HTTP demandée par le visiteur en utilisant les composants du framework
+        :class: text-left
+            
         Modèle (model)
             Responsable des données et de tous les traitements faits sur les données
-        Vue (vue)
-            Affiche les données
+
+        .. rst-class:: fragment
+
+            Vue (vue)
+                Affiche les données
+
+        .. rst-class:: fragment
+
+            Contrôleur (controller)
+                Génère la réponse à la requête HTTP en utilisant les composants du framework
 
     .. revealjs:: Service-oriented - SOA
 
