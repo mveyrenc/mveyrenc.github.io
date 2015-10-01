@@ -417,11 +417,13 @@
 <div class="section" id="travail-a-effectuer">
 <h2>Travail à effectuer<a class="headerlink" href="#travail-a-effectuer" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Créez le bundle EpsiBlogBundle (chapitre <em>Création d’un bundle</em>)</p>
+<li><p class="first">Créez le bundle EpsiBlogBundle (chapitre <em>Création d’un bundle</em>) avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:bundle</span></code></p>
 </li>
-<li><p class="first">Créez les entités Post, User, Comment et Tag</p>
+<li><p class="first">Créez les entités Post, User, Comment et Tag avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">doctrine:generate:entity</span></code></p>
 </li>
-<li><p class="first">Ajoutez les relations entre les entités</p>
+<li><p class="first">Ajoutez les relations entre les entités en modifiant les classes Entity générées précédemment</p>
+</li>
+<li><p class="first">Générez les méthodes manquantes dans vos entités en exécutant la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">doctrine:generate:entities</span> <span class="pre">EpsiBlogBundle</span></code></p>
 </li>
 <li><p class="first">Créez les interfaces pour gérer chacune des entités avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:doctrine:crud</span></code></p>
 <blockquote>
@@ -432,8 +434,6 @@
 <p>Lorsque vous allez la lancer elle va vous demander si vous souhaitez créer les actions d&#8217;écriture (<code class="docutils literal"><span class="pre">new</span></code>, <code class="docutils literal"><span class="pre">update</span></code> et <code class="docutils literal"><span class="pre">delete</span></code>), répondez <code class="docutils literal"><span class="pre">yes</span></code>.</p>
 <p>Elle vous demandera également le format de la configuration de vos routes (<code class="docutils literal"><span class="pre">yml</span></code>, <code class="docutils literal"><span class="pre">xml</span></code>, <code class="docutils literal"><span class="pre">php</span></code>, ou <code class="docutils literal"><span class="pre">annotation</span></code>), répondez <code class="docutils literal"><span class="pre">annotation</span></code>.</p>
 </div></blockquote>
-</li>
-<li><p class="first">Ajouter la route <code class="docutils literal"><span class="pre">epsi_blog_homepage</span></code> qui doit afficher la liste des posts du blog (chapitre <em>Le routing</em>)</p>
 </li>
 <li><p class="first">Mettez en place le triple héritage de template (chapitres <em>Les vues avec Twig</em>)</p>
 <blockquote>

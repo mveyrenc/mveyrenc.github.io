@@ -176,11 +176,14 @@ La page affiche la liste des posts associés au tag.
 Travail à effectuer
 *******************
 
-#. Créez le bundle EpsiBlogBundle (chapitre *Création d’un bundle*)
+#. Créez le bundle EpsiBlogBundle (chapitre *Création d’un bundle*) avec la commande ``php app/console generate:bundle``
 
-#. Créez les entités Post, User, Comment et Tag
 
-#. Ajoutez les relations entre les entités
+#. Créez les entités Post, User, Comment et Tag avec la commande ``php app/console doctrine:generate:entity``
+
+#. Ajoutez les relations entre les entités en modifiant les classes Entity générées précédemment
+
+#. Générez les méthodes manquantes dans vos entités en exécutant la commande ``php app/console doctrine:generate:entities EpsiBlogBundle``
 
 #. Créez les interfaces pour gérer chacune des entités avec la commande ``php app/console generate:doctrine:crud``
     
@@ -193,8 +196,6 @@ Travail à effectuer
     Lorsque vous allez la lancer elle va vous demander si vous souhaitez créer les actions d'écriture (``new``, ``update`` et ``delete``), répondez ``yes``.
 
     Elle vous demandera également le format de la configuration de vos routes (``yml``, ``xml``, ``php``, ou ``annotation``), répondez ``annotation``.
-
-#. Ajouter la route ``epsi_blog_homepage`` qui doit afficher la liste des posts du blog (chapitre *Le routing*)
 
 #. Mettez en place le triple héritage de template (chapitres *Les vues avec Twig*)
 
