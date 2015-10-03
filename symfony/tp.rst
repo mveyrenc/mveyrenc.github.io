@@ -203,7 +203,7 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
 
 #. Ajouter le formulaire ajout de commentaires grâce à une inclusion de contrôleur
 
-    .. image:: _static/images/tp/CommentForm.png
+    .. image:: _static/images/tp/PostShowWithComment.png
         :align: center
 
 ********
