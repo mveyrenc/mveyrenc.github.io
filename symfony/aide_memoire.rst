@@ -1,3 +1,5 @@
+.. _aide-memoire:
+
 ############
 Aide mémoire
 ############

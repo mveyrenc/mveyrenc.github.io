@@ -1,3 +1,5 @@
+.. _doctrine:
+
 #############################
 Doctrine et la base de donnée
 #############################
@@ -7,6 +9,8 @@ Qu'est ce qu'un ORM ?
 *********************
 
 Un ORM (Object-Relation Mapper, ou mapping objet-relationnel en français) et un composant qui permet de créer l'illusion qu'une base de données relationnelle est une base de données orientée objet en définissant des correspondances entre la base de données et les objets manipulés dans le code.
+
+.. _doctrine-creation-entite:
 
 ********************
 Création des entités
@@ -156,6 +160,8 @@ L'entité ``Image``
 | alt       | string        |                   |
 +-----------+---------------+-------------------+
 
+.. _doctrine-valeur-defaut:
+
 *******************************
 Définition de valeur par défaut
 *******************************
@@ -174,6 +180,8 @@ Les entités ``Post`` et ``Comment`` ont une date qui correspond à leur date de
        }
        ...
     }
+
+.. _doctrine-relations-entite:
 
 ************************
 Définition des relations
@@ -209,6 +217,8 @@ Dans le cas d'une relation unidirectionnelle, on peut récupérer les entités i
 Dans les relations bidirectionnelles, les deux actions sont possibles.
 
 Les cas présentés ci-dessous sont tous des relations bidirectionnelles.
+
+.. _doctrine-relations-entite-o2o:
 
 Relation One-To-One
 ===================
@@ -329,6 +339,8 @@ Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``Image``
     }
 
 Aucune modification n'est nécessaire sur la table ``image``.
+
+.. _doctrine-relations-entite-m2o-o2m:
 
 Relation Many-To-One et One-To-Many
 ===================================
@@ -469,6 +481,8 @@ Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``User`` 
     }
 
 Aucune modification n'est nécessaire sur la table ``user``.
+
+.. _doctrine-relations-entite-m2m:
 
 Relation Many-To-Many
 =====================

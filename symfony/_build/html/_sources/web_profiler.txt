@@ -1,3 +1,5 @@
+.. _web-profiler:
+
 ###############
 Le web-profiler
 ###############

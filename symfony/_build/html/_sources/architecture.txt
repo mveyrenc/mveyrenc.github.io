@@ -2,6 +2,8 @@
 Architecture de :program:`Symfony`
 ##################################
 
+.. _architecture-conceptuelle:
+
 *************************
 Architecture conceptuelle
 *************************
@@ -32,6 +34,8 @@ Comme dit précédemment, un contrôleur ne fait qu'utiliser d'autres composants
 L'objectif de l'architecture orientée services (service oriented architecture, SOA, en anglais) est de déposer une fonctionnalité en un ensemble de fonctions basiques, appelées **services**.
 
 Concrètement, les services sont des objets PHP qui gèrent une tâche précise comme envoyer un mail, gérer les sessions de l'utilisateur ou persister des données. Tous les services sont regroupé dans le **service container** qui se charge de les instancier.
+
+.. _architecture-fichier:
 
 ***************************
 L'architecture des fichiers

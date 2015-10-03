@@ -1,3 +1,5 @@
+.. _controleur:
+
 ###############
 Les contrôleurs
 ###############

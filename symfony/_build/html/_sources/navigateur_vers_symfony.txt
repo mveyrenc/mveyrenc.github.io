@@ -1,3 +1,5 @@
+.. _http-vers-symfony:
+
 #####################################
 Du navigateur vers :program:`Symfony`
 #####################################

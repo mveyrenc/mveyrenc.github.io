@@ -1,3 +1,5 @@
+.. _installation:
+
 #######################################
 Pré-requis et installation du framework
 #######################################

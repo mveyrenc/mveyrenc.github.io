@@ -171,9 +171,11 @@
 <li>Nous n&#8217;aurons pas de système de gestion des utilisateurs : nous devrons choisir l&#8217;utilisateur lorsque nous rédigerons un post ou un commentaire.</li>
 </ul>
 <ol class="arabic">
-<li><p class="first">Créez le bundle EpsiBlogBundle (chapitre <em>Création d’un bundle</em>) avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:bundle</span></code></p>
+<li><p class="first">Installez Symfony en suivant la procédure suivante : <a class="reference internal" href="pre-requis_installation.html#installation"><span>Pré-requis et installation du framework</span></a></p>
 </li>
-<li><p class="first">Créez les entités suivantes avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">doctrine:generate:entity</span></code></p>
+<li><p class="first">Créez le bundle EpsiBlogBundle (chapitre <em>Création d’un bundle</em>) avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:bundle</span></code> et en vous aidant du chapitre <a class="reference internal" href="application_symfony.html#creation-bundle"><span>Création d&#8217;un bundle</span></a></p>
+</li>
+<li><p class="first">Créez les entités suivantes avec la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">doctrine:generate:entity</span></code> et en vous aidant du chapitre <a class="reference internal" href="doctrine.html#doctrine-creation-entite"><span>Création des entités</span></a></p>
 <blockquote>
 <div><ul>
 <li><p class="first">Entité <code class="docutils literal"><span class="pre">User</span></code></p>
@@ -309,7 +311,7 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Ajoutez les relations entre les entités en modifiant les classes Entity générées précédemment</p>
+<li><p class="first">Ajoutez les relations entre les entités en modifiant les classes Entity générées précédemment en vous aidant du chapitre <a class="reference internal" href="doctrine.html#doctrine-relations-entite"><span>Définition des relations</span></a></p>
 <blockquote>
 <div><ul>
 <li><p class="first">Entité <code class="docutils literal"><span class="pre">User</span></code></p>
@@ -454,7 +456,7 @@
 <p>Elle vous demandera également le format de la configuration de vos routes (<code class="docutils literal"><span class="pre">yml</span></code>, <code class="docutils literal"><span class="pre">xml</span></code>, <code class="docutils literal"><span class="pre">php</span></code>, ou <code class="docutils literal"><span class="pre">annotation</span></code>). Répondez <code class="docutils literal"><span class="pre">annotation</span></code>.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Mettez en place le triple héritage de template (chapitres <em>Les vues avec Twig</em>)</p>
+<li><p class="first">Mettez en place le triple héritage de template en vous aidant du chapitre <a class="reference internal" href="twig.html#twig"><span>Les vues avec Twig</span></a></p>
 <blockquote>
 <div><img alt="_images/TemplateHeritage.png" class="align-center" src="_images/TemplateHeritage.png" />
 <ul class="simple">
@@ -464,11 +466,11 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Ajouter jQuery et Bootstrap (chapitres <em>Les assets</em>)</p>
+<li><p class="first">Ajouter jQuery et Bootstrap en vous aidant du chapitre <a class="reference internal" href="assets.html#assets"><span>Les assets</span></a></p>
 </li>
-<li><p class="first">Ajoutez un menu en haut de la page vers les listes les entités post, user et tag (chapitres <em>Les vues avec Twig</em>)</p>
+<li><p class="first">Ajoutez un menu en haut de la page vers les listes les entités post, user et tag  en vous aidant du chapitre <a class="reference internal" href="twig.html#twig"><span>Les vues avec Twig</span></a></p>
 </li>
-<li><p class="first">Mettez en place les interfaces telles que ci-dessous</p>
+<li><p class="first">Mettez en place les interfaces telles que ci-dessous en vous aidant des chapitres <a class="reference internal" href="twig.html#twig"><span>Les vues avec Twig</span></a> et <a class="reference internal" href="formulaire.html#formulaire"><span>Les formulaires</span></a></p>
 <blockquote>
 <div><ul>
 <li><p class="first">Les tags</p>
@@ -564,7 +566,7 @@
 <h2>A rendre<a class="headerlink" href="#a-rendre" title="Lien permanent vers ce titre">¶</a></h2>
 <blockquote>
 <div><ul>
-<li><p class="first">une archive avec vos développements <strong class="program">Symfony</strong> + un dump de votre base de données</p>
+<li><p class="first">une archive avec vos développements <strong class="program">Symfony</strong> et un dump de votre base de données</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /var/www/symfony/
 mysqldump -usymfony -p symfony &gt; symfony.sql

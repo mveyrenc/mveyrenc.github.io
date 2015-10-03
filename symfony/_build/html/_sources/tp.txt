@@ -10,9 +10,11 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
 * Nous pourrons également commenter les posts.
 * Nous n'aurons pas de système de gestion des utilisateurs : nous devrons choisir l'utilisateur lorsque nous rédigerons un post ou un commentaire.
 
-#. Créez le bundle EpsiBlogBundle (chapitre *Création d’un bundle*) avec la commande ``php app/console generate:bundle``
+#. Installez Symfony en suivant la procédure suivante : :ref:`installation`
 
-#. Créez les entités suivantes avec la commande ``php app/console doctrine:generate:entity``
+#. Créez le bundle EpsiBlogBundle (chapitre *Création d’un bundle*) avec la commande ``php app/console generate:bundle`` et en vous aidant du chapitre :ref:`creation-bundle`
+
+#. Créez les entités suivantes avec la commande ``php app/console doctrine:generate:entity`` et en vous aidant du chapitre :ref:`doctrine-creation-entite`
 
     * Entité ``User``
 
@@ -59,7 +61,7 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
         | comment   | text          |                   | requis                |
         +-----------+---------------+-------------------+-----------------------+
 
-#. Ajoutez les relations entre les entités en modifiant les classes Entity générées précédemment
+#. Ajoutez les relations entre les entités en modifiant les classes Entity générées précédemment en vous aidant du chapitre :ref:`doctrine-relations-entite`
 
     * Entité ``User``
 
@@ -119,7 +121,7 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
 
     Elle vous demandera également le format de la configuration de vos routes (``yml``, ``xml``, ``php``, ou ``annotation``). Répondez ``annotation``.
 
-#. Mettez en place le triple héritage de template (chapitres *Les vues avec Twig*)
+#. Mettez en place le triple héritage de template en vous aidant du chapitre :ref:`twig`
 
     .. image:: _static/images/tp/TemplateHeritage.png
         :align: center
@@ -128,11 +130,11 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
     * en bleu : le template du bundle ``src/Epsi/Bundle/BlogBundle/Resources/views/base.html.twig``
     * en vert : le template de la page
 
-#. Ajouter jQuery et Bootstrap (chapitres *Les assets*)
+#. Ajouter jQuery et Bootstrap en vous aidant du chapitre :ref:`assets`
 
-#. Ajoutez un menu en haut de la page vers les listes les entités post, user et tag (chapitres *Les vues avec Twig*)
+#. Ajoutez un menu en haut de la page vers les listes les entités post, user et tag  en vous aidant du chapitre :ref:`twig`
 
-#. Mettez en place les interfaces telles que ci-dessous
+#. Mettez en place les interfaces telles que ci-dessous en vous aidant des chapitres :ref:`twig` et :ref:`formulaire`
 
     * Les tags
 
@@ -210,7 +212,7 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
 A rendre
 ********
 
-    * une archive avec vos développements :program:`Symfony` + un dump de votre base de données
+    * une archive avec vos développements :program:`Symfony` et un dump de votre base de données
 
         .. code-block:: bash
 

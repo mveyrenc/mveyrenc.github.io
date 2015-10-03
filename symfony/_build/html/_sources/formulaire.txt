@@ -1,3 +1,5 @@
+.. _formulaire:
+
 ###############
 Les formulaires
 ###############

@@ -1,3 +1,5 @@
+.. _creation-bundle:
+
 ####################
 Création d'un bundle
 ####################
