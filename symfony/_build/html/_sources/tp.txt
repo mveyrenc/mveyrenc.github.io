@@ -76,7 +76,7 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
     * Entité ``Post``
 
         +-----------+---------------+-------------------+-----------------------+
-        | Nom       | Type de champ | Taille du champ   | Validation            |
+        | Nom       | Type de champ | Cardinalité       | Validation            |
         +===========+===============+===================+=======================+
         | author    | ``User``      |  1                | requis                |
         +-----------+---------------+-------------------+-----------------------+
@@ -90,7 +90,7 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
     * Entité ``Tag``
 
         +-----------+---------------+-------------------+-----------------------+
-        | Nom       | Type de champ | Taille du champ   | Validation            |
+        | Nom       | Type de champ | Cardinalité       | Validation            |
         +===========+===============+===================+=======================+
         | posts     | ``Post``      |  0..n             |                       |
         +-----------+---------------+-------------------+-----------------------+
@@ -98,7 +98,7 @@ Le blog que nous allons créer est très simple. En voici les grandes lignes :
     * Entité ``Comment``
 
         +-----------+---------------+-------------------+-----------------------+
-        | Nom       | Type de champ | Taille du champ   | Validation            |
+        | Nom       | Type de champ | Cardinalité       | Validation            |
         +===========+===============+===================+=======================+
         | author    | ``User``      | 1                 | requis                |
         +-----------+---------------+-------------------+-----------------------+
