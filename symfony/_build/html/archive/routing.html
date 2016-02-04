@@ -1,0 +1,531 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Le routing &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <a href="../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels : La programmation orientée objet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/terminologie.html">Terminologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/mots-reserves.html">Mots réservés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/syntaxe.html">Syntaxe de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/constructeur-destructeur.html">Constructeurs et destructeurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/heritage.html">Héritage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/classes-abstraites.html">Classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/interfaces.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/visibilite.html">Visibilité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/resolution-portee.html">L&#8217;opérateur de résolution de portée (::)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/references-clonage.html">Références et clonage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/exception.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/namespace.html">Espace de nom ou namespace</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tp/sujet_tp.html">Objectif du TP : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/application_symfony.html">Création d&#8217;un bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/routing.html">Les routes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aide/controller.html">Contrôlleur</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Le routing</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="le-routing">
+<span id="routing"></span><h1>Le routing<a class="headerlink" href="#le-routing" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Le routing fait la correspondance entre les URLs et les les contrôleurs. La configuration de ce mapping se fait</p>
+<blockquote>
+<div><ul class="simple">
+<li>dans le fichier <code class="docutils literal"><span class="pre">routing.yml</span></code> se trouvant dans le répertoire <code class="docutils literal"><span class="pre">config</span></code> de l&#8217;application ;</li>
+<li>dans les bundles sous forme de fichiers de configuration ou d&#8217;annotations dans les contrôleurs.</li>
+</ul>
+</div></blockquote>
+<p>Dans le fichier <code class="docutils literal"><span class="pre">routing.yml</span></code> se trouvant dans le répertoire <code class="docutils literal"><span class="pre">config</span></code> de l&#8217;application, on inclus les routes des bundles en leur mettant des préfixes :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
+
+<span class="l-Scalar-Plain">epsi_blog</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">resource</span><span class="p-Indicator">:</span> <span class="s">&quot;@EpsiBlogBundle/Controller/&quot;</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span>     <span class="l-Scalar-Plain">annotation</span>
+    <span class="l-Scalar-Plain">prefix</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">/</span>
+
+<span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">resource</span><span class="p-Indicator">:</span> <span class="s">&quot;@AppBundle/Controller/&quot;</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span>     <span class="l-Scalar-Plain">annotation</span>
+</pre></div>
+</div>
+<p>Dans le bundle, on décrit par quelle URL sera accessible chaque méthode du contrôleur :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="c1">// src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php</span>
+
+<span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Controller</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Symfony\Bundle\FrameworkBundle\Controller\Controller</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Route</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">DefaultController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/hello/{name}&quot;)</span>
+<span class="sd">     * @Template()</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ce qui produit les routes suivantes :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">&gt;</span> php app/console debug:router --show-controllers
+
+<span class="go"> Name                     Method Scheme Host Path                              Controller</span>
+<span class="go"> _wdt                     ANY    ANY    ANY  /_wdt/{token}                     web_profiler.controller.profiler:toolbarAction</span>
+<span class="go"> _profiler_home           ANY    ANY    ANY  /_profiler/                       web_profiler.controller.profiler:homeAction</span>
+<span class="go"> _profiler_search         ANY    ANY    ANY  /_profiler/search                 web_profiler.controller.profiler:searchAction</span>
+<span class="go"> _profiler_search_bar     ANY    ANY    ANY  /_profiler/search_bar             web_profiler.controller.profiler:searchBarAction</span>
+<span class="go"> _profiler_purge          ANY    ANY    ANY  /_profiler/purge                  web_profiler.controller.profiler:purgeAction</span>
+<span class="go"> _profiler_info           ANY    ANY    ANY  /_profiler/info/{about}           web_profiler.controller.profiler:infoAction</span>
+<span class="go"> _profiler_phpinfo        ANY    ANY    ANY  /_profiler/phpinfo                web_profiler.controller.profiler:phpinfoAction</span>
+<span class="go"> _profiler_search_results ANY    ANY    ANY  /_profiler/{token}/search/results web_profiler.controller.profiler:searchResultsAction</span>
+<span class="go"> _profiler                ANY    ANY    ANY  /_profiler/{token}                web_profiler.controller.profiler:panelAction</span>
+<span class="go"> _profiler_router         ANY    ANY    ANY  /_profiler/{token}/router         web_profiler.controller.router:panelAction</span>
+<span class="go"> _profiler_exception      ANY    ANY    ANY  /_profiler/{token}/exception      web_profiler.controller.exception:showAction</span>
+<span class="go"> _profiler_exception_css  ANY    ANY    ANY  /_profiler/{token}/exception.css  web_profiler.controller.exception:cssAction</span>
+<span class="go"> _configurator_home       ANY    ANY    ANY  /_configurator/                   SensioDistributionBundle:Configurator:check</span>
+<span class="go"> _configurator_step       ANY    ANY    ANY  /_configurator/step/{index}       SensioDistributionBundle:Configurator:step</span>
+<span class="go"> _configurator_final      ANY    ANY    ANY  /_configurator/final              SensioDistributionBundle:Configurator:final</span>
+<span class="go"> _twig_error_test         ANY    ANY    ANY  /_error/{code}.{_format}          twig.controller.preview_error:previewErrorPageAction</span>
+<span class="go"> epsi_blog_default_index  ANY    ANY    ANY  /hello/{name}                     EpsiBlogBundle:Default:index</span>
+<span class="go"> homepage                 ANY    ANY    ANY  /                                 AppBundle:Default:index</span>
+</pre></div>
+</div>
+<div class="section" id="fonctionnement">
+<h2>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les routes sont composés à minima de trois éléments suivants :</p>
+<ul class="simple">
+<li>un <strong>identifiant</strong>. Il doit être unique dans l&#8217;application. Quand on utilise les annotations, Symfony génère lui même cet identifiant. Pour les autres configurations, il faudra le faire à la main ;</li>
+<li>un <strong>chemin</strong> (<code class="docutils literal"><span class="pre">path</span></code>). C&#8217;est URL de la route. Les éléments entre <code class="docutils literal"><span class="pre">{}</span></code> sont des paramètres de l&#8217;URL, comme l&#8217;ID d&#8217;un objet ;</li>
+<li>le <strong>contrôleur</strong> à appeler.</li>
+</ul>
+<p>Voici comment fonctionne le routeur pas à pas :</p>
+<ol class="arabic">
+<li><p class="first">On appelle l&#8217;URL <code class="docutils literal"><span class="pre">/hello/World</span></code> ;</p>
+</li>
+<li><p class="first">Le routeur essaie de faire correspondre cette URL avec le chemin de chaque route. On d&#8217;ailleurs le voir dans le profiler :</p>
+<blockquote>
+<div><img alt="../_images/profiler_routes.png" class="box align-center" src="../_images/profiler_routes.png" />
+</div></blockquote>
+</li>
+<li><p class="first">Le routeur s&#8217;arrête dès qu&#8217;il a trouvé un route qui correspond ;</p>
+</li>
+<li><p class="first">À partir de la route, il trouve qu&#8217;il faut appelé le contrôleur <code class="docutils literal"><span class="pre">EpsiBlogBundle:Default:index</span></code> avec comme paramètre <code class="docutils literal"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">World</span></code> ;</p>
+</li>
+<li><p class="first">Le routeur renvoie donc ces informations au Kernel ;</p>
+</li>
+<li><p class="first">Le noyau va exécuter le contrôleur.</p>
+</li>
+</ol>
+<p>Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404, comme par exemple pour la page, <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/The/World">http://symfony.loc.epsi.fr/app_dev.php/hello/The/World</a> :</p>
+<blockquote>
+<div><img alt="../_images/symfony_exception.png" class="box align-center" src="../_images/symfony_exception.png" />
+<p>En haut de la page est affiché un message d&#8217;erreur, un exception a été détectée.</p>
+<p>Dans la seconde partie, la stack trace. Il s&#8217;agit de la liste des fonctions appelées depuis le contrôleur frontal jusqu&#8217;à la ligne qui a levé l&#8217;exception.</p>
+</div></blockquote>
+</div>
+<div class="section" id="les-annotation-pour-le-routeur">
+<h2>Les annotation pour le routeur<a class="headerlink" href="#les-annotation-pour-le-routeur" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="route">
+<h3>&#64;Route<a class="headerlink" href="#route" title="Lien permanent vers ce titre">¶</a></h3>
+<ul>
+<li><p class="first">Il faut importer le namespace <code class="docutils literal"><span class="pre">Sensio\Bundle\FrameworkExtraBundle\Configuration\Route</span></code></p>
+</li>
+<li><p class="first">Définit le chemin avec ses paramètres</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Route(&quot;/&quot;)</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Route(&quot;/{id}&quot;, requirements={&quot;id&quot; = &quot;\d+&quot;}, defaults={&quot;id&quot; = 1})</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Elle peut être utilisée avant la déclaration du contrôleur, ou avant une méthode du contrôleur</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre> <span class="sd">/**</span>
+<span class="sd">  * @Route(&quot;/blog&quot;)</span>
+<span class="sd">  */</span>
+ <span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+ <span class="p">{</span>
+     <span class="sd">/**</span>
+<span class="sd">      * @Route(&quot;/&quot;)</span>
+<span class="sd">      */</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+     <span class="p">{</span>
+     <span class="p">}</span>
+
+     <span class="sd">/**</span>
+<span class="sd">      * @Route(&quot;/{id}&quot;)</span>
+<span class="sd">      */</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+     <span class="p">{</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="method">
+<h3>&#64;Method<a class="headerlink" href="#method" title="Lien permanent vers ce titre">¶</a></h3>
+<ul>
+<li><p class="first">Il faut importer le namespace <code class="docutils literal"><span class="pre">Sensio\Bundle\FrameworkExtraBundle\Configuration\Method</span></code></p>
+</li>
+<li><p class="first">Définit la méthode HTTP utilisée</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="sd"> * @Route(&quot;/blog&quot;)</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">PostController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/edit/{id}&quot;)</span>
+<span class="sd">     * @Method({&quot;GET&quot;, &quot;POST&quot;})</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">editAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/update/{id}&quot;)</span>
+<span class="sd">     * @Method({&quot;POST&quot;})</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">updateAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="controles-des-parametres-des-routes">
+<h4>Contrôles des paramètres des routes<a class="headerlink" href="#controles-des-parametres-des-routes" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Lorsq&#8217;on va sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World">http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World</a>, elle affiche &#8220;Hello The World!&#8221;.</p>
+<p>Ajoutons un validation pour vérifier que le nom soit bien un mot ou un ensemble de mots.</p>
+<p>La validation des paramètres se fait grâce à des expressions régulières. Voici les éléments de base pour les construire :</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">[abc]</span></code> : le caractère &#8220;a&#8221;, &#8220;b&#8221; ou &#8220;c&#8221;</li>
+<li><code class="docutils literal"><span class="pre">[^abc]</span></code> : n&#8217;importe quel caractère sauf &#8220;a&#8221;, &#8220;b&#8221;, ou &#8220;c&#8221;</li>
+<li><code class="docutils literal"><span class="pre">[a-z]</span></code> : n&#8217;importe quel caractère dans l&#8217;intervalle a-z</li>
+<li><code class="docutils literal"><span class="pre">[a-zA-Z]</span></code> : n&#8217;importe quel caractère dans les intervalles a-z ou A-Z</li>
+<li><code class="docutils literal"><span class="pre">^</span></code> : début de ligne</li>
+<li><code class="docutils literal"><span class="pre">$</span></code> : fin de ligne</li>
+<li><code class="docutils literal"><span class="pre">.</span></code> : n&#8217;importe quel caractère unique</li>
+<li><code class="docutils literal"><span class="pre">\s</span></code> : tout caractère blanc</li>
+<li><code class="docutils literal"><span class="pre">\S</span></code> : tout caractère qui n&#8217;est pas un caractère blanc</li>
+<li><code class="docutils literal"><span class="pre">\d</span></code> : tout caractère décimal</li>
+<li><code class="docutils literal"><span class="pre">\D</span></code> : tout caractère qui n&#8217;est pas un caractère décimal</li>
+<li><code class="docutils literal"><span class="pre">\w</span></code> : tout caractère de &#8220;mot&#8221; (lettre, nombre, underscore)</li>
+<li><code class="docutils literal"><span class="pre">\W</span></code> : tout caractère qui n&#8217;est pas un caractère de &#8220;mot&#8221;</li>
+<li><code class="docutils literal"><span class="pre">(...)</span></code> : sous ensemble</li>
+<li><code class="docutils literal"><span class="pre">(a|b)</span></code> : &#8220;a&#8221; ou &#8220;b&#8221;</li>
+<li><code class="docutils literal"><span class="pre">a?</span></code> : zéro ou un &#8220;a&#8221;</li>
+<li><code class="docutils literal"><span class="pre">a*</span></code> : zéro &#8220;a&#8221; ou plus</li>
+<li><code class="docutils literal"><span class="pre">a+</span></code> : un &#8220;a&#8221; ou plus</li>
+<li><code class="docutils literal"><span class="pre">a{3}</span></code> : exactement trois &#8220;a&#8221;</li>
+<li><code class="docutils literal"><span class="pre">a{3,}</span></code> : trois &#8220;a&#8221; ou plus</li>
+<li><code class="docutils literal"><span class="pre">a{3,6}</span></code> : entre trois ou six &#8220;a&#8221;</li>
+</ul>
+<p>Le nom est une chaîne de caractères qui est composé de un ou plusieurs mots séparés par un espace, ce qui nous donne : <code class="docutils literal"><span class="pre">(\w\s?)+</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>un mot</li>
+<li>suivit de zéro ou un espace</li>
+<li>le tout répété au moins une fois</li>
+</ul>
+</div></blockquote>
+<p>Ajoutons cette règle dans le contrôleur :</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="c1"># src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php</span>
+<span class="k">class</span> <span class="nc">DefaultController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/hello/{name}&quot;, requirements={&quot;name&quot; = &quot;(\w+[\s]?)+&quot;})</span>
+<span class="sd">     * @Template()</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Ensuite lorsqu&#8217;on affiche les pages suivantes</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a> affiche &#8220;Hello World!&#8221;</li>
+<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World">http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World</a> affiche &#8220;Hello The World!&#8221;</li>
+<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/125">http://symfony.loc.epsi.fr/app_dev.php/hello/125</a> affiche &#8220;Hello 125&#8221;</li>
+<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello">http://symfony.loc.epsi.fr/app_dev.php/hello</a>/hého affiche une message d&#8217;erreur (404).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="parametres-speciaux-de-routing">
+<h4>Paramètres spéciaux de routing<a class="headerlink" href="#parametres-speciaux-de-routing" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Il existe deux paramètres spéciaux :</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">_format</span></code> : il est utilisé pour définir le format de la requête</p>
+<blockquote>
+<div><p>Lorsque vous utilisez ce paramètre Symfony va automatique remplir le header <code class="docutils literal"><span class="pre">Content-Type</span></code> avec la bonne valeur en fonction du format demandé. Dans le contrôleur, on peut récupérer sa valeur avec <code class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getRequestFormat()</span></code>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="c1"># src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php</span>
+<span class="k">class</span> <span class="nc">DefaultController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/hello/{name}.{_format}&quot;,</span>
+<span class="sd">     *         requirements={&quot;name&quot; = &quot;(\w+[\s]?)+&quot;, &quot;format&quot; = &quot;html|json&quot;},</span>
+<span class="sd">     *         defaults={ &quot;_format&quot; = &quot;html&quot;})</span>
+<span class="sd">     * @Template()</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avec cette configuration :</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a> et <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World.html">http://symfony.loc.epsi.fr/app_dev.php/hello/World.html</a> affiche la version HTML de la page ;</li>
+<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World.json">http://symfony.loc.epsi.fr/app_dev.php/hello/World.json</a> affiche la page en json</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">_locale</span></code> : il est utilisé pour définir la locale de la session</p>
+<blockquote>
+<div><p>Ce paramètre permet de choisir la langue à afficher. Cette valeur sera également stockée en session pour que les futures requêtes la conservent. Dans le contrôleur, on peut récupérer sa valeur avec <code class="docutils literal"><span class="pre">$this-&gt;get('request')-&gt;getLocale()</span></code>.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="comment-generer-des-url">
+<h2>Comment générer des URL ?<a class="headerlink" href="#comment-generer-des-url" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Depuis un contrôleur, c&#8217;est la méthode <code class="docutils literal"><span class="pre">$this-&gt;generateUrl()</span></code> qu&#8217;il faut appeler. Par exemple : <code class="docutils literal"><span class="pre">$url</span> <span class="pre">=</span> <span class="pre">$this-&gt;generateUrl(</span> <span class="pre">'epsi_blog_show',</span> <span class="pre">array(</span> <span class="pre">'id'</span> <span class="pre">=&gt;</span> <span class="pre">$id</span> <span class="pre">)</span> <span class="pre">);</span></code></p>
+<p>Depuis les tempaltes Twig, on utilise l&#8217;opérateur <code class="docutils literal"><span class="pre">path</span></code>. Par exemple : <code class="docutils literal"><span class="pre">{{</span> <span class="pre">path(</span> <span class="pre">'epsi_blog_show',</span> <span class="pre">{</span> <span class="pre">'id':</span> <span class="pre">article_id</span> <span class="pre">}</span> <span class="pre">)</span> <span class="pre">}}</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
