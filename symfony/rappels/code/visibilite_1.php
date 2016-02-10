@@ -1,26 +1,32 @@
 <?php
 
-class MyParentClass {
+class MyParentClass
+{
 
     public $public = 'Public';
     protected $protected = 'Protected';
     private $private = 'Private';
 
-    public function myPublic() {
+    public function myPublic()
+    {
         return $this->public;
     }
 
-    protected function myProtected() {
+    protected function myProtected()
+    {
         return $this->protected;
     }
 
-    private function myPrivate() {
+    private function myPrivate()
+    {
         return $this->private;
     }
 
 }
 
-class MyClass extends MyParentClass {}
+class MyClass extends MyParentClass
+{
+}
 
 $parentObjet = new MyParentClass();
 var_dump($parentObjet->public);           // Affiche string(6) "Public"

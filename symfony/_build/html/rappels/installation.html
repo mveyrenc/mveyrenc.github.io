@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation et configuration &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
+        <link rel="next" title="La syntaxe" href="syntaxe.html"/>
+        <link rel="prev" title="Que peut faire PHP ?" href="usages.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation et configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sous-linux-debian-ubuntu">Sous Linux (Debian/Ubuntu)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sous-macos">Sous MacOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sous-windows">Sous Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fichier-de-configuration">Fichier de configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quelques-elements-a-configurer">Quelques éléménts à configurer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tp/sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/routing.html">Les routes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aide/controller.html">Contrôlleur</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Archive</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archive/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/tp.html">TP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Installation et configuration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-et-configuration">
+<span id="rappels-installation-configuration"></span><h1>Installation et configuration<a class="headerlink" href="#installation-et-configuration" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="installation">
+<span id="rappels-installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il faut installer un serveur web (<code class="docutils literal"><span class="pre">apache2</span></code>), l&#8217;interpréteur PHP (<code class="docutils literal"><span class="pre">php5</span></code> et <code class="docutils literal"><span class="pre">php5-cli</span></code>), un SGBD (<code class="docutils literal"><span class="pre">mysql-server</span></code>)
+et le connecteur entre PHP et le SGBD (<code class="docutils literal"><span class="pre">php5-mysql</span></code>).</p>
+<div class="section" id="sous-linux-debian-ubuntu">
+<span id="rappels-installation-linux"></span><h3>Sous Linux (Debian/Ubuntu)<a class="headerlink" href="#sous-linux-debian-ubuntu" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo apt-get install apache2 mysql-server mysql-client php5 php5-cli php5-mysql
+</pre></div>
+</div>
+<p>Si c&#8217;est pour un poste de développement :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo apt-get install php5-xdebug phpmyadmin
+</pre></div>
+</div>
+</div>
+<div class="section" id="sous-macos">
+<span id="rappels-installation-macos"></span><h3>Sous MacOS<a class="headerlink" href="#sous-macos" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il faut télécharger et installer <a class="reference external" href="https://www.mamp.info/">MAMP</a>.</p>
+</div>
+<div class="section" id="sous-windows">
+<span id="rappels-installation-windows"></span><h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il faut télécharger et installer <a class="reference external" href="http://www.wampserver.com/">WAMP</a>.</p>
+<p>Puis, sous Windows 7, XP, Vista, 2008, 2012 et plus récent :</p>
+<ol class="arabic simple">
+<li>Allez dans le centre de contrôle et ouvrez l&#8217;icône système (<span class="menuselection">Démarrer ‣ Paramètres ‣ Panneau de configuration ‣ Système</span>)</li>
+<li>Allez à l&#8217;onglet &#8220;Avancé&#8221;</li>
+<li>Cliquez sur le bouton &#8220;Variables d&#8217;environnements&#8221;</li>
+<li>Regardez dans le panneau &#8220;Variables systèmes&#8221;</li>
+<li>Trouvez l&#8217;entrée Path (vous devriez avoir à faire descendre l&#8217;ascenseur pour le trouver)</li>
+<li>Double cliquez sur l&#8217;entrée Path</li>
+<li>Entrez votre répertoire PHP à la fin, sans oublier cd commender par un point virgule (;), par exemple <code class="docutils literal"><span class="pre">;C:\php</span></code></li>
+<li>Confirmez en cliquant sur OK</li>
+</ol>
+</div>
+</div>
+<div class="section" id="configuration">
+<span id="rappels-configuration"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="fichier-de-configuration">
+<h3>Fichier de configuration<a class="headerlink" href="#fichier-de-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La configuration de PHP se fait dans le fichier <code class="docutils literal"><span class="pre">php.ini</span></code>.</p>
+<p>Pour savoir où se trouve le ou les <code class="docutils literal"><span class="pre">php.ini</span></code> utilisés par votre interpreteur, lancez la commande suivante :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php --ini
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>Sous certaines distribution linux comme les Debian et ses dérivés, dont fait parti Ubuntu, Apache et le client en ligne de commande utilisent deux configurations différentes.</p>
+<p>Lorsque vous taper la commande <code class="docutils literal"><span class="pre">php</span> <span class="pre">--ini</span></code>, vous voyez la liste des fichiers de configuration utilisés par le client en ligne de commande.</p>
+<p class="last">Pour savoir quels fichiers sont utilisés par Apache, il faut juste remplacer <code class="docutils literal"><span class="pre">cli</span></code> par <code class="docutils literal"><span class="pre">apache2</span></code> dans les chemins. Ainsi, <code class="docutils literal"><span class="pre">/etc/php5/cli/php.ini</span></code> devient <code class="docutils literal"><span class="pre">/etc/php5/apache2/php.ini</span></code>.</p>
+</div>
+</div>
+<div class="section" id="quelques-elements-a-configurer">
+<h3>Quelques éléménts à configurer<a class="headerlink" href="#quelques-elements-a-configurer" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">date.timezone</span> <span class="pre">=</span> <span class="pre">'Europe/Paris'</span></code> : le fuseau horaire à utiliser pour les fonctions date</li>
+<li><code class="docutils literal"><span class="pre">short_open_tag</span> <span class="pre">=</span> <span class="pre">Off</span></code> : ne pas interpréter les balises &lt;? ?&gt; et &lt;?= ?&gt; comme du PHP</li>
+<li><code class="docutils literal"><span class="pre">magic_quotes_gpc</span> <span class="pre">=</span> <span class="pre">Off</span></code> : tous les caractères &#8216; (guillemets simples), &#8221; (guillemets doubles), (antislash) et NUL ne sont pas échappés avec un antislash
+pour les opérations GPC (Get/Post/Cookie). Fonction obsolète en 5.3.0, supprimée depuis 5.4.0</li>
+<li><code class="docutils literal"><span class="pre">register_globals</span> <span class="pre">=</span> <span class="pre">Off</span></code> : désativer les variables super-globales. Fonction obsolète en 5.3.0, supprimée depuis 5.4.0</li>
+<li><code class="docutils literal"><span class="pre">session.auto_start</span> <span class="pre">=</span> <span class="pre">Off</span></code> : Spécifie si le module de session doit démarrer automatiquement au début de chaque script PHP</li>
+<li><code class="docutils literal"><span class="pre">upload_max_filesize</span></code> : taille maxi autorisée pour uploder des fichiers</li>
+<li><code class="docutils literal"><span class="pre">post_max_size</span></code> : taille maxi autorisée pour une requête POST</li>
+<li><code class="docutils literal"><span class="pre">memory_limit</span></code> : mémoire maxi qu&#8217;un script PHP peut allouer. Si ce paramètre vaut -1, alors la mémoire n&#8217;est pas limitée</li>
+<li><code class="docutils literal"><span class="pre">max_execution_time</span></code> : temps d&#8217;exécution maxi pour un script. Si ce paramètre vaut -1, alors le temps n&#8217;est pas limitée</li>
+<li><code class="docutils literal"><span class="pre">display_errors</span></code> : affiche les erreurs. Doit être à On sur un poste de développement</li>
+<li><code class="docutils literal"><span class="pre">html_errors</span></code> : affiche les erreurs en HTML. Doit être à On sur un poste de développement</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="syntaxe.html" class="btn btn-neutral float-right" title="La syntaxe" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usages.html" class="btn btn-neutral" title="Que peut faire PHP ?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

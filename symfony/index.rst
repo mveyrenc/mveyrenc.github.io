@@ -1,6 +1,9 @@
-﻿===========
+﻿###########
 PHP/Symfony
-===========
+###########
+
+..
+    watchmedo shell-command --recursive --patterns="*.rst" --wait --command='make html'
 
 Ce document a pour but de vous faire acquérir les compétences suivantes :
 
@@ -9,48 +12,48 @@ Ce document a pour but de vous faire acquérir les compétences suivantes :
 * Développer une application qui exploite une base de données
 * Comprendre l'architecture du framework :program:`Symfony2`, et savoir le mettre en œuvre dans un développement PHP5
 
-Contents
-========
+
+.. _rappels:
 
 .. toctree::
-    :caption: Rappels : La programmation orientée objet
     :maxdepth: 2
+    :caption: Rappels
     :glob:
 
-    rappels/terminologie
-    rappels/mots-reserves
+    rappels/introduction
+    rappels/usages
+    rappels/installation
     rappels/syntaxe
-    rappels/constructeur-destructeur
-    rappels/heritage
-    rappels/classes-abstraites
-    rappels/interfaces
-    rappels/visibilite
-    rappels/resolution-portee
-    rappels/references-clonage
-    rappels/exception
-    rappels/namespace
+    rappels/fonctions
+    rappels/poo
+
+.. _cours:
 
 .. toctree::
-    :caption: Cours
     :maxdepth: 2
+    :caption: Cours
     :glob:
 
     cours/introduction
     cours/navigateur_vers_symfony
-    cours/pre-requis_installation
     cours/architecture
+
+.. _tp:
 
 .. toctree::
     :maxdepth: 2
-    :caption: TP
+    :caption: tp
     :glob:
 
-    tp/sujet_tp
-    tp/application_symfony
+    tp/sujet
+    tp/pre-requis_installation
+    tp/bundle
     tp/controleur
     tp/web_profiler
     tp/routing
     tp/*
+
+.. _aide:
 
 .. toctree::
     :maxdepth: 2
@@ -59,20 +62,21 @@ Contents
 
     aide/*
 
-..
-    .. toctree::
-        :maxdepth: 2
-        :caption: Archive
-        :glob:
+.. _archive:
 
-        archive/controleur
-        archive/web_profiler
-        archive/routing
-        archive/services
-        archive/twig
-        archive/assets
-        archive/doctrine
-        archive/formulaire
-        archive/tp
+.. toctree::
+    :maxdepth: 2
+    :caption: Archive
+    :glob:
+
+    archive/controleur
+    archive/web_profiler
+    archive/routing
+    archive/services
+    archive/twig
+    archive/assets
+    archive/doctrine
+    archive/formulaire
+    archive/tp
 
 

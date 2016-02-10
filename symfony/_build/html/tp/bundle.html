@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Création du bundle &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
+        <link rel="next" title="Les contrôleurs" href="controleur.html"/>
+        <link rel="prev" title="Pré-requis et installation du framework" href="pre-requis_installation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/installation.html">Installation et configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Création du bundle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-de-la-console">Utilisation de la console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-du-bundle-epsiblogbundle">Création du bundle EpsiBlogBundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Les routes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aide/controller.html">Contrôlleur</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Archive</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archive/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/tp.html">TP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Création du bundle</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creation-du-bundle">
+<span id="creation-bundle"></span><h1>Création du bundle<a class="headerlink" href="#creation-du-bundle" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Bien que tous les répertoires et les fichiers d&#8217;un bundle peuvent être créés manuellement, nous allons utilisé la console Symfony pour générer le bundle et l&#8217;activer.</p>
+<div class="section" id="utilisation-de-la-console">
+<h2>Utilisation de la console<a class="headerlink" href="#utilisation-de-la-console" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La console permet de lancer des actions en ligne de commande pour aider au développement, lancer des tâches planifiées (cron), etc.</p>
+<p>Pour lancer la console, il faut exécuter le script <code class="docutils literal"><span class="pre">app/console</span></code> suivit d&#8217;arguments pour lancer les différentes commandes. Pour avoir la liste des commandes disponible, il suffit de lancer le script <code class="docutils literal"><span class="pre">app/console</span></code> sans arguments :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console
+</pre></div>
+</div>
+</div>
+<div class="section" id="creation-du-bundle-epsiblogbundle">
+<h2>Création du bundle EpsiBlogBundle<a class="headerlink" href="#creation-du-bundle-epsiblogbundle" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Exécutez la commande suivante :</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console generate:bundle
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">La namespace du bundle</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">  Welcome to the Symfony2 bundle generator</span>
+
+<span class="go">Your application code must be written in bundles. This command helps</span>
+<span class="go">you generate them easily.</span>
+
+<span class="go">Each bundle is hosted under a namespace (like Acme/Bundle/BlogBundle).</span>
+<span class="go">The namespace should begin with a &quot;vendor&quot; name like your company name, your</span>
+<span class="go">project name, or your client name, followed by one or more optional category</span>
+<span class="go">sub-namespaces, and it should end with the bundle name itself</span>
+<span class="go">(which must have Bundle as a suffix).</span>
+
+<span class="go">See http://symfony.com/doc/current/cookbook/bundles/best_practices.html#index-1 for more</span>
+<span class="go">details on bundle naming conventions.</span>
+
+<span class="go">Use / instead of \  for the namespace delimiter to avoid any problem.</span>
+
+<span class="go">Bundle namespace:</span>
+</pre></div>
+</div>
+<p>Vous pouvez nommer votre namespace comme bon vous semble, du moment qu&#8217;il se termine par <code class="docutils literal"><span class="pre">Bundle</span></code>. Mais convention, le namespace d&#8217;un bundle pour être former ainsi :</p>
+<ul class="simple">
+<li>Un namespace racine, il s&#8217;agit du vendor : l&#8217;auteur, une société, un projet, un client, etc.</li>
+<li>Le namespace optionnel <code class="docutils literal"><span class="pre">Bundle</span></code></li>
+<li>Un ou plusieurs namespaces de catégorisation (optionnel)</li>
+<li>Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de <code class="docutils literal"><span class="pre">Bundle</span></code></li>
+</ul>
+<p>Ce qui nous donne par exemple : <code class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></code>, <code class="docutils literal"><span class="pre">Epsi\Bundle\Social\BlogBundle</span></code> ou <code class="docutils literal"><span class="pre">Epsi\BlogBundle</span></code>.</p>
+<p><strong>Nous allons appelé notre bundle</strong> <code class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Le nom du bundle</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">In your code, a bundle is often referenced by its name. It can be the</span>
+<span class="go">concatenation of all namespace parts but it&#39;s really up to you to come</span>
+<span class="go">up with a unique name (a good practice is to start with the vendor name).</span>
+<span class="go">Based on the namespace, we suggest EpsiBlogBundle.</span>
+
+<span class="go">Bundle name [EpsiBlogBundle]:</span>
+</pre></div>
+</div>
+<p>Symfony génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu&#8217;il soit unique.</p>
+</div></blockquote>
+</li>
+<li><p class="first">L&#8217;emplacement du bundle</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">The bundle can be generated anywhere. The suggested default directory uses</span>
+<span class="go">the standard conventions.</span>
+
+<span class="go">Target directory [~/symfony/src]:</span>
+</pre></div>
+</div>
+<p>Par défaut Symfony le place dans le répertoire <code class="docutils literal"><span class="pre">/src</span></code>. On laisse la valeur par défaut.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Le format de la configuration</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">Determine the format to use for the generated configuration.</span>
+
+<span class="go">Configuration format (yml, xml, php, or annotation):</span>
+</pre></div>
+</div>
+<p>Symfony propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n&#8217;a pas d&#8217;impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s&#8217;agit juste de choisir le format avec lequel vous êtes le plus alèse.</p>
+<p>Dans notre cas, nous allons choisir le <code class="docutils literal"><span class="pre">annotation</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">La structure générer</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">To help you get started faster, the command can generate some</span>
+<span class="go">code snippets for you.</span>
+
+<span class="go">Do you want to generate the whole directory structure [no]?</span>
+</pre></div>
+</div>
+<p>Ici, Symfony vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s&#8217;ils ne sont pas utilisés.</p>
+<p>Répondez <code class="docutils literal"><span class="pre">yes</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">  Summary before generation</span>
+
+<span class="go">You are going to generate a &quot;Epsi\Bundle\BlogBundle\EpsiBlogBundle&quot; bundle</span>
+<span class="go">in &quot;~/symfony/src/&quot; using the &quot;annotation&quot; format.</span>
+
+<span class="go">Do you confirm generation [yes]?</span>
+
+<span class="go">  Bundle generation</span>
+
+<span class="go">Generating the bundle code: OK</span>
+<span class="go">Checking that the bundle is autoloaded: OK</span>
+<span class="go">Confirm automatic update of your Kernel [yes]?</span>
+<span class="go">Enabling the bundle inside the Kernel: OK</span>
+<span class="go">Confirm automatic update of the Routing [yes]?</span>
+<span class="go">Importing the bundle routing resource: OK</span>
+
+<span class="go">  You can now start using the generated code!</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="que-s-est-il-passe">
+<h2>Que s&#8217;est-il passé ?<a class="headerlink" href="#que-s-est-il-passe" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Symfony a généré la structure du bundle</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">src/Epsi</span>
+<span class="go">└── Bundle</span>
+<span class="go">    └── BlogBundle</span>
+<span class="go">        ├── Controller</span>
+<span class="go">        │   └── DefaultController.php</span>
+<span class="go">        ├── DependencyInjection</span>
+<span class="go">        │   ├── Configuration.php</span>
+<span class="go">        │   └── EpsiBlogExtension.php</span>
+<span class="go">        ├── EpsiBlogBundle.php</span>
+<span class="go">        ├── Resources</span>
+<span class="go">        │   ├── config</span>
+<span class="go">        │   │   └── services.xml</span>
+<span class="go">        │   ├── doc</span>
+<span class="go">        │   │   └── index.rst</span>
+<span class="go">        │   ├── public</span>
+<span class="go">        │   │   ├── css</span>
+<span class="go">        │   │   ├── images</span>
+<span class="go">        │   │   └── js</span>
+<span class="go">        │   ├── translations</span>
+<span class="go">        │   │   └── messages.fr.xlf</span>
+<span class="go">        │   └── views</span>
+<span class="go">        │       └── Default</span>
+<span class="go">        │           └── index.html.twig</span>
+<span class="go">        └── Tests</span>
+<span class="go">            └── Controller</span>
+<span class="go">                └── DefaultControllerTest.php</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Symfony enregistre notre bundle dans le Kernel (<code class="docutils literal"><span class="pre">app/AppKernel.php</span></code>)</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">AppKernel</span> <span class="k">extends</span> <span class="nx">Kernel</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">registerBundles</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$bundles</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="o">...</span>
+            <span class="k">new</span> <span class="nx">Epsi\Bundle\BlogBundle\EpsiBlogBundle</span><span class="p">(),</span>
+            <span class="o">...</span>
+        <span class="k">return</span> <span class="nv">$bundles</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Symfony ajoute les routes de notre bundle dans le Routeur (<code class="docutils literal"><span class="pre">app/config/routing.yml</span></code>)</p>
+<blockquote>
+<div><div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">resource</span><span class="p-Indicator">:</span> <span class="s">&quot;@EpsiBlogBundle/Controller/&quot;</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span>     <span class="l-Scalar-Plain">annotation</span>
+    <span class="l-Scalar-Plain">prefix</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">/</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Pour tester que votre bundle fonctionne correctement, allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/hello/World">http://symfony.loc.epsi.fr/hello/World</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="controleur.html" class="btn btn-neutral float-right" title="Les contrôleurs" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pre-requis_installation.html" class="btn btn-neutral" title="Pré-requis et installation du framework" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

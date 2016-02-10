@@ -13,9 +13,9 @@ $voiture1 = null;
 
 var_dump($voiture1);    // Affiche NULL
 var_dump($voiture2);    // Affiche 
-                        //      object(Voiture)#3 (2) {                                                                                                 
-                        //          ["kilometrage"]=>                                                                                                     
-                        //          int(40)                                                                                                               
-                        //          ["resteReservoir":protected]=>                                                                                        
-                        //          int(60)                                                                                                               
-                        //       }
+//      object(Voiture)#3 (2) {
+//          ["kilometrage"]=>
+//          int(40)
+//          ["resteReservoir":protected]=>
+//          int(60)
+//       }

@@ -1,10 +1,12 @@
 <?php
 
-class MyClass {
+class MyClass
+{
 
     const CONST_VALUE = 'Une valeur constante';
 
-    public function displayConst() {
+    public function displayConst()
+    {
         echo self::CONST_VALUE;
     }
 

@@ -1,20 +1,25 @@
 <?php
 
-class A {
+class A
+{
 
-    public static function qui() {
+    public static function qui()
+    {
         echo __CLASS__;
     }
 
-    public static function test() {
+    public static function test()
+    {
         self::qui();
     }
 
 }
 
-class B extends A {
+class B extends A
+{
 
-    public static function qui() {
+    public static function qui()
+    {
         echo __CLASS__;
     }
 
@@ -22,21 +27,26 @@ class B extends A {
 
 B::test();      // Affiche A
 
-class C {
+class C
+{
 
-    public static function qui() {
+    public static function qui()
+    {
         echo __CLASS__;
     }
 
-    public static function test() {
+    public static function test()
+    {
         static::qui();
     }
 
 }
 
-class D extends C {
+class D extends C
+{
 
-    public static function qui() {
+    public static function qui()
+    {
         echo __CLASS__;
     }
 

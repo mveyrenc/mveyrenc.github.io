@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Que peut faire PHP ? &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
+        <link rel="next" title="Installation et configuration" href="installation.html"/>
+        <link rel="prev" title="Programmation en PHP" href="introduction.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Que peut faire PHP ?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-usages">Les usages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#langage-de-script-cote-serveur">Langage de script coté serveur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#langage-de-programmation-en-ligne-de-commande">Langage de programmation en ligne de commande</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#l-environnement">L&#8217;environnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-de-programmation">Type de programmation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types-de-fichiers-que-l-on-peut-generer-cote-serveur">Types de fichiers que l&#8217;on peut générer coté serveur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connextion-a-une-base-de-donnees">Connextion à une base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#protocoles">Protocoles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extensible">Extensible</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation et configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tp/sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp/routing.html">Les routes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aide/controller.html">Contrôlleur</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Archive</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archive/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/tp.html">TP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Que peut faire PHP ?</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="que-peut-faire-php">
+<h1>Que peut faire PHP ?<a class="headerlink" href="#que-peut-faire-php" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="les-usages">
+<h2>Les usages<a class="headerlink" href="#les-usages" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="langage-de-script-cote-serveur">
+<h3>Langage de script coté serveur<a class="headerlink" href="#langage-de-script-cote-serveur" title="Lien permanent vers ce titre">¶</a></h3>
+<p>C&#8217;est l&#8217;utilisation la plus traditionnelle, et aussi le principal objet de PHP.
+Vous aurez besoin de trois composants pour l&#8217;exploiter : un analyseur PHP (CGI ou module serveur), un serveur web et un navigateur web.</p>
+</div>
+<div class="section" id="langage-de-programmation-en-ligne-de-commande">
+<h3>Langage de programmation en ligne de commande<a class="headerlink" href="#langage-de-programmation-en-ligne-de-commande" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Vous pouvez écrire des scripts PHP et l&#8217;exécuter en ligne de commande, sans l&#8217;aide du serveur web et d&#8217;un navigateur.
+Il vous suffit de disposer de l&#8217;exécutable PHP.</p>
+</div>
+</div>
+<div class="section" id="l-environnement">
+<h2>L&#8217;environnement<a class="headerlink" href="#l-environnement" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il est utilisable sur la majorité des systèmes d&#8217;exploitation comme Linux et ses nombreuses variantes Unix (incluant HP-UX, Solaris et OpenBSD), Microsoft Windows, Mac OS X, RISC OS et d&#8217;autres encore.
+PHP est ausi supporté aussi la plupart des serveurs web actuels dont Apache, IIS et bien d&#8217;autres.</p>
+</div>
+<div class="section" id="type-de-programmation">
+<h2>Type de programmation<a class="headerlink" href="#type-de-programmation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous avez le choix d&#8217;utiliser la programmation procédurale ou objet (OOP), ou encore un mélange des deux.</p>
+</div>
+<div class="section" id="types-de-fichiers-que-l-on-peut-generer-cote-serveur">
+<h2>Types de fichiers que l&#8217;on peut générer coté serveur<a class="headerlink" href="#types-de-fichiers-que-l-on-peut-generer-cote-serveur" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On peut bien sûr produire du code HTML mais tout autre type de fichier text (XML, json...), mais on peut aussi générer des images, des PDFs... et tout ça à la volée.
+Ces fichiers peuvent être sauvegardés sur le système de fichier, ou bien envoyés directement au client.</p>
+</div>
+<div class="section" id="connextion-a-une-base-de-donnees">
+<h2>Connextion à une base de données<a class="headerlink" href="#connextion-a-une-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il supporte énormément de base de données : MySQL, PostgreSQL, SQLite, MongoDB, etc.</p>
+</div>
+<div class="section" id="protocoles">
+<h2>Protocoles<a class="headerlink" href="#protocoles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>PHP supporte de nombreux protocoles comme LDAP, IMAP, SNMP, NNTP, POP3, HTTP, COM (sous Windows) et encore d&#8217;autres. Vous pouvez ouvrir des sockets réseau, et interagir avec n&#8217;importe quel autre protocole.</p>
+</div>
+<div class="section" id="extensible">
+<h2>Extensible<a class="headerlink" href="#extensible" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il existe beaucoup d&#8217;extensions pour traiter du XML, gérer du cache, manupulier des fichiers audio, etc...
+<a class="reference external" href="http://php.net/manual/fr/funcref.php">http://php.net/manual/fr/funcref.php</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation et configuration" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Programmation en PHP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
