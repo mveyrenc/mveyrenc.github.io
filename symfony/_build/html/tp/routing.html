@@ -187,7 +187,9 @@
 <p>Les routes permettent à Symfony de savoir quel contrôleur exécuter lorsque vous appelez une page.</p>
 <p>Une route est composée à minima :</p>
 <ul class="simple">
-<li>d&#8217;un nom. Il s&#8217;agit d&#8217;une chaine de caractères,</li>
+<li>un <strong>identifiant</strong>. Il doit être unique dans l&#8217;application. Quand on utilise les annotations, Symfony génère lui même cet identifiant. Pour les autres configurations, il faudra le faire à la main ;</li>
+<li>un <strong>chemin</strong> (<code class="docutils literal"><span class="pre">path</span></code>). C&#8217;est URL de la route. Les éléments entre <code class="docutils literal"><span class="pre">{}</span></code> sont des paramètres de l&#8217;URL, comme l&#8217;ID d&#8217;un objet ;</li>
+<li>le <strong>contrôleur</strong> à appeler.</li>
 </ul>
 <p>Le routing fait la correspondance entre les URLs et les les contrôleurs. La configuration de ce mapping se fait</p>
 <blockquote>

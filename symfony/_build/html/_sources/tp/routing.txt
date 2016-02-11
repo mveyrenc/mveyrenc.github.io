@@ -8,7 +8,9 @@ Les routes permettent à Symfony de savoir quel contrôleur exécuter lorsque vo
 
 Une route est composée à minima :
 
-* d'un nom. Il s'agit d'une chaine de caractères,
+* un **identifiant**. Il doit être unique dans l'application. Quand on utilise les annotations, Symfony génère lui même cet identifiant. Pour les autres configurations, il faudra le faire à la main ;
+* un **chemin** (``path``). C'est URL de la route. Les éléments entre ``{}`` sont des paramètres de l'URL, comme l'ID d'un objet ;
+* le **contrôleur** à appeler.
 
 Le routing fait la correspondance entre les URLs et les les contrôleurs. La configuration de ce mapping se fait
 
