@@ -39,9 +39,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
-        <link rel="next" title="Les formulaires" href="formulaire.html"/>
-        <link rel="prev" title="Les assets" href="assets.html"/> 
+    <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -116,68 +114,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../aide/console.html">Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aide/controller.html">Contrôlleur</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Archive</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a></li>
-<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Doctrine et la base de donnée</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creation-des-entites">Création des entités</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#l-entite-user">L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#structure-de-l-entite">Structure de l&#8217;entité</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-du-generateur">Utilisation du générateur</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#la-classe-user">La classe <code class="docutils literal"><span class="pre">User</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#la-classe-userrepository">La classe <code class="docutils literal"><span class="pre">UserRepository</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#creation-des-autres-entites">Création des autres entités</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#l-entite-post">L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#l-entite-tag">L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#l-entite-comment">L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#l-entite-image">L&#8217;entité <code class="docutils literal"><span class="pre">Image</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#definition-des-relations">Définition des relations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#notions-techniques-a-savoir">Notions techniques à savoir</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#notion-du-proprietaire-et-de-l-inverse">Notion du propriétaire et de l&#8217;inverse</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite">Notion d&#8217;unidirectionnalité et de bidirectionnalité</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#relation-one-to-one">Relation One-To-One</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dans-l-entite-proprietaire">Dans l&#8217;entité propriétaire</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dans-l-entite-inverse">Dans l&#8217;entité inverse</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#relation-many-to-one-et-one-to-many">Relation Many-To-One et One-To-Many</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Dans l&#8217;entité propriétaire</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Dans l&#8217;entité inverse</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#relation-many-to-many">Relation Many-To-Many</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Dans l&#8217;entité propriétaire</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">Dans l&#8217;entité inverse</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manipulation-des-donnees">Manipulation des données</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#enregistrer-les-entites-dans-la-base-de-donnee">Enregistrer les entités dans la base de donnée</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recuperer-ses-entites-avec-un-entityrepository">Récupérer ses entités avec un EntityRepository</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a></li>
 </ul>
 
           
@@ -1312,15 +1248,6 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="formulaire.html" class="btn btn-neutral float-right" title="Les formulaires" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="assets.html" class="btn btn-neutral" title="Les assets" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
-      
-    </div>
   
 
   <hr/>

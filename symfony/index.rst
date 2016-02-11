@@ -62,21 +62,22 @@ Ce document a pour but de vous faire acquérir les compétences suivantes :
 
     aide/*
 
-.. _archive:
+..
+    .. _archive:
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Archive
-    :glob:
+    .. toctree::
+        :maxdepth: 2
+        :caption: Archive
+        :glob:
 
-    archive/controleur
-    archive/web_profiler
-    archive/routing
-    archive/services
-    archive/twig
-    archive/assets
-    archive/doctrine
-    archive/formulaire
-    archive/tp
+        archive/controleur
+        archive/web_profiler
+        archive/routing
+        archive/services
+        archive/twig
+        archive/assets
+        archive/doctrine
+        archive/formulaire
+        archive/tp
 
 
