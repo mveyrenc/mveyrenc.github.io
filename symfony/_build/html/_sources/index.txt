@@ -22,7 +22,6 @@ Ce document a pour but de vous faire acquérir les compétences suivantes :
 
     rappels/introduction
     rappels/usages
-    rappels/installation
     rappels/syntaxe
     rappels/fonctions
     rappels/poo
@@ -46,7 +45,8 @@ Ce document a pour but de vous faire acquérir les compétences suivantes :
     :glob:
 
     tp/sujet
-    tp/pre-requis_installation
+    tp/installation-php
+    tp/installation-symfony
     tp/bundle
     tp/controleur
     tp/web_profiler

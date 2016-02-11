@@ -40,7 +40,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
-        <link rel="next" title="Console" href="../aide/console.html"/>
+        <link rel="next" title="Les entités" href="entite.html"/>
         <link rel="prev" title="Le web-profiler" href="web_profiler.html"/> 
 
   
@@ -50,14 +50,12 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+      <div class="wy-side-nav-search">
+        
 
         
             
@@ -82,17 +80,8 @@
           </div>
         
 
-          
-            
-            
-              <div class="version">
-                1.0.0
-              </div>
-            
-          
-
-          
-        </div>
+        
+      </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -102,7 +91,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../rappels/introduction.html">Programmation en PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rappels/usages.html">Que peut faire PHP ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rappels/installation.html">Installation et configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rappels/syntaxe.html">La syntaxe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rappels/fonctions.html">Les fonctions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rappels/poo.html">La programmation orientée objet</a></li>
@@ -116,9 +104,10 @@
 <p class="caption"><span class="caption-text">tp</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sujet.html">Sujet du TP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pre-requis_installation.html">Pré-requis et installation du framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation-symfony.html">Installation de Symfony</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bundle.html">Création du bundle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Créer une page sous Symfony</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Les routes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fonctionnement">Fonctionnement</a></li>
@@ -134,6 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#comment-generer-des-url">Comment générer des URL ?</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="entite.html">Les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -192,12 +182,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Les routes</li>
-    <li class="wy-breadcrumbs-aside">
-      
+      <li class="wy-breadcrumbs-aside">
+        
+          
         
 
-      
-    </li>
+      </li>
   </ul>
   <hr/>
 </div>
@@ -291,7 +281,7 @@
 <li><p class="first">Le noyau va exécuter le contrôleur.</p>
 </li>
 </ol>
-<p>Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404, comme par exemple pour la page, <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/The/World">http://symfony.loc.epsi.fr/app_dev.php/hello/The/World</a> :</p>
+<p>Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404, comme par exemple pour la page, <code class="docutils literal"><span class="pre">/app_dev.php/hello/The/World</span></code> :</p>
 <blockquote>
 <div><img alt="../_images/symfony_exception.png" class="box align-center" src="../_images/symfony_exception.png" />
 <p>En haut de la page est affiché un message d&#8217;erreur, un exception a été détectée.</p>
@@ -312,6 +302,7 @@
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
 <span class="p">{</span>
+    <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -320,6 +311,7 @@
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
 <span class="p">{</span>
+    <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -337,6 +329,7 @@
 <span class="sd">      */</span>
      <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
      <span class="p">{</span>
+         <span class="o">...</span>
      <span class="p">}</span>
 
      <span class="sd">/**</span>
@@ -344,6 +337,7 @@
 <span class="sd">      */</span>
      <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
      <span class="p">{</span>
+         <span class="o">...</span>
      <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -387,7 +381,7 @@
 </ul>
 <div class="section" id="controles-des-parametres-des-routes">
 <h4>Contrôles des paramètres des routes<a class="headerlink" href="#controles-des-parametres-des-routes" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Lorsq&#8217;on va sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World">http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World</a>, elle affiche &#8220;Hello The World!&#8221;.</p>
+<p>Lorsq&#8217;on va sur la page <code class="docutils literal"><span class="pre">/app_dev.php/hello/The%20World</span></code>, elle affiche &#8220;Hello The World!&#8221;.</p>
 <p>Ajoutons un validation pour vérifier que le nom soit bien un mot ou un ensemble de mots.</p>
 <p>La validation des paramètres se fait grâce à des expressions régulières. Voici les éléments de base pour les construire :</p>
 <ul class="simple">
@@ -441,10 +435,10 @@
 <p>Ensuite lorsqu&#8217;on affiche les pages suivantes</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a> affiche &#8220;Hello World!&#8221;</li>
-<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World">http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World</a> affiche &#8220;Hello The World!&#8221;</li>
-<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/125">http://symfony.loc.epsi.fr/app_dev.php/hello/125</a> affiche &#8220;Hello 125&#8221;</li>
-<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello">http://symfony.loc.epsi.fr/app_dev.php/hello</a>/hého affiche une message d&#8217;erreur (404).</li>
+<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/World</span></code> affiche &#8220;Hello World!&#8221;</li>
+<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/The%20World</span></code> affiche &#8220;Hello The World!&#8221;</li>
+<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/125</span></code> affiche &#8220;Hello 125&#8221;</li>
+<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/hého</span></code> affiche une message d&#8217;erreur (404).</li>
 </ul>
 </div></blockquote>
 </div>
@@ -474,8 +468,8 @@
 <p>Avec cette configuration :</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a> et <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World.html">http://symfony.loc.epsi.fr/app_dev.php/hello/World.html</a> affiche la version HTML de la page ;</li>
-<li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World.json">http://symfony.loc.epsi.fr/app_dev.php/hello/World.json</a> affiche la page en json</li>
+<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/World</span></code> et <code class="docutils literal"><span class="pre">/app_dev.php/hello/World</span></code>.html affiche la version HTML de la page ;</li>
+<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/World</span></code>.json affiche la page en json</li>
 </ul>
 </div></blockquote>
 </div></blockquote>
@@ -503,7 +497,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../aide/console.html" class="btn btn-neutral float-right" title="Console" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="entite.html" class="btn btn-neutral float-right" title="Les entités" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="web_profiler.html" class="btn btn-neutral" title="Le web-profiler" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
@@ -520,7 +514,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 

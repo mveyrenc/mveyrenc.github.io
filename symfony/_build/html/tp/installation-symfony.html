@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation de Symfony &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
+        <link rel="next" title="Création du bundle" href="bundle.html"/>
+        <link rel="prev" title="Installation et configuration de PHP" href="installation-php.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <a href="../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation de Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sous-linux">Sous Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sous-mac-os">Sous Mac OS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sous-windows">Sous Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#verification-de-l-installation">Vérification  de l&#8217;installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verifier-votre-configuration-de-php">Vérifier votre configuration de PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verifier-la-configuration-de-php-en-console">Vérifier la configuration de PHP en console</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entite.html">Les entités</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aide/controller.html">Contrôlleur</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Archive</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archive/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/tp.html">TP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Installation de Symfony</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-de-symfony">
+<span id="tp-installation"></span><h1>Installation de Symfony<a class="headerlink" href="#installation-de-symfony" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="warning admonition">
+<p class="first admonition-title">Avant de commencer</p>
+<p class="last">Le TP est doit être réalisé avec la version 2.7 de Symfony.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="sous-linux">
+<h3>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd</span> ~
+<span class="gp">$</span> curl -LsS https://symfony.com/installer -o symfony.phar
+<span class="gp">$</span> chmod a+x symfony.phar
+<span class="gp">$</span> php symfony.phar new symfony 2.7
+</pre></div>
+</div>
+<p>Le <strong>VHost</strong>, ou <em>Virtual Host</em>, est un paramétrage au niveau du serveur web pour qu&#8217;il oriente les requêtes HTTP entrantes vers la bonne application.</p>
+<p>Dans un premier temps, nous allons créé un hostname qui nous permettra s&#8217;accéder à notre application :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># /etc/hosts</span>
+
+127.0.1.1  symfony.loc.epsi.fr
+</pre></div>
+</div>
+<p>Ensuite, on crée le Vhost :</p>
+<div class="highlight-apache"><div class="highlight"><pre><span class="c"># /etc/apache2/sites-available/symfony.conf</span>
+
+<span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+    <span class="nb">ServerName</span> symfony.loc.epsi.fr
+
+    <span class="nb">DocumentRoot</span> ~/Symfony/web
+    <span class="nt">&lt;Directory</span> <span class="s">~/Symfony/web</span><span class="nt">&gt;</span>
+        <span class="nb">AllowOverride</span> <span class="k">All</span>
+        <span class="nb">Require</span> <span class="k">all</span> granted
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    <span class="nb">ErrorLog</span> <span class="sx">/var/log/apache2/symfony.loc.epsi.fr_error.log</span>
+    <span class="nb">CustomLog</span> <span class="sx">/var/log/apache2/symfony.loc.epsi.fr_access.log</span> combined
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+<p>Pour finir, on active le VHost et on recharche Apache :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo a2ensite symfony.conf</span>
+<span class="go">sudo service apache2 reload</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sous-mac-os">
+<h3>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd</span> /Applications/MAMP/htdocs/
+<span class="gp">$</span> curl -LsS https://symfony.com/installer -o symfony.phar
+<span class="gp">$</span> chmod a+x symfony.phar
+<span class="gp">$</span> php symfony.phar new Symfony 2.7
+</pre></div>
+</div>
+</div>
+<div class="section" id="sous-windows">
+<h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">c:\&gt; cd c:\wamp\www</span>
+<span class="go">c:\&gt; php -r &quot;readfile(&#39;https://symfony.com/installer&#39;);&quot; &gt; symfony.phar</span>
+<span class="go">c:\&gt; php symfony.phar new Symfony 2.7</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>A la fin de l&#8217;installation, votre Symfony sera accéssible à l&#8217;adresse :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sous Linux : <a class="reference external" href="http://symfony.loc.epsi.fr">http://symfony.loc.epsi.fr</a></li>
+<li>Sous MacOS : <a class="reference external" href="http://localhost:8888/Symfony/web">http://localhost:8888/Symfony/web</a></li>
+<li>Sous Windows : <a class="reference external" href="http://localhost/Symfony/web">http://localhost/Symfony/web</a></li>
+</ul>
+</div></blockquote>
+<p>Toutes les URL données dans le TP doivent être préfixées par l&#8217;URL d&#8217;accès de Symfony. Par exemple, si on vous demande d&#8217;afficher la page <code class="docutils literal"><span class="pre">/app_dev.php/blog1</span></code>, il faudra aller sur la page :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sous Linux : <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog1">http://symfony.loc.epsi.fr/app_dev.php/blog1</a></li>
+<li>Sous MacOS : <a class="reference external" href="http://localhost:8888/Symfony/web/app_dev.php/blog1">http://localhost:8888/Symfony/web/app_dev.php/blog1</a></li>
+<li>Sous Windows : <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/blog1">http://localhost/Symfony/web/app_dev.php/blog1</a></li>
+</ul>
+</div></blockquote>
+<p>Toutes les commandes doivent être exécutées dans le répertoire de Symfony :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sous Linux : <code class="docutils literal"><span class="pre">~/symfony</span></code></li>
+<li>Sous MacOS : <code class="docutils literal"><span class="pre">/Applications/MAMP/htdocs/Symfony</span></code></li>
+<li>Sous Windows : <code class="docutils literal"><span class="pre">cd</span> <span class="pre">c:\wamp\www\Symfony</span></code></li>
+</ul>
+</div></blockquote>
+<p class="last">De plus, pour ceux travaillant sous Windows, il faudra remplacer les <code class="docutils literal"><span class="pre">/</span></code> dans les lignes de commande par <code class="docutils literal"><span class="pre">\</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="verification-de-l-installation">
+<h2>Vérification  de l&#8217;installation<a class="headerlink" href="#verification-de-l-installation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="verifier-votre-configuration-de-php">
+<h3>Vérifier votre configuration de PHP<a class="headerlink" href="#verifier-votre-configuration-de-php" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Allez à l&#8217;adresse :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sous Linux : <a class="reference external" href="http://symfony.loc.epsi.fr/config.php">http://symfony.loc.epsi.fr/config.php</a></li>
+<li>Sous MacOS : <a class="reference external" href="http://localhost:8888/Symfony/web/config.php">http://localhost:8888/Symfony/web/config.php</a></li>
+<li>Sous Windows : <a class="reference external" href="http://localhost/Symfony/web/config.php">http://localhost/Symfony/web/config.php</a></li>
+</ul>
+</div></blockquote>
+<p>Si vous avez des problèmes de configuration ou de droits, vous verrez cette page :</p>
+<blockquote>
+<div><img alt="../_images/symfony_config_error.png" src="../_images/symfony_config_error.png" />
+<p>Corrigez tous les problèmes avant de continuer :</p>
+<ul>
+<li><p class="first">Change the permissions of either &#8220;app/cache/&#8221; or &#8220;var/cache/&#8221; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">chmod -R 777 app/cache/</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Change the permissions of either &#8220;app/logs/&#8221; or &#8220;var/logs/&#8221; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">chmod -R 777 app/logs/</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set the &#8220;date.timezone&#8221; setting in php.ini* (like Europe/Paris).</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+</pre></div>
+</div>
+<div class="highlight-ini"><div class="highlight"><pre><span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set &#8220;xdebug.max_nesting_level&#8221; to e.g. &#8220;250&#8221; in php.ini</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>L&#8217;installation de Symfony est terminée lorsque vous affichez cette page :</p>
+<img alt="../_images/symfony_config_success.png" src="../_images/symfony_config_success.png" />
+<p>Rendez-vous sur la page <code class="docutils literal"><span class="pre">/app_dev.php</span></code>, vous devriez voir cette page :</p>
+<img alt="../_images/symfony_homepage_post_install.png" src="../_images/symfony_homepage_post_install.png" />
+</div>
+<div class="section" id="verifier-la-configuration-de-php-en-console">
+<h3>Vérifier la configuration de PHP en console<a class="headerlink" href="#verifier-la-configuration-de-php-en-console" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour gagner du temps, vous aurez besoin d&#8217;exécuter des commandes PHP via la console, vérifions donc que la configuration de PHP soit correcte :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">php app/check.php</span>
+</pre></div>
+</div>
+<img alt="../_images/symfony_config_cli.png" class="align-center" src="../_images/symfony_config_cli.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bundle.html" class="btn btn-neutral float-right" title="Création du bundle" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation-php.html" class="btn btn-neutral" title="Installation et configuration de PHP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

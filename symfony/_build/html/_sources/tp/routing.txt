@@ -92,7 +92,7 @@ Voici comment fonctionne le routeur pas à pas :
 #. Le routeur renvoie donc ces informations au Kernel ;
 #. Le noyau va exécuter le contrôleur.
 
-Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404, comme par exemple pour la page, http://symfony.loc.epsi.fr/app_dev.php/hello/The/World :
+Dans le cas où le routeur ne trouve pas de correspondance pour une URL, il renvoi une erreur 404, comme par exemple pour la page, ``/app_dev.php/hello/The/World`` :
 
     .. image:: /_static/images/symfony_exception.png
         :align: center
@@ -120,6 +120,7 @@ Les annotation pour le routeur
          */
         public function indexAction()
         {
+            ...
         }
 
     .. code-block:: php
@@ -129,6 +130,7 @@ Les annotation pour le routeur
          */
         public function showAction($id)
         {
+            ...
         }
 
 * Elle peut être utilisée avant la déclaration du contrôleur, ou avant une méthode du contrôleur
@@ -145,6 +147,7 @@ Les annotation pour le routeur
              */
             public function indexAction()
             {
+                ...
             }
 
             /**
@@ -152,6 +155,7 @@ Les annotation pour le routeur
              */
             public function showAction($id)
             {
+                ...
             }
        }
 
@@ -189,7 +193,7 @@ Les annotation pour le routeur
 Contrôles des paramètres des routes
 -----------------------------------
 
-Lorsq'on va sur la page http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World, elle affiche "Hello The World!".
+Lorsq'on va sur la page ``/app_dev.php/hello/The%20World``, elle affiche "Hello The World!".
 
 Ajoutons un validation pour vérifier que le nom soit bien un mot ou un ensemble de mots.
 
@@ -242,10 +246,10 @@ Ajoutons cette règle dans le contrôleur :
 
 Ensuite lorsqu'on affiche les pages suivantes
 
-    * http://symfony.loc.epsi.fr/app_dev.php/hello/World affiche "Hello World!"
-    * http://symfony.loc.epsi.fr/app_dev.php/hello/The%20World affiche "Hello The World!"
-    * http://symfony.loc.epsi.fr/app_dev.php/hello/125 affiche "Hello 125"
-    * http://symfony.loc.epsi.fr/app_dev.php/hello/hého affiche une message d'erreur (404).
+    * ``/app_dev.php/hello/World`` affiche "Hello World!"
+    * ``/app_dev.php/hello/The%20World`` affiche "Hello The World!"
+    * ``/app_dev.php/hello/125`` affiche "Hello 125"
+    * ``/app_dev.php/hello/hého`` affiche une message d'erreur (404).
 
 ..
     On peut également utiliser des paramètres suivants :
@@ -256,10 +260,10 @@ Ensuite lorsqu'on affiche les pages suivantes
 
     Avec cette route, les URL suivantes vont valides :
 
-    * http://symfony.loc.epsi.fr/app_dev.php/post/5
-    * http://symfony.loc.epsi.fr/app_dev.php/post/5.html
-    * http://symfony.loc.epsi.fr/app_dev.php/post/5.xml
-    * http://symfony.loc.epsi.fr/app_dev.php/post/5.json
+    * ``/app_dev.php/post/5``
+    * ``/app_dev.php/post/5.html``
+    * ``/app_dev.php/post/5.xml``
+    * ``/app_dev.php/post/5.json``
 
 Paramètres spéciaux de routing
 ------------------------------
@@ -289,8 +293,8 @@ Il existe deux paramètres spéciaux :
 
     Avec cette configuration :
 
-        * http://symfony.loc.epsi.fr/app_dev.php/hello/World et http://symfony.loc.epsi.fr/app_dev.php/hello/World.html affiche la version HTML de la page ;
-        * http://symfony.loc.epsi.fr/app_dev.php/hello/World.json affiche la page en json
+        * ``/app_dev.php/hello/World`` et ``/app_dev.php/hello/World``.html affiche la version HTML de la page ;
+        * ``/app_dev.php/hello/World``.json affiche la page en json
 
 * ``_locale`` : il est utilisé pour définir la locale de la session
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation et configuration &mdash; documentation Symfony 1.0.1</title>
+  <title>Installation et configuration de PHP &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -40,8 +40,8 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
-        <link rel="next" title="La syntaxe" href="syntaxe.html"/>
-        <link rel="prev" title="Que peut faire PHP ?" href="usages.html"/> 
+        <link rel="next" title="Installation de Symfony" href="installation-symfony.html"/>
+        <link rel="prev" title="Sujet du TP" href="sujet.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -50,14 +50,12 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+      <div class="wy-side-nav-search">
+        
 
         
             
@@ -82,27 +80,31 @@
           </div>
         
 
-          
-            
-            
-              <div class="version">
-                1.0.0
-              </div>
-            
-          
-
-          
-        </div>
+        
+      </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
           
           
               <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Programmation en PHP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usages.html">Que peut faire PHP ?</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Installation et configuration</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation et configuration de PHP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sous-linux-debian-ubuntu">Sous Linux (Debian/Ubuntu)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sous-macos">Sous MacOS</a></li>
@@ -116,24 +118,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="syntaxe.html">La syntaxe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fonctions.html">Les fonctions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="poo.html">La programmation orientée objet</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Cours</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../cours/introduction.html">Introduction à Symfony</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cours/architecture.html">Architecture de Symfony</a></li>
-</ul>
-<p class="caption"><span class="caption-text">tp</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../tp/sujet.html">Sujet du TP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tp/pre-requis_installation.html">Pré-requis et installation du framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tp/bundle.html">Création du bundle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tp/controleur.html">Les contrôleurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tp/web_profiler.html">Le web-profiler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tp/routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation-symfony.html">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entite.html">Les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -191,57 +181,112 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Installation et configuration</li>
-    <li class="wy-breadcrumbs-aside">
-      
+    <li>Installation et configuration de PHP</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
         
 
-      
-    </li>
+      </li>
   </ul>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installation-et-configuration">
-<span id="rappels-installation-configuration"></span><h1>Installation et configuration<a class="headerlink" href="#installation-et-configuration" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="installation-et-configuration-de-php">
+<span id="tp-installation-configuration-php"></span><h1>Installation et configuration de PHP<a class="headerlink" href="#installation-et-configuration-de-php" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="installation">
-<span id="rappels-installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<span id="tp-installation-php"></span><h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il faut installer un serveur web (<code class="docutils literal"><span class="pre">apache2</span></code>), l&#8217;interpréteur PHP (<code class="docutils literal"><span class="pre">php5</span></code> et <code class="docutils literal"><span class="pre">php5-cli</span></code>), un SGBD (<code class="docutils literal"><span class="pre">mysql-server</span></code>)
 et le connecteur entre PHP et le SGBD (<code class="docutils literal"><span class="pre">php5-mysql</span></code>).</p>
 <div class="section" id="sous-linux-debian-ubuntu">
-<span id="rappels-installation-linux"></span><h3>Sous Linux (Debian/Ubuntu)<a class="headerlink" href="#sous-linux-debian-ubuntu" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="tp-installation-php-linux"></span><h3>Sous Linux (Debian/Ubuntu)<a class="headerlink" href="#sous-linux-debian-ubuntu" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Lancez les commandes suivantes pour installer les paquets nécessaires :</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo apt-get install apache2 mysql-server mysql-client php5 php5-cli php5-mysql
+<span class="gp">$</span> sudo apt-get install php5-intl php5-xsl php5-curl
+<span class="gp">$</span> sudo apt-get install curl git
 </pre></div>
 </div>
 <p>Si c&#8217;est pour un poste de développement :</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo apt-get install php5-xdebug phpmyadmin
 </pre></div>
 </div>
+<p>Afin de corriger les droits sur les fichiers une bonne fois pour toute :</p>
+<ul>
+<li><p class="first">Ajoutons l&#8217;utilisateur d&#8217;<strong class="program">Apache</strong> (<code class="docutils literal"><span class="pre">www-data</span></code>) dans notre groupe</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G www-data $(whoami)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Ajoutons dans le groupe <code class="docutils literal"><span class="pre">www-data</span></code></p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G $(whoami) www-data</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Forçons les droits à 775 pour tous les nouveaux fichiers créés par notre utilisateur</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># ~/.profile</span>
+...
+
+<span class="c"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
+<span class="nb">umask </span>002
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Rechargeons notre profil</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">source ~/.profile</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Faisons de même pour www-data</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># /etc/apache2/envvars</span>
+...
+
+<span class="c"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
+<span class="nb">umask </span>002
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Redémarrons <strong class="program">Apache</strong></p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo service apache2 restart</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
 </div>
 <div class="section" id="sous-macos">
-<span id="rappels-installation-macos"></span><h3>Sous MacOS<a class="headerlink" href="#sous-macos" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="tp-installation-php-macos"></span><h3>Sous MacOS<a class="headerlink" href="#sous-macos" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Il faut télécharger et installer <a class="reference external" href="https://www.mamp.info/">MAMP</a>.</p>
 </div>
 <div class="section" id="sous-windows">
-<span id="rappels-installation-windows"></span><h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="tp-installation-php-windows"></span><h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Il faut télécharger et installer <a class="reference external" href="http://www.wampserver.com/">WAMP</a>.</p>
 <p>Puis, sous Windows 7, XP, Vista, 2008, 2012 et plus récent :</p>
 <ol class="arabic simple">
-<li>Allez dans le centre de contrôle et ouvrez l&#8217;icône système (<span class="menuselection">Démarrer ‣ Paramètres ‣ Panneau de configuration ‣ Système</span>)</li>
-<li>Allez à l&#8217;onglet &#8220;Avancé&#8221;</li>
+<li>Allez dans le centre de contrôle et ouvrez l&#8217;icône système (<span class="menuselection">Démarrer ‣ Panneau de configuration ‣ Système et sécurité ‣ Système ‣ Paramètres système avancés</span>)</li>
 <li>Cliquez sur le bouton &#8220;Variables d&#8217;environnements&#8221;</li>
 <li>Regardez dans le panneau &#8220;Variables systèmes&#8221;</li>
-<li>Trouvez l&#8217;entrée Path (vous devriez avoir à faire descendre l&#8217;ascenseur pour le trouver)</li>
-<li>Double cliquez sur l&#8217;entrée Path</li>
-<li>Entrez votre répertoire PHP à la fin, sans oublier cd commender par un point virgule (;), par exemple <code class="docutils literal"><span class="pre">;C:\php</span></code></li>
+<li>Trouvez l&#8217;entrée &#8220;Path&#8221; (vous devriez avoir à faire descendre l&#8217;ascenseur pour le trouver)</li>
+<li>Double cliquez sur l&#8217;entrée &#8220;Path&#8221;</li>
+<li>Entrez votre répertoire PHP à la fin, sans oublier cd commender par un point virgule (;), par exemple <code class="docutils literal"><span class="pre">;c:\wamp\bin\php\php5.5.12</span></code></li>
 <li>Confirmez en cliquant sur OK</li>
 </ol>
 </div>
 </div>
 <div class="section" id="configuration">
-<span id="rappels-configuration"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<span id="tp-configuration-php"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="fichier-de-configuration">
 <h3>Fichier de configuration<a class="headerlink" href="#fichier-de-configuration" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La configuration de PHP se fait dans le fichier <code class="docutils literal"><span class="pre">php.ini</span></code>.</p>
@@ -272,6 +317,10 @@ pour les opérations GPC (Get/Post/Cookie). Fonction obsolète en 5.3.0, supprim
 <li><code class="docutils literal"><span class="pre">display_errors</span></code> : affiche les erreurs. Doit être à On sur un poste de développement</li>
 <li><code class="docutils literal"><span class="pre">html_errors</span></code> : affiche les erreurs en HTML. Doit être à On sur un poste de développement</li>
 </ul>
+<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
+<span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -283,10 +332,10 @@ pour les opérations GPC (Get/Post/Cookie). Fonction obsolète en 5.3.0, supprim
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="syntaxe.html" class="btn btn-neutral float-right" title="La syntaxe" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="installation-symfony.html" class="btn btn-neutral float-right" title="Installation de Symfony" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usages.html" class="btn btn-neutral" title="Que peut faire PHP ?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="sujet.html" class="btn btn-neutral" title="Sujet du TP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -300,7 +349,7 @@ pour les opérations GPC (Get/Post/Cookie). Fonction obsolète en 5.3.0, supprim
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 

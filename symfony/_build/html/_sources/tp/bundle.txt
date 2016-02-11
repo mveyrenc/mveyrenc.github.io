@@ -193,7 +193,7 @@ Que s'est-il passé ?
             type:     annotation
             prefix:   /
 
-Pour tester que votre bundle fonctionne correctement, allez sur la page http://symfony.loc.epsi.fr/hello/World.
+Pour tester que votre bundle fonctionne correctement, allez sur la page ``/hello/World``.
 
 
 

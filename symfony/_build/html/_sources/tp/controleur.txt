@@ -1,8 +1,8 @@
 .. _controleur:
 
-###############
-Les contrôleurs
-###############
+###########################
+Créer une page sous Symfony
+###########################
 
 Comme vu précédemment, le contrôleur est le chef d'orchestre de votre application, il va utiliser les autres composants (services, modèles, vues) afin de construire la page demandée par l'internaute.
 

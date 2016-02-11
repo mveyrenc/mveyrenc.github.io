@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Création de l’entité Post &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
+        <link rel="up" title="Les entités" href="../entite.html"/>
+        <link rel="next" title="Code généré" href="code-genere.html"/>
+        <link rel="prev" title="Les entités" href="../entite.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <a href="../../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-symfony.html">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../entite.html">Les entités</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Création de l&#8217;entité Post</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#structure-de-l-entite-post">Structure de l&#8217;entité Post</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-du-generateur">Utilisation du générateur</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code-genere.html">Code généré</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/controller.html">Contrôlleur</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Archive</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/controleur.html">Les contrôleurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/routing.html">Le routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/services.html">Les services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/twig.html">Les vues avec Twig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/doctrine.html">Doctrine et la base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/formulaire.html">Les formulaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/tp.html">TP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../entite.html">Les entités</a> &raquo;</li>
+      
+    <li>Création de l&#8217;entité Post</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creation-de-l-entite-post">
+<h1>Création de l&#8217;entité Post<a class="headerlink" href="#creation-de-l-entite-post" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Les entités Doctrine sont de simples classes PHP avec des propriétés et des méthodes. Comme pour les bundles, Symfony propose un générateur créer ces classes.</p>
+<div class="section" id="structure-de-l-entite-post">
+<h2>Structure de l&#8217;entité Post<a class="headerlink" href="#structure-de-l-entite-post" title="Lien permanent vers ce titre">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="33%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Nom</th>
+<th class="head">Type de champ</th>
+<th class="head">Taille du champ</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>date</td>
+<td>datetime</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>body</td>
+<td>text</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="utilisation-du-generateur">
+<h2>Utilisation du générateur<a class="headerlink" href="#utilisation-du-generateur" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console doctrine:generate:entity
+</pre></div>
+</div>
+<p>Ce générateur vous demande dans un premier temps le nom de l&#8217;entité que vous souhaitez créer :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">  Welcome to the Doctrine2 entity generator</span>
+
+<span class="go">This command helps you generate Doctrine2 entities.</span>
+
+<span class="go">First, you need to give the entity name you want to generate.</span>
+<span class="go">You must use the shortcut notation like AcmeBlogBundle:Post.</span>
+
+<span class="go">The Entity shortcut name:</span>
+</pre></div>
+</div>
+<p>Ici, il faut saisir <code class="docutils literal"><span class="pre">EpsiBlogBundle:Post</span></code>, autrement dit, le nom de votre bundle, suivit de <code class="docutils literal"><span class="pre">:</span></code> et efin le nom de l&#8217;entité.</p>
+<p>Ensuite, Symfony votre demande quel format de la configuration de votre entité, vous gardez la valeur par défaut <code class="docutils literal"><span class="pre">annotation</span></code> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Determine the format to use for the mapping information.</span>
+
+<span class="go">Configuration format (yml, xml, php, or annotation) [annotation]:</span>
+</pre></div>
+</div>
+<p>Ensuite vous pouvez commencer à entrer les différents champs composant votre entité.</p>
+<p>Commençez par <code class="docutils literal"><span class="pre">title</span></code> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Instead of starting with a blank entity, you can add some fields now.</span>
+<span class="go">Note that the primary key will be added automatically (named id).</span>
+
+<span class="go">Available types: array, simple_array, json_array, object,</span>
+<span class="go">boolean, integer, smallint, bigint, string, text, datetime, datetimetz,</span>
+<span class="go">date, time, decimal, float, binary, blob, guid.</span>
+
+<span class="go">New field name (press &lt;return&gt; to stop adding fields): title</span>
+<span class="go">Field type [string]:</span>
+<span class="go">Field length [255]: 10</span>
+</pre></div>
+</div>
+<p>Ensuite, passez au champ <code class="docutils literal"><span class="pre">date</span></code> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">New field name (press &lt;return&gt; to stop adding fields): date</span>
+<span class="go">Field type [string]: datetimetz</span>
+</pre></div>
+</div>
+<p>Puis <code class="docutils literal"><span class="pre">body</span></code> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">New field name (press &lt;return&gt; to stop adding fields): body</span>
+<span class="go">Field type [string]: text</span>
+</pre></div>
+</div>
+<p>Pour finir, lorsque Symfony vous propose d&#8217;entrer un nouveau champ, laissez le nom vide et validez. Cela permet d&#8217;arrêter l&#8217;ajout de champs dans l&#8217;entité.</p>
+<p>Symfony vous propose ensuite de créer une classe repository vide, répondez <code class="docutils literal"><span class="pre">yes</span></code> à cette question :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">New field name (press &lt;return&gt; to stop adding fields):</span>
+
+<span class="go">Do you want to generate an empty repository class [no]? yes</span>
+</pre></div>
+</div>
+<p>Pour finir, Symfony vous demande de confirmer la génération de l&#8217;entité :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">  Summary before generation</span>
+
+
+<span class="go">You are going to generate a &quot;EpsiBlogBundle:Post&quot; Doctrine2 entity</span>
+<span class="go">using the &quot;annotation&quot; format.</span>
+
+<span class="go">Do you confirm generation [yes]?</span>
+
+
+<span class="go">  Entity generation</span>
+
+
+<span class="go">Generating the entity code: OK</span>
+
+
+<span class="go">  You can now start using the generated code!</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code-genere.html" class="btn btn-neutral float-right" title="Code généré" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../entite.html" class="btn btn-neutral" title="Les entités" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
