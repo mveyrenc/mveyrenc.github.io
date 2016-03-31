@@ -119,6 +119,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../entite.html">Les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
@@ -182,31 +183,56 @@
             
   <div class="section" id="parametres-dans-l-url">
 <span id="controleur-index2"></span><h1>Paramètres dans l&#8217;URL<a class="headerlink" href="#parametres-dans-l-url" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Les paramètres placés dans l&#8217;URL doivent être placés :</p>
-<ul class="simple">
-<li>dans la route entre accolades ;</li>
-<li>et dans la signature de la méthode.</li>
-</ul>
-<p>Ajoutez une nouvelle action avec un paramètre :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<p>Ajoutez la méthode <code class="docutils literal"><span class="pre">index2Action</span></code> surlignée en dessous de la méthode <code class="docutils literal"><span class="pre">index1Action</span></code>.</p>
+<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @Route(&quot;/blog2/{name}&quot;)</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">index2Action</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index1Action</span><span class="p">()</span>
+        <span class="o">...</span>
     <span class="p">{</span>
-        <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
-        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span><span class="o">.</span><span class="nv">$name</span><span class="o">.</span><span class="s1">&#39;!&#39;</span><span class="p">);</span>
-        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
 
-        <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="hll">    <span class="sd">/**</span>
+</span><span class="hll"><span class="sd">     * @Route(&quot;/blog2/{name}&quot;)</span>
+</span><span class="hll"><span class="sd">     */</span>
+</span><span class="hll">    <span class="k">public</span> <span class="k">function</span> <span class="nf">index2Action</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+</span><span class="hll">        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span><span class="o">.</span><span class="nv">$name</span><span class="o">.</span><span class="s1">&#39;!&#39;</span><span class="p">);</span>
+</span><span class="hll">        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog2/John">http://symfony.loc.epsi.fr/app_dev.php/blog2/John</a></p>
+<p>Ici le mot &#8216;John&#8217; est un paramètre passé dans l&#8217;URL.</p>
+<p>Les paramètres placés dans l&#8217;URL doivent être placés :</p>
+<ul class="simple">
+<li>dans la route entre accolades (l10) ;</li>
+<li>et dans la signature de la méthode (l12).</li>
+</ul>
+<p>Enfin, il ne reste plus qu&#8217;à utiliser la variable contenant notre paramètre. Ici, nous l&#8217;insérons dans le message affiché sur la page (l15).</p>
 </div>
 
 

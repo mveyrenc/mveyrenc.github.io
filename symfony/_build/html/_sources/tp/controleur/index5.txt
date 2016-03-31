@@ -9,12 +9,18 @@ Pour écrire encore moins de code, on peut utiliser l'annotation ``@Template``.
 Ajoutez une nouvelle action dans le contrôleur :
 
 .. code-block:: php
+    :linenos:
+    :emphasize-lines: 11-20
 
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
     class BlogController extends Controller
     {
         ...
+
+        public function index4Action()
+            ...
+        {
 
         /**
          * @Route("/blog5/{name}")

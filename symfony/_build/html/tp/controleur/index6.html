@@ -119,6 +119,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../entite.html">Les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
@@ -185,15 +186,39 @@
 <p>Dans la configuration des routes, on peut demander à Symfony de valider le format des paramètres présents dans l&#8217;URL, ainsi, Symfony s&#8217;occupe de faire la vérification à notre place.</p>
 <p>Dans la route de l&#8217;action <code class="docutils literal"><span class="pre">index5Action</span></code>, on veut que le paramètre <code class="docutils literal"><span class="pre">name</span></code> doit être une suite de mot (lettre + chiffre + espace). Pour cela, on utilise le paramètre <code class="docutils literal"><span class="pre">requirements</span></code>,
 qui valide le format d&#8217;un paramètre avec une expression régulière.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
+<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
 
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index4Action</span><span class="p">()</span>
+        <span class="o">...</span>
+    <span class="p">{</span>
+
     <span class="sd">/**</span>
-<span class="sd">     * @Route(&quot;/blog5/{name}&quot;, requirements={&quot;name&quot; = &quot;(\w+[\s]?)+&quot;})</span>
-<span class="sd">     * @Template()</span>
+<span class="hll"><span class="sd">     * @Route(&quot;/blog5/{name}&quot;, requirements={&quot;name&quot; = &quot;(\w+[\s]?)+&quot;})</span>
+</span><span class="sd">     * @Template()</span>
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index5Action</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
     <span class="p">{</span>
@@ -203,7 +228,7 @@ qui valide le format d&#8217;un paramètre avec une expression régulière.</p>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Allez sur les pages :</p>
 <ul class="simple">
 <li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog5/John">http://symfony.loc.epsi.fr/app_dev.php/blog5/John</a></li>
@@ -211,6 +236,32 @@ qui valide le format d&#8217;un paramètre avec une expression régulière.</p>
 <li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog5/John%20Doe">http://symfony.loc.epsi.fr/app_dev.php/blog5/John%20Doe</a></li>
 <li><a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog5/John%20Doe%20...">http://symfony.loc.epsi.fr/app_dev.php/blog5/John%20Doe%20...</a></li>
 </ul>
+<div class="admonition-expressions-regulieres admonition">
+<p class="first admonition-title">Expressions régulières</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">[abc]</span></code> : le caractère &#8220;a&#8221;, &#8220;b&#8221; ou &#8220;c&#8221;</li>
+<li><code class="docutils literal"><span class="pre">[^abc]</span></code> : n&#8217;importe quel caractère sauf &#8220;a&#8221;, &#8220;b&#8221;, ou &#8220;c&#8221;</li>
+<li><code class="docutils literal"><span class="pre">[a-z]</span></code> : n&#8217;importe quel caractère dans l&#8217;intervalle a-z</li>
+<li><code class="docutils literal"><span class="pre">[a-zA-Z]</span></code> : n&#8217;importe quel caractère dans les intervalles a-z ou A-Z</li>
+<li><code class="docutils literal"><span class="pre">^</span></code> : début de ligne</li>
+<li><code class="docutils literal"><span class="pre">$</span></code> : fin de ligne</li>
+<li><code class="docutils literal"><span class="pre">.</span></code> : n&#8217;importe quel caractère unique</li>
+<li><code class="docutils literal"><span class="pre">\s</span></code> : tout caractère blanc</li>
+<li><code class="docutils literal"><span class="pre">\S</span></code> : tout caractère qui n&#8217;est pas un caractère blanc</li>
+<li><code class="docutils literal"><span class="pre">\d</span></code> : tout caractère décimal</li>
+<li><code class="docutils literal"><span class="pre">\D</span></code> : tout caractère qui n&#8217;est pas un caractère décimal</li>
+<li><code class="docutils literal"><span class="pre">\w</span></code> : tout caractère de &#8220;mot&#8221; (lettre, nombre, underscore)</li>
+<li><code class="docutils literal"><span class="pre">\W</span></code> : tout caractère qui n&#8217;est pas un caractère de &#8220;mot&#8221;</li>
+<li><code class="docutils literal"><span class="pre">(...)</span></code> : sous ensemble</li>
+<li><code class="docutils literal"><span class="pre">(a|b)</span></code> : &#8220;a&#8221; ou &#8220;b&#8221;</li>
+<li><code class="docutils literal"><span class="pre">a?</span></code> : zéro ou un &#8220;a&#8221;</li>
+<li><code class="docutils literal"><span class="pre">a*</span></code> : zéro &#8220;a&#8221; ou plus</li>
+<li><code class="docutils literal"><span class="pre">a+</span></code> : un &#8220;a&#8221; ou plus</li>
+<li><code class="docutils literal"><span class="pre">a{3}</span></code> : exactement trois &#8220;a&#8221;</li>
+<li><code class="docutils literal"><span class="pre">a{3,}</span></code> : trois &#8220;a&#8221; ou plus</li>
+<li><code class="docutils literal"><span class="pre">a{3,6}</span></code> : entre trois ou six &#8220;a&#8221;</li>
+</ul>
+</div>
 </div>
 
 

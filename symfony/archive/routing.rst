@@ -127,6 +127,7 @@ Les annotation pour le routeur
 * Définit le chemin avec ses paramètres
 
     .. code-block:: php
+        :emphasize-lines: 2
 
         /**
          * @Route("/")
@@ -136,6 +137,7 @@ Les annotation pour le routeur
         }
 
     .. code-block:: php
+        :emphasize-lines: 2
 
         /**
          * @Route("/{id}", requirements={"id" = "\d+"}, defaults={"id" = 1})

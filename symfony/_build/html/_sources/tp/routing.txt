@@ -74,15 +74,8 @@ Ce qui produit les routes suivantes :
 Fonctionnement
 **************
 
-Les routes sont composés à minima de trois éléments suivants :
+Quand on appelle la page ``/hello/World`` ;
 
-* un **identifiant**. Il doit être unique dans l'application. Quand on utilise les annotations, Symfony génère lui même cet identifiant. Pour les autres configurations, il faudra le faire à la main ;
-* un **chemin** (``path``). C'est URL de la route. Les éléments entre ``{}`` sont des paramètres de l'URL, comme l'ID d'un objet ;
-* le **contrôleur** à appeler.
-
-Voici comment fonctionne le routeur pas à pas :
-
-#. On appelle l'URL ``/hello/World`` ;
 #. Le routeur essaie de faire correspondre cette URL avec le chemin de chaque route. On d'ailleurs le voir dans le profiler :
 
     .. image:: /_static/images/profiler_routes.png
@@ -116,6 +109,7 @@ Les annotation pour le routeur
 * Définit le chemin avec ses paramètres
 
     .. code-block:: php
+        :emphasize-lines: 2
 
         /**
          * @Route("/")
@@ -126,6 +120,7 @@ Les annotation pour le routeur
         }
 
     .. code-block:: php
+        :emphasize-lines: 2
 
         /**
          * @Route("/{id}", requirements={"id" = "\d+"}, defaults={"id" = 1})
@@ -138,6 +133,7 @@ Les annotation pour le routeur
 * Elle peut être utilisée avant la déclaration du contrôleur, ou avant une méthode du contrôleur
 
     .. code-block:: php
+        :emphasize-lines: 2
 
         /**
          * @Route("/blog")
@@ -159,7 +155,7 @@ Les annotation pour le routeur
             {
                 ...
             }
-       }
+        }
 
 @Method
 =======
@@ -169,6 +165,7 @@ Les annotation pour le routeur
 * Définit la méthode HTTP utilisée
 
     .. code-block:: php
+        :emphasize-lines: 8,16
 
         /**
          * @Route("/blog")
@@ -228,30 +225,6 @@ Le nom est une chaîne de caractères qui est composé de un ou plusieurs mots s
     * un mot
     * suivit de zéro ou un espace
     * le tout répété au moins une fois
-
-Ajoutons cette règle dans le contrôleur :
-
-    .. code-block:: php
-
-        # src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php
-        class DefaultController extends Controller
-        {
-            /**
-             * @Route("/hello/{name}", requirements={"name" = "(\w+[\s]?)+"})
-             * @Template()
-             */
-            public function indexAction($name)
-            {
-                return array('name' => $name);
-            }
-        }
-
-Ensuite lorsqu'on affiche les pages suivantes
-
-    * ``/app_dev.php/hello/World`` affiche "Hello World!"
-    * ``/app_dev.php/hello/The%20World`` affiche "Hello The World!"
-    * ``/app_dev.php/hello/125`` affiche "Hello 125"
-    * ``/app_dev.php/hello/hého`` affiche une message d'erreur (404).
 
 ..
     On peut également utiliser des paramètres suivants :

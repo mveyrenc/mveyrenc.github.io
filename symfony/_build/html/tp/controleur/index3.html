@@ -119,6 +119,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../entite.html">Les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
@@ -183,36 +184,66 @@
   <div class="section" id="utilisation-des-templates">
 <span id="controleur-index3"></span><h1>Utilisation des templates<a class="headerlink" href="#utilisation-des-templates" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Comme on ne peux pas générer tous le code HTML dans le corps de la fonction du contrôleur, on utilise des templates qui représentent la vue de l&#8217;architecture MVC.</p>
-<p>Ajoutez cette une nouvelle action dans le contrôleur :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<p>Ajoutez la méthode <code class="docutils literal"><span class="pre">index3Action</span></code> dans le contrôleur :</p>
+<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @Route(&quot;/blog3/{name}&quot;)</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">index3Action</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index2Action</span><span class="p">()</span>
+        <span class="o">...</span>
     <span class="p">{</span>
-        <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
-        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;templating&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
-                <span class="s1">&#39;EpsiBlogBundle:Blog:index3.html.twig&#39;</span><span class="p">,</span>
-                <span class="k">array</span><span class="p">(</span>
-                    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-        <span class="p">);</span>
-        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
 
-        <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="hll">    <span class="sd">/**</span>
+</span><span class="hll"><span class="sd">     * @Route(&quot;/blog3/{name}&quot;)</span>
+</span><span class="hll"><span class="sd">     */</span>
+</span><span class="hll">    <span class="k">public</span> <span class="k">function</span> <span class="nf">index3Action</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+</span><span class="hll">        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span>
+</span><span class="hll">            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;templating&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
+</span><span class="hll">                <span class="s1">&#39;EpsiBlogBundle:Blog:index3.html.twig&#39;</span><span class="p">,</span>
+</span><span class="hll">                <span class="k">array</span><span class="p">(</span>
+</span><span class="hll">                    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
+</span><span class="hll">                <span class="p">)</span>
+</span><span class="hll">            <span class="p">)</span>
+</span><span class="hll">        <span class="p">);</span>
+</span><span class="hll">        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Créez le template <code class="docutils literal"><span class="pre">index3.html.twig</span></code> dans le répertoire <code class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/Blog/</span></code> avec le contenu suivant :</p>
-<div class="highlight-html+jinja"><div class="highlight"><pre>Hello <span class="nt">&lt;b&gt;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="nt">&lt;/b&gt;</span>!
+<div class="highlight-html+jinja"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>Hello <span class="nt">&lt;b&gt;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="nt">&lt;/b&gt;</span>!
 </pre></div>
-</div>
+</td></tr></table></div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p>Les templates sont toujours dans le répertoire <code class="docutils literal"><span class="pre">Resources/views</span></code> du bundle.</p>

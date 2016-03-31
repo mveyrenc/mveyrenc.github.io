@@ -14,6 +14,7 @@ Dans le répertoire ``src/Epsi/Bundle/BlogBundle/Controller/``, créez le contr�
 
 
 .. code-block:: php
+    :linenos:
 
     namespace Epsi\Bundle\BlogBundle\Controller;
 

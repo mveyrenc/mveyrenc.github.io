@@ -51,6 +51,7 @@ Ce document a pour but de vous faire acquérir les compétences suivantes :
     tp/controleur
     tp/web_profiler
     tp/routing
+    tp/assets
     tp/*
 
 .. _aide:

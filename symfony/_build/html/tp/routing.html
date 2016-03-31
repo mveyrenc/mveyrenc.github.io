@@ -40,7 +40,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
-        <link rel="next" title="Les entités" href="entite.html"/>
+        <link rel="next" title="Les assets" href="assets.html"/>
         <link rel="prev" title="Le web-profiler" href="web_profiler.html"/> 
 
   
@@ -123,6 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#comment-generer-des-url">Comment générer des URL ?</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entite.html">Les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
@@ -247,16 +248,8 @@
 </div>
 <div class="section" id="fonctionnement">
 <h2>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les routes sont composés à minima de trois éléments suivants :</p>
-<ul class="simple">
-<li>un <strong>identifiant</strong>. Il doit être unique dans l&#8217;application. Quand on utilise les annotations, Symfony génère lui même cet identifiant. Pour les autres configurations, il faudra le faire à la main ;</li>
-<li>un <strong>chemin</strong> (<code class="docutils literal"><span class="pre">path</span></code>). C&#8217;est URL de la route. Les éléments entre <code class="docutils literal"><span class="pre">{}</span></code> sont des paramètres de l&#8217;URL, comme l&#8217;ID d&#8217;un objet ;</li>
-<li>le <strong>contrôleur</strong> à appeler.</li>
-</ul>
-<p>Voici comment fonctionne le routeur pas à pas :</p>
+<p>Quand on appelle la page <code class="docutils literal"><span class="pre">/hello/World</span></code> ;</p>
 <ol class="arabic">
-<li><p class="first">On appelle l&#8217;URL <code class="docutils literal"><span class="pre">/hello/World</span></code> ;</p>
-</li>
 <li><p class="first">Le routeur essaie de faire correspondre cette URL avec le chemin de chaque route. On d&#8217;ailleurs le voir dans le profiler :</p>
 <blockquote>
 <div><img alt="../_images/profiler_routes.png" class="box align-center" src="../_images/profiler_routes.png" />
@@ -288,8 +281,8 @@
 <li><p class="first">Définit le chemin avec ses paramètres</p>
 <blockquote>
 <div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @Route(&quot;/&quot;)</span>
-<span class="sd"> */</span>
+<span class="hll"><span class="sd"> * @Route(&quot;/&quot;)</span>
+</span><span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="o">...</span>
@@ -297,8 +290,8 @@
 </pre></div>
 </div>
 <div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @Route(&quot;/{id}&quot;, requirements={&quot;id&quot; = &quot;\d+&quot;}, defaults={&quot;id&quot; = 1})</span>
-<span class="sd"> */</span>
+<span class="hll"><span class="sd"> * @Route(&quot;/{id}&quot;, requirements={&quot;id&quot; = &quot;\d+&quot;}, defaults={&quot;id&quot; = 1})</span>
+</span><span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="o">...</span>
@@ -309,26 +302,26 @@
 </li>
 <li><p class="first">Elle peut être utilisée avant la déclaration du contrôleur, ou avant une méthode du contrôleur</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre> <span class="sd">/**</span>
-<span class="sd">  * @Route(&quot;/blog&quot;)</span>
-<span class="sd">  */</span>
- <span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
- <span class="p">{</span>
-     <span class="sd">/**</span>
-<span class="sd">      * @Route(&quot;/&quot;)</span>
-<span class="sd">      */</span>
-     <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
-     <span class="p">{</span>
-         <span class="o">...</span>
-     <span class="p">}</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<span class="hll"><span class="sd"> * @Route(&quot;/blog&quot;)</span>
+</span><span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-     <span class="sd">/**</span>
-<span class="sd">      * @Route(&quot;/{id}&quot;)</span>
-<span class="sd">      */</span>
-     <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="o">...</span>
-     <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/{id}&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -350,16 +343,16 @@
 <span class="p">{</span>
     <span class="sd">/**</span>
 <span class="sd">     * @Route(&quot;/edit/{id}&quot;)</span>
-<span class="sd">     * @Method({&quot;GET&quot;, &quot;POST&quot;})</span>
-<span class="sd">     */</span>
+<span class="hll"><span class="sd">     * @Method({&quot;GET&quot;, &quot;POST&quot;})</span>
+</span><span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">editAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
     <span class="p">{</span>
     <span class="p">}</span>
 
     <span class="sd">/**</span>
 <span class="sd">     * @Route(&quot;/update/{id}&quot;)</span>
-<span class="sd">     * @Method({&quot;POST&quot;})</span>
-<span class="sd">     */</span>
+<span class="hll"><span class="sd">     * @Method({&quot;POST&quot;})</span>
+</span><span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">updateAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
     <span class="p">{</span>
     <span class="p">}</span>
@@ -403,32 +396,6 @@
 <li>un mot</li>
 <li>suivit de zéro ou un espace</li>
 <li>le tout répété au moins une fois</li>
-</ul>
-</div></blockquote>
-<p>Ajoutons cette règle dans le contrôleur :</p>
-<blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="c1"># src/Epsi/Bundle/BlogBundle/Controller/DefaultController.php</span>
-<span class="k">class</span> <span class="nc">DefaultController</span> <span class="k">extends</span> <span class="nx">Controller</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @Route(&quot;/hello/{name}&quot;, requirements={&quot;name&quot; = &quot;(\w+[\s]?)+&quot;})</span>
-<span class="sd">     * @Template()</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>Ensuite lorsqu&#8217;on affiche les pages suivantes</p>
-<blockquote>
-<div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/World</span></code> affiche &#8220;Hello World!&#8221;</li>
-<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/The%20World</span></code> affiche &#8220;Hello The World!&#8221;</li>
-<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/125</span></code> affiche &#8220;Hello 125&#8221;</li>
-<li><code class="docutils literal"><span class="pre">/app_dev.php/hello/hého</span></code> affiche une message d&#8217;erreur (404).</li>
 </ul>
 </div></blockquote>
 </div>
@@ -487,7 +454,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="entite.html" class="btn btn-neutral float-right" title="Les entités" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="assets.html" class="btn btn-neutral float-right" title="Les assets" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="web_profiler.html" class="btn btn-neutral" title="Le web-profiler" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>

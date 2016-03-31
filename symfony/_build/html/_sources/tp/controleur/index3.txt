@@ -6,13 +6,19 @@ Utilisation des templates
 
 Comme on ne peux pas générer tous le code HTML dans le corps de la fonction du contrôleur, on utilise des templates qui représentent la vue de l'architecture MVC.
 
-Ajoutez cette une nouvelle action dans le contrôleur :
+Ajoutez la méthode ``index3Action`` dans le contrôleur :
 
 .. code-block:: php
+    :linenos:
+    :emphasize-lines: 9-26
 
     class BlogController extends Controller
     {
         ...
+
+        public function index2Action()
+            ...
+        {
 
         /**
          * @Route("/blog3/{name}")
@@ -37,6 +43,7 @@ Ajoutez cette une nouvelle action dans le contrôleur :
 Créez le template ``index3.html.twig`` dans le répertoire ``src/Epsi/Bundle/BlogBundle/Resources/views/Blog/`` avec le contenu suivant :
 
 .. code-block:: html+jinja
+    :linenos:
 
     Hello <b>{{ name }}</b>!
 

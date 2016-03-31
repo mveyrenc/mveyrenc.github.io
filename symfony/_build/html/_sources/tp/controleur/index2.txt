@@ -4,18 +4,19 @@
 Paramètres dans l'URL
 *********************
 
-Les paramètres placés dans l'URL doivent être placés :
-
-* dans la route entre accolades ;
-* et dans la signature de la méthode.
-
-Ajoutez une nouvelle action avec un paramètre :
+Ajoutez la méthode ``index2Action`` surlignée en dessous de la méthode ``index1Action``.
 
 .. code-block:: php
+    :linenos:
+    :emphasize-lines: 9-19
 
     class BlogController extends Controller
     {
         ...
+
+        public function index1Action()
+            ...
+        {
 
         /**
          * @Route("/blog2/{name}")
@@ -31,3 +32,12 @@ Ajoutez une nouvelle action avec un paramètre :
     }
 
 Allez sur la page http://symfony.loc.epsi.fr/app_dev.php/blog2/John
+
+Ici le mot 'John' est un paramètre passé dans l'URL.
+
+Les paramètres placés dans l'URL doivent être placés :
+
+* dans la route entre accolades (l10) ;
+* et dans la signature de la méthode (l12).
+
+Enfin, il ne reste plus qu'à utiliser la variable contenant notre paramètre. Ici, nous l'insérons dans le message affiché sur la page (l15).

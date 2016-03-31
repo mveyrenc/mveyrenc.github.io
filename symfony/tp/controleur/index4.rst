@@ -9,10 +9,16 @@ Comme toutes les actions revoient des objets ``Response`` et que dans 95% des ca
 Ajoutez une nouvelle action dans le contrôleur :
 
 .. code-block:: php
+    :linenos:
+    :emphasize-lines: 9-20
 
     class BlogController extends Controller
     {
         ...
+
+        public function index3Action()
+            ...
+        {
 
         /**
          * @Route("/blog/{name}")
