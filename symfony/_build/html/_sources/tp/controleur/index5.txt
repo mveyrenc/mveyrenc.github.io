@@ -10,7 +10,7 @@ Ajoutez une nouvelle action dans le contrôleur :
 
 .. code-block:: php
     :linenos:
-    :emphasize-lines: 1,11-20
+    :emphasize-lines: 1,12-21
 
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
@@ -19,8 +19,9 @@ Ajoutez une nouvelle action dans le contrôleur :
         ...
 
         public function index4Action()
-            ...
         {
+            ...
+        }
 
         /**
          * @Route("/blog5/{name}")

@@ -41,7 +41,7 @@
     <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
         <link rel="up" title="Créer une page sous Symfony" href="../controleur.html"/>
-        <link rel="next" title="Les paramètres" href="index6.html"/>
+        <link rel="next" title="Validation des paramètres" href="index6.html"/>
         <link rel="prev" title="Utilisation des templates avec moins de code" href="index4.html"/> 
 
   
@@ -115,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index3.html">Utilisation des templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index4.html">Utilisation des templates avec moins de code</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Utilisation des templates avec encore moins de code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index6.html">Les paramètres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index6.html">Validation des paramètres</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
@@ -206,15 +206,17 @@
 18
 19
 20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
 </span>
 <span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index4Action</span><span class="p">()</span>
-        <span class="o">...</span>
     <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
 <span class="hll">    <span class="sd">/**</span>
 </span><span class="hll"><span class="sd">     * @Route(&quot;/blog5/{name}&quot;)</span>
@@ -241,7 +243,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="index6.html" class="btn btn-neutral float-right" title="Les paramètres" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="index6.html" class="btn btn-neutral float-right" title="Validation des paramètres" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index4.html" class="btn btn-neutral" title="Utilisation des templates avec moins de code" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>

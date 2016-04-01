@@ -50,7 +50,7 @@ Modifiez le template ``EpsiBlogBundle:Blog:index5.html.twig`` pour charger la CS
         </body>
     </html>
 
-Dans les templates, la fonction ``asset`` permet de gérérer correctement le chemin vers les assets (CSS, JS, images, etc.). Le chemin des fichiers ne correspond pas à celui présent dans le bundle, mais à celui qui se trouve dans le répertoire ``Web`` :
+Dans les templates, la fonction ``asset`` permet de gérérer correctement le chemin vers les assets (CSS, JS, images, etc.). Le chemin des fichiers ne correspond pas à celui présent dans le bundle, mais à celui qui se trouve dans le répertoire ``web`` :
 
 .. code-block:: none
 
