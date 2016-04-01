@@ -4,9 +4,24 @@
 Utilisation des templates
 *************************
 
-Comme on ne peux pas générer tous le code HTML dans le corps de la fonction du contrôleur, on utilise des templates qui représentent la vue de l'architecture MVC.
+Les templates représentent la vue de l'architecture MVC. Il permettent de générer le code de pages web qu'elles soient en HTML, Json, XML ou tout autre format.
+ 
+Pour appeler un template, on utilise la méthode ``render`` du service ``templating``. Cette fonction prend deux paramètres :
 
-Ajoutez la méthode ``index3Action`` dans le contrôleur :
+* le chemin du template que l'on veut appeler (chaîne de caractère)
+* les données qui seront utilisables dans le template (tableau associatif)
+
+.. note::
+
+    Dans Symfony un service est un objet instancié par le kernel qui permet de gérer d'effectuer une tâche. On trouve par exemple les services :
+
+    * **router** qui gère le routing
+    * **mailer** pour envoyer des mails
+    * **logger** pour écrire des logs
+    * **request** et **response** qui gèrent la requête et la réponse du contrôleur
+    * **templating** qui permet d'appeler des templates
+
+Comme exemple, ajoutez la méthode ``index3Action`` dans le contrôleur :
 
 .. code-block:: php
     :linenos:
@@ -47,15 +62,16 @@ Créez le template ``index3.html.twig`` dans le répertoire ``src/Epsi/Bundle/Bl
 
     Hello <b>{{ name }}</b>!
 
-.. important::
+Dans l'exemple ci-dessus, nous appelons le template ``EpsiBlogBundle:Blog:index3.html.twig``. Sous Symfony, les templates sont toujours dans le répertoire ``Resources/views`` du bundle.
+De plus, le chemin d'un template suit le format suivant : ``<NomDuBundle>:<Chemin>:<nom_du_template>.<format>.twig`` où :
 
-    Les templates sont toujours dans le répertoire ``Resources/views`` du bundle.
+* *NomDuBundle* : nom du bundle dans lequel se trouve le template
+* *Chemin* : chemin relatif au répertoire ``Resources/views`` où se trouve le template ; par conventions c'est le nom du contrôleur ;
+* *nom_du_template* : nom du fichier ; par conventions c'est le nom de l'action ;
+* *format* : format de la vue : html, xml, etc.
 
-    Le chemin d'un template suit le format suivant : ``<NomDuBundle>:<Chemin>:<nom_du_template>.<format>.twig`` où :
+Par conséquent, le fichier correspondant au template ``EpsiBlogBundle:Blog:index3.html.twig`` est ``Epsi/Bundle/EpsiBlogBundle/Resources/views/Blog/index3.html.twig``
 
-    * *NomDuBundle* : nom du bundle dans lequel se trouve le template
-    * *Chemin* : chemin relatif au répertoire ``Resources/views`` où se trouve le template ; par conventions c'est le nom du contrôleur ;
-    * *nom_du_template* : nom du fichier ; par conventions c'est le nom de l'action ;
-    * *format* : format de la vue : html, xml, etc.
+Concernant les données qui seront utilisables dans le template, dans le contrôleur, elles sont représentées sous la forme d'un tableau associatif où la clé représente le nom de la variable à utiliser dans le template.
 
-Allez sur la page http://symfony.loc.epsi.fr/app_dev.php/blog3/John
+Pour tester cet exemple, allez sur la page http://symfony.loc.epsi.fr/app_dev.php/blog3/John

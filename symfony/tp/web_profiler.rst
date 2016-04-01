@@ -10,12 +10,19 @@ Modifiez le template ``EpsiBlogBundle:Blog:index5.html.twig`` pour y insérer le
 
 .. code-block:: html+jinja
 
-    {% extends "::base.html.twig" %}
-    {% block body %}
-        Hello {{ name }}!
-    {% endblock %}
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta http-equic="Content-type" content="text/html; charset=utf-8" />
+        </head>
+        <body>
+            {% block body %}
+                Hello {{ name }}!
+            {% endblock %}
+        </body>
+    </html>
 
-Allez sur la page http://symfony.loc.epsi.fr/app_dev.php/hello/World.
+Allez sur la page http://symfony.loc.epsi.fr/app_dev.php/blog5/John.
 
 En bas de la page, vous trouverez une barre avec des informations sur la page que vous affichez :
 

@@ -184,7 +184,7 @@
             
   <div class="section" id="utilisation-des-templates-avec-moins-de-code">
 <span id="controleur-index4"></span><h1>Utilisation des templates avec moins de code<a class="headerlink" href="#utilisation-des-templates-avec-moins-de-code" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Comme toutes les actions revoient des objets <code class="docutils literal"><span class="pre">Response</span></code> et que dans 95% des cas, avec le code 200, il existe un raccourcis dans la classe <code class="docutils literal"><span class="pre">Controller</span></code>.</p>
+<p>Comme une action revoit toujours un objet <code class="docutils literal"><span class="pre">Response</span></code> et que dans 95% des cas, il s&#8217;agit d&#8217;un code de retour 200, la classe <code class="docutils literal"><span class="pre">Controller</span></code> implémente la méthode <code class="docutils literal"><span class="pre">render</span></code> qui permet de faire exactement la même chose que dans <code class="docutils literal"><span class="pre">index3Action</span></code> mais en une seule ligne.</p>
 <p>Ajoutez une nouvelle action dans le contrôleur :</p>
 <div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -206,21 +206,49 @@
 18
 19
 20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
 
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/blog3/{name}&quot;)</span>
+<span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index3Action</span><span class="p">()</span>
-        <span class="o">...</span>
+        <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;templating&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
+                <span class="s1">&#39;EpsiBlogBundle:Blog:index3.html.twig&#39;</span><span class="p">,</span>
+                <span class="k">array</span><span class="p">(</span>
+                    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
     <span class="p">{</span>
 
 <span class="hll">    <span class="sd">/**</span>
-</span><span class="hll"><span class="sd">     * @Route(&quot;/blog/{name}&quot;)</span>
+</span><span class="hll"><span class="sd">     * @Route(&quot;/blog4/{name}&quot;)</span>
 </span><span class="hll"><span class="sd">     */</span>
 </span><span class="hll">    <span class="k">public</span> <span class="k">function</span> <span class="nf">index4Action</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
 </span><span class="hll">    <span class="p">{</span>
 </span><span class="hll">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
-</span><span class="hll">            <span class="s1">&#39;EpsiBlogBundle:Blog:index4.html.twig&#39;</span><span class="p">,</span>
+</span><span class="hll">            <span class="s1">&#39;EpsiBlogBundle:Blog:index3.html.twig&#39;</span><span class="p">,</span>
 </span><span class="hll">            <span class="k">array</span><span class="p">(</span>
 </span><span class="hll">                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
 </span><span class="hll">            <span class="p">)</span>
@@ -229,7 +257,6 @@
 </span><span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Pour le template <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index4.html.twig</span></code>, on copie le template <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index3.html.twig</span></code>.</p>
 <p>Allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog4/John">http://symfony.loc.epsi.fr/app_dev.php/blog4/John</a></p>
 </div>
 

@@ -184,7 +184,7 @@
             
   <div class="section" id="utilisation-des-templates-avec-encore-moins-de-code">
 <span id="controleur-index5"></span><h1>Utilisation des templates avec encore moins de code<a class="headerlink" href="#utilisation-des-templates-avec-encore-moins-de-code" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Pour écrire encore moins de code, on peut utiliser l&#8217;annotation <code class="docutils literal"><span class="pre">&#64;Template</span></code>.</p>
+<p>Pour écrire encore moins de code, on peut utiliser l&#8217;annotation <code class="docutils literal"><span class="pre">&#64;Template</span></code> qui va remplacer l&#8217;appel à la méthode render du contrôleur. Dans ce cas, l&#8217;action doit juste renvoyer le tableau des paramètres à passer au template.</p>
 <p>Ajoutez une nouvelle action dans le contrôleur :</p>
 <div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -206,8 +206,8 @@
 18
 19
 20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
-
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
+</span>
 <span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
@@ -229,8 +229,7 @@
 </span><span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Comme vous pouvez l&#8217;observez, on ne spécifie pas le chemin du template dans l&#8217;annotation <code class="docutils literal"><span class="pre">&#64;Template</span></code>, ceci permet d&#8217;utiliser automatiquement le chemin normalisé. Ici, <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index5</span>
-<span class="pre">.html.twig</span></code>.</p>
+<p>Comme vous pouvez l&#8217;observez, on ne spécifie pas le chemin du template dans l&#8217;annotation <code class="docutils literal"><span class="pre">&#64;Template</span></code>, ceci permet d&#8217;utiliser automatiquement le chemin normalisé. Ici, <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index5.html.twig</span></code>.</p>
 <p>Pour le template <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index5.html.twig</span></code>, on copie le template <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index3.html.twig</span></code>.</p>
 <p>Allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog5/John">http://symfony.loc.epsi.fr/app_dev.php/blog5/John</a></p>
 </div>

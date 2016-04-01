@@ -1,8 +1,8 @@
 .. _controleur-index6:
 
-**************
-Les paramètres
-**************
+*************************
+Validation des paramètres
+*************************
 
 Dans la configuration des routes, on peut demander à Symfony de valider le format des paramètres présents dans l'URL, ainsi, Symfony s'occupe de faire la vérification à notre place.
 

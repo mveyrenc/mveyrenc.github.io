@@ -31,9 +31,7 @@ Ajoutez la méthode ``index2Action`` surlignée en dessous de la méthode ``inde
         }
     }
 
-Allez sur la page http://symfony.loc.epsi.fr/app_dev.php/blog2/John
-
-Ici le mot 'John' est un paramètre passé dans l'URL.
+Appelez l'action ``index2`` avec le paramètre 'John' an allant sur la page http://symfony.loc.epsi.fr/app_dev.php/blog2/John. La page doit afficher le message 'Hello John!'.
 
 Les paramètres placés dans l'URL doivent être placés :
 

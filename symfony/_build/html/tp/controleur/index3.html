@@ -184,8 +184,24 @@
             
   <div class="section" id="utilisation-des-templates">
 <span id="controleur-index3"></span><h1>Utilisation des templates<a class="headerlink" href="#utilisation-des-templates" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Comme on ne peux pas générer tous le code HTML dans le corps de la fonction du contrôleur, on utilise des templates qui représentent la vue de l&#8217;architecture MVC.</p>
-<p>Ajoutez la méthode <code class="docutils literal"><span class="pre">index3Action</span></code> dans le contrôleur :</p>
+<p>Les templates représentent la vue de l&#8217;architecture MVC. Il permettent de générer le code de pages web qu&#8217;elles soient en HTML, Json, XML ou tout autre format.</p>
+<p>Pour appeler un template, on utilise la méthode <code class="docutils literal"><span class="pre">render</span></code> du service <code class="docutils literal"><span class="pre">templating</span></code>. Cette fonction prend deux paramètres :</p>
+<ul class="simple">
+<li>le chemin du template que l&#8217;on veut appeler (chaîne de caractère)</li>
+<li>les données qui seront utilisables dans le template (tableau associatif)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Dans Symfony un service est un objet instancié par le kernel qui permet de gérer d&#8217;effectuer une tâche. On trouve par exemple les services :</p>
+<ul class="last simple">
+<li><strong>router</strong> qui gère le routing</li>
+<li><strong>mailer</strong> pour envoyer des mails</li>
+<li><strong>logger</strong> pour écrire des logs</li>
+<li><strong>request</strong> et <strong>response</strong> qui gèrent la requête et la réponse du contrôleur</li>
+<li><strong>templating</strong> qui permet d&#8217;appeler des templates</li>
+</ul>
+</div>
+<p>Comme exemple, ajoutez la méthode <code class="docutils literal"><span class="pre">index3Action</span></code> dans le contrôleur :</p>
 <div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -245,18 +261,17 @@
 <div class="highlight-html+jinja"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Hello <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>!
 </pre></div>
 </td></tr></table></div>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p>Les templates sont toujours dans le répertoire <code class="docutils literal"><span class="pre">Resources/views</span></code> du bundle.</p>
-<p>Le chemin d&#8217;un template suit le format suivant : <code class="docutils literal"><span class="pre">&lt;NomDuBundle&gt;:&lt;Chemin&gt;:&lt;nom_du_template&gt;.&lt;format&gt;.twig</span></code> où :</p>
-<ul class="last simple">
+<p>Dans l&#8217;exemple ci-dessus, nous appelons le template <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index3.html.twig</span></code>. Sous Symfony, les templates sont toujours dans le répertoire <code class="docutils literal"><span class="pre">Resources/views</span></code> du bundle.
+De plus, le chemin d&#8217;un template suit le format suivant : <code class="docutils literal"><span class="pre">&lt;NomDuBundle&gt;:&lt;Chemin&gt;:&lt;nom_du_template&gt;.&lt;format&gt;.twig</span></code> où :</p>
+<ul class="simple">
 <li><em>NomDuBundle</em> : nom du bundle dans lequel se trouve le template</li>
 <li><em>Chemin</em> : chemin relatif au répertoire <code class="docutils literal"><span class="pre">Resources/views</span></code> où se trouve le template ; par conventions c&#8217;est le nom du contrôleur ;</li>
 <li><em>nom_du_template</em> : nom du fichier ; par conventions c&#8217;est le nom de l&#8217;action ;</li>
 <li><em>format</em> : format de la vue : html, xml, etc.</li>
 </ul>
-</div>
-<p>Allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog3/John">http://symfony.loc.epsi.fr/app_dev.php/blog3/John</a></p>
+<p>Par conséquent, le fichier correspondant au template <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index3.html.twig</span></code> est <code class="docutils literal"><span class="pre">Epsi/Bundle/EpsiBlogBundle/Resources/views/Blog/index3.html.twig</span></code></p>
+<p>Concernant les données qui seront utilisables dans le template, dans le contrôleur, elles sont représentées sous la forme d&#8217;un tableau associatif où la clé représente le nom de la variable à utiliser dans le template.</p>
+<p>Pour tester cet exemple, allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog3/John">http://symfony.loc.epsi.fr/app_dev.php/blog3/John</a></p>
 </div>
 
 

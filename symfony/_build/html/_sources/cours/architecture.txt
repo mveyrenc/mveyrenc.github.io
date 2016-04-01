@@ -43,7 +43,24 @@ L'architecture des fichiers
 
 Dans les sources que nous venons de d'installer, il n'y a pas beaucoup de fichiers :
 
-.. command-output:: ls -A1 ~/symfony
+.. code-block:: none
+
+    app
+    bin
+    composer.json
+    composer.lock
+    .git
+    .gitignore
+    LICENSE
+    nbproject
+    README.md
+    src
+    UPGRADE-2.2.md
+    UPGRADE-2.3.md
+    UPGRADE-2.4.md
+    UPGRADE.md
+    vendor
+    web
 
 Voyons à quoi ils correspondent.
 

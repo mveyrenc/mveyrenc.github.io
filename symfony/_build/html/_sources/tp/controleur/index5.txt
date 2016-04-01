@@ -4,13 +4,13 @@
 Utilisation des templates avec encore moins de code
 ***************************************************
 
-Pour écrire encore moins de code, on peut utiliser l'annotation ``@Template``.
+Pour écrire encore moins de code, on peut utiliser l'annotation ``@Template`` qui va remplacer l'appel à la méthode render du contrôleur. Dans ce cas, l'action doit juste renvoyer le tableau des paramètres à passer au template.
 
 Ajoutez une nouvelle action dans le contrôleur :
 
 .. code-block:: php
     :linenos:
-    :emphasize-lines: 11-20
+    :emphasize-lines: 1,11-20
 
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
@@ -34,8 +34,7 @@ Ajoutez une nouvelle action dans le contrôleur :
         }
     }
 
-Comme vous pouvez l'observez, on ne spécifie pas le chemin du template dans l'annotation ``@Template``, ceci permet d'utiliser automatiquement le chemin normalisé. Ici, ``EpsiBlogBundle:Blog:index5
-.html.twig``.
+Comme vous pouvez l'observez, on ne spécifie pas le chemin du template dans l'annotation ``@Template``, ceci permet d'utiliser automatiquement le chemin normalisé. Ici, ``EpsiBlogBundle:Blog:index5.html.twig``.
 
 Pour le template ``EpsiBlogBundle:Blog:index5.html.twig``, on copie le template ``EpsiBlogBundle:Blog:index3.html.twig``.
 

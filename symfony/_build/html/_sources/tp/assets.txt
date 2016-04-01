@@ -22,7 +22,59 @@ Actuellement, les fichiers ne sont pas accessibles par le visiteur car il n'a ac
 
 L'option ``symlink`` permet de créer des liens symboliques au lieu de copies physique des fichiers. Cela nous permet de ne pas retaper cette commande à chaque modification.
 
-Chargeons la CSS et les javascripts dans nos templates :
+ :
 
-.. literalinclude:: /code-block/assets/base.html.twig
-    :language: html+jinja
+Modifiez le template ``EpsiBlogBundle:Blog:index5.html.twig`` pour charger la CSS et les javascripts dans nos templates :
+
+.. code-block:: html+jinja
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta http-equic="Content-type" content="text/html; charset=utf-8" />
+            {% block stylesheets %}
+                <link href="{{ asset('bundles/epsiblog/css/bootstrap.min.css') }}" rel="stylesheet" />
+                <link href="{{ asset('bundles/epsiblog/css/bootstrap-theme.css') }}" rel="stylesheet" />
+            {% endblock %}
+        </head>
+        <body>
+            {% block body %}
+                <div class="container">
+                        <h1>Hello {{ name }}!</h1>
+                </div>
+            {% endblock %}
+            {% block javascripts %}
+                <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.2.min.js') }}"></script>
+                <script src="{{ asset('bundles/epsiblog/js/bootstrap.min.js') }}"></script>
+            {% endblock %}
+        </body>
+    </html>
+
+Dans les templates, la fonction ``asset`` permet de gérérer correctement le chemin vers les assets (CSS, JS, images, etc.). Le chemin des fichiers ne correspond pas à celui présent dans le bundle, mais à celui qui se trouve dans le répertoire ``Web`` :
+
+.. code-block:: none
+
+    web/
+    ├── app_dev.php
+    ├── apple-touch-icon.png
+    ├── app.php
+    ├── bundles
+    │   ├── epsiblog
+    │   │   ├── css
+    │   │   │   ├── bootstrap.min.css
+    │   │   │   └── bootstrap-theme.css
+    │   │   ├── fonts
+    │   │   │   ├── glyphicons-halflings-regular.eot
+    │   │   │   ├── glyphicons-halflings-regular.svg
+    │   │   │   ├── glyphicons-halflings-regular.ttf
+    │   │   │   ├── glyphicons-halflings-regular.woff
+    │   │   │   └── glyphicons-halflings-regular.woff2
+    │   │   ├── images
+    │   │   └── js
+    │   │       ├── bootstrap.min.js
+    │   │       └── jquery-1.12.2.min.js
+    │   ├── framework
+    │   └── sensiodistribution
+    ├── config.php
+    ├── favicon.ico
+    └── robots.txt

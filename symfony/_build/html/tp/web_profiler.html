@@ -41,7 +41,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
         <link rel="next" title="Les routes" href="routing.html"/>
-        <link rel="prev" title="Les paramètres" href="controleur/index6.html"/> 
+        <link rel="prev" title="Validation des paramètres" href="controleur/index6.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -175,13 +175,20 @@
 <span id="web-profiler"></span><h1>Le web-profiler<a class="headerlink" href="#le-web-profiler" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Le web-profiler est actif uniquement lorsqu&#8217;on utilise le contrôleur frontal <code class="file docutils literal"><span class="pre">app_dev.php</span></code>.</p>
 <p>Modifiez le template <code class="docutils literal"><span class="pre">EpsiBlogBundle:Blog:index5.html.twig</span></code> pour y insérer le code suivant :</p>
-<div class="highlight-html+jinja"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;::base.html.twig&quot;</span> <span class="cp">%}</span>
-<span class="cp">{%</span> <span class="k">block</span> <span class="nv">body</span> <span class="cp">%}</span>
-    Hello <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span>!
-<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equic</span><span class="o">=</span><span class="s">&quot;Content-type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">block</span> <span class="nv">body</span> <span class="cp">%}</span>
+            Hello <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span>!
+        <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/hello/World">http://symfony.loc.epsi.fr/app_dev.php/hello/World</a>.</p>
+<p>Allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog5/John">http://symfony.loc.epsi.fr/app_dev.php/blog5/John</a>.</p>
 <p>En bas de la page, vous trouverez une barre avec des informations sur la page que vous affichez :</p>
 <img alt="../_images/web_toolbar_description.png" class="box align-center" src="../_images/web_toolbar_description.png" />
 <ol class="arabic simple">
@@ -211,7 +218,7 @@
         <a href="routing.html" class="btn btn-neutral float-right" title="Les routes" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="controleur/index6.html" class="btn btn-neutral" title="Les paramètres" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="controleur/index6.html" class="btn btn-neutral" title="Validation des paramètres" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
