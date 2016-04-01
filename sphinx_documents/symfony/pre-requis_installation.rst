@@ -1,0 +1,264 @@
+#######################################
+Pré-requis et installation du framework
+#######################################
+
+.. admonition:: Avant de commencer
+    :class: warning
+
+    Cette procédure est donnée pour une installation sur une Ubuntu 14.04. En fonction de la version d'Ubuntu ou de la distribution utilisée, les paquets à installer peuvent être différents.
+
+**********
+Pré-requis
+**********
+
+* PHP doit être au minimum à la version PHP 5.3.3
+* JSON doit être activé
+* ctype doit être activé
+* Votre PHP.ini doit avoir le paramètre date.timezone défini
+    
+Installation de MySQL
+=====================
+
+.. code-block:: console
+
+    sudo apt-get install mysql-server mysql-client
+    
+
+Installation d'Apache
+=====================
+
+.. code-block:: console
+
+    sudo apt-get install apache2
+    
+Installation de librairies et outils supplémentaires
+====================================================
+
+.. code-block:: console
+
+    sudo apt-get install curl git
+
+Installation de PHP
+===================
+
+.. code-block:: console
+
+    sudo apt-get install php5 php5-cli php5-intl php5-xsl php5-curl php5-mysql
+
+Comme on est sur un post de développement, on installe :program:`xDebug` :
+
+.. code-block:: console
+
+    sudo apt-get install php5-xdebug
+
+Configuration de PHP
+====================
+
+.. code-block:: ini
+
+    # /etc/php5/apache2/php.ini
+    date.timezone = Europe/Paris
+    short_open_tag = Off
+    magic_quotes_gpc = Off
+    register_globals = Off
+    session.autostart = Off
+
+.. code-block:: ini
+
+    # /etc/php5/cli/php.ini
+    date.timezone = Europe/Paris
+    short_open_tag = Off
+    magic_quotes_gpc = Off
+    register_globals = Off
+    session.autostart = Off
+
+.. code-block:: ini
+
+    # /etc/php5/apache2/conf.d/20-xdebug.ini
+    xdebug.max_nesting_level = 250
+
+Correction des droits sur les fichiers
+======================================
+
+Afin corriger les droits sur les fichiers une bonne fois pour toute :
+
+* Ajoutons l'utilisateur d'Apache (``www-data``) dans notre groupe
+
+    .. code-block:: console
+
+        sudo usermod -a -G www-data $(whoami)
+
+* Ajoutons dans le groupe ``www-data``
+
+    .. code-block:: console
+
+        sudo usermod -a -G $(whoami) www-data
+
+* Forçons les droits à 775 pour tous les nouveaux fichiers créés par notre utilisateur
+
+    .. code-block:: bash
+
+        # ~/.profile
+        umask 002
+
+* Rechargeons notre profil
+
+    .. code-block:: console
+
+        source ~/.profile
+
+* Faisons de même pour www-data
+
+    .. code-block:: bash
+
+        # /etc/apache2/envvars
+        umask 002
+
+* Redémarrons Apache
+
+    .. code-block:: console
+
+        sudo service apache2 restart
+
+***********************
+Installation de Symfony
+***********************
+
+Téléchargement de Symfony
+=========================
+
+Deux méthodes existent :
+
+* Via le site Symfony http://symfony.com/download
+* Via ``Composer``
+
+Nous allons préféré la seconde.
+
+Dans un premier temps, installons ``Composer`` :
+
+.. code-block:: console
+
+    mkdir -p ~/web
+    cd ~/web
+    curl -sS https://getcomposer.org/installer | php
+    php composer.phar -h
+
+.. code-block:: console
+    
+    cd ~/web
+    php composer.phar create-project symfony/framework-standard-edition symfony
+    mv composer.phar symfony
+
+``Composer`` va télécharger et installer toutes les librairies nécessaires au fonctionnent de Symfony dans le répertoire ``~/web/Symfony``. il est possible de spécifier une version. S'il n'y en a pas, c'est la dernière version stable qui sera installée.
+
+À la fin l'installation de Symfony, il vous propose une série de question pour le paramétrage :
+
+.. code-block:: console
+
+    Would you like to install Acme demo bundle? [y/N] y
+    database_driver (pdo_mysql):
+    database_host (127.0.0.1):
+    database_port (null):
+    database_name (symfony):
+    database_user (root): symfony
+    database_password (null): symfony
+    mailer_transport (smtp): 
+    mailer_host (127.0.0.1):
+    mailer_user (null):
+    mailer_password (null):
+    locale (en): fr
+    secret (ThisTokenIsNotSoSecretChangeIt):
+
+Tous ces paramètres sont enregistrés dans le fichier ``app/config/parameters.yml``.
+
+Mettre en place le VHost
+========================
+
+.. code-block:: apache
+
+    <VirtualHost *:80>
+        ServerName loc.epsi.fr
+        ServerAlias blog.loc.epsi.fr
+
+        DocumentRoot /home/mveyrenc/web/symfony/web
+        <Directory /home/mveyrenc/web/symfony/web>
+            AllowOverride All
+            Order Allow,Deny
+            Allow from All
+        </Directory>
+
+        # uncomment the following lines if you install assets as symlinks
+        # or run into problems when compiling LESS/Sass/CoffeScript assets
+        # <Directory /var/www/project>
+        #     Options FollowSymlinks
+        # </Directory>
+
+        ErrorLog /var/log/apache2/blog_error.log
+        CustomLog /var/log/apache2/blog_access.log combined
+    </VirtualHost>
+
+Vérifier votre configuration de PHP
+===================================
+
+Allez à l'adresse http://localhost/Symfony/web/config.php :
+
+.. image:: /_static/images/symfony_config_error.png
+
+Corrigez tous les problèmes avant de continuer :
+
+* Change the permissions of either "app/cache/" or "var/cache/" directory so that the web server can write into it.
+
+    .. code-block:: console
+
+        chmod -R 777 app/cache/
+
+* Change the permissions of either "app/logs/" or "var/logs/" directory so that the web server can write into it.
+
+    .. code-block:: console
+
+        chmod -R 777 app/logs/
+
+* Set the "date.timezone" setting in php.ini* (like Europe/Paris).
+
+    .. code-block:: ini
+
+        # /etc/php5/apache2/php.ini
+        date.timezone = Europe/Paris
+        short_open_tag = Off
+        magic_quotes_gpc = Off
+        register_globals = Off
+        session.autostart = Off
+
+    .. code-block:: ini
+
+        # /etc/php5/cli/php.ini
+        date.timezone = Europe/Paris
+        short_open_tag = Off
+        magic_quotes_gpc = Off
+        register_globals = Off
+        session.autostart = Off
+
+* Set "xdebug.max_nesting_level" to e.g. "250" in php.ini
+
+    .. code-block:: ini
+
+        # /etc/php5/apache2/conf.d/20-xdebug.ini
+        xdebug.max_nesting_level = 250
+
+.. image:: /_static/images/symfony_config_success.png
+
+L'installation de Symfony est terminée. Rendez-vous sur la page http://localhost/Symfony/web/app_dev.php/, vous devriez voir une page ressemblant à l'image ci-dessous :
+
+.. image:: /_static/images/symfony_homepage_post_install.png
+
+Vérifier la configuration de PHP en console
+===========================================
+
+Pour gagner du temps, vous aurez besoin d'exécuter des commandes PHP via la console, vérifions donc que la configuration de PHP soit correcte :
+
+.. code-block:: console
+    
+    php app/check.php
+
+.. image:: /_static/images/symfony_config_cli.png
+    :align: center

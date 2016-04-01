@@ -50,12 +50,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -79,9 +81,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -115,7 +116,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Console</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Console</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-d-une-entite">Création d&#8217;une entité</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
@@ -158,7 +159,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -167,12 +168,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Console</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -183,27 +184,27 @@
 <span id="aide-memoire-console"></span><h1>Console<a class="headerlink" href="#console" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="creation-d-un-bundle">
 <h2>Création d&#8217;un bundle<a class="headerlink" href="#creation-d-un-bundle" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console generate:bundle
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console generate:bundle
 <span class="gp">#</span> puis répondre aux questions
 </pre></div>
 </div>
 </div>
 <div class="section" id="creation-d-une-entite">
 <h2>Création d&#8217;une entité<a class="headerlink" href="#creation-d-une-entite" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console doctrine:generate:entity
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:generate:entity
 <span class="gp">#</span> puis répondre aux questions
 </pre></div>
 </div>
 </div>
 <div class="section" id="deployer-les-fichiers-statiques-des-bundles-dans-web">
 <h2>Déployer les fichiers statiques des bundles dans web/<a class="headerlink" href="#deployer-les-fichiers-statiques-des-bundles-dans-web" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console assets:install web --symlink
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console assets:install web --symlink
 </pre></div>
 </div>
 </div>
 <div class="section" id="manipuler-la-base-de-donnees">
 <h2>Manipuler la base de données<a class="headerlink" href="#manipuler-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> créer la base de données
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> créer la base de données
 <span class="gp">$</span> php app/console doctrine:database:create
 
 <span class="gp">#</span> supprimer la base de données
@@ -231,7 +232,7 @@
 </div>
 <div class="section" id="generation-de-code">
 <h2>Génération de code<a class="headerlink" href="#generation-de-code" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> générer la classe de formulaire associée à une entité
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> générer la classe de formulaire associée à une entité
 <span class="gp">$</span> php app/console doctrine:generate:form EpsiBlogBundle:User
 
 <span class="gp">#</span> générer le contrôleur, les templates et le formulaire pour gérer une entité
@@ -245,13 +246,13 @@
 </div>
 <div class="section" id="transformer-la-configuration-des-entites">
 <h2>Transformer la configuration des entités<a class="headerlink" href="#transformer-la-configuration-des-entites" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console doctrine:mapping:convert annotation ./src/Epsi/Bundle/BlogBundle/Entity
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:mapping:convert annotation ./src/Epsi/Bundle/BlogBundle/Entity
 </pre></div>
 </div>
 </div>
 <div class="section" id="debug">
 <h2>Debug<a class="headerlink" href="#debug" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> voir toutes les routes
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> voir toutes les routes
 <span class="gp">$</span> php app/console debug:route
 
 <span class="gp">#</span> effacer le cache
@@ -288,7 +289,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pré-requis et installation du framework &mdash; Symfony 1.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Symfony 1.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Architecture de Symfony" href="architecture.html"/>
+        <link rel="prev" title="La programmation orientée objet" href="rappel.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> Symfony
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction à Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-framework">Qu&#8217;est ce qu&#8217;un framework ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#pourquoi-utiliser-un-framework">Pourquoi utiliser un framework ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rappel.html">La programmation orientée objet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#terminologie">Terminologie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#mots-reserves">Mots réservés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#syntaxe-de-base">Syntaxe de base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#heritage">Héritage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#classes-abstraites">Classes abstraites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#visibilite">Visibilité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#l-operateur-de-resolution-de-portee">L&#8217;opérateur de résolution de portée (::)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#references-et-clonage">Références et clonage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rappel.html#espace-de-nom-ou-namespace">Espace de nom ou namespace</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Pré-requis et installation du framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requis">Pré-requis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-de-mysql">Installation de MySQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-d-apache">Installation d&#8217;Apache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-de-librairies-et-outils-supplementaires">Installation de librairies et outils supplémentaires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-de-php">Installation de PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-de-php">Configuration de PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#correction-des-droits-sur-les-fichiers">Correction des droits sur les fichiers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-symfony">Installation de Symfony</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telechargement-de-symfony">Téléchargement de Symfony</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mettre-en-place-le-vhost">Mettre en place le VHost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verifier-votre-configuration-de-php">Vérifier votre configuration de PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verifier-la-configuration-de-php-en-console">Vérifier la configuration de PHP en console</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture de Symfony</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#l-architecture-des-fichiers">L&#8217;architecture des fichiers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#le-repertoire-app">Le répertoire <em>/app</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#le-repertoire-bin">Le répertoire <em>/bin</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#le-repertoire-src">Le répertoire <em>/src</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#le-repertoire-vendor">Le répertoire <em>/vendor</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#le-repertoire-web">Le répertoire <em>/web</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#les-fichiers-composer">Les fichiers <em>/composer.*</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#les-fichiers-md">Les fichiers <em>/*.md</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture-conceptuelle">Architecture conceptuelle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#architecture-mvc">Architecture MVC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#deroulement-d-une-requete-dans-symfony">Déroulement d&#8217;une requête dans Symfony</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#les-bundles">Les bundles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html">Création d&#8217;un bundle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#utilisation-de-la-console">Utilisation de la console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#creation-du-bundle">Création du bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_symfony.html#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_symfony.html#objectif-de-notre-bundle-un-blog">Objectif de notre bundle : un blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Le routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#fonctionnement">Fonctionnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#convention-de-nommage-des-controleurs">Convention de nommage des contrôleurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#controles-des-parametres-des-routes">Contrôles des paramètres des routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#parametres-speciaux-de-routing">Paramètres spéciaux de routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#comment-generer-des-url">Comment générer des URL ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html#creons-les-routes-du-blog">Créons les routes du blog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="routing.html#liste-des-posts">Liste des posts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routing.html#visualisation-d-un-post">Visualisation d&#8217;un post</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routing.html#ajout-d-un-post">Ajout d&#8217;un post</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routing.html#modification-d-un-post">Modification d&#8217;un post</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routing.html#suppression-d-un-post">Suppression d&#8217;un post</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="controleur.html">Les contrôleurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controleur.html#request-et-response"><code class="docutils literal"><span class="pre">Request</span></code> et <code class="docutils literal"><span class="pre">Response</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-request">L&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controleur.html#les-parametres-contenus-dans-les-routes">Les paramètres contenus dans les routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="controleur.html#les-parametres-hors-routes">Les paramètres hors routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="controleur.html#les-autres-methodes-de-l-objet-request">Les autres méthodes de l&#8217;objet <code class="docutils literal"><span class="pre">Request</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controleur.html#l-objet-response">L&#8217;objet <code class="docutils literal"><span class="pre">Response</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Les services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="services.html#acceder-un-service">Accéder un service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html#exemple-de-services">Exemple de services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="services.html#templating">Templating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#request">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#session">Session</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="services.html#obtenir-des-informations-sur-les-services">Obtenir des informations sur les services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="twig.html">Les vues avec Twig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#le-base">Le base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#acces-aux-variables">Accès aux variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#affectation-de-variables">Affectation de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-filtres">Les filtres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-fonctions">Les fonctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-structures-de-controle">Les structures de contrôle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="twig.html#conditions">Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="twig.html#boucle">Boucle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-types-de-variables">Les types de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-operateurs">Les opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-variables-globales">Les variables globales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#les-macros">Les macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#heritage-de-templates">Héritage de templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-templates">Inclusion de templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twig.html#inclusion-de-controleurs">Inclusion de contrôleurs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Doctrine et la base de donnée</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doctrine.html#qu-est-ce-qu-un-orm">Qu&#8217;est ce qu&#8217;un ORM ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-des-entites">Création des entités</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#l-entite-user">L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#structure-de-l-entite">Structure de l&#8217;entité</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#utilisation-du-generateur">Utilisation du générateur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#la-classe-user">La classe <code class="docutils literal"><span class="pre">User</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#la-classe-userrepository">La classe <code class="docutils literal"><span class="pre">UserRepository</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#creation-des-autres-entites">Création des autres entités</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#l-entite-post">L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#l-entite-tag">L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#l-entite-comment">L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#l-entite-image">L&#8217;entité <code class="docutils literal"><span class="pre">Image</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-de-valeur-par-defaut">Définition de valeur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctrine.html#definition-des-relations">Définition des relations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#notions-techniques-a-savoir">Notions techniques à savoir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#notion-du-proprietaire-et-de-l-inverse">Notion du propriétaire et de l&#8217;inverse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#notion-d-unidirectionnalite-et-de-bidirectionnalite">Notion d&#8217;unidirectionnalité et de bidirectionnalité</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#relation-one-to-one">Relation One-To-One</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#dans-l-entite-proprietaire">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#dans-l-entite-inverse">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#relation-many-to-one-et-one-to-many">Relation Many-To-One et One-To-Many</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#id1">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#id2">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#relation-many-to-many">Relation Many-To-Many</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#id3">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doctrine.html#id4">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doctrine.html#creation-de-la-base-de-donnees-et-des-tables">Création de la base de données et des tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctrine.html#manipulation-des-donnees">Manipulation des données</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#enregistrer-les-entites-dans-la-base-de-donnee">Enregistrer les entités dans la base de donnée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctrine.html#recuperer-ses-entites-avec-un-entityrepository">Récupérer ses entités avec un EntityRepository</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Les formulaires</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#gestion-basique-d-un-formulaire">Gestion basique d&#8217;un formulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#validation-des-donnees">Validation des données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formulaire.html#personnalisation-de-l-affichage">Personnalisation de l&#8217;affichage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aide_memoire.html">Aide mémoire</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-un-bundle">Création d&#8217;un bundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#creation-d-une-entite">Création d&#8217;une entité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#deployer-les-fichiers-statiques-des-bundles-dans-web">Déployer les fichiers statiques des bundles dans web/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#manipuler-la-base-de-donnees">Manipuler la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#generation-de-code">Génération de code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#transformer-la-configuration-des-entites">Transformer la configuration des entités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#debug">Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aide_memoire.html#depuis-un-controleur">Depuis un contrôleur</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tp.html">TP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tp.html#description-de-l-application">Description de l&#8217;application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tp.html#description-des-entites">Description des entités</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#l-entite-user">L&#8217;entité <code class="docutils literal"><span class="pre">User</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#l-entite-post">L&#8217;entité <code class="docutils literal"><span class="pre">Post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#l-entite-tag">L&#8217;entité <code class="docutils literal"><span class="pre">Tag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#l-entite-comment">L&#8217;entité <code class="docutils literal"><span class="pre">Comment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tp.html#les-interfaces">Les interfaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#les-posts">Les posts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#les-commentaires">Les commentaires</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#les-utilisateurs">Les utilisateurs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tp.html#les-tags">Les tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tp.html#travail-a-effectuer">Travail à effectuer</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Pré-requis et installation du framework</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pre-requis-et-installation-du-framework">
+<h1>Pré-requis et installation du framework<a class="headerlink" href="#pre-requis-et-installation-du-framework" title="Permalink to this headline">¶</a></h1>
+<div class="warning admonition">
+<p class="first admonition-title">Avant de commencer</p>
+<p class="last">Cette procédure est donnée pour une installation sur une Ubuntu 14.04. En fonction de la version d&#8217;Ubuntu ou de la distribution utilisée, les paquets à installer peuvent être différents.</p>
+</div>
+<div class="section" id="pre-requis">
+<h2>Pré-requis<a class="headerlink" href="#pre-requis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>PHP doit être au minimum à la version PHP 5.3.3</li>
+<li>JSON doit être activé</li>
+<li>ctype doit être activé</li>
+<li>Votre PHP.ini doit avoir le paramètre date.timezone défini</li>
+</ul>
+<div class="section" id="installation-de-mysql">
+<h3>Installation de MySQL<a class="headerlink" href="#installation-de-mysql" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install mysql-server mysql-client</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-d-apache">
+<h3>Installation d&#8217;Apache<a class="headerlink" href="#installation-d-apache" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install apache2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-de-librairies-et-outils-supplementaires">
+<h3>Installation de librairies et outils supplémentaires<a class="headerlink" href="#installation-de-librairies-et-outils-supplementaires" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install curl git</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-de-php">
+<h3>Installation de PHP<a class="headerlink" href="#installation-de-php" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install php5 php5-cli php5-intl php5-xsl php5-curl php5-mysql</span>
+</pre></div>
+</div>
+<p>Comme on est sur un post de développement, on installe <strong class="program">xDebug</strong> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install php5-xdebug</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-de-php">
+<h3>Configuration de PHP<a class="headerlink" href="#configuration-de-php" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+<span class="na">short_open_tag</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">magic_quotes_gpc</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">register_globals</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">session.autostart</span> <span class="o">=</span> <span class="s">Off</span>
+</pre></div>
+</div>
+<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/cli/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+<span class="na">short_open_tag</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">magic_quotes_gpc</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">register_globals</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">session.autostart</span> <span class="o">=</span> <span class="s">Off</span>
+</pre></div>
+</div>
+<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
+<span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="correction-des-droits-sur-les-fichiers">
+<h3>Correction des droits sur les fichiers<a class="headerlink" href="#correction-des-droits-sur-les-fichiers" title="Permalink to this headline">¶</a></h3>
+<p>Afin corriger les droits sur les fichiers une bonne fois pour toute :</p>
+<ul>
+<li><p class="first">Ajoutons l&#8217;utilisateur d&#8217;Apache (<code class="docutils literal"><span class="pre">www-data</span></code>) dans notre groupe</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G www-data $(whoami)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Ajoutons dans le groupe <code class="docutils literal"><span class="pre">www-data</span></code></p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G $(whoami) www-data</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Forçons les droits à 775 pour tous les nouveaux fichiers créés par notre utilisateur</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># ~/.profile</span>
+<span class="nb">umask </span>002
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Rechargeons notre profil</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">source ~/.profile</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Faisons de même pour www-data</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># /etc/apache2/envvars</span>
+<span class="nb">umask </span>002
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Redémarrons Apache</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo service apache2 restart</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="installation-de-symfony">
+<h2>Installation de Symfony<a class="headerlink" href="#installation-de-symfony" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="telechargement-de-symfony">
+<h3>Téléchargement de Symfony<a class="headerlink" href="#telechargement-de-symfony" title="Permalink to this headline">¶</a></h3>
+<p>Deux méthodes existent :</p>
+<ul class="simple">
+<li>Via le site Symfony <a class="reference external" href="http://symfony.com/download">http://symfony.com/download</a></li>
+<li>Via <code class="docutils literal"><span class="pre">Composer</span></code></li>
+</ul>
+<p>Nous allons préféré la seconde.</p>
+<p>Dans un premier temps, installons <code class="docutils literal"><span class="pre">Composer</span></code> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">mkdir -p ~/web</span>
+<span class="go">cd ~/web</span>
+<span class="go">curl -sS https://getcomposer.org/installer | php</span>
+<span class="go">php composer.phar -h</span>
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">cd ~/web</span>
+<span class="go">php composer.phar create-project symfony/framework-standard-edition symfony</span>
+<span class="go">mv composer.phar symfony</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Composer</span></code> va télécharger et installer toutes les librairies nécessaires au fonctionnent de Symfony dans le répertoire <code class="docutils literal"><span class="pre">~/web/Symfony</span></code>. il est possible de spécifier une version. S&#8217;il n&#8217;y en a pas, c&#8217;est la dernière version stable qui sera installée.</p>
+<p>À la fin l&#8217;installation de Symfony, il vous propose une série de question pour le paramétrage :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Would you like to install Acme demo bundle? [y/N] y</span>
+<span class="go">database_driver (pdo_mysql):</span>
+<span class="go">database_host (127.0.0.1):</span>
+<span class="go">database_port (null):</span>
+<span class="go">database_name (symfony):</span>
+<span class="go">database_user (root): symfony</span>
+<span class="go">database_password (null): symfony</span>
+<span class="go">mailer_transport (smtp):</span>
+<span class="go">mailer_host (127.0.0.1):</span>
+<span class="go">mailer_user (null):</span>
+<span class="go">mailer_password (null):</span>
+<span class="go">locale (en): fr</span>
+<span class="go">secret (ThisTokenIsNotSoSecretChangeIt):</span>
+</pre></div>
+</div>
+<p>Tous ces paramètres sont enregistrés dans le fichier <code class="docutils literal"><span class="pre">app/config/parameters.yml</span></code>.</p>
+</div>
+<div class="section" id="mettre-en-place-le-vhost">
+<h3>Mettre en place le VHost<a class="headerlink" href="#mettre-en-place-le-vhost" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-apache"><div class="highlight"><pre><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+    <span class="nb">ServerName</span> domain.tld
+    <span class="nb">ServerAlias</span> www.domain.tld
+
+    <span class="nb">DocumentRoot</span> <span class="sx">/var/www/project/web</span>
+    <span class="nt">&lt;Directory</span> <span class="s">/var/www/project/web</span><span class="nt">&gt;</span>
+        <span class="nb">AllowOverride</span> <span class="k">All</span>
+        <span class="nb">Order</span> Allow,Deny
+        <span class="nb">Allow</span> from <span class="k">All</span>
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    <span class="c"># uncomment the following lines if you install assets as symlinks</span>
+    <span class="c"># or run into problems when compiling LESS/Sass/CoffeScript assets</span>
+    <span class="c"># &lt;Directory /var/www/project&gt;</span>
+    <span class="c">#     Options FollowSymlinks</span>
+    <span class="c"># &lt;/Directory&gt;</span>
+
+    <span class="nb">ErrorLog</span> <span class="sx">/var/log/apache2/project_error.log</span>
+    <span class="nb">CustomLog</span> <span class="sx">/var/log/apache2/project_access.log</span> combined
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verifier-votre-configuration-de-php">
+<h3>Vérifier votre configuration de PHP<a class="headerlink" href="#verifier-votre-configuration-de-php" title="Permalink to this headline">¶</a></h3>
+<p>Allez à l&#8217;adresse <a class="reference external" href="http://localhost/Symfony/web/config.php">http://localhost/Symfony/web/config.php</a> :</p>
+<img alt="_images/symfony_config_error.png" src="_images/symfony_config_error.png" />
+<p>Corrigez tous les problèmes avant de continuer :</p>
+<ul>
+<li><p class="first">Change the permissions of either &#8220;app/cache/&#8221; or &#8220;var/cache/&#8221; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">chmod -R 777 app/cache/</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Change the permissions of either &#8220;app/logs/&#8221; or &#8220;var/logs/&#8221; directory so that the web server can write into it.</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">chmod -R 777 app/logs/</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set the &#8220;date.timezone&#8221; setting in php.ini* (like Europe/Paris).</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+<span class="na">short_open_tag</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">magic_quotes_gpc</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">register_globals</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">session.autostart</span> <span class="o">=</span> <span class="s">Off</span>
+</pre></div>
+</div>
+<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/cli/php.ini</span>
+<span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+<span class="na">short_open_tag</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">magic_quotes_gpc</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">register_globals</span> <span class="o">=</span> <span class="s">Off</span>
+<span class="na">session.autostart</span> <span class="o">=</span> <span class="s">Off</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set &#8220;xdebug.max_nesting_level&#8221; to e.g. &#8220;250&#8221; in php.ini</p>
+<blockquote>
+<div><div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
+<span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<img alt="_images/symfony_config_success.png" src="_images/symfony_config_success.png" />
+<p>L&#8217;installation de Symfony est terminée. Rendez-vous sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/">http://localhost/Symfony/web/app_dev.php/</a>, vous devriez voir une page ressemblant à l&#8217;image ci-dessous :</p>
+<img alt="_images/symfony_homepage_post_install.png" src="_images/symfony_homepage_post_install.png" />
+</div>
+<div class="section" id="verifier-la-configuration-de-php-en-console">
+<h3>Vérifier la configuration de PHP en console<a class="headerlink" href="#verifier-la-configuration-de-php-en-console" title="Permalink to this headline">¶</a></h3>
+<p>Pour gagner du temps, vous aurez besoin d&#8217;exécuter des commandes PHP via la console, vérifions donc que la configuration de PHP soit correcte :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">php app/check.php</span>
+</pre></div>
+</div>
+<img alt="_images/symfony_config_cli.png" class="align-center" src="_images/symfony_config_cli.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="architecture.html" class="btn btn-neutral float-right" title="Architecture de Symfony" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rappel.html" class="btn btn-neutral" title="La programmation orientée objet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

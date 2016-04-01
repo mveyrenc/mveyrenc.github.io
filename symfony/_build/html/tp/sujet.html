@@ -50,12 +50,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -79,9 +81,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -103,7 +104,7 @@
 </ul>
 <p class="caption"><span class="caption-text">tp</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Sujet du TP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sujet du TP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation-php.html">Installation et configuration de PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation-symfony.html">Installation de Symfony</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bundle.html">Création du bundle</a></li>
@@ -149,7 +150,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -158,12 +159,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Sujet du TP</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -183,6 +184,17 @@
 <li>Nous n&#8217;aurons pas de système de gestion des utilisateurs : nous devrons choisir l&#8217;utilisateur lorsque nous rédigerons un post ou un commentaire.</li>
 </ul>
 <div class="wy-text-center container">
+<p class="Scruffy">
+<img src="../_images/scruffy-e574eb7470215098421bf7a23143ed5441792ff2.png" alt="[User|username:string(30);email:string(100);password:string(100)]
+[Post|title:string(100);date:datetime;body:text]
+[Tag|name:string(30)]
+[Comment|date:datetime;comment:text]
+
+[User]1-0..*&gt;[Post]
+[Tag]0..*-0..*&gt;[Post]
+[Comment]1-0..*&gt;[Post]
+[User]1-0..*&gt;[Comment]" />
+</p>
 </div>
 </div>
 
@@ -210,7 +222,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

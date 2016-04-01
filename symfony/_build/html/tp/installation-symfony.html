@@ -50,12 +50,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -79,9 +81,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -105,7 +106,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sujet.html">Sujet du TP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation-php.html">Installation et configuration de PHP</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Installation de Symfony</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation de Symfony</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sous-linux">Sous Linux</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sous-mac-os">Sous Mac OS</a></li>
@@ -162,7 +163,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -171,12 +172,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Installation de Symfony</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -193,7 +194,7 @@
 <h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="sous-linux">
 <h3>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd</span> ~
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ~
 <span class="gp">$</span> curl -LsS https://symfony.com/installer -o symfony.phar
 <span class="gp">$</span> chmod a+x symfony.phar
 <span class="gp">$</span> php symfony.phar new symfony 2.7
@@ -201,13 +202,13 @@
 </div>
 <p>Le <strong>VHost</strong>, ou <em>Virtual Host</em>, est un paramétrage au niveau du serveur web pour qu&#8217;il oriente les requêtes HTTP entrantes vers la bonne application.</p>
 <p>Dans un premier temps, nous allons créé un hostname qui nous permettra s&#8217;accéder à notre application :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># /etc/hosts</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># /etc/hosts</span>
 
 127.0.1.1  symfony.loc.epsi.fr
 </pre></div>
 </div>
 <p>Ensuite, on crée le Vhost :</p>
-<div class="highlight-apache"><div class="highlight"><pre><span class="c"># /etc/apache2/sites-available/symfony.conf</span>
+<div class="highlight-apache"><div class="highlight"><pre><span></span><span class="c"># /etc/apache2/sites-available/symfony.conf</span>
 
 <span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
     <span class="nb">ServerName</span> symfony.loc.epsi.fr
@@ -224,14 +225,14 @@
 </pre></div>
 </div>
 <p>Pour finir, on active le VHost et on recharche Apache :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo a2ensite symfony.conf</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo a2ensite symfony.conf</span>
 <span class="go">sudo service apache2 reload</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sous-mac-os">
 <h3>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd</span> /Applications/MAMP/htdocs/
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /Applications/MAMP/htdocs/
 <span class="gp">$</span> curl -LsS https://symfony.com/installer -o symfony.phar
 <span class="gp">$</span> chmod a+x symfony.phar
 <span class="gp">$</span> php symfony.phar new Symfony 2.7
@@ -240,7 +241,7 @@
 </div>
 <div class="section" id="sous-windows">
 <h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">c:\&gt; cd c:\wamp\www</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">c:\&gt; cd c:\wamp\www</span>
 <span class="go">c:\&gt; php -r &quot;readfile(&#39;https://symfony.com/installer&#39;);&quot; &gt; symfony.phar</span>
 <span class="go">c:\&gt; php symfony.phar new Symfony 2.7</span>
 </pre></div>
@@ -294,31 +295,31 @@
 <ul>
 <li><p class="first">Change the permissions of either &#8220;app/cache/&#8221; or &#8220;var/cache/&#8221; directory so that the web server can write into it.</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">chmod -R 777 app/cache/</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">chmod -R 777 app/cache/</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Change the permissions of either &#8220;app/logs/&#8221; or &#8220;var/logs/&#8221; directory so that the web server can write into it.</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">chmod -R 777 app/logs/</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">chmod -R 777 app/logs/</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Set the &#8220;date.timezone&#8221; setting in php.ini* (like Europe/Paris).</p>
 <blockquote>
-<div><div class="highlight-ini"><div class="highlight"><pre><span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+<div><div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
 </pre></div>
 </div>
-<div class="highlight-ini"><div class="highlight"><pre><span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Set &#8220;xdebug.max_nesting_level&#8221; to e.g. &#8220;250&#8221; in php.ini</p>
 <blockquote>
-<div><div class="highlight-ini"><div class="highlight"><pre><span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+<div><div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -333,7 +334,7 @@
 <div class="section" id="verifier-la-configuration-de-php-en-console">
 <h3>Vérifier la configuration de PHP en console<a class="headerlink" href="#verifier-la-configuration-de-php-en-console" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour gagner du temps, vous aurez besoin d&#8217;exécuter des commandes PHP via la console, vérifions donc que la configuration de PHP soit correcte :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">php app/check.php</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">php app/check.php</span>
 </pre></div>
 </div>
 <img alt="../_images/symfony_config_cli.png" class="align-center" src="../_images/symfony_config_cli.png" />
@@ -365,7 +366,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

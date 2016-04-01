@@ -16,7 +16,7 @@ Télécharger `Bootstrap <http://getbootstrap.com/getting-started/#download>`_ e
 
 Actuellement, les fichiers ne sont pas accessibles par le visiteur car il n'a accès qu'au répertoire ``web`` de Symfony. Pour les publier, lançons la commande suivante :
 
-.. code-block:: bash
+.. code-block:: console
 
     $ php app/console assets:install web --symlink
 

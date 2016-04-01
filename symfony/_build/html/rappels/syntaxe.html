@@ -50,12 +50,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -79,9 +81,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -91,7 +92,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Programmation en PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usages.html">Que peut faire PHP ?</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">La syntaxe</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">La syntaxe</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#generalites">Généralités</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#les-balises-php">Les balises PHP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
@@ -194,7 +195,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -203,12 +204,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>La syntaxe</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -253,7 +254,7 @@ L&#8217;interpréteur crée automatiquement une variable dès qu&#8217;un nouvea
 <h3>Les constantes<a class="headerlink" href="#les-constantes" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une constante est un symbole associé à une valeur mais, contrairement aux variables, sa valeur ne change jamais.
 Elles sont définies par la commande <code class="docutils literal"><span class="pre">define()</span></code>.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;PI&quot;</span><span class="p">,</span> <span class="mf">3.14116</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;PI&quot;</span><span class="p">,</span> <span class="mf">3.14116</span><span class="p">);</span>
 <span class="nb">define</span><span class="p">(</span><span class="s2">&quot;FOO&quot;</span><span class="p">,</span> <span class="s2">&quot;something&quot;</span><span class="p">);</span>
 
 <span class="c1">// Noms invalides</span>
@@ -291,7 +292,7 @@ Elles sont définies par la commande <code class="docutils literal"><span class=
 <p>Pour utiliser la notation octale, précédez le nombre d&#8217;un 0 (zéro).
 Pour utiliser la notation hexadécimale, précédez le nombre d&#8217;un 0x.
 Pour utiliser la notation binaire, précédez le nombre d&#8217;un 0b.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$a</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span> <span class="c1">// un nombre décimal</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$a</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span> <span class="c1">// un nombre décimal</span>
 <span class="nv">$a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// un nombre négatif</span>
 <span class="nv">$a</span> <span class="o">=</span> <span class="mo">0123</span><span class="p">;</span> <span class="c1">// un nombre octal (équivalent à 83 en décimal)</span>
 <span class="nv">$a</span> <span class="o">=</span> <span class="mh">0x1A</span><span class="p">;</span> <span class="c1">// un nombre héxadecimal (équivalent à 26 en décimal)</span>
@@ -299,7 +300,7 @@ Pour utiliser la notation binaire, précédez le nombre d&#8217;un 0b.</p>
 </pre></div>
 </div>
 <p>Les flottants peuvent être spécifiés en utilisant les syntaxes suivantes :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$a</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$a</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">;</span>
 <span class="nv">$b</span> <span class="o">=</span> <span class="mf">1.2e3</span><span class="p">;</span>
 <span class="nv">$c</span> <span class="o">=</span> <span class="mf">7E-10</span><span class="p">;</span>
 </pre></div>
@@ -310,21 +311,21 @@ Pour utiliser la notation binaire, précédez le nombre d&#8217;un 0b.</p>
 <p>Une chaîne de caractères littérale peut être spécifiée de 4 façons différentes :</p>
 <ul>
 <li><p class="first">Entourée de guillemets simples</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">echo</span> <span class="s1">&#39;Arnold a dit : &quot;I\&#39;ll be back&quot;&#39;</span>              <span class="c1">// Affiche : Arnold a dit : &quot;I&#39;ll be back&quot;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="s1">&#39;Arnold a dit : &quot;I\&#39;ll be back&quot;&#39;</span>              <span class="c1">// Affiche : Arnold a dit : &quot;I&#39;ll be back&quot;</span>
 <span class="k">echo</span> <span class="s1">&#39;Ceci n\&#39;affichera pas \n de nouvelle ligne&#39;</span>  <span class="c1">// Affiche : Ceci n&#39;affichera pas \n de nouvelle ligne</span>
 <span class="k">echo</span> <span class="s1">&#39;Les variables ne seront pas $traitees $ici&#39;</span>  <span class="c1">// Affiche : Les variables ne seront pas $traitees $ici</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Entourée de guillemets doubles</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$juice</span> <span class="o">=</span> <span class="s2">&quot;pomme&quot;</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$juice</span> <span class="o">=</span> <span class="s2">&quot;pomme&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="s2">&quot;Il a bu du jus de </span><span class="si">$juice</span><span class="s2">.&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>     <span class="c1">// Affiche : Il a bu du jus de pomme.&quot;</span>
 <span class="k">echo</span> <span class="s2">&quot;Il a bu du jus constitué de </span><span class="si">$juices</span><span class="s2">.&quot;</span>   <span class="c1">// Affiche : Il a bu du jus constitué de .</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Syntaxe Heredoc</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;EOD</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;EOD</span>
 <span class="s">Exemple de chaîne</span>
 <span class="s">sur plusieurs lignes</span>
 <span class="s">en utilisant la syntaxe Heredoc.</span>
@@ -356,7 +357,7 @@ Pour utiliser la notation binaire, précédez le nombre d&#8217;un 0b.</p>
 </div>
 </li>
 <li><p class="first">Syntaxe Nowdoc (depuis PHP 5.3.0)</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;&#39;EOD&#39;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;&#39;EOD&#39;</span>
 <span class="s">Exemple de chaîne</span>
 <span class="s">sur plusieurs lignes</span>
 <span class="s">en utilisant la syntaxe Nowdoc.</span>
@@ -382,7 +383,7 @@ Pour utiliser la notation binaire, précédez le nombre d&#8217;un 0b.</p>
 <p>Un tableau est un ensemble qui associe une clé à une valeur.
 Une clé est un entier ou une chaîne de caractères.
 La valeur peut être de n&#8217;importe quel type.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="nb">key</span>  <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">,</span>
     <span class="nx">key2</span> <span class="o">=&gt;</span> <span class="nx">value2</span><span class="p">,</span>
     <span class="nx">key3</span> <span class="o">=&gt;</span> <span class="nx">value3</span><span class="p">,</span>
@@ -391,7 +392,7 @@ La valeur peut être de n&#8217;importe quel type.</p>
 </pre></div>
 </div>
 <p>Depuis PHP 5.4.0, il existe une syntaxe courte pour déclarer un tableau :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span>
      <span class="nb">key</span>  <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">,</span>
      <span class="nx">key2</span> <span class="o">=&gt;</span> <span class="nx">value2</span><span class="p">,</span>
      <span class="nx">key3</span> <span class="o">=&gt;</span> <span class="nx">value3</span><span class="p">,</span>
@@ -403,11 +404,11 @@ La valeur peut être de n&#8217;importe quel type.</p>
 <div class="section" id="les-objets">
 <h3>Les objets<a class="headerlink" href="#les-objets" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour instancier un nouvel objet, il faut utiliser le mot-clé <code class="docutils literal"><span class="pre">new</span></code> :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DateTime</span><span class="p">(</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DateTime</span><span class="p">(</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>On utilise le synbole <code class="docutils literal"><span class="pre">-&gt;</span></code> pour accéder au méthodes et attributs de l&#8217;objet :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$date</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">&#39;d/m/Y&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$date</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">&#39;d/m/Y&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -430,7 +431,7 @@ La valeur peut être de n&#8217;importe quel type.</p>
 <h3>Les opérateurs d&#8217;affectation<a class="headerlink" href="#les-operateurs-d-affectation" title="Lien permanent vers ce titre">¶</a></h3>
 <p>L&#8217;opérateur d&#8217;affectation est le signe &#8220;=&#8221;.</p>
 <p>En plus du simple opérateur d&#8217;affectation, il existe des &#8220;opérateurs combinés&#8221; pour tous les opérateurs arithmétiques, l&#8217;union de tableaux et pour les opérateurs sur les chaînes de caractères :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="nv">$a</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// affecte la valeur 8 à la variable $a correspond à l&#39;instruction &#39;$a = $a + 5&#39;;</span>
 
 <span class="nv">$b</span> <span class="o">=</span> <span class="s2">&quot;Bonjour &quot;</span><span class="p">;</span>
@@ -491,7 +492,7 @@ Utilisez les guillemets obliques revient à utiliser la fonction shell_exec().</
 <li>Pré-décrémente <code class="docutils literal"><span class="pre">--</span></code> : <code class="docutils literal"><span class="pre">--$a</span></code></li>
 <li>Post-décrémente <code class="docutils literal"><span class="pre">--</span></code> : <code class="docutils literal"><span class="pre">$a++</span></code></li>
 </ul>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nv">$a</span><span class="o">++</span><span class="p">;</span> <span class="c1">// Affiche 5</span>
 <span class="k">echo</span> <span class="nv">$a</span><span class="p">;</span>   <span class="c1">// Affiche 6</span>
 
@@ -540,7 +541,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 <div class="section" id="operateurs-de-types">
 <h3>Opérateurs de types<a class="headerlink" href="#operateurs-de-types" title="Lien permanent vers ce titre">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">instanceof</span></code> est utilisé pour déterminer si une variable PHP est un objet instancié d&#8217;une certaine classe, d&#8217;une classe héritées, d&#8217;une interface ou s&#8217;il est de la même classe qu&#8217;un autre objet.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">interface</span> <span class="nx">InterfaceI</span> <span class="p">{}</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">interface</span> <span class="nx">InterfaceI</span> <span class="p">{}</span>
 <span class="k">class</span> <span class="nc">ClassA</span>  <span class="k">implements</span> <span class="nx">InterfaceI</span> <span class="p">{}</span>
 <span class="k">class</span> <span class="nc">ClassB</span> <span class="p">{}</span>
 
@@ -565,7 +566,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 <span id="rappels-syntaxe-structures-controle"></span><h2>Les structures de contrôle<a class="headerlink" href="#les-structures-de-controle" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="if-elseif-else">
 <h3>if/elseif/else<a class="headerlink" href="#if-elseif-else" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span> <span class="nx">condition</span> <span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="nx">condition</span> <span class="p">)</span> <span class="p">{</span>
     <span class="nx">commandes</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span> <span class="nx">condition</span> <span class="p">)</span> <span class="p">{</span>
     <span class="nx">commandes</span><span class="p">;</span>
@@ -577,7 +578,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 </div>
 <div class="section" id="while-do-while">
 <h3>while/do-while<a class="headerlink" href="#while-do-while" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">while</span> <span class="p">(</span> <span class="nx">expression</span> <span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span> <span class="nx">expression</span> <span class="p">)</span> <span class="p">{</span>
     <span class="nx">commandes</span>
 <span class="p">}</span>
 
@@ -589,7 +590,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 </div>
 <div class="section" id="for">
 <h3>for<a class="headerlink" href="#for" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="nx">expr1</span><span class="p">;</span> <span class="nx">expr2</span><span class="p">;</span> <span class="nx">expr3</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">expr1</span><span class="p">;</span> <span class="nx">expr2</span><span class="p">;</span> <span class="nx">expr3</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">commandes</span>
 <span class="p">}</span>
 </pre></div>
@@ -600,7 +601,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 </div>
 <div class="section" id="foreach">
 <h3>foreach<a class="headerlink" href="#foreach" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">foreach</span> <span class="p">(</span><span class="nx">array_expression</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">){</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="nx">array_expression</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">){</span>
     <span class="nx">commandes</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nx">array_expression</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">){</span>
@@ -620,7 +621,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 <div class="section" id="switch">
 <h3>switch<a class="headerlink" href="#switch" title="Lien permanent vers ce titre">¶</a></h3>
 <p>L&#8217;instruction switch équivaut à une série d&#8217;instructions if.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">switch</span> <span class="p">(</span> <span class="nx">variable</span> <span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span> <span class="nx">variable</span> <span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="nx">valeur1</span><span class="o">:</span>
         <span class="nx">commandes</span><span class="p">;</span>
         <span class="k">break</span><span class="p">;</span>
@@ -639,7 +640,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 </div>
 <div class="section" id="declare">
 <h3>declare<a class="headerlink" href="#declare" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">declare</span> <span class="p">(</span><span class="nx">directive</span><span class="p">)</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">declare</span> <span class="p">(</span><span class="nx">directive</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Il existe deux directives :</p>
@@ -651,14 +652,14 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 <div class="section" id="return">
 <h3>return<a class="headerlink" href="#return" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Stoppe l&#8217;exécution de la fonction courante et retourne la valeur au module appelant.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">return</span> <span class="nx">valeur</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nx">valeur</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="include-require-include-once-require-once">
 <h3>include/require/include_once/require_once<a class="headerlink" href="#include-require-include-once-require-once" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ils permettent d&#8217;inclure et exécuter le fichier spécifié en argument.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">include</span> <span class="s1">&#39;fichier.php&#39;</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">include</span> <span class="s1">&#39;fichier.php&#39;</span><span class="p">;</span>
 <span class="k">require</span> <span class="s1">&#39;fichier.php&#39;</span><span class="p">;</span>
 <span class="k">include_once</span> <span class="s1">&#39;fichier.php&#39;</span><span class="p">;</span>
 <span class="k">require_once</span> <span class="s1">&#39;fichier.php&#39;</span><span class="p">;</span>
@@ -675,7 +676,7 @@ Voir le paragraphe <a href="http://fr2.php.net/manual/fr/language.operators.prec
 <h3>goto<a class="headerlink" href="#goto" title="Lien permanent vers ce titre">¶</a></h3>
 <p>L&#8217;opérateur goto peut être utilisé pour continuer l&#8217;exécution du script à un autre point du programme.
 La cible est spécifiée par un label, suivi de deux-point.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nx">goto</span> <span class="nx">a</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">goto</span> <span class="nx">a</span><span class="p">;</span>
 <span class="k">echo</span> <span class="s1">&#39;Foo&#39;</span><span class="p">;</span>
 
 <span class="nx">a</span><span class="o">:</span>
@@ -712,7 +713,7 @@ La cible est spécifiée par un label, suivi de deux-point.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

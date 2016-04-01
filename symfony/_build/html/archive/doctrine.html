@@ -48,12 +48,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -77,9 +79,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -147,7 +148,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -156,12 +157,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Doctrine et la base de donnée</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -211,7 +212,7 @@
 </div>
 <div class="section" id="utilisation-du-generateur">
 <h4>Utilisation du générateur<a class="headerlink" href="#utilisation-du-generateur" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre>$ php app/console doctrine:generate:entity
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ php app/console doctrine:generate:entity
 
 ...
 
@@ -244,7 +245,7 @@ Do you confirm generation [yes]? yes
 </div>
 <div class="section" id="la-classe-user">
 <h4>La classe <code class="docutils literal"><span class="pre">User</span></code><a class="headerlink" href="#la-classe-user" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
 
@@ -369,14 +370,14 @@ Do you confirm generation [yes]? yes
 </li>
 <li><p class="first">L&#8217;annotation <code class="docutils literal"><span class="pre">&#64;ORM\Table</span></code> doit être également placé avant la définition de la classe, mais elle est facultative. Elle permet juste de personnaliser le nom de la table créée en base de données, par exemple <code class="docutils literal"><span class="pre">&#64;ORM\Table(name=&quot;epsi_user&quot;)</span></code>, et d&#8217;ajouter des paramètres pour le création de la table. Par défaut, si ne nom n&#8217;est pas personnalisé, Doctrine utilisera la nom de l&#8217;entité comme nom de table, ici <code class="docutils literal"><span class="pre">User</span></code>. Par conséquent, les noms de vos tables peuvent comporter des majuscules, or la convention de nommage des tables d&#8217;une base de donnée et de ne pas mettre de majuscule car sur un serveur Linux, vous aurez des erreurs. Pour éviter de personnaliser le nom de la table pour chaque entité, on peut paramétré Doctrine pour qu&#8217;il utilise une autre convention de nommage pour ses tables :</p>
 <blockquote>
-<div><div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/config.yml</span>
+<div><div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># app/config/config.yml</span>
 
-<span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
+<span class="l l-Scalar l-Scalar-Plain">doctrine</span><span class="p p-Indicator">:</span>
     <span class="c1"># ...</span>
 
-    <span class="l-Scalar-Plain">orm</span><span class="p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">orm</span><span class="p p-Indicator">:</span>
         <span class="c1"># ...</span>
-        <span class="l-Scalar-Plain">naming_strategy</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">doctrine.orm.naming_strategy.underscore</span>
+        <span class="l l-Scalar l-Scalar-Plain">naming_strategy</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">doctrine.orm.naming_strategy.underscore</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -439,7 +440,7 @@ Do you confirm generation [yes]? yes
 </div>
 <div class="section" id="la-classe-userrepository">
 <h4>La classe <code class="docutils literal"><span class="pre">UserRepository</span></code><a class="headerlink" href="#la-classe-userrepository" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
 
@@ -571,7 +572,7 @@ Do you confirm generation [yes]? yes
 <div class="section" id="definition-de-valeur-par-defaut">
 <span id="doctrine-valeur-defaut"></span><h2>Définition de valeur par défaut<a class="headerlink" href="#definition-de-valeur-par-defaut" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les entités <code class="docutils literal"><span class="pre">Post</span></code> et <code class="docutils literal"><span class="pre">Comment</span></code> ont une date qui correspond à leur date de création. Pour éviter d&#8217;avoir à le saisir à chaque fois, on peut placer l&#8217;initialisation de ce champ dans le constructeur :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="o">...</span>
     <span class="sd">/**</span>
 <span class="sd">    * Constructor</span>
@@ -589,7 +590,7 @@ Do you confirm generation [yes]? yes
 <p>Le générateur d&#8217;entités ne crée pas propriétés et méthodes nécessaires à la manipulation des relations entre les entités. Il faut les ajouter manuellement après la génération de l&#8217;entité.</p>
 <p>Doctrine gère plusieurs types de relations dans les entités : <code class="docutils literal"><span class="pre">OneToOne</span></code>, <code class="docutils literal"><span class="pre">OneToMany</span></code>, <code class="docutils literal"><span class="pre">ManyToOne</span></code> et <code class="docutils literal"><span class="pre">ManyToMany</span></code>.</p>
 <p>Les relations sont traitées comme les autres champs gérés par Doctrine. Il faut ajouter un attribut à la classe et le précéder d&#8217;annotations décrivant la relation. Ensuite, vous pouvez utiliser la commande suivante pour générer le getter et setter nécessaire pour le nouvel attribut :</p>
-<div class="highlight-bash"><div class="highlight"><pre>php app/console doctrine:generate:entities EpsiBlogBundle:User
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">php app/console doctrine:generate:entities EpsiBlogBundle:User</span>
 </pre></div>
 </div>
 <div class="section" id="notions-techniques-a-savoir">
@@ -613,7 +614,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <p>L&#8217;annotation <code class="docutils literal"><span class="pre">&#64;ORM\OneToOne</span></code> définit la relation vers l&#8217;autre entité. Elle possède au moins l&#8217;option <code class="docutils literal"><span class="pre">targetEntity</span></code> qui vaut le namespace complet vers l&#8217;entité liée. L&#8217;option <code class="docutils literal"><span class="pre">cascade</span></code> permet de &#8220;cascader&#8221; les actions effectuées sur l&#8217;entité sur ses entités liées par la relation (<code class="docutils literal"><span class="pre">persist</span></code>, <code class="docutils literal"><span class="pre">remove</span></code>, <code class="docutils literal"><span class="pre">merge</span></code>, <code class="docutils literal"><span class="pre">detach</span></code>, <code class="docutils literal"><span class="pre">refresh</span></code>).</p>
 <div class="section" id="dans-l-entite-proprietaire">
 <h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#dans-l-entite-proprietaire" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -632,7 +633,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">User</span></code> :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -660,14 +661,14 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Dans la base de données, Doctrine ajoutera un champ <code class="docutils literal"><span class="pre">avatar_id</span></code> dans la table <code class="docutils literal"><span class="pre">user</span></code> et une contrainte d&#8217;intégrité sur ce champ :</p>
-<div class="highlight-mysql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="n">avatar_id</span> <span class="kt">INT</span> <span class="k">DEFAULT</span> <span class="no">NULL</span><span class="p">;</span>
+<div class="highlight-mysql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="n">avatar_id</span> <span class="kt">INT</span> <span class="k">DEFAULT</span> <span class="no">NULL</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">FK_8D93D64986383B10</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">avatar_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nf">image</span> <span class="p">(</span><span class="n">id</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="dans-l-entite-inverse">
 <h4>Dans l&#8217;entité inverse<a class="headerlink" href="#dans-l-entite-inverse" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Image</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Image</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -685,7 +686,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Image</span></code> :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Image</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Image</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -721,7 +722,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <p>Dans le cas des relations OneToMany et ManyToOne, le paramètre <code class="docutils literal"><span class="pre">inversedBy</span></code> est toujours du côté de la relation propriétaire et l&#8217;attribut <code class="docutils literal"><span class="pre">mappedBy</span></code> est toujours du côté de l&#8217;inverse.</p>
 <div class="section" id="id1">
 <h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -740,7 +741,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Post</span></code> :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -768,14 +769,14 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Dans la base de données, Doctrine ajoutera un champ <code class="docutils literal"><span class="pre">author_id</span></code> dans la table <code class="docutils literal"><span class="pre">post</span></code> et une contrainte d&#8217;intégrité sur ce champ :</p>
-<div class="highlight-mysql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="n">author_id</span> <span class="kt">INT</span> <span class="k">NOT</span> <span class="no">NULL</span><span class="p">;</span>
+<div class="highlight-mysql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="n">author_id</span> <span class="kt">INT</span> <span class="k">NOT</span> <span class="no">NULL</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">user</span> <span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">FK_5A8A6C8DF675F31B</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">author_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nf">user</span> <span class="p">(</span><span class="n">id</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id2">
 <h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -794,7 +795,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">User</span></code> :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -849,7 +850,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <p>Cette relation permet à plusieurs entités d&#8217;avoir une relation vers plusieurs autres entités comme par exemple, des <code class="docutils literal"><span class="pre">Post</span></code> qui sont liés à plusieurs <code class="docutils literal"><span class="pre">Tag</span></code>.</p>
 <div class="section" id="id3">
 <h4>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -867,7 +868,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Post</span></code> :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -915,7 +916,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>En base de données, Doctrine crée la table de jointure :</p>
-<div class="highlight-mysql"><div class="highlight"><pre><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">post_tag</span> <span class="p">(</span>
+<div class="highlight-mysql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">post_tag</span> <span class="p">(</span>
     <span class="n">post_id</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="no">NULL</span><span class="p">,</span>
     <span class="n">tag_id</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="no">NULL</span><span class="p">,</span>
     <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">post_id</span><span class="p">,</span><span class="n">tag_id</span><span class="p">)</span>
@@ -927,7 +928,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 <div class="section" id="id4">
 <h4>Dans l&#8217;entité inverse<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Tag</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tag</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -945,7 +946,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </pre></div>
 </div>
 <p>Doctrine le traduit par l&#8217;ajout des méthodes suivantes dans la classe <code class="docutils literal"><span class="pre">Tag</span></code> :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Tag</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tag</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="sd">/**</span>
@@ -995,7 +996,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Lorsque vous ajoutez des propriétés dans une entité, pensez à générer les getter et setter en lançant la commande :</p>
-<div class="last highlight-bash"><div class="highlight"><pre>php app/console doctrine:generate:entities <span class="o">[</span>BundleName<span class="o">[</span>:Entity<span class="o">]]</span>
+<div class="last highlight-console"><div class="highlight"><pre><span></span><span class="go">php app/console doctrine:generate:entities [BundleName[:Entity]]</span>
 </pre></div>
 </div>
 </div>
@@ -1005,45 +1006,45 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <div class="section" id="creation-de-la-base-de-donnees-et-des-tables">
 <h2>Création de la base de données et des tables<a class="headerlink" href="#creation-de-la-base-de-donnees-et-des-tables" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les paramètres de connexion à la base de données se trouvent habituellement dans le fichier <code class="docutils literal"><span class="pre">app/config/parameters.yml</span></code> :</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">parameters</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">database_driver</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">pdo_mysql</span>
-    <span class="l-Scalar-Plain">database_host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">127.0.0.1</span>
-    <span class="l-Scalar-Plain">database_port</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">null</span>
-    <span class="l-Scalar-Plain">database_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
-    <span class="l-Scalar-Plain">database_user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
-    <span class="l-Scalar-Plain">database_password</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">symfony</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">parameters</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_driver</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pdo_mysql</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_host</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">symfony</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">symfony</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">symfony</span>
 </pre></div>
 </div>
 <p>Ces paramètres sont repris dans le fichier <code class="docutils literal"><span class="pre">app/config/config.yml</span></code> :</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">dbal</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">driver</span><span class="p-Indicator">:</span>   <span class="s">&quot;%database_driver%&quot;</span>
-        <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span>     <span class="s">&quot;%database_host%&quot;</span>
-        <span class="l-Scalar-Plain">dbname</span><span class="p-Indicator">:</span>   <span class="s">&quot;%database_name%&quot;</span>
-        <span class="l-Scalar-Plain">user</span><span class="p-Indicator">:</span>     <span class="s">&quot;%database_user%&quot;</span>
-        <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span> <span class="s">&quot;%database_password%&quot;</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">doctrine</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">dbal</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">driver</span><span class="p p-Indicator">:</span>   <span class="s">&quot;%database_driver%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span>     <span class="s">&quot;%database_host%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">dbname</span><span class="p p-Indicator">:</span>   <span class="s">&quot;%database_name%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">user</span><span class="p p-Indicator">:</span>     <span class="s">&quot;%database_user%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="s">&quot;%database_password%&quot;</span>
 </pre></div>
 </div>
 <p>Maintenant que Doctrine connaît vos paramètres de connexion, vous pouvez lui demander de créer votre base de données :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:database:create
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:database:create
 </pre></div>
 </div>
 <p>Si l&#8217;utilisateur <code class="docutils literal"><span class="pre">symfony</span></code> ne peut pas se connecter à la base de données, ajoutez lui les droits puis relancer la création de la base :</p>
-<div class="highlight-mysql"><div class="highlight"><pre><span class="c1"># mysql -uroot -p</span>
+<div class="highlight-mysql"><div class="highlight"><pre><span></span><span class="c1"># mysql -uroot -p</span>
 <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">symfony</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">symfony</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;symfony&#39;</span><span class="p">;</span>
-<span class="n">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
+<span class="k">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="hint admonition">
 <p class="first admonition-title">Pour supprimer la base de données</p>
 <blockquote class="last">
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:database:drop --force
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:database:drop --force
 </pre></div>
 </div>
 </div></blockquote>
 </div>
 <p>Ensuite, pour créer le schéma dans la base de données, il suffit de taper la commande :</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php app/console doctrine:schema:update --dump-sql --force
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:schema:update --dump-sql --force
 </pre></div>
 </div>
 <p>Cette commande compare à quoi votre base <em>devrait</em> ressembler en se basant sur le mapping de vos entités, à ce quoi quoi en ressemble <em>vraiment</em>, et génère les requêtes SQL nécessaires pour mettre à jour la base de données.</p>
@@ -1051,16 +1052,16 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <div class="section" id="manipulation-des-donnees">
 <h2>Manipulation des données<a class="headerlink" href="#manipulation-des-donnees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les données sont manipulées par le service EntityManager qui est appelé depuis le contrôleur de la façon suivante :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Comme tout service qui se respecte, il peut aussi être appelé de la façon suivante :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;doctrine.orm.entity_manager&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;doctrine.orm.entity_manager&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="section" id="enregistrer-les-entites-dans-la-base-de-donnee">
 <h3>Enregistrer les entités dans la base de donnée<a class="headerlink" href="#enregistrer-les-entites-dans-la-base-de-donnee" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$tag</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tag</span><span class="p">();</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$tag</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tag</span><span class="p">();</span>
 <span class="nv">$tag</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span> <span class="s1">&#39;symfony&#39;</span> <span class="p">);</span>
 
 <span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
@@ -1084,7 +1085,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <p>À partir d&#8217;un repository, nous pouvons utiliser du DQL pour composer une requête. Le DQL (Doctrine Qauery Language) est le pseudo-SQL de Doctrine, il est compatible avec les bases de données supportées par Doctrine. Sa syntaxe est très proche du SQL, amis il propose moins d&#8217;opérateurs et de fonctions pas soucis de portabilité entre ces systèmes.</p>
 <p>Les repositories nous proposent également d&#8217;utiliser un QueryBuilder. C&#8217;est un outil qui permet de construire des requêtes en utilisant des instructions chaînées et reflétant d&#8217;assez près la construction d&#8217;une requête SQL.</p>
 <p>Tout d&#8217;abord, il faut récupérer le repository de l&#8217;entité :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span>
                <span class="o">-&gt;</span><span class="na">getManager</span><span class="p">()</span>
                <span class="o">-&gt;</span><span class="na">getRepository</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Post&#39;</span><span class="p">);</span>
 </pre></div>
@@ -1093,28 +1094,28 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <ul>
 <li><p class="first">récupérer une entité à partir de son ID</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">récupérer tous les entités</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">récupérer les entités en fonction de critères</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findBy</span><span class="p">(</span><span class="k">array</span> <span class="nv">$criteres</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$orderBy</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$limite</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$offset</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findBy</span><span class="p">(</span><span class="k">array</span> <span class="nv">$criteres</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$orderBy</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$limite</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$offset</span> <span class="o">=</span> <span class="k">null</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">récupérer une entité en fonction de critères</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findOneBy</span><span class="p">(</span><span class="k">array</span> <span class="nv">$criteres</span><span class="p">);</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">findOneBy</span><span class="p">(</span><span class="k">array</span> <span class="nv">$criteres</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1128,7 +1129,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 <p>X doit être remplacé par le nom d&#8217;une propriété, Par exemple <code class="docutils literal"><span class="pre">findByTitre()</span></code>, <code class="docutils literal"><span class="pre">findOneByTitre()</span></code>, <code class="docutils literal"><span class="pre">findByDate()</span></code>, <code class="docutils literal"><span class="pre">findOneByDate()</span></code></p>
 <p>Pour toutes les autres requêtes, il va falloir les construire dans le repository grâce au QueryBuilder.</p>
 <p>Par exemple, recréons la méthode <code class="docutils literal"><span class="pre">findAll</span></code> dans le repository <code class="docutils literal"><span class="pre">Post</span></code> pour que les <code class="docutils literal"><span class="pre">Post</span></code> soient triés par date :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostRepository</span> <span class="k">extends</span> <span class="nx">EntityRepository</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PostRepository</span> <span class="k">extends</span> <span class="nx">EntityRepository</span> <span class="p">{</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">findAllOrderByDate</span><span class="p">()</span> <span class="p">{</span>
         <span class="nv">$queryBuilder</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
@@ -1151,7 +1152,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 </div>
 <p>Voici la liste des méthodes disponibles dans le QueryBuilder :</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">QueryBuilder</span> <span class="p">{</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">QueryBuilder</span> <span class="p">{</span>
 
     <span class="c1">// Example - $qb-&gt;select(&#39;u&#39;)</span>
     <span class="c1">// Example - $qb-&gt;select(array(&#39;u&#39;, &#39;p&#39;))</span>
@@ -1260,7 +1261,7 @@ Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

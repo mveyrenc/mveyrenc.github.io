@@ -51,12 +51,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -80,9 +82,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -113,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../entite.html">Les entités</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Création de l&#8217;entité Post</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Création de l&#8217;entité Post</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#structure-de-l-entite-post">Structure de l&#8217;entité Post</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#utilisation-du-generateur">Utilisation du générateur</a></li>
 </ul>
@@ -158,7 +159,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -166,15 +167,15 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../entite.html">Les entités</a> &raquo;</li>
+        <li><a href="../entite.html">Les entités</a> &raquo;</li>
       
     <li>Création de l&#8217;entité Post</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -216,11 +217,11 @@
 </div>
 <div class="section" id="utilisation-du-generateur">
 <h2>Utilisation du générateur<a class="headerlink" href="#utilisation-du-generateur" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console doctrine:generate:entity
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:generate:entity
 </pre></div>
 </div>
 <p>Ce générateur vous demande dans un premier temps le nom de l&#8217;entité que vous souhaitez créer :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">  Welcome to the Doctrine2 entity generator</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Welcome to the Doctrine2 entity generator</span>
 
 <span class="go">This command helps you generate Doctrine2 entities.</span>
 
@@ -232,14 +233,14 @@
 </div>
 <p>Ici, il faut saisir <code class="docutils literal"><span class="pre">EpsiBlogBundle:Post</span></code>, autrement dit, le nom de votre bundle, suivit de <code class="docutils literal"><span class="pre">:</span></code> et efin le nom de l&#8217;entité.</p>
 <p>Ensuite, Symfony votre demande quel format de la configuration de votre entité, vous gardez la valeur par défaut <code class="docutils literal"><span class="pre">annotation</span></code> :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Determine the format to use for the mapping information.</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Determine the format to use for the mapping information.</span>
 
 <span class="go">Configuration format (yml, xml, php, or annotation) [annotation]:</span>
 </pre></div>
 </div>
 <p>Ensuite vous pouvez commencer à entrer les différents champs composant votre entité.</p>
 <p>Commençez par <code class="docutils literal"><span class="pre">title</span></code> :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Instead of starting with a blank entity, you can add some fields now.</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Instead of starting with a blank entity, you can add some fields now.</span>
 <span class="go">Note that the primary key will be added automatically (named id).</span>
 
 <span class="go">Available types: array, simple_array, json_array, object,</span>
@@ -252,24 +253,24 @@
 </pre></div>
 </div>
 <p>Ensuite, passez au champ <code class="docutils literal"><span class="pre">date</span></code> :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">New field name (press &lt;return&gt; to stop adding fields): date</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">New field name (press &lt;return&gt; to stop adding fields): date</span>
 <span class="go">Field type [string]: datetimetz</span>
 </pre></div>
 </div>
 <p>Puis <code class="docutils literal"><span class="pre">body</span></code> :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">New field name (press &lt;return&gt; to stop adding fields): body</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">New field name (press &lt;return&gt; to stop adding fields): body</span>
 <span class="go">Field type [string]: text</span>
 </pre></div>
 </div>
 <p>Pour finir, lorsque Symfony vous propose d&#8217;entrer un nouveau champ, laissez le nom vide et validez. Cela permet d&#8217;arrêter l&#8217;ajout de champs dans l&#8217;entité.</p>
 <p>Symfony vous propose ensuite de créer une classe repository vide, répondez <code class="docutils literal"><span class="pre">yes</span></code> à cette question :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">New field name (press &lt;return&gt; to stop adding fields):</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">New field name (press &lt;return&gt; to stop adding fields):</span>
 
 <span class="go">Do you want to generate an empty repository class [no]? yes</span>
 </pre></div>
 </div>
 <p>Pour finir, Symfony vous demande de confirmer la génération de l&#8217;entité :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">  Summary before generation</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Summary before generation</span>
 
 
 <span class="go">You are going to generate a &quot;EpsiBlogBundle:Post&quot; Doctrine2 entity</span>
@@ -314,7 +315,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

@@ -193,7 +193,7 @@ Doctrine gère plusieurs types de relations dans les entités : ``OneToOne``, ``
 
 Les relations sont traitées comme les autres champs gérés par Doctrine. Il faut ajouter un attribut à la classe et le précéder d'annotations décrivant la relation. Ensuite, vous pouvez utiliser la commande suivante pour générer le getter et setter nécessaire pour le nouvel attribut :
 
-.. code-block:: bash
+.. code-block:: console
     
     php app/console doctrine:generate:entities EpsiBlogBundle:User
 
@@ -647,7 +647,7 @@ Doctrine le traduit par l'ajout des méthodes suivantes dans la classe ``Tag`` :
 
     Lorsque vous ajoutez des propriétés dans une entité, pensez à générer les getter et setter en lançant la commande :
 
-    .. code-block:: bash
+    .. code-block:: console
 
         php app/console doctrine:generate:entities [BundleName[:Entity]]
 
@@ -675,7 +675,7 @@ Ces paramètres sont repris dans le fichier ``app/config/config.yml`` :
 
 Maintenant que Doctrine connaît vos paramètres de connexion, vous pouvez lui demander de créer votre base de données :
 
-.. code-block:: bash
+.. code-block:: console
 
     $ php app/console doctrine:database:create
 
@@ -692,13 +692,13 @@ Si l'utilisateur ``symfony`` ne peut pas se connecter à la base de données, aj
 .. admonition:: Pour supprimer la base de données
     :class: hint
 
-        .. code-block:: bash
+        .. code-block:: console
 
             $ php app/console doctrine:database:drop --force
 
 Ensuite, pour créer le schéma dans la base de données, il suffit de taper la commande :
 
-.. code-block:: bash
+.. code-block:: console
 
     $ php app/console doctrine:schema:update --dump-sql --force
 

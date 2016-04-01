@@ -1,24 +1,5 @@
-$ curl -sS https://getcomposer.org/installer | php
-$ sudo mv composer.phar /usr/local/bin/composer
-$ composer -h
-$ composer create-project symfony/framework-standard-edition ~/html/Symfony [version]
-
-Would you like to install Acme demo bundle? [y/N] y
-database_driver (pdo_mysql):
-database_host (127.0.0.1):
-database_port (null):
-database_name (symfony):
-database_user (root): symfony
-database_password (null): symfony
-mailer_transport (smtp): 
-mailer_host (127.0.0.1):
-mailer_user (null):
-mailer_password (null):
-locale (en): fr
-secret (ThisTokenIsNotSoSecretChangeIt):
-
-$ chmod -R 777 app/cache/
-$ chmod -R 777 app/logs/
+chmod -R 777 app/cache/
+chmod -R 777 app/logs/
 
 # /etc/php5/apache2/php.ini
 date.timezone = Europe/Paris
@@ -29,4 +10,4 @@ date.timezone = Europe/Paris
 # /etc/php5/apache2/conf.d/20-xdebug.ini
 xdebug.max_nesting_level = 250
 
-$ php app/check.php
+php app/check.php

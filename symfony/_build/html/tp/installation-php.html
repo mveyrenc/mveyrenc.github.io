@@ -50,12 +50,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -79,9 +81,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -104,7 +105,7 @@
 <p class="caption"><span class="caption-text">tp</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sujet.html">Sujet du TP</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Installation et configuration de PHP</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation et configuration de PHP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sous-linux-debian-ubuntu">Sous Linux (Debian/Ubuntu)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sous-macos">Sous MacOS</a></li>
@@ -162,7 +163,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -171,12 +172,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Installation et configuration de PHP</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -192,63 +193,63 @@ et le connecteur entre PHP et le SGBD (<code class="docutils literal"><span clas
 <div class="section" id="sous-linux-debian-ubuntu">
 <span id="tp-installation-php-linux"></span><h3>Sous Linux (Debian/Ubuntu)<a class="headerlink" href="#sous-linux-debian-ubuntu" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Lancez les commandes suivantes pour installer les paquets nécessaires :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo apt-get install apache2 mysql-server mysql-client php5 php5-cli php5-mysql
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install apache2 mysql-server mysql-client php5 php5-cli php5-mysql
 <span class="gp">$</span> sudo apt-get install php5-intl php5-xsl php5-curl
 <span class="gp">$</span> sudo apt-get install curl git
 </pre></div>
 </div>
 <p>Si c&#8217;est pour un poste de développement :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo apt-get install php5-xdebug phpmyadmin
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install php5-xdebug phpmyadmin
 </pre></div>
 </div>
 <p>Afin de corriger les droits sur les fichiers une bonne fois pour toute :</p>
 <ul>
 <li><p class="first">Ajoutons l&#8217;utilisateur d&#8217;<strong class="program">Apache</strong> (<code class="docutils literal"><span class="pre">www-data</span></code>) dans notre groupe</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G www-data $(whoami)</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo usermod -a -G www-data $(whoami)</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Ajoutons dans le groupe <code class="docutils literal"><span class="pre">www-data</span></code></p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G $(whoami) www-data</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo usermod -a -G $(whoami) www-data</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Forçons les droits à 775 pour tous les nouveaux fichiers créés par notre utilisateur</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># ~/.profile</span>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># ~/.profile</span>
 ...
 
-<span class="c"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
-<span class="nb">umask </span>002
+<span class="c1"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
+<span class="nb">umask</span> 002
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Rechargeons notre profil</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">source ~/.profile</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">source ~/.profile</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Faisons de même pour www-data</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># /etc/apache2/envvars</span>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># /etc/apache2/envvars</span>
 ...
 
-<span class="c"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
-<span class="nb">umask </span>002
+<span class="c1"># umask  002 pour passer les permission de fichiers à 0664 et de dossiers à 0775</span>
+<span class="nb">umask</span> 002
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Redémarrons <strong class="program">Apache</strong></p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo service apache2 restart</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo service apache2 restart</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -280,7 +281,7 @@ et le connecteur entre PHP et le SGBD (<code class="docutils literal"><span clas
 <h3>Fichier de configuration<a class="headerlink" href="#fichier-de-configuration" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La configuration de PHP se fait dans le fichier <code class="docutils literal"><span class="pre">php.ini</span></code>.</p>
 <p>Pour savoir où se trouve le ou les <code class="docutils literal"><span class="pre">php.ini</span></code> utilisés par votre interpreteur, lancez la commande suivante :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php --ini
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php --ini
 </pre></div>
 </div>
 <div class="admonition attention">
@@ -306,7 +307,7 @@ pour les opérations GPC (Get/Post/Cookie). Fonction obsolète en 5.3.0, supprim
 <li><code class="docutils literal"><span class="pre">display_errors</span></code> : affiche les erreurs. Doit être à On sur un poste de développement</li>
 <li><code class="docutils literal"><span class="pre">html_errors</span></code> : affiche les erreurs en HTML. Doit être à On sur un poste de développement</li>
 </ul>
-<div class="highlight-ini"><div class="highlight"><pre><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1"># /etc/php5/apache2/conf.d/20-xdebug.ini</span>
 <span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
 </pre></div>
 </div>
@@ -338,7 +339,7 @@ pour les opérations GPC (Get/Post/Cookie). Fonction obsolète en 5.3.0, supprim
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

@@ -235,7 +235,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </section>
 <section>
 <h2>Syntaxe de base</h2>
-<div class="first last highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
+<div class="first last highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
     <span class="k">const</span> <span class="no">CONSOMMATION</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1"># L/100km</span>
     <span class="k">const</span> <span class="no">CAPACITE_RESERVOIR</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">#L</span>
@@ -262,7 +262,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </section>
 <section>
 <h2>Héritage</h2>
-<div class="first last highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
+<div class="first last highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
     <span class="k">public</span> <span class="nv">$kilometrage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
@@ -292,7 +292,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </section>
 <section>
 <h2>Exceptions</h2>
-<div class="first last highlight-php"><div class="highlight"><pre><span class="k">try</span> <span class="p">{</span>
+<div class="first last highlight-php"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s1">&#39;Incident XY&#39;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span> <span class="c1">//affiche &quot;Incident XY&quot;</span>
@@ -302,7 +302,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </section>
 <section class="last">
 <h2>Namespace</h2>
-<div class="first last highlight-php"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">PHPUnit\Extensions\Database\DB\MetaData</span><span class="p">;</span>
+<div class="first last highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">PHPUnit\Extensions\Database\DB\MetaData</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">MySQL</span> <span class="k">extends</span> <span class="nx">InformationSchema</span> <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -360,7 +360,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 <section class="text-left">
 <h2>Installation des paquets</h2>
 <p class="first">Exécutez les commandes suivantes</p>
-<div class="last highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install mysql-server mysql-client</span>
+<div class="last highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install mysql-server mysql-client</span>
 <span class="go">sudo apt-get install apache2</span>
 <span class="go">sudo apt-get install curl git</span>
 <span class="go">sudo apt-get install php5 php5-cli php5-intl php5-xsl \</span>
@@ -375,42 +375,42 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 <ul class="simple">
 <li>dans <code class="file docutils literal"><span class="pre">/etc/php5/apache2/php.ini</span></code> :</li>
 </ul>
-<div class="highlight-ini"><div class="highlight"><pre><span class="c1">;date.timezone</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1">;date.timezone</span>
 <span class="na">date.timezone</span>  <span class="o">=</span> <span class="s">Europe/Paris</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li>dans <code class="file docutils literal"><span class="pre">/etc/php5/cli/php.ini</span></code> :</li>
 </ul>
-<div class="highlight-ini"><div class="highlight"><pre><span class="c1">;date.timezone</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="c1">;date.timezone</span>
 <span class="na">date.timezone</span> <span class="o">=</span> <span class="s">Europe/Paris</span>
 </pre></div>
 </div>
 <p>Ajoutez le ligne suivante à la fin du fichier <code class="file docutils literal"><span class="pre">/etc/php5/apache2/conf.d/20-xdebug.ini</span></code></p>
-<div class="last highlight-ini"><div class="highlight"><pre><span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
+<div class="last highlight-ini"><div class="highlight"><pre><span></span><span class="na">xdebug.max_nesting_level</span> <span class="o">=</span> <span class="s">250</span>
 </pre></div>
 </div>
 </section>
 <section class="text-left">
 <h2>Correction des droits sur les fichiers</h2>
 <p class="first">Exécutez les commandes suivantes</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -a -G www-data $(whoami)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo usermod -a -G www-data $(whoami)</span>
 <span class="go">sudo usermod -a -G $(whoami) www-data</span>
 </pre></div>
 </div>
 <p>Ajoutez la ligne suivante à la fin du fichier <code class="file docutils literal"><span class="pre">~/.profile</span></code></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>002
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">umask</span> 002
 </pre></div>
 </div>
 <p>Ajoutez la lignes suivante à la fin du fichier <code class="file docutils literal"><span class="pre">/etc/apache2/envvars</span></code></p>
-<div class="last highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>002
+<div class="last highlight-bash"><div class="highlight"><pre><span></span><span class="nb">umask</span> 002
 </pre></div>
 </div>
 </section>
 <section class="text-left">
 <h2>Correction des droits sur les fichiers</h2>
 <p class="first">Exécutez les commandes suivantes</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo chown www-data:www-data -R /var/www</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo chown www-data:www-data -R /var/www</span>
 <span class="go">sudo chmod g+w -R /var/www</span>
 <span class="go">sudo service apache2 restart</span>
 </pre></div>
@@ -420,15 +420,15 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 <section class="text-left">
 <h2>Installation de Symfony</h2>
 <p class="first">Allez dans le répertoire <code class="file docutils literal"><span class="pre">/var/www</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">cd /var/www</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /var/www</span>
 </pre></div>
 </div>
 <p>Téléchargez <strong class="program">Composer</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">curl -sS https://getcomposer.org/installer | php</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sS https://getcomposer.org/installer | php</span>
 </pre></div>
 </div>
 <p>Télécharger et installez <strong class="program">Symfony</strong> via <strong class="program">Composer</strong></p>
-<div class="last highlight-console"><div class="highlight"><pre><span class="go">php composer.phar create-project \</span>
+<div class="last highlight-console"><div class="highlight"><pre><span></span><span class="go">php composer.phar create-project \</span>
 <span class="go">    symfony/framework-standard-edition ./symfony</span>
 </pre></div>
 </div>
@@ -436,7 +436,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 <section class="text-left">
 <h2>Installation de Symfony</h2>
 <p class="first">À la fin de l&#8217;installation, paramétrez votre installation de <strong class="program">Symfony</strong> en spécifiant les paramètres <code class="docutils literal"><span class="pre">database_user</span></code> et <code class="docutils literal"><span class="pre">database_password</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Creating the &quot;app/config/parameters.yml&quot; file</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Creating the &quot;app/config/parameters.yml&quot; file</span>
 <span class="go">Some parameters are missing. Please provide them.</span>
 <span class="go">database_host (127.0.0.1):</span>
 <span class="go">database_port (null):</span>
@@ -451,18 +451,18 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </pre></div>
 </div>
 <p>Déplacez le fichier <code class="file docutils literal"><span class="pre">composer.phar</span></code> dans le répertoire <code class="file docutils literal"><span class="pre">symfony</span></code></p>
-<div class="last highlight-console"><div class="highlight"><pre><span class="go">mv composer.phar symfony</span>
+<div class="last highlight-console"><div class="highlight"><pre><span></span><span class="go">mv composer.phar symfony</span>
 </pre></div>
 </div>
 </section>
 <section class="text-left">
 <h2>Création de la base de données</h2>
 <p class="first">Connectez-vous à MySQL</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">mysql -uroot -p</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mysql -uroot -p</span>
 </pre></div>
 </div>
 <p>Entrez les requêtes suivantes</p>
-<div class="last highlight-mysql"><div class="highlight"><pre><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">symfony</span><span class="p">;</span>
+<div class="last highlight-mysql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">symfony</span><span class="p">;</span>
 <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">symfony</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">symfony</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;symfony_pass&#39;</span><span class="p">;</span>
 <span class="n">QUIT</span>
 </pre></div>
@@ -471,14 +471,14 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 <section class="text-left">
 <h2>Mise en place du VHost</h2>
 <p class="first">Ajoutez la signe suivante à la fin du fichier <code class="file docutils literal"><span class="pre">/etc/hosts</span></code></p>
-<div class="last highlight-bash"><div class="highlight"><pre>127.0.1.1  symfony.loc.epsi.fr
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>127.0.1.1  symfony.loc.epsi.fr
 </pre></div>
 </div>
 </section>
 <section class="text-left">
 <h2>Mise en place du VHost</h2>
 <p class="first">Créez le fichier <code class="file docutils literal"><span class="pre">/etc/apache2/sites-available/symfony.conf</span></code> et ajoutez-y les lignes suivantes</p>
-<div class="highlight-apache"><div class="highlight"><pre><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+<div class="highlight-apache"><div class="highlight"><pre><span></span><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
     <span class="nb">ServerName</span> symfony.loc.epsi.fr
 
     <span class="nb">DocumentRoot</span> <span class="sx">/var/www/symfony/web</span>
@@ -493,7 +493,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </pre></div>
 </div>
 <p>Activez le VHost et rechargez Apache</p>
-<div class="last highlight-console"><div class="highlight"><pre><span class="go">sudo a2ensite symfony.conf</span>
+<div class="last highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo a2ensite symfony.conf</span>
 <span class="go">sudo service apache2 reload</span>
 </pre></div>
 </div>
@@ -505,7 +505,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 </section>
 <section class="last">
 <h2>Vérification de votre configuration de PHP</h2>
-<div class="first highlight-console"><div class="highlight"><pre><span class="go">cd /var/www/symfony</span>
+<div class="first highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /var/www/symfony</span>
 <span class="go">php app/check.php</span>
 </pre></div>
 </div>
@@ -536,7 +536,7 @@ open source = l’utilisation, l’étude, la modification et la duplication en 
 Déposer une fonctionnalité en un ensemble de fonctions basiques, appelées services</section>
 <section class="last">
 <h2>Fichiers</h2>
-<div class="first last highlight-console"><div class="highlight"><pre><span class="gp">$</span> ls -A1 /var/www/symfony
+<div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ls -A1 /var/www/symfony
 <span class="go">app</span>
 <span class="go">bin</span>
 <span class="go">composer.json</span>
@@ -601,7 +601,7 @@ Déposer une fonctionnalité en un ensemble de fonctions basiques, appelées ser
 <section class="text-left">
 <h2>Création d'un bundle</h2>
 <p class="first">Exécutez la commande suivante</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">php app/console generate:bundle</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">php app/console generate:bundle</span>
 </pre></div>
 </div>
 <dl class="last docutils">
@@ -630,7 +630,7 @@ Déposer une fonctionnalité en un ensemble de fonctions basiques, appelées ser
 </section>
 <section class="text-left last">
 <h2>Structure d'un bundle</h2>
-<div class="first last highlight-console"><div class="highlight"><pre><span class="go">src/Epsi/Bundle/BlogBundle/</span>
+<div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="go">src/Epsi/Bundle/BlogBundle/</span>
 <span class="go">├── Controller</span>
 <span class="go">│   └── DefaultController.php</span>
 <span class="go">├── DependencyInjection</span>
@@ -668,7 +668,7 @@ Déposer une fonctionnalité en un ensemble de fonctions basiques, appelées ser
 <section class="text-left">
 <h2>Activation</h2>
 <p class="first">Dans votre bundle, modifiez le fichier <code class="docutils literal"><span class="pre">Resources/views/Default/index.html.twig</span></code> comme suit</p>
-<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;::base.html.twig&quot;</span> <span class="cp">%}</span>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;::base.html.twig&quot;</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">body</span> <span class="cp">%}</span>
     Hello <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span>!
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>

@@ -48,12 +48,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -77,9 +79,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -147,7 +148,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -156,12 +157,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Les contrôleurs</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -176,7 +177,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <div class="section" id="l-objet-response">
 <h2>L&#8217;objet <code class="docutils literal"><span class="pre">Response</span></code><a class="headerlink" href="#l-objet-response" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Voici en version longue de qu&#8217;il faut faire pour construire et retourner une réponse :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
     <span class="c1">// on instancie une réponse</span>
     <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
     <span class="c1">// on définit le contenu</span>
@@ -190,7 +191,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </div>
 <p>Mais généralement, on préfère utiliser les vues pour générer le contenu de la réponse :</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Default:index.html.twig&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
     <span class="p">));</span>
@@ -200,7 +201,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </div></blockquote>
 <p>Cette méthode est un raccourcie qui permet de générer une réponse en une seul ligne. Le contenu de la réponse est généré par le template <code class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Resources/views/Default/index.html.twig</span></code> :</p>
 <blockquote>
-<div><div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;::base.html.twig&quot;</span> <span class="cp">%}</span>
+<div><div class="highlight-html+jinja"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;::base.html.twig&quot;</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">body</span> <span class="cp">%}</span>
     Hello <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span>!
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
@@ -216,7 +217,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </li>
 <li><p class="first">Il permet de convertir un paramètre de l&#8217;URL en objet</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
 <span class="sd"> * @Route(&quot;/blog/{id}&quot;)</span>
 <span class="sd"> * @ParamConverter(&quot;post&quot;, class=&quot;EpsiBlogBundle:Post&quot;)</span>
 <span class="sd"> */</span>
@@ -229,14 +230,14 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </li>
 <li><p class="first">Dans la configuration de Symfony, on peut activer la conversion automatique</p>
 <blockquote>
-<div><div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># app/config/config.yml</span>
-<span class="l-Scalar-Plain">sensio_framework_extra</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">request</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">converters</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
-        <span class="l-Scalar-Plain">auto_convert</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<div><div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># app/config/config.yml</span>
+<span class="l l-Scalar l-Scalar-Plain">sensio_framework_extra</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">request</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">converters</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">auto_convert</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
 <span class="sd"> * @Route(&quot;/blog/{id}/comments/{comment_id}&quot;)</span>
 <span class="sd"> * @ParamConverter(&quot;comment&quot;, class=&quot;EpsiBlogBundle:Comment&quot;, options={&quot;id&quot; = &quot;comment_id&quot;})</span>
 <span class="sd"> */</span>
@@ -256,7 +257,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 </li>
 <li><p class="first">Il permet de spécifier quel template utilise le contrôleur</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
 <span class="sd"> * @Template(&quot;EpsiBlogBundle:Post:show.html.twig&quot;)</span>
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
@@ -268,7 +269,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
 <span class="sd"> * @ParamConverter(&quot;post&quot;, class=&quot;EpsiBlogBundle:Post&quot;)</span>
 <span class="sd"> * @Template(&quot;EpsiBlogBundle:Post:show.html.twig&quot;, vars={&quot;post&quot;})</span>
 <span class="sd"> */</span>
@@ -277,7 +278,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
 <span class="sd"> * @Template(vars={&quot;post&quot;})</span>
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
@@ -285,7 +286,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
 <span class="sd"> * @Template</span>
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
@@ -300,7 +301,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <p>Si vous souhaitez tout de même modifier certains éléments de la réponse (Content-Type, code de retour, durée du cache, etc.), on peut passer un objet <code class="docutils literal"><span class="pre">Response</span></code> en paramètre à la méthode <code class="docutils literal"><span class="pre">render()</span></code>.</p>
 <p>On peut également faire des redirections dans le contrôleur avec la méthode <code class="docutils literal"><span class="pre">redirect()</span></code>. La méthode <code class="docutils literal"><span class="pre">generateUrl</span></code> permet quant à elle de générer l&#8217;URL de la page de destination :</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;epsi_blog_default_index&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;the world&#39;</span><span class="p">)));</span>
 <span class="p">}</span>
 </pre></div>
@@ -314,7 +315,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 <h3>Paramètres de la route<a class="headerlink" href="#parametres-de-la-route" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Les paramètres passés par dans l&#8217;URL (hors paramètres GET) doivent êtres récupérés comme paramètre dans dans la route. Il seront ensuite transmis au contrôleur comme arguments de celui-ci :</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="sd">/**</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="sd">/**</span>
 <span class="sd"> * @Route(&quot;/hello/{name}&quot;)</span>
 <span class="sd"> * @Template()</span>
 <span class="sd"> */</span>
@@ -404,7 +405,7 @@ La demande de l&#8217;internaute se trouve dans un objet <code class="docutils l
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

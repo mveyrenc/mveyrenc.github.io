@@ -50,12 +50,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -79,9 +81,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -106,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="sujet.html">Sujet du TP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation-php.html">Installation et configuration de PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation-symfony.html">Installation de Symfony</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Création du bundle</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Création du bundle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-de-la-console">Utilisation de la console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-du-bundle-epsiblogbundle">Création du bundle EpsiBlogBundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
@@ -154,7 +155,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -163,12 +164,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Création du bundle</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -182,7 +183,7 @@
 <h2>Utilisation de la console<a class="headerlink" href="#utilisation-de-la-console" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La console permet de lancer des actions en ligne de commande pour aider au développement, lancer des tâches planifiées (cron), etc.</p>
 <p>Pour lancer la console, il faut exécuter le script <code class="docutils literal"><span class="pre">app/console</span></code> suivit d&#8217;arguments pour lancer les différentes commandes. Pour avoir la liste des commandes disponible, il suffit de lancer le script <code class="docutils literal"><span class="pre">app/console</span></code> sans arguments :</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console
 </pre></div>
 </div>
 </div>
@@ -191,14 +192,14 @@
 <ol class="arabic">
 <li><p class="first">Exécutez la commande suivante :</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> php app/console generate:bundle
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console generate:bundle
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">La namespace du bundle</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">  Welcome to the Symfony2 bundle generator</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Welcome to the Symfony2 bundle generator</span>
 
 <span class="go">Your application code must be written in bundles. This command helps</span>
 <span class="go">you generate them easily.</span>
@@ -230,7 +231,7 @@
 </li>
 <li><p class="first">Le nom du bundle</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">In your code, a bundle is often referenced by its name. It can be the</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">In your code, a bundle is often referenced by its name. It can be the</span>
 <span class="go">concatenation of all namespace parts but it&#39;s really up to you to come</span>
 <span class="go">up with a unique name (a good practice is to start with the vendor name).</span>
 <span class="go">Based on the namespace, we suggest EpsiBlogBundle.</span>
@@ -243,7 +244,7 @@
 </li>
 <li><p class="first">L&#8217;emplacement du bundle</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">The bundle can be generated anywhere. The suggested default directory uses</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">The bundle can be generated anywhere. The suggested default directory uses</span>
 <span class="go">the standard conventions.</span>
 
 <span class="go">Target directory [~/symfony/src]:</span>
@@ -254,7 +255,7 @@
 </li>
 <li><p class="first">Le format de la configuration</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">Determine the format to use for the generated configuration.</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Determine the format to use for the generated configuration.</span>
 
 <span class="go">Configuration format (yml, xml, php, or annotation):</span>
 </pre></div>
@@ -265,7 +266,7 @@
 </li>
 <li><p class="first">La structure générer</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">To help you get started faster, the command can generate some</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">To help you get started faster, the command can generate some</span>
 <span class="go">code snippets for you.</span>
 
 <span class="go">Do you want to generate the whole directory structure [no]?</span>
@@ -277,7 +278,7 @@
 </li>
 <li><p class="first">Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">  Summary before generation</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Summary before generation</span>
 
 <span class="go">You are going to generate a &quot;Epsi\Bundle\BlogBundle\EpsiBlogBundle&quot; bundle</span>
 <span class="go">in &quot;~/symfony/src/&quot; using the &quot;annotation&quot; format.</span>
@@ -305,7 +306,7 @@
 <ol class="arabic">
 <li><p class="first">Symfony a généré la structure du bundle</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span class="go">src/Epsi</span>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">src/Epsi</span>
 <span class="go">└── Bundle</span>
 <span class="go">    └── BlogBundle</span>
 <span class="go">        ├── Controller</span>
@@ -337,7 +338,7 @@
 </li>
 <li><p class="first">Symfony enregistre notre bundle dans le Kernel (<code class="docutils literal"><span class="pre">app/AppKernel.php</span></code>)</p>
 <blockquote>
-<div><div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">AppKernel</span> <span class="k">extends</span> <span class="nx">Kernel</span>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AppKernel</span> <span class="k">extends</span> <span class="nx">Kernel</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">registerBundles</span><span class="p">()</span>
     <span class="p">{</span>
@@ -355,10 +356,10 @@
 </li>
 <li><p class="first">Symfony ajoute les routes de notre bundle dans le Routeur (<code class="docutils literal"><span class="pre">app/config/routing.yml</span></code>)</p>
 <blockquote>
-<div><div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">epsi_blog</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">resource</span><span class="p-Indicator">:</span> <span class="s">&quot;@EpsiBlogBundle/Controller/&quot;</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span>     <span class="l-Scalar-Plain">annotation</span>
-    <span class="l-Scalar-Plain">prefix</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">/</span>
+<div><div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">epsi_blog</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">resource</span><span class="p p-Indicator">:</span> <span class="s">&quot;@EpsiBlogBundle/Controller/&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span>     <span class="l l-Scalar l-Scalar-Plain">annotation</span>
+    <span class="l l-Scalar l-Scalar-Plain">prefix</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">/</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -392,7 +393,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 

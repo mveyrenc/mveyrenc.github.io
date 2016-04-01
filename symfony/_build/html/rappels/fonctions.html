@@ -50,12 +50,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
         
             
@@ -79,9 +81,8 @@
             
           </div>
         
-
-        
-      </div>
+          
+        </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
@@ -92,7 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Programmation en PHP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usages.html">Que peut faire PHP ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="syntaxe.html">La syntaxe</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Les fonctions</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les fonctions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fonctions-definies-par-l-utilisateur">Fonctions définies par l&#8217;utilisateur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#arguments-de-fonction">Arguments de fonction</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#passage-d-arguments-par-valeur">Passage d&#8217;arguments par valeur</a></li>
@@ -166,7 +167,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -175,12 +176,12 @@
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Les fonctions</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
+    <li class="wy-breadcrumbs-aside">
+      
         
 
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
@@ -192,7 +193,7 @@
 <div class="section" id="fonctions-definies-par-l-utilisateur">
 <h2>Fonctions définies par l&#8217;utilisateur<a class="headerlink" href="#fonctions-definies-par-l-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une fonction peut être définie en utilisant la syntaxe suivante :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$arg_1</span><span class="p">,</span> <span class="nv">$arg_2</span><span class="p">,</span> <span class="cm">/* ..., */</span> <span class="nv">$arg_n</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$arg_1</span><span class="p">,</span> <span class="nv">$arg_2</span><span class="p">,</span> <span class="cm">/* ..., */</span> <span class="nv">$arg_n</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s2">&quot;Exemple de fonction.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
     <span class="k">return</span> <span class="nv">$retval</span><span class="p">;</span>
 <span class="p">}</span>
@@ -208,7 +209,7 @@ Un nom de fonction valide commence par une lettre ou un underscore, suivi par un
 le passage par référence, et des valeurs d&#8217;arguments par défaut. Une liste variable d&#8217;arguments est également supportée.</p>
 <div class="section" id="passage-d-arguments-par-valeur">
 <h3>Passage d&#8217;arguments par valeur<a class="headerlink" href="#passage-d-arguments-par-valeur" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">add_some_extra</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">add_some_extra</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$string</span> <span class="o">.=</span> <span class="s1">&#39;, et un peu plus.&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Ceci est une chaîne&#39;</span><span class="p">;</span>
@@ -219,7 +220,7 @@ le passage par référence, et des valeurs d&#8217;arguments par défaut. Une li
 </div>
 <div class="section" id="passage-d-arguments-par-reference">
 <h3>Passage d&#8217;arguments par référence<a class="headerlink" href="#passage-d-arguments-par-reference" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">add_some_extra</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$string</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">add_some_extra</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$string</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$string</span> <span class="o">.=</span> <span class="s1">&#39;, et un peu plus.&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Ceci est une chaîne&#39;</span><span class="p">;</span>
@@ -230,7 +231,7 @@ le passage par référence, et des valeurs d&#8217;arguments par défaut. Une li
 </div>
 <div class="section" id="valeur-par-defaut-des-arguments">
 <h3>Valeur par défaut des arguments<a class="headerlink" href="#valeur-par-defaut-des-arguments" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">servir_cafe</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">=</span> <span class="s2">&quot;cappuccino&quot;</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">servir_cafe</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">=</span> <span class="s2">&quot;cappuccino&quot;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s2">&quot;Servir un </span><span class="si">$type</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">echo</span> <span class="nx">servir_cafe</span><span class="p">();</span> <span class="c1">// Affiche &quot;Servir un cappuccino&quot;</span>
@@ -240,7 +241,7 @@ le passage par référence, et des valeurs d&#8217;arguments par défaut. Une li
 </div>
 <p>La valeur par défaut d&#8217;un argument doit obligatoirement être une constante, et ne peut être ni une variable, ni un membre de classe, ni un appel de fonction.</p>
 <p>Les arguments sans valeur par défaut doivent être en avant ceux ayant une veleur par défaut.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">servir_cafe</span> <span class="p">(</span><span class="nv">$action</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="s2">&quot;cappuccino&quot;</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">servir_cafe</span> <span class="p">(</span><span class="nv">$action</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="s2">&quot;cappuccino&quot;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s2">&quot;Servir un </span><span class="si">$type</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">echo</span> <span class="nx">servir_cafe</span><span class="p">(</span><span class="s2">&quot;Servir&quot;</span><span class="p">);</span> <span class="c1">// Affiche &quot;Servir un cappuccino&quot;</span>
@@ -259,7 +260,7 @@ le passage par référence, et des valeurs d&#8217;arguments par défaut. Une li
 Ceci est implémenté en utilisant le mot-clé <code class="docutils literal"><span class="pre">...</span></code> en PHP 5.6 et suivants, et en utilisant les fonctions <cite>func_num_args()</cite>, <cite>func_get_arg()</cite> et <cite>func_get_args()</cite> en PHP 5.5 et antérieurs.</p>
 <div class="section" id="en-php-5-6">
 <h4>En PHP 5.6<a class="headerlink" href="#en-php-5-6" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">sum</span><span class="p">(</span><span class="o">...</span><span class="nv">$numbers</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">sum</span><span class="p">(</span><span class="o">...</span><span class="nv">$numbers</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">foreach</span> <span class="p">(</span><span class="nv">$numbers</span> <span class="k">as</span> <span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$acc</span> <span class="o">+=</span> <span class="nv">$n</span><span class="p">;</span>
@@ -271,7 +272,7 @@ Ceci est implémenté en utilisant le mot-clé <code class="docutils literal"><s
 </pre></div>
 </div>
 <p>Le mot-clé <cite>...</cite> peut aussi servir à passer des arguments à une fonction :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -291,7 +292,7 @@ cependant, l&#8217;accès aux arguments de la fonction nécessite l&#8217;utilis
 <li><code class="docutils literal"><span class="pre">func_get_arg(</span> <span class="pre">int</span> <span class="pre">$arg_num</span> <span class="pre">)</span></code> pour avoir un attribut précis</li>
 <li><code class="docutils literal"><span class="pre">func_get_args()</span></code> pour obtenir la liste des attributs</li>
 </ul>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">sum</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">sum</span><span class="p">()</span> <span class="p">{</span>
     <span class="nv">$acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">foreach</span> <span class="p">(</span><span class="nb">func_get_args</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$acc</span> <span class="o">+=</span> <span class="nv">$n</span><span class="p">;</span>
@@ -306,7 +307,7 @@ cependant, l&#8217;accès aux arguments de la fonction nécessite l&#8217;utilis
 </div>
 <div class="section" id="typage-des-arguments">
 <h3>Typage des arguments<a class="headerlink" href="#typage-des-arguments" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">servir_cafe</span> <span class="p">(</span><span class="nx">string</span> <span class="nv">$action</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="s2">&quot;cappuccino&quot;</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">servir_cafe</span> <span class="p">(</span><span class="nx">string</span> <span class="nv">$action</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="s2">&quot;cappuccino&quot;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s2">&quot;Servir un </span><span class="si">$type</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">echo</span> <span class="nx">servir_cafe</span><span class="p">(</span><span class="s2">&quot;Servir&quot;</span><span class="p">);</span> <span class="c1">// Fonctionne : Affiche &quot;Servir un cappuccino&quot;</span>
@@ -321,7 +322,7 @@ cependant, l&#8217;accès aux arguments de la fonction nécessite l&#8217;utilis
 <p>PHP supporte le concept de fonctions variables.
 Cela signifie que si le nom d&#8217;une variable est suivi de parenthèses, PHP recherchera une fonction de même nom, et essaiera de l&#8217;exécuter.
 Cela peut servir, entre autres, pour faire des fonctions de rappel, des tables de fonctions...</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">function</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s2">&quot;dans foo()&lt;br /&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -350,12 +351,12 @@ Cela peut servir, entre autres, pour faire des fonctions de rappel, des tables d
 <div class="section" id="fonctions-anonymes">
 <h2>Fonctions anonymes<a class="headerlink" href="#fonctions-anonymes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les fonctions anonymes, aussi appelées fermetures ou closures permettent la création de fonctions sans préciser leur nom.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">echo</span> <span class="nb">preg_replace_callback</span><span class="p">(</span><span class="s1">&#39;~-([a-z])~&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$match</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nb">preg_replace_callback</span><span class="p">(</span><span class="s1">&#39;~-([a-z])~&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$match</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$match</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
 <span class="p">},</span> <span class="s1">&#39;bonjour-le-monde&#39;</span><span class="p">);</span> <span class="c1">// Affiche &quot;bonjourLeMonde&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$greet</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$greet</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;Bonjour %s&quot;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span>
 <span class="p">};</span>
 
@@ -390,7 +391,7 @@ Cela peut servir, entre autres, pour faire des fonctions de rappel, des tables d
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
