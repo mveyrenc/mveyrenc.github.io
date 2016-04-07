@@ -31,4 +31,23 @@ class BlogController extends Controller
 
         return $response;
     }
+
+    /**
+     * @Route("/blog3/{name}")
+     */
+    public function index3Action($name)
+    {
+        $response = new Response();
+        $response->setContent(
+            $this->get('templating')->render(
+                'EpsiBlogBundle:Blog:index3.html.twig',
+                array(
+                    'name' => $name,
+                )
+            )
+        );
+        $response->setStatusCode(Response::HTTP_OK);
+
+        return $response;
+    }
 }
