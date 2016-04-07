@@ -63,4 +63,15 @@ class BlogController extends Controller
             )
         );
     }
+
+    /**
+     * @Route("/blog5/{name}")
+     * @Template()
+     */
+    public function index5Action($name)
+    {
+        return array(
+            'name' => $name,
+        );
+    }
 }
