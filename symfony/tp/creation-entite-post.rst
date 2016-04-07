@@ -1,8 +1,36 @@
-###########
-Les entités
-###########
+#########################
+Création de l'entité Post
+#########################
 
-Les entités, ou entity, sont des classes métiers qui décrivent chaque objet de notre application.
+Les entités, ou entity, sont des classes permettent de manipuler les données en base de donnéee.
+
+Pour rappel notre entité Post contient les données suivantes :
+
+.. container:: wy-text-center
+
+    .. scruffy::
+
+        [Post|title:string(100);date:datetime;body:text]
+
+
+Dans un terminal, lancez la commande suivante pour créer votre entité :
+
+$ php app/console generate:doctrine:entity
+
+  Welcome to the Doctrine2 entity generator
+
+
+
+This command helps you generate Doctrine2 entities.
+
+First, you need to give the entity name you want to generate.
+You must use the shortcut notation like AcmeBlogBundle:Post.
+
+The Entity shortcut name:
+
+Réponse : EpsiBlogBundle:Post
+
+
 
 Dans notre application, nous retrouverons ainsi les Entity:
 
