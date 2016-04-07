@@ -19,4 +19,16 @@ class BlogController extends Controller
 
         return $response;
     }
+
+    /**
+     * @Route("/blog2/{name}")
+     */
+    public function index2Action($name)
+    {
+        $response = new Response();
+        $response->setContent('Hello '.$name.'!');
+        $response->setStatusCode(Response::HTTP_OK);
+
+        return $response;
+    }
 }
