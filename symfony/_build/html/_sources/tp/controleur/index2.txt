@@ -8,15 +8,16 @@ Ajoutez la méthode ``index2Action`` surlignée en dessous de la méthode ``inde
 
 .. code-block:: php
     :linenos:
-    :emphasize-lines: 9-19
+    :emphasize-lines: 10-20
 
     class BlogController extends Controller
     {
         ...
 
         public function index1Action()
-            ...
         {
+            ...
+        }
 
         /**
          * @Route("/blog2/{name}")

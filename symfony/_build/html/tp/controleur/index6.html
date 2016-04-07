@@ -115,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index3.html">Utilisation des templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index4.html">Utilisation des templates avec moins de code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index5.html">Utilisation des templates avec encore moins de code</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Validation des paramètres</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Validation des paramètres</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
@@ -159,7 +159,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -207,15 +207,17 @@ qui valide le format d&#8217;un paramètre avec une expression régulière.</p>
 18
 19
 20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index4Action</span><span class="p">()</span>
-        <span class="o">...</span>
     <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
     <span class="sd">/**</span>
 <span class="hll"><span class="sd">     * @Route(&quot;/blog5/{name}&quot;, requirements={&quot;name&quot; = &quot;(\w+[\s]?)+&quot;})</span>

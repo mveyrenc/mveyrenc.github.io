@@ -20,6 +20,7 @@ Ajoutez une nouvelle action dans le contrôleur :
          * @Route("/blog3/{name}")
          */
         public function index3Action()
+        {
             $response = new Response();
             $response->setContent(
                 $this->get('templating')->render(
@@ -32,7 +33,7 @@ Ajoutez une nouvelle action dans le contrôleur :
             $response->setStatusCode(Response::HTTP_OK);
 
             return $response;
-        {
+        }
 
         /**
          * @Route("/blog4/{name}")

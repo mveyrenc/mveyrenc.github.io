@@ -113,7 +113,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index1.html">Création d&#8217;un contrôleur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index2.html">Paramètres dans l&#8217;URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index3.html">Utilisation des templates</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Utilisation des templates avec moins de code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Utilisation des templates avec moins de code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index5.html">Utilisation des templates avec encore moins de code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index6.html">Validation des paramètres</a></li>
 </ul>
@@ -159,7 +159,7 @@
         <div class="rst-content">
           
 
- 
+
 
 
 
@@ -220,7 +220,8 @@
 32
 33
 34
-35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+35
+36</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BlogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="o">...</span>
 
@@ -228,6 +229,7 @@
 <span class="sd">     * @Route(&quot;/blog3/{name}&quot;)</span>
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index3Action</span><span class="p">()</span>
+    <span class="p">{</span>
         <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
         <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;templating&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
@@ -240,9 +242,9 @@
         <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">);</span>
 
         <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
-    <span class="p">{</span>
-
-<span class="hll">    <span class="sd">/**</span>
+    <span class="p">}</span>
+<span class="hll">
+</span><span class="hll">    <span class="sd">/**</span>
 </span><span class="hll"><span class="sd">     * @Route(&quot;/blog4/{name}&quot;)</span>
 </span><span class="hll"><span class="sd">     */</span>
 </span><span class="hll">    <span class="k">public</span> <span class="k">function</span> <span class="nf">index4Action</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
@@ -253,8 +255,8 @@
 </span><span class="hll">                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
 </span><span class="hll">            <span class="p">)</span>
 </span><span class="hll">        <span class="p">);</span>
-</span><span class="hll">    <span class="p">}</span>
-</span><span class="p">}</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Allez sur la page <a class="reference external" href="http://symfony.loc.epsi.fr/app_dev.php/blog4/John">http://symfony.loc.epsi.fr/app_dev.php/blog4/John</a></p>

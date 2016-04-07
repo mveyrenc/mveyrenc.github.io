@@ -25,15 +25,16 @@ Comme exemple, ajoutez la méthode ``index3Action`` dans le contrôleur :
 
 .. code-block:: php
     :linenos:
-    :emphasize-lines: 9-26
+    :emphasize-lines: 10-27
 
     class BlogController extends Controller
     {
         ...
 
         public function index2Action()
-            ...
         {
+            ...
+        }
 
         /**
          * @Route("/blog3/{name}")

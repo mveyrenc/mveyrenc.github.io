@@ -22,8 +22,6 @@ Actuellement, les fichiers ne sont pas accessibles par le visiteur car il n'a ac
 
 L'option ``symlink`` permet de créer des liens symboliques au lieu de copies physique des fichiers. Cela nous permet de ne pas retaper cette commande à chaque modification.
 
- :
-
 Modifiez le template ``EpsiBlogBundle:Blog:index5.html.twig`` pour charger la CSS et les javascripts dans nos templates :
 
 .. code-block:: html+jinja

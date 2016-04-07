@@ -11,7 +11,7 @@ qui valide le format d'un paramètre avec une expression régulière.
 
 .. code-block:: php
     :linenos:
-    :emphasize-lines: 12
+    :emphasize-lines: 13
 
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
@@ -20,8 +20,9 @@ qui valide le format d'un paramètre avec une expression régulière.
         ...
 
         public function index4Action()
-            ...
         {
+            ...
+        }
 
         /**
          * @Route("/blog5/{name}", requirements={"name" = "(\w+[\s]?)+"})
