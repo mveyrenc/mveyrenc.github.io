@@ -26,7 +26,7 @@ class BlogController extends Controller
     public function index2Action($name)
     {
         $response = new Response();
-        $response->setContent('Hello '.$name.'!');
+        $response->setContent('Hello ' . $name . '!');
         $response->setStatusCode(Response::HTTP_OK);
 
         return $response;
@@ -49,5 +49,18 @@ class BlogController extends Controller
         $response->setStatusCode(Response::HTTP_OK);
 
         return $response;
+    }
+
+    /**
+     * @Route("/blog4/{name}")
+     */
+    public function index4Action($name)
+    {
+        return $this->render(
+            'EpsiBlogBundle:Blog:index3.html.twig',
+            array(
+                'name' => $name,
+            )
+        );
     }
 }
