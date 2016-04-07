@@ -10,7 +10,7 @@ Ajoutez une nouvelle action dans le contrôleur :
 
 .. code-block:: php
     :linenos:
-    :emphasize-lines: 23-34
+    :emphasize-lines: 24-35
 
     class BlogController extends Controller
     {
