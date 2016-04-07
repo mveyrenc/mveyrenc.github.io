@@ -5,6 +5,7 @@ namespace Epsi\Bundle\BlogBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class BlogController extends Controller
 {
@@ -65,7 +66,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/blog5/{name}")
+     * @Route("/blog5/{name}", requirements={"name" = "(\w+[\s]?)+"})
      * @Template()
      */
     public function index5Action($name)

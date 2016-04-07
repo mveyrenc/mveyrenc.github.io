@@ -1,1 +1,12 @@
-Hello <b>{{ name }}</b>!
+{#Hello <b>{{ name }}</b>!#}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equic="Content-type" content="text/html; charset=utf-8"/>
+    </head>
+    <body>
+    {% block body %}
+        Hello {{ name }}!
+    {% endblock %}
+    </body>
+</html>
