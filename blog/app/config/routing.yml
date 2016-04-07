@@ -1,3 +1,8 @@
+epsi_blog:
+    resource: "@EpsiBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
