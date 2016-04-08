@@ -40,7 +40,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
-        <link rel="next" title="Console" href="../aide/console.html"/>
+        <link rel="next" title="Génération de l’entité" href="creation-entite-post/generation-entite.html"/>
         <link rel="prev" title="Configuration de la base de données" href="configuration-bdd.html"/> 
 
   
@@ -113,7 +113,13 @@
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Les routes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration-bdd.html">Configuration de la base de données</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Création de l&#8217;entité Post</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Création de l&#8217;entité Post</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/generation-entite.html">Génération de l&#8217;entité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/insersion-bdd.html">Création de la table correspondant dans la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/orm.html">L&#8217;ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/autres-entites.html">Autres entités du blog</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -181,104 +187,8 @@
 <img src="../_images/scruffy-9a4598cce33e3fd0aba019f29543c5dd453d660c.png" alt="[Post|title:string(100);date:datetime;body:text]" />
 </p>
 </div>
-<p>Dans un terminal, lancez la commande suivante pour créer votre entité :</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console generate:doctrine:entity
-
-<span class="go">  Welcome to the Doctrine2 entity generator</span>
-
-
-
-<span class="go">This command helps you generate Doctrine2 entities.</span>
-
-<span class="go">First, you need to give the entity name you want to generate.</span>
-<span class="go">You must use the shortcut notation like AcmeBlogBundle:Post.</span>
-
-<span class="go">The Entity shortcut name:</span>
-
-<span class="go">**Répondez** ``EpsiBlogBundle:Post``</span>
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Determine the format to use for the mapping information.</span>
-
-<span class="go">Configuration format (yml, xml, php, or annotation) [annotation]:</span>
-
-<span class="go">**Répondez** ``annotation``</span>
-</pre></div>
-</div>
-<p>Entrons le premier champ, <code class="docutils literal"><span class="pre">title</span></code> :</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Instead of starting with a blank entity, you can add some fields now.</span>
-<span class="go">Note that the primary key will be added automatically (named id).</span>
-
-<span class="go">Available types: array, simple_array, json_array, object,</span>
-<span class="go">boolean, integer, smallint, bigint, string, text, datetime, datetimetz,</span>
-<span class="go">date, time, decimal, float, binary, blob, guid.</span>
-
-<span class="go">New field name (press &lt;return&gt; to stop adding fields):</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">title</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Field type [string]:</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">string</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Field length [255]:</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">100</span></code></p>
-</div></blockquote>
-<p>Entrons le champ <code class="docutils literal"><span class="pre">date</span></code> :</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">New field name (press &lt;return&gt; to stop adding fields):</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">date</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Field type [string]:</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">datetime</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">New field name (press &lt;return&gt; to stop adding fields):</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>Entrons le champ <code class="docutils literal"><span class="pre">body</span></code> :</p>
-<blockquote>
-<div><p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">body</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Field type [string]:</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">text</span></code></p>
-</div></blockquote>
-<p>Finalisons la création de l&#8217;entité :</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">New field name (press &lt;return&gt; to stop adding fields):</span>
-</pre></div>
-</div>
-<p><strong>Tapez juste sur la touche Entrée pour stopper l&#8217;ajout de champ dans l&#8217;entité</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Do you want to generate an empty repository class [no]?</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">yes</span></code></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Summary before generation</span>
-
-
-<span class="go">You are going to generate a &quot;EpsiBlogBundle:Post&quot; Doctrine2 entity</span>
-<span class="go">using the &quot;annotation&quot; format.</span>
-
-<span class="go">Do you confirm generation [yes]?</span>
-</pre></div>
-</div>
-<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">yes</span></code></p>
-</div></blockquote>
-<p>Le générateur a créé deux fichiers dans le dossier <code class="docutils literal"><span class="pre">src/Epsi/Bundle/BlogBundle/Entity/</span></code> :</p>
-<blockquote>
-<div><dl class="docutils">
-<dt><code class="file docutils literal"><span class="pre">Post.php</span></code></dt>
-<dd>Ce fichier contient la classe <code class="docutils literal"><span class="pre">Post</span></code> qui représente un post dans notre application.</dd>
-<dt><code class="file docutils literal"><span class="pre">PostRepository.php</span></code></dt>
-<dd>Ce fichier contient la classe <code class="docutils literal"><span class="pre">PostRepository</span></code> qui permet de faire des requêtes dans la table qui contient les posts dans notre base de données.</dd>
-</dl>
-</div></blockquote>
 </div>
 
 
@@ -288,7 +198,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../aide/console.html" class="btn btn-neutral float-right" title="Console" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="creation-entite-post/generation-entite.html" class="btn btn-neutral float-right" title="Génération de l’entité" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="configuration-bdd.html" class="btn btn-neutral" title="Configuration de la base de données" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>

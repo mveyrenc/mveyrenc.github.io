@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>L’ORM &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
+        <link rel="up" title="Création de l’entité Post" href="../creation-entite-post.html"/>
+        <link rel="next" title="Autres entités du blog" href="autres-entites.html"/>
+        <link rel="prev" title="Création de la table correspondant dans la base de données" href="insersion-bdd.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-symfony.html">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration-bdd.html">Configuration de la base de données</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../creation-entite-post.html">Création de l&#8217;entité Post</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="generation-entite.html">Génération de l&#8217;entité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insersion-bdd.html">Création de la table correspondant dans la base de données</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">L&#8217;ORM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definition">Définition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explication">Explication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fonctionnement">Fonctionnement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autres-entites.html">Autres entités du blog</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/controller.html">Contrôlleur</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../creation-entite-post.html">Création de l&#8217;entité Post</a> &raquo;</li>
+      
+    <li>L&#8217;ORM</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="l-orm">
+<h1>L&#8217;ORM<a class="headerlink" href="#l-orm" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="definition">
+<h2>Définition<a class="headerlink" href="#definition" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote class="epigraph">
+<div><p>Un ORM (Object-Relation Mapper, ou mapping objet-relationnel en français) et un composant qui permet de créer l&#8217;illusion qu&#8217;une base de données relationnelle est une base de données orientée objet en définissant des correspondances entre la base de données et les objets manipulés dans le code.</p>
+<p class="attribution">&mdash;Wikipedia</p>
+</div></blockquote>
+</div>
+<div class="section" id="explication">
+<h2>Explication<a class="headerlink" href="#explication" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un ORM est une librairie, ici en PHP, qui fait le mapping entre vos objets et votre base de données. Elle enregistre vos objets dans la base de données (création, modification et suppression) et transforme le résultat de vos requêtes en un ou une collection d&#8217;objet. Ainsi, dans votre code, vous ne manipulez que des objets et n&#8217;avez pas besoin de vous occupez de comment sont stockées les données.</p>
+</div>
+<div class="section" id="fonctionnement">
+<h2>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans les classes entité, comme <code class="docutils literal"><span class="pre">Post</span></code>, vous trouvez des annotations commançant par <code class="docutils literal"><span class="pre">&#64;ORM</span></code>. Ces annotations décrivent à votre ORM comment il doit mapper vos objets avec la base de données.</p>
+<p>Reprenons la classe <code class="docutils literal"><span class="pre">Post</span></code> :</p>
+<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Post</span>
+<span class="sd"> *</span>
+<span class="sd"> * @ORM\Table()</span>
+<span class="sd"> * @ORM\Entity(repositoryClass=&quot;Epsi\Bundle\BlogBundle\Entity\PostRepository&quot;)</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var integer</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;id&quot;, type=&quot;integer&quot;)</span>
+<span class="sd">     * @ORM\Id</span>
+<span class="sd">     * @ORM\GeneratedValue(strategy=&quot;AUTO&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;title&quot;, type=&quot;string&quot;, length=100)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$title</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var \DateTime</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;date&quot;, type=&quot;datetime&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$date</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var string</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\Column(name=&quot;body&quot;, type=&quot;text&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$body</span><span class="p">;</span>
+
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get id</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return integer</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getId</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Set title</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $title</span>
+<span class="sd">     * @return Post</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setTitle</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">title</span> <span class="o">=</span> <span class="nv">$title</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get title</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTitle</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Set date</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param \DateTime $date</span>
+<span class="sd">     * @return Post</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setDate</span><span class="p">(</span><span class="nv">$date</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">date</span> <span class="o">=</span> <span class="nv">$date</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get date</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return \DateTime</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getDate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">date</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Set body</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $body</span>
+<span class="sd">     * @return Post</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setBody</span><span class="p">(</span><span class="nv">$body</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">body</span> <span class="o">=</span> <span class="nv">$body</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get body</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getBody</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Avant la déclaration de la classe (l 5-10), des annotations indiquent à l&#8217;ORM :</p>
+<ul>
+<li><p class="first">que notre classe est une entité à persister dans une base de données</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">@</span><span class="nx">ORM\Entity</span><span class="p">(</span><span class="nx">repositoryClass</span><span class="o">=</span><span class="s2">&quot;Epsi\Bundle\BlogBundle\Entity\PostRepository&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">et la description de la table dans laquelle il faut la persister</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">@</span><span class="nx">ORM\Table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Avant chaque attribut (l 22-26), des annotations décrivent à l&#8217;ORM la colonne dans laquelle est stockée l&#8217;attribut. Par exemple, pour le <code class="docutils literal"><span class="pre">title</span></code> :</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">@</span><span class="nx">ORM\Column</span><span class="p">(</span><span class="nx">name</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="nx">length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>En lisant des annotations, l&#8217;ORM va savoir :</p>
+<ul class="simple">
+<li>les différences de schema entre vos entités et votre base de données</li>
+<li>enregistrer vos entités dans la base de données</li>
+<li>resortir des entrées de votre base de données sous la forme d&#8217;un ou d&#8217;une collection d&#8217;objet.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="autres-entites.html" class="btn btn-neutral float-right" title="Autres entités du blog" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="insersion-bdd.html" class="btn btn-neutral" title="Création de la table correspondant dans la base de données" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

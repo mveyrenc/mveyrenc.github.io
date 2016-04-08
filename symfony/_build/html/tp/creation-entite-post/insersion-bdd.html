@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Création de la table correspondant dans la base de données &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
+        <link rel="up" title="Création de l’entité Post" href="../creation-entite-post.html"/>
+        <link rel="next" title="L’ORM" href="orm.html"/>
+        <link rel="prev" title="Génération de l’entité" href="generation-entite.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-symfony.html">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration-bdd.html">Configuration de la base de données</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../creation-entite-post.html">Création de l&#8217;entité Post</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="generation-entite.html">Génération de l&#8217;entité</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Création de la table correspondant dans la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orm.html">L&#8217;ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autres-entites.html">Autres entités du blog</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/controller.html">Contrôlleur</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../creation-entite-post.html">Création de l&#8217;entité Post</a> &raquo;</li>
+      
+    <li>Création de la table correspondant dans la base de données</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creation-de-la-table-correspondant-dans-la-base-de-donnees">
+<h1>Création de la table correspondant dans la base de données<a class="headerlink" href="#creation-de-la-table-correspondant-dans-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Lancez la commande suivante :</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:schema:update --dump-sql --force
+
+<span class="go">CREATE TABLE post (id INT AUTO_INCREMENT NOT NULL, title VARCHAR(100) NOT NULL,</span>
+<span class="go">             date DATETIME NOT NULL,</span>
+<span class="go">             body LONGTEXT NOT NULL,</span>
+<span class="go">             PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;</span>
+
+<span class="go">Updating database schema...</span>
+<span class="go">Database schema updated successfully! &quot;1&quot; queries were executed</span>
+</pre></div>
+</div>
+<p>La commande <code class="docutils literal"><span class="pre">doctrine:schema:update</span></code> analyse les différences entre la structure de vos entités et cette de votre base de données, puis elle génère les requètes SQL qui permettent de mettre à jour la base de données. L&#8217;option <code class="docutils literal"><span class="pre">--dump-sql</span></code> permet d&#8217;afficher les requêtes SQL et <code class="docutils literal"><span class="pre">--force</span></code> permet de les exécuter.</p>
+<p>Si vous ouvrez un PhpMyAdmin et que vous ouvrez votre base de données vous verrez apparaitre la table <code class="docutils literal"><span class="pre">post</span></code>.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="orm.html" class="btn btn-neutral float-right" title="L’ORM" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generation-entite.html" class="btn btn-neutral" title="Génération de l’entité" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
