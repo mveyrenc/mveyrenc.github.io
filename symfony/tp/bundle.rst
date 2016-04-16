@@ -22,115 +22,123 @@ Pour lancer la console, il faut exécuter le script ``app/console`` suivit d'arg
 Création du bundle EpsiBlogBundle
 *********************************
 
-#. Exécutez la commande suivante :
+Lancement du générateur
+-----------------------
+
+Exécutez la commande suivante :
 
     .. code-block:: console
 
         $ php app/console generate:bundle
 
-#. La namespace du bundle
+Namespace du bundle
+-------------------
 
-    .. code-block:: console
+.. code-block:: console
 
-          Welcome to the Symfony2 bundle generator
+      Welcome to the Symfony2 bundle generator
 
-        Your application code must be written in bundles. This command helps
-        you generate them easily.
+    Your application code must be written in bundles. This command helps
+    you generate them easily.
 
-        Each bundle is hosted under a namespace (like Acme/Bundle/BlogBundle).
-        The namespace should begin with a "vendor" name like your company name, your
-        project name, or your client name, followed by one or more optional category
-        sub-namespaces, and it should end with the bundle name itself
-        (which must have Bundle as a suffix).
+    Each bundle is hosted under a namespace (like Acme/Bundle/BlogBundle).
+    The namespace should begin with a "vendor" name like your company name, your
+    project name, or your client name, followed by one or more optional category
+    sub-namespaces, and it should end with the bundle name itself
+    (which must have Bundle as a suffix).
 
-        See http://symfony.com/doc/current/cookbook/bundles/best_practices.html#index-1 for more
-        details on bundle naming conventions.
+    See http://symfony.com/doc/current/cookbook/bundles/best_practices.html#index-1 for more
+    details on bundle naming conventions.
 
-        Use / instead of \  for the namespace delimiter to avoid any problem.
+    Use / instead of \  for the namespace delimiter to avoid any problem.
 
-        Bundle namespace:
+    Bundle namespace:
 
-    Vous pouvez nommer votre namespace comme bon vous semble, du moment qu'il se termine par ``Bundle``. Mais convention, le namespace d'un bundle pour être former ainsi :
+**Répondez** ``Epsi/Bundle/BlogBundle``.
 
-    * Un namespace racine, il s'agit du vendor : l'auteur, une société, un projet, un client, etc.
-    * Le namespace optionnel ``Bundle``
-    * Un ou plusieurs namespaces de catégorisation (optionnel)
-    * Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de ``Bundle``
+Vous pouvez nommer votre namespace comme bon vous semble, du moment qu'il se termine par ``Bundle``. Mais convention, le namespace d'un bundle pour être former ainsi :
 
-    Ce qui nous donne par exemple : ``Epsi\Bundle\BlogBundle``, ``Epsi\Bundle\Social\BlogBundle`` ou ``Epsi\BlogBundle``.
+* Un namespace racine, il s'agit du vendor : l'auteur, une société, un projet, un client, etc.
+* Le namespace optionnel ``Bundle``
+* Un ou plusieurs namespaces de catégorisation (optionnel)
+* Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de ``Bundle``
 
-    **Nous allons appelé notre bundle** ``Epsi\Bundle\BlogBundle``.
+Ce qui nous donne par exemple : ``Epsi\Bundle\BlogBundle``, ``Epsi\Bundle\Social\BlogBundle`` ou ``Epsi\BlogBundle``.
 
-#. Le nom du bundle
+Nom du bundle
+-------------
 
-    .. code-block:: console
+.. code-block:: console
 
-        In your code, a bundle is often referenced by its name. It can be the
-        concatenation of all namespace parts but it's really up to you to come
-        up with a unique name (a good practice is to start with the vendor name).
-        Based on the namespace, we suggest EpsiBlogBundle.
+    In your code, a bundle is often referenced by its name. It can be the
+    concatenation of all namespace parts but it's really up to you to come
+    up with a unique name (a good practice is to start with the vendor name).
+    Based on the namespace, we suggest EpsiBlogBundle.
 
-        Bundle name [EpsiBlogBundle]:
+    Bundle name [EpsiBlogBundle]:
 
-    Symfony génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu'il soit unique.
+**Tapez sur Entrer pour concerver la valeur proposée par Symfony (**``EpsiBlogBundle``**)**
 
-#. L'emplacement du bundle
+Symfony génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu'il soit unique.
 
-    .. code-block:: console
+Emplacement du bundle
+---------------------
 
-        The bundle can be generated anywhere. The suggested default directory uses
-        the standard conventions.
+.. code-block:: console
 
-        Target directory [~/symfony/src]:
+    The bundle can be generated anywhere. The suggested default directory uses
+    the standard conventions.
 
-    Par défaut Symfony le place dans le répertoire ``/src``. On laisse la valeur par défaut.
+    Target directory [~/symfony/src]:
 
-#. Le format de la configuration
+**Tapez sur Entrer pour concerver la valeur proposée par Symfony, autrement dit dans le répertoire** ``src`` **de votre Symfony**
 
-    .. code-block:: console
+Format de la configuration
+--------------------------
 
-        Determine the format to use for the generated configuration.
+.. code-block:: console
 
-        Configuration format (yml, xml, php, or annotation):
+    Determine the format to use for the generated configuration.
 
-    Symfony propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n'a pas d'impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s'agit juste de choisir le format avec lequel vous êtes le plus alèse.
+    Configuration format (yml, xml, php, or annotation):
 
-    Dans notre cas, nous allons choisir le ``annotation``.
+**Répondez**  ``annotation``
 
-#. La structure générer
+Symfony propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n'a pas d'impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s'agit juste de choisir le format avec lequel vous êtes le plus alèse.
 
-    .. code-block:: console
+Finalisation de la génération du bundle
+---------------------------------------
 
-        To help you get started faster, the command can generate some
-        code snippets for you.
+**Répondez** ``yes`` **à toutes les autres questions** et votre bundle sera généré et installé.
 
-        Do you want to generate the whole directory structure [no]?
+.. code-block:: console
 
-    Ici, Symfony vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s'ils ne sont pas utilisés.
+    To help you get started faster, the command can generate some
+    code snippets for you.
 
-    Répondez ``yes``.
+    Do you want to generate the whole directory structure [no]?
 
-#. Répondez ``yes`` à toutes les autres questions et votre bundle sera généré et installé
+Ici, Symfony vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s'ils ne sont pas utilisés.
 
-    .. code-block:: console
+.. code-block:: console
 
-          Summary before generation
+      Summary before generation
 
-        You are going to generate a "Epsi\Bundle\BlogBundle\EpsiBlogBundle" bundle
-        in "~/symfony/src/" using the "annotation" format.
+    You are going to generate a "Epsi\Bundle\BlogBundle\EpsiBlogBundle" bundle
+    in "~/symfony/src/" using the "annotation" format.
 
-        Do you confirm generation [yes]?
+    Do you confirm generation [yes]?
 
-          Bundle generation
+      Bundle generation
 
-        Generating the bundle code: OK
-        Checking that the bundle is autoloaded: OK
-        Confirm automatic update of your Kernel [yes]?
-        Enabling the bundle inside the Kernel: OK
-        Confirm automatic update of the Routing [yes]?
-        Importing the bundle routing resource: OK
+    Generating the bundle code: OK
+    Checking that the bundle is autoloaded: OK
+    Confirm automatic update of your Kernel [yes]?
+    Enabling the bundle inside the Kernel: OK
+    Confirm automatic update of the Routing [yes]?
+    Importing the bundle routing resource: OK
 
-          You can now start using the generated code!
+      You can now start using the generated code!
 
 ********************
 Que s'est-il passé ?

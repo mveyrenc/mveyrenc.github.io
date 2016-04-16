@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Création de l’entité Post &mdash; documentation Symfony 1.0.1</title>
+  <title>Création des entités &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -40,7 +40,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../index.html"/>
-        <link rel="next" title="Génération de l’entité" href="creation-entite-post/generation-entite.html"/>
+        <link rel="next" title="Génération de l’entité" href="creation-entites/generation-entite.html"/>
         <link rel="prev" title="Configuration de la base de données" href="configuration-bdd.html"/> 
 
   
@@ -113,11 +113,11 @@
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Les routes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration-bdd.html">Configuration de la base de données</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Création de l&#8217;entité Post</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/generation-entite.html">Génération de l&#8217;entité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/insersion-bdd.html">Création de la table correspondant dans la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/orm.html">L&#8217;ORM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creation-entite-post/autres-entites.html">Autres entités du blog</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Création des entités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="creation-entites/generation-entite.html">Génération de l&#8217;entité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creation-entites/insersion-bdd.html">Création de la table correspondant dans la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creation-entites/orm.html">L&#8217;ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creation-entites/autres-entites.html">Autres entités du blog</a></li>
 </ul>
 </li>
 </ul>
@@ -165,7 +165,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Création de l&#8217;entité Post</li>
+    <li>Création des entités</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -178,10 +178,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creation-de-l-entite-post">
-<h1>Création de l&#8217;entité Post<a class="headerlink" href="#creation-de-l-entite-post" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="creation-des-entites">
+<h1>Création des entités<a class="headerlink" href="#creation-des-entites" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Les entités, ou entity, sont des classes permettent de manipuler les données en base de donnéee.</p>
-<p>Pour rappel notre entité Post contient les données suivantes :</p>
+<p>Commençons par créer l&#8217;entité Post dont voici la structure :</p>
 <div class="wy-text-center container">
 <p class="Scruffy">
 <img src="../_images/scruffy-9a4598cce33e3fd0aba019f29543c5dd453d660c.png" alt="[Post|title:string(100);date:datetime;body:text]" />
@@ -198,7 +198,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creation-entite-post/generation-entite.html" class="btn btn-neutral float-right" title="Génération de l’entité" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="creation-entites/generation-entite.html" class="btn btn-neutral float-right" title="Génération de l’entité" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="configuration-bdd.html" class="btn btn-neutral" title="Configuration de la base de données" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>

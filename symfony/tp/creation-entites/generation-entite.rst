@@ -74,13 +74,13 @@ Champ ``date``
 
     **Répondez** ``datetime``
 
-    .. code-block:: console
-
-         New field name (press <return> to stop adding fields):
-
 **************
 Champ ``body``
 **************
+
+    .. code-block:: console
+
+         New field name (press <return> to stop adding fields):
 
     **Répondez** ``body``
 

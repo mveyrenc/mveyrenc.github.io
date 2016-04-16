@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Autres entités du blog &mdash; documentation Symfony 1.0.1</title>
+  <title>Création de la table correspondant dans la base de données &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -40,9 +40,9 @@
     <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
-        <link rel="up" title="Création de l’entité Post" href="../creation-entite-post.html"/>
-        <link rel="next" title="Console" href="../../aide/console.html"/>
-        <link rel="prev" title="L’ORM" href="orm.html"/> 
+        <link rel="up" title="Création des entités" href="../creation-entites.html"/>
+        <link rel="next" title="L’ORM" href="orm.html"/>
+        <link rel="prev" title="Génération de l’entité" href="generation-entite.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -114,16 +114,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration-bdd.html">Configuration de la base de données</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../creation-entite-post.html">Création de l&#8217;entité Post</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../creation-entites.html">Création des entités</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="generation-entite.html">Génération de l&#8217;entité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="insersion-bdd.html">Création de la table correspondant dans la base de données</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Création de la table correspondant dans la base de données</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orm.html">L&#8217;ORM</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Autres entités du blog</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#user">User</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tag">Tag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment">Comment</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="autres-entites.html">Autres entités du blog</a></li>
 </ul>
 </li>
 </ul>
@@ -171,9 +166,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-        <li><a href="../creation-entite-post.html">Création de l&#8217;entité Post</a> &raquo;</li>
+        <li><a href="../creation-entites.html">Création des entités</a> &raquo;</li>
       
-    <li>Autres entités du blog</li>
+    <li>Création de la table correspondant dans la base de données</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -186,33 +181,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="autres-entites-du-blog">
-<h1>Autres entités du blog<a class="headerlink" href="#autres-entites-du-blog" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Créez les autres entités nécessaires à la réalisation du blog :</p>
-<div class="section" id="user">
-<h2>User<a class="headerlink" href="#user" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="wy-text-center container">
-<p class="Scruffy">
-<img src="../../_images/scruffy-ed1ee8f01f9d6efeb58878ad2bfdcd159ed78825.png" alt="[User|username:string(30);email:string(100);password:string(100)]" />
-</p>
+  <div class="section" id="creation-de-la-table-correspondant-dans-la-base-de-donnees">
+<h1>Création de la table correspondant dans la base de données<a class="headerlink" href="#creation-de-la-table-correspondant-dans-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Lancez la commande suivante :</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:schema:update --dump-sql --force
+
+<span class="go">CREATE TABLE post (id INT AUTO_INCREMENT NOT NULL, title VARCHAR(100) NOT NULL,</span>
+<span class="go">             date DATETIME NOT NULL,</span>
+<span class="go">             body LONGTEXT NOT NULL,</span>
+<span class="go">             PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;</span>
+
+<span class="go">Updating database schema...</span>
+<span class="go">Database schema updated successfully! &quot;1&quot; queries were executed</span>
+</pre></div>
 </div>
-</div>
-<div class="section" id="tag">
-<h2>Tag<a class="headerlink" href="#tag" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="wy-text-center container">
-<p class="Scruffy">
-<img src="../../_images/scruffy-76476fc0bcbb3689d34338c81efa46bc2997049c.png" alt="[Tag|name:string(30)]" />
-</p>
-</div>
-</div>
-<div class="section" id="comment">
-<h2>Comment<a class="headerlink" href="#comment" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="wy-text-center container">
-<p class="Scruffy">
-<img src="../../_images/scruffy-c46e2f21cbb191efc1bf0a5062fd9c27a8114ff8.png" alt="[Comment|date:datetime;comment:text]" />
-</p>
-</div>
-</div>
+<p>La commande <code class="docutils literal"><span class="pre">doctrine:schema:update</span></code> analyse les différences entre la structure de vos entités et cette de votre base de données, puis elle génère les requètes SQL qui permettent de mettre à jour la base de données. L&#8217;option <code class="docutils literal"><span class="pre">--dump-sql</span></code> permet d&#8217;afficher les requêtes SQL et <code class="docutils literal"><span class="pre">--force</span></code> permet de les exécuter.</p>
+<p>Si vous ouvrez un PhpMyAdmin et que vous ouvrez votre base de données vous verrez apparaitre la table <code class="docutils literal"><span class="pre">post</span></code>.</p>
 </div>
 
 
@@ -222,10 +206,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../aide/console.html" class="btn btn-neutral float-right" title="Console" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="orm.html" class="btn btn-neutral float-right" title="L’ORM" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="orm.html" class="btn btn-neutral" title="L’ORM" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="generation-entite.html" class="btn btn-neutral" title="Génération de l’entité" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   

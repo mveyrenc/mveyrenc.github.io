@@ -109,7 +109,15 @@
 <li class="toctree-l1"><a class="reference internal" href="installation-symfony.html">Installation de Symfony</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Création du bundle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-de-la-console">Utilisation de la console</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creation-du-bundle-epsiblogbundle">Création du bundle EpsiBlogBundle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-du-bundle-epsiblogbundle">Création du bundle EpsiBlogBundle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lancement-du-generateur">Lancement du générateur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#namespace-du-bundle">Namespace du bundle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nom-du-bundle">Nom du bundle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emplacement-du-bundle">Emplacement du bundle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#format-de-la-configuration">Format de la configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalisation-de-la-generation-du-bundle">Finalisation de la génération du bundle</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#que-s-est-il-passe">Que s&#8217;est-il passé ?</a></li>
 </ul>
 </li>
@@ -118,7 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="routing.html">Les routes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration-bdd.html">Configuration de la base de données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creation-entite-post.html">Création de l&#8217;entité Post</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creation-entites.html">Création des entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -190,17 +198,18 @@
 </div>
 <div class="section" id="creation-du-bundle-epsiblogbundle">
 <h2>Création du bundle EpsiBlogBundle<a class="headerlink" href="#creation-du-bundle-epsiblogbundle" title="Lien permanent vers ce titre">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Exécutez la commande suivante :</p>
+<div class="section" id="lancement-du-generateur">
+<h3>Lancement du générateur<a class="headerlink" href="#lancement-du-generateur" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Exécutez la commande suivante :</p>
 <blockquote>
 <div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console generate:bundle
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-<li><p class="first">La namespace du bundle</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Welcome to the Symfony2 bundle generator</span>
+</div>
+<div class="section" id="namespace-du-bundle">
+<h3>Namespace du bundle<a class="headerlink" href="#namespace-du-bundle" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Welcome to the Symfony2 bundle generator</span>
 
 <span class="go">Your application code must be written in bundles. This command helps</span>
 <span class="go">you generate them easily.</span>
@@ -219,6 +228,7 @@
 <span class="go">Bundle namespace:</span>
 </pre></div>
 </div>
+<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">Epsi/Bundle/BlogBundle</span></code>.</p>
 <p>Vous pouvez nommer votre namespace comme bon vous semble, du moment qu&#8217;il se termine par <code class="docutils literal"><span class="pre">Bundle</span></code>. Mais convention, le namespace d&#8217;un bundle pour être former ainsi :</p>
 <ul class="simple">
 <li>Un namespace racine, il s&#8217;agit du vendor : l&#8217;auteur, une société, un projet, un client, etc.</li>
@@ -227,12 +237,10 @@
 <li>Le nom du bundle en lui même qui doit décrire la fonction implémentée par le bundle en un ou deux mots suivit de <code class="docutils literal"><span class="pre">Bundle</span></code></li>
 </ul>
 <p>Ce qui nous donne par exemple : <code class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></code>, <code class="docutils literal"><span class="pre">Epsi\Bundle\Social\BlogBundle</span></code> ou <code class="docutils literal"><span class="pre">Epsi\BlogBundle</span></code>.</p>
-<p><strong>Nous allons appelé notre bundle</strong> <code class="docutils literal"><span class="pre">Epsi\Bundle\BlogBundle</span></code>.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Le nom du bundle</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">In your code, a bundle is often referenced by its name. It can be the</span>
+</div>
+<div class="section" id="nom-du-bundle">
+<h3>Nom du bundle<a class="headerlink" href="#nom-du-bundle" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">In your code, a bundle is often referenced by its name. It can be the</span>
 <span class="go">concatenation of all namespace parts but it&#39;s really up to you to come</span>
 <span class="go">up with a unique name (a good practice is to start with the vendor name).</span>
 <span class="go">Based on the namespace, we suggest EpsiBlogBundle.</span>
@@ -240,46 +248,40 @@
 <span class="go">Bundle name [EpsiBlogBundle]:</span>
 </pre></div>
 </div>
+<p><strong>Tapez sur Entrer pour concerver la valeur proposée par Symfony (**``EpsiBlogBundle``</strong>)**</p>
 <p>Symfony génère automatiquement un nom à partir du namespace du bundle en respectant les conventions de nommage. Il faut juste vérifier qu&#8217;il soit unique.</p>
-</div></blockquote>
-</li>
-<li><p class="first">L&#8217;emplacement du bundle</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">The bundle can be generated anywhere. The suggested default directory uses</span>
+</div>
+<div class="section" id="emplacement-du-bundle">
+<h3>Emplacement du bundle<a class="headerlink" href="#emplacement-du-bundle" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">The bundle can be generated anywhere. The suggested default directory uses</span>
 <span class="go">the standard conventions.</span>
 
 <span class="go">Target directory [~/symfony/src]:</span>
 </pre></div>
 </div>
-<p>Par défaut Symfony le place dans le répertoire <code class="docutils literal"><span class="pre">/src</span></code>. On laisse la valeur par défaut.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Le format de la configuration</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Determine the format to use for the generated configuration.</span>
+<p><strong>Tapez sur Entrer pour concerver la valeur proposée par Symfony, autrement dit dans le répertoire</strong> <code class="docutils literal"><span class="pre">src</span></code> <strong>de votre Symfony</strong></p>
+</div>
+<div class="section" id="format-de-la-configuration">
+<h3>Format de la configuration<a class="headerlink" href="#format-de-la-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Determine the format to use for the generated configuration.</span>
 
 <span class="go">Configuration format (yml, xml, php, or annotation):</span>
 </pre></div>
 </div>
+<p><strong>Répondez</strong>  <code class="docutils literal"><span class="pre">annotation</span></code></p>
 <p>Symfony propose plusieurs format pour la configuration : YAML, XML, PHP ou Annotations. Ce choix n&#8217;a pas d&#8217;impact sur les performances, et chaque format a ses avantages et ses inconvénients. Il s&#8217;agit juste de choisir le format avec lequel vous êtes le plus alèse.</p>
-<p>Dans notre cas, nous allons choisir le <code class="docutils literal"><span class="pre">annotation</span></code>.</p>
-</div></blockquote>
-</li>
-<li><p class="first">La structure générer</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">To help you get started faster, the command can generate some</span>
+</div>
+<div class="section" id="finalisation-de-la-generation-du-bundle">
+<h3>Finalisation de la génération du bundle<a class="headerlink" href="#finalisation-de-la-generation-du-bundle" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Répondez</strong> <code class="docutils literal"><span class="pre">yes</span></code> <strong>à toutes les autres questions</strong> et votre bundle sera généré et installé.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">To help you get started faster, the command can generate some</span>
 <span class="go">code snippets for you.</span>
 
 <span class="go">Do you want to generate the whole directory structure [no]?</span>
 </pre></div>
 </div>
 <p>Ici, Symfony vous demande si vous voulez juste le minimum vital ou une structure plus complète, quitte à supprimer des répertoires à posteriori s&#8217;ils ne sont pas utilisés.</p>
-<p>Répondez <code class="docutils literal"><span class="pre">yes</span></code>.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Répondez <code class="docutils literal"><span class="pre">yes</span></code> à toutes les autres questions et votre bundle sera généré et installé</p>
-<blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Summary before generation</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">  Summary before generation</span>
 
 <span class="go">You are going to generate a &quot;Epsi\Bundle\BlogBundle\EpsiBlogBundle&quot; bundle</span>
 <span class="go">in &quot;~/symfony/src/&quot; using the &quot;annotation&quot; format.</span>
@@ -298,9 +300,7 @@
 <span class="go">  You can now start using the generated code!</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ol>
+</div>
 </div>
 <div class="section" id="que-s-est-il-passe">
 <h2>Que s&#8217;est-il passé ?<a class="headerlink" href="#que-s-est-il-passe" title="Lien permanent vers ce titre">¶</a></h2>
