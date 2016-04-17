@@ -42,11 +42,21 @@ class User
      */
     private $password;
 
+    /**
+     * @var Post[]
+     *
+     * @ORM\OneToMany(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\Post",
+     *      mappedBy="author"
+     * )
+     */
+    private $posts;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +79,7 @@ class User
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
     public function getUsername()
     {
@@ -92,7 +102,7 @@ class User
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -115,10 +125,50 @@ class User
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
         return $this->password;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add posts
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Post $posts
+     * @return User
+     */
+    public function addPost(\Epsi\Bundle\BlogBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Post $posts
+     */
+    public function removePost(\Epsi\Bundle\BlogBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
     }
 }

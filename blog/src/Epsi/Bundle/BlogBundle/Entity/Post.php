@@ -42,11 +42,21 @@ class Post
      */
     private $body;
 
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\User",
+     *      inversedBy="posts"
+     * )
+     */
+    private $author;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +79,7 @@ class Post
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -92,7 +102,7 @@ class Post
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -115,10 +125,33 @@ class Post
     /**
      * Get body
      *
-     * @return string 
+     * @return string
      */
     public function getBody()
     {
         return $this->body;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\User $author
+     * @return Post
+     */
+    public function setAuthor(\Epsi\Bundle\BlogBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Epsi\Bundle\BlogBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }
