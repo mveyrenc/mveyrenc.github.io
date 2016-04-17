@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quelques notions à connaitre &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
+        <link rel="up" title="Création des relations entre les entités" href="../relations-entites.html"/>
+        <link rel="next" title="Relation One-To-One dans Symfony" href="symfony-one-to-one.html"/>
+        <link rel="prev" title="Création des relations entre les entités" href="../relations-entites.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-symfony.html">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration-bdd.html">Configuration de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation-entites.html">Création des entités</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../relations-entites.html">Création des relations entre les entités</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Quelques notions à connaitre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#relation-en-base-de-donnees">Relation en base de données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notion-du-proprietaire-et-de-l-inverse">Notion du propriétaire et de l&#8217;inverse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite">Notion d&#8217;unidirectionnalité et de bidirectionnalité</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-one-to-one.html">Relation One-To-One dans Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-one-to-many.html">Relation One-To-Many dans Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-many-to-many.html">Relation Many-To-Many dans Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajout-relation.html">Ajout d&#8217;une relation étape par étape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autres-relations.html">Autres relations du blog</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/controller.html">Contrôlleur</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../relations-entites.html">Création des relations entre les entités</a> &raquo;</li>
+      
+    <li>Quelques notions à connaitre</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quelques-notions-a-connaitre">
+<h1>Quelques notions à connaitre<a class="headerlink" href="#quelques-notions-a-connaitre" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="relation-en-base-de-donnees">
+<h2>Relation en base de données<a class="headerlink" href="#relation-en-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans une base de données relationnelle, il y a trois possibilités pour lier des tables entre elle :</p>
+<blockquote>
+<div><div class="wy-text-center container">
+<p class="plantuml">
+<img src="../../_images/plantuml-68f7a41bea8741018c771f29d3f0f1db0b052253.png" alt="&#64;startuml
+
+note &quot;PK = clé primaire&quot; as N1
+note &quot;FK = clé étrangère&quot; as N2
+
+&#64;enduml" />
+</p>
+</div>
+</div></blockquote>
+<ul>
+<li><p class="first">One-To-One :  relation unique entre deux objets</p>
+<blockquote>
+<div><p>Une personne a un seul permis de conduire. Un permis est détenu par une seule personne.</p>
+<div class="wy-text-center container">
+<p class="plantuml">
+<img src="../../_images/plantuml-50dc4526543cf328d48aeee8a8a62f52bc1a7658.png" alt="&#64;startuml
+
+object Person {
+    &lt;&lt;PK&gt;&gt; id
+    first_name
+    last_name
+}
+
+object DriverLicense {
+    &lt;&lt;PK/FK&gt;&gt; person_id
+    license_number
+    issue_date
+    expiry_date
+}
+
+Person - DriverLicense
+
+&#64;enduml" />
+</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">One-to-Many : une entité peut être en relation avec plusieurs autres entités</p>
+<blockquote>
+<div><p>Un utilisateur peut avoir plusieurs adresses. Une adresse est liée à un seul utilisateur.</p>
+<div class="wy-text-center container">
+<p class="plantuml">
+<img src="../../_images/plantuml-099a18ef6b15de0f8ea92b9f4c1322718bc192de.png" alt="&#64;startuml
+
+object User {
+    &lt;&lt;PK&gt;&gt; id
+    username
+    email
+    password
+}
+
+object Address {
+    &lt;&lt;PK&gt;&gt; id
+    &lt;&lt;FK&gt;&gt; user_id
+    street_address_1
+    street_address_2
+    region
+    zip_code
+    country
+}
+
+User - Address
+
+&#64;enduml" />
+</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Many-to-Many : plusieurs entités peuvent être en relation avec plusieurs autres entités</p>
+<blockquote>
+<div><p>Un livre peut être écrit par plusieurs auteurs. Un auteur peut écrire plusieurs livres.</p>
+<div class="wy-text-center container">
+<p class="plantuml">
+<img src="../../_images/plantuml-abad10f81340c89b89e5e553ead4eec827deefd5.png" alt="&#64;startuml
+
+object Author {
+    &lt;&lt;PK&gt;&gt; id
+    first_name
+    last_name
+}
+
+object Book {
+    &lt;&lt;PK&gt;&gt; id
+    title
+    ISBN
+    version
+}
+
+object AuthorBook {
+    &lt;&lt;FK&gt;&gt; author_id
+    &lt;&lt;FK&gt;&gt; book_id
+}
+
+Author - AuthorBook
+AuthorBook - Book
+
+&#64;enduml" />
+</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="notion-du-proprietaire-et-de-l-inverse">
+<h2>Notion du propriétaire et de l&#8217;inverse<a class="headerlink" href="#notion-du-proprietaire-et-de-l-inverse" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans une relation, il y a toujours un entité <strong>propriétaire</strong>, et une dite <strong>inverse</strong>.</p>
+<p>La logique propriétaire-inverse n&#8217;est pas lié à la logique métier, mais elle est purement technique. Le propriétaire de la relation est celui qui porte la clé étrangère.</p>
+<p>Dans les exemples ci-dessus :</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">DriverLicense</span></code> est l&#8217;entité propriétaire de la relation One-To-One</li>
+<li><code class="docutils literal"><span class="pre">Address</span></code> est l&#8217;entité propriétaire de la relation One-To-Many</li>
+<li>pour les relations Many-To-Many, c&#8217;est à vous de choisir l&#8217;entité propriétaire.</li>
+</ul>
+</div>
+<div class="section" id="notion-d-unidirectionnalite-et-de-bidirectionnalite">
+<h2>Notion d&#8217;unidirectionnalité et de bidirectionnalité<a class="headerlink" href="#notion-d-unidirectionnalite-et-de-bidirectionnalite" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une relation peut être unidirectionnalité, à sens unique, ou bidirectionnalité, à double sens.</p>
+<p>Une relation bidirectionnelle a toujours une entité propriétaire et une entité inverse. Une relation unidirectionnelle n&#8217;a qu&#8217;une entité propriété.</p>
+<p>Dans le cas d&#8217;une relation unidirectionnelle, on peut récupérer les entités inverses à partir de l&#8217;entité propriétaire (<code class="docutils literal"><span class="pre">$entiteProprietaire-&gt;getEntiteInverse()</span></code>) mais on ne peut pas récupéré l&#8217;entité propriétaire à partir des entités inverses (<code class="docutils literal"><span class="pre">$entiteInverse-&gt;getEntiteProprietaire()</span></code>).</p>
+<p>Dans les relations bidirectionnelles, les deux actions sont possibles.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="symfony-one-to-one.html" class="btn btn-neutral float-right" title="Relation One-To-One dans Symfony" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../relations-entites.html" class="btn btn-neutral" title="Création des relations entre les entités" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

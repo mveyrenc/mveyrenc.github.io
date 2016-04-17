@@ -8,7 +8,7 @@ Dans PhpMyAdmin, créez une base de données MySQL pour votre blog.
 
 Entrez les paramètres de connexion à votre base dans le fichier :file:`app/config/parameters.yml`. Voici un exemple :
 
-.. code-block:: yml
+.. code-block:: yaml
 
     parameters:
         database_host: 127.0.0.1

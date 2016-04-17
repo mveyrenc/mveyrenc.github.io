@@ -8,9 +8,17 @@ Commençons par créer l'entité Post dont voici la structure :
 
 .. container:: wy-text-center
 
-    .. scruffy::
+    .. uml::
 
-        [Post|title:string(100);date:datetime;body:text]
+        @startuml
+
+        object Post {
+            title   string[100]
+            date    datetime
+            body    text
+        }
+
+        @enduml
 
 .. toctree::
     :maxdepth: 2

@@ -41,7 +41,7 @@
     <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
         <link rel="up" title="Création des entités" href="../creation-entites.html"/>
-        <link rel="next" title="Console" href="../../aide/console.html"/>
+        <link rel="next" title="Création des relations entre les entités" href="../relations-entites.html"/>
         <link rel="prev" title="L’ORM" href="orm.html"/> 
 
   
@@ -126,6 +126,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../relations-entites.html">Création des relations entre les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -192,24 +193,45 @@
 <div class="section" id="user">
 <h2>User<a class="headerlink" href="#user" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="wy-text-center container">
-<p class="Scruffy">
-<img src="../../_images/scruffy-ed1ee8f01f9d6efeb58878ad2bfdcd159ed78825.png" alt="[User|username:string(30);email:string(100);password:string(100)]" />
+<p class="plantuml">
+<img src="../../_images/plantuml-efa1e081ec193722fae2d215f839165cbfaa6c40.png" alt="&#64;startuml
+
+object User {
+    username    string[30]
+    email       string[100]
+    password    string[100]
+}
+
+&#64;enduml" />
 </p>
 </div>
 </div>
 <div class="section" id="tag">
 <h2>Tag<a class="headerlink" href="#tag" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="wy-text-center container">
-<p class="Scruffy">
-<img src="../../_images/scruffy-76476fc0bcbb3689d34338c81efa46bc2997049c.png" alt="[Tag|name:string(30)]" />
+<p class="plantuml">
+<img src="../../_images/plantuml-543cdddd63dc4028eac7ed8fdee4b5751138ffdb.png" alt="&#64;startuml
+
+object Tag {
+    name    string[30]
+}
+
+&#64;enduml" />
 </p>
 </div>
 </div>
 <div class="section" id="comment">
 <h2>Comment<a class="headerlink" href="#comment" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="wy-text-center container">
-<p class="Scruffy">
-<img src="../../_images/scruffy-c46e2f21cbb191efc1bf0a5062fd9c27a8114ff8.png" alt="[Comment|date:datetime;comment:text]" />
+<p class="plantuml">
+<img src="../../_images/plantuml-6605d4a4888c3a1ce34bfe033f434763aef9d253.png" alt="&#64;startuml
+
+object Comment {
+    date    datetime
+    comment text
+}
+
+&#64;enduml" />
 </p>
 </div>
 </div>
@@ -222,7 +244,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../aide/console.html" class="btn btn-neutral float-right" title="Console" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../relations-entites.html" class="btn btn-neutral float-right" title="Création des relations entre les entités" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="orm.html" class="btn btn-neutral" title="L’ORM" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>

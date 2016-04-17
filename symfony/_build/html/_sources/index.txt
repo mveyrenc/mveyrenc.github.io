@@ -52,6 +52,9 @@ Ce document a pour but de vous faire acquérir les compétences suivantes :
     tp/web_profiler
     tp/routing
     tp/assets
+    tp/configuration-bdd
+    tp/creation-entites
+    tp/relations-entites
     tp/*
 
 .. _aide:

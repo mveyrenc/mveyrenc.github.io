@@ -120,6 +120,7 @@
 <li class="toctree-l2"><a class="reference internal" href="creation-entites/autres-entites.html">Autres entités du blog</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="relations-entites.html">Création des relations entre les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -183,8 +184,16 @@
 <p>Les entités, ou entity, sont des classes permettent de manipuler les données en base de donnéee.</p>
 <p>Commençons par créer l&#8217;entité Post dont voici la structure :</p>
 <div class="wy-text-center container">
-<p class="Scruffy">
-<img src="../_images/scruffy-9a4598cce33e3fd0aba019f29543c5dd453d660c.png" alt="[Post|title:string(100);date:datetime;body:text]" />
+<p class="plantuml">
+<img src="../_images/plantuml-8521260da539c8b3dd9be0233de05c37b8a8e25c.png" alt="&#64;startuml
+
+object Post {
+    title   string[100]
+    date    datetime
+    body    text
+}
+
+&#64;enduml" />
 </p>
 </div>
 <div class="toctree-wrapper compound">

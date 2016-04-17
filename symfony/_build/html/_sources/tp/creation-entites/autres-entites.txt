@@ -10,9 +10,17 @@ User
 
 .. container:: wy-text-center
 
-    .. scruffy::
+    .. uml::
 
-        [User|username:string(30);email:string(100);password:string(100)]
+        @startuml
+
+        object User {
+            username    string[30]
+            email       string[100]
+            password    string[100]
+        }
+
+        @enduml
 
 ***
 Tag
@@ -20,9 +28,15 @@ Tag
 
 .. container:: wy-text-center
 
-    .. scruffy::
+    .. uml::
 
-        [Tag|name:string(30)]
+        @startuml
+
+        object Tag {
+            name    string[30]
+        }
+
+        @enduml
 
 *******
 Comment
@@ -30,6 +44,13 @@ Comment
 
 .. container:: wy-text-center
 
-    .. scruffy::
+    .. uml::
 
-        [Comment|date:datetime;comment:text]
+        @startuml
+
+        object Comment {
+            date    datetime
+            comment text
+        }
+
+        @enduml

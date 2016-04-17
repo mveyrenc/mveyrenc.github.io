@@ -45,7 +45,8 @@ extensions = [
     'sphinxcontrib.programoutput',
     'sphinxcontrib.phpdomain',
     'sphinxcontrib.images',
-    'sphinx_scruffy'
+    'sphinx_scruffy',
+    'sphinxcontrib.plantuml'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -203,6 +204,7 @@ html_show_sourcelink = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Symfonydoc'
 
+plantuml = 'java -jar bin/plantuml.jar'
 
 # -- Options for LaTeX output ---------------------------------------------
 

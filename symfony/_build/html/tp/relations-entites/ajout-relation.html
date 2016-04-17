@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ajout d’une relation étape par étape &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
+        <link rel="up" title="Création des relations entre les entités" href="../relations-entites.html"/>
+        <link rel="next" title="Autres relations du blog" href="autres-relations.html"/>
+        <link rel="prev" title="Relation Many-To-Many dans Symfony" href="symfony-many-to-many.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-symfony.html">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration-bdd.html">Configuration de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation-entites.html">Création des entités</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../relations-entites.html">Création des relations entre les entités</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="avant-de-commencer.html">Quelques notions à connaitre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-one-to-one.html">Relation One-To-One dans Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-one-to-many.html">Relation One-To-Many dans Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-many-to-many.html">Relation Many-To-Many dans Symfony</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Ajout d&#8217;une relation étape par étape</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ajout-des-attributs-dans-les-classes-de-la-relation">1. Ajout des attributs dans les classes de la relation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choix-du-type-de-relation">2. Choix du type de relation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-du-targetentity">3. Paramétrage du <code class="docutils literal"><span class="pre">targetEntity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-de-inversedby-et-mappedby">4. Paramétrage de <code class="docutils literal"><span class="pre">inversedBy</span></code> et <code class="docutils literal"><span class="pre">mappedBy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generation-des-methodes-get-et-set">5. Génération des méthodes get et set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-a-jour-du-schema-de-la-base-de-donnees">6. Mise à jour du schema de la base de données</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autres-relations.html">Autres relations du blog</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/controller.html">Contrôlleur</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../relations-entites.html">Création des relations entre les entités</a> &raquo;</li>
+      
+    <li>Ajout d&#8217;une relation étape par étape</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ajout-d-une-relation-etape-par-etape">
+<h1>Ajout d&#8217;une relation étape par étape<a class="headerlink" href="#ajout-d-une-relation-etape-par-etape" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Prenons comme exemple la relation entre <code class="docutils literal"><span class="pre">Post</span></code> et <code class="docutils literal"><span class="pre">User</span></code>.</p>
+<div class="section" id="ajout-des-attributs-dans-les-classes-de-la-relation">
+<h2>1. Ajout des attributs dans les classes de la relation<a class="headerlink" href="#ajout-des-attributs-dans-les-classes-de-la-relation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ouvrez les deux classes des entités concernées par la relation :</p>
+<style>
+    .rst-content .code-in-two-column div[class^='highlight'] {border: none;}
+    .rst-content .code-in-two-column table.docutils td {padding: 0px;vertical-align: top;}
+</style><p>Un post est écrit par un auteur, on ajoute donc l&#8217;attribut <code class="docutils literal"><span class="pre">$author</span></code> dans la classe <code class="docutils literal"><span class="pre">Post</span></code>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$title</span><span class="p">;</span>
+
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$date</span><span class="p">;</span>
+
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$body</span><span class="p">;</span>
+
+<span class="hll">    <span class="k">private</span> <span class="nv">$author</span><span class="p">;</span>
+</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Un auteur peut écrire plusieurs posts, on ajoute donc l&#8217;attribut <code class="docutils literal"><span class="pre">$posts</span></code> dans la classe <code class="docutils literal"><span class="pre">User</span></code>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$username</span><span class="p">;</span>
+
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$email</span><span class="p">;</span>
+
+    <span class="cm">/*...*/</span>
+    <span class="k">private</span> <span class="nv">$password</span><span class="p">;</span>
+
+<span class="hll">    <span class="k">private</span> <span class="nv">$posts</span><span class="p">;</span>
+</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>Lorsque vous ajoutez les attributs dans vos classes, faites bien attention à mettre votre attribut</p>
+<ul class="last simple">
+<li>au singulier si vous faites une relation vers un élément</li>
+<li>au pluriel si vous faites une relation vers plus d&#8217;un éléments</li>
+</ul>
+</div>
+</div>
+<div class="section" id="choix-du-type-de-relation">
+<h2>2. Choix du type de relation<a class="headerlink" href="#choix-du-type-de-relation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans la classe <code class="docutils literal"><span class="pre">Post</span></code>, comme on n&#8217;a qu&#8217;on auteur, le type de relation se terminera obligatoirement par <code class="docutils literal"><span class="pre">ToOne</span></code>.</p>
+<p>Dans la classe <code class="docutils literal"><span class="pre">User</span></code>, comme on a plusieurs posts, le type de relation se terminera obligatoirement par <code class="docutils literal"><span class="pre">ToMany</span></code>.</p>
+<p>En mixant les deux, on obtient une <code class="docutils literal"><span class="pre">ManyToOne</span></code> dans <code class="docutils literal"><span class="pre">Post</span></code> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="c1">//...</span>
+
+<span class="hll">    <span class="sd">/**</span>
+</span><span class="hll"><span class="sd">     * @var User</span>
+</span><span class="hll"><span class="sd">     *</span>
+</span><span class="hll"><span class="sd">     * @ORM\ManyToOne(</span>
+</span><span class="hll"><span class="sd">     *      targetEntity=&quot;&quot;,</span>
+</span><span class="hll"><span class="sd">     *      inversedBy=&quot;&quot;</span>
+</span><span class="hll"><span class="sd">     * )</span>
+</span><span class="hll"><span class="sd">     */</span>
+</span>    <span class="k">private</span> <span class="nv">$author</span><span class="p">;</span>
+
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Et une <code class="docutils literal"><span class="pre">OneToMany</span></code> dans <code class="docutils literal"><span class="pre">User</span></code> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+    <span class="cm">/*...*/</span>
+
+<span class="hll">    <span class="sd">/**</span>
+</span><span class="hll"><span class="sd">     * @var Post[]</span>
+</span><span class="hll"><span class="sd">     *</span>
+</span><span class="hll"><span class="sd">     * @ORM\OneToMany(</span>
+</span><span class="hll"><span class="sd">     *      targetEntity=&quot;&quot;,</span>
+</span><span class="hll"><span class="sd">     *      mappedBy=&quot;&quot;</span>
+</span><span class="hll"><span class="sd">     * )</span>
+</span><span class="hll"><span class="sd">     */</span>
+</span>    <span class="k">private</span> <span class="nv">$posts</span><span class="p">;</span>
+
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parametrage-du-targetentity">
+<h2>3. Paramétrage du <code class="docutils literal"><span class="pre">targetEntity</span></code><a class="headerlink" href="#parametrage-du-targetentity" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le targetEntity correspond à l&#8217;entité vers laquelle on fait la relation. Dans la classe <code class="docutils literal"><span class="pre">Post</span></code>, il s&#8217;agit de <code class="docutils literal"><span class="pre">User</span></code> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="c1">//...</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var User</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\ManyToOne(</span>
+<span class="hll"><span class="sd">     *      targetEntity=&quot;Epsi\Bundle\BlogBundle\Entity\User&quot;,</span>
+</span><span class="sd">     *      inversedBy=&quot;&quot;</span>
+<span class="sd">     * )</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$author</span><span class="p">;</span>
+
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Et dans <code class="docutils literal"><span class="pre">User</span></code>, c&#8217;est <code class="docutils literal"><span class="pre">Post</span></code> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+    <span class="cm">/*...*/</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var Post[]</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\OneToMany(</span>
+<span class="hll"><span class="sd">     *      targetEntity=&quot;Epsi\Bundle\BlogBundle\Entity\Post&quot;,</span>
+</span><span class="sd">     *      mappedBy=&quot;&quot;</span>
+<span class="sd">     * )</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$posts</span><span class="p">;</span>
+
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parametrage-de-inversedby-et-mappedby">
+<h2>4. Paramétrage de <code class="docutils literal"><span class="pre">inversedBy</span></code> et <code class="docutils literal"><span class="pre">mappedBy</span></code><a class="headerlink" href="#parametrage-de-inversedby-et-mappedby" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les paramètres <code class="docutils literal"><span class="pre">inversedBy</span></code> et <code class="docutils literal"><span class="pre">mappedBy</span></code> doivent être égals au nom de l&#8217;attribut faisant la relation dans le targetEntity.</p>
+<p>On utilise le paramètre <code class="docutils literal"><span class="pre">inversedBy</span></code> dans l&#8217;entité propriétaire :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span>    <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+    <span class="k">class</span> <span class="nc">Post</span>
+    <span class="p">{</span>
+        <span class="c1">//...</span>
+
+        <span class="sd">/**</span>
+<span class="sd">         * @var User</span>
+<span class="sd">         *</span>
+<span class="sd">         * @ORM\ManyToOne(</span>
+<span class="sd">         *      targetEntity=&quot;Epsi\Bundle\BlogBundle\Entity\User&quot;,</span>
+<span class="hll"><span class="sd">         *      inversedBy=&quot;posts&quot;</span>
+</span><span class="sd">         * )</span>
+<span class="sd">         */</span>
+        <span class="k">private</span> <span class="nv">$author</span><span class="p">;</span>
+
+        <span class="c1">//...</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>On utilise le paramètre <code class="docutils literal"><span class="pre">mappedBy</span></code> dans l&#8217;entité inverse :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span>    <span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity</span><span class="p">;</span>
+
+    <span class="k">class</span> <span class="nc">User</span>
+    <span class="p">{</span>
+        <span class="cm">/*...*/</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var Post[]</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\OneToMany(</span>
+<span class="sd">     *      targetEntity=&quot;Epsi\Bundle\BlogBundle\Entity\Post&quot;,</span>
+<span class="hll"><span class="sd">     *      mappedBy=&quot;author&quot;</span>
+</span><span class="sd">     * )</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$posts</span><span class="p">;</span>
+
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generation-des-methodes-get-et-set">
+<h2>5. Génération des méthodes get et set<a class="headerlink" href="#generation-des-methodes-get-et-set" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lancer la commande suivante :</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:generate:entities Epsi
+</pre></div>
+</div>
+<p>Cette méthode ajoute les méthodes get et set manquantes dans vos entités :</p>
+<ul class="simple">
+<li>Dans <code class="docutils literal"><span class="pre">Post</span></code> : <code class="docutils literal"><span class="pre">setAuthor</span></code> et <code class="docutils literal"><span class="pre">getAuthor</span></code></li>
+<li>Dans <code class="docutils literal"><span class="pre">User</span></code> : <code class="docutils literal"><span class="pre">addPost</span></code>, <code class="docutils literal"><span class="pre">removePost</span></code> et <code class="docutils literal"><span class="pre">getPosts</span></code></li>
+</ul>
+</div>
+<div class="section" id="mise-a-jour-du-schema-de-la-base-de-donnees">
+<h2>6. Mise à jour du schema de la base de données<a class="headerlink" href="#mise-a-jour-du-schema-de-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lancer la commande suivante :</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> php app/console doctrine:schema:update --force --dump-sql
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="autres-relations.html" class="btn btn-neutral float-right" title="Autres relations du blog" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="symfony-many-to-many.html" class="btn btn-neutral" title="Relation Many-To-Many dans Symfony" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

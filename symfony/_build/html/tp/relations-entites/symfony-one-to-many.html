@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Relation One-To-Many dans Symfony &mdash; documentation Symfony 1.0.1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
+        <link rel="up" title="Création des relations entre les entités" href="../relations-entites.html"/>
+        <link rel="next" title="Relation Many-To-Many dans Symfony" href="symfony-many-to-many.html"/>
+        <link rel="prev" title="Relation One-To-One dans Symfony" href="symfony-one-to-one.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <a href="../../index.html"> Symfony
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Cours
+          </div>
+        
+
+        
+          <div class="reference">
+            EPSI/B2
+
+            
+            - v1.0.1
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Rappels</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/introduction.html">Programmation en PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/usages.html">Que peut faire PHP ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/syntaxe.html">La syntaxe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/fonctions.html">Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rappels/poo.html">La programmation orientée objet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cours</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/introduction.html">Introduction à Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/navigateur_vers_symfony.html">Du navigateur vers Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cours/architecture.html">Architecture de Symfony</a></li>
+</ul>
+<p class="caption"><span class="caption-text">tp</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sujet.html">Sujet du TP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-php.html">Installation et configuration de PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-symfony.html">Installation de Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundle.html">Création du bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../controleur.html">Créer une page sous Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_profiler.html">Le web-profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Les routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Les assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration-bdd.html">Configuration de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation-entites.html">Création des entités</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../relations-entites.html">Création des relations entre les entités</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="avant-de-commencer.html">Quelques notions à connaitre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-one-to-one.html">Relation One-To-One dans Symfony</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Relation One-To-Many dans Symfony</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#declation-des-attributs">Déclation des attributs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dans-l-entite-proprietaire">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dans-l-entite-inverse">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#methodes-get-et-set-generee-par-doctrine">Méthodes get et set générée par Doctrine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Dans l&#8217;entité propriétaire</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Dans l&#8217;entité inverse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modifications-effectuees-en-base-de-donnee-par-doctrine">Modifications effectuées en base de donnée par Doctrine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="symfony-many-to-many.html">Relation Many-To-Many dans Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajout-relation.html">Ajout d&#8217;une relation étape par étape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autres-relations.html">Autres relations du blog</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/console.html">Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aide/controller.html">Contrôlleur</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Symfony</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="../relations-entites.html">Création des relations entre les entités</a> &raquo;</li>
+      
+    <li>Relation One-To-Many dans Symfony</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="relation-one-to-many-dans-symfony">
+<h1>Relation One-To-Many dans Symfony<a class="headerlink" href="#relation-one-to-many-dans-symfony" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Dans le cas des relations OneToMany et ManyToOne, le paramètre <code class="docutils literal"><span class="pre">inversedBy</span></code> est toujours du côté de la relation propriétaire et l&#8217;attribut <code class="docutils literal"><span class="pre">mappedBy</span></code> est toujours du côté de l&#8217;inverse.</p>
+<div class="section" id="declation-des-attributs">
+<h2>Déclation des attributs<a class="headerlink" href="#declation-des-attributs" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="dans-l-entite-proprietaire">
+<h3>Dans l&#8217;entité propriétaire<a class="headerlink" href="#dans-l-entite-proprietaire" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Address</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var User</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\ManyToOne(</span>
+<span class="sd">     *      targetEntity=&quot;Namespace\Of\MyBundle\Entity\User&quot;,</span>
+<span class="sd">     *      inversedBy=&quot;addresses&quot;</span>
+<span class="sd">     * )</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$user</span><span class="p">;</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dans-l-entite-inverse">
+<h3>Dans l&#8217;entité inverse<a class="headerlink" href="#dans-l-entite-inverse" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var Address[]</span>
+<span class="sd">     *</span>
+<span class="sd">     * @ORM\OneToMany(</span>
+<span class="sd">     *      targetEntity=&quot;Namespace\Of\MyBundle\Entity\Address&quot;,</span>
+<span class="sd">     *      mappedBy=&quot;user&quot;</span>
+<span class="sd">     * )</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$addresses</span><span class="p">;</span>
+
+     <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="methodes-get-et-set-generee-par-doctrine">
+<h2>Méthodes get et set générée par Doctrine<a class="headerlink" href="#methodes-get-et-set-generee-par-doctrine" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="id1">
+<h3>Dans l&#8217;entité propriétaire<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Address</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Set user</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param User $user</span>
+<span class="sd">     * @return Post</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setUser</span><span class="p">(</span><span class="nx">User</span> <span class="nv">$user</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user</span> <span class="o">=</span> <span class="nv">$user</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get user</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return User</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUser</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Dans l&#8217;entité inverse<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Constructor</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addresses</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Add addresses</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param Address $addresses</span>
+<span class="sd">     * @return User</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addPost</span><span class="p">(</span><span class="nx">Address</span> <span class="nv">$addresses</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addresses</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$addresses</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Remove addresses</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param Address $addresses</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">removePost</span><span class="p">(</span><span class="nx">Address</span> <span class="nv">$addresses</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addresses</span><span class="o">-&gt;</span><span class="na">removeElement</span><span class="p">(</span><span class="nv">$addresses</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Get addresses</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return ArrayCollection</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAddresses</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addresses</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modifications-effectuees-en-base-de-donnee-par-doctrine">
+<h2>Modifications effectuées en base de donnée par Doctrine<a class="headerlink" href="#modifications-effectuees-en-base-de-donnee-par-doctrine" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-mysql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">address</span> <span class="k">ADD</span> <span class="n">user_id</span> <span class="kt">INT</span> <span class="k">DEFAULT</span> <span class="no">NULL</span><span class="p">;</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">address</span> <span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">FK_XXX</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">user_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nf">user</span> <span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="symfony-many-to-many.html" class="btn btn-neutral float-right" title="Relation Many-To-Many dans Symfony" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="symfony-one-to-one.html" class="btn btn-neutral" title="Relation One-To-One dans Symfony" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright 2014, Madeline VEYRENC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

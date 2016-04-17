@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="assets.html">Les assets</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Configuration de la base de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creation-entites.html">Création des entités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations-entites.html">Création des relations entre les entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -177,17 +178,17 @@
 <p>Avant de pouvoir s&#8217;attaquer aux entités, il faut créer une base de données qui permettra de stocker les données saisies dans les formulaires de notre blog.</p>
 <p>Dans PhpMyAdmin, créez une base de données MySQL pour votre blog.</p>
 <p>Entrez les paramètres de connexion à votre base dans le fichier <code class="file docutils literal"><span class="pre">app/config/parameters.yml</span></code>. Voici un exemple :</p>
-<div class="highlight-yml"><div class="highlight"><pre><span></span>parameters:
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: epsi_blog
-    database_user: epsi_blog
-    database_password: epsi_blog
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
-    secret: ThisIsSecret
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">parameters</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_host</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">epsi_blog</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">epsi_blog</span>
+    <span class="l l-Scalar l-Scalar-Plain">database_password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">epsi_blog</span>
+    <span class="l l-Scalar l-Scalar-Plain">mailer_transport</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">smtp</span>
+    <span class="l l-Scalar l-Scalar-Plain">mailer_host</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+    <span class="l l-Scalar l-Scalar-Plain">mailer_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+    <span class="l l-Scalar l-Scalar-Plain">mailer_password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+    <span class="l l-Scalar l-Scalar-Plain">secret</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ThisIsSecret</span>
 </pre></div>
 </div>
 <p>Si vous n&#8217;avez pas de mot de passe pour vous connectez à votre base de données, mettez la valeur <code class="docutils literal"><span class="pre">null</span></code> à <code class="docutils literal"><span class="pre">database_password</span></code>.</p>
