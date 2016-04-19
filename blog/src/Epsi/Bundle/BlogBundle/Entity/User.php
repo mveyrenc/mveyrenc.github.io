@@ -52,6 +52,16 @@ class User
      */
     private $posts;
 
+    /**
+     * @var Comment[]
+     *
+     * @ORM\OneToMany(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\Comment",
+     *      mappedBy="author"
+     * )
+     */
+    private $comments;
+
 
     /**
      * Get id
@@ -170,5 +180,38 @@ class User
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Comment $comments
+     * @return User
+     */
+    public function addComment(\Epsi\Bundle\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Epsi\Bundle\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

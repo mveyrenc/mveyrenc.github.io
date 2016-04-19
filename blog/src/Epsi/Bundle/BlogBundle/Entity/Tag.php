@@ -28,6 +28,16 @@ class Tag
      */
     private $name;
 
+    /**
+     * @var Post[]
+     *
+     * @ORM\ManyToMany(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\Post",
+     *      mappedBy="tags"
+     * )
+     */
+    private $posts;
+
 
     /**
      * Get id
@@ -60,5 +70,45 @@ class Tag
     public function getName()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add posts
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Post $posts
+     * @return Tag
+     */
+    public function addPost(\Epsi\Bundle\BlogBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Post $posts
+     */
+    public function removePost(\Epsi\Bundle\BlogBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
     }
 }

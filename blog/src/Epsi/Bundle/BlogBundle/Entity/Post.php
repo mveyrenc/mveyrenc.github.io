@@ -52,6 +52,26 @@ class Post
      */
     private $author;
 
+    /**
+     * @var Comment[]
+     *
+     * @ORM\OneToMany(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\Comment",
+     *      mappedBy="post"
+     * )
+     */
+    private $comments;
+
+    /**
+     * @var Tag[]
+     *
+     * @ORM\ManyToMany(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\Tag",
+     *      inversedBy="posts"
+     * )
+     */
+    private $tags;
+
 
     /**
      * Get id
@@ -153,5 +173,79 @@ class Post
     public function getAuthor()
     {
         return $this->author;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Comment $comments
+     * @return Post
+     */
+    public function addComment(\Epsi\Bundle\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Epsi\Bundle\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Add tags
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Tag $tags
+     * @return Post
+     */
+    public function addTag(\Epsi\Bundle\BlogBundle\Entity\Tag $tags)
+    {
+        $this->tags[] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Remove tags
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Tag $tags
+     */
+    public function removeTag(\Epsi\Bundle\BlogBundle\Entity\Tag $tags)
+    {
+        $this->tags->removeElement($tags);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 }

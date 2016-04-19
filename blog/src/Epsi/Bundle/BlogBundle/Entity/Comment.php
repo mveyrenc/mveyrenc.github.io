@@ -35,6 +35,25 @@ class Comment
      */
     private $comment;
 
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\User",
+     *      inversedBy="comments"
+     * )
+     */
+    private $author;
+
+    /**
+     * @var Post
+     *
+     * @ORM\ManyToOne(
+     *      targetEntity="Epsi\Bundle\BlogBundle\Entity\Post",
+     *      inversedBy="comments"
+     * )
+     */
+    private $post;
 
     /**
      * Get id
@@ -90,5 +109,51 @@ class Comment
     public function getComment()
     {
         return $this->comment;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\User $author
+     * @return Comment
+     */
+    public function setAuthor(\Epsi\Bundle\BlogBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Epsi\Bundle\BlogBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set post
+     *
+     * @param \Epsi\Bundle\BlogBundle\Entity\Post $post
+     * @return Comment
+     */
+    public function setPost(\Epsi\Bundle\BlogBundle\Entity\Post $post = null)
+    {
+        $this->post = $post;
+
+        return $this;
+    }
+
+    /**
+     * Get post
+     *
+     * @return \Epsi\Bundle\BlogBundle\Entity\Post 
+     */
+    public function getPost()
+    {
+        return $this->post;
     }
 }
