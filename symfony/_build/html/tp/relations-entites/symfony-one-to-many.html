@@ -297,7 +297,7 @@
 <span class="sd">     * @param Address $addresses</span>
 <span class="sd">     * @return User</span>
 <span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">addPost</span><span class="p">(</span><span class="nx">Address</span> <span class="nv">$addresses</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addAddress</span><span class="p">(</span><span class="nx">Address</span> <span class="nv">$addresses</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addresses</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$addresses</span><span class="p">;</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
     <span class="p">}</span>
@@ -307,7 +307,7 @@
 <span class="sd">     *</span>
 <span class="sd">     * @param Address $addresses</span>
 <span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">removePost</span><span class="p">(</span><span class="nx">Address</span> <span class="nv">$addresses</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">removeAddress</span><span class="p">(</span><span class="nx">Address</span> <span class="nv">$addresses</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addresses</span><span class="o">-&gt;</span><span class="na">removeElement</span><span class="p">(</span><span class="nv">$addresses</span><span class="p">);</span>
     <span class="p">}</span>
 

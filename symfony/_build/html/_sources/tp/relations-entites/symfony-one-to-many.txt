@@ -112,7 +112,7 @@ Dans l'entité inverse
          * @param Address $addresses
          * @return User
          */
-        public function addPost(Address $addresses) {
+        public function addAddress(Address $addresses) {
             $this->addresses[] = $addresses;
             return $this;
         }
@@ -122,7 +122,7 @@ Dans l'entité inverse
          *
          * @param Address $addresses
          */
-        public function removePost(Address $addresses) {
+        public function removeAddress(Address $addresses) {
             $this->addresses->removeElement($addresses);
         }
 
