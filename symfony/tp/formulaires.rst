@@ -1,0 +1,29 @@
+###############
+Les formulaires
+###############
+
+La vision Symfony des formulaires est la suivante : un formulaire se construit sur un **objet existant**, et son objectif est d'**hydrater cet objet**.
+
+.. admonition:: Hydrater un objet
+
+    Hydrater un objet consiste à remplir ses attributs avec les valeurs provenant d'un formulaire ou d'une base de données, par exemple.
+
+Donc le but d'un formulaire sous Symfony est de collecter les informations saisies dans un formulaire afin de remplir un objet. Cet objet pourra ensuite être sauvegradé dans la base de données.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+
+    formulaires/formulaires-basiques
+    formulaires/soumission-formulaire
+    formulaires/formulaire-edition
+    formulaires/form-type
+    formulaires/theme-bootstrap
+    formulaires/*
+
+
+
+
+
+

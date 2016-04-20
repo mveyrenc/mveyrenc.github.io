@@ -55,6 +55,7 @@ Ce document a pour but de vous faire acquérir les compétences suivantes :
     tp/configuration-bdd
     tp/creation-entites
     tp/relations-entites
+    tp/formulaires
     tp/*
 
 .. _aide:
