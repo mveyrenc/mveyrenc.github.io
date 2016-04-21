@@ -7,7 +7,7 @@
                 {{ type }} : {{ message }}
             {% endfor %}
         {% endfor %}
-        <table>
+        <table class="table table-responsive table-bordered table-striped">
             <thead>
             <tr>
                 <th>Id</th>
@@ -22,10 +22,10 @@
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('epsi_blog_tag_show', { 'id': entity.id }) }}">show</a>
+                                <a href="{{ path('epsi_blog_tag_show', { 'id': entity.id }) }}" class="btn btn-default btn-xs">show</a>
                             </li>
                             <li>
-                                <a href="{{ path('epsi_blog_tag_edit', { 'id': entity.id }) }}">edit</a>
+                                <a href="{{ path('epsi_blog_tag_edit', { 'id': entity.id }) }}" class="btn  btn-default btn-xs">edit</a>
                             </li>
                         </ul>
                     </td>
@@ -33,11 +33,9 @@
             {% endfor %}
         </table>
 
-        <ul>
-            <li>
-                <a href="{{ path('epsi_blog_tag_new') }}">
-                    Create a new entry
-                </a>
-            </li>
-        </ul>
+        <div>
+            <a href="{{ path('epsi_blog_tag_new') }}" class="btn btn-success">
+                Create a new entry
+            </a>
+        </div>
     {% endblock %}

@@ -10,21 +10,21 @@
 </head>
 <body>
 {% block body %}
+    <header>
+        {% block header %}
+        {% endblock %}
+    </header>
     <div class="container">
-        <header class="well">
-            {% block header %}
-            {% endblock %}
-        </header>
         <div id="content">
             {% block content %}
             {% endblock %}
         </div>
-        <footer>
-            {% block footer %}
-                &copy; Copyright 2015
-            {% endblock %}
-        </footer>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">&copy; Copyright 2015</p>
+        </div>
+    </footer>
 {% block javascripts %}
     <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.2.min.js') }}"></script>
     <script src="{{ asset('bundles/epsiblog/js/bootstrap.min.js') }}"></script>

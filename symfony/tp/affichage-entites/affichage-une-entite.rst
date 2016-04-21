@@ -5,6 +5,7 @@ Affichage d'une entité
 Dans le ``TagController`` ajouter la méthode suivante :
 
 .. code-block:: php
+    :emphasize-lines: 22-39
 
     namespace Epsi\Bundle\BlogBundle\Controller;
 

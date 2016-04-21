@@ -209,21 +209,21 @@
         <span class="c1">// ...</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @Route(&quot;/&quot;)</span>
-<span class="sd">     * @Template()</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
-
-        <span class="nv">$entities</span> <span class="o">=</span> <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getRepository</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Tag&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
-
-        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;entities&#39;</span> <span class="o">=&gt;</span> <span class="nv">$entities</span><span class="p">,</span>
-        <span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="hll">    <span class="sd">/**</span>
+</span><span class="hll"><span class="sd">     * @Route(&quot;/&quot;)</span>
+</span><span class="hll"><span class="sd">     * @Template()</span>
+</span><span class="hll"><span class="sd">     */</span>
+</span><span class="hll">    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="nv">$entities</span> <span class="o">=</span> <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getRepository</span><span class="p">(</span><span class="s1">&#39;EpsiBlogBundle:Tag&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+</span><span class="hll">            <span class="s1">&#39;entities&#39;</span> <span class="o">=&gt;</span> <span class="nv">$entities</span><span class="p">,</span>
+</span><span class="hll">        <span class="p">);</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans le répertoire <code class="docutils literal"><span class="pre">Resources/views/Tag</span></code> de votre bundle ajoutez le fichier <code class="docutils literal"><span class="pre">index.html.twig</span></code>, insérez-y le code suivant :</p>
