@@ -102,7 +102,7 @@ Dans le répertoire ``Resources/views/Tag`` de votre bundle ajoutez le fichier `
         </div>
     {% endblock %}
     {% block javascripts %}
-        <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.2.min.js') }}"></script>
+        <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.3.min.js') }}"></script>
         <script src="{{ asset('bundles/epsiblog/js/bootstrap.min.js') }}"></script>
     {% endblock %}
     </body>
