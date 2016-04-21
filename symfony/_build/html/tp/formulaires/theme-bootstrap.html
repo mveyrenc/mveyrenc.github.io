@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Soumission d’un formulaire &mdash; documentation Symfony 1.0.1</title>
+  <title>Thème Bootstrap &mdash; documentation Symfony 1.0.1</title>
   
 
   
@@ -41,8 +41,8 @@
     <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <link rel="top" title="documentation Symfony 1.0.1" href="../../index.html"/>
         <link rel="up" title="Les formulaires" href="../formulaires.html"/>
-        <link rel="next" title="Formulaire d’édition" href="formulaire-edition.html"/>
-        <link rel="prev" title="Formulaire basique" href="formulaires-basiques.html"/> 
+        <link rel="next" title="La validation des données" href="validation-donnees.html"/>
+        <link rel="prev" title="Les FormTypes" href="form-type.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -118,10 +118,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../relations-entites.html">Création des relations entre les entités</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../formulaires.html">Les formulaires</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="formulaires-basiques.html">Formulaire basique</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Soumission d&#8217;un formulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soumission-formulaire.html">Soumission d&#8217;un formulaire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formulaire-edition.html">Formulaire d&#8217;édition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form-type.html">Les FormTypes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="theme-bootstrap.html">Thème Bootstrap</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Thème Bootstrap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validation-donnees.html">La validation des données</a></li>
 </ul>
 </li>
@@ -172,7 +172,7 @@
       
         <li><a href="../formulaires.html">Les formulaires</a> &raquo;</li>
       
-    <li>Soumission d&#8217;un formulaire</li>
+    <li>Thème Bootstrap</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -185,61 +185,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="soumission-d-un-formulaire">
-<h1>Soumission d&#8217;un formulaire<a class="headerlink" href="#soumission-d-un-formulaire" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Reprenez la méthode <code class="docutils literal"><span class="pre">newAction</span></code> du <code class="docutils literal"><span class="pre">TagController</span></code> et ajoutez les lignes surlignées :</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nx">Epsi\Bundle\BlogBundle\Controller</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">Epsi\Bundle\BlogBundle\Entity\Tag</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Symfony\Bundle\FrameworkBundle\Controller\Controller</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Route</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</span><span class="p">;</span>
-<span class="hll"><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
-</span>
-<span class="sd">/**</span>
-<span class="sd"> * @Route(&quot;/tag&quot;)</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">TagController</span> <span class="k">extends</span> <span class="nx">Controller</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @Route(&quot;/new&quot;)</span>
-<span class="sd">     * @Template()</span>
-<span class="sd">     */</span>
-<span class="hll">    <span class="k">public</span> <span class="k">function</span> <span class="nf">newAction</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
-</span>    <span class="p">{</span>
-        <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tag</span><span class="p">();</span>
-
-        <span class="nv">$formBuilder</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;form.factory&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">createBuilder</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="nv">$entity</span><span class="p">);</span>
-
-        <span class="nv">$formBuilder</span>
-            <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span> <span class="s1">&#39;submit&#39;</span><span class="p">);</span>
-
-        <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$formBuilder</span><span class="o">-&gt;</span><span class="na">getForm</span><span class="p">();</span>
-
-<span class="hll">        <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">handleRequest</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
-</span><span class="hll">
-</span><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">())</span> <span class="p">{</span>
-</span><span class="hll">            <span class="nv">$em</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDoctrine</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getManager</span><span class="p">();</span>
-</span><span class="hll">            <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span>
-</span><span class="hll">            <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">flush</span><span class="p">();</span>
-</span><span class="hll">            <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getSession</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getFlashBag</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;notice&#39;</span><span class="p">,</span> <span class="s1">&#39;Tag bien enregistré.&#39;</span><span class="p">);</span>
-</span><span class="hll">
-</span><span class="hll">            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;epsi_blog_tag_new&#39;</span><span class="p">));</span>
-</span><span class="hll">        <span class="p">}</span>
-</span>
-        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;form&#39;</span> <span class="o">=&gt;</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">createView</span><span class="p">(),</span>
-        <span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+  <div class="section" id="theme-bootstrap">
+<h1>Thème Bootstrap<a class="headerlink" href="#theme-bootstrap" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Symfony fournit par défaut des templates pour mettre en forme les formulaires avec Bootstrap. Pour les utiliser, modifiez le fichier <code class="docutils literal"><span class="pre">app/config/config.yml</span></code> pour y ajouter le paramètre suivant :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">twig</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">form</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">resources</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;bootstrap_3_layout.html.twig&#39;</span><span class="p p-Indicator">]</span>
+        <span class="c1"># resources: [&#39;bootstrap_3_horizontal_layout.html.twig&#39;]</span>
 </pre></div>
 </div>
-<p>Pour soumettre un formulaire, il faut construire le formulaire, comme pour l&#8217;affichage, puis on lui passe la requête reçue qui contient les données soumises par l&#8217;utilisateur. La méthode <code class="docutils literal"><span class="pre">handleRequest</span></code> hydrate notre objet <code class="docutils literal"><span class="pre">$entity</span></code>. Donc en sortant de cette méthode, nous avons un tag rempli avec le nom saisi dans le formulaire. Mais avant de le sauvegrader, il faut vérifier que les données qu&#8217;il contient sont correctes.</p>
-<p>Lorsque les données sont validée, il faut passer à l&#8217;enregistrement de notre objet. En premier lieu il faut récupérer l&#8217;entity manager, c&#8217;est lui qui gère les interractions avec la base de données,
-Ensuite, on demande à l&#8217;entity manager de persister, autrement dit, enregistrer notre entité.
-Pour finir, on flush l&#8217;entity manager. C&#8217;est à ce moment qu&#8217;il va exécuter les requêtes pour insérer, modifier ou supprimer des entrées dans la base de données.</p>
-<p>Allez sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/tag/new">http://localhost/Symfony/web/app_dev.php/tag/new</a> et testez le formulaire.</p>
 </div>
 
 
@@ -249,10 +203,10 @@ Pour finir, on flush l&#8217;entity manager. C&#8217;est à ce moment qu&#8217;i
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="formulaire-edition.html" class="btn btn-neutral float-right" title="Formulaire d’édition" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="validation-donnees.html" class="btn btn-neutral float-right" title="La validation des données" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="formulaires-basiques.html" class="btn btn-neutral" title="Formulaire basique" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="form-type.html" class="btn btn-neutral" title="Les FormTypes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   

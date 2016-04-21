@@ -3,6 +3,7 @@
 namespace Epsi\Bundle\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Tag
@@ -25,6 +26,7 @@ class Tag
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=30)
+     * @Assert\NotBlank()
      */
     private $name;
 

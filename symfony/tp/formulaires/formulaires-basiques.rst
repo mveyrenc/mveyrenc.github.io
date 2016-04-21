@@ -81,6 +81,18 @@ Affichez la page http://localhost/Symfony/web/app_dev.php/tag/new.
 Pour créer un formulaire dans Symfony, on ne crée pas directement un objet ``Form``. On utilise un ``FormBuilder`` pour construire le formulaire, puis on génère le ``Form`` avec le ``FormBuilder``.
 Enfin, on génère un ``FormView`` pour afficher le formulaire.
 
+Dans l'exemple ci dessus, lors de la construction du formulaire, on ne précise pas le type de champ à afficher. Symfony le détermine automatique en fonction de la nature du champ de l'entité :
+
+* si le champ dans l'entité est un string, on aura un input text dans le formulaire,
+* si le champ dans l'entité est un booléen, on aura une case à cocher dans le formulaire,
+* si le champ dans l'entité est une relation, on aura un select simple ou multiple dans le formulaire,
+* etc.
+
+Cependant, on peut ajouter un paramètre à la méthode ``add`` pour forcer le type de champ affiché. Par exemple, si je fais un ``->add('name', 'text')``, le champ name sera un textarea dans le formulaire.
+
+On peut ajouter un troisième paramètre à la méthode ``add`` pour paramétrer le champ comme par exemple lui ajouter un classe CSS. Toutes les options par tye de champ sont précisées dans la documentation de Symfony : http://symfony.com/doc/2.7/reference/forms/types.html.
+
+
 
 
 

@@ -19,6 +19,7 @@ Donc le but d'un formulaire sous Symfony est de collecter les informations saisi
     formulaires/soumission-formulaire
     formulaires/formulaire-edition
     formulaires/form-type
+    formulaires/theme-bootstrap
     formulaires/*
 
 

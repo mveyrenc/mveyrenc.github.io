@@ -121,6 +121,8 @@
 <li class="toctree-l2"><a class="reference internal" href="soumission-formulaire.html">Soumission d&#8217;un formulaire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formulaire-edition.html">Formulaire d&#8217;édition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form-type.html">Les FormTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme-bootstrap.html">Thème Bootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation-donnees.html">La validation des données</a></li>
 </ul>
 </li>
 </ul>
@@ -255,6 +257,15 @@
 <img alt="../../_images/formulaires-basiques.png" class="box align-center" src="../../_images/formulaires-basiques.png" />
 <p>Pour créer un formulaire dans Symfony, on ne crée pas directement un objet <code class="docutils literal"><span class="pre">Form</span></code>. On utilise un <code class="docutils literal"><span class="pre">FormBuilder</span></code> pour construire le formulaire, puis on génère le <code class="docutils literal"><span class="pre">Form</span></code> avec le <code class="docutils literal"><span class="pre">FormBuilder</span></code>.
 Enfin, on génère un <code class="docutils literal"><span class="pre">FormView</span></code> pour afficher le formulaire.</p>
+<p>Dans l&#8217;exemple ci dessus, lors de la construction du formulaire, on ne précise pas le type de champ à afficher. Symfony le détermine automatique en fonction de la nature du champ de l&#8217;entité :</p>
+<ul class="simple">
+<li>si le champ dans l&#8217;entité est un string, on aura un input text dans le formulaire,</li>
+<li>si le champ dans l&#8217;entité est un booléen, on aura une case à cocher dans le formulaire,</li>
+<li>si le champ dans l&#8217;entité est une relation, on aura un select simple ou multiple dans le formulaire,</li>
+<li>etc.</li>
+</ul>
+<p>Cependant, on peut ajouter un paramètre à la méthode <code class="docutils literal"><span class="pre">add</span></code> pour forcer le type de champ affiché. Par exemple, si je fais un <code class="docutils literal"><span class="pre">-&gt;add('name',</span> <span class="pre">'text')</span></code>, le champ name sera un textarea dans le formulaire.</p>
+<p>On peut ajouter un troisième paramètre à la méthode <code class="docutils literal"><span class="pre">add</span></code> pour paramétrer le champ comme par exemple lui ajouter un classe CSS. Toutes les options par tye de champ sont précisées dans la documentation de Symfony : <a class="reference external" href="http://symfony.com/doc/2.7/reference/forms/types.html">http://symfony.com/doc/2.7/reference/forms/types.html</a>.</p>
 </div>
 
 

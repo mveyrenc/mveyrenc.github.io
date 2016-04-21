@@ -3,6 +3,7 @@
 namespace Epsi\Bundle\BlogBundle\Controller;
 
 use Epsi\Bundle\BlogBundle\Entity\Tag;
+use Epsi\Bundle\BlogBundle\Form\TagType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -21,13 +22,8 @@ class TagController extends Controller
     {
         $entity = new Tag();
 
-        $formBuilder = $this->get('form.factory')->createBuilder('form', $entity);
-
-        $formBuilder
-            ->add('name')
-            ->add('submit', 'submit');
-
-        $form = $formBuilder->getForm();
+        $form = $this->createForm(new TagType(), $entity);
+        $form->add('submit', 'submit', array('label' => 'Add'));
 
         $form->handleRequest($request);
 
@@ -59,13 +55,8 @@ class TagController extends Controller
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
 
-        $formBuilder = $this->get('form.factory')->createBuilder('form', $entity);
-
-        $formBuilder
-            ->add('name')
-            ->add('submit', 'submit');
-
-        $form = $formBuilder->getForm();
+        $form = $this->createForm(new TagType(), $entity);
+        $form->add('submit', 'submit', array('label' => 'Update'));
 
         $form->handleRequest($request);
 
