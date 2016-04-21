@@ -38,7 +38,7 @@ Dans le ``TagController`` ajouter la méthode suivante :
             $entity = $em->getRepository('EpsiBlogBundle:Tag')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Post entity.');
+                throw $this->createNotFoundException('Unable to find tag entity.');
             }
 
             return array(
