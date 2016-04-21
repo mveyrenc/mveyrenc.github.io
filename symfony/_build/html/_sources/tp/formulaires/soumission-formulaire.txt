@@ -59,4 +59,12 @@ Lorsque les données sont validée, il faut passer à l'enregistrement de notre 
 Ensuite, on demande à l'entity manager de persister, autrement dit, enregistrer notre entité.
 Pour finir, on flush l'entity manager. C'est à ce moment qu'il va exécuter les requêtes pour insérer, modifier ou supprimer des entrées dans la base de données.
 
+En plus des méthodes ``persist`` et ``flush``, l'EntityManager dispose d'autres méthodes intéressantes :
+
+* ``clear( $entity )`` : annule tous les ``persist`` effectués. Si un nom d'entité est passé en paramètre, alors seuls les ``persist`` sur les entités de ce type seront annulés
+* ``detach( $entity )`` : annule le ``persist`` sur l'entité passé en argument
+* ``contains( $entity )`` : retourne ``true`` si l'entité est gérée pas l'EntityManager, c'est à dire s'il y a eu un ``persist`` sur l'entité
+* ``refresh( $entity )`` : met à jour l'entité donnée en argument dans l'état où elle est en base de données
+* ``remove( $entity )`` : supprime l'entité donnée en argument de la base de données lors du prochain ``flush``
+
 Allez sur la page http://localhost/Symfony/web/app_dev.php/tag/new et testez le formulaire.

@@ -40,7 +40,7 @@ class TagController extends Controller
             'form' => $form->createView(),
         );
     }
-    
+
     /**
      * @Route("/{id}/edit")
      * @Template()
@@ -71,6 +71,42 @@ class TagController extends Controller
 
         return array(
             'form' => $form->createView(),
+        );
+    }
+
+    /**
+     * Finds and displays a Post entity.
+     *
+     * @Route("/{id}")
+     * @Template()
+     */
+    public function showAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('EpsiBlogBundle:Tag')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Post entity.');
+        }
+
+        return array(
+            'entity' => $entity,
+        );
+    }
+
+    /**
+     * @Route("/")
+     * @Template()
+     */
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('EpsiBlogBundle:Tag')->findAll();
+
+        return array(
+            'entities' => $entities,
         );
     }
 }

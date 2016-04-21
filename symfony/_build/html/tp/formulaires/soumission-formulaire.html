@@ -125,6 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="validation-donnees.html">La validation des données</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../affichage-entites.html">Affichage des entités</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aide</span></p>
 <ul>
@@ -239,6 +240,14 @@
 <p>Lorsque les données sont validée, il faut passer à l&#8217;enregistrement de notre objet. En premier lieu il faut récupérer l&#8217;entity manager, c&#8217;est lui qui gère les interractions avec la base de données,
 Ensuite, on demande à l&#8217;entity manager de persister, autrement dit, enregistrer notre entité.
 Pour finir, on flush l&#8217;entity manager. C&#8217;est à ce moment qu&#8217;il va exécuter les requêtes pour insérer, modifier ou supprimer des entrées dans la base de données.</p>
+<p>En plus des méthodes <code class="docutils literal"><span class="pre">persist</span></code> et <code class="docutils literal"><span class="pre">flush</span></code>, l&#8217;EntityManager dispose d&#8217;autres méthodes intéressantes :</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">clear(</span> <span class="pre">$entity</span> <span class="pre">)</span></code> : annule tous les <code class="docutils literal"><span class="pre">persist</span></code> effectués. Si un nom d&#8217;entité est passé en paramètre, alors seuls les <code class="docutils literal"><span class="pre">persist</span></code> sur les entités de ce type seront annulés</li>
+<li><code class="docutils literal"><span class="pre">detach(</span> <span class="pre">$entity</span> <span class="pre">)</span></code> : annule le <code class="docutils literal"><span class="pre">persist</span></code> sur l&#8217;entité passé en argument</li>
+<li><code class="docutils literal"><span class="pre">contains(</span> <span class="pre">$entity</span> <span class="pre">)</span></code> : retourne <code class="docutils literal"><span class="pre">true</span></code> si l&#8217;entité est gérée pas l&#8217;EntityManager, c&#8217;est à dire s&#8217;il y a eu un <code class="docutils literal"><span class="pre">persist</span></code> sur l&#8217;entité</li>
+<li><code class="docutils literal"><span class="pre">refresh(</span> <span class="pre">$entity</span> <span class="pre">)</span></code> : met à jour l&#8217;entité donnée en argument dans l&#8217;état où elle est en base de données</li>
+<li><code class="docutils literal"><span class="pre">remove(</span> <span class="pre">$entity</span> <span class="pre">)</span></code> : supprime l&#8217;entité donnée en argument de la base de données lors du prochain <code class="docutils literal"><span class="pre">flush</span></code></li>
+</ul>
 <p>Allez sur la page <a class="reference external" href="http://localhost/Symfony/web/app_dev.php/tag/new">http://localhost/Symfony/web/app_dev.php/tag/new</a> et testez le formulaire.</p>
 </div>
 
