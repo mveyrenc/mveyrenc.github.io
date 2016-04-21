@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equic="Content-type" content="text/html; charset=utf-8"/>
-    {% block stylesheets %}
-        <link href="{{ asset('bundles/epsiblog/css/bootstrap.min.css') }}" rel="stylesheet"/>
-        <link href="{{ asset('bundles/epsiblog/css/bootstrap-theme.css') }}" rel="stylesheet"/>
-    {% endblock %}
-</head>
-<body>
-{% block body %}
-    <div class="container">
+{% extends "EpsiBlogBundle::base.html.twig" %}
+
+    {% block content %}
         <h1>Tags</h1>
         {% for type, messages in app.session.flashbag.all %}
             {% for message in messages %}
@@ -49,11 +40,4 @@
                 </a>
             </li>
         </ul>
-    </div>
-{% endblock %}
-{% block javascripts %}
-    <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.2.min.js') }}"></script>
-    <script src="{{ asset('bundles/epsiblog/js/bootstrap.min.js') }}"></script>
-{% endblock %}
-</body>
-</html>
+    {% endblock %}

@@ -56,4 +56,6 @@ Mais nous allons nous contenter des méthodes déjà implémentées pour le mome
     :hidden:
 
     affichage-entites/affichage-une-entite
+    affichage-entites/affichage-plusieurs-entites
+    affichage-entites/twig
     affichage-entites/*
