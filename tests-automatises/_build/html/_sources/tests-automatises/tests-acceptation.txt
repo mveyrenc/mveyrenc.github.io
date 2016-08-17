@@ -74,5 +74,95 @@ Une **feature** ou un **scenario** peut être associée à des tags afin de pouv
 
 `Documentation de Behat <http://docs.behat.org/en/v3.0/user_guide/writing_scenarios.html#user-guide-writing-scenarios-backgrounds/>`_
 
+*******************
+Lancement des tests
+*******************
+
+* `JBehave <http://jbehave.org//>`_ (Java)
+* `Cucumber <https://cucumber.io/>`_ (Ruby)
+* `Behat <http://docs.behat.org/en/v3.0/>`_ (PHP)
+* `Behave <http://pythonhosted.org/behave/>`_ (Python)
+
+*****
+Behat
+*****
+
+Installation
+============
+
+.. code-block:: console
+
+    php composer.phar require --dev behat/behat
+    php composer.phar require --dev behat/mink
+    php composer.phar require --dev behat/mink-selenium2-driver
+    php composer.phar require --dev behat/mink-extension
+    php composer.phar require --dev behat/mink-goutte-driver
+    vendor/bin/behat --init
+
+Fichier de configuration :
+
+.. code-block:: yml
+
+    # behat.yml
+    default:
+        suites:
+            default:
+                path: %paths.base%/features
+                contexts:
+                    - FeatureContext
+                    - Behat\MinkExtension\Context\MinkContext
+        extensions:
+            Behat\MinkExtension:
+                base_url:  'http://mveyrenc.github.io'
+                sessions:
+                    default:
+                        goutte: ~
+
+.. admonition:: Mink Drivers
+
+    ======================  =================  =========  ======  ========  ====
+    Feature                 BrowserKit/Goutte  Selenium2  Zombie  Selenium  Sahi
+    ======================  =================  =========  ======  ========  ====
+    Page traversing         Yes                Yes        Yes     Yes       Yes
+    Form manipulation       Yes                Yes        Yes     Yes       Yes
+    HTTP Basic auth         Yes                No         Yes     No        No
+    Windows management      No                 Yes        No      Yes       Yes
+    iFrames management      No                 Yes        No      Yes       No
+    Request headers access  Yes                No         Yes     No        No
+    Response headers        Yes                No         Yes     No        No
+    Cookie manipulation     Yes                Yes        Yes     Yes       Yes
+    Status code access      Yes                No         Yes     No        No
+    Mouse manipulation      No                 Yes        Yes     Yes       Yes
+    Drag'n Drop             No                 Yes        No      Yes       Yes
+    Keyboard actions        No                 Yes        Yes     Yes       Yes
+    Element visibility      No                 Yes        No      Yes       Yes
+    JS evaluation           No                 Yes        Yes     Yes       Yes
+    Window resizing         No                 Yes        No      No        No
+    Window maximizing       No                 Yes        No      Yes       No
+    ======================  =================  =========  ======  ========  ====
+
+
+Exécuter Behat
+==============
+
+Écrivez vos tests dans le répertoire ``features`` comme par exemple :
+
+.. code-block:: gherkin
+
+    # language: fr
+
+    Fonctionnalité: Homepage
+        Scénario: Je vais sur la page d'accueil
+            Etant donné que je suis sur la page "/"
+            Alors je devrais voir "Tests automatisés et intégration continue PHP"
+
+Définissez les étapes manquantes dans ``features/bootstrap/FeatureContext.php`` :
+
+
+
+.. code-block:: console
+
+    vendor/bin/behat
+
 
 

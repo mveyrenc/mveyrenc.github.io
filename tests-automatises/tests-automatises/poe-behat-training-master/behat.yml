@@ -11,4 +11,3 @@ default:
             sessions:
                 default:
                     goutte: ~
-#                    selenium2: ~

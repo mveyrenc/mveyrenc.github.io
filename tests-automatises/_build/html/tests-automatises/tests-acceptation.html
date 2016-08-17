@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les tests d’acceptation &mdash; documentation Demo 1.0</title>
+  <title>Les tests d’acceptation &mdash; documentation Tests automatisés et intégration continue 1.0</title>
   
 
   
@@ -48,7 +48,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <link rel="top" title="documentation Demo 1.0" href="../index.html"/>
+    <link rel="top" title="documentation Tests automatisés et intégration continue 1.0" href="../index.html"/>
         <link rel="next" title="Les tests fonctionels" href="tests-fonctionnels.html"/>
         <link rel="prev" title="Les tests unitaires" href="tests-unitaires.html"/> 
 
@@ -73,7 +73,7 @@
               <div class="logo">
                 <a href="../index.html"><img src="../_static/logo_html.png" /></a>
               </div>
-              <a href="../index.html"> Demo
+              <a href="../index.html"> Tests automatisés et intégration continue
             
         
         </a>
@@ -86,7 +86,7 @@
 
         
           <div class="reference">
-            OWSI-PHP-INT
+            POE-TESTS
 
             
             - v1.0
@@ -110,6 +110,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#gherkin">Gherkin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#features-et-scenarios">Features et scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ecrire-des-scenarios">Écrire des scénarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lancement-des-tests">Lancement des tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Behat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#executer-behat">Exécuter Behat</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tests-fonctionnels.html">Les tests fonctionels</a></li>
@@ -144,7 +150,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Demo</a>
+        <a href="../index.html">Tests automatisés et intégration continue</a>
       </nav>
 
 
@@ -238,6 +244,198 @@ Chaque <strong>scenario</strong> contient des étapes qui doivent commençer par
 <div class="section" id="ecrire-des-scenarios">
 <h2>Écrire des scénarios<a class="headerlink" href="#ecrire-des-scenarios" title="Lien permanent vers ce titre">¶</a></h2>
 <p><a class="reference external" href="http://docs.behat.org/en/v3.0/user_guide/writing_scenarios.html#user-guide-writing-scenarios-backgrounds/">Documentation de Behat</a></p>
+</div>
+<div class="section" id="lancement-des-tests">
+<h2>Lancement des tests<a class="headerlink" href="#lancement-des-tests" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://jbehave.org//">JBehave</a> (Java)</li>
+<li><a class="reference external" href="https://cucumber.io/">Cucumber</a> (Ruby)</li>
+<li><a class="reference external" href="http://docs.behat.org/en/v3.0/">Behat</a> (PHP)</li>
+<li><a class="reference external" href="http://pythonhosted.org/behave/">Behave</a> (Python)</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Behat<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">php composer.phar require --dev behat/behat</span>
+<span class="go">php composer.phar require --dev behat/mink</span>
+<span class="go">php composer.phar require --dev behat/mink-selenium2-driver</span>
+<span class="go">php composer.phar require --dev behat/mink-extension</span>
+<span class="go">php composer.phar require --dev behat/mink-goutte-driver</span>
+<span class="go">vendor/bin/behat --init</span>
+</pre></div>
+</div>
+<p>Fichier de configuration :</p>
+<div class="highlight-yml"><div class="highlight"><pre><span></span># behat.yml
+default:
+    suites:
+        default:
+            path: %paths.base%/features
+            contexts:
+                - FeatureContext
+                - Behat\MinkExtension\Context\MinkContext
+    extensions:
+        Behat\MinkExtension:
+            base_url:  &#39;http://mveyrenc.github.io&#39;
+            sessions:
+                default:
+                    goutte: ~
+</pre></div>
+</div>
+<div class="admonition-mink-drivers admonition">
+<p class="first admonition-title">Mink Drivers</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="33%" />
+<col width="26%" />
+<col width="14%" />
+<col width="9%" />
+<col width="12%" />
+<col width="6%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Feature</th>
+<th class="head">BrowserKit/Goutte</th>
+<th class="head">Selenium2</th>
+<th class="head">Zombie</th>
+<th class="head">Selenium</th>
+<th class="head">Sahi</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Page traversing</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>Form manipulation</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>HTTP Basic auth</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>Windows management</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>iFrames management</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>Request headers access</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>Response headers</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>Cookie manipulation</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>Status code access</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>Mouse manipulation</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>Drag&#8217;n Drop</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>Keyboard actions</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>Element visibility</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>JS evaluation</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>Window resizing</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>Window maximizing</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="executer-behat">
+<h3>Exécuter Behat<a class="headerlink" href="#executer-behat" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Écrivez vos tests dans le répertoire <code class="docutils literal"><span class="pre">features</span></code> comme par exemple :</p>
+<div class="highlight-gherkin"><div class="highlight"><pre><span></span><span class="c"># language: fr</span><span class="nf"></span>
+
+<span class="k">Fonctionnalité:</span><span class="nf"> Homepage</span>
+<span class="nf">    </span><span class="k">Scénario:</span><span class="nf"> Je vais sur la page d&#39;accueil</span>
+<span class="k">        Etant donné </span><span class="nf">que je suis sur la page &quot;</span><span class="s">/</span><span class="nf">&quot;</span>
+<span class="nf">        </span><span class="k">Alors </span><span class="nf">je devrais voir &quot;</span><span class="s">Tests automatisés et intégration continue PHP</span><span class="nf">&quot;</span>
+</pre></div>
+</div>
+<p>Définissez les étapes manquantes dans <code class="docutils literal"><span class="pre">features/bootstrap/FeatureContext.php</span></code> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vendor/bin/behat</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

@@ -101,16 +101,46 @@ Installation
 
 Fichier de configuration :
 
-.. code-block:: yaml
+.. code-block:: yml
 
     # behat.yml
     default:
+        suites:
+            default:
+                path: %paths.base%/features
+                contexts:
+                    - FeatureContext
+                    - Behat\MinkExtension\Context\MinkContext
         extensions:
             Behat\MinkExtension:
                 base_url:  'http://mveyrenc.github.io'
                 sessions:
-                default:
-                    goutte: ~
+                    default:
+                        goutte: ~
+
+.. admonition:: Mink Drivers
+
+    ======================  =================  =========  ======  ========  ====
+    Feature                 BrowserKit/Goutte  Selenium2  Zombie  Selenium  Sahi
+    ======================  =================  =========  ======  ========  ====
+    Page traversing         Yes                Yes        Yes     Yes       Yes
+    Form manipulation       Yes                Yes        Yes     Yes       Yes
+    HTTP Basic auth         Yes                No         Yes     No        No
+    Windows management      No                 Yes        No      Yes       Yes
+    iFrames management      No                 Yes        No      Yes       No
+    Request headers access  Yes                No         Yes     No        No
+    Response headers        Yes                No         Yes     No        No
+    Cookie manipulation     Yes                Yes        Yes     Yes       Yes
+    Status code access      Yes                No         Yes     No        No
+    Mouse manipulation      No                 Yes        Yes     Yes       Yes
+    Drag'n Drop             No                 Yes        No      Yes       Yes
+    Keyboard actions        No                 Yes        Yes     Yes       Yes
+    Element visibility      No                 Yes        No      Yes       Yes
+    JS evaluation           No                 Yes        Yes     Yes       Yes
+    Window resizing         No                 Yes        No      No        No
+    Window maximizing       No                 Yes        No      Yes       No
+    ======================  =================  =========  ======  ========  ====
+
 
 Exécuter Behat
 ==============
@@ -124,7 +154,7 @@ Exécuter Behat
     Fonctionnalité: Homepage
         Scénario: Je vais sur la page d'accueil
             Etant donné que je suis sur la page "/"
-            Alors je devrais voir "TESTS AUTOMATISÉS ET INTÉGRATION CONTINUE PHP"
+            Alors je devrais voir "Tests automatisés et intégration continue PHP"
 
 Définissez les étapes manquantes dans ``features/bootstrap/FeatureContext.php`` :
 

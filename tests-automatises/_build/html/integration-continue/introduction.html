@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>L’integration continue &mdash; documentation Demo 1.0</title>
+  <title>L’intégration continue &mdash; documentation Tests automatisés et intégration continue 1.0</title>
   
 
   
@@ -48,7 +48,7 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <link rel="top" title="documentation Demo 1.0" href="../index.html"/>
+    <link rel="top" title="documentation Tests automatisés et intégration continue 1.0" href="../index.html"/>
         <link rel="next" title="Versions du document" href="../appendices/versions.html"/>
         <link rel="prev" title="Les tests fonctionels" href="../tests-automatises/tests-fonctionnels.html"/> 
 
@@ -73,7 +73,7 @@
               <div class="logo">
                 <a href="../index.html"><img src="../_static/logo_html.png" /></a>
               </div>
-              <a href="../index.html"> Demo
+              <a href="../index.html"> Tests automatisés et intégration continue
             
         
         </a>
@@ -86,7 +86,7 @@
 
         
           <div class="reference">
-            OWSI-PHP-INT
+            POE-TESTS
 
             
             - v1.0
@@ -110,7 +110,7 @@
 </ul>
 <p class="caption"><span class="caption-text">L&#8217;integration continue</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">L&#8217;integration continue</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">L&#8217;intégration continue</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Annexes</span></p>
 <ul>
@@ -138,7 +138,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Demo</a>
+        <a href="../index.html">Tests automatisés et intégration continue</a>
       </nav>
 
 
@@ -155,7 +155,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>L&#8217;integration continue</li>
+    <li>L&#8217;intégration continue</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -171,7 +171,23 @@
            <div itemprop="articleBody">
             
   <div class="section" id="l-integration-continue">
-<h1>L&#8217;integration continue<a class="headerlink" href="#l-integration-continue" title="Lien permanent vers ce titre">¶</a></h1>
+<h1>L&#8217;intégration continue<a class="headerlink" href="#l-integration-continue" title="Lien permanent vers ce titre">¶</a></h1>
+<ul class="simple">
+<li>compilation du code</li>
+<li>tests unitaires</li>
+<li>packaging</li>
+<li>déploiement</li>
+<li>tests acceptance</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><a class="reference external" href="https://jenkins.io/">Jenkins</a></li>
+</ul>
+<p>Pour tester :</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker pull jenkins</span>
+<span class="go">docker run -p 8080:8080 -p 50000:50000 jenkins</span>
+</pre></div>
+</div>
 </div>
 
 
