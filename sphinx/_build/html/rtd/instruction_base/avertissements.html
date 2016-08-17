@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Avertissements &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../../index.html"/>
+        <link rel="up" title="Instructions de base" href="../instruction_base.html"/>
+        <link rel="next" title="Citations" href="citation.html"/>
+        <link rel="prev" title="Les directives" href="base.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../../index.html"><img src="../../_static/logo_html.png" /></a>
+              </div>
+              <a href="../../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../instruction_base.html">Instructions de base</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">Les directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#les-roles">Les rôles</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Avertissements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#specifiques">Spécifiques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generiques">Génériques</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="citation.html">Citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commentaires.html">Commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_css.html">Customisation CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="footnotes.html">Notes de bas de page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html#figures">Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inclusion-fichier.html">Inclusion de fichier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inline-markup.html">Inline markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="listes.html">Listes et définitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paragraphes.html">Paragraphes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raw.html">Raw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sidebar.html">Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitutions.html">Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tableaux.html">Tableaux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html">Titres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html#titre-de-la-partie">Titre de la partie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toc-tree.html">TOC tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic.html">Topic!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transition.html">Transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typographie.html">Typographie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../instruction_base.html">Instructions de base</a> &raquo;</li>
+      
+    <li>Avertissements</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/rtd/instruction_base/avertissements.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="avertissements">
+<h1>Avertissements<a class="headerlink" href="#avertissements" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="specifiques">
+<span id="index-0"></span><h2>Spécifiques<a class="headerlink" href="#specifiques" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">warning</span><span class="p">::</span>
+    Equations within a note
+    <span class="na">:math:</span><span class="nv">`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`</span>.
+</pre></div>
+</div>
+<ul id="index-1">
+<li><p class="first">attention</p>
+<blockquote>
+<div><div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="index-2">
+<li><p class="first">caution</p>
+<blockquote>
+<div><div class="admonition caution">
+<p class="first admonition-title">Prudence</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="index-3">
+<li><p class="first">danger</p>
+<blockquote>
+<div><div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="index-4">
+<li><p class="first">error</p>
+<blockquote>
+<div><div class="admonition error">
+<p class="first admonition-title">Erreur</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="index-5">
+<li><p class="first">hint</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="first admonition-title">Indice</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="index-6">
+<li><p class="first">important</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="index-7">
+<li><p class="first">note</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="index-8">
+<li><p class="first">tip</p>
+<blockquote>
+<div><div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">tip avec paramètre</p>
+<blockquote>
+<div><div class="custom-class admonition tip" id="this-is-the-custom-name">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="generiques">
+<h2>Génériques<a class="headerlink" href="#generiques" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-rst" id="index-9"><div class="highlight"><pre><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Custom
+
+    Equations within a note
+    <span class="na">:math:</span><span class="nv">`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`</span>.
+</pre></div>
+</div>
+<div class="admonition-custom admonition">
+<p class="first admonition-title">Custom</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+<div class="warning admonition" id="custom">
+<p class="first admonition-title">Custom</p>
+<p class="last">Equations within a note
+<span class="math">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+</div>
+<p><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions">http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="citation.html" class="btn btn-neutral float-right" title="Citations" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="base.html" class="btn btn-neutral" title="Les directives" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

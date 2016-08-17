@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Commandes Drush &mdash; documentation Drupal 7 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Drupal 7 1.0" href="index.html"/>
+        <link rel="next" title="Les modules" href="modules.html"/>
+        <link rel="prev" title="Environnements" href="environnement.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo.png" /></a>
+              </div>
+              <a href="index.html"> Drupal 7
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="poste_travail.html">Poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environnement.html">Environnements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Commandes Drush</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#autocompletion">Autocomplétion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#activer-un-module">Activer un module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desactiver-un-module">Désactiver un module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lister-les-modules-du-site">Lister les modules du site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dumper-une-bdd">Dumper une BDD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vider-le-cache">Vider le cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mettre-a-jour-une-bdd">Mettre à jour une BDD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mode-maintenance">Mode maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-du-cache-des-alias-d-image">Gestion du cache des alias d&#8217;image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug">Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#features-update">features-update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#features-revert">features-revert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#features-export">features-export</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Les modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Les thèmes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behat.html">Tests Behat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_continue.html">Intégration continue</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Drupal 7</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Commandes Drush</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/drush.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="commandes-drush">
+<h1>Commandes Drush<a class="headerlink" href="#commandes-drush" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="autocompletion">
+<h2>Autocomplétion<a class="headerlink" href="#autocompletion" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour faciliter l&#8217;écriture de commandes Drush, il existe un outil d&#8217;autocomplétion.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<p class="last"><a class="reference external" href="http://developpeur-drupal.com/article/drush-avance-installation-composer-alias-autocompletions">http://developpeur-drupal.com/article/drush-avance-installation-composer-alias-autocompletions</a></p>
+</div>
+</div>
+<div class="section" id="activer-un-module">
+<h2>Activer un module<a class="headerlink" href="#activer-un-module" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Si le module n&#8217;est pas dans les sources, alors il est téléchargé dans sa dernière version compatible avec le core choisi par le profil (ex : 7.x).</p>
+<p>Cependant, avant de télécharger la dernière version d&#8217;un module, il est conseillé de le tester en local pour vérifier qu&#8217;il n&#8217;y a pas de régression.</p>
+<p>On utilisera le module <strong>update_manager</strong> pour être averti en BO des nouvelles versions des modules installés.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush en mymodule
+</pre></div>
+</div>
+</div>
+<div class="section" id="desactiver-un-module">
+<h2>Désactiver un module<a class="headerlink" href="#desactiver-un-module" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush dis mymodule
+</pre></div>
+</div>
+</div>
+<div class="section" id="lister-les-modules-du-site">
+<h2>Lister les modules du site<a class="headerlink" href="#lister-les-modules-du-site" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush pml
+</pre></div>
+</div>
+</div>
+<div class="section" id="dumper-une-bdd">
+<h2>Dumper une BDD<a class="headerlink" href="#dumper-une-bdd" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush sql-dump &gt; dump.sql
+</pre></div>
+</div>
+</div>
+<div class="section" id="vider-le-cache">
+<h2>Vider le cache<a class="headerlink" href="#vider-le-cache" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush cc all
+<span class="nv">$ </span>./bin/drush cc css-js
+</pre></div>
+</div>
+</div>
+<div class="section" id="mettre-a-jour-une-bdd">
+<h2>Mettre à jour une BDD<a class="headerlink" href="#mettre-a-jour-une-bdd" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Met à jour la BDD selon les hooks créés</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush updb
+</pre></div>
+</div>
+</div>
+<div class="section" id="mode-maintenance">
+<h2>Mode maintenance<a class="headerlink" href="#mode-maintenance" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush vset maintenance_mode 1
+<span class="nv">$ </span>./bin/drush vset maintenance_mode 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="gestion-du-cache-des-alias-d-image">
+<h2>Gestion du cache des alias d&#8217;image<a class="headerlink" href="#gestion-du-cache-des-alias-d-image" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Regénère le itok des images</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush vset drupal_private_key 0
+<span class="nv">$ </span>rm -rf sites/default/files/styles/<span class="o">[</span>STYLE_NAME<span class="o">]</span>/*
+</pre></div>
+</div>
+</div>
+<div class="section" id="debug">
+<h2>Debug<a class="headerlink" href="#debug" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush ws --tail
+</pre></div>
+</div>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<p class="last"><a class="reference external" href="http://drupalfr.org/documentation/prise-main-detaillee-modules-context-features">http://drupalfr.org/documentation/prise-main-detaillee-modules-context-features</a></p>
+</div>
+<div class="section" id="features-update">
+<h3>features-update<a class="headerlink" href="#features-update" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Appliquer les modifications de la BDD dans le fichier.</p>
+<p>Cas : On a mis à jour les droits utilisateurs ou un type de contenu en local, on lance cette commande pour injecter les modifications dans la feature pour déploiement sur les environnements</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush fu -y ow_main
+</pre></div>
+</div>
+</div>
+<div class="section" id="features-revert">
+<h3>features-revert<a class="headerlink" href="#features-revert" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Appliquer les modifications fichiers dans la BDD.</p>
+<p>Cas : On déploie des modifications sur les environnements (Attention : écrase les valeurs précédemments affectées)</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush fr -y ow_main
+<span class="nv">$ </span>./bin/drush fra <span class="o">(</span>features-revert-all<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="features-export">
+<h3>features-export<a class="headerlink" href="#features-export" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour exporter une variable dans le fichier <code class="docutils literal"><span class="pre">module.info</span></code> du module</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># ./bin/drush fe mymodule var:googleanalytics_account</span>
+<span class="nv">$ </span>./bin/drush fe mymodule my_variable
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<p><a class="reference external" href="https://www.drupal.org/node/960926">https://www.drupal.org/node/960926</a></p>
+<p><a class="reference external" href="http://docs.drush.org/en/master/examples/">http://docs.drush.org/en/master/examples/</a></p>
+<p class="last"><a class="reference external" href="http://drewpull.drupalgardens.com/blog/drush-make-site-deployment">http://drewpull.drupalgardens.com/blog/drush-make-site-deployment</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules.html" class="btn btn-neutral float-right" title="Les modules" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="environnement.html" class="btn btn-neutral" title="Environnements" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

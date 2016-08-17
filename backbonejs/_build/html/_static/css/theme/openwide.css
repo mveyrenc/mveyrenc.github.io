@@ -1,0 +1,52 @@
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+@import url(white.css);
+
+.backgrounds .first-slide {
+    background: url("../../img/diapo_banniereow.jpg") no-repeat top;
+    background-size: 100% 50%;
+}
+
+.reveal:after {
+    background: url("../../images/diapo_footerow.jpg") no-repeat bottom;
+    height: 40px;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-size: 627px 40px;
+    margin-bottom: 10px;
+}
+
+.reveal {
+    color: #505050;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    color: #0c96c7;
+}
+
+.reveal section img {
+    border: 1px solid #505050;
+    padding: 5px;
+}
+
+.reveal .first-slide h1 {
+    color: #FFF;
+    text-shadow: 2px 2px #505050;
+}
+
+.print-pdf .reveal .first-slide h1 {
+    color: #0c96c7;
+    text-shadow: 2px 2px #505050;
+}
+
+.reveal section.last-slide img {
+    border: none;
+    box-shadow: none;
+}
+
+.reveal .dl-left dl {
+    width: 100%;
+}
+
+

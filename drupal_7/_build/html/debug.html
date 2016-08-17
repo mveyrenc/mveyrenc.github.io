@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Debug &mdash; documentation Drupal 7 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Drupal 7 1.0" href="index.html"/>
+        <link rel="next" title="Liens" href="liens.html"/>
+        <link rel="prev" title="Theming" href="theming.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo.png" /></a>
+              </div>
+              <a href="index.html"> Drupal 7
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="poste_travail.html">Poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environnement.html">Environnements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drush.html">Commandes Drush</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Les modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Les thèmes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Debug</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#drush">Drush</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-php">Code PHP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#xdebug">XDebug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-devel">Module devel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-drupal-for-firebug">Module Drupal for Firebug</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behat.html">Tests Behat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_continue.html">Intégration continue</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Drupal 7</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Debug</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/debug.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="debug">
+<h1>Debug<a class="headerlink" href="#debug" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="drush">
+<h2>Drush<a class="headerlink" href="#drush" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush wd-show --tail
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<p class="last"><a class="reference external" href="https://www.drupal.org/node/960926">https://www.drupal.org/node/960926</a></p>
+</div>
+</div>
+<div class="section" id="code-php">
+<h2>Code PHP<a class="headerlink" href="#code-php" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="xdebug">
+<h3>XDebug<a class="headerlink" href="#xdebug" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<ul class="last simple">
+<li>Installation Xdebug : <a class="reference external" href="http://xdebug.org/docs/install">http://xdebug.org/docs/install</a></li>
+<li>Configurer PHPStorm et Xdebug : <a class="reference external" href="https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm">https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-devel">
+<h3>Module devel<a class="headerlink" href="#module-devel" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">// dumper une variable</span>
+<span class="x">global $user;</span>
+<span class="x">$account = $user;</span>
+<span class="x">dpm($account);</span>
+
+<span class="x">// ou pour afficher toutes les variables disponibles</span>
+<span class="x">dpm(get_defined_vars());</span>
+
+<span class="x">// ou</span>
+<span class="x">dpm(debug_backtrace());</span>
+
+<span class="x">drupal_set_message()</span>
+
+<span class="x">// Debug d&#39;une query</span>
+<span class="x">dpq($query);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-drupal-for-firebug">
+<h3>Module Drupal for Firebug<a class="headerlink" href="#module-drupal-for-firebug" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">// dumper une variable</span>
+<span class="x">firep($item, $optional_title)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://www.wdtutorials.com/drupal-7/drupal-7-useful-modules-developers#.VWbENbziBWU">http://www.wdtutorials.com/drupal-7/drupal-7-useful-modules-developers#.VWbENbziBWU</a></li>
+<li>Module MailLog : <a class="reference external" href="https://www.drupal.org/project/maillog">https://www.drupal.org/project/maillog</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="liens.html" class="btn btn-neutral float-right" title="Liens" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="theming.html" class="btn btn-neutral" title="Theming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; documentation Drupal 7 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Drupal 7 1.0" href="index.html"/>
+        <link rel="next" title="Environnements" href="environnement.html"/>
+        <link rel="prev" title="Poste de travail" href="poste_travail.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo.png" /></a>
+              </div>
+              <a href="index.html"> Drupal 7
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="poste_travail.html">Poste de travail</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requis">Pré-requis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-initiale-du-projet">Création initiale du projet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-du-repository-owsi-drupal-7">Installation du repository OWSI-Drupal 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialisation-du-projet">Initialisation du projet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-du-projet">Installation du projet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creation-du-vhost">Création du VHost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creation-de-la-bdd">Création de la BDD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-du-site">Installation du site</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lancement">Lancement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#traductions">Traductions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environnement.html">Environnements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drush.html">Commandes Drush</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Les modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Les thèmes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behat.html">Tests Behat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_continue.html">Intégration continue</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Drupal 7</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/installation.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="pre-requis">
+<h2>Pré-requis<a class="headerlink" href="#pre-requis" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Pour dézipper les libraires JS téléchargées</span>
+<span class="nv">$ </span>sudo apt-get install unzip
+
+<span class="c"># Génération de la documentation Sphinx en PDF</span>
+<span class="nv">$ </span>sudo apt-get install texlive
+</pre></div>
+</div>
+</div>
+<div class="section" id="creation-initiale-du-projet">
+<h2>Création initiale du projet<a class="headerlink" href="#creation-initiale-du-projet" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Cette phase n&#8217;est nécessaire que lors du démarrage d&#8217;un projet. Si le projet a déjà un repository, alors passez directement à l&#8217;étape suivante <a class="reference internal" href="#installation-projet">installation-projet</a>.</p>
+</div>
+<div class="section" id="installation-du-repository-owsi-drupal-7">
+<h3>Installation du repository OWSI-Drupal 7<a class="headerlink" href="#installation-du-repository-owsi-drupal-7" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /data/sources
+<span class="nv">$ </span>git clone ssh://git.projects.openwide.fr/gitroot/owsi-drupal7
+<span class="nv">$ </span><span class="nb">cd</span> /data/sources/owsi-drupal7
+<span class="nv">$ </span>git submodule update --init
+</pre></div>
+</div>
+</div>
+<div class="section" id="initialisation-du-projet">
+<h3>Initialisation du projet<a class="headerlink" href="#initialisation-du-projet" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Clônez le repository du projet dans <em>[PROJECT_DIRECTORY]</em>, puis lancez le script d&#8217;initialisation <strong>à partir du dossier owsi-drupal7</strong> :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /data/sources/owsi-drupal7/bin
+<span class="nv">$ </span>chmod u+x create-project.sh
+<span class="nv">$ </span>./create-project.sh <span class="o">[</span>PROJECT_DIRECTORY<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installation-du-projet">
+<span id="installation-projet"></span><h2>Installation du projet<a class="headerlink" href="#installation-du-projet" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="creation-du-vhost">
+<h3>Création du VHost<a class="headerlink" href="#creation-du-vhost" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Configurez votre VHost comme ceci :</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;Directory</span> <span class="s">/data/services/web/MY_PROJECT/www</span><span class="nt">&gt;</span>
+        <span class="nb">Require</span> <span class="k">all</span> granted
+        <span class="nb">Options</span> FollowSymLinks
+        <span class="nb">AllowOverride</span> <span class="k">All</span>
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    <span class="nb">ServerAdmin</span> webmaster@example.fr
+    <span class="nb">DocumentRoot</span> <span class="sx">/data/services/web/MY_PROJECT/www</span>
+    <span class="nb">ServerName</span> www.MY_PROJECT.loc
+    <span class="nb">ServerAlias</span> MY_PROJECT.loc
+    <span class="nb">RewriteEngine</span> <span class="k">On</span>
+    <span class="nb">RewriteOptions</span> inherit
+    <span class="nb">CustomLog</span> <span class="sx">/var/log/apache2/MY_PROJECT.log</span> combined
+
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creation-de-la-bdd">
+<h3>Création de la BDD<a class="headerlink" href="#creation-de-la-bdd" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Créez la BDD via phpMyAdmin ou en ligne de commandes :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mysql -u <span class="o">[</span>username<span class="o">]</span> -e <span class="s2">&quot;CREATE DATABASE __db__ CHARACTER SET utf8 COLLATE utf8_general_ci;&quot;</span>
+<span class="nv">$ </span>mysql -u <span class="o">[</span>username<span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Puis affectez les droits à un user MySQL que vousdoc créerez :</p>
+<div class="highlight-mysql"><div class="highlight"><pre><span class="k">GRANT</span> <span class="k">SELECT</span><span class="p">,</span> <span class="k">INSERT</span><span class="p">,</span> <span class="k">UPDATE</span><span class="p">,</span> <span class="k">DELETE</span><span class="p">,</span> <span class="k">CREATE</span><span class="p">,</span> <span class="k">DROP</span><span class="p">,</span> <span class="k">INDEX</span><span class="p">,</span> <span class="k">ALTER</span><span class="p">,</span> <span class="k">CREATE</span> <span class="n">TEMPORARY</span> <span class="kp">TABLES</span> <span class="k">ON</span> <span class="n">__db__</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;admin&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;admin&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<p class="last">Création de la BDD : <a class="reference external" href="https://www.drupal.org/documentation/install/create-database">https://www.drupal.org/documentation/install/create-database</a></p>
+</div>
+</div>
+<div class="section" id="installation-du-site">
+<h3>Installation du site<a class="headerlink" href="#installation-du-site" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="introduction">
+<h4>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h4>
+<p><strong>Que fait l&#8217;installeur ?</strong></p>
+<ul class="simple">
+<li>Récupération de Drush via composer</li>
+<li>Génération des fichiers de settings nécessaires :<ul>
+<li><em>drush.env.php/drush.common.php</em> : Activation/désactivation des modules/thèmes/settings de façon générale ou par environnement (dev, recette, prod ...)</li>
+<li><em>conf.[env].sh</em> : Paramétrage de l&#8217;environnement courant avec les accès SSH / répertoires d&#8217;installation</li>
+<li><em>sites/[site]/common.settings.php</em> / <em>sites/[site]/[env].settings.php</em> : Configuration de la BDD de chaque site (cas du multisite)</li>
+</ul>
+</li>
+<li>Création des répertoires / liens symboliques nécéssaires dans le répertoire de travail / instance Drupal</li>
+<li>Utilisation du profil <em>Ow Profile</em> comme base pour les modules/thèmes spécifiques sur le site</li>
+<li>Récupération du core Drupal + création de la BDD</li>
+<li>Récupération et copie des librairies JS distantes indiquées dans le fichier <code class="docutils literal"><span class="pre">ow_profile.make</span></code> du profil</li>
+<li>Application des droits de lecture/écriture selon les préconisations Drupal.org</li>
+<li>Insertion de variables custom dans la console d&#8217;administration générale Drupal</li>
+</ul>
+</div>
+<div class="section" id="lancement">
+<h4>Lancement<a class="headerlink" href="#lancement" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Clônez le repository du projet dans votre workspace :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /data/sources/
+<span class="nv">$ </span>git clone ssh://git.projects.openwide.fr/gitroot/MY_PROJECT
+<span class="nv">$ </span><span class="nb">cd</span> /data/sources/MY_PROJECT
+<span class="nv">$ </span>git submodule update --init
+<span class="nv">$ </span>./bin/install.sh -e dev
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Lors de la saisie des paramètres de BDD &amp; co sur les environnements distants, copiez-les également dans le wiki OW ou dans un doc sphinx interne pour historique.</p>
+</div>
+</div>
+</div>
+<div class="section" id="traductions">
+<h3>Traductions<a class="headerlink" href="#traductions" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Allez dans l&#8217;interface d&#8217;administration, et appliquez la langue par défaut pour le BO : <a class="reference external" href="http://myvhost.loc/admin/config/regional/language">http://myvhost.loc/admin/config/regional/language</a>, puis lancez la commande de mise à jour des traductions du core et des modules :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/drush l10n-update-refresh
+<span class="nv">$ </span>./bin/drush l10n-update
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Le temps de chargement peut être relativement long alors ... allez chercher un café ;-)</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="environnement.html" class="btn btn-neutral float-right" title="Environnements" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="poste_travail.html" class="btn btn-neutral" title="Poste de travail" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

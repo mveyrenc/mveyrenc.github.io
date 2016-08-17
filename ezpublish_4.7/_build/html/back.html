@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Formation eZ Publish dev</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="custom/css/ow.css">
+
+		<link rel="Shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div id="header">
+				<img src="images/logo-ow.png" />
+				<div class="title"></div>
+			</div>
+			<br class="clearfloat" />
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>eZ Publish</h1>
+					<h3>Formation développeur</h3>
+					<hr />
+					<h4>Back-office</h4>
+				</section>
+
+				<!-- START Sommaire -->
+				<section>
+					<section>
+						<h1>Sommaire</h1>
+						<ul>
+							<li>Fonctionnalités</li>
+							<li>Principes généraux</li>
+							<li>Modules et Vues</li>
+							<li>Sections</li>
+							<li>Gestion des utilisateurs</li>
+							<li>Workflow</li>
+							<li>Formulaire</li>
+							<li>Datatypes</li>
+						</ul>
+					</section>
+				</section>
+				<!-- STOP Sommaire -->
+
+				<!-- START Fonctionnalités -->
+				<section data-title="Fonctionnalités">
+					<h1>Fonctionnalités</h1>
+					<small>
+						<ul>
+							<li>Système de gestion de contenu modulable</li>
+							<li>Séparation entre le fond et la forme (contenu/gabarits)</li>
+							<li>Interface back-office riche</li>
+							<li>Langage de templating fichiers *.tpl</li>
+							<li>Gestion de versions des contenus</li>
+							<li>Multilinguisme</li>
+							<li>Moteur de recherche intégré ou déporté (ezFind / Solr)</li>
+							<li>Workflow intégré</li>
+							<li>Système de gestion de droits / Rôles / Utilisateurs</li>
+							<li>Extensions</li>
+						</ul>
+					</small>
+				</section>
+				<!-- STOP Fonctionnalités -->
+
+				<!-- START Principes généraux -->
+				<section data-title="Principes généraux">
+
+					<section>
+						<h1>Principes généraux</h1>
+					</section>
+					<section>
+						<h2>Définitions</h2>
+						<table class="small">
+							<tr>
+								<th>Classe</th>
+								<td>Schéma d'un type de contenu</td>
+							</tr>
+							<tr>
+								<th>Objet</th>
+								<td>Instance d'une classe de contenu, créée par un contributeur</td>
+							</tr>
+							<tr>
+								<th>Version</th>
+								<td>Version publiée / archivée - Historique des modifications d'un objet</td>
+							</tr>
+							<tr>
+								<th>Noeud</th>
+								<td>Positionnement(s) d'un objet dans l'arborescence</td>
+							</tr>
+							<tr>
+								<th>Template</th>
+								<td>Gabarit de mise en forme d'une vue</td>
+							</tr>
+							<tr>
+								<th>Override</th>
+								<td>Surchage d'un comportement par défaut du noyau ou extension</td>
+							</tr>
+						</table>
+					</section>
+
+					<section data-title="Contenus">
+						<h2>Contenus</h2>
+						<ul>
+							<li>Données</li>
+							<li>Structure</li>
+							<li>Contenus + Gabarits &raquo; Page web</li>
+						</ul>
+						<p><img src="images/content_design_web.png" class="img" /></p>
+					</section>
+
+					<section data-title="Gabarits">
+						<h2>Gabarits</h2>
+						<ul>
+							<li>Mise en forme des données : HTML / CSS / JS</li>
+							<li>Séparation des métiers :
+								<ul>
+									<li>Rédacteurs</li>
+									<li>Webdesigner</li>
+									<li>Développeurs</li>
+								</ul>
+							</li>
+							<li>Réutilisation / Factorisation</li>
+						</ul>
+					</section>
+
+					<section data-title="Classes">
+						<h2>Classes</h2>
+						<ul>
+							<li>Structure du contenu</li>
+							<li>Evolutive</li>
+							<li>Ne contient pas les données</li>
+							<li>Attributs
+								<ul>
+									<li>Ligne de texte</li>
+									<li>Bloc XML (contenu riche)</li>
+									<li>Image</li>
+									<li>Relations d'objets</li>
+									<li>...</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section data-title="Noeuds">
+						<h2>Noeuds</h2>
+						<ul>
+							<li>Contenu publié / masqué</li>
+							<li>Instance d'un objet
+								<ul>
+									<li>dans une version donnée</li>
+									<li>dans un emplacement d'arborescence donné</li>
+								</ul>
+							</li>
+							<li>Notion de multi-publication</li>
+						</ul>
+					</section>
+
+					<section data-title="Versions">
+						<h2>Versions</h2>
+						<ul>
+							<li>Un objet contient les versions</li>
+							<li>Un contenu peut avoir plusieurs versions</li>
+							<li>Une seule version par langue est publiée</li>
+							<li>Une nouvelle version est crée à chaque modification (brouillon)</li>
+							<li>Possibilité de revenir à une version précédente : mais attention création d'une nouvelle version</li>
+						</ul>
+					</section>
+
+					<section data-title="Versions - exemple">
+						<p><img src="images/article_object_version.png" class="img" /></p>
+					</section>
+
+
+
+				</section>
+				<!-- STOP Principes généraux -->
+
+				<!-- START Modules et vues -->
+				<section data-title="Modules et vues">
+					<section>
+						<h1>Modules et vues</h1>
+					</section>
+
+					<section data-title="Modules">
+						<h2>Modules</h2>
+						<ul>
+							<li>Fonctions spécifiques indépendantes des noeuds de l'arborescence</li>
+							<li>Accessibles via une URL</li>
+							<li>Modules du noyau ou spécifiques</li>
+							<li>Exemples :
+								<ul>
+									<li>/user/login</li>
+									<li>/content/search</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section data-title="Vues">
+						<h2>Vues</h2>
+						<ul>
+							<li>Mise en forme d'un contenu (noeud/objet) dans un conteneur</li>
+							<li>Exemples :
+								<ul>
+									<li>Vue complète du noeud (accessible via son URL d'arborescence)</li>
+									<li>Vue simplifiée en page d'accueil dans un bloc</li>
+									<li>Vue simplifiée dans un diaporama</li>
+									<li>Vue d'édition du contenu</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<!-- STOP Modules et vues -->
+
+				<!-- START Sections -->
+				<section data-title="Sections">
+					<section>
+						<h1>Sections</h1>
+					</section>
+
+					<section data-title="Définition">
+						<h2>Définition</h2>
+						<ul>
+							<li>Une section est affectée à un noeud et à sa sous arborescence</li>
+							<li>Application de droits d'utilisateurs spécifiques</li>
+							<li>Paramétrage (ex : surcharge de templates)</li>
+							<li>Exemples :
+								<ul>
+									<li>Standard</li>
+									<li>Media</li>
+									<li>Users</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section data-title="Exemple">
+						<p><img src="images/sections.png" class="img" /></p>
+					</section>
+				</section>
+				<!-- STOP Sections -->
+
+				<!-- START Gestion des utilisateurs -->
+				<section data-title="Gestion des utilisateurs">
+					<section>
+						<h1>Gestion des utilisateurs</h1>
+					</section>
+
+					<section data-title="Utilisateur">
+						<h2>Utilisateur</h2>
+
+						<ul>
+							<li>Un utilisateur est un objet de contenu</li>
+							<li>Le noeud peut appartenir à plusieurs groupes (multi-publication)</li>
+							<li>Affectation de droits à des groupes d'utilisateurs
+								<ul>
+									<li>Lecture d'une sous-arborescence</li>
+									<li>Création de contenus (contributeurs)</li>
+									<li>...</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section data-title="Droits">
+						<h2>Droits</h2>
+
+						<ul>
+							<li>Action liée à un module / une vue</li>
+							<li>Paramétrage administrateur en back-office</li>
+							<li>Gestion par groupes rassemblant des permissions</li>
+							<li>Exemples :
+								<table>
+									<tr>
+										<th>content/read</th>
+										<td>Visualisation d'un contenu</td>
+									</tr>
+									<tr>
+										<th>content/edit</th>
+										<td>Edition d'un contenu (contribution)</td>
+									</tr>
+									<tr>
+										<th>user/login</th>
+										<td>Possibilité de se logguer sur le siteaccess</td>
+									</tr>
+								</table>
+							</li>
+						</ul>
+					</section>
+
+					<section data-title="Droits / Limitations">
+						<h2>Droits / Limitations</h2>
+						<small>
+							<ul>
+								<li>Classes</li>
+								<li>Noeud</li>
+								<li>Classe parente</li>
+								<li>Section</li>
+								<li>Sous-arborescence</li>
+								<li>...</li>
+								<li>Exemples :
+									<ul>
+										<li>content/read + article : accès en lecture aux objets de la classe "article"</li>
+										<li>user/login + edition : possibilité de se logguer sur le back-office</li>
+										<li>content/create + folder + noeud #123 : possibilité de création d'un dossier uniquement dans la sous-arborescence du noeud #123</li>
+									</ul>
+								</li>
+							</ul>
+						</small>
+					</section>
+
+					<section data-title="Rôles">
+						<h2>Rôles</h2>
+						<ul>
+							<li>Association de plusieurs droits à un "profil" d'utilisateur  / groupe(s)</li>
+							<li>Exemples :
+								<ul>
+									<li>Anonyme : droit de lecture sur les sections Standard et Media</li>
+									<li>Contributeur actualités : droit de création/modification sur des contenus d'une sous-arborescence Actualités</li>
+									<li>Contributeur boutique : droit de création/modification sur des produits/catégories</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section data-title="Groupe d'utilisateurs">
+						<h2>Groupe d'utilisateurs</h2>
+						<ul>
+							<li>Un groupe contient une liste d'utilisateurs</li>
+							<li>On lui affecte un ou plusieurs rôles</li>
+							<li>Possibilité de groupes / sous-groupes / ...</li>
+							<li>Système d'héritage des droits entre les groupes / sous-groupes</li>
+						</ul>
+					</section>
+
+				</section>
+				<!-- STOP Gestion des utilisateurs -->
+
+				<!-- START Workflow -->
+				<section data-title="Workflow">
+					<h1>Workflow</h1>
+					<ul>
+						<li>Déclenchement d'événements via le navigateur ou déléguée à un cron</li>
+						<li>Déclencheurs
+							<ul>
+								<li>content/publish</li>
+								<li>content/delete</li>
+								<li>shop/addtobasket</li>
+							</ul>
+						</li>
+						<li>Evénements
+							<ul>
+								<li>Before : avant l'action content/publish par ex</li>
+								<li>After : après l'action content/delete par ex</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<!-- STOP Workflow -->
+
+				<!-- START Formulaire -->
+				<section data-title="Formulaire">
+					<h1>Formulaire</h1>
+					<ul>
+						<li>Contenu classique</li>
+						<li>Option "Collecteur d'information" sur les attributs</li>
+						<li>Soumissions du fomulaire enregistrées</li>
+						<li>Paramétrage de mails client/admin</li>
+					</ul>
+				</section>
+				<!-- STOP Formulaire -->
+
+				<!-- START Datatypes -->
+				<section data-title="Datatype">
+					<h1>Datatype</h1>
+					<ul>
+						<li>Type d'attribut ayant un ensemble de règles de gestion
+							<ul>
+								<li>Ligne de texte (= champ texte limité à X caractères)</li>
+								<li>Relation d'objet (limitation à des classes de contenu)</li>
+								<li>...</li>
+							</ul>
+						</li>
+						<li>Possibilité de créer un datatype spécifique
+							<ul>
+								<li>Format d'enregistrement en base de données</li>
+								<li>Contrôles de formulaires en back-office</li>
+								<li>Création de toutes les vues nécessaires FO/BO car n'existe pas dans le design standard</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<!-- STOP Datatypes -->
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							# eZ Publish
+							## Back-office
+							### Fin
+
+							-------------------
+
+							<a href="front.html">&raquo; Front-office</a>
+						</script>
+					</section>
+				</section>
+
+			</div>
+
+			<div id="footer">
+			</div>
+
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'custom/js/jquery-min.js'},
+					{ src: 'custom/js/ow.js'}
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

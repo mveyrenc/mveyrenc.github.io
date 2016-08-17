@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Inline markup &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../../index.html"/>
+        <link rel="up" title="Instructions de base" href="../instruction_base.html"/>
+        <link rel="next" title="Liens" href="liens.html"/>
+        <link rel="prev" title="Inclusion de fichier" href="inclusion-fichier.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../../index.html"><img src="../../_static/logo_html.png" /></a>
+              </div>
+              <a href="../../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../instruction_base.html">Instructions de base</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">Les directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#les-roles">Les rôles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="avertissements.html">Avertissements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="citation.html">Citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commentaires.html">Commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_css.html">Customisation CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="footnotes.html">Notes de bas de page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html#figures">Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inclusion-fichier.html">Inclusion de fichier</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Inline markup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#italique">Italique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gras">Gras</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expression-reguliere">Expression régulière</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemple">Exemple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commande">Commande</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#programme">Programme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fichier">Fichier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#definition">Définition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-a-des-titres-d-oeuvres-livres-films-etc">Référence à des titres d&#8217;œuvres (livres, films, etc.)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indice">Indice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exposant">Exposant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#abreviation">Abréviation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pep-python-enhancement-proposal">PEP (Python Enhancement Proposal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rfc-internet-request-for-comments">RFC (Internet Request for Comments)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#label-dans-l-interface-utilisateur">Label dans l&#8217;interface utilisateur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selection-de-menus">Sélection de menus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sequence-de-touches">Séquence de touches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#entete-de-mail">Entête de mail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mimetype">Mimetype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-pour-make">Variable pour <strong class="command">make</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manuel">Manuel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="listes.html">Listes et définitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paragraphes.html">Paragraphes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raw.html">Raw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sidebar.html">Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitutions.html">Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tableaux.html">Tableaux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html">Titres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html#titre-de-la-partie">Titre de la partie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toc-tree.html">TOC tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic.html">Topic!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transition.html">Transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typographie.html">Typographie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../instruction_base.html">Instructions de base</a> &raquo;</li>
+      
+    <li>Inline markup</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/rtd/instruction_base/inline-markup.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="inline-markup">
+<h1>Inline markup<a class="headerlink" href="#inline-markup" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="italique">
+<span id="index-0"></span><h2>Italique<a class="headerlink" href="#italique" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><em>emphasize</em></div>
+<div class="line"><em>emphasize</em></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="ge">*emphasize*</span>
+<span class="na">:emphasis:</span><span class="nv">`emphasize`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="gras">
+<h2>Gras<a class="headerlink" href="#gras" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><strong>strong</strong></div>
+<div class="line"><strong>strong</strong></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="gs">**strong**</span>
+<span class="na">:strong:</span><span class="nv">`strong`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">code</span></code></div>
+<div class="line"><code class="code docutils literal"><span class="pre">code</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">literal</span></code></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="s">``code``</span>
+<span class="na">:code:</span><span class="nv">`code`</span>
+<span class="na">:literal:</span><span class="nv">`literal`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="expression-reguliere">
+<h2>Expression régulière<a class="headerlink" href="#expression-reguliere" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><code class="regexp docutils literal"><span class="pre">(.*)</span></code></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:regexp:</span><span class="nv">`(.*)`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><code class="samp docutils literal"><span class="pre">toto</span></code></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:samp:</span><span class="nv">`toto`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="commande">
+<h2>Commande<a class="headerlink" href="#commande" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><strong class="command">ls -l</strong></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:command:</span><span class="nv">`ls -l`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="programme">
+<h2>Programme<a class="headerlink" href="#programme" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><strong class="program">libreoffice</strong></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:program:</span><span class="nv">`libreoffice`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="fichier">
+<h2>Fichier<a class="headerlink" href="#fichier" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><code class="file docutils literal"><span class="pre">/etc/hosts</span></code></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:file:</span><span class="nv">`/etc/hosts`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="definition">
+<h2>Définition<a class="headerlink" href="#definition" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line">Marquez l&#8217;instance la définition d&#8217;un terme dans le texte. (Pas d&#8217;entrées d&#8217;<em class="dfn">index</em> sont générés.)</div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>Marquez l&#39;instance la définition d&#39;un terme dans le texte. (Pas d&#39;entrées d&#39;<span class="na">:dfn:</span><span class="nv">`index`</span> sont générés.)
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="reference-a-des-titres-d-oeuvres-livres-films-etc">
+<h2>Référence à des titres d&#8217;œuvres (livres, films, etc.)<a class="headerlink" href="#reference-a-des-titres-d-oeuvres-livres-films-etc" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><cite>Design Patterns</cite></div>
+<div class="line"><cite>Design Patterns</cite></div>
+<div class="line"><cite>Design Patterns</cite></div>
+<div class="line"><cite>Design Patterns</cite></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="nv">`Design Patterns`</span>
+<span class="na">:title-reference:</span><span class="nv">`Design Patterns`</span>
+<span class="na">:title:</span><span class="nv">`Design Patterns`</span>
+<span class="na">:t:</span><span class="nv">`Design Patterns`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line">H<sub>2</sub>O</div>
+<div class="line">H<sub>2</sub>O</div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>H\ <span class="na">:subscript:</span><span class="nv">`2`</span>\ O
+H\ <span class="na">:sub:</span><span class="nv">`2`</span>\ O
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="exposant">
+<h2>Exposant<a class="headerlink" href="#exposant" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line">m<sup>3</sup></div>
+<div class="line">m<sup>3</sup></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>m\ <span class="na">:superscript:</span><span class="nv">`3`</span>
+m\ <span class="na">:sup:</span><span class="nv">`3`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="abreviation">
+<h2>Abréviation<a class="headerlink" href="#abreviation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><abbr title="last-in, first-out">LIFO</abbr></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:abbr:</span><span class="nv">`LIFO (last-in, first-out)`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="pep-python-enhancement-proposal">
+<h2>PEP (Python Enhancement Proposal)<a class="headerlink" href="#pep-python-enhancement-proposal" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0287"><strong>PEP 287</strong></a></div>
+<div class="line"><a class="reference external" href="https://www.python.org/dev/peps/pep-0287">PEP 287</a></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:PEP:</span><span class="nv">`287`</span>
+<span class="na">:pep-reference:</span><span class="nv">`287`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="rfc-internet-request-for-comments">
+<h2>RFC (Internet Request for Comments)<a class="headerlink" href="#rfc-internet-request-for-comments" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc287.html"><strong>RFC 287</strong></a></div>
+<div class="line"><a class="reference external" href="https://tools.ietf.org/html/rfc287.html">RFC 287</a></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:RFC:</span><span class="nv">`287`</span>
+<span class="na">:rfc-reference:</span><span class="nv">`287`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="label-dans-l-interface-utilisateur">
+<h2>Label dans l&#8217;interface utilisateur<a class="headerlink" href="#label-dans-l-interface-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><span class="guilabel">Ajouter</span></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:guilabel:</span><span class="nv">`Ajouter`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="selection-de-menus">
+<h2>Sélection de menus<a class="headerlink" href="#selection-de-menus" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><span class="menuselection">Start ‣ Programs</span></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:menuselection:</span><span class="nv">`Start --&gt; Programs`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="sequence-de-touches">
+<h2>Séquence de touches<a class="headerlink" href="#sequence-de-touches" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><code class="kbd docutils literal"><span class="pre">C-x</span> <span class="pre">C-f</span></code></div>
+<div class="line"><code class="kbd docutils literal"><span class="pre">Control-x</span> <span class="pre">Control-f</span></code></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:kbd:</span><span class="nv">`C-x C-f`</span>
+<span class="na">:kbd:</span><span class="nv">`Control-x Control-f`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="entete-de-mail">
+<h2>Entête de mail<a class="headerlink" href="#entete-de-mail" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><em class="mailheader">Content-Type</em></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:mailheader:</span><span class="nv">`Content-Type`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="mimetype">
+<h2>Mimetype<a class="headerlink" href="#mimetype" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><em class="mimetype">application/pdf</em></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:mimetype:</span><span class="nv">`application/pdf`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="variable-pour-make">
+<h2>Variable pour <strong class="command">make</strong><a class="headerlink" href="#variable-pour-make" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line">make <strong class="makevar">all</strong></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>make <span class="na">:makevar:</span><span class="nv">`all`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="manuel">
+<h2>Manuel<a class="headerlink" href="#manuel" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="last line-block">
+<div class="line"><em class="manpage">ls(1)</em></div>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:manpage:</span><span class="nv">`ls(1)`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="liens.html" class="btn btn-neutral float-right" title="Liens" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="inclusion-fichier.html" class="btn btn-neutral" title="Inclusion de fichier" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

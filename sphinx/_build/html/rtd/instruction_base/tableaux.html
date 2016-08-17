@@ -1,0 +1,1336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tableaux &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../../index.html"/>
+        <link rel="up" title="Instructions de base" href="../instruction_base.html"/>
+        <link rel="next" title="Titres" href="titre.html"/>
+        <link rel="prev" title="Substitutions" href="substitutions.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../../index.html"><img src="../../_static/logo_html.png" /></a>
+              </div>
+              <a href="../../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../instruction_base.html">Instructions de base</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">Les directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#les-roles">Les rôles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="avertissements.html">Avertissements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="citation.html">Citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commentaires.html">Commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_css.html">Customisation CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="footnotes.html">Notes de bas de page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html#figures">Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inclusion-fichier.html">Inclusion de fichier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inline-markup.html">Inline markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="listes.html">Listes et définitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paragraphes.html">Paragraphes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raw.html">Raw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sidebar.html">Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitutions.html">Substitutions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Tableaux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tableaux-simple">Tableaux simple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grilles">Grilles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#csv">CSV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#listes">Listes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#large">Large</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tres-grand">Très grand</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html">Titres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html#titre-de-la-partie">Titre de la partie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toc-tree.html">TOC tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic.html">Topic!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transition.html">Transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typographie.html">Typographie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../instruction_base.html">Instructions de base</a> &raquo;</li>
+      
+    <li>Tableaux</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/rtd/instruction_base/tableaux.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tableaux">
+<h1>Tableaux<a class="headerlink" href="#tableaux" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="tableaux-simple">
+<span id="index-0"></span><h2>Tableaux simple<a class="headerlink" href="#tableaux-simple" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar" id="index-1">
+<p class="first sidebar-title">Rendu</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aA</td>
+<td>bB</td>
+</tr>
+<tr class="row-even"><td>cC</td>
+<td>dD</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>==  ==
+aA  bB
+cC  dD
+==  ==
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Vokal</th>
+<th class="head">Umlaut</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>aA</td>
+<td>äÄ</td>
+</tr>
+<tr class="row-odd"><td>oO</td>
+<td>öÖ</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>=====  ======
+Vokal  Umlaut
+=====  ======
+aA     äÄ
+oO     öÖ
+=====  ======
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr class="row-even"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="2">False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td colspan="2">True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>=====  =====  ======
+Inputs        Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False         False
+------------  ------
+True   False  True
+False  True   True
+True          True
+============  ======
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple">
+<li>Hallo</li>
+</ol>
+</td>
+<td><div class="first last line-block">
+<div class="line">blah blah blah
+blah blah blah
+blah</div>
+<div class="line">blah blah</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="2">
+<li>Here</li>
+</ol>
+</td>
+<td>We can wrap the
+text in source</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="32">
+<li>There</li>
+</ol>
+</td>
+<td><strong>aha</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>===========  ================
+<span class="m">1.</span> Hallo     | blah blah blah
+               blah blah blah
+               blah
+             <span class="o">|</span> blah blah
+<span class="m">2.</span> Here      We can wrap the
+             text in source
+<span class="m">32.</span> There    <span class="gs">**aha**</span>
+===========  ================
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="grilles">
+<h2>Grilles<a class="headerlink" href="#grilles" title="Lien permanent vers ce titre">¶</a></h2>
+<table border="1" class="docutils" id="index-2">
+<colgroup>
+<col width="34%" />
+<col width="34%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-rst"><div class="highlight"><pre>+------------+------------+-----------+
+<span class="o">|</span> Header 1   | Header 2   | Header 3  |
++============+============+===========+
+<span class="o">|</span> body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+<span class="o">|</span> body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+<span class="o">|</span> body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+<span class="o">|</span> body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+</pre></div>
+</div>
+<hr class="docutils" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head" colspan="2">Header with 2 cols</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A</td>
+<td>Lists:</td>
+<td><strong>C</strong></td>
+</tr>
+<tr class="row-odd"><td><p class="first">B:</p>
+<div class="last highlight-rst"><div class="highlight"><pre><span class="ge">*hey*</span>
+</pre></div>
+</div>
+</td>
+<td><ul class="first simple">
+<li>aha</li>
+<li>yes</li>
+</ul>
+<ol class="last arabic simple">
+<li>hi</li>
+</ol>
+</td>
+<td><div class="first last line-block">
+<div class="line">a block
+of text</div>
+<div class="line">a break</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-rst"><div class="highlight"><pre>+--------+--------+-----------+
+<span class="o">|</span> Header | Header with 2 cols |
++========+========+===========+
+<span class="o">|</span> A      | Lists: | <span class="gs">**C**</span>     |
++--------+        +-----------+
+<span class="o">|</span> B::    | - aha  | | a block |
+<span class="o">|</span>        | - yes  |   of text |
+<span class="o">|</span>  <span class="ge">*hey*</span> |        | | a break |
+<span class="o">|</span>        | #. hi  |           |
++--------+--------+-----------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="csv">
+<h2>CSV<a class="headerlink" href="#csv" title="Lien permanent vers ce titre">¶</a></h2>
+<table border="1" class="docutils" id="id1">
+<span id="index-3"></span><caption><span class="caption-text">Balance Sheet</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="40%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Description</th>
+<th class="head">In</th>
+<th class="head">Out</th>
+<th class="head">Balance</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Travel</th>
+<td>&nbsp;</td>
+<td>230.00</td>
+<td>-230.00</td>
+</tr>
+<tr class="row-odd"><th class="stub">Fees</th>
+<td>&nbsp;</td>
+<td>400.00</td>
+<td>-630.00</td>
+</tr>
+<tr class="row-even"><th class="stub">Grant</th>
+<td>700.00</td>
+<td>&nbsp;</td>
+<td>70.00</td>
+</tr>
+<tr class="row-odd"><th class="stub">Train Fare</th>
+<td>&nbsp;</td>
+<td>70.00</td>
+<td><strong>0.00</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">csv-table</span><span class="p">::</span> Balance Sheet
+    <span class="nc">:header:</span> <span class="nf">Description,In,Out,Balance</span>
+    <span class="nc">:widths:</span> <span class="nf">20, 10, 10, 10</span>
+    <span class="nc">:stub-columns:</span> <span class="nf">1</span>
+
+    Travel,,230.00,-230.00
+    Fees,,400.00,-630.00
+    Grant,700.00,,70.00
+    Train Fare,,70.00,<span class="gs">**0.00**</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#id4">http://docutils.sourceforge.net/docs/ref/rst/directives.html#id4</a></p>
+</div>
+<div class="section" id="listes">
+<h2>Listes<a class="headerlink" href="#listes" title="Lien permanent vers ce titre">¶</a></h2>
+<table border="1" class="docutils" id="id2">
+<span id="index-4"></span><caption><span class="caption-text">Weather forecast</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Day</th>
+<th class="head">Min Temp</th>
+<th class="head">Max Temp</th>
+<th class="head">&nbsp;</th>
+<th class="head">Summary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Monday</th>
+<td>11C</td>
+<td>22C</td>
+<td><a class="first last reference internal image-reference" href="../../_images/sunny.png"><img alt="../../_images/sunny.png" src="../../_images/sunny.png" style="width: 30px;" /></a>
+</td>
+<td>A clear day with lots of sunshine.
+However, the strong breeze will bring
+down the temperatures.</td>
+</tr>
+<tr class="row-odd"><th class="stub">Tuesday</th>
+<td>9C</td>
+<td>10C</td>
+<td><a class="first last reference internal image-reference" href="../../_images/rain.png"><img alt="../../_images/rain.png" src="../../_images/rain.png" style="width: 30px;" /></a>
+</td>
+<td>Cloudy with rain, across many northern regions.
+Clear spells across most of Scotland and Northern Ireland,
+but rain reaching the far northwest.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">list-table</span><span class="p">::</span> Weather forecast
+    <span class="nc">:header-rows:</span> <span class="nf">1</span>
+    <span class="nc">:widths:</span> <span class="nf">7 7 7 7 60</span>
+    <span class="nc">:stub-columns:</span> <span class="nf">1</span>
+
+    <span class="m">*</span>  -  Day
+       <span class="m">-</span>  Min Temp
+       <span class="m">-</span>  Max Temp
+       -
+       <span class="m">-</span>  Summary
+    <span class="m">*</span>  -  Monday
+       <span class="m">-</span>  11C
+       <span class="m">-</span>  22C
+       <span class="m">-</span>  .. image:: /_static/images/sunny.png
+             <span class="nc">:width:</span> <span class="nf">30</span>
+
+       <span class="m">-</span>  A clear day with lots of sunshine.
+          However, the strong breeze will bring
+          down the temperatures.
+    <span class="m">*</span>  -  Tuesday
+       <span class="m">-</span>  9C
+       <span class="m">-</span>  10C
+       <span class="m">-</span>  .. image:: /_static/images/rain.png
+             <span class="nc">:width:</span> <span class="nf">30</span>
+
+       <span class="m">-</span>  Cloudy with rain, across many northern regions.
+          Clear spells across most of Scotland and Northern Ireland,
+          but rain reaching the far northwest.
+</pre></div>
+</div>
+<p><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table">http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table</a></p>
+</div>
+<div class="section" id="large">
+<h2>Large<a class="headerlink" href="#large" title="Lien permanent vers ce titre">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tres-grand">
+<h2>Très grand<a class="headerlink" href="#tres-grand" title="Lien permanent vers ce titre">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="titre.html" class="btn btn-neutral float-right" title="Titres" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="substitutions.html" class="btn btn-neutral" title="Substitutions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

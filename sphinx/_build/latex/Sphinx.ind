@@ -1,0 +1,149 @@
+\begin{theindex}
+
+  \item avertissements, \hyperpage{7}
+    \subitem admonition, \hyperpage{8}
+    \subitem attention, \hyperpage{7}
+    \subitem caution, \hyperpage{7}
+    \subitem danger, \hyperpage{8}
+    \subitem error, \hyperpage{8}
+    \subitem hint, \hyperpage{8}
+    \subitem important, \hyperpage{8}
+    \subitem note, \hyperpage{8}
+    \subitem tip, \hyperpage{8}
+
+  \indexspace
+
+  \item citation, \hyperpage{9}
+  \item code, \hyperpage{9}
+    \subitem bloc de code, \hyperpage{10}
+    \subitem bloc litt\IeC {\'e}ral, \hyperpage{9}
+    \subitem bloc litt\IeC {\'e}ral interpr\IeC {\'e}t\IeC {\'e}, 
+		\hyperpage{9}
+    \subitem inline markup, \hyperpage{16}
+  \item commentaire, \hyperpage{12}
+  \item customisation CSS, \hyperpage{13}
+
+  \indexspace
+
+  \item DateTime (class), \hyperindexformat{\textbf}{53}
+  \item DateTime::ATOM (class constant), \hyperindexformat{\textbf}{53}
+  \item directive, \hyperpage{7}
+    \subitem admonition, \hyperpage{8}
+    \subitem attention, \hyperpage{7}
+    \subitem caution, \hyperpage{7}
+    \subitem code-block, \hyperpage{10}
+    \subitem container, \hyperpage{13}
+    \subitem csv-table, \hyperpage{35}
+    \subitem danger, \hyperpage{8}
+    \subitem epigraph, \hyperpage{28}
+    \subitem error, \hyperpage{8}
+    \subitem figure, \hyperpage{15}
+    \subitem highlights, \hyperpage{28}
+    \subitem hint, \hyperpage{8}
+    \subitem hlist, \hyperpage{25}
+    \subitem image, \hyperpage{14}
+    \subitem important, \hyperpage{8}
+    \subitem include, \hyperpage{16}
+    \subitem list-table, \hyperpage{36}
+    \subitem math, \hyperpage{26}
+    \subitem note, \hyperpage{8}
+    \subitem parsed-literal, \hyperpage{9}
+    \subitem pull-quote, \hyperpage{28}
+    \subitem role, \hyperpage{7}
+    \subitem rst-class, \hyperpage{13}
+    \subitem sidebar, \hyperpage{29}
+    \subitem tip, \hyperpage{8}
+    \subitem toctree, \hyperpage{40}
+    \subitem topic, \hyperpage{41}
+
+  \indexspace
+
+  \item figure, \hyperpage{15}
+
+  \indexspace
+
+  \item image, \hyperpage{14}
+    \subitem figure, \hyperpage{15}
+  \item inclusion de fichier, \hyperpage{16}
+  \item inline markup, \hyperpage{16}
+    \subitem code, \hyperpage{16}
+    \subitem emphasize, \hyperpage{16}
+    \subitem strong, \hyperpage{16}
+
+  \indexspace
+
+  \item lien, \hyperpage{22}
+    \subitem citation, \hyperpage{9}
+    \subitem note de pied de page, \hyperpage{14}
+  \item liste, \hyperpage{24}
+    \subitem liste \IeC {\`a} puce, \hyperpage{24}
+    \subitem liste d'option, \hyperpage{26}
+    \subitem liste de champs, \hyperpage{26}
+    \subitem liste de d\IeC {\'e}finitions, \hyperpage{25}
+    \subitem liste horizontale, \hyperpage{25}
+    \subitem liste imbriqu\IeC {\'e}e, \hyperpage{24}
+    \subitem liste num\IeC {\'e}rot\IeC {\'e}e, \hyperpage{24}
+
+  \indexspace
+
+  \item math, \hyperpage{26}
+  \item mise en forme, \hyperpage{16}
+    \subitem gras, \hyperpage{16}
+    \subitem italique, \hyperpage{16}
+
+  \indexspace
+
+  \item note de pied de page, \hyperpage{14}
+
+  \indexspace
+
+  \item Python Enhancement Proposals
+    \subitem PEP 287, \hyperpage{20}
+
+  \indexspace
+
+  \item raw, \hyperpage{29}
+  \item raw-html, \hyperpage{29}
+  \item raw-latex, \hyperpage{29}
+  \item RFC
+    \subitem RFC 287, \hyperpage{20}
+  \item role, \hyperpage{7}
+    \subitem classe CSS, \hyperpage{14}
+    \subitem code, \hyperpage{16}
+    \subitem emphasize, \hyperpage{16}
+    \subitem literal, \hyperpage{16}
+    \subitem math, \hyperpage{26}
+    \subitem PEP, \hyperpage{16}
+    \subitem pep-reference, \hyperpage{16}
+    \subitem raw, \hyperpage{29}
+    \subitem RFC, \hyperpage{16}
+    \subitem rfc-reference, \hyperpage{16}
+    \subitem sub, \hyperpage{16}
+    \subitem subscript, \hyperpage{16}
+    \subitem t, \hyperpage{16}
+    \subitem title, \hyperpage{16}
+    \subitem title-reference, \hyperpage{16}
+
+  \indexspace
+
+  \item setDate() (m\IeC {\'e}thode DateTime), 
+		\hyperindexformat{\textbf}{53}
+  \item setTime() (m\IeC {\'e}thode DateTime), 
+		\hyperindexformat{\textbf}{53}
+  \item sidebar, \hyperpage{29}
+  \item substitution, \hyperpage{30}
+
+  \indexspace
+
+  \item table des mati\IeC {\`e}res, \hyperpage{40}
+  \item tableau, \hyperpage{32}
+    \subitem CSV, \hyperpage{35}
+    \subitem grille, \hyperpage{34}
+    \subitem liste, \hyperpage{36}
+    \subitem tableau simple, \hyperpage{32}
+  \item titre, \hyperpage{39}
+  \item topic, \hyperpage{41}
+  \item transition, \hyperpage{41}
+  \item typographie, \hyperpage{41}
+
+\end{theindex}

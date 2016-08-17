@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Présentation Backbone.js</title>
+
+    
+
+    
+<link rel="stylesheet" href="_static/css/reveal.css">
+<link rel="stylesheet" href="_static/css/theme/openwide.css" id="theme">
+<link rel="stylesheet" href="_static/lib/css/zenburn.css">
+<link rel="stylesheet" href="_static/revealjs.css" type="text/css" />
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if(window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '_static/css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="_static/lib/js/html5shiv.js"></script>
+    <![endif]-->
+      <script type="text/javascript" src="_static/translations.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+  <section class="first-slide">
+<h1>Backbone.js</h1>
+<h2>MVC Javascript framework</h2>
+<img alt="_images/backbonejs_logo.gif" class="first last" src="_images/backbonejs_logo.gif" />
+</section>
+<section>
+<h1>C'est quoi Backbone.js ?</h1>
+<div class="first last"><ul>
+    <li>Framework Javascript MVC</li>
+    <li>Première version en 2010</li>
+    <li>Version 1.2.3 sortie en septembre 2015</li>
+    <li>Ultra-léger (71 ko non-minifié, 23 Ko minifié)</li>
+    <li>une seule vraie dépendance : underscore.js (et jQuery aussi...)</li>
+    <li>Hébergé sur <a href="https://github.com/jashkenas/backbone">Github</a></li>
+</ul></div></section>
+<section>
+<h1>On fait quoi avec ?</h1>
+<div class="first last"><ul>
+    <li>Single-page apps</li>
+    <li>RESTFul car Backbone ne sait pas stocker de données</li>
+    <li>Trello</li>
+    <li>Foursquare</li>
+    <li>Bitbucket</li>
+    <li>Basecamp</li>
+    <li>...</li>
+</ul></div></section>
+<section>
+<section class="first">
+<div class="first last"><h1>MVC oui, mais attention à la terminologie...</h1></div></section>
+<section>
+<h2>Model</h2>
+<dl class="first last docutils">
+<dt>Dans Backbone, 2 concepts composent la couche Model :</dt>
+<dd><ul class="first last simple">
+<li>les modèles</li>
+<li>les collections</li>
+</ul>
+</dd>
+</dl>
+</section>
+<section>
+<h2>View</h2>
+Dans Backbone, les <strong>templates</strong> représentent la couche View.</section>
+<section class="last">
+<h2>Controller</h2>
+Dans Backbone, les <strong>vues</strong> sont en réalité les Controllers.</section>
+</section>
+<section>
+<section class="first">
+<div class="first last"><h1>Les modèles</h1></div></section>
+<section>
+<h2>Définition et instanciation</h2>
+<pre class="first last">
+<code data-trim contenteditable>var CardModel = Backbone.Model.extend({
+    urlRoot: 'https://api.trello.com/1/cards/',
+});
+
+var card = new CardModel({
+    title: 'Connecteur Sugar CRM',
+    author: 'Franck'
+});</code></pre>
+</section>
+<section>
+<h2>POST</h2>
+<pre class="first">
+<code data-trim contenteditable>var card = new CardModel({
+    title: 'Connecteur Sugar CRM',
+    author: 'Franck'
+});
+
+card.save();</code></pre>
+<p class="last">La méthode <strong>save</strong> réalise un POST sur <a class="reference external" href="https://api.trello.com/1/cards">https://api.trello.com/1/cards</a> .</p>
+</section>
+<section>
+<h2>GET</h2>
+<pre class="first">
+<code data-trim contenteditable>var card = new CardModel({id: '50f68b0ab78052ba760115b8'});
+
+card.fetch();</code></pre>
+<p class="last">La méthode <strong>fetch</strong> réalise un GET sur <a class="reference external" href="https://api.trello.com/1/cards/50f68b0ab78052ba760115b8">https://api.trello.com/1/cards/50f68b0ab78052ba760115b8</a> .</p>
+</section>
+<section>
+<h2>PUT</h2>
+<pre class="first">
+<code data-trim contenteditable>var card = new CardModel({id: '50f68b0ab78052ba760115b8'});
+card.set('Title', 'Implémenter un connecteur Sugar CRM');
+card.save();</code></pre>
+<p class="last">La méthode <strong>save</strong> réalise un PUT sur <a class="reference external" href="https://api.trello.com/1/cards/50f68b0ab78052ba760115b8">https://api.trello.com/1/cards/50f68b0ab78052ba760115b8</a> .</p>
+</section>
+<section class="last">
+<h2>DELETE</h2>
+<pre class="first">
+<code data-trim contenteditable>card.destroy();</code></pre>
+<p class="last">La méthode <strong>destroy</strong> réalise un DELETE sur <a class="reference external" href="https://api.trello.com/1/cards/50f68b0ab78052ba760115b8">https://api.trello.com/1/cards/50f68b0ab78052ba760115b8</a> .</p>
+</section>
+</section>
+<section>
+<section class="first">
+<div class="first last"><h1>Les collections</h1></div></section>
+<section>
+<ul class="first last simple">
+<li>Listes ordonnées de modèles</li>
+<li>Elles fournissent des méthodes (add, remove, sort, push, pop, shift)</li>
+<li>et des événements</li>
+<li>Par exemple, dans Trello, une todolist est une collection.</li>
+</ul>
+</section>
+<section>
+<h2>Définition et instanciation</h2>
+<pre class="first last">
+<code data-trim contenteditable>var CardCollection = Backbone.Collection.extend({
+    model: CardModel,
+    url: 'https://api.trello.com/1/cards',
+});
+
+var todolist = new CardCollection();</code></pre>
+</section>
+<section>
+<h2>GET</h2>
+<pre class="first">
+<code data-trim contenteditable>todolist.fetch();</code></pre>
+<p>La méthode <strong>fetch</strong> réalise un GET sur <a class="reference external" href="https://api.trello.com/1/cards">https://api.trello.com/1/cards</a> .</p>
+<pre class="last">
+<code data-trim contenteditable>todolist.toJSON();
+
+/*
+    [
+        {"title": "Tâche 1", "author": "Franck"},
+        {"title": "Tâche 2", "author": "Madeline"}
+    ]
+*/</code></pre>
+</section>
+<section>
+<h2>Ajouter des modèles</h2>
+<pre class="first last">
+<code data-trim contenteditable>card3 = new CardModel({title: 'Tâche 3', author: 'Madeline'});
+card4 = new CardModel({title: 'Tâche 4', author: 'Madeline'});
+
+todolist.add([card3,card4]);
+
+todolist.toJSON();
+
+/*
+    [
+        {"title": "Tâche 1", "author": "Franck"},
+        {"title": "Tâche 2", "author": "Madeline"},
+        {"title": "Tâche 3", "author": "Madeline"},
+        {"title": "Tâche 4", "author": "Madeline"}
+    ]
+*/</code></pre>
+</section>
+<section>
+<h2>Supprimer des modèles</h2>
+<pre class="first last">
+<code data-trim contenteditable>todolist.remove(card4);
+
+todolist.toJSON();
+
+/*
+    [
+        {"title": "Tâche 1", "author": "Franck"},
+        {"title": "Tâche 2", "author": "Madeline"},
+        {"title": "Tâche 3", "author": "Madeline"}
+    ]
+*/</code></pre>
+</section>
+<section>
+<h2>Récupérer des modèles</h2>
+<pre class="first last">
+<code data-trim contenteditable>/*
+    [
+        {"title": "Tâche 1", "author": "Franck"},
+        {"title": "Tâche 2", "author": "Madeline"},
+        {"title": "Tâche 3", "author": "Madeline"}
+    ]
+*/
+
+var MadelineCards = todolist.where({author: 'Madeline'});
+
+console.log(MadelineCards);
+
+/*
+    [
+        {"title": "Tâche 2", "author": "Madeline"},
+        {"title": "Tâche 3", "author": "Madeline"}
+    ]
+*/</code></pre>
+</section>
+<section class="last">
+<h2>Collections et persistence</h2>
+<ul class="first last simple">
+<li>Les collections ne permettent pas la persistence des données.</li>
+<li>Ce sont uniquement les modèles, individuellement, qui permettent la persistence...</li>
+<li>...avec Model.save() et Model.destroy().</li>
+</ul>
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Les vues</h1>
+<h2>(les contrôleurs)</h2>
+Les vues Backbone sont en réalité des contrôleurs.</section>
+<section>
+<h2>Déclaration et instanciation</h2>
+<pre class="first">
+<code data-trim contenteditable>var TaskListView = Backbone.View.extend({
+    el: '#main-container',
+
+    initialize: function() {
+        this.collection = new CardCollection();
+        this.collection.fetch();
+    },
+
+    render: function() {
+        var list = $("ul");
+
+        this.collection.forEach( // Underscore.js method
+            function(card) {
+                var item = $("li");
+                item.text(card.get("title"));
+                list.append(item);
+            }
+        );
+
+        this.$el.append(list);
+    },
+
+});
+
+new TaskListView();</code></pre>
+<p class="last">A noter la définition de la propriété <strong>el</strong> qui permet de mapper la vue avec une zone de la page HTML.</p>
+</section>
+<section>
+<h2>Rendu de la vue</h2>
+<ul class="first simple">
+<li>Le code précédent n&#8217;éxécute pas la méthode render.</li>
+<li>Ajax = asynchrone.</li>
+<li>On doit écouter un événement (ou implémenter un callback) pour déclencher ce rendu.</li>
+</ul>
+<pre class="last">
+<code data-trim contenteditable>initialize: function() {
+    this.collection = new CardCollection();
+    this.listenTo(this.collection, "sync", this.render);
+    this.collection.fetch();
+}</code></pre>
+</section>
+<section class="last">
+<h2>Contrôleur ?</h2>
+<p class="first">Les vues sont des contrôleurs car elles pilotent :</p>
+<ul class="simple">
+<li>la logique d&#8217;affichage des informations</li>
+<li>les interactions avec l&#8217;utilisateur</li>
+</ul>
+<pre class="last">
+<code data-trim contenteditable>var TaskListView = Backbone.View.extend({
+    ...
+
+    events: {
+        'click button.add-task' : 'addTask'
+    },
+
+    ...
+
+    addTask: function() {
+        var newTask = this.collection.create({
+            title: 'Tâche 5',
+            author: 'Fabien'
+        });
+    },
+
+});</code></pre>
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Les événements</h1>
+<ul class="first last simple">
+<li>Javascript et le DOM sont événementiels.</li>
+<li>Backbone émet des événements. (model change, collection add...)</li>
+<li>Backbone permet de définir ses propres événements.</li>
+</ul>
+</section>
+<section>
+<h1>Exemple</h1>
+<pre class="first last">
+<code data-trim contenteditable>var objectA = {};
+_.extend(objectA, Backbone.Events);
+
+var objectB = {};
+_.extend(objectB, Backbone.Events);
+
+objectA.listenTo(objectB, 'dance', function(event, what){
+    console.log(event + ' ' + what);
+});
+objectB.trigger("dance" , "the boogie !");
+
+// objetA log : dance the boogie !</code></pre>
+</section>
+<section class="last">
+<h1>Inversion de contrôle</h1>
+<ul class="first last simple">
+<li>La programmation événementielle permet l&#8217;inversion de contrôle.</li>
+<li>Grâce aux événements, si on modifie l&#8217;implémentation de objetA, on n&#8217;a pas besoin de modifier l&#8217;implémentation de objetB.</li>
+</ul>
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Les templates</h1>
+<ul class="first simple">
+<li>Fonction render précédente pas très propre...</li>
+<li>Par défaut, fonction de templating de Underscore.js, basique mais peut suffire.</li>
+</ul>
+<pre>
+<code data-trim contenteditable><script type="text/template" id="todos_tpl">
+    <h2>Mes tâches</h2>
+    <ul class="todo_list">
+        <% _.each(todos, function(todo){ %>
+            <li><h3><%= todo.title %></h3></li>
+        <% }) %>
+    </ul>
+</script></code></pre>
+<pre class="last">
+<code data-trim contenteditable>var TasksView = Backbone.View.extend({
+    ...
+    template: _.template($('#todos_tpl').html()),
+    ...
+    render: function() {
+        this.$el.html(this.template({todos: this.collection.toJSON()}));
+    }
+});</code></pre>
+</section>
+<section>
+<h1>Des fichiers séparés</h1>
+<ul class="first simple">
+<li>On peut écrire chaque template dans un fichier.</li>
+<li>Il faudra charger ces fichiers lorsqu&#8217;on en a besoin, comme pour les autres dépendances.</li>
+<li>Utilisation de RequireJS et RequireJS Text</li>
+</ul>
+<pre class="last">
+<code data-trim contenteditable>define([
+    "backbone",
+    "underscore",
+    "text!templates/menu.html"
+],
+function(Backbone, _, MenuTpl) {
+
+    var MenuView = Backbone.View.extend({
+        el: "#menu",
+        template: _.template(MenuTpl),
+        ...
+    });
+
+    return MenuView;
+});</code></pre>
+</section>
+<section class="last">
+<h1>et d'autres libs de templating</h1>
+<ul class="first last simple">
+<li>Backbone est modulaire.</li>
+<li>On peut donc utiliser n&#8217;importe quelle librairie JS de templating (Handlebars, Mustache, Jade...)</li>
+</ul>
+</section>
+</section>
+<section>
+<section class="first">
+<h1>Le router</h1>
+<ul class="first last simple">
+<li>classique</li>
+<li>permet d&#8217;associer des URIs à des vues</li>
+</ul>
+</section>
+<section>
+<h2>Exemple pour notre TODO</h2>
+<pre class="first last">
+<code data-trim contenteditable>define([
+    'backbone',
+    'views/tasks',
+    'views/card',
+],
+function(Backbone, TasksView, CardView){
+
+    var Router = Backbone.Router.extend({
+
+        routes: {
+            'todo/:id':  'card',
+            '':          '_default',
+        },
+
+        card: function(id) {
+            new CardView(id);
+        },
+
+        _default: function() {
+            new TasksView();
+        },
+
+    });
+
+    return Router;
+});</code></pre>
+</section>
+<section>
+<h2>Instanciation du router et démarrage de l'application</h2>
+<p class="first">Nous avons :</p>
+<ul class="simple">
+<li>un modèle et une collection de cards</li>
+<li>une vue principale pour notre application</li>
+<li>un router</li>
+</ul>
+<p class="last"><strong>Nous devons maintenant instancier notre router et démarrer notre application.</strong></p>
+</section>
+<section>
+<h2>main.js</h2>
+<p class="first">main.js est le script principal de notre application.</p>
+<pre class="last">
+<code data-trim contenteditable>require(["backbone", "router"],
+    function (Backbone, Router) {
+        new Router();
+        Backbone.history.start();
+    }
+);</code></pre>
+</section>
+<section>
+<h2>index.html</h2>
+<p class="first">L&#8217;application sera représentée par un fichier HTML constituant le layout de la page.</p>
+<pre class="last">
+<code data-trim contenteditable>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Cetim&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;http://fonts.googleapis.com/css?family=Lato:300,400,700&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;div id=&quot;menu&quot;&gt;
+            &lt;!-- menu view --&gt;
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;section id=&quot;main-container&quot;&gt;
+            &lt;!-- content view --&gt;
+        &lt;/section&gt;
+
+        &lt;footer id=&quot;main-footer&quot; class=&quot;text-center&quot;&gt;
+            &lt;!-- footer view --&gt;
+        &lt;/footer&gt;
+        &lt;script data-main=&quot;js/main.js&quot; src=&quot;js/require.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="last">
+<h2>démo</h2>
+<div class="first last"><a href="file:///data/home/fgrenier/workspace/backbonejs_tasks_tuto/todolist_app/index.html" target="_blank">
+    TODO app
+</a></div></section>
+</section>
+<section>
+<h1>Exemple</h1>
+<h3>m.cetim.fr</h3>
+<ul class="first last simple">
+<li>Site mobile</li>
+<li>Exploitant les données d&#8217;un site eZ Publish (pas toujours bien structurées...)</li>
+<li>API Rest pas très conventionnelle</li>
+<li><a class="reference external" href="http://m.cetim.fr">http://m.cetim.fr</a></li>
+</ul>
+</section>
+<section>
+<h1>Ressources</h1>
+<ul class="first last simple">
+<li><a class="reference external" href="http://addyosmani.github.io/backbone-fundamentals">http://addyosmani.github.io/backbone-fundamentals</a></li>
+<li><a class="reference external" href="http://backbonejs.org">http://backbonejs.org</a></li>
+<li><a class="reference external" href="http://stackoverflow.com/questions/tagged/backbone.js">http://stackoverflow.com/questions/tagged/backbone.js</a></li>
+<li><a class="reference external" href="https://backbonetutorials.com">https://backbonetutorials.com</a></li>
+</ul>
+</section>
+<section class="last-slide">
+<h1>Merci à tous</h1>
+</section>
+
+
+      </div>
+    </div>
+    
+<script src="_static/js/jquery.min.js"></script>
+<script src="_static/lib/js/head.min.js"></script>
+<script src="_static/js/reveal.js"></script>
+    <script>
+
+      // change DOM for reveal.js
+      $("div.section h1").remove();
+      var content = $("div.section").html();
+      $("div.section").remove();
+      $("div.slides").html(content);
+
+      Reveal.initialize({
+        width: 960,
+        height: 700,
+
+        margin: 0.1,
+
+        minScale: 0.2,
+        maxScale: 1.0,
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        keyboard : true,
+        overview: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        fragments: true,
+
+        autoSlide: 0,
+        mouseWheel: false,
+        rollingLinks: false,
+        previewLinks: false,
+
+        transitionSpeed: "default",
+        backgroundTransition: "default",
+
+        slideNumber: true,
+        embedded: false,
+        autoSlideStoppable: true,
+        hideAddressBar: true,
+
+        parallaxBackgroundImage: "",
+        parallaxBackgroundSize: "",
+
+        focusBodyOnPageVisiblityChange: true,
+
+        viewDistance: 3,
+
+        transition: Reveal.getQueryHash().transition || "default",
+
+        
+
+        dependencies: [
+           { src: '_static/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+           { src: '_static/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+           { src: '_static/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+           { src: '_static/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+    
+  </body>
+</html>

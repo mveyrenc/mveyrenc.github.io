@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation de Sphinx &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="index.html"/>
+        <link rel="next" title="Construction du document" href="construction_document.html"/>
+        <link rel="prev" title="Sphinx" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo_html.png" /></a>
+              </div>
+              <a href="index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation de Sphinx</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-des-pre-requis">Installation des pré-requis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-des-themes">Installation des thèmes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reveal-js">reveal.js</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-the-docs">Read the Docs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pour-construire-des-pdf">Pour construire des PDF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rtd/instruction_base.html">Instructions de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rtd/instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Installation de Sphinx</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/installation.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-de-sphinx">
+<h1>Installation de Sphinx<a class="headerlink" href="#installation-de-sphinx" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="installation-des-pre-requis">
+<h2>Installation des pré-requis<a class="headerlink" href="#installation-des-pre-requis" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install python-pip python-dev build-essential</span>
+<span class="go">sudo apt-get install graphviz librsvg2-bin plotutils</span>
+<span class="go">sudo pip install --upgrade pip</span>
+<span class="go">sudo pip install --upgrade virtualenv</span>
+<span class="go">sudo pip install sphinx</span>
+<span class="go">sudo pip install watchdog</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-des-themes">
+<h2>Installation des thèmes<a class="headerlink" href="#installation-des-themes" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="reveal-js">
+<h3>reveal.js<a class="headerlink" href="#reveal-js" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour les présentations.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">git submodule add \</span>
+<span class="go">    https://github.com/Open-Wide/sphinxjp.themes.revealjs.git \</span>
+<span class="go">    docs/_themes/sphinxjp.themes.revealjs</span>
+<span class="go">cd docs/_themes/sphinxjp.themes.revealjs</span>
+<span class="go">sudo python setup.py install</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># docs/sphinx_doc/config.py</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;sphinxjp.themes.revealjs&#39;</span><span class="p">]</span>
+
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;_build&#39;</span><span class="p">]</span>
+
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s">&#39;revealjs&#39;</span>
+<span class="n">html_use_index</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;lang&quot;</span><span class="p">:</span> <span class="s">&quot;fr&quot;</span><span class="p">,</span>
+    <span class="s">&quot;theme&quot;</span><span class="p">:</span> <span class="s">&quot;openwide&quot;</span><span class="p">,</span>
+    <span class="s">&quot;slide_number&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="read-the-docs">
+<h3>Read the Docs<a class="headerlink" href="#read-the-docs" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour les autres documents.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">git submodule add \</span>
+<span class="go">    https://github.com/Open-Wide/sphinx_rtd_theme.git \</span>
+<span class="go">    docs/_themes/sphinx_rtd_theme</span>
+<span class="go">cd docs/_themes/sphinx_rtd_theme</span>
+<span class="go">sudo python setup.py install</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># docs/sphinx_doc/config.py</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;sphinx_rtd_theme&#39;</span><span class="p">]</span>
+
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;_build&#39;</span><span class="p">]</span>
+
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s">&#39;sphinx_rtd_theme&#39;</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;subtitle&#39;</span><span class="p">:</span> <span class="n">subtitle</span><span class="p">,</span>
+    <span class="s">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pour-construire-des-pdf">
+<h2>Pour construire des PDF<a class="headerlink" href="#pour-construire-des-pdf" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install texlive-latex-recommended texlive-latex-base <span class="se">\</span>
+    texlive-lang-french fonts-linuxlibertine ttf-linux-libertine <span class="se">\</span>
+    python-genshi python-lxml python-jinja2-doc ttf-bitstream-vera <span class="se">\</span>
+    jsmath libjs-mathjax dvipng texlive-latex-extra <span class="se">\</span>
+    texlive-fonts-recommended texlive-lang-cyrillic
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># docs/sphinx_doc/config.py</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;sphinx_rtd_theme&#39;</span><span class="p">]</span>
+<span class="n">latex_elements</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;pointsize&#39;</span><span class="p">:</span> <span class="s">&#39;12pt&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="construction_document.html" class="btn btn-neutral float-right" title="Construction du document" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Sphinx" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

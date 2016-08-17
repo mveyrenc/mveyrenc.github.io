@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instructions spécifiques à la version Open Wide &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../index.html"/>
+        <link rel="next" title="Les extensions" href="../extensions.html"/>
+        <link rel="prev" title="Typographie" href="instruction_base/typographie.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instruction_base.html">Instructions de base</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Instructions spécifiques à la version Open Wide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#awesome-font">Awesome font</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#icone-de-base">Icône de base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tailles-des-icones">Tailles des icônes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#icones-a-largeur-fixe">Icônes à largeur fixe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#icones-animes">Icônes animés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-avec-icones">Liste avec icônes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bordures-alignement-d-icones">Bordures &amp; alignement d&#8217;icônes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotation-et-miroir">Rotation et miroir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#empilement-d-icones">Empilement d&#8217;icônes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tags">Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typographie">Typographie</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Instructions spécifiques à la version Open Wide</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/rtd/instruction_openwide.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instructions-specifiques-a-la-version-open-wide">
+<h1>Instructions spécifiques à la version Open Wide<a class="headerlink" href="#instructions-specifiques-a-la-version-open-wide" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="awesome-font">
+<h2>Awesome font<a class="headerlink" href="#awesome-font" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="http://fortawesome.github.io/Font-Awesome/">http://fortawesome.github.io/Font-Awesome/</a></p>
+<div class="section" id="icone-de-base">
+<h3>Icône de base<a class="headerlink" href="#icone-de-base" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last"><i class="fa fa-camera-retro"></i></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:awesome:</span><span class="nv">`camera-retro`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="tailles-des-icones">
+<h3>Tailles des icônes<a class="headerlink" href="#tailles-des-icones" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p><i class="fa fa-camera-retro fa-lg"></i></p>
+<p><i class="fa fa-camera-retro fa-2x"></i></p>
+<p><i class="fa fa-camera-retro fa-3x"></i></p>
+<p><i class="fa fa-camera-retro fa-4x"></i></p>
+<p class="last"><i class="fa fa-camera-retro fa-5x"></i></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:awesome:</span><span class="nv">`camera-retro fa-lg`</span>
+
+<span class="na">:awesome:</span><span class="nv">`camera-retro fa-2x`</span>
+
+<span class="na">:awesome:</span><span class="nv">`camera-retro fa-3x`</span>
+
+<span class="na">:awesome:</span><span class="nv">`camera-retro fa-4x`</span>
+
+<span class="na">:awesome:</span><span class="nv">`camera-retro fa-5x`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="icones-a-largeur-fixe">
+<h3>Icônes à largeur fixe<a class="headerlink" href="#icones-a-largeur-fixe" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="list-group last container">
+<p class="list-group-item"><i class="fa fa-home fa-fw"></i> Home</p>
+<p class="list-group-item"><i class="fa fa-book fa-fw"></i> Library</p>
+<p class="list-group-item"><i class="fa fa-pencil fa-fw"></i> Applications</p>
+<p class="list-group-item"><i class="fa fa-cog fa-fw"></i> Settings</p>
+</div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">container</span><span class="p">::</span> list-group
+
+<span class="p">    ..</span> <span class="ow">rst-class</span><span class="p">::</span> list-group-item
+
+        <span class="na">:awesome:</span><span class="nv">`home fa-fw`</span> Home
+
+<span class="p">    ..</span> <span class="ow">rst-class</span><span class="p">::</span> list-group-item
+
+
+        <span class="na">:awesome:</span><span class="nv">`book fa-fw`</span> Library
+
+<span class="p">    ..</span> <span class="ow">rst-class</span><span class="p">::</span> list-group-item
+
+
+        <span class="na">:awesome:</span><span class="nv">`pencil fa-fw`</span> Applications
+
+<span class="p">    ..</span> <span class="ow">rst-class</span><span class="p">::</span> list-group-item
+
+        <span class="na">:awesome:</span><span class="nv">`cog fa-fw`</span> Settings
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="icones-animes">
+<h3>Icônes animés<a class="headerlink" href="#icones-animes" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p><i class="fa fa-spinner fa-spin fa-2x"></i></p>
+<p><i class="fa fa-circle-o-notch fa-spin fa-2x"></i></p>
+<p><i class="fa fa-refresh fa-spin fa-2x"></i></p>
+<p><i class="fa fa-cog fa-spin fa-2x"></i></p>
+<p class="last"><i class="fa fa-spinner fa-pulse fa-2x"></i></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:awesome:</span><span class="nv">`spinner fa-spin fa-2x`</span>
+
+<span class="na">:awesome:</span><span class="nv">`circle-o-notch fa-spin fa-2x`</span>
+
+<span class="na">:awesome:</span><span class="nv">`refresh fa-spin fa-2x`</span>
+
+<span class="na">:awesome:</span><span class="nv">`cog fa-spin fa-2x`</span>
+
+<span class="na">:awesome:</span><span class="nv">`spinner fa-pulse fa-2x`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="liste-avec-icones">
+<h3>Liste avec icônes<a class="headerlink" href="#liste-avec-icones" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<ul class="fa-ul last simple">
+<li><i class="fa fa-check-square fa-li"></i> List icons</li>
+<li><i class="fa fa-check-square fa-li"></i> can be used</li>
+<li><i class="fa fa-spinner fa-spin fa-li"></i> as bullet</li>
+<li><i class="fa fa-square fa-li"></i> in lists</li>
+</ul>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> fa-ul
+
+    <span class="m">*</span> <span class="na">:awesome:</span><span class="nv">`check-square fa-li`</span> List icons
+    <span class="m">*</span> <span class="na">:awesome:</span><span class="nv">`check-square fa-li`</span> can be used
+    <span class="m">*</span> <span class="na">:awesome:</span><span class="nv">`spinner fa-spin fa-li`</span> as bullet
+    <span class="m">*</span> <span class="na">:awesome:</span><span class="nv">`square fa-li`</span> in lists
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="bordures-alignement-d-icones">
+<h3>Bordures &amp; alignement d&#8217;icônes<a class="headerlink" href="#bordures-alignement-d-icones" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last"><i class="fa fa-quote-left fa-3x pull-left fa-border"></i>
+Tomorrow we will run faster, stretch out our arms farther
+And then one fine morning — So we beat on, boats against the
+current, borne back ceaselessly into the past.</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:awesome:</span><span class="nv">`quote-left fa-3x pull-left fa-border`</span>
+Tomorrow we will run faster, stretch out our arms farther
+And then one fine morning — So we beat on, boats against the
+current, borne back ceaselessly into the past.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="rotation-et-miroir">
+<h3>Rotation et miroir<a class="headerlink" href="#rotation-et-miroir" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p><i class="fa fa-shield"></i></p>
+<p><i class="fa fa-shield fa-rotate-90"></i></p>
+<p><i class="fa fa-shield fa-rotate-180"></i></p>
+<p><i class="fa fa-shield fa-rotate-270"></i></p>
+<p><i class="fa fa-shield fa-flip-horizontal"></i></p>
+<p class="last"><i class="fa fa-shield fa-flip-vertical"></i></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:awesome:</span><span class="nv">`shield`</span>
+
+<span class="na">:awesome:</span><span class="nv">`shield fa-rotate-90`</span>
+
+<span class="na">:awesome:</span><span class="nv">`shield fa-rotate-180`</span>
+
+<span class="na">:awesome:</span><span class="nv">`shield fa-rotate-270`</span>
+
+<span class="na">:awesome:</span><span class="nv">`shield fa-flip-horizontal`</span>
+
+<span class="na">:awesome:</span><span class="nv">`shield fa-flip-vertical`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="empilement-d-icones">
+<h3>Empilement d&#8217;icônes<a class="headerlink" href="#empilement-d-icones" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<div class="fa-stack fa-lg container">
+<i class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x"></i></div>
+<div class="fa-stack fa-lg container">
+<i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-flag fa-stack-1x fa-inverse"></i></div>
+<div class="fa-stack fa-lg container">
+<i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i></div>
+<div class="fa-stack fa-lg last container">
+<i class="fa fa-camera fa-stack-1x"></i> <i class="fa fa-ban fa-stack-2x text-danger"></i></div>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">container</span><span class="p">::</span> fa-stack fa-lg
+
+    <span class="na">:awesome:</span><span class="nv">`square-o fa-stack-2x`</span> <span class="na">:awesome:</span><span class="nv">`twitter fa-stack-1x`</span>
+
+<span class="p">..</span> <span class="ow">container</span><span class="p">::</span> fa-stack fa-lg
+
+    <span class="na">:awesome:</span><span class="nv">`circle fa-stack-2x`</span> <span class="na">:awesome:</span><span class="nv">`flag fa-stack-1x fa-inverse`</span>
+
+<span class="p">..</span> <span class="ow">container</span><span class="p">::</span> fa-stack fa-lg
+
+    <span class="na">:awesome:</span><span class="nv">`square fa-stack-2x`</span> <span class="na">:awesome:</span><span class="nv">`terminal fa-stack-1x fa-inverse`</span>
+
+<span class="p">..</span> <span class="ow">container</span><span class="p">::</span> fa-stack fa-lg
+
+    <span class="na">:awesome:</span><span class="nv">`camera fa-stack-1x`</span> <span class="na">:awesome:</span><span class="nv">`ban fa-stack-2x text-danger`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+</div>
+<div class="section" id="tags">
+<h2>Tags<a class="headerlink" href="#tags" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last"><span class="tag tag-default">text default</span>
+<span class="tag tag-default">text default</span>
+<span class="tag tag-primary">text primary</span>
+<span class="tag tag-success">text success</span>
+<span class="tag tag-info">text info</span>
+<span class="tag tag-warning">text warning</span>
+<span class="tag tag-danger">text danger</span></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="na">:tag:</span><span class="nv">`default`</span>
+<span class="na">:tag:</span><span class="nv">`default::text default`</span>
+<span class="na">:tag:</span><span class="nv">`primary::text primary`</span>
+<span class="na">:tag:</span><span class="nv">`success::text success`</span>
+<span class="na">:tag:</span><span class="nv">`info::text info`</span>
+<span class="na">:tag:</span><span class="nv">`warning::text warning`</span>
+<span class="na">:tag:</span><span class="nv">`danger::text danger`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="typographie">
+<h2>Typographie<a class="headerlink" href="#typographie" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+<p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+<p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+<p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-danger last">Donec ullamcorper nulla non metus auctor fringilla.</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-muted
+
+    Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-primary
+
+    Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-success
+
+    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-info
+
+    Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-warning
+
+    Etiam porta sem malesuada magna mollis euismod.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-danger
+
+    Donec ullamcorper nulla non metus auctor fringilla.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+<p class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+<p class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="bg-danger last">Donec ullamcorper nulla non metus auctor fringilla.</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> bg-muted
+
+    Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> bg-primary
+
+    Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-success
+
+    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> bg-info
+
+    Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> bg-warning
+
+    Etiam porta sem malesuada magna mollis euismod.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> bg-danger
+
+    Donec ullamcorper nulla non metus auctor fringilla.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="text-left">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p class="text-right">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+<p class="text-center">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+<p class="text-justify">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-nowrap">Donec ullamcorper nulla non metus auctor fringilla.</p>
+<p class="text-lowercase">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p class="text-uppercase">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+<p class="text-capitalize last">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-left
+
+    Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-right
+
+    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-center
+
+    Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-justify
+
+    Etiam porta sem malesuada magna mollis euismod.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-nowrap
+
+    Donec ullamcorper nulla non metus auctor fringilla.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-lowercase
+
+    Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-uppercase
+
+    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+<span class="p">..</span> <span class="ow">rst-class</span><span class="p">::</span> text-capitalize
+
+    Maecenas sed diam eget risus varius blandit sit amet non magna.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../extensions.html" class="btn btn-neutral float-right" title="Les extensions" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="instruction_base/typographie.html" class="btn btn-neutral" title="Typographie" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

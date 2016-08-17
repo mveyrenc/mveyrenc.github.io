@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Formation eZ Publish dev</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="custom/css/ow.css">
+
+		<link rel="Shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div id="header">
+				<img src="images/logo-ow.png" />
+				<div class="title"></div>
+			</div>
+			<br class="clearfloat" />
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-markdown>
+					<script type="text/template">
+						# eZ Publish
+
+						### Formation développeur
+
+						---------------
+
+						#### Front-office
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Sommaire
+
+						* Design : Principes
+						* Gabarits
+						* Langage de templates
+						* Configuration : override
+						* Debug
+					</script>
+				</section>
+
+				<section data-title="Design : Principes">
+					<section data-markdown>
+						<script type="text/template">
+							# Design : Principes
+						</script>
+					</section>
+
+					<section data-title="Principe" data-markdown>
+						<script type="text/template">
+						## Principe
+						* Présentation du site : gabarit, CSS, images, ...
+						* Design par défaut
+							* **admin** : back-office
+							* **standard** : minimum fonctionnel
+						* Surcharge : ne pas modifier les templates par défaut
+						</script>
+					</section>
+
+					<section data-title="Arborescence" data-markdown>
+						<script type="text/template">
+							## Arborescence
+							<table>
+								<tr>
+									<th>images</th>
+									<td>Les images statiques du site</td>
+								</tr>
+								<tr>
+									<th>javascript</th>
+									<td>Ressources JS</td>
+								</tr>
+								<tr>
+									<th>override</th>
+									<td>Surcharge de gabarits / vues</td>
+								</tr>
+								<tr>
+									<th>stylesheets</th>
+									<td>Ressources CSS</td>
+								</tr>
+								<tr>
+									<th>templates</th>
+									<td>Gabarits</td>
+								</tr>
+							</table>
+						</script>
+					</section>
+				</section>
+
+				<section data-title="Gabarits">
+					<section data-markdown>
+						<script type="text/template">
+							# Gabarits
+						</script>
+					</section>
+
+					<section data-title="pagelayout" data-markdown>
+						<script type="text/template">
+							## pagelayout.tpl
+							* C'est le template principal (body/head inclus)
+							* Inclusion d'autres templates (header.tpl, footer.tpl, ...)
+							* Définition de variables globales
+							* Exécute le module et la vue : retour dans *$module_result*
+						</script>
+					</section>
+
+					<section data-title="Template de noeud" data-markdown>
+						<script type="text/template">
+							## Template de noeud
+							* Rendu du noeud courant
+							* Objet noeud contenu dans la variable *$node*
+							* Vue : full, embed, embed-inline, link, line, ou personnalisée
+							* Appel des vues de rendu des attributs via *attribute_view_gui*
+						</script>
+					</section>
+
+				</section>
+
+				<section data-title="Langage de templates" data-markdown>
+					<script type="text/template">
+						# Langage de templates
+						* Code inclus entre accolades {}
+						* Exemples :
+							* {def $variable = 'test'} ... {undef $test}
+							* {$node.data_map.NOM_ATTRIBUT}
+							* {if condition} ... {else} ... {/if}
+							* {foreach $tableau as $item} ... {/foreach}
+					</script>
+				</section>
+
+				<section data-title="Surcharge de gabarits">
+
+					<section data-markdown>
+						<script type="text/template">
+							# Surcharge de gabarits
+						</script>
+					</section>
+
+					<section data-title="override.ini" data-markdown>
+						<script type="text/template">
+							## override.ini
+							* Lecture séquentielle du fichier
+							* Le 1er jeu de conditions validé renvoie le template indiqué
+
+							Exemple :
+
+								[full_folder]
+								Source=node/view/full.tpl
+								MatchFile=full/folder.tpl
+								Subdir=templates
+								Match[class_identifier]=folder
+						</script>
+					</section>
+				</section>
+
+				<section data-title="Debug">
+
+					<section data-markdown>
+						<script type="text/template">
+							# Debug
+
+							Dans un template :
+							{$variable|attribute(show)}
+
+							logs : var/log/[error|warning|debug].log
+
+							Configuration générale, site.ini :
+
+								[DebugSettings]
+								DebugOutput=true
+
+								[TemplateSettings]
+								Debug=true
+								ShowUsedTemplates=true
+								TemplateCache=false
+								DevelopmentMode=true
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							# eZ Publish
+							## Front-office
+							### Fin
+
+							-------------------
+
+							<a href="industrialisation.html">&raquo; Industrialisation</a>
+						</script>
+					</section>
+				</section>
+
+			</div>
+
+			<div id="footer">
+			</div>
+
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'custom/js/jquery-min.js'},
+					{ src: 'custom/js/ow.js'}
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

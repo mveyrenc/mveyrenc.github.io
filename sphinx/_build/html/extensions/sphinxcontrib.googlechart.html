@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sphinxcontrib.googlechart &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../index.html"/>
+        <link rel="up" title="Les extensions" href="../extensions.html"/>
+        <link rel="next" title="sphinxcontrib.images" href="sphinxcontrib.images.html"/>
+        <link rel="prev" title="sphinxcontrib-phpdomain" href="sphinxcontrib-phpdomain.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_base.html">Instructions de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../extensions.html">Les extensions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sphinx-scruffy.html">sphinx-scruffy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.extlinks.html">sphinx.ext.extlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.ifconfig.html">sphinx.ext.ifconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.intersphinx.html">sphinx.ext.intersphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.todo.html">sphinx.ext.todo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib-phpdomain.html">sphinxcontrib-phpdomain</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">sphinxcontrib.googlechart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#piechart">piechart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#piechart3d">piechart3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linechart">linechart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linechartxy">linechartxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#holizontal-barchart">holizontal_barchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vertical-barchart">vertical_barchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#holizontal-bargraph">holizontal_bargraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vertical-bargraph">vertical_bargraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#venndiagram">venndiagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plotchart">plotchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mapchart">mapchart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinxcontrib-googlechart-graphviz">sphinxcontrib.googlechart.graphviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.images.html">sphinxcontrib.images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.nvd3.html">sphinxcontrib.nvd3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.programoutput.html">sphinxcontrib.programoutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.taglist.html">sphinxcontrib.taglist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.webmocks.html">sphinxcontrib.webmocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.yuml.html">sphinxcontrib.yuml</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../extensions.html">Les extensions</a> &raquo;</li>
+      
+    <li>sphinxcontrib.googlechart</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/extensions/sphinxcontrib.googlechart.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sphinxcontrib-googlechart">
+<h1>sphinxcontrib.googlechart<a class="headerlink" href="#sphinxcontrib-googlechart" title="Lien permanent vers ce titre">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://pypi.python.org/pypi/sphinxcontrib-googlechart">https://pypi.python.org/pypi/sphinxcontrib-googlechart</a></li>
+<li><a class="reference external" href="https://pythonhosted.org/sphinxcontrib-googlechart/">https://pythonhosted.org/sphinxcontrib-googlechart/</a></li>
+</ul>
+<div class="section" id="piechart">
+<h2>piechart<a class="headerlink" href="#piechart" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-9b09390150dca2311e5ed8f8c4cb5a66f04f8847.png" alt="piechart { dog: 100
+cat: 80
+rabbit: 40 }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">piechart</span><span class="p">::</span>
+
+    dog: 100
+    cat: 80
+    rabbit: 40
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="piechart3d">
+<h2>piechart3d<a class="headerlink" href="#piechart3d" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-bb9becc56bb35c7897ebd8fa2778edb3ece6b1da.png" alt="piechart_3d { dog: 100
+cat: 80
+rabbit: 40 }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">piechart3d</span><span class="p">::</span>
+    <span class="nc">:size:</span> <span class="nf">480x240</span>
+
+    dog: 100
+    cat: 80
+    rabbit: 40
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="linechart">
+<h2>linechart<a class="headerlink" href="#linechart" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-cd7695906076ea1b6ab5dcf20dd09684916a630d.png" alt="linechart { bicycle: 15, 35, 20, 40
+bicycle.color: ff0000
+car: 60, 75, 60, 30
+car.color: 0000ff }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">linechart</span><span class="p">::</span>
+
+    bicycle: 15, 35, 20, 40
+    bicycle.color: ff0000
+    car: 60, 75, 60, 30
+    car.color: 0000ff
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="linechartxy">
+<h2>linechartxy<a class="headerlink" href="#linechartxy" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-a00ad8308e0570d9f57d2e59d855ed3039c07039.png" alt="linechartxy { bicycle: (0, 15), (30, 35), (60, 20), (90, 40)
+car: (0, 60), (20, 75), (40, 60), (90, 30) }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">linechartxy</span><span class="p">::</span>
+
+    bicycle: (0, 15), (30, 35), (60, 20), (90, 40)
+    car: (0, 60), (20, 75), (40, 60), (90, 30)
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="holizontal-barchart">
+<h2>holizontal_barchart<a class="headerlink" href="#holizontal-barchart" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-f3576c3a0549075a2d0c2ab5c591f0d4bb0f954b.png" alt="holizontal_barchart { bicycle: 15, 25, 20, 30
+bicycle.color: ff0000
+bicycle.axis: x
+bicycle.axis_label: slow, fast
+car: 40, 50, 60, 45
+car.color: 0000ff }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">holizontal_barchart</span><span class="p">::</span>
+
+    bicycle: 15, 25, 20, 30
+    bicycle.color: ff0000
+    bicycle.axis: x
+    bicycle.axis_label: slow, fast
+    car: 40, 50, 60, 45
+    car.color: 0000ff
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="vertical-barchart">
+<h2>vertical_barchart<a class="headerlink" href="#vertical-barchart" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-762e9a530ebb718d1d2266e2745ba51941401f50.png" alt="vertical_barchart { bicycle: 15, 25, 20, 30
+bicycle.color: ff0000
+bicycle.axis: y
+bicycle.axis_label: slow, fast
+car: 40, 50, 60, 45
+car.color: 0000ff }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">vertical_barchart</span><span class="p">::</span>
+
+    bicycle: 15, 25, 20, 30
+    bicycle.color: ff0000
+    bicycle.axis: y
+    bicycle.axis_label: slow, fast
+    car: 40, 50, 60, 45
+    car.color: 0000ff
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="holizontal-bargraph">
+<h2>holizontal_bargraph<a class="headerlink" href="#holizontal-bargraph" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-9223e5e37a7e67ecf5a64d711611b4b98bd4077a.png" alt="holizontal_bargraph { bicycle: 15, 25, 20, 30
+bicycle.color: ff0000
+bicycle.axis: x
+bicycle.axis_label: slow, fast
+car: 40, 50, 60, 45
+car.color: 0000ff }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">holizontal_bargraph</span><span class="p">::</span>
+
+    bicycle: 15, 25, 20, 30
+    bicycle.color: ff0000
+    bicycle.axis: x
+    bicycle.axis_label: slow, fast
+    car: 40, 50, 60, 45
+    car.color: 0000ff
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="vertical-bargraph">
+<h2>vertical_bargraph<a class="headerlink" href="#vertical-bargraph" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-890e294783a324be829288d7cc047904c84fc511.png" alt="vertical_bargraph { bicycle: 15, 25, 20, 30
+bicycle.color: ff0000
+bicycle.axis: x
+bicycle.axis_label: slow, fast
+car: 40, 50, 60, 45
+car.color: 0000ff }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">vertical_bargraph</span><span class="p">::</span>
+
+    bicycle: 15, 25, 20, 30
+    bicycle.color: ff0000
+    bicycle.axis: x
+    bicycle.axis_label: slow, fast
+    car: 40, 50, 60, 45
+    car.color: 0000ff
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="venndiagram">
+<h2>venndiagram<a class="headerlink" href="#venndiagram" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-407c335db2cc31edf86264a2d90e3cbd2a0c3fb5.png" alt="venndiagram { data: 100, 80, 40, 20, 20, 20, 10 }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">venndiagram</span><span class="p">::</span>
+
+    data: 100, 80, 40, 20, 20, 20, 10
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="plotchart">
+<h2>plotchart<a class="headerlink" href="#plotchart" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-db1942a0510d7a28ed1a3831ad15de61b3ee4bbe.png" alt="plotchart { data: (50, 60), (75, 20), (20, 30), (10, 70), (45, 10) }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">plotchart</span><span class="p">::</span>
+
+    data: (50, 60), (75, 20), (20, 30), (10, 70), (45, 10)
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="mapchart">
+<h2>mapchart<a class="headerlink" href="#mapchart" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-6b44365022df0f32bf5c830326848668a4865131.png" alt="mapchart { data: CN, JP, KR
+color: ff0000, 00ff00, 0000ff }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">mapchart</span><span class="p">::</span>
+
+    data: CN, JP, KR
+    color: ff0000, 00ff00, 0000ff
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last google_chart">
+<img src="../_images/google_chart-09bb06375eb03a9d3212dca99b55eb085b1ad77a.png" alt="mapchart { CN: &quot;People's Republic of China&quot;
+CN.color: ff0000
+JP: Japan
+JP.color: 00ff00
+KR: &quot;Republic of Korea&quot;
+KR.color: 0000ff }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">mapchart</span><span class="p">::</span>
+
+    CN: &quot;People&#39;s Republic of China&quot;
+    CN.color: ff0000
+    JP: Japan
+    JP.color: 00ff00
+    KR: &quot;Republic of Korea&quot;
+    KR.color: 0000ff
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+</div>
+<div class="section" id="sphinxcontrib-googlechart-graphviz">
+<h1>sphinxcontrib.googlechart.graphviz<a class="headerlink" href="#sphinxcontrib-googlechart-graphviz" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Cette extension fait la même chose que <code class="docutils literal"><span class="pre">sphinx.ext.graphviz</span></code> mais ne nécessite pas les binaires <strong class="program">graphviz</strong>.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last graphviz">
+<img src="../_images/graphviz-8b1edec9686a6ea547fc25cfbcfcae86d1103569.png" alt="digraph {
+    A -&gt; B;
+}" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">graphviz</span><span class="p">::</span>
+
+    digraph {
+        A -&gt; B;
+    }
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last graphviz">
+<img src="../_images/graphviz-c14561ea214956b3e3e44870736890425dbf6dfa.png" alt="graph { A -- B; }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">graph</span><span class="p">::</span>
+
+    A -- B;
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last graphviz">
+<img src="../_images/graphviz-b728ed744f911faa55880878b2bf8b92bc990bf3.png" alt="graph { C_0--H_0[type=s];C_0--H_1[type=s];C_0--H_2[type=s];C_0--C_1[type=s];C_1--H_3[type=s];C_1--H_4[type=s];C_1--H_5[type=s]; }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">graph</span><span class="p">::</span>
+
+    C_0--H_0[type=s];C_0--H_1[type=s];C_0--H_2[type=s];C_0--C_1[type=s];C_1--H_3[type=s];C_1--H_4[type=s];C_1--H_5[type=s];
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last graphviz">
+<img src="../_images/graphviz-6c6141e9c2c59426b0a02f9bf3e808c32115155b.png" alt="digraph { A -- B; }" />
+</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">digraph</span><span class="p">::</span>
+
+    A -- B;
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinxcontrib.images.html" class="btn btn-neutral float-right" title="sphinxcontrib.images" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinxcontrib-phpdomain.html" class="btn btn-neutral" title="sphinxcontrib-phpdomain" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

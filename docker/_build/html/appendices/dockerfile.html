@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instructions du Dockerfile &mdash; documentation Docker 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="documentation Docker 1.0" href="../index.html"/>
+        <link rel="next" title="Glossaire" href="glossaire.html"/>
+        <link rel="prev" title="Commandes Docker" href="commandes.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Docker
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+
+            
+            - v1.0
+            
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation_docker.html">Installation de Docker Engine </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../initialisation_projet.html">Installation d&#8217;un projet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Annexes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aide-memoire.html">Aide mémoire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandes.html">Commandes Docker </a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Instructions du Dockerfile </a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Références</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Versions du document</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Docker</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Instructions du Dockerfile </li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/appendices/dockerfile.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instructions-du-dockerfile">
+<h1>Instructions du Dockerfile <a class="footnote-reference" href="#id2" id="id1">[1]</a><a class="headerlink" href="#instructions-du-dockerfile" title="Lien permanent vers ce titre">¶</a></h1>
+<dl class="docutils">
+<dt>#</dt>
+<dd>Indique un commentaire.</dd>
+<dt>FROM</dt>
+<dd>Définit l&#8217;image sur laquelle les instructions qui suivent doivent se baser. Elle doit être la première instruction du Dockerfile.</dd>
+<dt>MAINTAINER</dt>
+<dd>Indique la personne maintenant ce Dockerfile.</dd>
+<dt>RUN</dt>
+<dd>Exécute une commande sur l&#8217;image courante et commit le résultat.</dd>
+<dt>CMD</dt>
+<dd>Définit la commande exécutée au lancement d&#8217;un container. Il ne peut y avoir qu&#8217;un <strong class="command">CMD</strong> dans un Dockerfile. Si il y en a plusieurs, seul le dernier sera pris en compte. Toujours préférer la syntaxe en tableau. <strong class="command">CMD</strong> simule un <strong class="command">docker run</strong> et peut être surchargé par cette commande.</dd>
+<dt>EXPOSE</dt>
+<dd>Définit le(s) port(s) qui devra être exposé(s) vers l&#8217;extérieur.</dd>
+<dt>ENV</dt>
+<dd>Affecte une valeur à une variable d&#8217;environnement.</dd>
+<dt>ADD</dt>
+<dd>Copie de nouveaux fichiers, dossiers locaux ou des fichiers distant (via URL) et les ajoute dans le système de fichier du conteneur selon le chemin indiqué. Cette instruction permet de travailler avec des archives.</dd>
+<dt>COPY</dt>
+<dd>Copie de nouveaux fichiers, dossiers locaux et les ajoute dans le système de fichier du conteneur selon le chemin indiqué. Cette instruction est purement dédiée pour copier des fichiers locaux lors de la construction d&#8217;une image et ne possède aucune capacité de compression/décompression.</dd>
+<dt>ENTRYPOINT</dt>
+<dd>Indique la commande par défaut qui sera exécuté au démarrage du conteneur. Il ne peut y avoir qu&#8217;un <strong class="command">ENTRYPOINT</strong> dans un Dockerfile. Si il y en a plusieurs, seul le dernier sera pris en compte. Toujours préférer la syntaxe en tableau. <strong class="command">ENTRYPOINT</strong> simule un <strong class="command">docker run</strong> et NE PEUT PAS être surchargé par une commande <strong class="command">docker run</strong> dans le terminal. En revanche tous les arguments passés sur un <strong class="command">docker run</strong> seront passés en arguments à la commande spécifiée dans l&#8217;instruction <strong class="command">ENTRYPOINT</strong> du dockerfile.</dd>
+<dt>VOLUME</dt>
+<dd><p class="first">Ajoute un/des volume(s) aux conteneurs crées à partir d&#8217;une image. On les utilise par exemple pour que les conteneurs puissent accéder à notre code source et/ou une base de données.</p>
+<ul class="last simple">
+<li>Ces volumes peuvent être partagés et réutilisés dans différents conteneurs.</li>
+<li>Un conteneur n&#8217;a pas besoin d&#8217;être démarré pour partager son volume.</li>
+<li>Un changement dans le volume ne sera pas conservé lorsque l&#8217;image sera mise à jour.</li>
+<li>Les volumes sont persistant jusqu&#8217;à ce que aucun conteneur ne les utilise.</li>
+</ul>
+</dd>
+<dt>USER</dt>
+<dd>Désigne l&#8217;utilisateur qui exécutera (<strong class="command">RUN</strong>) une instruction ou executera un <strong class="command">ENTRYPOINT</strong>.</dd>
+<dt>WORKDIR</dt>
+<dd>Assigne le répertoire de travail pour l&#8217;exécution des commandes sur l&#8217;<strong class="command">ENTRYPOINT</strong> et/ou l&#8217;instruction <strong class="command">CMD</strong> lorsque le conteneur est lancé à partir de l&#8217;image.</dd>
+<dt>ONBUILD</dt>
+<dd>ajoute des déclencheurs aux images. Un déclencheur est exécuté lorsque l&#8217;image est utilisée comme base d&#8217;une autre image. Le déclencheur insert une nouvelle instruction lors de la construction de l&#8217;image comme si elle avait été spécifié juste après le <strong class="command">FROM</strong>. Le déclencheur peut exécuter n&#8217;importe quelle instruction (<strong class="command">ADD</strong>, <strong class="command">RUN</strong> …)</dd>
+</dl>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://docs.docker.com/reference/builder">Documentation officielle reference/builder</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="glossaire.html" class="btn btn-neutral float-right" title="Glossaire" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="commandes.html" class="btn btn-neutral" title="Commandes Docker" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

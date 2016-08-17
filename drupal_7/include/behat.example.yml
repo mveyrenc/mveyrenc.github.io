@@ -1,0 +1,14 @@
+# behat.example.yml
+
+# Import default parameters
+imports:
+  - behat.yml
+
+# Override
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://__example__.com
+    Drupal\DrupalExtension:
+      drupal:
+        drupal_root: "/data/sources/__example__/www"

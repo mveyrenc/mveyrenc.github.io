@@ -1,0 +1,52 @@
+Créer de la documentation
+=========================
+
+Comment créer un manuel Sphinx ?
+
+Remplacer les valeurs ci-dessous :
+
+.. code-block:: bash
+
+    $ export PROJECT="owsi-drupal7"
+    $ export TYPE_DOC="specs_fonctionnelles"
+    $ export DIR_PROJECT=/data/sources/$PROJECT
+
+Création des répertoires nécessaires :
+
+.. code-block:: bash
+
+    $ cd $DIR_PROJECT
+    $ mkdir -p docs/themes
+    $ mkdir -p docs/_static/images
+    $ mkdir -p docs/$TYPE_DOC/build
+    $ mkdir -p docs/$TYPE_DOC/source/_theme
+
+Lien symbolique pour partager les ressources statiques (images ...) :
+
+.. code-block:: bash
+
+    $ cd $DIR_PROJECT/docs/$TYPE_DOC/source
+    $ ln -s ../../_static
+
+Création du submodule thème partagé Sphinx Open Wide :
+
+.. code-block:: bash
+
+    $ cd $DIR_PROJECT
+    $ git submodule add https://github.com/Open-Wide/sphinx_rtd_theme.git docs/themes/sphinx_rtd_theme
+
+Lien symbolique vers le thème partagé Sphinx Open Wide :
+
+.. code-block:: bash
+
+    $ cd $DIR_PROJECT/docs/$TYPE_DOC/source/_theme
+    $ ln -s ../../../themes/sphinx_rtd_theme
+
+
+Copiez ensuite les fichiers ``make.bat`` et ``Makefile`` (issus d'une autre doc Sphinx) dans ``$DIR_PROJECT/docs/$TYPE_DOC``, puis le fichier ``conf.py`` dans ``$DIR_PROJECT/docs/$TYPE_DOC/source``.
+
+Editez ce fichier pour en personnaliser les valeurs (titre du document, ...).
+
+Placez le logo et le favicon dans ``$DIR_PROJECT/docs/_static/images``
+
+Puis, créer un fichier ``index.rst``, accueil de la documentation.

@@ -1,0 +1,179 @@
+\select@language {french}
+\thispagestyle {toc}
+\contentsline {chapter}{\numberline {1}Installation de Sphinx}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Installation des pr\IeC {\'e}-requis}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Installation des th\IeC {\`e}mes}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}reveal.js}{1}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Read the Docs}{1}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Pour construire des PDF}{2}{section.1.3}
+\contentsline {chapter}{\numberline {2}Construction du document}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Cr\IeC {\'e}ation d'un document}{4}{chapter.3}
+\contentsline {section}{\numberline {3.1}Par copie}{4}{section.3.1}
+\contentsline {section}{\numberline {3.2}En ligne de commande}{4}{section.3.2}
+\contentsline {chapter}{\numberline {4}R\IeC {\'e}f\IeC {\'e}rences}{5}{chapter.4}
+\contentsline {section}{\numberline {4.1}How to write docstrings.}{5}{section.4.1}
+\contentsline {section}{\numberline {4.2}Extending Sphinx.}{6}{section.4.2}
+\contentsline {chapter}{\numberline {5}Instructions de base}{7}{chapter.5}
+\contentsline {section}{\numberline {5.1}Les directives}{7}{section.5.1}
+\contentsline {section}{\numberline {5.2}Les r\IeC {\^o}les}{7}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Customisation de r\IeC {\^o}le}{7}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Avertissements}{7}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Sp\IeC {\'e}cifiques}{7}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}G\IeC {\'e}n\IeC {\'e}riques}{8}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Citations}{9}{section.5.4}
+\contentsline {section}{\numberline {5.5}Code}{9}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Bloc litt\IeC {\'e}ral}{9}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Bloc litt\IeC {\'e}ral interpr\IeC {\'e}t\IeC {\'e}}{9}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Bloc de code}{10}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Lignes surlign\IeC {\'e}es et num\IeC {\'e}ros de lignes}{12}{subsection.5.5.4}
+\contentsline {section}{\numberline {5.6}Commentaires}{12}{section.5.6}
+\contentsline {section}{\numberline {5.7}Conditions}{13}{section.5.7}
+\contentsline {section}{\numberline {5.8}Customisation CSS}{13}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Container}{13}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Class}{13}{subsection.5.8.2}
+\contentsline {subsection}{\numberline {5.8.3}Role}{14}{subsection.5.8.3}
+\contentsline {section}{\numberline {5.9}Notes de bas de page}{14}{section.5.9}
+\contentsline {paragraph}{\numberline {5.9.0.0.1}Notes}{14}{paragraph.5.9.0.0.1}
+\contentsline {section}{\numberline {5.10}Images}{14}{section.5.10}
+\contentsline {section}{\numberline {5.11}Figures}{15}{section.5.11}
+\contentsline {section}{\numberline {5.12}Inclusion de fichier}{16}{section.5.12}
+\contentsline {section}{\numberline {5.13}Inline markup}{16}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Italique}{16}{subsection.5.13.1}
+\contentsline {subsection}{\numberline {5.13.2}Gras}{17}{subsection.5.13.2}
+\contentsline {subsection}{\numberline {5.13.3}Code}{17}{subsection.5.13.3}
+\contentsline {subsection}{\numberline {5.13.4}Expression r\IeC {\'e}guli\IeC {\`e}re}{17}{subsection.5.13.4}
+\contentsline {subsection}{\numberline {5.13.5}Exemple}{18}{subsection.5.13.5}
+\contentsline {subsection}{\numberline {5.13.6}Commande}{18}{subsection.5.13.6}
+\contentsline {subsection}{\numberline {5.13.7}Programme}{18}{subsection.5.13.7}
+\contentsline {subsection}{\numberline {5.13.8}Fichier}{18}{subsection.5.13.8}
+\contentsline {subsection}{\numberline {5.13.9}D\IeC {\'e}finition}{19}{subsection.5.13.9}
+\contentsline {subsection}{\numberline {5.13.10}R\IeC {\'e}f\IeC {\'e}rence \IeC {\`a} des titres d'\IeC {\oe }uvres (livres, films, etc.)}{19}{subsection.5.13.10}
+\contentsline {subsection}{\numberline {5.13.11}Indice}{19}{subsection.5.13.11}
+\contentsline {subsection}{\numberline {5.13.12}Exposant}{19}{subsection.5.13.12}
+\contentsline {subsection}{\numberline {5.13.13}Abr\IeC {\'e}viation}{20}{subsection.5.13.13}
+\contentsline {subsection}{\numberline {5.13.14}PEP (Python Enhancement Proposal)}{20}{subsection.5.13.14}
+\contentsline {subsection}{\numberline {5.13.15}RFC (Internet Request for Comments)}{20}{subsection.5.13.15}
+\contentsline {subsection}{\numberline {5.13.16}Label dans l'interface utilisateur}{21}{subsection.5.13.16}
+\contentsline {subsection}{\numberline {5.13.17}S\IeC {\'e}lection de menus}{21}{subsection.5.13.17}
+\contentsline {subsection}{\numberline {5.13.18}S\IeC {\'e}quence de touches}{21}{subsection.5.13.18}
+\contentsline {subsection}{\numberline {5.13.19}Ent\IeC {\^e}te de mail}{21}{subsection.5.13.19}
+\contentsline {subsection}{\numberline {5.13.20}Mimetype}{22}{subsection.5.13.20}
+\contentsline {subsection}{\numberline {5.13.21}Variable pour \textbf {\texttt {make}}}{22}{subsection.5.13.21}
+\contentsline {subsection}{\numberline {5.13.22}Manuel}{22}{subsection.5.13.22}
+\contentsline {section}{\numberline {5.14}Liens}{22}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Vers un titre de la page}{22}{subsection.5.14.1}
+\contentsline {subsection}{\numberline {5.14.2}Vers une r\IeC {\'e}f\IeC {\'e}rence dans le document}{23}{subsection.5.14.2}
+\contentsline {subsection}{\numberline {5.14.3}Lien externe}{23}{subsection.5.14.3}
+\contentsline {subsection}{\numberline {5.14.4}Download links}{23}{subsection.5.14.4}
+\contentsline {section}{\numberline {5.15}Listes et d\IeC {\'e}finitions}{24}{section.5.15}
+\contentsline {subsection}{\numberline {5.15.1}Liste \IeC {\`a} puce}{24}{subsection.5.15.1}
+\contentsline {subsection}{\numberline {5.15.2}Liste num\IeC {\'e}rot\IeC {\'e}e}{24}{subsection.5.15.2}
+\contentsline {subsection}{\numberline {5.15.3}Liste imbriqu\IeC {\'e}e}{24}{subsection.5.15.3}
+\contentsline {subsection}{\numberline {5.15.4}Liste horizontale}{25}{subsection.5.15.4}
+\contentsline {subsection}{\numberline {5.15.5}Liste de d\IeC {\'e}finitions}{25}{subsection.5.15.5}
+\contentsline {subsection}{\numberline {5.15.6}Liste de champs}{26}{subsection.5.15.6}
+\contentsline {subsection}{\numberline {5.15.7}Liste d'options}{26}{subsection.5.15.7}
+\contentsline {section}{\numberline {5.16}Math}{26}{section.5.16}
+\contentsline {section}{\numberline {5.17}Paragraphes}{27}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Paragraphe simple}{27}{subsection.5.17.1}
+\contentsline {subsection}{\numberline {5.17.2}Bloc de lignes}{27}{subsection.5.17.2}
+\contentsline {subsection}{\numberline {5.17.3}Blockquote}{27}{subsection.5.17.3}
+\contentsline {subsection}{\numberline {5.17.4}Pull quote}{28}{subsection.5.17.4}
+\contentsline {subsection}{\numberline {5.17.5}Epigraph et highlights}{28}{subsection.5.17.5}
+\contentsline {section}{\numberline {5.18}Raw}{29}{section.5.18}
+\contentsline {section}{\numberline {5.19}Sidebar}{29}{section.5.19}
+\contentsline {subsection}{\numberline {5.19.1}Code with Sidebar}{30}{subsection.5.19.1}
+\contentsline {section}{\numberline {5.20}Substitutions}{30}{section.5.20}
+\contentsline {subsection}{\numberline {5.20.1}Insertion d'images dans du texte}{30}{subsection.5.20.1}
+\contentsline {subsection}{\numberline {5.20.2}Ins\IeC {\'e}rer du code HTML}{31}{subsection.5.20.2}
+\contentsline {subsection}{\numberline {5.20.3}Remplacement par du texte}{31}{subsection.5.20.3}
+\contentsline {section}{\numberline {5.21}Tableaux}{32}{section.5.21}
+\contentsline {subsection}{\numberline {5.21.1}Tableaux simple}{32}{subsection.5.21.1}
+\contentsline {subsection}{\numberline {5.21.2}Grilles}{34}{subsection.5.21.2}
+\contentsline {subsection}{\numberline {5.21.3}CSV}{35}{subsection.5.21.3}
+\contentsline {subsection}{\numberline {5.21.4}Listes}{36}{subsection.5.21.4}
+\contentsline {subsection}{\numberline {5.21.5}Large}{37}{subsection.5.21.5}
+\contentsline {subsection}{\numberline {5.21.6}Tr\IeC {\`e}s grand}{37}{subsection.5.21.6}
+\contentsline {section}{\numberline {5.22}Titres}{39}{section.5.22}
+\contentsline {section}{\numberline {5.23}Titre de la partie}{40}{section.5.23}
+\contentsline {subsection}{\numberline {5.23.1}Titre du chapitre}{40}{subsection.5.23.1}
+\contentsline {subsubsection}{\numberline {5.23.1.1}Titre de la section}{40}{subsubsection.5.23.1.1}
+\contentsline {paragraph}{\numberline {5.23.1.1.1}Titre de la sous-section}{40}{paragraph.5.23.1.1.1}
+\contentsline {subparagraph}{\numberline {5.23.1.1.1.1}Titre de la sous-sous-section}{40}{subparagraph.5.23.1.1.1.1}
+\contentsline {subparagraph}{\numberline {5.23.1.1.1.2}Titre du paragraphe}{40}{subparagraph.5.23.1.1.1.2}
+\contentsline {subparagraph}{\numberline {5.23.1.1.1.3}Titre du sous-paragraphe}{40}{subparagraph.5.23.1.1.1.3}
+\contentsline {section}{\numberline {5.24}TOC tree}{40}{section.5.24}
+\contentsline {section}{\numberline {5.25}Topic!}{41}{section.5.25}
+\contentsline {section}{\numberline {5.26}Transition}{41}{section.5.26}
+\contentsline {section}{\numberline {5.27}Typographie}{41}{section.5.27}
+\contentsline {chapter}{\numberline {6}Instructions sp\IeC {\'e}cifiques \IeC {\`a} la version Open Wide}{44}{chapter.6}
+\contentsline {section}{\numberline {6.1}Awesome font}{44}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Ic\IeC {\^o}ne de base}{44}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Tailles des ic\IeC {\^o}nes}{44}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Ic\IeC {\^o}nes \IeC {\`a} largeur fixe}{44}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Ic\IeC {\^o}nes anim\IeC {\'e}s}{45}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}Liste avec ic\IeC {\^o}nes}{45}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}Bordures \& alignement d'ic\IeC {\^o}nes}{46}{subsection.6.1.6}
+\contentsline {subsection}{\numberline {6.1.7}Rotation et miroir}{46}{subsection.6.1.7}
+\contentsline {subsection}{\numberline {6.1.8}Empilement d'ic\IeC {\^o}nes}{46}{subsection.6.1.8}
+\contentsline {section}{\numberline {6.2}Tags}{47}{section.6.2}
+\contentsline {section}{\numberline {6.3}Typographie}{47}{section.6.3}
+\contentsline {chapter}{\numberline {7}Les extensions}{50}{chapter.7}
+\contentsline {section}{\numberline {7.1}sphinx-scruffy}{50}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}D\IeC {\'e}pendances}{50}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Exemple simple}{50}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Diagrammes de classe}{50}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Diagrammes de s\IeC {\'e}quence}{51}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}sphinx.ext.extlinks}{51}{section.7.2}
+\contentsline {section}{\numberline {7.3}sphinx.ext.ifconfig}{51}{section.7.3}
+\contentsline {section}{\numberline {7.4}sphinx.ext.intersphinx}{52}{section.7.4}
+\contentsline {section}{\numberline {7.5}sphinx.ext.todo}{52}{section.7.5}
+\contentsline {section}{\numberline {7.6}sphinxcontrib-phpdomain}{53}{section.7.6}
+\contentsline {section}{\numberline {7.7}sphinxcontrib.googlechart}{54}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}piechart}{54}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2}piechart3d}{54}{subsection.7.7.2}
+\contentsline {subsection}{\numberline {7.7.3}linechart}{54}{subsection.7.7.3}
+\contentsline {subsection}{\numberline {7.7.4}linechartxy}{54}{subsection.7.7.4}
+\contentsline {subsection}{\numberline {7.7.5}holizontal\_barchart}{55}{subsection.7.7.5}
+\contentsline {subsection}{\numberline {7.7.6}vertical\_barchart}{55}{subsection.7.7.6}
+\contentsline {subsection}{\numberline {7.7.7}holizontal\_bargraph}{55}{subsection.7.7.7}
+\contentsline {subsection}{\numberline {7.7.8}vertical\_bargraph}{55}{subsection.7.7.8}
+\contentsline {subsection}{\numberline {7.7.9}venndiagram}{56}{subsection.7.7.9}
+\contentsline {subsection}{\numberline {7.7.10}plotchart}{56}{subsection.7.7.10}
+\contentsline {subsection}{\numberline {7.7.11}mapchart}{56}{subsection.7.7.11}
+\contentsline {section}{\numberline {7.8}sphinxcontrib.googlechart.graphviz}{56}{section.7.8}
+\contentsline {section}{\numberline {7.9}sphinxcontrib.images}{57}{section.7.9}
+\contentsline {section}{\numberline {7.10}sphinxcontrib.nvd3}{58}{section.7.10}
+\contentsline {subsection}{\numberline {7.10.1}Line Chart}{58}{subsection.7.10.1}
+\contentsline {subsection}{\numberline {7.10.2}Line Plus Bar Chart}{58}{subsection.7.10.2}
+\contentsline {subsection}{\numberline {7.10.3}Line With Focus Chart}{58}{subsection.7.10.3}
+\contentsline {subsection}{\numberline {7.10.4}Cumulative Line Chart}{58}{subsection.7.10.4}
+\contentsline {subsection}{\numberline {7.10.5}Discrete Bar Chart}{58}{subsection.7.10.5}
+\contentsline {subsection}{\numberline {7.10.6}Multi Bar Chart}{59}{subsection.7.10.6}
+\contentsline {subsection}{\numberline {7.10.7}Multi Bar Horizontal Chart}{59}{subsection.7.10.7}
+\contentsline {subsection}{\numberline {7.10.8}Pie Chart}{59}{subsection.7.10.8}
+\contentsline {subsection}{\numberline {7.10.9}Scatter Chart}{60}{subsection.7.10.9}
+\contentsline {subsection}{\numberline {7.10.10}Stacked Area Chart}{60}{subsection.7.10.10}
+\contentsline {section}{\numberline {7.11}sphinxcontrib.programoutput}{60}{section.7.11}
+\contentsline {section}{\numberline {7.12}sphinxcontrib.taglist}{60}{section.7.12}
+\contentsline {section}{\numberline {7.13}sphinxcontrib.webmocks}{61}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}Exemple}{61}{subsection.7.13.1}
+\contentsline {subsection}{\numberline {7.13.2}text}{61}{subsection.7.13.2}
+\contentsline {subsection}{\numberline {7.13.3}textarea}{61}{subsection.7.13.3}
+\contentsline {subsection}{\numberline {7.13.4}select}{62}{subsection.7.13.4}
+\contentsline {subsection}{\numberline {7.13.5}radio}{62}{subsection.7.13.5}
+\contentsline {subsection}{\numberline {7.13.6}checkbox}{62}{subsection.7.13.6}
+\contentsline {subsection}{\numberline {7.13.7}button}{62}{subsection.7.13.7}
+\contentsline {subsection}{\numberline {7.13.8}menulist}{63}{subsection.7.13.8}
+\contentsline {subsection}{\numberline {7.13.9}page}{63}{subsection.7.13.9}
+\contentsline {subsubsection}{\numberline {7.13.9.1}create\_user}{63}{subsubsection.7.13.9.1}
+\contentsline {subsubsection}{\numberline {7.13.9.2}create\_user2}{63}{subsubsection.7.13.9.2}
+\contentsline {section}{\numberline {7.14}sphinxcontrib.yuml}{64}{section.7.14}
+\contentsline {chapter}{\numberline {8}Documentation commune p\IeC {\^o}le PHP}{65}{chapter.8}
+\contentsline {section}{\numberline {8.1}Pr\IeC {\'e}sentation}{65}{section.8.1}
+\contentsline {section}{\numberline {8.2}Contribution sur le d\IeC {\'e}p\IeC {\^o}t}{65}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Cr\IeC {\'e}ation d'une documentation client}{65}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Cr\IeC {\'e}ation d'une documentation outils}{66}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Affichage dans le menu}{66}{subsection.8.2.3}
+\contentsline {chapter}{Bibliographie}{67}{chapter*.11}
+\contentsline {chapter}{Index}{68}{section*.13}

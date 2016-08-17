@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Les modules &mdash; documentation Drupal 7 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Drupal 7 1.0" href="index.html"/>
+        <link rel="next" title="Les thèmes" href="themes.html"/>
+        <link rel="prev" title="Commandes Drush" href="drush.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo.png" /></a>
+              </div>
+              <a href="index.html"> Drupal 7
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="poste_travail.html">Poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environnement.html">Environnements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drush.html">Commandes Drush</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modules-du-core">Modules du core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modules-additionnels">Modules additionnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autres-modules">Autres modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arbo-d-un-module">Arbo d&#8217;un module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Les thèmes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behat.html">Tests Behat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_continue.html">Intégration continue</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Drupal 7</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Les modules</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/modules.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="les-modules">
+<h1>Les modules<a class="headerlink" href="#les-modules" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="modules-du-core">
+<h2>Modules du core<a class="headerlink" href="#modules-du-core" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Voici un descriptif de quelques modules du core :</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">aggregator</span></code> : Gestion de flux RSS</li>
+<li><code class="docutils literal"><span class="pre">block</span></code> : Fournit les outils pour créer des blocks dans des régions d&#8217;un thème</li>
+<li><code class="docutils literal"><span class="pre">color</span></code> : Permet de customiser les couleurs des thèmes compatibles</li>
+<li><code class="docutils literal"><span class="pre">comment</span></code> : Autorise les utilisateurs à commenter des contenus</li>
+<li><code class="docutils literal"><span class="pre">contact</span></code> : Module de contact standard</li>
+<li><code class="docutils literal"><span class="pre">field</span></code> / <code class="docutils literal"><span class="pre">field_ui</span></code> : API de manipulations de champs</li>
+<li><code class="docutils literal"><span class="pre">file</span></code> : Field type Fichier</li>
+<li><code class="docutils literal"><span class="pre">image</span></code> : Field type image + gestion des alias</li>
+<li><code class="docutils literal"><span class="pre">locale</span></code> : Permet de traduire l&#8217;interface dans plusieurs langues</li>
+<li><code class="docutils literal"><span class="pre">list</span></code> : Field type Liste</li>
+<li><code class="docutils literal"><span class="pre">number</span></code> : Field type Nombre</li>
+<li><code class="docutils literal"><span class="pre">options</span></code> : Field type Options (selection/checkbox/radio)</li>
+<li><code class="docutils literal"><span class="pre">poll</span></code> : Gestion d&#8217;un sondage simple</li>
+<li><code class="docutils literal"><span class="pre">statistics</span></code> : Enregistrement des statistiques de consultation dans Drupal</li>
+<li><code class="docutils literal"><span class="pre">taxonomy</span></code> : Permet d&#8217;utiliser la taxonomie</li>
+</ul>
+</div>
+<div class="section" id="modules-additionnels">
+<h2>Modules additionnels<a class="headerlink" href="#modules-additionnels" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Voici une liste non exhaustive des modules additionnels utiles :</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">admin_menu</span></code> : Menu d&#8217;administration multi-niveaux plus pratique que le menu de base - <a class="reference external" href="https://www.drupal.org/project/admin_menu">https://www.drupal.org/project/admin_menu</a></li>
+<li><code class="docutils literal"><span class="pre">boost</span></code> : Génère du page statique pour le trafic anonyme - <a class="reference external" href="https://www.drupal.org/project/boost">https://www.drupal.org/project/boost</a></li>
+<li><code class="docutils literal"><span class="pre">captcha</span></code> : Image captcha avec caractères à saisir - <a class="reference external" href="https://www.drupal.org/project/captcha">https://www.drupal.org/project/captcha</a></li>
+<li><code class="docutils literal"><span class="pre">ckeditor</span></code> : Fournit un RTE paramétrable pour le contributeur - <a class="reference external" href="https://www.drupal.org/project/ckeditor">https://www.drupal.org/project/ckeditor</a></li>
+<li><code class="docutils literal"><span class="pre">coder</span></code> : Fournit PHP_CodeSniffer - <a class="reference external" href="https://www.drupal.org/project/coder">https://www.drupal.org/project/coder</a></li>
+<li><code class="docutils literal"><span class="pre">ctools</span></code> : Fournit des outils utilisés par plusieurs modules facilitant le développement - <a class="reference external" href="https://www.drupal.org/project/ctools">https://www.drupal.org/project/ctools</a></li>
+<li><code class="docutils literal"><span class="pre">date</span></code> : Field type Date - <a class="reference external" href="https://www.drupal.org/project/date">https://www.drupal.org/project/date</a></li>
+<li><code class="docutils literal"><span class="pre">devel</span></code> : Fonctions/helpers de développement pour le debug - <a class="reference external" href="https://www.drupal.org/project/devel">https://www.drupal.org/project/devel</a></li>
+<li><code class="docutils literal"><span class="pre">email</span></code> : Field type Email - <a class="reference external" href="https://www.drupal.org/project/email">https://www.drupal.org/project/email</a></li>
+<li><code class="docutils literal"><span class="pre">entity</span></code> : Fournit des fonctions pour manipuler les entités via le code (create / save / delete / view / access) - <a class="reference external" href="https://www.drupal.org/project/entity">https://www.drupal.org/project/entity</a></li>
+<li><code class="docutils literal"><span class="pre">entitycache</span></code> : Place les requêtes BDD des entités du core en cache</li>
+<li><code class="docutils literal"><span class="pre">features</span></code> : Permet d&#8217;importer/exporter des entités, settings, et autres paramétrages entre plusieurs environnements - <a class="reference external" href="https://www.drupal.org/project/features">https://www.drupal.org/project/features</a></li>
+<li><code class="docutils literal"><span class="pre">field_permissions</span></code> : Permissions sur des champs - <a class="reference external" href="https://www.drupal.org/project/field_permissions">https://www.drupal.org/project/field_permissions</a></li>
+<li><code class="docutils literal"><span class="pre">globalredirect</span></code> : Fournit une liste de règles de redirection de base - <a class="reference external" href="https://www.drupal.org/project/globalredirect">https://www.drupal.org/project/globalredirect</a></li>
+<li><code class="docutils literal"><span class="pre">honeypot</span></code> : Honeypot pour formulaires - <a class="reference external" href="https://www.drupal.org/project/honeypot">https://www.drupal.org/project/honeypot</a></li>
+<li><code class="docutils literal"><span class="pre">imagecache_actions</span></code> : Mise à disposition de filtres d&#8217;images supplémentaires - <a class="reference external" href="https://www.drupal.org/project/imagecache_actions">https://www.drupal.org/project/imagecache_actions</a></li>
+<li><code class="docutils literal"><span class="pre">imce</span></code> : Téléchargement de medias dans un browser - <a class="reference external" href="https://www.drupal.org/project/imce">https://www.drupal.org/project/imce</a></li>
+<li><code class="docutils literal"><span class="pre">l10n_client</span></code> : Fournit un bouton en bas à droite qui permet de détecter les traductions sur la page courante - <a class="reference external" href="https://www.drupal.org/project/l10n_client">https://www.drupal.org/project/l10n_client</a>. /!Version jQuery &lt; 1.9 (support de $.browser)</li>
+<li><code class="docutils literal"><span class="pre">l10n_update</span></code> : Permet de mettre à jour les traductions de tous les modules - <a class="reference external" href="https://www.drupal.org/project/l10n_update">https://www.drupal.org/project/l10n_update</a></li>
+<li><code class="docutils literal"><span class="pre">jquery_update</span></code> : <a class="reference external" href="https://www.drupal.org/project/jquery_update">https://www.drupal.org/project/jquery_update</a></li>
+<li><code class="docutils literal"><span class="pre">link</span></code> : Field type Lien - <a class="reference external" href="https://www.drupal.org/project/link">https://www.drupal.org/project/link</a></li>
+<li><code class="docutils literal"><span class="pre">linkit</span></code> : Fournit un menu ajax lors de la saisie d&#8217;un node en relation - <a class="reference external" href="https://www.drupal.org/project/linkit">https://www.drupal.org/project/linkit</a></li>
+<li><code class="docutils literal"><span class="pre">maillog</span></code> : Simule l&#8217;envoi d&#8217;un mail pour affichage dans le flux/BDD uniquement (mode dev sur données de prod) - <a class="reference external" href="https://www.drupal.org/project/maillog">https://www.drupal.org/project/maillog</a></li>
+<li><code class="docutils literal"><span class="pre">media</span></code> : Management des media - <a class="reference external" href="https://www.drupal.org/project/media">https://www.drupal.org/project/media</a></li>
+<li><code class="docutils literal"><span class="pre">menu_block</span></code> : Fournit des blocks menu de niveaux inférieurs - <a class="reference external" href="https://www.drupal.org/project/menu_block">https://www.drupal.org/project/menu_block</a></li>
+<li><code class="docutils literal"><span class="pre">metatag</span></code> : - <a class="reference external" href="https://www.drupal.org/project/metatag">https://www.drupal.org/project/metatag</a></li>
+<li><code class="docutils literal"><span class="pre">migrate</span></code> : Import de données depuis Drupal 5/6/7, Wordpress ou autres - <a class="reference external" href="https://www.drupal.org/project/migrate">https://www.drupal.org/project/migrate</a></li>
+<li><code class="docutils literal"><span class="pre">module_filter</span></code> : Améliore l&#8217;interface d&#8217;administration des modules - <a class="reference external" href="https://www.drupal.org/project/module_filter">https://www.drupal.org/project/module_filter</a></li>
+<li><code class="docutils literal"><span class="pre">pathauto</span></code> : Génère automatiquement des alias d&#8217;URL selon l&#8217;entité (+ règles paramétrables par type de contenu) - <a class="reference external" href="https://www.drupal.org/project/pathauto">https://www.drupal.org/project/pathauto</a></li>
+<li><code class="docutils literal"><span class="pre">print</span></code> : Génération d&#8217;une version imprimable web/pdf/epub/email - <a class="reference external" href="https://www.drupal.org/project/print">https://www.drupal.org/project/print</a></li>
+<li><code class="docutils literal"><span class="pre">redirect</span></code> : Améliore la gestion des redirections - <a class="reference external" href="https://www.drupal.org/project/redirect">https://www.drupal.org/project/redirect</a></li>
+<li><code class="docutils literal"><span class="pre">rules</span></code> : <a class="reference external" href="https://www.drupal.org/project/rules">https://www.drupal.org/project/rules</a></li>
+<li><code class="docutils literal"><span class="pre">search_api</span></code> : <a class="reference external" href="https://www.drupal.org/project/search_api">https://www.drupal.org/project/search_api</a></li>
+<li><code class="docutils literal"><span class="pre">security_review</span></code> : Fournit une batterie de tests basiques de sécurité - <a class="reference external" href="https://www.drupal.org/project/security_review">https://www.drupal.org/project/security_review</a></li>
+<li><code class="docutils literal"><span class="pre">special_menu_items</span></code> : Permet d&#8217;ajouter des entrées de menu sans lien ou séparateurs - <a class="reference external" href="https://www.drupal.org/project/special_menu_items">https://www.drupal.org/project/special_menu_items</a></li>
+<li><code class="docutils literal"><span class="pre">strongarm</span></code> : Permet d&#8217;importer/exporter des variables depuis des fichiers ou BDD (fonctionne avec features) - <a class="reference external" href="https://www.drupal.org/project/strongarm">https://www.drupal.org/project/strongarm</a></li>
+<li><code class="docutils literal"><span class="pre">taxonomy_menu</span></code> : Transforme l&#8217;arbo des termes en menu  - <a class="reference external" href="https://www.drupal.org/project/taxonomy_menu">https://www.drupal.org/project/taxonomy_menu</a></li>
+<li><code class="docutils literal"><span class="pre">token</span></code> : <a class="reference external" href="https://www.drupal.org/project/token">https://www.drupal.org/project/token</a></li>
+<li><code class="docutils literal"><span class="pre">transliteration</span></code> : Transformation de chaines pour génération d&#8217;URL propres si caractères spéciaux (ou dans une langue spécifique) - <a class="reference external" href="https://www.drupal.org/project/transliteration">https://www.drupal.org/project/transliteration</a></li>
+<li><code class="docutils literal"><span class="pre">xmlsitemap</span></code> : <a class="reference external" href="https://www.drupal.org/project/xmlsitemap">https://www.drupal.org/project/xmlsitemap</a></li>
+</ul>
+</div>
+<div class="section" id="autres-modules">
+<h2>Autres modules<a class="headerlink" href="#autres-modules" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">webform</span></code> : Création de formulaire au clic interface</li>
+<li><code class="docutils literal"><span class="pre">poll</span></code> ou <code class="docutils literal"><span class="pre">advanced_poll</span></code></li>
+<li><code class="docutils literal"><span class="pre">migrate</span></code> : API riche en objet avec la prise en compte de migration depuis Joomla / Wordpress ... - <a class="reference external" href="https://www.drupal.org/project/migrate">https://www.drupal.org/project/migrate</a></li>
+<li><code class="docutils literal"><span class="pre">feeds</span></code> : <a class="reference external" href="https://www.drupal.org/project/feeds">https://www.drupal.org/project/feeds</a></li>
+</ul>
+</div>
+<div class="section" id="arbo-d-un-module">
+<h2>Arbo d&#8217;un module<a class="headerlink" href="#arbo-d-un-module" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">mymodule.info</span></code> : Metadonnées du module : lister des fichiers PHP objet/interface dans files[], stylesheets[all] ou scripts[] chargé partout / Vider le cache de Drupal si on le modifie</li>
+<li><code class="docutils literal"><span class="pre">mymodule.module</span></code> : Liste des hooks</li>
+<li><code class="docutils literal"><span class="pre">mymodule.install</span></code> : Code d&#8217;install / désinstall / mise à jour nécessaire</li>
+<li><code class="docutils literal"><span class="pre">*.js</span></code> : à référencer avec drupal_add_js()</li>
+<li><code class="docutils literal"><span class="pre">*.css</span></code> : à référencer avec drupal_add_css()</li>
+<li><code class="docutils literal"><span class="pre">*.inc</span></code> : Code PHP supplémentaires si besoin : à inclure avec require / module_load_include() ...</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="themes.html" class="btn btn-neutral float-right" title="Les thèmes" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="drush.html" class="btn btn-neutral" title="Commandes Drush" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

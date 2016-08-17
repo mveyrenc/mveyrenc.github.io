@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Listes et définitions &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../../index.html"/>
+        <link rel="up" title="Instructions de base" href="../instruction_base.html"/>
+        <link rel="next" title="Math" href="math.html"/>
+        <link rel="prev" title="Liens" href="liens.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../../index.html"><img src="../../_static/logo_html.png" /></a>
+              </div>
+              <a href="../../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../instruction_base.html">Instructions de base</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">Les directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#les-roles">Les rôles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="avertissements.html">Avertissements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="citation.html">Citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commentaires.html">Commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_css.html">Customisation CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="footnotes.html">Notes de bas de page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="images.html#figures">Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inclusion-fichier.html">Inclusion de fichier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inline-markup.html">Inline markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Listes et définitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#liste-a-puce">Liste à puce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-numerotee">Liste numérotée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-imbriquee">Liste imbriquée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-horizontale">Liste horizontale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-de-definitions">Liste de définitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-de-champs">Liste de champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-d-options">Liste d&#8217;options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paragraphes.html">Paragraphes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raw.html">Raw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sidebar.html">Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitutions.html">Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tableaux.html">Tableaux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html">Titres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="titre.html#titre-de-la-partie">Titre de la partie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toc-tree.html">TOC tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic.html">Topic!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transition.html">Transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typographie.html">Typographie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../instruction_base.html">Instructions de base</a> &raquo;</li>
+      
+    <li>Listes et définitions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/rtd/instruction_base/listes.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="listes-et-definitions">
+<h1>Listes et définitions<a class="headerlink" href="#listes-et-definitions" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="liste-a-puce">
+<span id="index-0"></span><h2>Liste à puce<a class="headerlink" href="#liste-a-puce" title="Lien permanent vers ce titre">¶</a></h2>
+<p id="index-1">Pour construire une liste, ajoutez le caractère <code class="docutils literal"><span class="pre">*</span></code> au début du paragraphe et indentez la correctement.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<ul class="last simple">
+<li>This is a bulleted list.</li>
+<li>It has two items, the second
+item uses two lines.</li>
+</ul>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="m">*</span> This is a bulleted list.
+<span class="m">*</span> It has two items, the second
+  item uses two lines.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="liste-numerotee">
+<h2>Liste numérotée<a class="headerlink" href="#liste-numerotee" title="Lien permanent vers ce titre">¶</a></h2>
+<p id="index-2">Pour les listes numérotés, remplacez <code class="docutils literal"><span class="pre">*</span></code> par <code class="docutils literal"><span class="pre">#</span></code>.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<ol class="arabic simple">
+<li>This is a numbered list.</li>
+<li>It has two items too.</li>
+<li>This is a numbered list.</li>
+<li>It has two items too.</li>
+</ol>
+<ol class="last loweralpha simple">
+<li>Point a</li>
+<li>Point b</li>
+<li>Automatic point c.</li>
+</ol>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="m">1.</span> This is a numbered list.
+<span class="m">2.</span> It has two items too.
+<span class="m">#.</span> This is a numbered list.
+<span class="m">#.</span> It has two items too.
+
+a) Point a
+b) Point b
+<span class="m">#)</span> Automatic point c.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="liste-imbriquee">
+<h2>Liste imbriquée<a class="headerlink" href="#liste-imbriquee" title="Lien permanent vers ce titre">¶</a></h2>
+<p id="index-3">Pour créez des listes imbriquées, faites attention à séparer les listes parent et enfant avec au moins une ligne vide :</p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<ul class="last">
+<li><p class="first">this is</p>
+</li>
+<li><p class="first">a list</p>
+<blockquote>
+<div><ul class="simple">
+<li>with a nested list</li>
+<li>and some subitems</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">and here the parent list continues</p>
+</li>
+</ul>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="m">*</span> this is
+<span class="m">*</span> a list
+
+    <span class="m">*</span> with a nested list
+    <span class="m">*</span> and some subitems
+
+<span class="m">*</span> and here the parent list continues
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="liste-horizontale">
+<h2>Liste horizontale<a class="headerlink" href="#liste-horizontale" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar" id="index-4">
+<p class="first sidebar-title">Rendu</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>list of</li>
+<li>short items</li>
+<li>that should be</li>
+</ul>
+</td><td><ul class="simple">
+<li>displayed</li>
+<li>horizontally</li>
+</ul>
+</td></tr></table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">hlist</span><span class="p">::</span>
+    <span class="nc">:columns:</span> <span class="nf">2</span>
+
+    <span class="m">*</span> list of
+    <span class="m">*</span> short items
+    <span class="m">*</span> that should be
+    <span class="m">*</span> displayed
+    <span class="m">*</span> horizontally
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="liste-de-definitions">
+<h2>Liste de définitions<a class="headerlink" href="#liste-de-definitions" title="Lien permanent vers ce titre">¶</a></h2>
+<p id="index-5">Les définitions sont des paragraphes indentés sans marqueur au début :</p>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<dl class="last docutils">
+<dt>term (up to a line of text)</dt>
+<dd><p class="first">Definition of the term, which must be indented</p>
+<p class="last">and can even consist of multiple paragraphs</p>
+</dd>
+<dt>next term</dt>
+<dd>Description.</dd>
+</dl>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>term (up to a line of text)
+    Definition of the term, which must be indented
+
+    and can even consist of multiple paragraphs
+next term
+    Description.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="liste-de-champs">
+<h2>Liste de champs<a class="headerlink" href="#liste-de-champs" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar" id="index-6">
+<p class="first sidebar-title">Rendu</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Name:</th><td class="field-body">Isaac Newton</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Long:</th><td class="field-body">Here we insert more
+text to show the effect of
+many lines.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Remark:</th><td class="field-body">Start on the next line.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="nc">:Name:</span> <span class="nf">Isaac Newton</span>
+<span class="nc">:Long:</span> <span class="nf">Here we insert more</span>
+    text to show the effect of
+    many lines.
+<span class="nc">:Remark:</span>
+    Start on the next line.
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="liste-d-options">
+<h2>Liste d&#8217;options<a class="headerlink" href="#liste-d-options" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar" id="index-7">
+<p class="first sidebar-title">Rendu</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-v</span></kbd></td>
+<td>An option</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-o <var>file</var></span></kbd></td>
+<td>Same with value</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--delta</span></kbd></td>
+<td>A long option</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--delta=<var>len</var></span></kbd></td>
+<td>Same with value</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>-v           An option
+-o file      Same with value
+--delta      A long option
+--delta=len  Same with value
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="math.html" class="btn btn-neutral float-right" title="Math" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="liens.html" class="btn btn-neutral" title="Liens" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

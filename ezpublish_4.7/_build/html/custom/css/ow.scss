@@ -1,0 +1,51 @@
+#header {
+    .title {
+        float: left;
+        font-size: 0.7em;
+        margin: 20px !important;
+        color: #999;
+    }
+}
+#header img,
+#footer img,
+img.img {
+    border-radius: 10px;
+    background: #FFF;
+}
+
+#header img,
+#footer img {
+    float: right;
+    margin: 12px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    img {
+        float: left;
+    }
+}
+
+.slide_title {
+    display: none;
+}
+
+.reveal table {
+    &.small * {
+        font-size: 0.83em;
+    }
+    thead tr {
+        border-bottom: 1px solid #FFF;
+    }
+    td, th {
+        border-bottom: 0;
+    }
+}
+
+.clearfloat {
+    height: 1px;
+    clear: all;
+}

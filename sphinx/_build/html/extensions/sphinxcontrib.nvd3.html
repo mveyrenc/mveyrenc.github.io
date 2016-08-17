@@ -1,0 +1,981 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sphinxcontrib.nvd3 &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../index.html"/>
+        <link rel="up" title="Les extensions" href="../extensions.html"/>
+        <link rel="next" title="sphinxcontrib.programoutput" href="sphinxcontrib.programoutput.html"/>
+        <link rel="prev" title="sphinxcontrib.images" href="sphinxcontrib.images.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_base.html">Instructions de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../extensions.html">Les extensions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sphinx-scruffy.html">sphinx-scruffy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.extlinks.html">sphinx.ext.extlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.ifconfig.html">sphinx.ext.ifconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.intersphinx.html">sphinx.ext.intersphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.todo.html">sphinx.ext.todo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib-phpdomain.html">sphinxcontrib-phpdomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.googlechart.html">sphinxcontrib.googlechart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.googlechart.html#sphinxcontrib-googlechart-graphviz">sphinxcontrib.googlechart.graphviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.images.html">sphinxcontrib.images</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">sphinxcontrib.nvd3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#line-chart">Line Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-plus-bar-chart">Line Plus Bar Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-with-focus-chart">Line With Focus Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cumulative-line-chart">Cumulative Line Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#discrete-bar-chart">Discrete Bar Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-bar-chart">Multi Bar Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-bar-horizontal-chart">Multi Bar Horizontal Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pie-chart">Pie Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scatter-chart">Scatter Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stacked-area-chart">Stacked Area Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.programoutput.html">sphinxcontrib.programoutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.taglist.html">sphinxcontrib.taglist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.webmocks.html">sphinxcontrib.webmocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.yuml.html">sphinxcontrib.yuml</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../extensions.html">Les extensions</a> &raquo;</li>
+      
+    <li>sphinxcontrib.nvd3</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/extensions/sphinxcontrib.nvd3.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sphinxcontrib-nvd3">
+<h1>sphinxcontrib.nvd3<a class="headerlink" href="#sphinxcontrib-nvd3" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="line-chart">
+<h2>Line Chart<a class="headerlink" href="#line-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="linechart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+    $(function(){
+
+
+            data_linechart=[{"values": [{"y": 1, "x": 0}, {"y": 5, "x": 1}, {"y": 10, "x": 2}, {"y": 5, "x": 3}, {"y": 6, "x": 4}, {"y": 15, "x": 5}, {"y": 12, "x": 6}, {"y": 11, "x": 7}, {"y": 12, "x": 8}, {"y": 12, "x": 9}, {"y": 12, "x": 10}, {"y": 18, "x": 11}, {"y": 22, "x": 12}, {"y": 18, "x": 13}, {"y": 18, "x": 14}, {"y": 19, "x": 15}, {"y": 17, "x": 16}, {"y": 26, "x": 17}, {"y": 24, "x": 18}, {"y": 25, "x": 19}, {"y": 21, "x": 20}, {"y": 28, "x": 21}, {"y": 25, "x": 22}, {"y": 32, "x": 23}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 0, "x": 0}, {"y": 7, "x": 1}, {"y": 6, "x": 2}, {"y": 18, "x": 3}, {"y": 4, "x": 4}, {"y": 50, "x": 5}, {"y": 24, "x": 6}, {"y": 35, "x": 7}, {"y": 48, "x": 8}, {"y": 54, "x": 9}, {"y": 50, "x": 10}, {"y": 55, "x": 11}, {"y": 36, "x": 12}, {"y": 91, "x": 13}, {"y": 84, "x": 14}, {"y": 30, "x": 15}, {"y": 96, "x": 16}, {"y": 153, "x": 17}, {"y": 180, "x": 18}, {"y": 38, "x": 19}, {"y": 20, "x": 20}, {"y": 21, "x": 21}, {"y": 66, "x": 22}, {"y": 92, "x": 23}], "key": "ydata2", "yAxis": "1"}];
+
+
+        nv.addGraph(function() {
+        var chart = nv.models.lineChart().useInteractiveGuideline(true);
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_linechart;
+
+
+
+                chart.xAxis
+                .tickFormat(function(d) { return get_am_pm(parseInt(d)); });
+            chart.yAxis
+                .tickFormat(d3.format(',.02f'));
+
+
+        function get_am_pm(d){
+            if (d > 12) {
+                d = d - 12; return (String(d) + 'PM');
+            }
+            else {
+                return (String(d) + 'AM');
+            }
+        };
+
+          chart.showLegend(true);
+
+
+    
+
+        
+
+
+
+            d3.select('#linechart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+        });
+
+
+
+        });
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-linechart</span><span class="p">::</span> /_static/nvd3-chart/line-sample.csv
+    :jquery_on_ready:
+    :use_interactive_guideline:
+    <span class="nc">:x_axis_format:</span> <span class="nf">AM_PM</span>
+    <span class="nc">:extras:</span> <span class="nf">{&quot;tooltip&quot;: {&quot;y_start&quot;: &quot;&quot;, &quot;y_end&quot;: &quot;&quot;}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="line-plus-bar-chart">
+<h2>Line Plus Bar Chart<a class="headerlink" href="#line-plus-bar-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="lineplusbarchart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_lineplusbarchart=[{"bar": "true", "values": [{"y": 1, "x": 0}, {"y": 5, "x": 1}, {"y": 10, "x": 2}, {"y": 5, "x": 3}, {"y": 6, "x": 4}, {"y": 15, "x": 5}, {"y": 12, "x": 6}, {"y": 11, "x": 7}, {"y": 12, "x": 8}, {"y": 12, "x": 9}, {"y": 12, "x": 10}, {"y": 18, "x": 11}, {"y": 22, "x": 12}, {"y": 18, "x": 13}, {"y": 18, "x": 14}, {"y": 19, "x": 15}, {"y": 17, "x": 16}, {"y": 26, "x": 17}, {"y": 24, "x": 18}, {"y": 25, "x": 19}, {"y": 21, "x": 20}, {"y": 28, "x": 21}, {"y": 25, "x": 22}, {"y": 32, "x": 23}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 0, "x": 0}, {"y": 7, "x": 1}, {"y": 6, "x": 2}, {"y": 18, "x": 3}, {"y": 4, "x": 4}, {"y": 50, "x": 5}, {"y": 24, "x": 6}, {"y": 35, "x": 7}, {"y": 48, "x": 8}, {"y": 54, "x": 9}, {"y": 50, "x": 10}, {"y": 55, "x": 11}, {"y": 36, "x": 12}, {"y": 91, "x": 13}, {"y": 84, "x": 14}, {"y": 30, "x": 15}, {"y": 96, "x": 16}, {"y": 153, "x": 17}, {"y": 180, "x": 18}, {"y": 38, "x": 19}, {"y": 20, "x": 20}, {"y": 21, "x": 21}, {"y": 66, "x": 22}, {"y": 92, "x": 23}], "key": "ydata2", "yAxis": "1"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.linePlusBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_lineplusbarchart;
+
+
+
+
+            chart.y2Axis
+                .tickFormat(function(d) { return d3.format(',f')(d) });
+            chart.xAxis
+                .tickFormat(d3.format(',.2f'));
+            chart.y1Axis
+                .tickFormat(function(d) { return d3.format(',f')(d) });
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                        if(key.indexOf('ydata1') > -1 ){
+                        var y =  String(graph.point.y) ;
+                    }
+                    if(key.indexOf('ydata2') > -1 ){
+                        var y =  String(graph.point.y) ;
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#lineplusbarchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-lineplusbarchart</span><span class="p">::</span> /_static/nvd3-chart/line-sample.csv
+    <span class="nc">:chart_kwargs:</span> <span class="nf">{&quot;ydata1&quot;: {&quot;bar&quot;: true}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="line-with-focus-chart">
+<h2>Line With Focus Chart<a class="headerlink" href="#line-with-focus-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="linewithfocuschart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+    
+        data_linewithfocuschart=[{"values": [{"y": 1, "x": 0}, {"y": 5, "x": 1}, {"y": 10, "x": 2}, {"y": 5, "x": 3}, {"y": 6, "x": 4}, {"y": 15, "x": 5}, {"y": 12, "x": 6}, {"y": 11, "x": 7}, {"y": 12, "x": 8}, {"y": 12, "x": 9}, {"y": 12, "x": 10}, {"y": 18, "x": 11}, {"y": 22, "x": 12}, {"y": 18, "x": 13}, {"y": 18, "x": 14}, {"y": 19, "x": 15}, {"y": 17, "x": 16}, {"y": 26, "x": 17}, {"y": 24, "x": 18}, {"y": 25, "x": 19}, {"y": 21, "x": 20}, {"y": 28, "x": 21}, {"y": 25, "x": 22}, {"y": 32, "x": 23}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 0, "x": 0}, {"y": 7, "x": 1}, {"y": 6, "x": 2}, {"y": 18, "x": 3}, {"y": 4, "x": 4}, {"y": 50, "x": 5}, {"y": 24, "x": 6}, {"y": 35, "x": 7}, {"y": 48, "x": 8}, {"y": 54, "x": 9}, {"y": 50, "x": 10}, {"y": 55, "x": 11}, {"y": 36, "x": 12}, {"y": 91, "x": 13}, {"y": 84, "x": 14}, {"y": 30, "x": 15}, {"y": 96, "x": 16}, {"y": 153, "x": 17}, {"y": 180, "x": 18}, {"y": 38, "x": 19}, {"y": 20, "x": 20}, {"y": 21, "x": 21}, {"y": 66, "x": 22}, {"y": 92, "x": 23}], "key": "ydata2", "yAxis": "1"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.lineWithFocusChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_linewithfocuschart;
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+            chart.y2Axis
+                .tickFormat(d3.format(',.2f'));
+            chart.xAxis
+                .tickFormat(d3.format(',.2f'));
+            chart.x2Axis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'ydata1'){
+                        var y =  String(graph.point.y) ;
+                    }
+                    if(key == 'ydata2'){
+                        var y =  String(graph.point.y) ;
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#linewithfocuschart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-linewithfocuschart</span><span class="p">::</span> /_static/nvd3-chart/line-sample.csv
+</pre></div>
+</div>
+</div>
+<div class="section" id="cumulative-line-chart">
+<h2>Cumulative Line Chart<a class="headerlink" href="#cumulative-line-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="cumulativelinechart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_cumulativelinechart=[{"values": [{"y": 2, "x": 1338476400000}, {"y": 9, "x": 1339476400000}, {"y": 7, "x": 1340476400000}, {"y": 8, "x": 1341476400000}, {"y": 14, "x": 1342476400000}, {"y": 6, "x": 1343476400000}, {"y": 8, "x": 1344476400000}, {"y": 15, "x": 1345476400000}, {"y": 13, "x": 1346476400000}, {"y": 18, "x": 1347476400000}, {"y": 17, "x": 1348476400000}, {"y": 15, "x": 1349476400000}, {"y": 13, "x": 1350476400000}, {"y": 20, "x": 1351476400000}, {"y": 15, "x": 1352476400000}, {"y": 21, "x": 1353476400000}, {"y": 17, "x": 1354476400000}, {"y": 18, "x": 1355476400000}, {"y": 22, "x": 1356476400000}, {"y": 26, "x": 1357476400000}, {"y": 30, "x": 1358476400000}, {"y": 22, "x": 1359476400000}, {"y": 25, "x": 1360476400000}, {"y": 31, "x": 1361476400000}, {"y": 27, "x": 1362476400000}, {"y": 32, "x": 1363476400000}, {"y": 35, "x": 1364476400000}, {"y": 29, "x": 1365476400000}, {"y": 34, "x": 1366476400000}, {"y": 38, "x": 1367476400000}, {"y": 39, "x": 1368476400000}, {"y": 35, "x": 1369476400000}, {"y": 37, "x": 1370476400000}, {"y": 36, "x": 1371476400000}, {"y": 40, "x": 1372476400000}, {"y": 38, "x": 1373476400000}, {"y": 44, "x": 1374476400000}, {"y": 40, "x": 1375476400000}, {"y": 48, "x": 1376476400000}, {"y": 46, "x": 1377476400000}, {"y": 46, "x": 1378476400000}, {"y": 44, "x": 1379476400000}, {"y": 51, "x": 1380476400000}, {"y": 53, "x": 1381476400000}, {"y": 52, "x": 1382476400000}, {"y": 51, "x": 1383476400000}, {"y": 51, "x": 1384476400000}, {"y": 50, "x": 1385476400000}, {"y": 49, "x": 1386476400000}, {"y": 52, "x": 1387476400000}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 4, "x": 1338476400000}, {"y": 18, "x": 1339476400000}, {"y": 14, "x": 1340476400000}, {"y": 16, "x": 1341476400000}, {"y": 28, "x": 1342476400000}, {"y": 12, "x": 1343476400000}, {"y": 16, "x": 1344476400000}, {"y": 30, "x": 1345476400000}, {"y": 26, "x": 1346476400000}, {"y": 36, "x": 1347476400000}, {"y": 34, "x": 1348476400000}, {"y": 30, "x": 1349476400000}, {"y": 26, "x": 1350476400000}, {"y": 40, "x": 1351476400000}, {"y": 30, "x": 1352476400000}, {"y": 42, "x": 1353476400000}, {"y": 34, "x": 1354476400000}, {"y": 36, "x": 1355476400000}, {"y": 44, "x": 1356476400000}, {"y": 52, "x": 1357476400000}, {"y": 60, "x": 1358476400000}, {"y": 44, "x": 1359476400000}, {"y": 50, "x": 1360476400000}, {"y": 62, "x": 1361476400000}, {"y": 54, "x": 1362476400000}, {"y": 64, "x": 1363476400000}, {"y": 70, "x": 1364476400000}, {"y": 58, "x": 1365476400000}, {"y": 68, "x": 1366476400000}, {"y": 76, "x": 1367476400000}, {"y": 78, "x": 1368476400000}, {"y": 70, "x": 1369476400000}, {"y": 74, "x": 1370476400000}, {"y": 72, "x": 1371476400000}, {"y": 80, "x": 1372476400000}, {"y": 76, "x": 1373476400000}, {"y": 88, "x": 1374476400000}, {"y": 80, "x": 1375476400000}, {"y": 96, "x": 1376476400000}, {"y": 92, "x": 1377476400000}, {"y": 92, "x": 1378476400000}, {"y": 88, "x": 1379476400000}, {"y": 102, "x": 1380476400000}, {"y": 106, "x": 1381476400000}, {"y": 104, "x": 1382476400000}, {"y": 102, "x": 1383476400000}, {"y": 102, "x": 1384476400000}, {"y": 100, "x": 1385476400000}, {"y": 98, "x": 1386476400000}, {"y": 104, "x": 1387476400000}], "key": "ydata2", "yAxis": "1"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.cumulativeLineChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_cumulativelinechart;
+
+
+
+
+            chart.xAxis
+                .tickFormat(function(d) { return d3.time.format('%d %b %Y')(new Date(parseInt(d))) }
+);
+            chart.yAxis
+                .tickFormat(d3.format(',.1%'));
+
+                chart.tooltipContent(function(key, y, e, graph) {
+                    var x = d3.time.format("%d %b %Y")(new Date(parseInt(graph.point.x)));
+                    var y = String(graph.point.y);
+                    if(key == 'ydata1'){
+                        var y =  String(e) ;
+                    }
+if(key == 'ydata2'){
+                        var y =  String(e) ;
+                    }
+
+                    tooltip_str = '<center><b>'+key+'</b></center>' + y + ' on ' + x;
+                    return tooltip_str;
+                });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#cumulativelinechart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</div></div>
+<div class="section" id="discrete-bar-chart">
+<h2>Discrete Bar Chart<a class="headerlink" href="#discrete-bar-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="discretebarchart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+                data_discretebarchart=[{"values": [{"y": 3, "x": "A"}, {"y": 12, "x": "B"}, {"y": -10, "x": "C"}, {"y": 5, "x": "D"}, {"y": 25, "x": "E"}, {"y": -7, "x": "F"}, {"y": 2, "x": "G"}], "key": "ydata", "yAxis": "1"}];
+
+
+            nv.addGraph(function() {
+        var chart = nv.models.discreteBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_discretebarchart;
+
+
+
+                    chart.yAxis
+                .tickFormat(d3.format(',.0f'));
+
+    
+    
+
+        
+
+
+
+            d3.select('#discretebarchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+    
+        });
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-discretebarchart</span><span class="p">::</span>
+
+    xdata,ydata
+    A,3
+    B,12
+    C,-10
+    D,5
+    E,25
+    F,-7
+    G,2
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-bar-chart">
+<h2>Multi Bar Chart<a class="headerlink" href="#multi-bar-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="multibarchart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_multibarchart=[{"values": [{"y": 8, "x": 0}, {"y": 1, "x": 1}, {"y": 7, "x": 2}, {"y": 9, "x": 3}, {"y": 8, "x": 4}, {"y": 7, "x": 5}, {"y": 4, "x": 6}, {"y": 6, "x": 7}, {"y": 9, "x": 8}, {"y": 4, "x": 9}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 16, "x": 0}, {"y": 2, "x": 1}, {"y": 14, "x": 2}, {"y": 18, "x": 3}, {"y": 16, "x": 4}, {"y": 14, "x": 5}, {"y": 8, "x": 6}, {"y": 12, "x": 7}, {"y": 18, "x": 8}, {"y": 8, "x": 9}], "key": "ydata2", "yAxis": "1"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_multibarchart;
+
+
+
+
+            chart.xAxis
+                .tickFormat(d3.format(',.2f'));
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'ydata1'){
+                        var y =  String(graph.point.y) ;
+                    }
+                    if(key == 'ydata2'){
+                        var y =  String(graph.point.y) ;
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#multibarchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-multibarchart</span><span class="p">::</span>
+
+    xdata,ydata1,ydata2
+    0,8,16
+    1,1,2
+    2,7,14
+    3,9,18
+    4,8,16
+    5,7,14
+    6,4,8
+    7,6,12
+    8,9,18
+    9,4,8
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-bar-horizontal-chart">
+<h2>Multi Bar Horizontal Chart<a class="headerlink" href="#multi-bar-horizontal-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="multibarhorizontalchart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_multibarhorizontalchart=[{"values": [{"y": 8, "x": 0}, {"y": 1, "x": 1}, {"y": 7, "x": 2}, {"y": 9, "x": 3}, {"y": 8, "x": 4}, {"y": 7, "x": 5}, {"y": 4, "x": 6}, {"y": 6, "x": 7}, {"y": 9, "x": 8}, {"y": 4, "x": 9}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 16, "x": 0}, {"y": 2, "x": 1}, {"y": 14, "x": 2}, {"y": 18, "x": 3}, {"y": 16, "x": 4}, {"y": 14, "x": 5}, {"y": 8, "x": 6}, {"y": 12, "x": 7}, {"y": 18, "x": 8}, {"y": 8, "x": 9}], "key": "ydata2", "yAxis": "1"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarHorizontalChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_multibarhorizontalchart;
+
+
+
+
+            chart.xAxis
+                .tickFormat(d3.format(',.2f'));
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'ydata1'){
+                        var y =  String(graph.point.y) ;
+                    }
+                    if(key == 'ydata2'){
+                        var y =  String(graph.point.y) ;
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#multibarhorizontalchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-multibarhorizontalchart</span><span class="p">::</span>
+
+    xdata,ydata1,ydata2
+    0,8,16
+    1,1,2
+    2,7,14
+    3,9,18
+    4,8,16
+    5,7,14
+    6,4,8
+    7,6,12
+    8,9,18
+    9,4,8
+</pre></div>
+</div>
+</div>
+<div class="section" id="pie-chart">
+<h2>Pie Chart<a class="headerlink" href="#pie-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="piechart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+    data_piechart=[{"values": [{"value": 3, "label": "Orange"}, {"value": 4, "label": "Banana"}, {"value": 0, "label": "pear"}, {"value": 1, "label": "Kiwi"}, {"value": 5, "label": "Apple"}, {"value": 7, "label": "Strawberry"}, {"value": 3, "label": "Pineapple"}], "key": "ydata"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.pieChart();
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+        var datum = data_piechart[0].values;
+
+    chart.tooltipContent(function(key, y, e, graph) {
+          var x = String(key);
+              var y =  String(y) ;
+
+              tooltip_str = '<center><b>'+x+'</b></center>' + y;
+              return tooltip_str;
+              });
+        chart.showLabels(true);
+
+            chart.donut(false);
+
+    chart.showLegend(true);
+
+
+
+
+        chart
+            .x(function(d) { return d.label })
+            .y(function(d) { return d.value });
+
+
+        chart.height(450);
+
+
+            d3.select('#piechart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+        });
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-piechart</span><span class="p">::</span>
+
+    xdata,ydata
+    Orange,3
+    Banana,4
+    pear,0
+    Kiwi,1
+    Apple,5
+    Strawberry,7
+    Pineapple,3
+</pre></div>
+</div>
+</div>
+<div class="section" id="scatter-chart">
+<h2>Scatter Chart<a class="headerlink" href="#scatter-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="scatterchart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+            data_scatterchart=[{"values": [{"y": 0, "x": 10}, {"y": 5, "x": 7}, {"y": 10, "x": 12}, {"y": 27, "x": 7}, {"y": 28, "x": 10}, {"y": 30, "x": 11}, {"y": 48, "x": 13}, {"y": 56, "x": 14}, {"y": 72, "x": 17}, {"y": 27, "x": 19}, {"y": 40, "x": 13}, {"y": 77, "x": 18}, {"y": 48, "x": 20}, {"y": 39, "x": 19}, {"y": 28, "x": 24}, {"y": 15, "x": 24}, {"y": 112, "x": 17}, {"y": 85, "x": 24}, {"y": 144, "x": 21}, {"y": 38, "x": 22}, {"y": 100, "x": 30}, {"y": 21, "x": 29}, {"y": 154, "x": 32}, {"y": 230, "x": 24}, {"y": 240, "x": 25}, {"y": 150, "x": 30}, {"y": 260, "x": 31}, {"y": 81, "x": 33}, {"y": 168, "x": 33}, {"y": 29, "x": 39}, {"y": 30, "x": 35}, {"y": 248, "x": 41}, {"y": 160, "x": 36}, {"y": 99, "x": 37}, {"y": 340, "x": 41}, {"y": 280, "x": 43}, {"y": 360, "x": 41}, {"y": 333, "x": 38}, {"y": 342, "x": 47}, {"y": 351, "x": 44}, {"y": 280, "x": 41}, {"y": 82, "x": 48}, {"y": 294, "x": 46}, {"y": 129, "x": 51}, {"y": 440, "x": 49}, {"y": 225, "x": 50}, {"y": 414, "x": 54}, {"y": 282, "x": 51}, {"y": 48, "x": 51}, {"y": 392, "x": 57}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 0, "x": 10}, {"y": 10, "x": 7}, {"y": 20, "x": 12}, {"y": 54, "x": 7}, {"y": 56, "x": 10}, {"y": 60, "x": 11}, {"y": 96, "x": 13}, {"y": 112, "x": 14}, {"y": 144, "x": 17}, {"y": 54, "x": 19}, {"y": 80, "x": 13}, {"y": 154, "x": 18}, {"y": 96, "x": 20}, {"y": 78, "x": 19}, {"y": 56, "x": 24}, {"y": 30, "x": 24}, {"y": 224, "x": 17}, {"y": 170, "x": 24}, {"y": 288, "x": 21}, {"y": 76, "x": 22}, {"y": 200, "x": 30}, {"y": 42, "x": 29}, {"y": 308, "x": 32}, {"y": 460, "x": 24}, {"y": 480, "x": 25}, {"y": 300, "x": 30}, {"y": 520, "x": 31}, {"y": 162, "x": 33}, {"y": 336, "x": 33}, {"y": 58, "x": 39}, {"y": 60, "x": 35}, {"y": 496, "x": 41}, {"y": 320, "x": 36}, {"y": 198, "x": 37}, {"y": 680, "x": 41}, {"y": 560, "x": 43}, {"y": 720, "x": 41}, {"y": 666, "x": 38}, {"y": 684, "x": 47}, {"y": 702, "x": 44}, {"y": 560, "x": 41}, {"y": 164, "x": 48}, {"y": 588, "x": 46}, {"y": 258, "x": 51}, {"y": 880, "x": 49}, {"y": 450, "x": 50}, {"y": 828, "x": 54}, {"y": 564, "x": 51}, {"y": 96, "x": 51}, {"y": 784, "x": 57}], "key": "ydata2", "yAxis": "1"}, {"values": [{"y": 0, "x": 10}, {"y": 25, "x": 7}, {"y": 50, "x": 12}, {"y": 135, "x": 7}, {"y": 140, "x": 10}, {"y": 150, "x": 11}, {"y": 240, "x": 13}, {"y": 280, "x": 14}, {"y": 360, "x": 17}, {"y": 135, "x": 19}, {"y": 200, "x": 13}, {"y": 385, "x": 18}, {"y": 240, "x": 20}, {"y": 195, "x": 19}, {"y": 140, "x": 24}, {"y": 75, "x": 24}, {"y": 560, "x": 17}, {"y": 425, "x": 24}, {"y": 720, "x": 21}, {"y": 190, "x": 22}, {"y": 500, "x": 30}, {"y": 105, "x": 29}, {"y": 770, "x": 32}, {"y": 1150, "x": 24}, {"y": 1200, "x": 25}, {"y": 750, "x": 30}, {"y": 1300, "x": 31}, {"y": 405, "x": 33}, {"y": 840, "x": 33}, {"y": 145, "x": 39}, {"y": 150, "x": 35}, {"y": 1240, "x": 41}, {"y": 800, "x": 36}, {"y": 495, "x": 37}, {"y": 1700, "x": 41}, {"y": 1400, "x": 43}, {"y": 1800, "x": 41}, {"y": 1665, "x": 38}, {"y": 1710, "x": 47}, {"y": 1755, "x": 44}, {"y": 1400, "x": 41}, {"y": 410, "x": 48}, {"y": 1470, "x": 46}, {"y": 645, "x": 51}, {"y": 2200, "x": 49}, {"y": 1125, "x": 50}, {"y": 2070, "x": 54}, {"y": 1410, "x": 51}, {"y": 240, "x": 51}, {"y": 1960, "x": 57}], "key": "ydata3", "yAxis": "1"}];
+
+
+        nv.addGraph(function() {
+        var chart = nv.models.scatterChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_scatterchart;
+
+
+
+                chart.xAxis
+                .tickFormat(d3.format(',.02f'));
+            chart.yAxis
+                .tickFormat(d3.format(',.02f'));
+
+
+
+          chart.showLegend(true);
+
+
+    
+
+        
+
+
+
+
+    chart
+        .showDistX(true)
+        .showDistY(true)
+        .color(d3.scale.category10().range());
+
+            d3.select('#scatterchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+        });
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-scatterchart</span><span class="p">::</span> /_static/nvd3-chart/scatter-sample.csv
+    <span class="nc">:height:</span> <span class="nf">450</span>
+    <span class="nc">:extras:</span> <span class="nf">{&quot;tooltip&quot;: {&quot;y_start&quot;: &quot;&quot;, &quot;y_end&quot;: &quot; calls&quot;}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stacked-area-chart">
+<h2>Stacked Area Chart<a class="headerlink" href="#stacked-area-chart" title="Lien permanent vers ce titre">¶</a></h2>
+<div>
+
+    <div id="stackedareachart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+            data_stackedareachart=[{"values": [{"y": 6, "x": 100}, {"y": 11, "x": 101}, {"y": 12, "x": 102}, {"y": 7, "x": 103}, {"y": 11, "x": 104}, {"y": 10, "x": 105}, {"y": 11, "x": 106}], "key": "ydata1", "yAxis": "1"}, {"values": [{"y": 8, "x": 100}, {"y": 20, "x": 101}, {"y": 16, "x": 102}, {"y": 12, "x": 103}, {"y": 20, "x": 104}, {"y": 28, "x": 105}, {"y": 28, "x": 106}], "key": "ydata2", "yAxis": "1"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.stackedAreaChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_stackedareachart;
+
+
+
+
+            chart.xAxis
+                .tickFormat(d3.format(',.2f'));
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'ydata1'){
+                        var y =  String(graph.point.y) ;
+                    }
+                    if(key == 'ydata2'){
+                        var y =  String(graph.point.y) ;
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#stackedareachart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+    });
+
+
+
+    </script>
+</div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">nvd3-stackedareachart</span><span class="p">::</span>
+
+    xdata,ydata1,ydata2
+    100,6,8
+    101,11,20
+    102,12,16
+    103,7,12
+    104,11,20
+    105,10,28
+    106,11,28
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinxcontrib.programoutput.html" class="btn btn-neutral float-right" title="sphinxcontrib.programoutput" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinxcontrib.images.html" class="btn btn-neutral" title="sphinxcontrib.images" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

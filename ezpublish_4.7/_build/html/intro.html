@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Formation eZ Publish dev</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="custom/css/ow.css">
+
+		<link rel="Shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div id="header">
+				<img src="images/logo-ow.png" />
+				<div class="title"></div>
+			</div>
+			<br class="clearfloat" />
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-markdown>
+					<script type="text/template">
+						# eZ Publish
+
+						### Formation développeur
+
+						---------------
+
+						#### Introduction
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Sommaire
+
+						* Installation et arborescence
+						* Fichiers de configuration
+						* Sauvegarde
+						* Traitements Cron
+						* Principes d'eZ Publish
+						* Fichiers de configuration (organisation / surcharge)
+						* Backoffice / Administration
+					</script>
+				</section>
+
+				<!-- START Installation et arborescence -->
+				<section data-title="Installation et arborescence">
+					<section>
+						<h1>Installation et arborescence</h1>
+					</section>
+
+					<section data-title="Installation">
+						<h2>Installation</h2>
+						<ul>
+							<li>Wizard d'installation
+								<ul>
+									<li>Base de données</li>
+									<li>Langue(s)</li>
+									<li>Administrateur</li>
+								</ul>
+							</li>
+						</ul>
+						<hr />
+						<p><i>Exercice pratique :</i> installation instance eZ 4.7</p>
+					</section>
+
+					<section data-title="Arborescence">
+						<h2>Structure des répertoires</h2>
+							<table class="small">
+								<thead>
+									<tr>
+										<th>Répertoire</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>bin</th>
+										<td>Scripts utilisable en ligne de commande pour le lancement de commandes d'exploitation</td>
+									</tr>
+									<tr>
+										<th>cronjobs</th>
+										<td>Scripts cron</td>
+									</tr>
+									<tr>
+										<th>design</th>
+										<td>Répertoire des gabarits</td>
+									</tr>
+									<tr>
+										<th>doc</th>
+										<td>Documentations</td>
+									</tr>
+									<tr>
+										<th>extension</th>
+										<td>Répertoires des modules d'extensions</td>
+									</tr>
+									<tr>
+										<th>kernel</th>
+										<td>Scripts php du noyau d'eZ Publish</td>
+									</tr>
+									<tr>
+										<th>lib</th>
+										<td>Librairies utilisée par eZ Publish</td>
+									</tr>
+									<tr>
+										<th>settings</th>
+										<td>Fichiers de configuration</td>
+									</tr>
+									<tr>
+										<th>share</th>
+										<td>Configuration statique, commune et fichiers de traductions</td>
+									</tr>
+									<tr>
+										<th>var</th>
+										<td>Caches, fichiers de log, fichiers de contenus (images d'origines et retaillées)</td>
+									</tr>
+								</tbody>
+							</table>
+					</section>
+
+					<section data-title="Répertoire bin">
+						<h2>Répertoire bin</h2>
+						<h3>Utilisation</h3>
+						<p>Scripts d'exploitation : lancement en ligne de commandes</p>
+						<h3>Principaux scripts</h3>
+						<table class="small">
+							<tr>
+								<th>ezcache.php</th>
+								<td>suppression des caches (ini, content, ...)</td>
+							</tr>
+							<tr>
+								<th>updatesearchindex.php</th>
+								<td>Mise à jour des index du moteur de recherche</td>
+							</tr>
+						</table>
+					</section>
+
+					<section data-title="Répertoire var">
+						<h2>Répertoire var</h2>
+						<table class="small">
+							<tr>
+								<th>autoload</th>
+								<td>Répertoire cache des autoload de classes PHP</td>
+							</tr>
+							<tr>
+								<th>cache</th>
+								<td>Répertoire cache des fichiers de configuration</td>
+							</tr>
+							<tr>
+								<th>plain_site</th>
+								<td>Cache du site</td>
+							</tr>
+							<tr>
+								<th>storage</th>
+								<td>Répertoire des contenus statiques (images, ...)</td>
+							</tr>
+							<tr>
+								<th>log</th>
+								<td>Fichiers de trace d'eZ Publish</td>
+							</tr>
+						</table>
+					</section>
+
+				</section>
+				<!-- STOP Installation et arborescence -->
+
+				<!-- START Fichiers de configuration -->
+				<section data-title="Fichiers de configuration">
+					<section>
+						<h1>Fichiers de configuration</h1>
+					</section>
+
+					<section data-title="Répertoire settings">
+						<h2>Répertoire settings</h2>
+
+						<p>Contient l'ensemble des fichier ini pour une configuration par défaut</p>
+
+						<ul>
+							<li>Structure
+								<ul>
+									<li><b>Override</b> : Configuration surchargeant celle par défaut</li>
+									<li><b>Siteaccess</b> : Paramétrage spécifique pour chaque site</li>
+								</ul>
+							</li>
+
+
+							<li>Types de fichiers
+								<ul>
+									<li><b>*.ini</b> : Fichiers par défaut</li>
+									<li><b>*.ini.append.php</b> : Fichiers surchargés</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section data-title="Exemples">
+						<h2>Exemples</h2>
+						<ul>
+							<li>site.ini
+								<ul>
+									<li>Accès à la base de données</li>
+									<li>Listing des ressources générales du site (CSS / JS)</li>
+									<li>Activation/désactivation du debug</li>
+									<li>Langue</li>
+								</ul>
+							</li>
+							<li>image.ini
+								<ul>
+									<li>Gestion des variantes d'images</li>
+									<li>Alias spécifiques selon les dimensions souhaitées</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<!-- STOP Fichiers de configuration -->
+
+				<!-- START Sauvegarde -->
+				<section data-title="Sauvegarde">
+					<section>
+						<h1>Sauvegarde</h1>
+					</section>
+
+					<section data-title="Que sauvegarder ?">
+						<h2>Quels éléments sauvegarder ?</h2>
+						<ul>
+							<li>Base de données</li>
+							<li>Contenu : répertoire [cheminInstall]/var</li>
+							<li>Autres - Si utilisation d'un outil de versionning et/ou livraison continue
+								<ul>
+									<li>Répertoire des gabarits</li>
+									<li>Répertoire de configuration</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+				</section>
+				<!-- STOP Sauvegarde -->
+
+				<!-- START Traitement cron -->
+				<section data-title="Traitement cron">
+					<section>
+						<h1>Traitement cron</h1>
+					</section>
+
+					<section data-title="Paramétrage">
+						<h2>Paramétrage</h2>
+						<table>
+							<tr>
+								<th>cron.ini</th>
+								<td>Configuration générale</td>
+							</tr>
+							<tr>
+								<th>cronjobs</th>
+								<td>Emplacement des scripts</td>
+							</tr>
+							<tr>
+								<th>runcronjobs.php</th>
+								<td>Déclenchement des scripts en ligne de commande</td>
+							</tr>
+						</table>
+					</section>
+
+					<section data-title="Exemples">
+						<h2>Exemples</h2>
+						<table>
+							<tr>
+								<th>internal_drafts_cleanup</th>
+								<td>Nettoyage des brouillons</td>
+							</tr>
+							<tr>
+								<th>workflow</th>
+								<td>Lancement du moteur de workflow</td>
+							</tr>
+							<tr>
+								<th>staticcache_cleanup</th>
+								<td>Suppression du cache de contenu statique</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							# eZ Publish
+							## Introduction
+							### Fin
+
+							-------------------
+
+							<a href="back.html">&raquo; Back-office</a>
+						</script>
+					</section>
+				</section>
+			</div>
+
+			<div id="footer">
+			</div>
+
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'custom/js/jquery-min.js'},
+					{ src: 'custom/js/ow.js'}
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

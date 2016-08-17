@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tests Behat &mdash; documentation Drupal 7 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Drupal 7 1.0" href="index.html"/>
+        <link rel="next" title="Intégration continue" href="integration_continue.html"/>
+        <link rel="prev" title="Liens" href="liens.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo.png" /></a>
+              </div>
+              <a href="index.html"> Drupal 7
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="poste_travail.html">Poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environnement.html">Environnements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drush.html">Commandes Drush</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Les modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Les thèmes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Tests Behat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commandes-utiles">Commandes utiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="integration_continue.html">Intégration continue</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Drupal 7</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Tests Behat</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/behat.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tests-behat">
+<h1>Tests Behat<a class="headerlink" href="#tests-behat" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="http://behat-drupal-extension.readthedocs.org/">Behat</a> est installé par défaut dans le submodule Open Wide <strong>drupal_builder</strong>.</p>
+<p>Pour en être sûr, placez-vous à la racine des sources du site puis lancez :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git submodule update --init
+<span class="nv">$ </span>mkdir tests/
+<span class="nv">$ </span>./bin/behat --init
+<span class="nv">$ </span>cp behat.example.yml behat.local.yml
+</pre></div>
+</div>
+<p>Créez ensuite le fichier behat.yml comme suit :</p>
+<div class="highlight-yaml"><div class="highlight"><pre># behat.yml
+
+# Default parameters
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+      paths:
+        - %paths.base%/features/basic
+        - %paths.base%/features/users
+        - %paths.base%/features/site_default
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: &quot;drupal&quot;
+      drush:
+        alias: &quot;default&quot;
+      region_map:
+        content: &quot;.region-content&quot;
+        footer: &quot;.region-footer&quot;
+      selectors:
+        message_selector: &#39;.messages&#39;
+        error_message_selector: &#39;.messages.error&#39;
+        success_message_selector: &#39;.messages.status&#39;
+        warning_message_selector: &#39;.messages.warning&#39;
+      text:
+        log_out: &quot;Se déconnecter&quot;
+        log_in: &quot;Se connecter&quot;
+        password_field: &quot;Mot de passe&quot;
+        username_field: &quot;Nom d&#39;utilisateur&quot;
+
+# For multisite
+site2:
+  extensions:
+    Drupal\DrupalExtension:
+      drush:
+        alias: &quot;site2&quot;
+</pre></div>
+</div>
+<p>Pour la gestion de l&#8217;environnement, créer le fichier local contenant le chemin de l&#8217;instance Drupal + l&#8217;URL du site :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># behat.example.yml</span>
+
+<span class="c1"># Import default parameters</span>
+<span class="l-Scalar-Plain">imports</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">behat.yml</span>
+
+<span class="c1"># Override</span>
+<span class="l-Scalar-Plain">default</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">Behat\MinkExtension</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">base_url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://__example__.com</span>
+    <span class="l-Scalar-Plain">Drupal\DrupalExtension</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">drupal</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">drupal_root</span><span class="p-Indicator">:</span> <span class="s">&quot;/data/sources/__example__/www&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commandes-utiles">
+<h2>Commandes utiles<a class="headerlink" href="#commandes-utiles" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Commandes accessibles sans surcharge</span>
+<span class="nv">$ </span>./bin/behat -dl
+
+<span class="c"># Idem avec emplacement des méthodes PHP</span>
+<span class="nv">$ </span>./bin/behat -di
+
+<span class="c"># Afficher les options de config disponibles</span>
+<span class="nv">$ </span>./bin/behat --config-reference
+
+<span class="c"># Lancement les tests</span>
+<span class="nv">$ </span>./bin/behat
+
+<span class="c"># Lancement des tests avec une configuration locale</span>
+<span class="nv">$ </span>./bin/behat --config behat.local.yml
+
+<span class="c"># Lancement des tests sur une feature particulière</span>
+<span class="nv">$ </span>./bin/behat --name<span class="o">=</span>homepage
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">Voir aussi</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://behat-drupal-extension.readthedocs.org">http://behat-drupal-extension.readthedocs.org</a></li>
+<li><a class="reference external" href="http://docs.behat.org">http://docs.behat.org</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="integration_continue.html" class="btn btn-neutral float-right" title="Intégration continue" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="liens.html" class="btn btn-neutral" title="Liens" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

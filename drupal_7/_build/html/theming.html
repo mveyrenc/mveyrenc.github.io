@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Theming &mdash; documentation Drupal 7 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Drupal 7 1.0" href="index.html"/>
+        <link rel="next" title="Debug" href="debug.html"/>
+        <link rel="prev" title="Les thèmes" href="themes.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo.png" /></a>
+              </div>
+              <a href="index.html"> Drupal 7
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="poste_travail.html">Poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environnement.html">Environnements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drush.html">Commandes Drush</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Les modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Les thèmes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Theming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fonctions-de-base">Fonctions de base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hooks">Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#infos">Infos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonction-t">Fonction t()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users">Users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behat.html">Tests Behat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_continue.html">Intégration continue</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Drupal 7</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Theming</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/theming.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="theming">
+<h1>Theming<a class="headerlink" href="#theming" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="fonctions-de-base">
+<h2>Fonctions de base<a class="headerlink" href="#fonctions-de-base" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">drupal_get_path()</span></code> : pour récupérer chaque chemin de fichier css/js</li>
+<li><code class="docutils literal"><span class="pre">drupal_add_css()</span></code> : groupe CSS_DEFAULT / CSS_THEME</li>
+</ul>
+</div>
+<div class="section" id="hooks">
+<h2>Hooks<a class="headerlink" href="#hooks" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">hook_block_view()</span></code> : Drupal sapprête à afficherun bloc - <a class="reference external" href="https://api.drupal.org/hook_block_view">https://api.drupal.org/hook_block_view</a></li>
+<li><code class="docutils literal"><span class="pre">hook_user_login()</span></code> : Quand l&#8217;utilisateur s&#8217;authentifie - <a class="reference external" href="https://api.drupal.org/hook_user_login">https://api.drupal.org/hook_user_login</a></li>
+<li><code class="docutils literal"><span class="pre">hook_form_alter()</span></code> : Avant qu&#8217;un formulaire soit affiché - <a class="reference external" href="https://api.drupal.org/hook_form_alter">https://api.drupal.org/hook_form_alter</a></li>
+<li><code class="docutils literal"><span class="pre">hook_block_info()</span></code> : Déclaration de nouveaux blocks - <a class="reference external" href="https://api.drupal.org/hook_block_info">https://api.drupal.org/hook_block_info</a></li>
+<li><code class="docutils literal"><span class="pre">hook_node_validate()</span></code> : <a class="reference external" href="https://api.drupal.org/hook_node_validate">https://api.drupal.org/hook_node_validate</a></li>
+<li><code class="docutils literal"><span class="pre">hook_node_insert()</span></code> : <a class="reference external" href="https://api.drupal.org/hook_node_insert">https://api.drupal.org/hook_node_insert</a></li>
+<li><code class="docutils literal"><span class="pre">hook_node_update()</span></code> : <a class="reference external" href="https://api.drupal.org/hook_node_update">https://api.drupal.org/hook_node_update</a></li>
+<li><code class="docutils literal"><span class="pre">hook_node_detete()</span></code> : <a class="reference external" href="https://api.drupal.org/hook_node_detete">https://api.drupal.org/hook_node_detete</a></li>
+<li><code class="docutils literal"><span class="pre">hook_menu()</span></code> : <a class="reference external" href="https://api.drupal.org/hook_menu">https://api.drupal.org/hook_menu</a></li>
+</ul>
+</div>
+<div class="section" id="infos">
+<h2>Infos<a class="headerlink" href="#infos" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>Si plusieurs hook <em>titi_block_view</em>/<em>toto_block_view</em> sont appelés, l&#8217;ordre d&#8217;appel est par ordre alphabétique. Si on veut contourner, on change le poids du module dans la table système.</li>
+<li><code class="docutils literal"><span class="pre">drupal_set_title()</span></code> : Mettre à jour dynamiquement le h1</li>
+<li><code class="docutils literal"><span class="pre">drupal_add_http_header()</span></code> : si on veut faire un flux RSS par ex</li>
+<li><code class="docutils literal"><span class="pre">hook_menu()</span></code> : <code class="docutils literal"><span class="pre">MENU_CONTEXT_INLINE</span></code> pour afficher dans le menu contextuel en mode debug (engrenage) et <code class="docutils literal"><span class="pre">MENU_CONTEXT_PAGE</span></code> pour afficher dans le menu (par défaut)</li>
+<li><code class="docutils literal"><span class="pre">check_plain</span></code> : protéger les chaines</li>
+</ul>
+</div>
+<div class="section" id="fonction-t">
+<h2>Fonction t()<a class="headerlink" href="#fonction-t" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Type de jetons pour la fonction <code class="docutils literal"><span class="pre">t('Welcome</span> <span class="pre">&#64;username',</span> <span class="pre">array('&#64;username'</span> <span class="pre">=&gt;</span> <span class="pre">$account-&gt;name))</span></code> :
+- <code class="docutils literal"><span class="pre">!</span></code> - interprète (on est sûr que la donnée ne contient pas d&#8217;injection particulière)
+- <code class="docutils literal"><span class="pre">%</span></code> - échappe et ajoute la balise &lt;em&gt;
+- <code class="docutils literal"><span class="pre">&#64;</span></code> - échappe (dans tous les cas si on n&#8217;est pas sûr)</p>
+</div>
+<div class="section" id="users">
+<h2>Users<a class="headerlink" href="#users" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>User courant : <code class="docutils literal"><span class="pre">$GLOBALS['user']</span></code> ou <code class="docutils literal"><span class="pre">get_current_user()</span></code></li>
+<li><code class="docutils literal"><span class="pre">user_load()</span></code>, <code class="docutils literal"><span class="pre">user_save()</span></code>, <code class="docutils literal"><span class="pre">hook_user_view()</span></code>, ...</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="debug.html" class="btn btn-neutral float-right" title="Debug" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="themes.html" class="btn btn-neutral" title="Les thèmes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

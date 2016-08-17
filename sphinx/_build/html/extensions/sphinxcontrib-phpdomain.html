@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sphinxcontrib-phpdomain &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../index.html"/>
+        <link rel="up" title="Les extensions" href="../extensions.html"/>
+        <link rel="next" title="sphinxcontrib.googlechart" href="sphinxcontrib.googlechart.html"/>
+        <link rel="prev" title="sphinx.ext.todo" href="sphinx.ext.todo.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_base.html">Instructions de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../extensions.html">Les extensions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sphinx-scruffy.html">sphinx-scruffy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.extlinks.html">sphinx.ext.extlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.ifconfig.html">sphinx.ext.ifconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.intersphinx.html">sphinx.ext.intersphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.todo.html">sphinx.ext.todo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">sphinxcontrib-phpdomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.googlechart.html">sphinxcontrib.googlechart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.googlechart.html#sphinxcontrib-googlechart-graphviz">sphinxcontrib.googlechart.graphviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.images.html">sphinxcontrib.images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.nvd3.html">sphinxcontrib.nvd3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.programoutput.html">sphinxcontrib.programoutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.taglist.html">sphinxcontrib.taglist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.webmocks.html">sphinxcontrib.webmocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.yuml.html">sphinxcontrib.yuml</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../extensions.html">Les extensions</a> &raquo;</li>
+      
+    <li>sphinxcontrib-phpdomain</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/extensions/sphinxcontrib-phpdomain.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sphinxcontrib-phpdomain">
+<h1>sphinxcontrib-phpdomain<a class="headerlink" href="#sphinxcontrib-phpdomain" title="Lien permanent vers ce titre">¶</a></h1>
+<blockquote>
+<div><div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">php:class</span><span class="p">::</span> DateTime
+
+    Datetime class
+
+<span class="p">    ..</span> <span class="ow">php:method</span><span class="p">::</span> setDate($year, $month, $day)
+
+        Set the date.
+
+        <span class="nc">:param int $year:</span> <span class="nf">The year.</span>
+        <span class="nc">:param int $month:</span> <span class="nf">The month.</span>
+        <span class="nc">:param int $day:</span> <span class="nf">The day.</span>
+        <span class="nc">:returns:</span> <span class="nf">Either false on failure, or the datetime object for method chaining.</span>
+
+
+<span class="p">    ..</span> <span class="ow">php:method</span><span class="p">::</span> setTime($hour, $minute[, $second])
+
+        Set the time.
+
+        <span class="nc">:param int $hour:</span> <span class="nf">The hour</span>
+        <span class="nc">:param int $minute:</span> <span class="nf">The minute</span>
+        <span class="nc">:param int $second:</span> <span class="nf">The second</span>
+        <span class="nc">:returns:</span> <span class="nf">Either false on failure, or the datetime object for method chaining.</span>
+
+<span class="p">    ..</span> <span class="ow">php:const</span><span class="p">::</span> ATOM
+
+        Y-m-d\TH:i:sP
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="class">
+<dt id="DateTime">
+<em class="property">class </em><code class="descname">DateTime</code><a class="headerlink" href="#DateTime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Datetime class</p>
+<dl class="method">
+<dt id="DateTime::setDate">
+<code class="descname">setDate</code><span class="sig-paren">(</span><em>$year</em>, <em>$month</em>, <em>$day</em><span class="sig-paren">)</span><a class="headerlink" href="#DateTime::setDate" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Set the date.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Paramètres:</th><td class="field-body"><ul class="first simple">
+<li><strong>$year</strong> (<em>int</em>) &#8211; The year.</li>
+<li><strong>$month</strong> (<em>int</em>) &#8211; The month.</li>
+<li><strong>$day</strong> (<em>int</em>) &#8211; The day.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Retourne:</th><td class="field-body"><p class="first last">Either false on failure, or the datetime object for method chaining.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="DateTime::setTime">
+<code class="descname">setTime</code><span class="sig-paren">(</span><em>$hour</em>, <em>$minute</em><span class="optional">[</span>, <em>$second</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#DateTime::setTime" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Set the time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Paramètres:</th><td class="field-body"><ul class="first simple">
+<li><strong>$hour</strong> (<em>int</em>) &#8211; The hour</li>
+<li><strong>$minute</strong> (<em>int</em>) &#8211; The minute</li>
+<li><strong>$second</strong> (<em>int</em>) &#8211; The second</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Retourne:</th><td class="field-body"><p class="first last">Either false on failure, or the datetime object for method chaining.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="const">
+<dt id="DateTime::ATOM">
+<em class="property">constant </em><code class="descname">ATOM</code><a class="headerlink" href="#DateTime::ATOM" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Y-m-dTH:i:sP</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinxcontrib.googlechart.html" class="btn btn-neutral float-right" title="sphinxcontrib.googlechart" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinx.ext.todo.html" class="btn btn-neutral" title="sphinx.ext.todo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Intégration continue &mdash; documentation Drupal 7 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Drupal 7 1.0" href="index.html"/>
+        <link rel="prev" title="Tests Behat" href="behat.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo.png" /></a>
+              </div>
+              <a href="index.html"> Drupal 7
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="poste_travail.html">Poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environnement.html">Environnements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drush.html">Commandes Drush</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Les modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="themes.html">Les thèmes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liens.html">Liens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behat.html">Tests Behat</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Intégration continue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jenkins">Jenkins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#archivage">Archivage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#application-d-un-tag-auto">Application d&#8217;un tag auto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deploiement-des-sources">Déploiement des sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Drupal 7</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Intégration continue</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/integration_continue.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="integration-continue">
+<h1>Intégration continue<a class="headerlink" href="#integration-continue" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="jenkins">
+<h2>Jenkins<a class="headerlink" href="#jenkins" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Voici le paramétrage utilisé sur Jenkins pour la livraison en 3 étapes :</p>
+<div class="section" id="archivage">
+<h3>Archivage<a class="headerlink" href="#archivage" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./archive.sh -e <span class="si">${</span><span class="nv">DELIVERY_ENV</span><span class="si">}</span> -w <span class="si">${</span><span class="nv">WORKSPACE</span><span class="si">}</span> -v <span class="si">${</span><span class="nv">GIT_TAG</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>Les sources possédant des liens symboliques, le script va remplacer le lien symbolique type <code class="docutils literal"><span class="pre">conf.local.sh</span></code> par une copie du fichier de l&#8217;environnment à livrer (ex : <code class="docutils literal"><span class="pre">conf.prod.sh</span></code>).</p>
+<p>Le script va ensuite remplacer les valeurs spécifiques de l&#8217;environnements (ex : chemins) dans le fichier <code class="docutils literal"><span class="pre">delivery.sh</span></code>.</p>
+<p>Les valeurs de <code class="docutils literal"><span class="pre">DELIVERY_ENV</span></code> et <code class="docutils literal"><span class="pre">GIT_TAG</span></code> sont affichées dans le tableau de bord Drupal afin de voir quel environnement a été livré, et sur quelle branche (En plus de la date de dernière livraison).</p>
+</div>
+<div class="section" id="application-d-un-tag-auto">
+<h3>Application d&#8217;un tag auto<a class="headerlink" href="#application-d-un-tag-auto" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> <span class="si">${</span><span class="nv">WORKSPACE</span><span class="si">}</span>/sources
+<span class="nv">$ </span>git tag -f -a <span class="si">${</span><span class="nv">DELIVERY_ENV</span><span class="si">}</span> -m <span class="s2">&quot;Dernière livraison sur </span><span class="si">${</span><span class="nv">DELIVERY_ENV</span><span class="si">}</span><span class="s2"> (</span><span class="si">${</span><span class="nv">BUILD_TAG</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="nv">$ </span>git push -f origin <span class="si">${</span><span class="nv">DELIVERY_ENV</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>Après livraison de l&#8217;archive, on va appliquer automatiquement le tag de l&#8217;environnement.</p>
+</div>
+<div class="section" id="deploiement-des-sources">
+<h3>Déploiement des sources<a class="headerlink" href="#deploiement-des-sources" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /data/sources/cfdt-f3c<span class="p">;</span>
+<span class="nv">$ </span>tar xvf delivery_<span class="si">${</span><span class="nv">DELIVERY_ENV</span><span class="si">}</span>.tar.gz<span class="p">;</span>
+<span class="nv">$ </span><span class="nb">cd </span>new_drupal/<span class="p">;</span>
+<span class="nv">$ </span>./delivery.sh -t <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BUILD_ID</span><span class="si">}</span><span class="s2">&quot;</span> -v <span class="s2">&quot;</span><span class="si">${</span><span class="nv">GIT_TAG</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Côté serveur applicatif, on désarchive les sources et on lance le déploiement.</p>
+<p>Le répertoire des anciennes sources est renommé pour historique, et pour permettre un revert, au cas où.</p>
+<p>Le déploiement consiste en plusieurs étapes :</p>
+<ul class="simple">
+<li>Récupération via composer des dernières versions d&#8217;utilitaires : drush (+ mode dev : code sniffer, utilitaires pour behat ...)</li>
+<li>Mise en mode maintenance</li>
+<li>Lancement du <code class="docutils literal"><span class="pre">make.sh</span></code> : téléchargement version Drupal 7.x paramétrée + librairies additionnelles</li>
+<li>Lancement de <code class="docutils literal"><span class="pre">drush</span> <span class="pre">environment</span></code> : téléchargement/activation des modules et thèmes de l&#8217;environnement</li>
+<li>Application de toutes les features versionnées</li>
+<li>Création des variables du tag livré + date pour affichage dans le tableau de bord admin</li>
+<li>Lancement des mises à jour BDD éventuelles</li>
+<li>Suppression du  cache</li>
+<li>Suppression du mode maintenance</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="behat.html" class="btn btn-neutral" title="Tests Behat" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

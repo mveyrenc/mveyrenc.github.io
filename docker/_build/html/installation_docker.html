@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation de Docker Engine &mdash; documentation Docker 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Docker 1.0" href="index.html"/>
+        <link rel="next" title="Architecture" href="architecture.html"/>
+        <link rel="prev" title="Docker" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo_html.png" /></a>
+              </div>
+              <a href="index.html"> Docker
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+
+            
+            - v1.0
+            
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation de Docker Engine </a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-docker-sur-ubuntu">Installation de Docker sur Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mise-a-jour-des-sources-apt">Mise à jour des sources APT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intallation-des-prerequis">Intallation des prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Installation de Docker Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changer-le-dossier-lib-de-docker">Changer le dossier <code class="file docutils literal"><span class="pre">lib</span></code> de Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-docker-en-non-root-access">Configuration Docker en non root-access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-docker-compose">Installation de docker-compose </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-make">Installation de make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-docker-listen">Installation de docker-listen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialisation_projet.html">Installation d&#8217;un projet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Annexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendices/aide-memoire.html">Aide mémoire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/commandes.html">Commandes Docker </a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/dockerfile.html">Instructions du Dockerfile </a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/references.html">Références</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/versions.html">Versions du document</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Docker</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Installation de Docker Engine </li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/installation_docker.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-de-docker-engine">
+<h1>Installation de Docker Engine <a class="footnote-reference" href="#id4" id="id1">[1]</a><a class="headerlink" href="#installation-de-docker-engine" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="installation-de-docker-sur-ubuntu">
+<h2>Installation de Docker sur Ubuntu<a class="headerlink" href="#installation-de-docker-sur-ubuntu" title="Lien permanent vers ce titre">¶</a></h2>
+<dl class="docutils">
+<dt>Pré-requis</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Ubuntu:</th><td class="field-body">de 12.04 à 15.04 en 64-bit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Kernel:</th><td class="field-body">3.10+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Dépendance:</th><td class="field-body"><strong class="program">curl</strong></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Avertissement</p>
+<p class="last">Si vous êtes en 12.04, consultez la documentation officielle avant de vous lancez.</p>
+</div>
+</div>
+<div class="section" id="mise-a-jour-des-sources-apt">
+<h2>Mise à jour des sources APT<a class="headerlink" href="#mise-a-jour-des-sources-apt" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans un terminal, exécutez les commandes suivantes :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo apt-get update
+<span class="gp">$</span> sudo apt-get install aptitude
+<span class="gp">$</span> sudo aptitude install apt-transport-https ca-certificates
+<span class="gp">$</span> sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+</pre></div>
+</div>
+<p>Ouvrez le fichier <code class="docutils literal"><span class="pre">/etc/apt/sources.list.d/docker.list</span></code>. S&#8217;il n&#8217;exite pas, créez le. S&#8217;il existe déjà, videz le. Puis ajouter la ligne suivante :</p>
+<ul>
+<li><p class="first">sur Ubuntu Precise 12.04 (LTS)</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>deb https://apt.dockerproject.org/repo ubuntu-precise main
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">sur Ubuntu Trusty 14.04 (LTS)</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>deb https://apt.dockerproject.org/repo ubuntu-trusty main
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">sur Ubuntu Wily 15.10</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre>deb https://apt.dockerproject.org/repo ubuntu-wily main
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Rechargez la liste des paquets :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo aptitude update
+</pre></div>
+</div>
+<p>Si vous avez déjà installé docker, purgez votre installation :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo aptitude purge lxc-docker
+</pre></div>
+</div>
+<p>Vérifier que vous récupérerez le paquet à partir du bon repo :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> apt-cache policy docker-engine
+
+<span class="go">docker-engine:</span>
+<span class="go">  Installé : (aucun)</span>
+<span class="go">  Candidat : 1.10.1-0~trusty</span>
+<span class="go"> Table de version :</span>
+<span class="go">     1.10.1-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.10.0-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.9.1-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.9.0-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.8.3-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.8.2-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.8.1-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.8.0-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.7.1-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.7.0-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.6.2-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.6.1-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.6.0-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+<span class="go">     1.5.0-0~trusty 0</span>
+<span class="go">        500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="intallation-des-prerequis">
+<h2>Intallation des prérequis<a class="headerlink" href="#intallation-des-prerequis" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans un terminal, exécutez la commande suivante pour installer le paquet <code class="docutils literal"><span class="pre">linux-image-extra</span></code> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo aptitude install linux-image-extra-<span class="k">$(</span>uname -r<span class="k">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Installation de Docker Engine<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<blockquote>
+<div>Après plusieurs tests, la version 1.10 n&#8217;est pas compatible avec les images dont nous disponons. La procédure ci-dessous diffère de la procédure officiel afin de forcer l&#8217;installation de la version 1.9 et de bloquer les mise à jour automatique de Docker.</div></blockquote>
+<p class="last">Dans un terminal, listez les versions de Docker disponibles sur le dépôt :</p>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo aptitude versions docker-engine
+
+<span class="go">Paquet docker-engine :</span>
+<span class="go">p   1.5.0-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.6.0-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.6.1-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.6.2-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.7.0-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.7.1-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.8.0-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.8.1-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.8.2-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.8.3-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.9.0-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.9.1-0~trusty                                                    ubuntu-trusty                                  500</span>
+<span class="go">p   1.10.0-0~trusty                                                   ubuntu-trusty                                  500</span>
+<span class="go">p   1.10.1-0~trusty                                                   ubuntu-trusty                                  500</span>
+</pre></div>
+</div>
+<p>Intallez la version 1.9 la plus récente :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo aptitude install docker-engine<span class="o">=</span>1.9.1-0~trusty
+</pre></div>
+</div>
+<p>Enfin, vérouillez la version du paquet à la version installée :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo aptitude hold docker-engine
+</pre></div>
+</div>
+</div>
+<div class="section" id="changer-le-dossier-lib-de-docker">
+<h2>Changer le dossier <code class="file docutils literal"><span class="pre">lib</span></code> de Docker<a class="headerlink" href="#changer-le-dossier-lib-de-docker" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Arrêtez Docker :</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo stop docker</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Éditez le fichier <code class="file docutils literal"><span class="pre">/etc/default/docker</span></code> et ajoutez :</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">DOCKER_OPTS</span><span class="o">=</span><span class="s2">&quot;-g /data/services/docker/&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Déplacez le répertoire <code class="file docutils literal"><span class="pre">lib</span></code> :</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">mkdir -p /data/services</span>
+<span class="go">sudo mv /var/lib/docker /data/services</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Redémarrez Docker :</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span class="go">sudo start docker</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="configuration-docker-en-non-root-access">
+<h2>Configuration Docker en non root-access<a class="headerlink" href="#configuration-docker-en-non-root-access" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo usermod -aG docker $(whoami)</span>
+<span class="go">sudo restart docker</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-de-docker-compose">
+<h2>Installation de docker-compose <a class="footnote-reference" href="#id5" id="id3">[2]</a><a class="headerlink" href="#installation-de-docker-compose" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo -s</span>
+<span class="go">aptitude install curl</span>
+<span class="go">curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` \</span>
+<span class="go">    &gt; /usr/local/bin/docker-compose</span>
+<span class="go">chmod +x /usr/local/bin/docker-compose</span>
+<span class="go">curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --version | awk &#39;NR==1{print $NF}&#39;)/contrib/completion/bash/docker-compose \</span>
+<span class="go">    &gt; /etc/bash_completion.d/docker-compose</span>
+<span class="go">exit</span>
+</pre></div>
+</div>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://docs.docker.com/installation/ubuntulinux">Documentation officielle installation/ubuntulinux</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="https://docs.docker.com/compose">Documentation officielle compose</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="installation-de-make">
+<h2>Installation de make<a class="headerlink" href="#installation-de-make" title="Lien permanent vers ce titre">¶</a></h2>
+<p>make est utilisé au niveau des projets pour automatiser certaines tâches complètes ou répétitives.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo aptitude install make</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-de-docker-listen">
+<h2>Installation de docker-listen<a class="headerlink" href="#installation-de-docker-listen" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ce script python permet d&#8217;ajouter et de supprimer vos dockers dans dnsmaq pour vous permettre d&#8217;accéder à vos dockers avec des nom de domaine.</p>
+<ul class="simple">
+<li>Installez dnsmasq</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo aptitude install dnsmasq</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Installez docker-listen dans /data/services</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">cd /data/services/</span>
+<span class="go">git clone https://github.com/openwide-java/docker-listen.git</span>
+<span class="go">cd docker-listen</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Créez un environnement virtuel python</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo apt-get install python-pip python-dev build-essential</span>
+<span class="go">sudo pip install --upgrade pip</span>
+<span class="go">sudo pip install --upgrade virtualenv</span>
+<span class="go">virtualenv docker-listen-pyenv</span>
+<span class="go">./docker-listen-pyenv/bin/pip install dpath</span>
+<span class="go">./docker-listen-pyenv/bin/pip install docker-py</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Créez le script de démarrage du service. Pensez à ouvrir le fichier /etc/init/docker-listen.conf pour vérifier la configuration</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo cp upstart/docker-listen.conf /etc/init</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Lancer le service</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo start docker-listen</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="architecture.html" class="btn btn-neutral float-right" title="Architecture" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Docker" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

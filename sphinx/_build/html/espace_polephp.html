@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Documentation commune pôle PHP &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="index.html"/>
+        <link rel="prev" title="sphinxcontrib.yuml" href="extensions/sphinxcontrib.yuml.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="index.html"><img src="_static/logo_html.png" /></a>
+              </div>
+              <a href="index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rtd/instruction_base.html">Instructions de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rtd/instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Documentation commune pôle PHP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribution-sur-le-depot">Contribution sur le dépôt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creation-d-une-documentation-client">Création d&#8217;une documentation client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creation-d-une-documentation-outils">Création d&#8217;une documentation outils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#affichage-dans-le-menu">Affichage dans le menu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Documentation commune pôle PHP</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/espace_polephp.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="documentation-commune-pole-php">
+<h1>Documentation commune pôle PHP<a class="headerlink" href="#documentation-commune-pole-php" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="presentation">
+<h2>Présentation<a class="headerlink" href="#presentation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L&#8217;espace documentaire du pôle PHP est accessible depuis l&#8217;URL : <a class="reference external" href="http://docs.owsi-vm-polephp.accelance.net">http://docs.owsi-vm-polephp.accelance.net</a>.</p>
+<p>L&#8217;idée est de regrouper le maximum de documentations HTML / PDF / présentations générées via Sphinx.</p>
+<p>Elles sont organisées par catégories :</p>
+<ul class="simple">
+<li>Outils</li>
+<li>Clients</li>
+<li>Clients archivés</li>
+</ul>
+</div>
+<div class="section" id="contribution-sur-le-depot">
+<h2>Contribution sur le dépôt<a class="headerlink" href="#contribution-sur-le-depot" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://gitlab.openwide.fr/open-wide/docs-polephp.git
+</pre></div>
+</div>
+<div class="section" id="creation-d-une-documentation-client">
+<h3>Création d&#8217;une documentation client<a class="headerlink" href="#creation-d-une-documentation-client" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Exemple : Je souhaite créer des spécifications fonctionnelles pour la refonte du site de mon client <strong>Ministère de l&#8217;Intérieur</strong>.</p>
+<ul class="simple">
+<li>S&#8217;il n&#8217;existe pas déjà, il faut au préalable créer un dépôt Git spécifique <strong>au client</strong></li>
+<li>A la racine de ce dépôt, placer une image <code class="docutils literal"><span class="pre">/logo.png</span></code> relative au client</li>
+<li>A la racine également, créer un fichier <code class="docutils literal"><span class="pre">/README</span></code> optionnel qui peut donner des détails sur le client / projets ...</li>
+<li>Créer un dossier qui va contenir la documentation souhaitée, et nommer le dossier comme suit : <code class="docutils literal"><span class="pre">[AAAA]-[type_projet]-[type_de_document]</span></code>, comme par exemple : <code class="docutils literal"><span class="pre">2015-Site_ez-Specifications_fonctionnelles</span></code>.</li>
+<li>Dans le dépôt de documentation générale du pôle PHP, lier ce submodule nouvellement créé :</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git submodule add https://gitlab.openwide.fr/open-wide/<span class="o">[</span>XXX_CLIENT_DOCS_XXX<span class="o">]</span>.git docs/clients/<span class="o">[</span>XXX_CLIENT_XXX<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creation-d-une-documentation-outils">
+<h3>Création d&#8217;une documentation outils<a class="headerlink" href="#creation-d-une-documentation-outils" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les outils du pôle ne sont pas dans des dépôts séparés, donc il n&#8217;est pas nécessaire de faire un submodule.</p>
+<p>Placer simplement la documentation dans le dossier <code class="docutils literal"><span class="pre">/outils/</span></code>.</p>
+</div>
+<div class="section" id="affichage-dans-le-menu">
+<h3>Affichage dans le menu<a class="headerlink" href="#affichage-dans-le-menu" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L&#8217;affichage des différents clients/outils n&#8217;est pas automatique, mais provient d&#8217;un fichier de configuration <code class="docutils literal"><span class="pre">/config.php</span></code> :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$categories</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="cm">/*</span>
+<span class="cm">    &#39;GROUP_LABEL&#39; =&gt; array(</span>
+<span class="cm">        &#39;doc_folder_name&#39; =&gt; &#39;LABEL&#39;,</span>
+<span class="cm">    ),</span>
+<span class="cm">    */</span>
+    <span class="s1">&#39;Outils&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;outils/docker&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Docker&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;outils/drupal_7&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Drupal 7&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;outils/sphinx&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sphinx&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;outils/symfony&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Symfony&#39;</span><span class="p">,</span>
+        <span class="c1">// ...</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Clients&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;clients/cfdt-f3c&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;CFDT F3C&#39;</span><span class="p">,</span>
+        <span class="c1">// ...</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;Clients archivés&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="c1">// ...</span>
+    <span class="p">),</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="extensions/sphinxcontrib.yuml.html" class="btn btn-neutral" title="sphinxcontrib.yuml" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

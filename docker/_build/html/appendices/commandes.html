@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Commandes Docker &mdash; documentation Docker 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="documentation Docker 1.0" href="../index.html"/>
+        <link rel="next" title="Instructions du Dockerfile" href="dockerfile.html"/>
+        <link rel="prev" title="Aide mémoire" href="aide-memoire.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Docker
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+
+            
+            - v1.0
+            
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation_docker.html">Installation de Docker Engine </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../initialisation_projet.html">Installation d&#8217;un projet</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Annexes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aide-memoire.html">Aide mémoire</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Commandes Docker </a></li>
+<li class="toctree-l1"><a class="reference internal" href="dockerfile.html">Instructions du Dockerfile </a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Références</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Versions du document</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Docker</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Commandes Docker </li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/appendices/commandes.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="commandes-docker">
+<h1>Commandes Docker <a class="footnote-reference" href="#id2" id="id1">[1]</a><a class="headerlink" href="#commandes-docker" title="Lien permanent vers ce titre">¶</a></h1>
+<dl class="docutils">
+<dt>attach</dt>
+<dd>Attache à un conteneur en exécution.</dd>
+<dt>build</dt>
+<dd>Construit un conteneur à partir d&#8217;un fichier Dockerfile</dd>
+<dt>commit</dt>
+<dd>Créer une nouvelle image à partir d&#8217;une image modifiée.</dd>
+<dt>cp</dt>
+<dd>Copie des fichiers/dossiers du système de fichier d&#8217;un conteneur vers une adresse sur l&#8217;hôte.</dd>
+<dt>diff</dt>
+<dd>Inspecte les changements dans un système de fichier d&#8217;un conteneur.</dd>
+<dt>events</dt>
+<dd>Obtenir les événement en temps réel du serveur.</dd>
+<dt>export</dt>
+<dd>Transmets les contenus d&#8217;un conteneur dans une archive tar.</dd>
+<dt>history</dt>
+<dd>Montre l&#8217;historique d&#8217;une image.</dd>
+<dt>images</dt>
+<dd>Listes les images présentes sur le poste.</dd>
+<dt>import</dt>
+<dd>Créer une nouvelle image de système de fichier à partir du contenu d&#8217;une archive tar.</dd>
+<dt>info</dt>
+<dd>Affiche des informations sur l&#8217;ensemble du système.</dd>
+<dt>insert</dt>
+<dd>Insert un fichier dans une image.</dd>
+<dt>inspect</dt>
+<dd>Retourne des informations de bas niveau sur un conteneur.</dd>
+<dt>kill</dt>
+<dd>Tue un conteneur en cours d&#8217;exécution.</dd>
+<dt>login</dt>
+<dd>S&#8217;enregistre ou se logue sur un serveur d&#8217;images.</dd>
+<dt>logs</dt>
+<dd>Retourne les logs d&#8217;un conteneur.</dd>
+<dt>port</dt>
+<dd>Recherche le port publique exposé.</dd>
+<dt>top</dt>
+<dd>Recherche le process d&#8217;exécution d&#8217;un conteneur.</dd>
+<dt>ps</dt>
+<dd>Liste les conteneurs.</dd>
+<dt>pull</dt>
+<dd>Récupère une image ou un dépôt du serveur d&#8217;images publique de Docker.</dd>
+<dt>push</dt>
+<dd>Pousse une image ou un dépôt sur le serveur d&#8217;images de Docker.</dd>
+<dt>restart</dt>
+<dd>Redémarre un conteneur en cours d&#8217;exécution.</dd>
+<dt>rm</dt>
+<dd>Supprime un ou plusieurs conteneurs préalablement arrêté(s).</dd>
+<dt>rmi</dt>
+<dd>Suprime une ou plusieurs images.</dd>
+<dt>run</dt>
+<dd>Execute une commande dans un conteneur.</dd>
+<dt>search</dt>
+<dd>Recherche une image dans l&#8217;index de Docker.</dd>
+<dt>start</dt>
+<dd>Démarre un conteneur arrêté.</dd>
+<dt>stop</dt>
+<dd>Stop un conteneur démarré.</dd>
+<dt>tag</dt>
+<dd>Tag une image dans un repository.</dd>
+<dt>version</dt>
+<dd>Montre la version de Docker installé.</dd>
+<dt>wait</dt>
+<dd>Arrêt jusqu&#8217;à ce que le conteneur s&#8217;arrête, puis imprime ses codes de sortie.</dd>
+</dl>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://docs.docker.com/reference/commandline/cli">Documentation officielle reference/commandline/cli</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dockerfile.html" class="btn btn-neutral float-right" title="Instructions du Dockerfile" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aide-memoire.html" class="btn btn-neutral" title="Aide mémoire" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

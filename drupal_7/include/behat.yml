@@ -1,0 +1,46 @@
+# behat.yml
+
+# Default parameters
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+      paths:
+        - %paths.base%/features/basic
+        - %paths.base%/features/users
+        - %paths.base%/features/site_default
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: "drupal"
+      drush:
+        alias: "default"
+      region_map:
+        content: ".region-content"
+        footer: ".region-footer"
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages.error'
+        success_message_selector: '.messages.status'
+        warning_message_selector: '.messages.warning'
+      text:
+        log_out: "Se déconnecter"
+        log_in: "Se connecter"
+        password_field: "Mot de passe"
+        username_field: "Nom d'utilisateur"
+
+# For multisite
+site2:
+  extensions:
+    Drupal\DrupalExtension:
+      drush:
+        alias: "site2"

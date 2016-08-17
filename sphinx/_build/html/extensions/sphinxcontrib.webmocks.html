@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sphinxcontrib.webmocks &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../index.html"/>
+        <link rel="up" title="Les extensions" href="../extensions.html"/>
+        <link rel="next" title="sphinxcontrib.yuml" href="sphinxcontrib.yuml.html"/>
+        <link rel="prev" title="sphinxcontrib.taglist" href="sphinxcontrib.taglist.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_base.html">Instructions de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rtd/instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../extensions.html">Les extensions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sphinx-scruffy.html">sphinx-scruffy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.extlinks.html">sphinx.ext.extlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.ifconfig.html">sphinx.ext.ifconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.intersphinx.html">sphinx.ext.intersphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.ext.todo.html">sphinx.ext.todo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib-phpdomain.html">sphinxcontrib-phpdomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.googlechart.html">sphinxcontrib.googlechart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.googlechart.html#sphinxcontrib-googlechart-graphviz">sphinxcontrib.googlechart.graphviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.images.html">sphinxcontrib.images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.nvd3.html">sphinxcontrib.nvd3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.programoutput.html">sphinxcontrib.programoutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.taglist.html">sphinxcontrib.taglist</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">sphinxcontrib.webmocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exemple">Exemple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text">text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#textarea">textarea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select">select</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radio">radio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checkbox">checkbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#button">button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#menulist">menulist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#page">page</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-user">create_user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-user2">create_user2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-user3">create_user3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinxcontrib.yuml.html">sphinxcontrib.yuml</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../extensions.html">Les extensions</a> &raquo;</li>
+      
+    <li>sphinxcontrib.webmocks</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/extensions/sphinxcontrib.webmocks.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sphinxcontrib-webmocks">
+<h1>sphinxcontrib.webmocks<a class="headerlink" href="#sphinxcontrib-webmocks" title="Lien permanent vers ce titre">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://pythonhosted.org/sphinxcontrib-webmocks/">https://pythonhosted.org/sphinxcontrib-webmocks/</a></li>
+</ul>
+<div class="section" id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Name:</th><td class="field-body"><input type="text" value="Input your name" size="40" /></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Address:</th><td class="field-body"><input type="text" value="Input your address" size="40" /></td>
+</tr>
+</tbody>
+</table>
+<p><button>OK</button> <button>Cancel</button></p>
+<div class="highlight-rst"><div class="highlight"><pre><span class="nc">:Name:</span> <span class="nf">:text:`Input your name`</span>
+<span class="nc">:Address:</span> <span class="nf">:text:`Input your address`</span>
+
+<span class="na">:button:</span><span class="nv">`OK`</span> <span class="na">:button:</span><span class="nv">`Cancel`</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text">
+<h2>text<a class="headerlink" href="#text" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p>Text form is here: <input type="text" value="default value" size="40" /></p>
+<p class="last">Empty text form is here: <input type="text" value="" size="40" /></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>Text form is here: <span class="na">:text:</span><span class="nv">`default value`</span>
+
+Empty text form is here: <span class="na">:text:</span><span class="nv">`_`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="textarea">
+<h2>textarea<a class="headerlink" href="#textarea" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p>Textarea form is here: <textarea rows="5" cols="60">default value</textarea></p>
+<p class="last">Empty textarea form is here: <textarea rows="5" cols="60"></textarea></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>Textarea form is here: <span class="na">:textarea:</span><span class="nv">`default value`</span>
+
+Empty textarea form is here: <span class="na">:textarea:</span><span class="nv">`_`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="select">
+<h2>select<a class="headerlink" href="#select" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last">Select form is here: <select><option>Item 1</option><option>Item 2</option><option>Item 3</option><option>Item 4</option></select></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>Select form is here: <span class="na">:select:</span><span class="nv">`Item 1,Item 2,Item 3,Item 4`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="radio">
+<h2>radio<a class="headerlink" href="#radio" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last">Radio buttons are here: <input type="radio" name="8568bc6e-5569-11e5-999a-3417ebc623d9" value="Item 1" />Item 1&nbsp;<input type="radio" name="8568bc6e-5569-11e5-999a-3417ebc623d9" value="Item 2" />Item 2&nbsp;<input type="radio" name="8568bc6e-5569-11e5-999a-3417ebc623d9" value="Item 3" />Item 3&nbsp;<input type="radio" name="8568bc6e-5569-11e5-999a-3417ebc623d9" value="Item 4" />Item 4</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>Radio buttons are here: <span class="na">:radio:</span><span class="nv">`Item 1,Item 2,Item 3,Item 4`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="checkbox">
+<h2>checkbox<a class="headerlink" href="#checkbox" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last">Checkboxes are here: <input type="checkbox" value="Item 1" />Item 1&nbsp;<input type="checkbox" value="Item 2" />Item 2&nbsp;<input type="checkbox" value="Item 3" />Item 3&nbsp;<input type="checkbox" value="Item 4" />Item 4</p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>Checkboxes are here: <span class="na">:checkbox:</span><span class="nv">`Item 1,Item 2,Item 3,Item 4`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="button">
+<h2>button<a class="headerlink" href="#button" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Rendu</p>
+<p class="last">Button is here: <button>OK</button></p>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre>Button is here: <span class="na">:button:</span><span class="nv">`OK`</span>
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="menulist">
+<h2>menulist<a class="headerlink" href="#menulist" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Cette directive est utilisé pour le breadcrumb dans la directive <code class="docutils literal"><span class="pre">page</span></code>. (fonctionne pas)</p>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">menulist</span><span class="p">::</span>
+
+    <span class="m">*</span> Menu1
+        <span class="m">*</span> Sub-Menu 1-1
+        <span class="m">*</span> Sub-Menu 1-2
+        <span class="m">*</span> Sub-Menu 1-3
+    <span class="m">*</span> Menu2
+    <span class="m">*</span> Menu3
+    <span class="m">*</span> Menu4
+</pre></div>
+</div>
+<p><div class="clear-both"></div></p>
+</div>
+<div class="section" id="page">
+<h2>page<a class="headerlink" href="#page" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="create-user">
+<h3>create_user<a class="headerlink" href="#create-user" title="Lien permanent vers ce titre">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last container">
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">UserId:</th><td class="field-body"><input type="text" value="" size="40" /></td>
+</tr>
+<tr class="field-even field"><th class="field-name">E-mail:</th><td class="field-body"><input type="text" value="" size="40" /></td>
+</tr>
+</tbody>
+</table>
+<p><button>OK</button> <button>Cancel</button></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">page</span><span class="p">::</span> create_user
+
+    <span class="nc">:UserId:</span> <span class="nf">:text:`_`</span>
+    <span class="nc">:E-mail:</span> <span class="nf">:text:`_`</span>
+
+    <span class="na">:button:</span><span class="nv">`OK`</span> <span class="na">:button:</span><span class="nv">`Cancel`</span>
+</pre></div>
+</div>
+<div class="section" id="create-user2">
+<h3>create_user2<a class="headerlink" href="#create-user2" title="Lien permanent vers ce titre">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last container">
+<p><a class="reference external" href="#"><em>Users</em></a> <em>&gt;&gt;</em> <a class="reference external" href="#"><em>Create User</em></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">UserId:</th><td class="field-body"><input type="text" value="" size="40" /></td>
+</tr>
+<tr class="field-even field"><th class="field-name">E-mail:</th><td class="field-body"><input type="text" value="" size="40" /></td>
+</tr>
+</tbody>
+</table>
+<p><button>OK</button> <button>Cancel</button></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">page</span><span class="p">::</span> create_user2
+   <span class="nc">:breadcrumb:</span> <span class="nf">Users &gt; Create User</span>
+
+   <span class="nc">:UserId:</span> <span class="nf">:text:`_`</span>
+   <span class="nc">:E-mail:</span> <span class="nf">:text:`_`</span>
+
+   <span class="na">:button:</span><span class="nv">`OK`</span> <span class="na">:button:</span><span class="nv">`Cancel`</span>
+</pre></div>
+</div>
+<div class="section" id="create-user3">
+<h3>create_user3<a class="headerlink" href="#create-user3" title="Lien permanent vers ce titre">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last container">
+<p><a class="reference external" href="#"><em>Users</em></a> <em>&gt;&gt;</em> <a class="reference external" href="#"><em>Create User</em></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">UserId:</th><td class="field-body"><input type="text" value="" size="40" /></td>
+</tr>
+<tr class="field-even field"><th class="field-name">E-mail:</th><td class="field-body"><input type="text" value="" size="40" /></td>
+</tr>
+</tbody>
+</table>
+<p><button>OK</button> <button>Cancel</button></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="20%" />
+<col width="20%" />
+<col width="5%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">No</th>
+<th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>UserId</td>
+<td>テキスト</td>
+<td>o</td>
+<td>description=Allows only ASCII chars</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>E-mail</td>
+<td>テキスト</td>
+<td>o</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">page</span><span class="p">::</span> create_user3
+   <span class="nc">:breadcrumb:</span> <span class="nf">Users &gt; Create User</span>
+   <span class="nc">:desctable:</span>
+
+   <span class="nc">:UserId:</span> <span class="nf">:text:`_ &lt;required, description=Allows only ASCII chars&gt;`</span>
+   <span class="nc">:E-mail:</span> <span class="nf">:text:`_ &lt;required&gt;`</span>
+
+   <span class="na">:button:</span><span class="nv">`OK`</span> <span class="na">:button:</span><span class="nv">`Cancel`</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinxcontrib.yuml.html" class="btn btn-neutral float-right" title="sphinxcontrib.yuml" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinxcontrib.taglist.html" class="btn btn-neutral" title="sphinxcontrib.taglist" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instructions de base &mdash; documentation Sphinx 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/nv.d3.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/taglist_tags.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.min.js"></script>
+    <script type="text/javascript" src="../_static/js/nv.d3.min.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Sphinx 1.0" href="../index.html"/>
+        <link rel="next" title="Les directives" href="instruction_base/base.html"/>
+        <link rel="prev" title="Références" href="../references.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Sphinx
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+          </div>
+        
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation de Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../construction_document.html">Construction du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creation_document.html">Création d&#8217;un document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Références</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Read the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Instructions de base</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/base.html">Les directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/base.html#les-roles">Les rôles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/avertissements.html">Avertissements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/citation.html">Citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/code.html">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/commentaires.html">Commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/conditions.html">Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/custom_css.html">Customisation CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/footnotes.html">Notes de bas de page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/images.html">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/images.html#figures">Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inclusion-fichier.html">Inclusion de fichier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html">Inline markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/liens.html">Liens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html">Listes et définitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/paragraphes.html">Paragraphes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/raw.html">Raw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/sidebar.html">Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/substitutions.html">Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/tableaux.html">Tableaux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/titre.html">Titres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/titre.html#titre-de-la-partie">Titre de la partie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/toc-tree.html">TOC tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/topic.html">Topic!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/transition.html">Transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/typographie.html">Typographie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_openwide.html">Instructions spécifiques à la version Open Wide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extensions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../extensions.html">Les extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Doc Pôle PHP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../espace_polephp.html">Documentation commune pôle PHP</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Sphinx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Instructions de base</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/rtd/instruction_base.txt" rel="nofollow"> View page source</a>
+          
+        
+
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instructions-de-base">
+<h1>Instructions de base<a class="headerlink" href="#instructions-de-base" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/base.html">Les directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/base.html#les-roles">Les rôles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/base.html#customisation-de-role">Customisation de rôle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/avertissements.html">Avertissements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/avertissements.html#specifiques">Spécifiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/avertissements.html#generiques">Génériques</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/citation.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/code.html">Code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/code.html#bloc-litteral">Bloc littéral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/code.html#bloc-litteral-interprete">Bloc littéral interprété</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/code.html#bloc-de-code">Bloc de code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/code.html#lignes-surlignees-et-numeros-de-lignes">Lignes surlignées et numéros de lignes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/commentaires.html">Commentaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/conditions.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/custom_css.html">Customisation CSS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/custom_css.html#container">Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/custom_css.html#class">Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/custom_css.html#role">Role</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/footnotes.html">Notes de bas de page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/images.html">Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/images.html#figures">Figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/inclusion-fichier.html">Inclusion de fichier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/inline-markup.html">Inline markup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#italique">Italique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#gras">Gras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#code">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#expression-reguliere">Expression régulière</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#exemple">Exemple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#commande">Commande</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#programme">Programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#fichier">Fichier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#definition">Définition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#reference-a-des-titres-d-oeuvres-livres-films-etc">Référence à des titres d&#8217;œuvres (livres, films, etc.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#indice">Indice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#exposant">Exposant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#abreviation">Abréviation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#pep-python-enhancement-proposal">PEP (Python Enhancement Proposal)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#rfc-internet-request-for-comments">RFC (Internet Request for Comments)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#label-dans-l-interface-utilisateur">Label dans l&#8217;interface utilisateur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#selection-de-menus">Sélection de menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#sequence-de-touches">Séquence de touches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#entete-de-mail">Entête de mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#mimetype">Mimetype</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#variable-pour-make">Variable pour <strong class="command">make</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/inline-markup.html#manuel">Manuel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/liens.html">Liens</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/liens.html#vers-un-titre-de-la-page">Vers un titre de la page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/liens.html#vers-une-reference-dans-le-document">Vers une référence dans le document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/liens.html#lien-externe">Lien externe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/liens.html#download-links">Download links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/listes.html">Listes et définitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html#liste-a-puce">Liste à puce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html#liste-numerotee">Liste numérotée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html#liste-imbriquee">Liste imbriquée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html#liste-horizontale">Liste horizontale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html#liste-de-definitions">Liste de définitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html#liste-de-champs">Liste de champs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/listes.html#liste-d-options">Liste d&#8217;options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/math.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/paragraphes.html">Paragraphes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/paragraphes.html#paragraphe-simple">Paragraphe simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/paragraphes.html#bloc-de-lignes">Bloc de lignes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/paragraphes.html#blockquote">Blockquote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/paragraphes.html#pull-quote">Pull quote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/paragraphes.html#epigraph-et-highlights">Epigraph et highlights</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/raw.html">Raw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/sidebar.html">Sidebar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/sidebar.html#code-with-sidebar">Code with Sidebar</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/substitutions.html">Substitutions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/substitutions.html#insertion-d-images-dans-du-texte">Insertion d&#8217;images dans du texte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/substitutions.html#inserer-du-code-html">Insérer du code HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/substitutions.html#remplacement-par-du-texte">Remplacement par du texte</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/tableaux.html">Tableaux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/tableaux.html#tableaux-simple">Tableaux simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/tableaux.html#grilles">Grilles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/tableaux.html#csv">CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/tableaux.html#listes">Listes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/tableaux.html#large">Large</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/tableaux.html#tres-grand">Très grand</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/titre.html">Titres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/titre.html#titre-de-la-partie">Titre de la partie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instruction_base/titre.html#titre-du-chapitre">Titre du chapitre</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/toc-tree.html">TOC tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/topic.html">Topic!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/transition.html">Transition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruction_base/typographie.html">Typographie</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="instruction_base/base.html" class="btn btn-neutral float-right" title="Les directives" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../references.html" class="btn btn-neutral" title="Références" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    
+
+      
+
+      
+        <div class="version">
+          Version: 1.0
+        </div>
+      
+
+    
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

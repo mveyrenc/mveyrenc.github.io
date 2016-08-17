@@ -1,0 +1,25 @@
+###### 
+Topic!
+######
+
+.. index::
+    topic
+    single: directive; topic
+
+.. sidebar:: Rendu
+
+    .. topic:: Topic Title
+
+        Subsequent indented lines comprise
+        the body of the topic, and are
+        interpreted as body elements.
+
+.. code-block:: rst
+
+    .. topic:: Topic Title
+
+        Subsequent indented lines comprise
+        the body of the topic, and are
+        interpreted as body elements.
+
+:clear:`both`
