@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Les tests de qualité de code &mdash; documentation Demo 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Demo 1.0" href="../index.html"/>
+        <link rel="next" title="Les tests unitaires" href="tests-unitaires.html"/>
+        <link rel="prev" title="Les différents types de tests" href="intro-types-de-tests.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Demo
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+
+            
+            - v1.0
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Les tests automatisés</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro-types-de-tests.html">Les différents types de tests</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les tests de qualité de code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#php-codesniffer">PHP_CodeSniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integration-dans-phpstorm">Intégration dans PhpStorm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation">Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests-unitaires.html">Les tests unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-acceptation.html">Les tests d&#8217;acceptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-fonctionnels.html">Les tests fonctionels</a></li>
+</ul>
+<p class="caption"><span class="caption-text">L&#8217;integration continue</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../integration-continue/introduction.html">L&#8217;integration continue</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Annexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/versions.html">Versions du document</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Demo</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Les tests de qualité de code</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="../_sources/tests-automatises/tests-qualite-code.txt" rel="nofollow"> View page source</a>
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="les-tests-de-qualite-de-code">
+<h1>Les tests de qualité de code<a class="headerlink" href="#les-tests-de-qualite-de-code" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Les tests de qualité de code détectent les violations des règles de codage.</p>
+<p>Les règles de codage définissent les bonnes pratiques à respecter et les mauvaises à éviter. Elles définissent également les convensions de nommage et de formatage du code à respecter.</p>
+<div class="section" id="php-codesniffer">
+<h2>PHP_CodeSniffer<a class="headerlink" href="#php-codesniffer" title="Lien permanent vers ce titre">¶</a></h2>
+<p>CodeSniffer fournit 2 exécutables :</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">phpcs</span></code></dt>
+<dd>Détecte les violations des règles de codage dans le code PHP, CSS et Javascript</dd>
+<dt><code class="docutils literal"><span class="pre">phpcbf</span></code></dt>
+<dd>Corrige les violations détectées</dd>
+</dl>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>CodeSniffer s&#8217;installe via</p>
+<ul>
+<li><p class="first">les dépôts (paquet php-codesniffer)</p>
+</li>
+<li><p class="first">pear <code class="docutils literal"><span class="pre">pear</span> <span class="pre">install</span> <span class="pre">PHP_CodeSniffer</span></code></p>
+</li>
+<li><p class="first">composer</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">composer</span> <span class="pre">global</span> <span class="pre">require</span> <span class="pre">&quot;squizlabs/php_codesniffer=*&quot;</span></code></p>
+</li>
+<li><div class="first highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;require-dev&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;squizlabs/php_codesniffer&quot;</span><span class="p">:</span> <span class="s2">&quot;2.*&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="integration-dans-phpstorm">
+<h2>Intégration dans PhpStorm<a class="headerlink" href="#integration-dans-phpstorm" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Intallez les plugins <strong>Php Inspections (EA Extended)</strong> et <strong>PHP Toolbox</strong>.</p>
+<p>Téléchargez les règles de codage de votre choix :</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/djoos/Symfony2-coding-standard">Symfony2</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/coder">Drupal</a></li>
+</ul>
+<p>Déposez les fichiers téléchargés dans un sous-répertoire dans le répertoire <code class="docutils literal"><span class="pre">Standards</span></code> de CodeSniffer. Par exemple <code class="docutils literal"><span class="pre">/usr/share/php/PHP/CodeSniffer/Standards/Symfony2</span></code>.</p>
+<p>Paramétrez le chemin vers <code class="docutils literal"><span class="pre">phpcs</span></code> dans <span class="menuselection">Settings ‣ Languages &amp; Frameworks ‣ PHP ‣ Code Sniffer</span> :</p>
+<blockquote>
+<div><a class=""
+               data-lightbox="group-6a9e27f2-2e0c-41e8-9471-48837f0a4626"
+               href="../_images/phpstorm-phpcs-path1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/phpstorm-phpcs-path1.png"
+                     class="align-center"
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div></blockquote>
+<p>Paramétrez les règles utilisées pour l&#8217;inspection dans <span class="menuselection">Settings ‣ Editor ‣ Inspections ‣ PHP ‣ PHP Code Sniffer validation</span> :</p>
+<blockquote>
+<div><a class=""
+               data-lightbox="group-f8473a9d-123e-43e2-ad07-9621b268bc31"
+               href="../_images/phpstorm-phpcs-rules1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/phpstorm-phpcs-rules1.png"
+                     class="align-center"
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div></blockquote>
+</div>
+<div class="section" id="utilisation">
+<h2>Utilisation<a class="headerlink" href="#utilisation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L&#8217;analyse CodeSniffer est lancée lors de l&#8217;édition des fichiers.</p>
+<p>Les problèmes sont signalés par :</p>
+<ul>
+<li><p class="first">code couleur dans la barre de défilement</p>
+</li>
+<li><p class="first">code souligné</p>
+</li>
+<li><p class="first">puce de couleur en haut à droite</p>
+<blockquote>
+<div><a class=""
+               data-lightbox="group-9b158e42-07d9-4f2b-9bb5-b890108ad534"
+               href="../_images/phpstorm-phpcs-errors1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/phpstorm-phpcs-errors1.png"
+                     class="align-center"
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tests-unitaires.html" class="btn btn-neutral float-right" title="Les tests unitaires" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro-types-de-tests.html" class="btn btn-neutral" title="Les différents types de tests" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

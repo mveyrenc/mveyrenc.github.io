@@ -179,7 +179,7 @@
   <div class="section" id="les-assets">
 <span id="assets"></span><h1>Les assets<a class="headerlink" href="#les-assets" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Les assets sont les éléments de la page HTML chargés côté client comme les javacripts, les images, les CSS, etc. Chaque bundle peut accueillir des assets qui sont placés dans le répertoire <code class="docutils literal"><span class="pre">Resources/public</span></code> des bundles.</p>
-<p>Télécharger <a class="reference external" href="http://jquery.com/download">jQuery</a> et placer le fichier <code class="docutils literal"><span class="pre">jquery-1.12.2.min.js</span></code> dans le répertoire <code class="docutils literal"><span class="pre">public/js</span></code> de notre bundle.</p>
+<p>Télécharger <a class="reference external" href="http://jquery.com/download">jQuery</a> et placer le fichier <code class="docutils literal"><span class="pre">jquery-1.12.3.min.js</span></code> dans le répertoire <code class="docutils literal"><span class="pre">public/js</span></code> de notre bundle.</p>
 <p>Télécharger <a class="reference external" href="http://getbootstrap.com/getting-started/#download">Bootstrap</a> et placer les fichiers ainsi dans le répertoire <code class="docutils literal"><span class="pre">public</span></code> :</p>
 <ul class="simple">
 <li>dans <code class="docutils literal"><span class="pre">css</span></code> : <code class="docutils literal"><span class="pre">bootstrap.min.css</span></code> et <code class="docutils literal"><span class="pre">bootstrap-theme.css</span></code></li>
@@ -208,7 +208,7 @@
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
         <span class="cp">{%</span> <span class="k">block</span> <span class="nv">javascripts</span> <span class="cp">%}</span>
-            <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">asset</span><span class="o">(</span><span class="s1">&#39;bundles/epsiblog/js/jquery-1.12.2.min.js&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">asset</span><span class="o">(</span><span class="s1">&#39;bundles/epsiblog/js/jquery-1.12.3.min.js&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">asset</span><span class="o">(</span><span class="s1">&#39;bundles/epsiblog/js/bootstrap.min.js&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
         <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -234,7 +234,7 @@
 │   │   ├── images
 │   │   └── js
 │   │       ├── bootstrap.min.js
-│   │       └── jquery-1.12.2.min.js
+│   │       └── jquery-1.12.3.min.js
 │   ├── framework
 │   └── sensiodistribution
 ├── config.php

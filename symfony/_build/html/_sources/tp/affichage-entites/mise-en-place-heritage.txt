@@ -51,7 +51,7 @@ Ici, je définis la structure générale de ma page. On doit trouver les balises
             </footer>
         </div>
     {% block javascripts %}
-        <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.2.min.js') }}"></script>
+        <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.3.min.js') }}"></script>
         <script src="{{ asset('bundles/epsiblog/js/bootstrap.min.js') }}"></script>
     {% endblock %}
     {% endblock %}

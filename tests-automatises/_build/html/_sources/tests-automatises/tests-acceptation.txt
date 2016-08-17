@@ -1,0 +1,78 @@
+#######################
+Les tests d'acceptation
+#######################
+
+Les tests d'acceptence permettent de tester des scénarios tels que les jouent un utilisateur final.
+
+.. admonition:: +
+
+    * Peuvent être joué sur n'importe quel site et n'importe quel environnement
+    * Peuvent tester du Javascript et des requêtes ajax
+    * Peuvent être montrés au client
+    * Très stables, ils sont peu affectés par les changements de codes, de version ou de techno
+
+.. admonition:: -
+    :class: warning
+
+    * Lents, voir très lents
+    * Instable lors de l'exécution : les temps de chargement, d'affiche, etc. penvent donner des faux-natifs
+
+*******
+Exemple
+*******
+
+.. code-block:: gherkin
+
+    Feature: App
+      Scenario: I should see the home page of Symfony
+        Given I am on "/"
+        Then I should see "Welcome to Symfony 2.7.3"
+
+Ou
+
+.. code-block:: gherkin
+
+    # language: fr
+    Fonctionnalité: App
+      Scénario: Je vais sur la page d'accueil de Symfony
+        Etant donné que je suis sur la page "/"
+        Alors je devrais voir "Welcome to Symfony 2.7.3"
+
+*******
+Gherkin
+*******
+Le Gherkin est un language permettant d'écrire des sénarios.
+
+Comme YAML et Python, l'indentation permet de définir les différents blocks de code et chaque ligne définit une étape.
+Génaralement, les lignes de code Gherkin commence par un mot clé.
+
+Le Gherkin existe en plusieurs languages dont l'anglais et le français.
+
+*********************
+Features et scenarios
+*********************
+
+Chaque **feature** doit être placé dans un fichier ``*.feature``.
+Une **feature** peut contenir des **scenarios**, des **scenarios outline** (plan de scénario) et des **backgrounds** (étape jouée avant chaque scénario).
+Chaque **scenario** contient des étapes qui doivent commençer par ``Given``, ``When``, ``Then``, ``But`` ou ``And``.
+
+Une **feature** ou un **scenario** peut être associée à des tags afin de pouvoir filtrer les tests à lancer :
+
+.. code-block:: gherkin
+
+    @billing
+    Feature: Verify billing
+
+      @important
+      Scenario: Missing product description
+
+      Scenario: Several products
+
+********************
+Écrire des scénarios
+********************
+
+`Documentation de Behat <http://docs.behat.org/en/v3.0/user_guide/writing_scenarios.html#user-guide-writing-scenarios-backgrounds/>`_
+
+
+

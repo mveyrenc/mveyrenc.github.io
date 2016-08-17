@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>L’integration continue &mdash; documentation Demo 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Demo 1.0" href="../index.html"/>
+        <link rel="next" title="Versions du document" href="../appendices/versions.html"/>
+        <link rel="prev" title="Les tests fonctionels" href="../tests-automatises/tests-fonctionnels.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Demo
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+
+            
+            - v1.0
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Les tests automatisés</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tests-automatises/intro-types-de-tests.html">Les différents types de tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests-automatises/tests-qualite-code.html">Les tests de qualité de code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests-automatises/tests-unitaires.html">Les tests unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests-automatises/tests-acceptation.html">Les tests d&#8217;acceptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests-automatises/tests-fonctionnels.html">Les tests fonctionels</a></li>
+</ul>
+<p class="caption"><span class="caption-text">L&#8217;integration continue</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">L&#8217;integration continue</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Annexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/versions.html">Versions du document</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Demo</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>L&#8217;integration continue</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="../_sources/integration-continue/introduction.txt" rel="nofollow"> View page source</a>
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="l-integration-continue">
+<h1>L&#8217;integration continue<a class="headerlink" href="#l-integration-continue" title="Lien permanent vers ce titre">¶</a></h1>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../appendices/versions.html" class="btn btn-neutral float-right" title="Versions du document" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../tests-automatises/tests-fonctionnels.html" class="btn btn-neutral" title="Les tests fonctionels" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

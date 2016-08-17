@@ -66,7 +66,7 @@ Dans le répertoire ``Resources/views`` de votre bundle créez le répertoire ``
         </div>
     {% endblock %}
     {% block javascripts %}
-        <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.2.min.js') }}"></script>
+        <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.3.min.js') }}"></script>
         <script src="{{ asset('bundles/epsiblog/js/bootstrap.min.js') }}"></script>
     {% endblock %}
     </body>

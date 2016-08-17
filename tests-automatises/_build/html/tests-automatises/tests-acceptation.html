@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Les tests d’acceptation &mdash; documentation Demo 1.0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/tag.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/clear.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  
+
+  
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <link rel="top" title="documentation Demo 1.0" href="../index.html"/>
+        <link rel="next" title="Les tests fonctionels" href="tests-fonctionnels.html"/>
+        <link rel="prev" title="Les tests unitaires" href="tests-unitaires.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+        
+            
+              <div class="logo">
+                <a href="../index.html"><img src="../_static/logo_html.png" /></a>
+              </div>
+              <a href="../index.html"> Demo
+            
+        
+        </a>
+
+        
+          <div class="subtitle">
+            Documentation
+          </div>
+        
+
+        
+          <div class="reference">
+            OWSI-PHP-INT
+
+            
+            - v1.0
+            
+          </div>
+        
+          
+        </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Les tests automatisés</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro-types-de-tests.html">Les différents types de tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-qualite-code.html">Les tests de qualité de code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-unitaires.html">Les tests unitaires</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les tests d&#8217;acceptation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exemple">Exemple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gherkin">Gherkin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features-et-scenarios">Features et scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ecrire-des-scenarios">Écrire des scénarios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests-fonctionnels.html">Les tests fonctionels</a></li>
+</ul>
+<p class="caption"><span class="caption-text">L&#8217;integration continue</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../integration-continue/introduction.html">L&#8217;integration continue</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Annexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/versions.html">Versions du document</a></li>
+</ul>
+
+          
+        
+
+
+          
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Demo</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Les tests d&#8217;acceptation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="../_sources/tests-automatises/tests-acceptation.txt" rel="nofollow"> View page source</a>
+        
+
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="les-tests-d-acceptation">
+<h1>Les tests d&#8217;acceptation<a class="headerlink" href="#les-tests-d-acceptation" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Les tests d&#8217;acceptence permettent de tester des scénarios tels que les jouent un utilisateur final.</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">+</p>
+<ul class="last simple">
+<li>Peuvent être joué sur n&#8217;importe quel site et n&#8217;importe quel environnement</li>
+<li>Peuvent tester du Javascript et des requêtes ajax</li>
+<li>Peuvent être montrés au client</li>
+<li>Très stables, ils sont peu affectés par les changements de codes, de version ou de techno</li>
+</ul>
+</div>
+<div class="warning admonition">
+<p class="first admonition-title">-</p>
+<ul class="last simple">
+<li>Lents, voir très lents</li>
+<li>Instable lors de l&#8217;exécution : les temps de chargement, d&#8217;affiche, etc. penvent donner des faux-natifs</li>
+</ul>
+</div>
+<div class="section" id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-gherkin"><div class="highlight"><pre><span></span><span class="k">Feature:</span><span class="nf"> App</span>
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> I should see the home page of Symfony</span>
+<span class="k">    Given </span><span class="nf">I am on &quot;</span><span class="s">/</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">I should see &quot;</span><span class="s">Welcome to Symfony 2.7.3</span><span class="nf">&quot;</span>
+</pre></div>
+</div>
+<p>Ou</p>
+<div class="highlight-gherkin"><div class="highlight"><pre><span></span><span class="c"># language: fr</span><span class="nf"></span>
+<span class="k">Fonctionnalité:</span><span class="nf"> App</span>
+<span class="nf">  </span><span class="k">Scénario:</span><span class="nf"> Je vais sur la page d&#39;accueil de Symfony</span>
+<span class="k">    Etant donné </span><span class="nf">que je suis sur la page &quot;</span><span class="s">/</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">Alors </span><span class="nf">je devrais voir &quot;</span><span class="s">Welcome to Symfony 2.7.3</span><span class="nf">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gherkin">
+<h2>Gherkin<a class="headerlink" href="#gherkin" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le Gherkin est un language permettant d&#8217;écrire des sénarios.</p>
+<p>Comme YAML et Python, l&#8217;indentation permet de définir les différents blocks de code et chaque ligne définit une étape.
+Génaralement, les lignes de code Gherkin commence par un mot clé.</p>
+<p>Le Gherkin existe en plusieurs languages dont l&#8217;anglais et le français.</p>
+</div>
+<div class="section" id="features-et-scenarios">
+<h2>Features et scenarios<a class="headerlink" href="#features-et-scenarios" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Chaque <strong>feature</strong> doit être placé dans un fichier <code class="docutils literal"><span class="pre">*.feature</span></code>.
+Une <strong>feature</strong> peut contenir des <strong>scenarios</strong>, des <strong>scenarios outline</strong> (plan de scénario) et des <strong>backgrounds</strong> (étape jouée avant chaque scénario).
+Chaque <strong>scenario</strong> contient des étapes qui doivent commençer par <code class="docutils literal"><span class="pre">Given</span></code>, <code class="docutils literal"><span class="pre">When</span></code>, <code class="docutils literal"><span class="pre">Then</span></code>, <code class="docutils literal"><span class="pre">But</span></code> ou <code class="docutils literal"><span class="pre">And</span></code>.</p>
+<p>Une <strong>feature</strong> ou un <strong>scenario</strong> peut être associée à des tags afin de pouvoir filtrer les tests à lancer :</p>
+<div class="highlight-gherkin"><div class="highlight"><pre><span></span><span class="nt">@billing</span><span class="nf"></span>
+<span class="k">Feature:</span><span class="nf"> Verify billing</span>
+
+<span class="nf">  @important</span>
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Missing product description</span>
+
+<span class="nf">  Scenario: Several products</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ecrire-des-scenarios">
+<h2>Écrire des scénarios<a class="headerlink" href="#ecrire-des-scenarios" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="http://docs.behat.org/en/v3.0/user_guide/writing_scenarios.html#user-guide-writing-scenarios-backgrounds/">Documentation de Behat</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tests-fonctionnels.html" class="btn btn-neutral float-right" title="Les tests fonctionels" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tests-unitaires.html" class="btn btn-neutral" title="Les tests unitaires" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+
+    <p>
+        &copy; Copyright Toute reproduction interdite sauf autorisation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

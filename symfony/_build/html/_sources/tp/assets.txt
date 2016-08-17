@@ -6,7 +6,7 @@ Les assets
 
 Les assets sont les éléments de la page HTML chargés côté client comme les javacripts, les images, les CSS, etc. Chaque bundle peut accueillir des assets qui sont placés dans le répertoire ``Resources/public`` des bundles.
 
-Télécharger `jQuery <http://jquery.com/download>`_ et placer le fichier ``jquery-1.12.2.min.js`` dans le répertoire ``public/js`` de notre bundle.
+Télécharger `jQuery <http://jquery.com/download>`_ et placer le fichier ``jquery-1.12.3.min.js`` dans le répertoire ``public/js`` de notre bundle.
 
 Télécharger `Bootstrap <http://getbootstrap.com/getting-started/#download>`_ et placer les fichiers ainsi dans le répertoire ``public`` :
 
@@ -42,7 +42,7 @@ Modifiez le template ``EpsiBlogBundle:Blog:index5.html.twig`` pour charger la CS
                 </div>
             {% endblock %}
             {% block javascripts %}
-                <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.2.min.js') }}"></script>
+                <script src="{{ asset('bundles/epsiblog/js/jquery-1.12.3.min.js') }}"></script>
                 <script src="{{ asset('bundles/epsiblog/js/bootstrap.min.js') }}"></script>
             {% endblock %}
         </body>
@@ -70,7 +70,7 @@ Dans les templates, la fonction ``asset`` permet de gérérer correctement le ch
     │   │   ├── images
     │   │   └── js
     │   │       ├── bootstrap.min.js
-    │   │       └── jquery-1.12.2.min.js
+    │   │       └── jquery-1.12.3.min.js
     │   ├── framework
     │   └── sensiodistribution
     ├── config.php
