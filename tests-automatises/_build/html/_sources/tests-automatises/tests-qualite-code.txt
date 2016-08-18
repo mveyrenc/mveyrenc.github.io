@@ -84,7 +84,7 @@ Autres tests possibles
 
     * complexité cyclomatique
     * maintenabilité
-    * accessibilité pour les nouveau développeur
+    * accessibilité pour les nouveaux développeurs
     * simplicité des algorithmes
     * volumétrie
     * relation entres les classes
