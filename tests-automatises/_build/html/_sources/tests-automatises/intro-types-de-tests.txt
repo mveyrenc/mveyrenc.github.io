@@ -17,7 +17,7 @@ Tests d'intégration
 Tests fonctionnels
     Valide une fonctionnalité
 
-Test de non-régression
+Tests de non-régression
     Vérifie le fonctionnement des fonctionnalités déjà développées
 
 Tests d'acceptation

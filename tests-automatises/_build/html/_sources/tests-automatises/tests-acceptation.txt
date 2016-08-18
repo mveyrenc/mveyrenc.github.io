@@ -162,5 +162,9 @@ Lancez les tests :
 
     vendor/bin/behat
 
+Écrivez un test qui clique sur le lien "Tests automatisés et intégration continue PHP" et vérifie que l'on est sur la page d'accueil de la formation.
+
+
+
 
 
