@@ -74,3 +74,19 @@ Les problèmes sont signalés par :
 
     .. thumbnail:: /_static/images/phpstorm-phpcs-errors.png
         :align: center
+
+**********************
+Autres tests possibles
+**********************
+
+* Détection de copier/coller (`phpcpd <http://github.com/sebastianbergmann/phpcpd>`_)
+* Métrique de code (`phploc <https://github.com/sebastianbergmann/phploc>`_, `PhpMetrics <http://www.phpmetrics.org/>`_, `pdepend <https://pdepend.org>`_)
+
+    * complexité cyclomatique
+    * maintenabilité
+    * accessibilité pour les nouveau développeur
+    * simplicité des algorithmes
+    * volumétrie
+    * relation entres les classes
+
+* Détection de code mort (`phpdcd <https://github.com/sebastianbergmann/phpdcd>`_)

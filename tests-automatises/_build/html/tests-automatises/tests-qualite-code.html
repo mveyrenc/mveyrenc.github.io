@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#integration-dans-phpstorm">Intégration dans PhpStorm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation">Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autres-tests-possibles">Autres tests possibles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tests-unitaires.html">Les tests unitaires</a></li>
@@ -116,7 +117,7 @@
 </ul>
 <p class="caption"><span class="caption-text">L&#8217;integration continue</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../integration-continue/introduction.html">L&#8217;integration continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration-continue/introduction.html">L&#8217;intégration continue</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Annexes</span></p>
 <ul>
@@ -228,7 +229,7 @@
 <p>Paramétrez le chemin vers <code class="docutils literal"><span class="pre">phpcs</span></code> dans <span class="menuselection">Settings ‣ Languages &amp; Frameworks ‣ PHP ‣ Code Sniffer</span> :</p>
 <blockquote>
 <div><a class=""
-               data-lightbox="group-de401443-5411-4188-8d56-182848fee576"
+               data-lightbox="group-38a14e2b-0838-4e10-8323-fdd2ae112015"
                href="../_images/phpstorm-phpcs-path1.png"
                title=""
                data-title=""
@@ -241,7 +242,7 @@
 <p>Paramétrez les règles utilisées pour l&#8217;inspection dans <span class="menuselection">Settings ‣ Editor ‣ Inspections ‣ PHP ‣ PHP Code Sniffer validation</span> :</p>
 <blockquote>
 <div><a class=""
-               data-lightbox="group-4d62df92-09ea-4f5c-87da-c6a3b76aed5a"
+               data-lightbox="group-ec6824f8-7bbd-4e0d-ae2a-3d485b2315db"
                href="../_images/phpstorm-phpcs-rules1.png"
                title=""
                data-title=""
@@ -264,7 +265,7 @@
 <li><p class="first">puce de couleur en haut à droite</p>
 <blockquote>
 <div><a class=""
-               data-lightbox="group-884bee0a-b617-4490-b1fa-7cea0c3b9e38"
+               data-lightbox="group-80ecc27a-5576-428b-aa5f-b6372d79d84c"
                href="../_images/phpstorm-phpcs-errors1.png"
                title=""
                data-title=""
@@ -274,6 +275,27 @@
                      height="auto"
                      alt=""/>
                 </a></div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="autres-tests-possibles">
+<h2>Autres tests possibles<a class="headerlink" href="#autres-tests-possibles" title="Lien permanent vers ce titre">¶</a></h2>
+<ul>
+<li><p class="first">Détection de copier/coller (<a class="reference external" href="http://github.com/sebastianbergmann/phpcpd">phpcpd</a>)</p>
+</li>
+<li><p class="first">Métrique de code (<a class="reference external" href="https://github.com/sebastianbergmann/phploc">phploc</a>, <a class="reference external" href="http://www.phpmetrics.org/">PhpMetrics</a>, <a class="reference external" href="https://pdepend.org">pdepend</a>)</p>
+<blockquote>
+<div><ul class="simple">
+<li>complexité cyclomatique</li>
+<li>maintenabilité</li>
+<li>accessibilité pour les nouveau développeur</li>
+<li>simplicité des algorithmes</li>
+<li>volumétrie</li>
+<li>relation entres les classes</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Détection de code mort (<a class="reference external" href="https://github.com/sebastianbergmann/phpdcd">phpdcd</a>)</p>
 </li>
 </ul>
 </div>

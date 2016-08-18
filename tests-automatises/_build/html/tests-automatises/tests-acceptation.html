@@ -122,7 +122,7 @@
 </ul>
 <p class="caption"><span class="caption-text">L&#8217;integration continue</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../integration-continue/introduction.html">L&#8217;integration continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration-continue/introduction.html">L&#8217;intégration continue</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Annexes</span></p>
 <ul>
@@ -267,20 +267,20 @@ Chaque <strong>scenario</strong> contient des étapes qui doivent commençer par
 </pre></div>
 </div>
 <p>Fichier de configuration :</p>
-<div class="highlight-yml"><div class="highlight"><pre><span></span># behat.yml
-default:
-    suites:
-        default:
-            path: %paths.base%/features
-            contexts:
-                - FeatureContext
-                - Behat\MinkExtension\Context\MinkContext
-    extensions:
-        Behat\MinkExtension:
-            base_url:  &#39;http://mveyrenc.github.io&#39;
-            sessions:
-                default:
-                    goutte: ~
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># behat.yml</span>
+<span class="l l-Scalar l-Scalar-Plain">default</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">suites</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">default</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="s">&quot;%paths.base%/features&quot;</span>
+            <span class="l l-Scalar l-Scalar-Plain">contexts</span><span class="p p-Indicator">:</span>
+                <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FeatureContext</span>
+                <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Behat\MinkExtension\Context\MinkContext</span>
+    <span class="l l-Scalar l-Scalar-Plain">extensions</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">Behat\MinkExtension</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">base_url</span><span class="p p-Indicator">:</span> <span class="s">&quot;http://mveyrenc.github.io&quot;</span>
+            <span class="l l-Scalar l-Scalar-Plain">sessions</span><span class="p p-Indicator">:</span>
+                <span class="l l-Scalar l-Scalar-Plain">default</span><span class="p p-Indicator">:</span>
+                    <span class="l l-Scalar l-Scalar-Plain">goutte</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~</span>
 </pre></div>
 </div>
 <div class="admonition-mink-drivers admonition">
@@ -427,11 +427,11 @@ default:
 
 <span class="k">Fonctionnalité:</span><span class="nf"> Homepage</span>
 <span class="nf">    </span><span class="k">Scénario:</span><span class="nf"> Je vais sur la page d&#39;accueil</span>
-<span class="k">        Etant donné </span><span class="nf">que je suis sur la page &quot;</span><span class="s">/</span><span class="nf">&quot;</span>
+<span class="k">        Etant donné </span><span class="nf">je suis sur la page d&#39;accueil</span>
 <span class="nf">        </span><span class="k">Alors </span><span class="nf">je devrais voir &quot;</span><span class="s">Tests automatisés et intégration continue PHP</span><span class="nf">&quot;</span>
 </pre></div>
 </div>
-<p>Définissez les étapes manquantes dans <code class="docutils literal"><span class="pre">features/bootstrap/FeatureContext.php</span></code> :</p>
+<p>Lancez les tests :</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vendor/bin/behat</span>
 </pre></div>
 </div>

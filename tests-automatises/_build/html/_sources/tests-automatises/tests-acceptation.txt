@@ -101,19 +101,19 @@ Installation
 
 Fichier de configuration :
 
-.. code-block:: yml
+.. code-block:: yaml
 
     # behat.yml
     default:
         suites:
             default:
-                path: %paths.base%/features
+                path: "%paths.base%/features"
                 contexts:
                     - FeatureContext
                     - Behat\MinkExtension\Context\MinkContext
         extensions:
             Behat\MinkExtension:
-                base_url:  'http://mveyrenc.github.io'
+                base_url: "http://mveyrenc.github.io"
                 sessions:
                     default:
                         goutte: ~
@@ -153,12 +153,10 @@ Exécuter Behat
 
     Fonctionnalité: Homepage
         Scénario: Je vais sur la page d'accueil
-            Etant donné que je suis sur la page "/"
+            Etant donné je suis sur la page d'accueil
             Alors je devrais voir "Tests automatisés et intégration continue PHP"
 
-Définissez les étapes manquantes dans ``features/bootstrap/FeatureContext.php`` :
-
-
+Lancez les tests :
 
 .. code-block:: console
 
