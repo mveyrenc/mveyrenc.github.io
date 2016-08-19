@@ -67,6 +67,8 @@ TP
 
 :download:`Sujet du TP </_downloads/poe-tdd-training-master.tar.gz>`
 
+:download:`Correction du TP </_downloads/poe-tdd-training-master-solution.tar.gz>`
+
 Installation
 ============
 
